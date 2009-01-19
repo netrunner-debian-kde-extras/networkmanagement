@@ -4,3 +4,10 @@ DEB_KDE_LINK_WITH_AS_NEEDED ?= yes
 
 include debian/debhelper/kde4.mk
 -include /usr/share/topgit/tg2quilt.mk
+
+install:
+	$(DH) --until dh_auto_install $@
+	rm debian/plasma-applet-networkmanager/usr/lib/libknmui.so \
+	   debian/plasma-applet-networkmanager/usr/lib/libknmstorage.so \
+	   debian/plasma-applet-networkmanager/usr/lib/libknmdbus.so
+	$(DH) --after dh_auto_install $@
