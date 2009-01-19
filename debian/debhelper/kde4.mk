@@ -57,7 +57,8 @@ unpatch: clean_before_unpatch
 kde4/clean: unpatch
 
 # Required relationship between default targets
-$(filter-out build clean,$(DEB_ALL_DEFAULT_TARGETS)): build
+$(filter-out build clean kde4/build kde4/clean,$(DEB_ALL_DEFAULT_TARGETS) $(KDE4_ALL_DEFAULT_TARGETS)): build
+binary binary-arch binary-indep kde4/binary kde4/binary-arch kde4/binary-indep: install
 
 kde4/build: patch
 
