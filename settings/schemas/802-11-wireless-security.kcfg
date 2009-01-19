@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+  http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+  <kcfgfile arg="true"/>
+  <group name="802-11-wireless-security">
+    <entry name="keymgmt" key="keymgmt" type="Enum">
+      <label>Key management</label>
+      <whatsthis></whatsthis>
+      <choices>
+        <choice name="none"/>
+        <choice name="wpa-none"/>
+        <choice name="wpa-psk"/>
+        <choice name="wpa-eap"/>
+        <default>42</default><!-- invalid default so that the choice is always sent; NM requires this -->
+      </choices>
+
+    </entry>
+    <entry name="weptxkeyindex" type="UInt">
+      <label>WEP TX key index</label>
+      <whatsthis></whatsthis>
+    </entry>
+    <entry name="authalg" key="authalg" type="Enum">
+      <label>Authentication algorithm</label>
+      <whatsthis></whatsthis>
+      <choices>
+        <choice name="open"/>
+        <choice name="shared"/>
+        <choice name="leap"/>
+      </choices>
+    </entry>
+    <entry name="proto" type="StringList">
+      <label>Protocols</label>
+      <whatsthis></whatsthis>
+    </entry>
+    <entry name="pairwise" type="StringList">
+      <label>Pairwise</label>
+      <whatsthis></whatsthis>
+    </entry>
+    <entry name="group" type="StringList">
+      <label>Group</label>
+      <whatsthis></whatsthis>
+    </entry>
+    <entry name="leapusername" type="String">
+      <label>LEAP Username</label>
+      <whatsthis></whatsthis>
+    </entry>
+    <entry name="wepkey0" type="String" secret="true">
+      <label>WEP key 0</label>
+      <whatsthis></whatsthis>
+    </entry>
+    <entry name="wepkey1" type="String" secret="true">
+      <label>WEP key 1</label>
+      <whatsthis></whatsthis>
+    </entry>
+    <entry name="wepkey2" type="String" secret="true">
+      <label>WEP key 2</label>
+      <whatsthis></whatsthis>
+    </entry>
+    <entry name="wepkey3" type="String" secret="true">
+      <label>WEP key 3</label>
+      <whatsthis></whatsthis>
+    </entry>
+    <entry name="psk" type="String" secret="true">
+      <label>PSK</label>
+      <whatsthis></whatsthis>
+    </entry>
+    <entry name="leappassword" type="String" secret="true">
+         secret="true"<label>LEAP Password</label>
+      <whatsthis></whatsthis>
+    </entry>
+    <entry name="clientcert" type="String">
+        <label>Client Certificate</label>
+        <whatsthis></whatsthis>
+    </entry>
+    <entry name="cacert" type="String">
+        <label>CA Certificate</label>
+        <whatsthis></whatsthis>
+    </entry>
+    <entry name="phase2cacert" type="ByteArray">
+      <label>Phase 2 CA Cert</label>
+      <whatsthis></whatsthis>
+    </entry>
+    <entry name="phase2capath" type="Path">
+      <label>Phase 2 CA Path</label>
+      <whatsthis></whatsthis>
+    </entry>
+    <entry name="phase2clientcert" type="ByteArray">
+      <label>Phase 2 client cert</label>
+      <whatsthis></whatsthis>
+    </entry>
+    <entry name="password" type="String" secret="true">
+      <label>Password</label>
+      <whatsthis></whatsthis>
+    </entry>
+    <entry name="privatekey" type="ByteArray">
+      <label>Private key</label>
+      <whatsthis></whatsthis>
+    </entry>
+    <entry name="phase2privatekey" type="ByteArray">
+      <label>Phase 2 private key</label>
+      <whatsthis></whatsthis>
+    </entry>
+    <entry name="phase1peapver" key="phase1peapver" type="Enum">
+      <label>Phase 1 PEAP version</label>
+      <whatsthis></whatsthis>
+      <choices>
+        <choice name="0"/>
+        <choice name="1"/>
+      </choices>
+    </entry>
+    <entry name="phase1peaplabel" key="phase1peaplabel" type="String">
+      <label>Phase 1 PEAP label</label>
+      <whatsthis></whatsthis>
+      <choices>
+        <choice name="0"/>
+        <choice name="1"/>
+      </choices>
+    </entry>
+  </group>
+</kcfg>
+
