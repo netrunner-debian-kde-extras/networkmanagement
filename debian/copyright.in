@@ -1,0 +1,21 @@
+This package was debianized by Modestas Vainius <modestas@vainius.eu>
+on Tue, 20 Jan 2009 00:16:35 +0200
+
+The original source was downloaded from
+svn://anonsvn.kde.org/home/kde/trunk/playground/base/plasma/applets/networkmanager/
+
+Upstream Authors:
+
+  Christopher Blauvelt <cblauvelt@gmail.com>
+
+Upstream copyright holders:
+
+  [copyright.source]
+
+Debian packaging (debian/*) is under:
+
+Copyright: © 2008 Modestas Vainius <modestas@vainius.eu>
+           © Joey Hess <joeyh@debian.org> (debhelper scripts)
+License:   GPL-2+
+
+[copyright.licenses]

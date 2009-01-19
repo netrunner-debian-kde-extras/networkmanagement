@@ -1,0 +1,6 @@
+#!/usr/bin/make -f
+
+DEB_KDE_LINK_WITH_AS_NEEDED ?= yes
+
+include debian/debhelper/kde4.mk
+-include /usr/share/topgit/tg2quilt.mk

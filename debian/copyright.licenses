@@ -1,0 +1,121 @@
+License for all components unless stated otherwise:
+--
+  GNU General Public License, version 2 or later (GPL-2+)
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU General Public License as
+  published by the Free Software Foundation; either version 2 of
+  the License or (at your option) version 3 or any later version
+  accepted by the membership of KDE e.V. (or its successor approved
+  by the membership of KDE e.V.), which shall act as a proxy
+  defined in Section 14 of version 3 of the license.
+
+  On Debian systems, the complete text of the
+  GNU General Public License version 2 can be found in
+  /usr/share/common-licenses/GPL-2
+--
+
+Other used licenses:
+--
+  GNU General Public License, version 2 (GPL-2)
+    2 file(s) are licensed under this license:
+
+    + settings/service/pbkdf2.cpp
+    + settings/service/pbkdf2.h
+
+  On Debian systems, the complete text of the
+  GNU General Public License version 2 can be found in
+  /usr/share/common-licenses/GPL-2
+--
+
+--
+  GNU Library General Public License, version 2 (LGPL-2)
+    61 file(s) are licensed under this license:
+
+    * libs/* excluding:
+    -+ libs/knm_export.h
+    + libs/ui/accesspoint.cpp
+    + libs/ui/accesspoint.h
+    + libs/ui/apitemdelegate.cpp
+    + libs/ui/apitemdelegate.h
+    + libs/ui/apitemmodel.cpp
+    + libs/ui/apitemmodel.h
+    + libs/ui/apitemview.cpp
+    + libs/ui/apitemview.h
+    + libs/ui/ifaceitemmodel.cpp
+    + libs/ui/ifaceitemmodel.h
+    + libs/ui/scanwidget.cpp
+    + libs/ui/scanwidget.h
+    settings/*
+    + settings/service/connection.cpp
+    + settings/service/connection.h
+    + settings/service/networksettings.cpp
+    + settings/service/networksettings.h
+    + settings/service/wephash.cpp
+    + settings/service/wephash.h
+    widgets/*
+
+  On Debian systems, the complete text of the
+  GNU Library General Public License version 2 can be found in
+  /usr/share/common-licenses/LGPL-2
+--
+
+--
+  GNU Lesser General Public License, version 2.1 or later (LGPL-2.1+)
+    9 file(s) are licensed under this license:
+
+    + libs/ui/cellularpreferences.cpp
+    + libs/ui/pppoepreferences.cpp
+    + libs/ui/settinginterface.h
+    + libs/ui/settingwidget.h
+    + libs/ui/vpnpreferences.cpp
+    + libs/ui/vpnuiplugin.h
+    + libs/ui/wiredpreferences.cpp
+    + libs/ui/wirelesspreferences.cpp
+    + tests/testconfigxml.cpp
+
+  On Debian systems, the complete text of the
+  GNU Lesser General Public License version 2.1 can be found in
+  /usr/share/common-licenses/LGPL-2.1
+--
+
+--
+  GNU General Public License, version 2 or 3
+
+  Alternatively, this file may be used under the terms of the GNU
+  General Public License versions 2.0 or 3.0 as published by the Free
+  Software Foundation and appearing in the file LICENSE.GPL included in
+  the packaging of this file.  Please review the following information
+  to ensure GNU General Public Licensing requirements will be met:
+  http://www.fsf.org/licensing/licenses/info/GPLv2.html and
+  http://www.gnu.org/copyleft/gpl.html.  In addition, as a special
+  exception, Nokia gives you certain additional rights. These rights
+  are described in the Nokia Qt GPL Exception version 1.3, included in
+  the file GPL_EXCEPTION.txt in this package.
+
+    1 file(s) are licensed under these terms:
+
+    + tests/qdbusfornm.cpp
+
+  On Debian systems, the complete text of the
+  GNU General Public License version 2 and 3 can be found in
+  /usr/share/common-licenses/GPL-2
+  /usr/share/common-licenses/GPL-3
+
+  Nokia Qt GPL Exception version 1.3 is available in
+  /usr/share/doc/libqtcore4/GPL_EXCEPTION_ADDENDUM.TXT.gz
+--
+
+--
+  GNU Library General Public License, version 2 or later (LGPL-2+)
+    3 file(s) are licensed under this license:
+
+    + libs/knm_export.h
+    + libs/storage/configxml.cpp
+    + libs/storage/configxml.h
+
+  On Debian systems, the complete text of the
+  GNU Library General Public License version 2 can be found in
+  /usr/share/common-licenses/LGPL-2
+--
+

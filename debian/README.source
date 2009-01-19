@@ -1,0 +1,30 @@
+This package uses git+topgit as the packaging VCS. Please install Debian topgit
+package 0.5 or higher and read /usr/share/doc/topgit/HOWTO-tg2quilt.gz for more
+information how to checkout, add, remove, modify patches (topic branches) and
+do other common tasks. Branch structure of the repository is as follows:
+
+* upstream   - upstream source code.
+* master     - the Debianization branch (upstream source and debian directory).
+* build      - build branch; master and exported debian/patches ready for
+               building. This branch is used for tagging.
+
+Topic branches should be named as follows:
+
+* general/*  - namespace for general upstream patches. Patches can be named
+               freely, but it is recommended to prefix names with 'fix_' for
+               patches fixing bugs and with 'feature_' for patches introducing
+               new features. These patches should be based on the upstream
+               branch.
+* debian/*   - Debian specific patches should be put in this namespace. These
+               patches should be based on the upstream branch or even master
+               branch if necessary.
+
+If a patch depends on any other patch(es), create/adjust its topic branch
+dependencies as needed.
+
+However, topgit is not a build dependency. Patches are exported to
+debian/patches as quilt series before building. Please read
+/usr/share/doc/quilt/README.source (quilt version 0.46-4.1 or later) for more
+information on how to manage patches directly with quilt. Please note that this
+method is not acceptable for long term package management, only for quick
+patching.
