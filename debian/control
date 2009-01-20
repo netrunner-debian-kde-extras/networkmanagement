@@ -15,12 +15,12 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, network-manager (>= 0.7.0)
 Suggests: kdebase-workspace-bin
 Description: NetworkManager frontend for KDE4 and Plasma
- This package provides the NetworkManager plasma applet aims to provide a fully
- featured GUI frontend to NetworkManager daemon v0.7 including support for
- wired, wireless and VPN networks.  It is exclusively written for Plasma and
- KDE4 and it is not supposed to work in other environments. The package
- provides Plasma based interface to NetworkManager daemon and KDE4 Control
- Module (kcm) for changing NetworkManager settings
+ This package provides the NetworkManager plasma applet which aims to provide a
+ fully featured GUI frontend to NetworkManager daemon v0.7 including support
+ for wired, wireless, GSM and VPN networks.  It is exclusively written for
+ Plasma and KDE4 and it is not supposed to work in other environments. The
+ package provides Plasma based interface to NetworkManager daemon and KDE4
+ Control Module (kcm) for changing NetworkManager settings
  .
  This applet needs Plasma shell to be usable. Main KDE 4 Plasma shell is
  available in the kdebase-workspace-bin package. The user friendly name of the
