@@ -20,7 +20,7 @@ Description: NetworkManager frontend for KDE4 and Plasma
  for wired, wireless, GSM and VPN networks.  It is exclusively written for
  Plasma and KDE4 and it is not supposed to work in other environments. The
  package provides Plasma based interface to NetworkManager daemon and KDE4
- Control Module (kcm) for changing NetworkManager settings
+ Control Module (kcm) for changing NetworkManager settings.
  .
  This applet needs Plasma shell to be usable. Main KDE 4 Plasma shell is
  available in the kdebase-workspace-bin package. The user friendly name of the
