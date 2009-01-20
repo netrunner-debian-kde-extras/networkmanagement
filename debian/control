@@ -24,4 +24,4 @@ Description: NetworkManager frontend for KDE4 and Plasma
  .
  This applet needs Plasma shell to be usable. Main KDE 4 Plasma shell is
  available in the kdebase-workspace-bin package. The user friendly name of the
- applet is "Network Manager" (in e.g. "Add Widgets" dialog).
+ applet is "Networks" (in e.g. "Add Widgets" dialog).
