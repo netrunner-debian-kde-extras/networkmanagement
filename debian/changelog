@@ -1,5 +1,5 @@
-plasma-applet-networkmanager (0.1~svn913664-0r1) UNRELEASED; urgency=low
+plasma-applet-networkmanager (0.1~svn913664-0r2) UNRELEASED; urgency=low
 
   * Initial release. (Closes: #508438)
 
- -- Modestas Vainius <modestas@vainius.eu>  Tue, 20 Jan 2009 00:01:24 +0200
+ -- Modestas Vainius <modestas@vainius.eu>  Tue, 20 Jan 2009 02:14:35 +0200
