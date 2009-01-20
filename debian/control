@@ -12,7 +12,7 @@ Vcs-Browser: http://git.debian.org/?p=pkg-kde/kde-extras/plasma-applet-networkma
 
 Package: plasma-applet-networkmanager
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, network-manager (>= 0.7.0)
 Suggests: kdebase-workspace-bin
 Description: NetworkManager frontend for KDE4 and Plasma
  This package provides the NetworkManager plasma applet aims to provide a fully
