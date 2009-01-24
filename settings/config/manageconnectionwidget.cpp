@@ -40,6 +40,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <solid/control/networkinterface.h>
 
 #include "knmserviceprefs.h"
+#include "connection.h"
 #include "connectionprefs.h"
 
 #define ConnectionIdRole 1812
@@ -75,7 +76,7 @@ ManageConnectionWidget::~ManageConnectionWidget()
 
 void ManageConnectionWidget::createConnection(const QString &connectionType, const QVariantList &args)
 {
-    mEditor->addConnection(false, mEditor->connectionTypeForString(connectionType), args);
+    mEditor->addConnection(false, Knm::Connection::typeFromString(connectionType), args);
 }
 
 void ManageConnectionWidget::restoreConnections()
@@ -114,24 +115,29 @@ void ManageConnectionWidget::restoreConnections()
                     "network connection that has never been used", "Never");
         }
         kDebug() << type << name << lastUsed;
-        QTreeWidgetItem * item;
-        if (type == QLatin1String("Wired")) {
+        QTreeWidgetItem * item = 0;
+        if (type == Knm::Connection::typeAsString(Knm::Connection::Wired)) {
             item = new QTreeWidgetItem(mConnEditUi.listWired, itemContents);
             wiredItems.append(item);
-        } else if (type == QLatin1String("Wireless")) {
+        } else if (type == Knm::Connection::typeAsString(Knm::Connection::Wireless)) {
             item = new QTreeWidgetItem(mConnEditUi.listWireless, itemContents);
             wirelessItems.append(item);
-        } else if (type == QLatin1String("Cellular")) {
+        } else if (type == Knm::Connection::typeAsString(Knm::Connection::Gsm)) {
             item = new QTreeWidgetItem(mConnEditUi.listCellular, itemContents);
             cellularItems.append(item);
-        } else if (type.toLower() == QLatin1String("vpn")) {
+        } else if (type == Knm::Connection::typeAsString(Knm::Connection::Cdma)) {
+            item = new QTreeWidgetItem(mConnEditUi.listCellular, itemContents);
+            cellularItems.append(item);
+        } else if (type == Knm::Connection::typeAsString(Knm::Connection::Vpn)) {
             item = new QTreeWidgetItem(mConnEditUi.listVpn, itemContents);
             vpnItems.append(item);
-        } else if (type == QLatin1String("PPPoE")) {
+        } else if (type == Knm::Connection::typeAsString(Knm::Connection::Pppoe)) {
             item = new QTreeWidgetItem(mConnEditUi.listPppoe, itemContents);
             pppoeItems.append(item);
         }
-        item->setData(0, ConnectionIdRole, connectionId);
+        if (item) {
+            item->setData(0, ConnectionIdRole, connectionId);
+        }
     }
     mConnEditUi.listWired->insertTopLevelItems(0, wiredItems);
     mConnEditUi.listWired->resizeColumnToContents(0);
@@ -191,7 +197,6 @@ void ManageConnectionWidget::addClicked()
 void ManageConnectionWidget::editClicked()
 {
     //edit might be clicked on a system connection, in which case we need a connectionid for it
-    KDialog configDialog(this);
     QTreeWidgetItem * item = selectedItem();
     if ( !item ) {
         kDebug() << "edit clicked, but no selection!";
@@ -206,26 +211,7 @@ void ManageConnectionWidget::editClicked()
     QVariantList args;
     args << connectionId;
 
-    ConnectionPreferences * kcm = mEditor->editorForConnectionType(false, &configDialog, connectionTypeForCurrentIndex(), args);
-
-    if (kcm) {
-        configDialog.setMainWidget(kcm);
-        if (configDialog.exec() == QDialog::Accepted) {
-            kcm->save();
-
-            KNetworkManagerServicePrefs * prefs = KNetworkManagerServicePrefs::self();
-            KConfigGroup config(prefs->config(), QLatin1String("Connection_") + connectionId);
-            config.writeEntry("Name", kcm->connectionName());
-            config.writeEntry("Type", kcm->connectionType());
-            prefs->writeConfig();
-
-            QStringList changed;
-            changed << connectionId;
-            mEditor->updateService(changed);
-
-            restoreConnections();
-        }
-    }
+    mEditor->editConnection(connectionTypeForCurrentIndex(), args);
 }
 
 void ManageConnectionWidget::deleteClicked()
@@ -265,25 +251,26 @@ void ManageConnectionWidget::deleteClicked()
     }
 }
 
-ConnectionEditor::ConnectionType ManageConnectionWidget::connectionTypeForCurrentIndex() const
+Knm::Connection::Type ManageConnectionWidget::connectionTypeForCurrentIndex() const
 {
-    ConnectionEditor::ConnectionType t = ConnectionEditor::Wireless;
+    Knm::Connection::Type t = Knm::Connection::Wireless;
     int i = mConnEditUi.tabWidget->currentIndex();
     switch (i) {
         case 0:
-            t = ConnectionEditor::Wired;
+            t = Knm::Connection::Wired;
             break;
         case 1:
-            t = ConnectionEditor::Wireless;
+            t = Knm::Connection::Wireless;
             break;
         case 2:
-            t = ConnectionEditor::Cellular;
+#warning CDMA not handled in ManageConnectionWidget::connectionTypeForCurrentIndex()
+            t = Knm::Connection::Gsm;
             break;
         case 3:
-            t = ConnectionEditor::Vpn;
+            t = Knm::Connection::Vpn;
             break;
         case 4:
-            t = ConnectionEditor::Pppoe;
+            t = Knm::Connection::Pppoe;
             break;
         default:
             break;
