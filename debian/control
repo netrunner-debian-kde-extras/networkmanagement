@@ -4,8 +4,8 @@ Priority: optional
 Maintainer: Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian .org>
 Uploaders: Modestas Vainius <modestas@vainius.eu>
 Build-Depends: debhelper (>= 7.1.0), cmake (>= 2.6.2), pkg-kde-tools (>= 0.2), quilt,
- libqt4-dev (>= 4.4.0), kdelibs5-dev (>= 4:4.1.96), kdebase-workspace-dev (>= 4:4.1.96),
-  network-manager-dev (>= 0.7.0), libnm-util-dev (>= 0.7.0)
+ libqt4-dev (>= 4.4.0), kdelibs5-dev (>= 4:4.2.0), kdebase-workspace-dev (>= 4:4.2.0),
+ network-manager-dev (>= 0.7.0), libnm-util-dev (>= 0.7.0)
 Standards-Version: 3.8.0
 Vcs-Git: git://git.debian.org/git/pkg-kde/kde-extras/plasma-applet-networkmanager.git
 Vcs-Browser: http://git.debian.org/?p=pkg-kde/kde-extras/plasma-applet-networkmanager.git
@@ -15,12 +15,12 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, network-manager (>= 0.7.0)
 Suggests: kdebase-workspace-bin
 Description: NetworkManager frontend for KDE4 and Plasma
- This package provides the NetworkManager plasma applet aims to provide a fully
- featured GUI frontend to NetworkManager daemon v0.7 including support for
- wired, wireless and VPN networks.  It is exclusively written for Plasma and
- KDE4 and it is not supposed to work in other environments. The package
- provides Plasma based interface to NetworkManager daemon and KDE4 Control
- Module (kcm) for changing NetworkManager settings
+ This package provides the NetworkManager plasma applet which aims to provide a
+ fully featured GUI frontend to NetworkManager daemon v0.7 including support
+ for wired, wireless, GSM and VPN networks.  It is exclusively written for
+ Plasma and KDE4 and it is not supposed to work in other environments. The
+ package provides Plasma based interface to NetworkManager daemon and KDE4
+ Control Module (kcm) for changing NetworkManager settings.
  .
  This applet needs Plasma shell to be usable. Main KDE 4 Plasma shell is
  available in the kdebase-workspace-bin package. The user friendly name of the
