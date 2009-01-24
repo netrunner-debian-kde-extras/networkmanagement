@@ -10,15 +10,15 @@ Signed-off-by: Modestas Vainius <modestas@vainius.eu>
  1 files changed, 1 insertions(+), 1 deletions(-)
 
 diff --git a/tests/CMakeLists.txt b/tests/CMakeLists.txt
-index 4a7b360..3105735 100644
+index a586ab7..a3cacb4 100644
 --- a/tests/CMakeLists.txt
 +++ b/tests/CMakeLists.txt
-@@ -13,5 +13,5 @@ kde4_add_executable(testconfigxml ${testconfigxml_SRCS})
- target_link_libraries(testconfigxml knmstorage ${KDE4_KDEUI_LIBS})
+@@ -24,5 +24,5 @@ target_link_libraries(testnewstorage knmstorage ${KDE4_KDEUI_LIBS})
+ ## next target: hacked up qdbus that can display NM data types
  
  kde4_add_executable(qdbusfornm qdbusfornm.cpp )
 -target_link_libraries(qdbusfornm knmstorage )
 +target_link_libraries(qdbusfornm knmstorage ${QT_QTDBUS_LIBRARY})
  
 -- 
-tg: (01f73f8..) general/fix_target_link_libraries (depends on: upstream)
+tg: (d4ca9fd..) general/fix_target_link_libraries (depends on: upstream)
