@@ -19,8 +19,22 @@ void WirelessPersistence::load()
 {
   WirelessSetting * setting = static_cast<WirelessSetting *>(m_setting);
   setting->setSsid(m_config->readEntry("ssid", QByteArray()));
-  setting->setMode(m_config->readEntry("mode", 0));
-  setting->setBand(m_config->readEntry("band", 1));
+  {
+    QString contents = m_config->readEntry("mode", "infrastructure");
+    if (contents == "infrastructure")
+      setting->setMode(WirelessSetting::EnumMode::infrastructure);
+    else     if (contents == "adhoc")
+      setting->setMode(WirelessSetting::EnumMode::adhoc);
+
+  }
+  {
+    QString contents = m_config->readEntry("band", "bg");
+    if (contents == "a")
+      setting->setBand(WirelessSetting::EnumBand::a);
+    else     if (contents == "bg")
+      setting->setBand(WirelessSetting::EnumBand::bg);
+
+  }
   setting->setChannel(m_config->readEntry("channel", 0));
   setting->setBssid(m_config->readEntry("bssid", QByteArray()));
   setting->setRate(m_config->readEntry("rate", 0));
@@ -28,18 +42,29 @@ void WirelessPersistence::load()
   setting->setMacaddress(m_config->readEntry("macaddress", QByteArray()));
   setting->setMtu(m_config->readEntry("mtu", 0));
   setting->setSeenbssids(m_config->readEntry("seenbssids", QStringList()));
-  // SECRET
-  if (m_storageMode != ConnectionPersistence::Secure) {
-    setting->setSecurity(m_config->readEntry("security", ""));
-  }
+  setting->setSecurity(m_config->readEntry("security", ""));
 }
 
 void WirelessPersistence::save()
 {
   WirelessSetting * setting = static_cast<WirelessSetting *>(m_setting);
   m_config->writeEntry("ssid", setting->ssid());
-  m_config->writeEntry("mode", setting->mode());
-  m_config->writeEntry("band", setting->band());
+  switch (setting->mode()) {
+    case WirelessSetting::EnumMode::infrastructure:
+      m_config->writeEntry("mode", "infrastructure");
+      break;
+    case WirelessSetting::EnumMode::adhoc:
+      m_config->writeEntry("mode", "adhoc");
+      break;
+  }
+  switch (setting->band()) {
+    case WirelessSetting::EnumBand::a:
+      m_config->writeEntry("band", "a");
+      break;
+    case WirelessSetting::EnumBand::bg:
+      m_config->writeEntry("band", "bg");
+      break;
+  }
   m_config->writeEntry("channel", setting->channel());
   m_config->writeEntry("bssid", setting->bssid());
   m_config->writeEntry("rate", setting->rate());
@@ -47,25 +72,19 @@ void WirelessPersistence::save()
   m_config->writeEntry("macaddress", setting->macaddress());
   m_config->writeEntry("mtu", setting->mtu());
   m_config->writeEntry("seenbssids", setting->seenbssids());
-  // SECRET
-  if (m_storageMode != ConnectionPersistence::Secure) {
-    m_config->writeEntry("security", setting->security());
-  }
+kDebug() << setting->security();
+  m_config->writeEntry("security", setting->security());
 }
 
 QMap<QString,QString> WirelessPersistence::secrets() const
 {
-  WirelessSetting * setting = static_cast<WirelessSetting *>(m_setting);
   QMap<QString,QString> map;
-  map.insert(QLatin1String("security"), setting->security());
   return map;
 }
 
 void WirelessPersistence::restoreSecrets(QMap<QString,QString> secrets) const
 {
   if (m_storageMode == ConnectionPersistence::Secure) {
-  WirelessSetting * setting = static_cast<WirelessSetting *>(m_setting);
-    setting->setSecurity(secrets.value("security"));
-    setting->setSecretsAvailable(true);
+  Q_UNUSED(secrets);
   }
 }
