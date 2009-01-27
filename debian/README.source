@@ -28,3 +28,6 @@ debian/patches as quilt series before building. Please read
 information on how to manage patches directly with quilt. Please note that this
 method is not acceptable for long term package management, only for quick
 patching.
+
+Debian build scripts are based on the debhelper v7 with added cmake support
+and custom tweaks to the dh helper (available under debian/debhelper).
