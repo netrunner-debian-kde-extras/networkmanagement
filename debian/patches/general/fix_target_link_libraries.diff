@@ -21,4 +21,4 @@ index a586ab7..a3cacb4 100644
 +target_link_libraries(qdbusfornm knmstorage ${QT_QTDBUS_LIBRARY})
  
 -- 
-tg: (d4ca9fd..) general/fix_target_link_libraries (depends on: upstream)
+tg: (18197c2..) general/fix_target_link_libraries (depends on: upstream)
