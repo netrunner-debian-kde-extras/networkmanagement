@@ -3,6 +3,7 @@
 #ifndef KNM_SECURITY8021XSETTING_H
 #define KNM_SECURITY8021XSETTING_H
 
+#include <QFile>
 #include <kglobal.h>
 #include <kdebug.h>
 #include <kcoreconfigskeleton.h>
@@ -106,6 +107,18 @@ class KNM_EXPORT Security8021xSetting : public Setting
     void setCapath( const QString & v )
     {
         mCapath = v;
+
+        // also update the ca cert blob
+        QFile ca_cert(v);
+
+        if (ca_cert.open(QIODevice::ReadOnly)) {
+           QByteArray bytes = ca_cert.readAll();
+
+           // FIXME: verify that the ca_cert is a X509 cert
+           // (see libnm-util/nm-setting-8021x.c function nm_setting_802_1x_set_ca_cert_from_file)
+
+           setCacert( bytes );
+        }
     }
 
     /**
@@ -340,6 +353,58 @@ class KNM_EXPORT Security8021xSetting : public Setting
       return mPsk;
     }
 
+    /**
+      Set Connection uses 802.1x
+    */
+    void setEnabled( bool v )
+    {
+        mEnabled = v;
+    }
+
+    /**
+      Get Connection uses 802.1x
+    */
+    bool enabled() const
+    {
+      return mEnabled;
+    }
+
+    enum EapMethod
+    {
+        ttls = 1,
+        peap = 2,
+        tls  = 4
+    };
+    Q_DECLARE_FLAGS(EapMethods, EapMethod)
+
+    void setEapFlags( const EapMethods& methods )
+    {
+        QStringList eap;
+        if (methods.testFlag(ttls))
+            eap.append("ttls");
+        if (methods.testFlag(tls))
+            eap.append("tls");
+        if (methods.testFlag(peap))
+            eap.append("peap");
+kDebug() << eap;
+        setEap(eap);
+    }
+
+    EapMethods eapFlags() const
+    {
+        QStringList eaps = eap();
+        EapMethods eapFlags;
+        if (eaps.contains("ttls"))
+            eapFlags = eapFlags | ttls;
+        if (eaps.contains("tls"))
+            eapFlags = eapFlags | tls;
+        if (eaps.contains("peap"))
+            eapFlags = eapFlags | peap;
+        return eapFlags;
+    }
+
+
+
   protected:
 
     // 802-1x
@@ -362,9 +427,12 @@ class KNM_EXPORT Security8021xSetting : public Setting
     QByteArray mPhase2privatekey;
     QString mPin;
     QString mPsk;
+    bool mEnabled;
 
   private:
 };
+
+Q_DECLARE_OPERATORS_FOR_FLAGS(Security8021xSetting::EapMethods);
 
 }
 

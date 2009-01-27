@@ -49,7 +49,7 @@
     </entry>
     <entry name="mtu" type="UInt">
       <label>MTU</label>
-      <default>1500</default>
+      <default>0</default>
       <whatsthis>Maximum Transmit Unit</whatsthis>
     </entry>
     <!-- another unspecified list probably bytearrays -->
@@ -57,7 +57,7 @@
       <label>Seen BSSIDs</label>
       <whatsthis></whatsthis>
     </entry>
-    <entry name="security" type="String" secret="true">
+    <entry name="security" type="String">
       <label></label>
       <whatsthis></whatsthis>
     </entry>
