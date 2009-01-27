@@ -18,12 +18,49 @@ WirelessSecurityPersistence::~WirelessSecurityPersistence()
 void WirelessSecurityPersistence::load()
 {
   WirelessSecuritySetting * setting = static_cast<WirelessSecuritySetting *>(m_setting);
-  if (m_config->exists()) { // this persistence saves nothing if there is no security, so the 
+  {
+    if (m_config->exists()) { // this persistence saves nothing if there is no security, so the 
       // group won't exist.  not indenting the code inside this test to keep the diff clean ;)
-  setting->setClear(false);
-  setting->setKeymgmt(m_config->readEntry("keymgmt", 0));
+    QString contents = m_config->readEntry("securityType", "None");
+    if (contents == "None")
+      setting->setSecurityType(WirelessSecuritySetting::EnumSecurityType::None);
+    else     if (contents == "WEP40")
+      setting->setSecurityType(WirelessSecuritySetting::EnumSecurityType::WEP40);
+    else     if (contents == "WEP128")
+      setting->setSecurityType(WirelessSecuritySetting::EnumSecurityType::WEP128);
+    else     if (contents == "DynamicWEP")
+      setting->setSecurityType(WirelessSecuritySetting::EnumSecurityType::DynamicWEP);
+    else     if (contents == "WPAPSK")
+      setting->setSecurityType(WirelessSecuritySetting::EnumSecurityType::WPAPSK);
+    else     if (contents == "WPAEAP")
+      setting->setSecurityType(WirelessSecuritySetting::EnumSecurityType::WPAEAP);
+
+  }
+  {
+    QString contents = m_config->readEntry("keymgmt", "None");
+    if (contents == "None")
+      setting->setKeymgmt(WirelessSecuritySetting::EnumKeymgmt::None);
+    else     if (contents == "Ieee8021x")
+      setting->setKeymgmt(WirelessSecuritySetting::EnumKeymgmt::Ieee8021x);
+    else     if (contents == "WPANone")
+      setting->setKeymgmt(WirelessSecuritySetting::EnumKeymgmt::WPANone);
+    else     if (contents == "WPAPSK")
+      setting->setKeymgmt(WirelessSecuritySetting::EnumKeymgmt::WPAPSK);
+    else     if (contents == "WPAEAP")
+      setting->setKeymgmt(WirelessSecuritySetting::EnumKeymgmt::WPAEAP);
+
+  }
   setting->setWeptxkeyindex(m_config->readEntry("weptxkeyindex", 0));
-  setting->setAuthalg(m_config->readEntry("authalg", 0));
+  {
+    QString contents = m_config->readEntry("authalg", "open");
+    if (contents == "open")
+      setting->setAuthalg(WirelessSecuritySetting::EnumAuthalg::open);
+    else     if (contents == "shared")
+      setting->setAuthalg(WirelessSecuritySetting::EnumAuthalg::shared);
+    else     if (contents == "leap")
+      setting->setAuthalg(WirelessSecuritySetting::EnumAuthalg::leap);
+
+  }
   setting->setProto(m_config->readEntry("proto", QStringList()));
   setting->setPairwise(m_config->readEntry("pairwise", QStringList()));
   setting->setGroup(m_config->readEntry("group", QStringList()));
@@ -62,10 +99,55 @@ void WirelessSecurityPersistence::load()
 void WirelessSecurityPersistence::save()
 {
   WirelessSecuritySetting * setting = static_cast<WirelessSecuritySetting *>(m_setting);
-  if (!setting->clear()) { // don't save anything if security is disabled
-  m_config->writeEntry("keymgmt", setting->keymgmt());
+  switch (setting->securityType()) {
+    case WirelessSecuritySetting::EnumSecurityType::None:
+        return; // don't save anything if no encryption
+      break;
+    case WirelessSecuritySetting::EnumSecurityType::WEP40:
+      m_config->writeEntry("securityType", "WEP40");
+      break;
+    case WirelessSecuritySetting::EnumSecurityType::WEP128:
+      m_config->writeEntry("securityType", "WEP128");
+      break;
+    case WirelessSecuritySetting::EnumSecurityType::DynamicWEP:
+      m_config->writeEntry("securityType", "DynamicWEP");
+      break;
+    case WirelessSecuritySetting::EnumSecurityType::WPAPSK:
+      m_config->writeEntry("securityType", "WPAPSK");
+      break;
+    case WirelessSecuritySetting::EnumSecurityType::WPAEAP:
+      m_config->writeEntry("securityType", "WPAEAP");
+      break;
+  }
+  switch (setting->keymgmt()) {
+    case WirelessSecuritySetting::EnumKeymgmt::None:
+      m_config->writeEntry("keymgmt", "None");
+      break;
+    case WirelessSecuritySetting::EnumKeymgmt::Ieee8021x:
+      m_config->writeEntry("keymgmt", "Ieee8021x");
+      break;
+    case WirelessSecuritySetting::EnumKeymgmt::WPANone:
+      m_config->writeEntry("keymgmt", "WPANone");
+      break;
+    case WirelessSecuritySetting::EnumKeymgmt::WPAPSK:
+      m_config->writeEntry("keymgmt", "WPAPSK");
+      break;
+    case WirelessSecuritySetting::EnumKeymgmt::WPAEAP:
+      m_config->writeEntry("keymgmt", "WPAEAP");
+      break;
+  }
   m_config->writeEntry("weptxkeyindex", setting->weptxkeyindex());
-  m_config->writeEntry("authalg", setting->authalg());
+  switch (setting->authalg()) {
+    case WirelessSecuritySetting::EnumAuthalg::open:
+      m_config->writeEntry("authalg", "open");
+      break;
+    case WirelessSecuritySetting::EnumAuthalg::shared:
+      m_config->writeEntry("authalg", "shared");
+      break;
+    case WirelessSecuritySetting::EnumAuthalg::leap:
+      m_config->writeEntry("authalg", "leap");
+      break;
+  }
   m_config->writeEntry("proto", setting->proto());
   m_config->writeEntry("pairwise", setting->pairwise());
   m_config->writeEntry("group", setting->group());
@@ -98,14 +180,14 @@ void WirelessSecurityPersistence::save()
   if (m_storageMode != ConnectionPersistence::Secure) {
     m_config->writeEntry("weppassphrase", setting->weppassphrase());
   }
-  } // setting->clear()
 }
 
 QMap<QString,QString> WirelessSecurityPersistence::secrets() const
 {
   WirelessSecuritySetting * setting = static_cast<WirelessSecuritySetting *>(m_setting);
   QMap<QString,QString> map;
-  if (!setting->clear()) { // don't save anything if security is disabled
+  if (setting->securityType() != WirelessSecuritySetting::EnumSecurityType::None
+      && setting->securityType() != WirelessSecuritySetting::EnumSecurityType::WPAEAP) { // don't save anything if security is disabled
   map.insert(QLatin1String("wepkey0"), setting->wepkey0());
   map.insert(QLatin1String("wepkey1"), setting->wepkey1());
   map.insert(QLatin1String("wepkey2"), setting->wepkey2());

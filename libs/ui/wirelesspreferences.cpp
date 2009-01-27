@@ -28,13 +28,14 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 #include <KLocale>
 #include <KTabWidget>
 
-#include "configxml.h"
-#include "secretstoragehelper.h"
 #include "802_11_wirelesswidget.h"
 #include "security/802_11_wireless_security_widget.h"
 #include "ipv4widget.h"
 #include "connectionwidget.h"
+
 #include "connection.h"
+#include "settings/802-11-wireless-security.h"
+#include "settings/802-11-wireless.h"
 
 #include <nm-setting-connection.h>
 #include <nm-setting-wireless.h>
@@ -83,4 +84,9 @@ WirelessPreferences::~WirelessPreferences()
 {
 }
 
+
+void WirelessPreferences::save()
+{
+    ConnectionPreferences::save();
+}
 // vim: sw=4 sts=4 et tw=100
