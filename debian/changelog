@@ -2,8 +2,9 @@ plasma-applet-networkmanager (0.1~svn918251-0r1) UNRELEASED; urgency=low
 
   * New upstream development snapshot.
   * Pass -DDBUS_SYSTEM_POLICY_DIR=/etc/dbus-1/system.d to cmake.
+  * Improve wording in the description.
 
- -- Modestas Vainius <modestas@vainius.eu>  Fri, 30 Jan 2009 00:24:15 +0200
+ -- Modestas Vainius <modestas@vainius.eu>  Fri, 30 Jan 2009 00:26:16 +0200
 
 plasma-applet-networkmanager (0.1~svn917381-1) experimental; urgency=low
 
