@@ -2,6 +2,8 @@
 
 DEB_KDE_LINK_WITH_AS_NEEDED ?= yes
 
+DEB_CMAKE_CUSTOM_FLAGS += -DDBUS_SYSTEM_POLICY_DIR=/etc/dbus-1/system.d
+
 include debian/debhelper/kde4.mk
 -include /usr/share/topgit/tg2quilt.mk
 
