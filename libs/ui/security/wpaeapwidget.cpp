@@ -59,7 +59,6 @@ WpaEapWidget::WpaEapWidget(Knm::Connection* connection, QWidget * parent)
 
     d->settingSec = static_cast<Knm::WirelessSecuritySetting *>(connection->setting(Knm::Setting::WirelessSecurity));
     d->setting8021x = static_cast<Knm::Security8021xSetting *>(connection->setting(Knm::Setting::Security8021x));
-    
 
     // we have to be careful here as we deal with two settings objects.
     // the eap widgets need the 802.1x setting as KConfig attribute
@@ -167,6 +166,30 @@ void WpaEapWidget::writeConfig()
             break;
     }
     d->setting8021x->setEnabled(true);
+}
+
+
+void WpaEapWidget::readSecrets()
+{
+    Knm::Security8021xSetting::EapMethods eap = d->setting8021x->eapFlags();
+
+    // default is peap
+    EapWidget * ew = d->eapWidgetHash.value(d->peapIndex);
+
+    if (eap.testFlag(Knm::Security8021xSetting::ttls))
+    {
+        d->ui.cboEAPMethod->setCurrentIndex(d->ttlsIndex);
+        ew = d->eapWidgetHash.value(d->ttlsIndex);
+    } else if (eap.testFlag(Knm::Security8021xSetting::tls))
+    {
+        d->ui.cboEAPMethod->setCurrentIndex(d->tlsIndex);
+        ew = d->eapWidgetHash.value(d->tlsIndex);
+    } else if (eap.testFlag(Knm::Security8021xSetting::peap))
+    {
+        d->ui.cboEAPMethod->setCurrentIndex(d->peapIndex);
+        ew = d->eapWidgetHash.value(d->peapIndex);
+    }
+    ew->readSecrets();
 }
 
 #include "wpaeapwidget.moc"
