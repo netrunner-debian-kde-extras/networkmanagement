@@ -18,25 +18,21 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef SECURITYWIDGET_H
-#define SECURITYWIDGET_H
+#ifndef NM07_CDMA_CONNECTION_EDITOR_H
+#define NM07_CDMA_CONNECTION_EDITOR_H
 
-#include "settingwidget.h"
+#include "connectionprefs.h"
 
-#include "knm_export.h"
-
-class KNM_EXPORT SecurityWidget : public QWidget
+/**
+ * Configuration module for cellular connections
+ */
+class KNM_EXPORT CdmaConnectionEditor : public ConnectionPreferences
 {
 Q_OBJECT
 public:
-    SecurityWidget(Knm::Connection* connection, QWidget * parent = 0 );
-    virtual ~SecurityWidget();
-    virtual void readConfig() = 0;
-    virtual void writeConfig() = 0;
-    virtual void readSecrets() = 0;
-    virtual bool validate() const = 0;
-protected:
-    Knm::Connection* m_connection;
+    CdmaConnectionEditor(QWidget * parent = 0, const QVariantList & args = QVariantList());
+    virtual ~CdmaConnectionEditor();
+    virtual bool needsEdits() const { return true; }
 };
 
 #endif

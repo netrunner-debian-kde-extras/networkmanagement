@@ -1,5 +1,5 @@
 /*
-Copyright 2008 Will Stephenson <wstephenson@kde.org>
+Copyright 2008,2009 Will Stephenson <wstephenson@kde.org>
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -18,42 +18,37 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "pppoepreferences.h"
+#include "gsmconnectioneditor.h"
 
 #include <QVBoxLayout>
+
+#include <KDebug>
 #include <KGlobal>
 #include <KLocale>
 
-#include "pppoewidget.h"
+#include "gsmwidget.h"
 #include "pppwidget.h"
-#include "wiredwidget.h"
-#include "ipv4widget.h"
 #include "connectionwidget.h"
+
 #include "connection.h"
 
-//K_PLUGIN_FACTORY( PppoePreferencesFactory, registerPlugin<PppoePreferences>();)
-//K_EXPORT_PLUGIN( PppoePreferencesFactory( "kcm_knetworkmanager_pppoe" ) )
-
-PppoePreferences::PppoePreferences(QWidget *parent, const QVariantList &args)
+GsmConnectionEditor::GsmConnectionEditor(QWidget *parent, const QVariantList &args)
 : ConnectionPreferences( KGlobal::mainComponent(), parent, args )
 {
-    QString connectionId = args[0].toString();
-    m_connection = new Knm::Connection(QUuid(connectionId), Knm::Connection::Pppoe);
     QVBoxLayout * layout = new QVBoxLayout(this);
-    m_contents = new ConnectionWidget(m_connection, i18n("New Wired Connection"), this);
-    layout->addWidget(m_contents);
-    PppoeWidget * pppoeWidget = new PppoeWidget(m_connection, this);
-    WiredWidget * wiredWidget = new WiredWidget(m_connection, this);
-    PppWidget * pppWidget = new PppWidget(m_connection, this);
-    IpV4Widget * ipv4Widget = new IpV4Widget(m_connection, this);
 
-    addToTabWidget(pppoeWidget);
-    addToTabWidget(wiredWidget);
-    addToTabWidget(ipv4Widget);
+    Q_ASSERT(args.count());
+    QString connectionId = args[0].toString();
+    m_connection = new Knm::Connection(QUuid(connectionId), Knm::Connection::Gsm);
+    m_contents = new ConnectionWidget(m_connection, i18n("New Cellular Connection"), this);
+    GsmWidget * gsmWidget = new GsmWidget(m_connection, this);
+    PppWidget * pppWidget = new PppWidget(m_connection, this);
+    layout->addWidget(m_contents);
+    addToTabWidget(gsmWidget);
     addToTabWidget(pppWidget);
 }
 
-PppoePreferences::~PppoePreferences()
+GsmConnectionEditor::~GsmConnectionEditor()
 {
 }
 
