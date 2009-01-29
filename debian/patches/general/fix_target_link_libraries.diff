@@ -10,7 +10,7 @@ Signed-off-by: Modestas Vainius <modestas@vainius.eu>
  1 files changed, 1 insertions(+), 1 deletions(-)
 
 diff --git a/tests/CMakeLists.txt b/tests/CMakeLists.txt
-index a586ab7..a3cacb4 100644
+index 3fe9005..9500995 100644
 --- a/tests/CMakeLists.txt
 +++ b/tests/CMakeLists.txt
 @@ -24,5 +24,5 @@ target_link_libraries(testnewstorage knmstorage ${KDE4_KDEUI_LIBS})
@@ -21,4 +21,4 @@ index a586ab7..a3cacb4 100644
 +target_link_libraries(qdbusfornm knmstorage ${QT_QTDBUS_LIBRARY})
  
 -- 
-tg: (18197c2..) general/fix_target_link_libraries (depends on: upstream)
+tg: (a5c91e4..) general/fix_target_link_libraries (depends on: upstream)
