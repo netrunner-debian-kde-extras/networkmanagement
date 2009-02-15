@@ -1,4 +1,4 @@
-plasma-widget-networkmanagement (0.1~svn926306-0r1) UNRELEASED; urgency=low
+plasma-widget-networkmanagement (0.1~svn926306-1) experimental; urgency=low
 
   * New upstream development snapshot.
   * Pass -DDBUS_SYSTEM_POLICY_DIR=/etc/dbus-1/system.d to cmake.
@@ -11,7 +11,7 @@ plasma-widget-networkmanagement (0.1~svn926306-0r1) UNRELEASED; urgency=low
   * Improve wording in the description.
   * Update debian/copyright*.
 
- -- Modestas Vainius <modestas@vainius.eu>  Sun, 15 Feb 2009 22:51:20 +0200
+ -- Modestas Vainius <modestas@vainius.eu>  Sun, 15 Feb 2009 22:51:46 +0200
 
 plasma-widget-networkmanagement (0.1~svn917381-1) experimental; urgency=low
 
