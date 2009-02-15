@@ -14,7 +14,7 @@ Upstream copyright holders:
 
 Debian packaging (debian/*) is under:
 
-Copyright: © 2008 Modestas Vainius <modestas@vainius.eu>
+Copyright: © 2008-2009 Modestas Vainius <modestas@vainius.eu>
            © Joey Hess <joeyh@debian.org> (debhelper scripts)
 License:   GPL-2+
 
