@@ -6,8 +6,10 @@ plasma-widget-networkmanager (0.1~svn926306-0r1) UNRELEASED; urgency=low
   * Rename all plasma-applet-* stuff to plasma-widget-* including source
     package name.
   * Remove general/fix_target_link_libraries patch - merged upstream.
+  * Change widget friendly name in the debian/control description to match
+    a new upstream choice.
 
- -- Modestas Vainius <modestas@vainius.eu>  Sun, 15 Feb 2009 03:53:02 +0200
+ -- Modestas Vainius <modestas@vainius.eu>  Sun, 15 Feb 2009 04:30:02 +0200
 
 plasma-applet-networkmanager (0.1~svn917381-1) experimental; urgency=low
 
