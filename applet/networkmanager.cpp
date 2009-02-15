@@ -60,7 +60,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "interfaceitem.h"
 #include "events.h"
 
-K_EXPORT_PLASMA_APPLET(networkmanager, NetworkManagerApplet)
+K_EXPORT_PLASMA_APPLET(networkmanagement, NetworkManagerApplet)
 
 /* for qSort()ing */
 bool networkInterfaceLessThan(Solid::Control::NetworkInterface * if1, Solid::Control::NetworkInterface * if2);
@@ -77,10 +77,10 @@ NetworkManagerApplet::NetworkManagerApplet(QObject * parent, const QVariantList 
     setAspectRatioMode(Plasma::ConstrainedSquare);
     setHasConfigurationInterface(true);
     m_svg = new Plasma::Svg(this);
-    m_svg->setImagePath("networkmanager/networkmanager");
+    m_svg->setImagePath("networkmanagement/networkmanagement");
 
     m_wirelessSvg = new Plasma::Svg(this);
-    m_wirelessSvg->setImagePath("networkmanager/networkmanager-wireless");
+    m_wirelessSvg->setImagePath("networkmanagement/networkmanagement-wireless");
 
     m_interfaces = Solid::Control::NetworkManager::networkInterfaces();
     interfaceConnectionStateChanged();
@@ -128,18 +128,15 @@ void NetworkManagerApplet::init()
             this, SLOT(networkInterfaceAdded(const QString&)));
     QObject::connect(Solid::Control::NetworkManager::notifier(), SIGNAL(networkInterfaceRemoved(const QString&)),
             this, SLOT(networkInterfaceRemoved(const QString&)));
-    foreach (Solid::Control::NetworkInterface * interface,
-            Solid::Control::NetworkManager::networkInterfaces()) {
-        QObject::connect(interface, SIGNAL(connectionStateChanged(int)), this, SLOT(interfaceConnectionStateChanged()));
-    }
+
     // Set up the extender with its various groups.  The first call to extender() triggers calls to
     // initExtenderItem() if there are any detached items.
     extender()->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
 
-    showWired(cg.readEntry("showWired", true));
-    showWireless(cg.readEntry("showWireless", true));
+    // calling this initialises the extenderitems
+    networkInterfaceAdded(QString());
+    // add VPN last
     showVpn(cg.readEntry("showVpn", true));
-    showGsm(cg.readEntry("showGsm", true));
 
     QObject::connect(Solid::Control::NetworkManager::notifier(), SIGNAL(statusChanged(Solid::Networking::Status)),
                      this, SLOT(managerStatusChanged(Solid::Networking::Status)));
@@ -151,6 +148,7 @@ void NetworkManagerApplet::initExtenderItem(Plasma::ExtenderItem * eItem)
     const QString WIRED_EXTENDER_ITEM_NAME = QLatin1String("wired");
     const QString WIRELESS_EXTENDER_ITEM_NAME = QLatin1String("wireless");
     const QString GSM_EXTENDER_ITEM_NAME = QLatin1String("gsm");
+    const QString CDMA_EXTENDER_ITEM_NAME = QLatin1String("cdma");
     const QString VPN_EXTENDER_ITEM_NAME = QLatin1String("vpn");
 
     if (eItem->name() == WIRED_EXTENDER_ITEM_NAME) {
@@ -173,12 +171,18 @@ void NetworkManagerApplet::initExtenderItem(Plasma::ExtenderItem * eItem)
         gsmGroup->init();
 
         eItem->setWidget(gsmGroup);
+    } else if (eItem->name() == CDMA_EXTENDER_ITEM_NAME) {
+        InterfaceGroup * cdmaGroup = new InterfaceGroup(Solid::Control::NetworkInterface::Cdma, m_userSettings, m_systemSettings, eItem);
+        cdmaGroup->setObjectName("cdma-interface-group");
+        cdmaGroup->init();
+
+        eItem->setWidget(cdmaGroup);
     } else if (eItem->name() == VPN_EXTENDER_ITEM_NAME) {
         VpnConnectionGroup * vpnGroup = new VpnConnectionGroup(m_userSettings, m_systemSettings, eItem);
         vpnGroup->setObjectName("vpn-interface-group");
         vpnGroup->init();
-
         eItem->setWidget(vpnGroup);
+        connect(vpnGroup, SIGNAL(hideClicked()), SLOT(hideVpnGroup()));
     } else {
         kDebug() << "Unrecognised extender name!  Is the config from the future?";
     }
@@ -211,7 +215,7 @@ void NetworkManagerApplet::createConfigurationInterface(KConfigDialog *parent)
     ui.showWired->setChecked(m_showWired);
     ui.showWireless->setChecked(m_showWireless);
     ui.showVpn->setChecked(m_showVpn);
-    ui.showGsm->setChecked(m_showGsm);
+    ui.showCellular->setChecked(m_showCellular);
     ui.numberOfWlans->setValue(m_numberOfWlans);
 }
 
@@ -229,10 +233,10 @@ void NetworkManagerApplet::configAccepted()
         cg.writeEntry("showWireless", m_showWireless);
         kDebug() << "Wireless Changed" << m_showWireless;
     }
-    if (m_showGsm != ui.showGsm->isChecked()) {
-        showGsm(!m_showGsm);
-        cg.writeEntry("showGsm", m_showGsm);
-        kDebug() << "Gsm Changed" << m_showGsm;
+    if (m_showCellular != ui.showCellular->isChecked()) {
+        showCellular(!m_showCellular);
+        cg.writeEntry("showCellular", m_showCellular);
+        kDebug() << "Gsm Changed" << m_showCellular;
     }
     if (m_showVpn != ui.showVpn->isChecked()) {
         showVpn(!m_showVpn);
@@ -372,10 +376,21 @@ void NetworkManagerApplet::networkInterfaceAdded(const QString & uni)
     // update the tray icon
     m_interfaces = Solid::Control::NetworkManager::networkInterfaces();
     foreach (Solid::Control::NetworkInterface * interface,
-            Solid::Control::NetworkManager::networkInterfaces()) {
+            m_interfaces) {
+
+        // be aware of state changes
         QObject::disconnect(interface, SIGNAL(connectionStateChanged(int)), this, SLOT(interfaceConnectionStateChanged()));
         QObject::connect(interface, SIGNAL(connectionStateChanged(int)), this, SLOT(interfaceConnectionStateChanged()));
     }
+
+    // update extender visibility
+    KConfigGroup cg = config();
+    showWired(cg.readEntry("showWired", true));
+    showWireless(cg.readEntry("showWireless", true));
+    //showPppoe(cg.readEntry("showPppoe", true));
+    showCellular(cg.readEntry("showCellular", true));
+    //showCdma(cg.readEntry("showCdma", true));
+
     interfaceConnectionStateChanged();
     update();
 }
@@ -390,6 +405,14 @@ void NetworkManagerApplet::networkInterfaceRemoved(const QString & uni)
         QObject::disconnect(interface, SIGNAL(connectionStateChanged(int)), this, SLOT(interfaceConnectionStateChanged()));
         QObject::connect(interface, SIGNAL(connectionStateChanged(int)), this, SLOT(interfaceConnectionStateChanged()));
     }
+
+    // update extender visibility
+    KConfigGroup cg = config();
+    showWired(cg.readEntry("showWired", true));
+    showWireless(cg.readEntry("showWireless", true));
+    //showPppoe(cg.readEntry("showPppoe", true));
+    showCellular(cg.readEntry("showCellular", true));
+    //showCdma(cg.readEntry("showCdma", true));
 
     interfaceConnectionStateChanged();
     update();
@@ -459,7 +482,7 @@ void NetworkManagerApplet::updateToolTip()
     Solid::Control::NetworkInterfaceList interfaces
         = Solid::Control::NetworkManager::networkInterfaces();
     if (interfaces.isEmpty()) {
-        m_toolTip = Plasma::ToolTipContent(i18nc("Tooltip main title text", "Networks"),
+        m_toolTip = Plasma::ToolTipContent(name(),
                 i18nc("Tooltip sub text", "No network interfaces"),
                 KIcon("networkmanager").pixmap(IconSize(KIconLoader::Desktop))
                 );
@@ -471,7 +494,7 @@ void NetworkManagerApplet::updateToolTip()
                 subText += QLatin1String("<br>");
             }
             subText += QString::fromLatin1("<b>%1</b>: %2").arg(iface->interfaceName()).arg(connectionStateToString(iface->connectionState()));
-            m_toolTip = Plasma::ToolTipContent(i18nc("Tooltip main title text", "Networks"),
+            m_toolTip = Plasma::ToolTipContent(name(),
                 subText,
                 KIcon("networkmanager").pixmap(IconSize(KIconLoader::Desktop))
                 );
@@ -681,7 +704,7 @@ void NetworkManagerApplet::manageConnections()
 {
     //kDebug() << "opening connection management dialog";
     QStringList args;
-    args << "kcm_knetworkmanager";
+    args << "kcm_networkmanagement";
     KToolInvocation::kdeinitExec("kcmshell4", args);
     hidePopup();
 }
@@ -689,10 +712,10 @@ void NetworkManagerApplet::manageConnections()
 void NetworkManagerApplet::showWired(bool show)
 {
     m_showWired = show;
-    kDebug() << show << m_showWired;
     Plasma::ExtenderItem *eItem = extender()->item("wired");
-    if (show) {
+    if (show && hasInterfaceOfType(Solid::Control::NetworkInterface::Ieee8023)) {
         if (!eItem) {
+            kDebug() << "SHOWING";
             eItem = new Plasma::ExtenderItem(extender());
             eItem->setName("wired");
             eItem->setIcon("network-wired");
@@ -701,8 +724,8 @@ void NetworkManagerApplet::showWired(bool show)
         }
     } else {
         if (eItem) {
+            kDebug() << "HIDING";
             eItem->destroy();
-            
         }
     }
 }
@@ -710,10 +733,10 @@ void NetworkManagerApplet::showWired(bool show)
 void NetworkManagerApplet::showWireless(bool show)
 {
     m_showWireless = show;
-    kDebug() << show << m_showWireless;
     Plasma::ExtenderItem *eItem = extender()->item("wireless");
-    if (show) {
+    if (show && hasInterfaceOfType(Solid::Control::NetworkInterface::Ieee80211)) {
         if (!eItem) {
+            kDebug() << "SHOWING";
             eItem = new Plasma::ExtenderItem(extender());
             eItem->setName("wireless");
             eItem->setIcon("network-wireless");
@@ -722,6 +745,7 @@ void NetworkManagerApplet::showWireless(bool show)
         }
     } else {
         if (eItem) {
+            kDebug() << "HIDING";
             eItem->destroy();
         }
     }
@@ -730,10 +754,10 @@ void NetworkManagerApplet::showWireless(bool show)
 void NetworkManagerApplet::showVpn(bool show)
 {
     m_showVpn = show;
-    kDebug() << show;
     Plasma::ExtenderItem *eItem = extender()->item("vpn");
     if (show) {
         if (!eItem) {
+            kDebug() << "SHOWING";
             eItem = new Plasma::ExtenderItem(extender());
             eItem->setName("vpn");
             eItem->setIcon("network-server");
@@ -742,27 +766,41 @@ void NetworkManagerApplet::showVpn(bool show)
         }
     } else {
         if (eItem) {
+            kDebug() << "HIDING";
             eItem->destroy();
         }
     }
 }
 
-void NetworkManagerApplet::showGsm(bool show)
+void NetworkManagerApplet::showCellular(bool show)
 {
-    m_showGsm = show;
-    kDebug() << show;
-    Plasma::ExtenderItem *eItem = extender()->item("gsm");
-    if (show) {
-        if (!eItem) {
-            eItem = new Plasma::ExtenderItem(extender());
-            eItem->setName("gsm");
-            eItem->setIcon("phone");
-            eItem->setTitle(i18nc("Label for mobile broadband (GSM/CDMA/UMTS/HDSPA etc)","Mobile Broadband"));
-            initExtenderItem(eItem);
+    m_showCellular = show;
+    Plasma::ExtenderItem *gsmItem = extender()->item("gsm");
+    if (show && hasInterfaceOfType(Solid::Control::NetworkInterface::Gsm)) {
+        if (!gsmItem) {
+            gsmItem = new Plasma::ExtenderItem(extender());
+            gsmItem->setName("gsm");
+            gsmItem->setIcon("phone");
+            gsmItem->setTitle(i18nc("Label for mobile broadband (GSM/CDMA/UMTS/HDSPA etc)","Mobile Broadband"));
+            initExtenderItem(gsmItem);
         }
     } else {
-        if (eItem) {
-            eItem->destroy();
+        if (gsmItem) {
+            gsmItem->destroy();
+        }
+    }
+    Plasma::ExtenderItem *cdmaItem = extender()->item("cdma");
+    if (show && hasInterfaceOfType(Solid::Control::NetworkInterface::Cdma)) {
+        if (!cdmaItem) {
+            cdmaItem = new Plasma::ExtenderItem(extender());
+            cdmaItem->setName("cdma");
+            cdmaItem->setIcon("phone");
+            cdmaItem->setTitle(i18nc("Label for mobile broadband (GSM/CDMA/UMTS/HDSPA etc)","Mobile Broadband"));
+            initExtenderItem(cdmaItem);
+        }
+    } else {
+        if (cdmaItem) {
+            cdmaItem->destroy();
         }
     }
 }
@@ -774,11 +812,11 @@ void NetworkManagerApplet::managerWirelessEnabledChanged(bool )
 void NetworkManagerApplet::managerWirelessHardwareEnabledChanged(bool enabled)
 {
     if (enabled) {
-        KNotification::event(Event::RfOn, i18nc("Notification for radio kill switch turned on", "Wireless hardware enabled"), QPixmap(), 0, KNotification::CloseOnTimeout, KComponentData("knetworkmanager", "knetworkmanager", KComponentData::SkipMainComponentRegistration));
+        KNotification::event(Event::RfOn, i18nc("Notification for radio kill switch turned on", "Wireless hardware enabled"), QPixmap(), 0, KNotification::CloseOnTimeout, KComponentData("networkmanagement", "networkmanagement", KComponentData::SkipMainComponentRegistration));
         //m_lblRfkill->setText(i18nc("Label text when hardware wireless is enabled", "Wireless hardware is enabled"));
     } else {
         //m_lblRfkill->setText(i18nc("Label text when hardware wireless is not enabled", "Wireless hardware is disabled"));
-        KNotification::event(Event::RfOff, i18nc("Notification for radio kill switch turned on", "Wireless hardware disabled"), QPixmap(), 0, KNotification::CloseOnTimeout, KComponentData("knetworkmanager", "knetworkmanager", KComponentData::SkipMainComponentRegistration));
+        KNotification::event(Event::RfOff, i18nc("Notification for radio kill switch turned on", "Wireless hardware disabled"), QPixmap(), 0, KNotification::CloseOnTimeout, KComponentData("networkmanagerment", "networkmanagement", KComponentData::SkipMainComponentRegistration));
     }
 }
 
@@ -813,4 +851,24 @@ void NetworkManagerApplet::managerStatusChanged(Solid::Networking::Status status
     }
 }
 
+bool NetworkManagerApplet::hasInterfaceOfType(Solid::Control::NetworkInterface::Type type)
+{
+    foreach (Solid::Control::NetworkInterface * interface,
+            m_interfaces) {
+
+        if (interface->type() == type) {
+            return true;
+        }
+    }
+    return false;
+}
+
+void NetworkManagerApplet::hideVpnGroup()
+{
+    m_showVpn = false;
+    KConfigGroup cg = config();
+    cg.writeEntry("showVpn", m_showVpn);
+    showVpn(false);
+    Plasma::Applet::configNeedsSaving();
+}
 #include "networkmanager.moc"

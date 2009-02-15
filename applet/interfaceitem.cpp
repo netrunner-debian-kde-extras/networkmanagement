@@ -47,13 +47,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "remoteconnection.h"
 #include "wirelessnetwork.h"
 
-InterfaceItem::InterfaceItem(Solid::Control::NetworkInterface * iface, NetworkManagerSettings * userSettings, NetworkManagerSettings * systemSettings, NameDisplayMode mode, QGraphicsItem * parent) : QGraphicsWidget(parent), m_iface(iface), m_userSettings(userSettings), m_systemSettings(systemSettings), m_connectionInfoLabel(0), m_strengthMeter(0), m_nameMode(mode), m_enabled(false), m_connectionInspector(0), m_unavailableText(i18nc("Label for network interfaces that cannot be activated", "Unavailable"))
+InterfaceItem::InterfaceItem(Solid::Control::NetworkInterface * iface, NetworkManagerSettings * userSettings, NetworkManagerSettings * systemSettings, NameDisplayMode mode, QGraphicsItem * parent) : QGraphicsWidget(parent), m_iface(iface), m_userSettings(userSettings), m_systemSettings(systemSettings), m_connectionInfoLabel(0), m_strengthMeter(0), m_nameMode(mode), m_enabled(false), m_connectionInspector(0), m_unavailableText(i18nc("Label for network interfaces that cannot be activated", "Unavailable")), m_currentIp(0)
 {
     m_layout = new QGraphicsGridLayout(this);
     m_layout->setVerticalSpacing(0);
     m_layout->setColumnSpacing(0, 8);
     m_layout->setColumnSpacing(1, 4);
-    m_layout->setColumnSpacing(2, 4);
+    m_layout->setColumnSpacing(2, 6);
     m_layout->setPreferredWidth(300);
     m_layout->setColumnFixedWidth(0, 48);
     m_layout->setColumnMinimumWidth(1, 144);
@@ -213,9 +213,10 @@ void InterfaceItem::setConnectionInfo()
             m_connectionInfoLabel->setText(i18n("ip display error"));
         } else {
             QHostAddress addr(addresses.first().address());
-            QString ip = addr.toString();
+            m_currentIp = addr.toString();
             m_connectionNameLabel->setText(i18nc("wireless interface is connected", "Connected"));
-            m_connectionInfoLabel->setText(i18nc("ip address of the network interface", "IP: %1", ip));
+            m_connectionInfoLabel->setText(i18nc("ip address of the network interface", "IP: %1", m_currentIp));
+            //kDebug() << "addresses non-empty" << m_currentIp;
         }
     }
 }
@@ -289,13 +290,13 @@ void InterfaceItem::connectionStateChanged(int state, bool silently)
             break;
         case Solid::Control::NetworkInterface::Disconnected:
             if ( !silently )
-                KNotification::event(Event::Disconnected, i18nc("Notification text when a network interface was disconnected","Network interface %1 disconnected", m_iface->interfaceName()), QPixmap(), 0, KNotification::CloseOnTimeout, KComponentData("knetworkmanager", "knetworkmanager", KComponentData::SkipMainComponentRegistration));
+                KNotification::event(Event::Disconnected, i18nc("Notification text when a network interface was disconnected","Network interface %1 disconnected", m_iface->interfaceName()), QPixmap(), 0, KNotification::CloseOnTimeout, KComponentData("networkmanagement", "networkmanagement", KComponentData::SkipMainComponentRegistration));
             setInactive();
             break;
         case Solid::Control::NetworkInterface::Failed:
             // set the disconnected icon
             if ( !silently )
-                KNotification::event(Event::ConnectFailed, i18nc("Notification text when a network interface connection attempt failed","Connection on Network interface %1 failed", m_iface->interfaceName()), QPixmap(), 0, KNotification::CloseOnTimeout, KComponentData("knetworkmanager", "knetworkmanager", KComponentData::SkipMainComponentRegistration));
+                KNotification::event(Event::ConnectFailed, i18nc("Notification text when a network interface connection attempt failed","Connection on Network interface %1 failed", m_iface->interfaceName()), QPixmap(), 0, KNotification::CloseOnTimeout, KComponentData("networkmanagement", "networkmanagement", KComponentData::SkipMainComponentRegistration));
             setInactive();
             break;
         case Solid::Control::NetworkInterface::Preparing:
@@ -306,7 +307,7 @@ void InterfaceItem::connectionStateChanged(int state, bool silently)
             break;
         case Solid::Control::NetworkInterface::Activated: // lookup the active connection, get its state
             if ( !silently )
-                KNotification::event(Event::Connected, i18nc("Notification text when a network interface connection succeeded","Network interface %1 connected", m_iface->interfaceName()), QPixmap(), 0, KNotification::CloseOnTimeout, KComponentData("knetworkmanager", "knetworkmanager", KComponentData::SkipMainComponentRegistration));
+                KNotification::event(Event::Connected, i18nc("Notification text when a network interface connection succeeded","Network interface %1 connected", m_iface->interfaceName()), QPixmap(), 0, KNotification::CloseOnTimeout, KComponentData("networkmanagement", "networkmanagement", KComponentData::SkipMainComponentRegistration));
             setActiveConnection(state);
             break;
         case Solid::Control::NetworkInterface::Unmanaged:
@@ -381,13 +382,20 @@ ConnectionInspector * InterfaceItem::connectionInspector() const
 
 void InterfaceItem::serviceDisappeared(NetworkManagerSettings* service)
 {
+    Q_UNUSED( service );
+// just throw away our active connection list.  NM should signal activeConnectionsChanged anyway
+#if 0
     QMutableListIterator<ActiveConnectionPair> i(m_activeConnections);
     while (i.hasNext()) {
         i.next();
+        kDebug() << i.value().first << i.value().second;
         if (i.value().first == service->service()) {
+            kDebug() << "  Removed.";
             i.remove();
         }
     }
+#endif
+    m_activeConnections = QList<ActiveConnectionPair>();
     setConnectionInfo();
 }
 
