@@ -114,14 +114,14 @@ void WirelessInterfaceItem::connectButtonClicked()
             break;
         case Solid::Control::NetworkInterface::Disconnected:
         case Solid::Control::NetworkInterface::Failed:
-            kDebug() << "Activating default connection.";
+             kDebug() << "Activating default connection.";
              connections = availableConnections();
              accesspoints = availableAccessPoints();
              connections = appropriateConnections(connections, accesspoints);
              if (!connections.isEmpty()) {
                  //pick the first one.  TODO:Decide what to do if more than on connection is applicable.
                  Solid::Control::NetworkManager::activateConnection(m_wirelessIface->uni(), connections[0]->service() + " " + connections[0]->path(), QVariantMap());
-                 KNotification::event(Event::Connecting, i18nc("Notification text when activating a connection","Connecting %1", connections[0]->id()), QPixmap(), 0, KNotification::CloseOnTimeout, KComponentData("knetworkmanager", "knetworkmanager", KComponentData::SkipMainComponentRegistration));
+                 KNotification::event(Event::Connecting, i18nc("Notification text when activating a connection","Connecting %1", connections[0]->id()), QPixmap(), 0, KNotification::CloseOnTimeout, KComponentData("networkmanagement", "networkmanagement", KComponentData::SkipMainComponentRegistration));
              }
             break;
         case Solid::Control::NetworkInterface::Preparing:
@@ -146,7 +146,9 @@ void WirelessInterfaceItem::setConnectionInfo()
     //kDebug() << m_activeAccessPoint;
     //kDebug() << m_activeConnections;
     if (m_activeAccessPoint) {
-        m_connectionInfoLabel->setText(QString::fromLatin1("<b>Signal Strength:</b> %1 %").arg(m_activeAccessPoint->signalStrength())); //TODO:
+        m_connectionNameLabel->setText(i18n("Connected to \"%1\"", m_activeAccessPoint->ssid()));
+        m_connectionInfoLabel->setText(i18n("Address: %1", m_currentIp));
+        //TODO:
         if (m_strengthMeter) {
             m_strengthMeter->setValue(m_activeAccessPoint->signalStrength());
             m_strengthMeter->show();
@@ -188,7 +190,7 @@ void WirelessInterfaceItem::setConnectionInfo()
                 m_connectionInfoIcon->setIcon("object-locked");
             }
         } else {
-            m_connectionInfoLabel->setText(i18n("No active connection"));
+            // kDebug() << "FIXME: tjkActive connections is empty while connected?";
         }
         m_connectionInfoIcon->show();
     } else {

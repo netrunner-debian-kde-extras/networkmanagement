@@ -30,11 +30,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <kicon.h>
 
 #include "connectioneditor.h"
+#include "connectionpersistence.h"
 #include "knmserviceprefs.h"
 
 int main(int argc, char **argv)
 {
-    KAboutData aboutData( "knetworkmanager_configshell", 0, ki18n("KNetworkManager Config Shell"),
+    KAboutData aboutData( "networkmanagement_configshell", "kcm_networkmanagement", ki18n("Network Management"),
                           0,
                           ki18n("Create network connections standalone"),
                           KAboutData::License_GPL,
@@ -60,6 +61,7 @@ int main(int argc, char **argv)
         return -1;
     }
 
+    KGlobal::locale()->insertCatalog("libknmui");
     ConnectionEditor editor(0);
     QString specifics = args->getOption("specific-args");
     QString ssid;
@@ -95,7 +97,7 @@ int main(int argc, char **argv)
     }
     kDebug() << specificArgs;
 
-    KNetworkManagerServicePrefs::instance("knetworkmanagerrc");
+    KNetworkManagerServicePrefs::instance(Knm::ConnectionPersistence::NETWORKMANAGEMENT_RCFILE);
 
     if (args->arg(0) == QLatin1String("create")) {
         if (args->isSet("type")) {
