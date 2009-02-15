@@ -77,7 +77,7 @@ public:
     void showWired(bool show);
     void showWireless(bool show);
     void showVpn(bool show);
-    void showGsm(bool show);
+    void showCellular(bool show);
 
 public Q_SLOTS:
     /** slots called when a connection in the popup is clicked */
@@ -139,7 +139,10 @@ private Q_SLOTS:
     void networkInterfaceRemoved(const QString&);
     void interfaceConnectionStateChanged();
     void manageConnections();
+    // used to let the user easily hide VPN
+    void hideVpnGroup();
 private:
+    bool hasInterfaceOfType(Solid::Control::NetworkInterface::Type type);
     void updateToolTip();
     void updateIcons();
     void paintDefaultInterface(Solid::Control::NetworkInterface*, QPainter *painter, const QStyleOptionGraphicsItem * option, const QRect & rect);
@@ -164,7 +167,7 @@ private:
     bool m_showWired;
     bool m_showWireless;
     bool m_showVpn;
-    bool m_showGsm;
+    bool m_showCellular;
     int m_numberOfWlans;
 };
 
