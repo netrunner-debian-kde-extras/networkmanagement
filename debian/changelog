@@ -1,17 +1,18 @@
-plasma-widget-networkmanager (0.1~svn926306-0r1) UNRELEASED; urgency=low
+plasma-widget-networkmanagement (0.1~svn926306-0r1) UNRELEASED; urgency=low
 
   * New upstream development snapshot.
   * Pass -DDBUS_SYSTEM_POLICY_DIR=/etc/dbus-1/system.d to cmake.
-  * Improve wording in the description.
-  * Rename all plasma-applet-* stuff to plasma-widget-* including source
-    package name.
+  * Rename all plasma-applet-networkmanager stuff to
+    plasma-widget-networkmanagement including source/ binary package names and
+    descriptions.
   * Remove general/fix_target_link_libraries patch - merged upstream.
   * Change widget friendly name in the debian/control description to match
     a new upstream choice.
+  * Improve wording in the description.
 
  -- Modestas Vainius <modestas@vainius.eu>  Sun, 15 Feb 2009 04:30:02 +0200
 
-plasma-applet-networkmanager (0.1~svn917381-1) experimental; urgency=low
+plasma-widget-networkmanagement (0.1~svn917381-1) experimental; urgency=low
 
   * Initial release. (Closes: #508438)
 
