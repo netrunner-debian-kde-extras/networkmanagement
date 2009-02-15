@@ -1,4 +1,4 @@
-Source: plasma-applet-networkmanager
+Source: plasma-widget-networkmanager
 Section: kde
 Priority: optional
 Maintainer: Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian .org>
@@ -8,13 +8,15 @@ Build-Depends: debhelper (>= 7.1.0), cmake (>= 2.6.2), pkg-kde-tools (>= 0.2), q
  libqt4-dev (>= 4.4.0), kdelibs5-dev (>= 4:4.2.0), kdebase-workspace-dev (>= 4:4.2.0),
  network-manager-dev (>= 0.7.0), libnm-util-dev (>= 0.7.0)
 Standards-Version: 3.8.0
-Vcs-Git: git://git.debian.org/git/pkg-kde/kde-extras/plasma-applet-networkmanager.git
-Vcs-Browser: http://git.debian.org/?p=pkg-kde/kde-extras/plasma-applet-networkmanager.git
+Vcs-Git: git://git.debian.org/git/pkg-kde/kde-extras/plasma-widget-networkmanager.git
+Vcs-Browser: http://git.debian.org/?p=pkg-kde/kde-extras/plasma-widget-networkmanager.git
 
-Package: plasma-applet-networkmanager
+Package: plasma-widget-networkmanager
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, network-manager (>= 0.7.0)
 Suggests: kdebase-workspace-bin
+Conflicts: plasma-applet-networkmanager
+Replaces: plasma-applet-networkmanager
 Description: NetworkManager frontend for KDE4 and Plasma
  This package contains the NetworkManager plasma applet which aims to provide a
  fully featured GUI frontend to NetworkManager daemon v0.7 including support
