@@ -41,7 +41,6 @@ class KJob;
 namespace Knm
 {
     class Connection;
-    class ConnectionPersistence;
 } // namespace Knm
 
 /**
