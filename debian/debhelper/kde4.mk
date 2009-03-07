@@ -4,23 +4,31 @@ include /usr/share/quilt/quilt.make
 # Include default KDE 4 cmake configuration variables
 include /usr/share/pkg-kde-tools/makefiles/1/variables.mk
 
-# Pass configuration options
+# CMake configuration flags
 DEB_CMAKE_KDE4_DEFAULT_FLAGS = $(DEB_CMAKE_KDE4_FLAGS) $(DEB_CMAKE_CUSTOM_FLAGS)
-export DH_AUTO_CONFIGURE_OPTIONS = -- $(DEB_CMAKE_KDE4_DEFAULT_FLAGS)
+
+# Source package name
+DEB_SOURCE_PACKAGE := $(shell grep '^Source:' debian/control | sed 's/^Source:[[:space:]]*\([^[:space:]]\+\).*$$/\1/')
 
 # Handle DEB_BUILD_OPTIONS=noopt and C(XX)FLAGS
 ifeq (,$(filter noopt,$(DEB_BUILD_OPTIONS)))
-    export CFLAGS=-g -O2
+    CFLAGS = -g -O2
+    CXXFLAGS = -g -O2
 else
-    export CFLAGS=-g -O0
+    CFLAGS = -g -O0
+    CXXFLAGS = -g -O0
 endif
-export CXXFLAGS=$(CFLAGS)
+
+export CFLAGS
+export CXXFLAGS
 
 # DEB_BUILD_OPTIONS parallel=n support (policy 3.8.0 compliance)
 ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
     NUMJOBS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
     MAKEFLAGS += -j$(NUMJOBS)
 endif
+
+export MAKEFLAGS
 
 # Pass -DCMAKE_USE_RELATIVE_PATHS=ON to cmake when cmake >= 2.6.2-1 is used.
 CMAKE_DEB_VERSION := $(shell dpkg -l 'cmake' | grep 'ii' | awk '{print $$3}')
@@ -47,6 +55,21 @@ $(KDE4_ALL_DEFAULT_TARGETS): | dh_permissions
 
 .PHONY: dh_permissions
 
+# Pass cmake options via dh_auto_configure override
+DEB_KDE4_OVERRIDE_DH_AUTO_CONFIGURE ?= override_dh_auto_configure
+$(DEB_KDE4_OVERRIDE_DH_AUTO_CONFIGURE):
+	dh_auto_configure -- $(DEB_CMAKE_KDE4_DEFAULT_FLAGS)
+
+# dh_strip override - automatic -dbg package
+DEB_DBG_PACKAGE_NAME ?= $(DEB_SOURCE_PACKAGE)-dbg
+ifeq ($(DEB_DBG_PACKAGE_NAME),$(filter $(DEB_DBG_PACKAGE_NAME),$(shell dh_listpackages -s)))
+
+DEB_KDE4_OVERRIDE_DH_STRIP ?= override_dh_strip
+$(DEB_KDE4_OVERRIDE_DH_STRIP):
+	dh_strip --dbg-package=$(DEB_DBG_PACKAGE_NAME)
+
+endif
+
 # Clean rule is more complex. Cleaning should be done
 # before unpatching.
 clean_before_unpatch:
@@ -57,8 +80,7 @@ unpatch: clean_before_unpatch
 kde4/clean: unpatch
 
 # Required relationship between default targets
-$(filter-out build clean kde4/build kde4/clean,$(DEB_ALL_DEFAULT_TARGETS) $(KDE4_ALL_DEFAULT_TARGETS)): build
-binary binary-arch binary-indep kde4/binary kde4/binary-arch kde4/binary-indep: install
+$(filter-out build clean,$(DEB_ALL_DEFAULT_TARGETS)): build
 
 kde4/build: patch
 

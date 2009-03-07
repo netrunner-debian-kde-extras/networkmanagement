@@ -1,8 +1,13 @@
-plasma-widget-networkmanagement (0.1~svn929824-0r1) UNRELEASED; urgency=low
+plasma-widget-networkmanagement (0.1~svn935902-0r1) UNRELEASED; urgency=low
 
-  * New upstream development snapshot.
+  * New upstream development snapshot:
+    - Last Changed Author: scripty
+    - Last Changed Rev: 935902
+    - Last Changed Date: 2009-03-06 16:01:18 +0200
+  * Sync debhelper scripts with amarok 2.0.60.
+  * Migrate debian/rules to dh_overrides. Build depend on debhelper 7.0.50.
 
- -- Modestas Vainius <modestas@vainius.eu>  Sun, 22 Feb 2009 12:54:22 +0200
+ -- Modestas Vainius <modestas@vainius.eu>  Sun, 08 Mar 2009 00:46:53 +0200
 
 plasma-widget-networkmanagement (0.1~svn926306-1) experimental; urgency=low
 
