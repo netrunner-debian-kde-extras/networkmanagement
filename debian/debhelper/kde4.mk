@@ -4,8 +4,12 @@ include /usr/share/quilt/quilt.make
 # Include default KDE 4 cmake configuration variables
 include /usr/share/pkg-kde-tools/makefiles/1/variables.mk
 
+# CMake module
+include debian/debhelper/cmake.mk
+
 # CMake configuration flags
 DEB_CMAKE_KDE4_DEFAULT_FLAGS = $(DEB_CMAKE_KDE4_FLAGS) $(DEB_CMAKE_CUSTOM_FLAGS)
+CMAKE_ARGS = $(DEB_CMAKE_KDE4_DEFAULT_FLAGS)
 
 # Source package name
 DEB_SOURCE_PACKAGE := $(shell grep '^Source:' debian/control | sed 's/^Source:[[:space:]]*\([^[:space:]]\+\).*$$/\1/')
@@ -36,29 +40,22 @@ ifeq (yes,$(shell dpkg --compare-versions '$(CMAKE_DEB_VERSION)' ge '2.6.2-1' &&
     DEB_CMAKE_CUSTOM_FLAGS += -DCMAKE_USE_RELATIVE_PATHS=ON
 endif
 
-# Include debian in the PERL lib search path and executable search path
-_PERLLIB := $(PERLLIB)
-_PATH := $(PATH)
-export PERLLIB := $(CURDIR)/debian:$(_PERLLIB)
-export PATH := $(CURDIR)/debian/debhelper:$(_PATH)
-DH = dh --with kde4
-
 # Default targets
 DEB_ALL_DEFAULT_TARGETS := build install binary binary-arch binary-indep clean
 KDE4_ALL_DEFAULT_TARGETS :=  $(patsubst %,kde4/%,$(DEB_ALL_DEFAULT_TARGETS))
 
-# Ensure right permissions are set for custom debhelper scripts
-dh_permissions:
-	chmod a+x debian/debhelper/dh*
-
-$(KDE4_ALL_DEFAULT_TARGETS): | dh_permissions
-
-.PHONY: dh_permissions
-
-# Pass cmake options via dh_auto_configure override
+# Default overrides for cmake configuring/building/installing
 DEB_KDE4_OVERRIDE_DH_AUTO_CONFIGURE ?= override_dh_auto_configure
-$(DEB_KDE4_OVERRIDE_DH_AUTO_CONFIGURE):
-	dh_auto_configure -- $(DEB_CMAKE_KDE4_DEFAULT_FLAGS)
+$(DEB_KDE4_OVERRIDE_DH_AUTO_CONFIGURE): cmake_configure
+.PHONY: $(DEB_KDE4_OVERRIDE_DH_AUTO_CONFIGURE)
+
+DEB_KDE4_OVERRIDE_DH_AUTO_BUILD ?= override_dh_auto_build
+$(DEB_KDE4_OVERRIDE_DH_AUTO_BUILD): cmake_build
+.PHONY: $(DEB_KDE4_OVERRIDE_DH_AUTO_BUILD)
+
+DEB_KDE4_OVERRIDE_DH_AUTO_INSTALL ?= override_dh_auto_install
+$(DEB_KDE4_OVERRIDE_DH_AUTO_INSTALL): cmake_install
+.PHONY: $(DEB_KDE4_OVERRIDE_DH_AUTO_INSTALL)
 
 # dh_strip override - automatic -dbg package
 DEB_DBG_PACKAGE_NAME ?= $(DEB_SOURCE_PACKAGE)-dbg
@@ -72,8 +69,8 @@ endif
 
 # Clean rule is more complex. Cleaning should be done
 # before unpatching.
-clean_before_unpatch:
-	$(DH) clean
+clean_before_unpatch: cmake_clean
+	dh clean
 
 unpatch: clean_before_unpatch
 
@@ -87,7 +84,7 @@ kde4/build: patch
 # Default implementation (DH) of default targets.
 # Exclude clean as we have a specific target for it
 $(filter-out kde4/clean,$(KDE4_ALL_DEFAULT_TARGETS)):
-	$(DH) $(subst kde4/,,$@)
+	dh $(subst kde4/,,$@)
 
 # An implicit rule which runs default kde4/ targets
 # It can be easily overriden.

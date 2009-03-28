@@ -4,6 +4,9 @@ plasma-widget-networkmanagement (0.1~svn935902-0r1) UNRELEASED; urgency=low
     - Last Changed Author: wstephens
     - Last Changed Rev: 940405
     - Last Changed Date: 2009-03-17 15:14:21 +0200
+  * Get rid of complicated dh_auto_* implementation for cmake (as it seems
+    it is not going to be accepted upstream anyway). Write a simple cmake.mk
+    instead and make kde4.mk use it.
   * Migrate debian/rules to dh_overrides. Build depend on debhelper 7.0.50.
 
  -- Modestas Vainius <modestas@vainius.eu>  Sat, 28 Mar 2009 17:13:25 +0200
