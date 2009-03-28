@@ -8,8 +8,9 @@ plasma-widget-networkmanagement (0.1~svn935902-0r1) UNRELEASED; urgency=low
     it is not going to be accepted upstream anyway). Write a simple cmake.mk
     instead and make kde4.mk use it.
   * Migrate debian/rules to dh_overrides. Build depend on debhelper 7.0.50.
+  * Replace kde4 with kde everywhere.
 
- -- Modestas Vainius <modestas@vainius.eu>  Sat, 28 Mar 2009 17:13:25 +0200
+ -- Modestas Vainius <modestas@vainius.eu>  Sat, 28 Mar 2009 17:59:12 +0200
 
 plasma-widget-networkmanagement (0.1~svn926306-1) experimental; urgency=low
 
