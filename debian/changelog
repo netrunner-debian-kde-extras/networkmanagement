@@ -1,3 +1,18 @@
+plasma-widget-networkmanagement (0.1~svn940405-1) experimental; urgency=low
+
+  * New upstream development snapshot:
+    - Last Changed Author: wstephens
+    - Last Changed Rev: 940405
+    - Last Changed Date: 2009-03-17 15:14:21 +0200
+  * Get rid of complicated dh_auto_* implementation for cmake (as it seems
+    it is not going to be accepted upstream anyway). Write a simple cmake.mk
+    instead and make kde4.mk use it.
+  * Migrate debian/rules to dh_overrides. Build depend on debhelper 7.0.50.
+  * Replace kde4 with kde everywhere.
+  * Bump Standards-Version to 3.8.1 (no changes needed).
+
+ -- Modestas Vainius <modestas@vainius.eu>  Sat, 28 Mar 2009 18:01:58 +0200
+
 plasma-widget-networkmanagement (0.1~svn926306-1) experimental; urgency=low
 
   * New upstream development snapshot.
