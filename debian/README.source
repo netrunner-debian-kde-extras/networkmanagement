@@ -11,8 +11,8 @@ do other common tasks. Branch structure of the repository is as follows:
 Topic branches should be named as follows:
 
 * general/*  - namespace for general upstream patches. Patches can be named
-               freely, but it is recommended to prefix names with 'fix_' for
-               patches fixing bugs and with 'feature_' for patches introducing
+               freely, but it is recommended to suffix names with '_fix' for
+               patches fixing bugs and with '_feature' for patches introducing
                new features. These patches should be based on the upstream
                branch.
 * debian/*   - Debian specific patches should be put in this namespace. These
@@ -28,6 +28,3 @@ debian/patches as quilt series before building. Please read
 information on how to manage patches directly with quilt. Please note that this
 method is not acceptable for long term package management, only for quick
 patching.
-
-Debian build scripts are based on the debhelper v7 with added cmake support
-and custom tweaks to the dh helper (available under debian/debhelper).
