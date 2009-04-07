@@ -66,10 +66,14 @@ public:
     virtual void setEnabled(bool enable);
     virtual QString ssid();
 
-public slots:
+public Q_SLOTS:
     void activeConnectionsChanged();
     void connectionStateChanged(int);
+    /**
+     * The  button to connect the interface has been clicked
+     */
     virtual void connectButtonClicked() = 0;
+
 
 protected Q_SLOTS:
     /**
@@ -77,6 +81,9 @@ protected Q_SLOTS:
      * from our active connection list
      */
     void serviceDisappeared(NetworkManagerSettings *service);
+    virtual void hoverEnterEvent(QGraphicsSceneHoverEvent *event);
+    virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent *event);
+
 Q_SIGNALS:
     void stateChanged();
 protected:
@@ -97,8 +104,10 @@ protected:
      */
     virtual void setActiveConnection(int);
     /**
-     * The active connection's ssid or empty
+     * Give us a pixmap for an icon
      */
+    virtual QPixmap statePixmap(const QString &icon);
+
 
     /**
      * Returns all available connections for the device type.
@@ -114,6 +123,7 @@ protected:
     QGraphicsGridLayout * m_layout;
     QGraphicsLinearLayout * m_infoLayout;
     Plasma::IconWidget * m_icon;
+    Plasma::IconWidget* m_connectButton;
     Plasma::Label * m_ifaceNameLabel;
     Plasma::Label * m_connectionNameLabel;
     QGraphicsLinearLayout * m_connectionInfoLayout;
@@ -126,6 +136,8 @@ protected:
     QList<ActiveConnectionPair> m_activeConnections;
     ConnectionInspector * m_connectionInspector;
     QString m_unavailableText;
+    QString m_interfaceName;
     QString m_currentIp;
+    bool m_disconnect;
 };
 #endif // APPLET_INTERFACEWIDGET_H
