@@ -1,9 +1,9 @@
-plasma-widget-networkmanagement (0.1~svn940405-1) experimental; urgency=low
+plasma-widget-networkmanagement (0.1~svn948596-1) experimental; urgency=low
 
   * New upstream development snapshot:
-    - Last Changed Author: wstephens
-    - Last Changed Rev: 940405
-    - Last Changed Date: 2009-03-17 15:14:21 +0200
+    - Last Changed Author: sebas
+    - Last Changed Rev: 948596
+    - Last Changed Date: 2009-04-03 12:59:58 +0300
   * Get rid of complicated dh_auto_* implementation for cmake (as it seems
     it is not going to be accepted upstream anyway). Write a simple cmake.mk
     instead and make kde4.mk use it.
