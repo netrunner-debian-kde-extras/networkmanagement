@@ -1,9 +1,9 @@
-plasma-widget-networkmanagement (0.1~svn948596-1) experimental; urgency=low
+plasma-widget-networkmanagement (0.1~svn951801-1) experimental; urgency=low
 
   * New upstream development snapshot:
-    - Last Changed Author: sebas
-    - Last Changed Rev: 948596
-    - Last Changed Date: 2009-04-03 12:59:58 +0300
+    - Last Changed Author: modax
+    - Last Changed Rev: 951801
+    - Last Changed Date: 2009-04-10 12:37:25 +0300
   * Get rid of complicated dh_auto_* implementation for cmake (as it seems
     it is not going to be accepted upstream anyway). Write a simple cmake.mk
     instead and make kde4.mk use it.
@@ -11,7 +11,7 @@ plasma-widget-networkmanagement (0.1~svn948596-1) experimental; urgency=low
   * Replace kde4 with kde everywhere.
   * Bump Standards-Version to 3.8.1 (no changes needed).
 
- -- Modestas Vainius <modestas@vainius.eu>  Sat, 28 Mar 2009 18:01:58 +0200
+ -- Modestas Vainius <modestas@vainius.eu>  Fri, 10 Apr 2009 12:39:54 +0300
 
 plasma-widget-networkmanagement (0.1~svn926306-1) experimental; urgency=low
 
