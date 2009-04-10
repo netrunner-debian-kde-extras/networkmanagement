@@ -1,7 +1,7 @@
 Source: plasma-widget-networkmanagement
 Section: kde
 Priority: optional
-Maintainer: Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian .org>
+Maintainer: Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>
 Uploaders: Modestas Vainius <modestas@vainius.eu>
 DM-Upload-Allowed: yes
 Build-Depends: debhelper (>= 7.0.50), cmake (>= 2.6.2), pkg-kde-tools (>= 0.2), quilt,

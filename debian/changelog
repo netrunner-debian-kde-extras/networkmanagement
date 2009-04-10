@@ -1,3 +1,9 @@
+plasma-widget-networkmanagement (0.1~svn951801-2) UNRELEASED; urgency=low
+
+  * Fix typo in the debian/control Maintainer field.
+
+ -- Modestas Vainius <modestas@vainius.eu>  Fri, 10 Apr 2009 13:45:57 +0300
+
 plasma-widget-networkmanagement (0.1~svn951801-1) experimental; urgency=low
 
   * New upstream development snapshot:
