@@ -1,11 +1,10 @@
-# Using quilt patch system
-include /usr/share/quilt/quilt.make
-
 # Include default KDE 4 cmake configuration variables
 include /usr/share/pkg-kde-tools/makefiles/1/variables.mk
 
 # CMake module
 include debian/debhelper/cmake.mk
+
+DH ?= dh
 
 # CMake configuration flags
 DEB_CMAKE_KDE_DEFAULT_FLAGS = $(DEB_CMAKE_KDE4_FLAGS) $(DEB_CMAKE_CUSTOM_FLAGS)
@@ -57,6 +56,10 @@ DEB_KDE_OVERRIDE_DH_AUTO_INSTALL ?= override_dh_auto_install
 $(DEB_KDE_OVERRIDE_DH_AUTO_INSTALL): cmake_install
 .PHONY: $(DEB_KDE_OVERRIDE_DH_AUTO_INSTALL)
 
+DEB_KDE_OVERRIDE_DH_AUTO_CLEAN ?= override_dh_auto_clean
+$(DEB_KDE_OVERRIDE_DH_AUTO_CLEAN): cmake_clean
+.PHONY: $(DEB_KDE_OVERRIDE_DH_AUTO_CLEAN)
+
 # dh_strip override - automatic -dbg package
 DEB_DBG_PACKAGE_NAME ?= $(DEB_SOURCE_PACKAGE)-dbg
 ifeq ($(DEB_DBG_PACKAGE_NAME),$(filter $(DEB_DBG_PACKAGE_NAME),$(shell dh_listpackages -s)))
@@ -67,28 +70,16 @@ $(DEB_KDE_OVERRIDE_DH_STRIP):
 
 endif
 
-# Clean rule is more complex. Cleaning should be done
-# before unpatching.
-clean_before_unpatch: cmake_clean
-	dh clean
-
-unpatch: clean_before_unpatch
-
-kde/clean: unpatch
-
 # Required relationship between default targets
 $(filter-out build clean,$(DEB_ALL_DEFAULT_TARGETS)): build
 
-kde/build: patch
-
 # Default implementation (DH) of default targets.
-# Exclude clean as we have a specific target for it
-$(filter-out kde/clean,$(KDE_ALL_DEFAULT_TARGETS)):
-	dh $(subst kde/,,$@)
+$(KDE_ALL_DEFAULT_TARGETS):
+	$(DH) $(subst kde/,,$@)
 
 # An implicit rule which runs default kde/ targets
 # It can be easily overriden.
 %: kde/%
 	
 
-.PHONY: $(KDE_ALL_DEFAULT_TARGETS) clean_before_unpatch
+.PHONY: $(KDE_ALL_DEFAULT_TARGETS)

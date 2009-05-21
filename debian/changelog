@@ -5,8 +5,10 @@ plasma-widget-networkmanagement (0.1~svn970021-0r1) UNRELEASED; urgency=low
    - Last Changed Rev: 970021
    - Last Changed Date: 2009-05-19 16:34:14 +0300
   * Fix typo in the debian/control Maintainer field.
+  * Update debhelper scripts (use dh --with quilt) and README.source. Bump
+    quilt build depend to 0.46-7~.
 
- -- Modestas Vainius <modestas@vainius.eu>  Thu, 21 May 2009 09:50:36 +0300
+ -- Modestas Vainius <modestas@vainius.eu>  Thu, 21 May 2009 09:53:14 +0300
 
 plasma-widget-networkmanagement (0.1~svn951801-1) experimental; urgency=low
 

@@ -5,8 +5,8 @@ do other common tasks. Branch structure of the repository is as follows:
 
 * upstream   - upstream source code.
 * master     - the Debianization branch (upstream source and debian directory).
-* build      - build branch; master and exported debian/patches ready for
-               building. This branch is used for tagging.
+               This branch also contains exported debian/patches ready for
+               building.
 
 Topic branches should be named as follows:
 
