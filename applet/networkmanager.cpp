@@ -1,5 +1,5 @@
 /*
-Copyright 2008 Will Stephenson <wstephenson@kde.org>
+Copyright 2008,2009 Will Stephenson <wstephenson@kde.org>
 Copyright 2008 Sebastian Kügler <sebas@kde.org>
 
 This program is free software; you can redistribute it and/or
@@ -68,13 +68,13 @@ bool networkInterfaceLessThan(Solid::Control::NetworkInterface * if1, Solid::Con
 bool networkInterfaceSameConnectionStateLessThan(Solid::Control::NetworkInterface * if1, Solid::Control::NetworkInterface * if2);
 
 NetworkManagerApplet::NetworkManagerApplet(QObject * parent, const QVariantList & args)
-    : Plasma::PopupApplet(parent, args), m_iconPerDevice(false), m_svg(0)
+    : Plasma::PopupApplet(parent, args), m_iconPerDevice(false), m_svg(0), m_wirelessSvg(0), m_wifiGroup(0)
 {
     setHasConfigurationInterface(false);
     setPopupIcon(QIcon());
     //setPassivePopup(true); // only for testing ...
 
-    updateToolTip();
+    Plasma::ToolTipManager::self()->registerWidget(this);
     setAspectRatioMode(Plasma::ConstrainedSquare);
     setHasConfigurationInterface(true);
     m_svg = new Plasma::Svg(this);
@@ -164,8 +164,8 @@ void NetworkManagerApplet::initExtenderItem(Plasma::ExtenderItem * eItem)
         m_wifiGroup->setObjectName("wifi-interface-group");
         m_wifiGroup->init();
         KConfigGroup cg = config();
-        m_numberOfWlans = cg.readEntry("numberOfWlans", 4);
-        m_wifiGroup->setNetworksLimit( m_numberOfWlans );
+        m_numberWirelessShown = cg.readEntry("numberOfWlans", 4);
+        m_wifiGroup->setNetworksLimit( m_numberWirelessShown );
 
         eItem->setWidget(m_wifiGroup);
     } else if (eItem->name() == GSM_EXTENDER_ITEM_NAME) {
@@ -224,12 +224,22 @@ void NetworkManagerApplet::createConfigurationInterface(KConfigDialog *parent)
     ui.showWireless->setChecked(m_showWireless);
     ui.showVpn->setChecked(m_showVpn);
     ui.showCellular->setChecked(m_showCellular);
-    ui.numberOfWlans->setValue(m_numberOfWlans);
+    ui.numberOfWlans->setValue(m_numberWirelessShown);
 }
 
 void NetworkManagerApplet::configAccepted()
 {
     KConfigGroup cg = config();
+
+    int numberWirelessShown = ui.numberOfWlans->value();
+    if (m_numberWirelessShown != numberWirelessShown) {
+        m_numberWirelessShown = numberWirelessShown;
+        if (m_wifiGroup) {
+            m_wifiGroup->setNetworksLimit( m_numberWirelessShown );
+        }
+        cg.writeEntry("numberOfWlans", m_numberWirelessShown);
+        kDebug() << "No of Wifis Changed:" << m_numberWirelessShown;
+    }
 
     if (m_showWired != ui.showWired->isChecked()) {
         showWired(!m_showWired);
@@ -251,15 +261,7 @@ void NetworkManagerApplet::configAccepted()
         cg.writeEntry("showVpn", m_showVpn);
         kDebug() << "VPN Changed" << m_showVpn;
     }
-    int wlans = ui.numberOfWlans->value();
-    if (wlans != m_numberOfWlans) {
-        m_numberOfWlans = wlans;
-        if (m_wifiGroup) {
-            m_wifiGroup->setNetworksLimit( m_numberOfWlans );
-        }
-        cg.writeEntry("numberOfWlans", m_numberOfWlans);
-        kDebug() << "No of WLANS Changed:" << wlans;
-    }
+
     Plasma::Applet::configNeedsSaving();
 }
 
@@ -383,8 +385,7 @@ void NetworkManagerApplet::networkInterfaceAdded(const QString & uni)
     Q_UNUSED(uni);
     // update the tray icon
     m_interfaces = Solid::Control::NetworkManager::networkInterfaces();
-    foreach (Solid::Control::NetworkInterface * interface,
-            m_interfaces) {
+    foreach (Solid::Control::NetworkInterface* interface, m_interfaces) {
 
         // be aware of state changes
         QObject::disconnect(interface, SIGNAL(connectionStateChanged(int)), this, SLOT(interfaceConnectionStateChanged()));
@@ -409,7 +410,7 @@ void NetworkManagerApplet::networkInterfaceRemoved(const QString & uni)
     // update the tray icon
     m_interfaces = Solid::Control::NetworkManager::networkInterfaces();
     foreach (Solid::Control::NetworkInterface * interface,
-            Solid::Control::NetworkManager::networkInterfaces()) {
+            m_interfaces) {
         QObject::disconnect(interface, SIGNAL(connectionStateChanged(int)), this, SLOT(interfaceConnectionStateChanged()));
         QObject::connect(interface, SIGNAL(connectionStateChanged(int)), this, SLOT(interfaceConnectionStateChanged()));
     }
@@ -480,20 +481,17 @@ void NetworkManagerApplet::interfaceConnectionStateChanged()
         m_elementName = elementNameToPaint;
         update();
     }
-
-    updateToolTip();
 }
 
-
-void NetworkManagerApplet::updateToolTip()
+void NetworkManagerApplet::toolTipAboutToShow()
 {
     Solid::Control::NetworkInterfaceList interfaces
         = Solid::Control::NetworkManager::networkInterfaces();
     if (interfaces.isEmpty()) {
         m_toolTip = Plasma::ToolTipContent(name(),
-                i18nc("Tooltip sub text", "No network interfaces"),
-                KIcon("networkmanager").pixmap(IconSize(KIconLoader::Desktop))
-                );
+                                        i18nc("Tooltip sub text", "No network interfaces"),
+                                        KIcon("networkmanager").pixmap(IconSize(KIconLoader::Desktop))
+                                        );
     } else {
         QString subText;
         qSort(interfaces.begin(), interfaces.end(), networkInterfaceLessThan);
@@ -502,13 +500,22 @@ void NetworkManagerApplet::updateToolTip()
                 subText += QLatin1String("<br>");
             }
             subText += QString::fromLatin1("<b>%1</b>: %2").arg(iface->interfaceName()).arg(connectionStateToString(iface->connectionState()));
+            if (iface->connectionState() == Solid::Control::NetworkInterface::Activated) {
+                Solid::Control::IPv4Config ip4Config = iface->ipV4Config();
+                QList<Solid::Control::IPv4Address> addresses = ip4Config.addresses();
+                if (!addresses.isEmpty()) {
+                    QHostAddress addr(addresses.first().address());
+                    QString currentIp = addr.toString();
+                    subText += QString::fromLatin1("<br>") + i18nc("Display of the IP (network) address", "IP Address: %1", currentIp);
+                }
+            }
             m_toolTip = Plasma::ToolTipContent(name(),
-                subText,
-                KIcon("networkmanager").pixmap(IconSize(KIconLoader::Desktop))
-                );
-            Plasma::ToolTipManager::self()->setContent(this, m_toolTip);
+                                            subText,
+                                            KIcon("networkmanager").pixmap(IconSize(KIconLoader::Desktop))
+                                            );
         }
     }
+    Plasma::ToolTipManager::self()->setContent(this, m_toolTip);
 }
 
 QString NetworkManagerApplet::connectionStateToString(Solid::Control::NetworkInterface::ConnectionState state)
@@ -743,13 +750,11 @@ void NetworkManagerApplet::showGeneral(bool show)
     m_showGeneral = show;
     Plasma::ExtenderItem *eItem = extender()->item("general");
     if (show) {
-        if (!eItem) {
-            kDebug() << "Displaying general extender";
-            //if (!extender()->hasItem("general")) {
-                eItem = new GeneralExtender(extender());
-                initExtenderItem(eItem);
-            //}
+        if (eItem) {
+            eItem->destroy(); // Apparently, we need to "refresh the extenderitem
         }
+        eItem = new GeneralExtender(extender());
+        initExtenderItem(eItem);
     } else {
         if (eItem) {
             kDebug() << "Hiding General Settings extender";
@@ -881,9 +886,7 @@ void NetworkManagerApplet::managerStatusChanged(Solid::Networking::Status status
 
 bool NetworkManagerApplet::hasInterfaceOfType(Solid::Control::NetworkInterface::Type type)
 {
-    foreach (Solid::Control::NetworkInterface * interface,
-            m_interfaces) {
-
+    foreach (Solid::Control::NetworkInterface * interface, m_interfaces) {
         if (interface->type() == type) {
             return true;
         }
@@ -899,4 +902,16 @@ void NetworkManagerApplet::hideVpnGroup()
     showVpn(false);
     Plasma::Applet::configNeedsSaving();
 }
+
+void NetworkManagerApplet::popupEvent(bool show)
+{
+    // Notify the wireless extender of popup events so it can revert its hidden wireless network
+    // item to button mode
+    Plasma::ExtenderItem *eItem = extender()->item("wireless");
+    if (eItem) {
+        InterfaceGroup * wireless = static_cast<InterfaceGroup*>(eItem->widget());
+        wireless->popupEvent(show);
+    }
+}
+
 #include "networkmanager.moc"

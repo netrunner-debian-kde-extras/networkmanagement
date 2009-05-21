@@ -21,6 +21,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef NM07_MANAGE_CONNECTION_WIDGET_H
 #define NM07_MANAGE_CONNECTION_WIDGET_H
 
+#include <QHash>
+
 #include <KCModule>
 
 #include "connectioneditor.h"
@@ -28,6 +30,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "ui_manageconnectionwidget.h"
 
 class QMenu;
+class QTreeWidget;
+class QTreeWidgetItem;
 
 class ManageConnectionWidget : public KCModule
 {
@@ -44,15 +48,23 @@ public slots:
     void updateTabStates();
 
     Q_SCRIPTABLE void createConnection(const QString & connectionType, const QVariantList &args);
+    /**
+     * Update connection items last used timestamp if they become active
+     */
+    void activeConnectionsChanged();
 private slots:
     /** 
      * Add a new connection 
      */
     void addClicked();
     /**
-     * Edit selected connection
+     * Edit the selected connection
      */
     void editClicked();
+    /**
+     * Edit given item
+     */
+    void editItem(QTreeWidgetItem*);
     /**
      * Delete selected connection
      */
@@ -70,6 +82,10 @@ private slots:
      * Reparse knetworkmanagerrc (the main connection file) and rebuild the list of connections
      */
     void restoreConnections();
+    /**
+     * Update the relative last used labels (called once a minute on a timer, cheesy I know)
+     */
+    void updateLastUsed();
 private:
     /**
      * Get the connection type of the currently selected index
@@ -82,11 +98,19 @@ private:
      */
     QTreeWidgetItem * selectedItem() const;
 
+    /**
+     * Format a date as something relative to now
+     */
+    QString formatDateRelative(const QDateTime & lastUsed);
+    void updateLastUsed(QTreeWidget *);
+
     Ui_ManageConnectionWidget mConnEditUi;
     QTreeWidget * mWiredList;
     QMenu * mCellularMenu;
     QMenu * mVpnMenu;
     ConnectionEditor * mEditor;
+    QHash<QString,QTreeWidgetItem*> mUuidItemHash;
+    QTimer * mLastUsedTimer;
 };
 
 #endif // NM07_MANAGE_CONNECTION_WIDGET_H

@@ -72,7 +72,7 @@ QGraphicsWidget* GeneralExtender::graphicsWidget()
     m_rfCheckBox = new Plasma::CheckBox(this);
     m_rfCheckBox->setChecked(Solid::Control::NetworkManager::isWirelessEnabled());
     m_rfCheckBox->setEnabled(Solid::Control::NetworkManager::isWirelessHardwareEnabled());
-    m_rfCheckBox->setText(i18nc("CheckBox to enable or disable wireless interface (rfkill)", "Enable Wireless"));
+    m_rfCheckBox->setText(i18nc("CheckBox to enable or disable wireless interface (rfkill)", "Enable wireless"));
     m_layout->addItem(m_rfCheckBox);
     connect(m_rfCheckBox, SIGNAL(toggled(bool)),
             SLOT(wirelessEnabledToggled(bool)));
@@ -85,9 +85,13 @@ QGraphicsWidget* GeneralExtender::graphicsWidget()
     m_connectionsButton->setIcon("networkmanager");
     m_connectionsButton->setOrientation(Qt::Horizontal);
     m_connectionsButton->setText(i18nc("button in general settings extender", "Manage Connections..."));
-    m_connectionsButton->setPreferredHeight(KIconLoader::SizeMedium);
+    m_connectionsButton->setMaximumHeight(KIconLoader::SizeMedium);
+    m_connectionsButton->setMinimumHeight(KIconLoader::SizeMedium);
     m_connectionsButton->setDrawBackground(true);
-    connect(m_connectionsButton, SIGNAL(clicked()), this, SLOT(manageConnections()));
+#if KDE_IS_VERSION(4,2,60)
+    m_connectionsButton->setTextBackgroundColor(QColor());
+#endif
+    connect(m_connectionsButton, SIGNAL(activated()), this, SLOT(manageConnections()));
     m_layout->addItem(m_connectionsButton);
 
     m_widget->setLayout(m_layout);
