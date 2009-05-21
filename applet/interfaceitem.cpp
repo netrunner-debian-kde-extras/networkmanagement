@@ -50,13 +50,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "remoteconnection.h"
 #include "wirelessnetwork.h"
 
-InterfaceItem::InterfaceItem(Solid::Control::NetworkInterface * iface, NetworkManagerSettings * userSettings, NetworkManagerSettings * systemSettings, NameDisplayMode mode, QGraphicsItem * parent) : QGraphicsWidget(parent), m_iface(iface), m_userSettings(userSettings), m_systemSettings(systemSettings), m_connectionInfoLabel(0), m_strengthMeter(0), m_nameMode(mode), m_enabled(false), m_connectionInspector(0), m_unavailableText(i18nc("Label for network interfaces that cannot be activated", "Unavailable")), m_currentIp(0)
+InterfaceItem::InterfaceItem(Solid::Control::NetworkInterface * iface, NetworkManagerSettings * userSettings, NetworkManagerSettings * systemSettings, NameDisplayMode mode, QGraphicsItem * parent) : QGraphicsWidget(parent), m_iface(iface), m_userSettings(userSettings), m_systemSettings(systemSettings), m_connectionNameLabel(0), m_connectionInfoLabel(0), m_strengthMeter(0), m_nameMode(mode), m_enabled(false), m_connectionInspector(0), m_unavailableText(i18nc("Label for network interfaces that cannot be activated", "Unavailable"))
 {
     setAcceptHoverEvents(true);
 
     Solid::Device* dev = new Solid::Device(m_iface->uni());
     m_interfaceName = dev->product();
-
 
     m_layout = new QGraphicsGridLayout(this);
     m_layout->setVerticalSpacing(0);
@@ -99,7 +98,7 @@ InterfaceItem::InterfaceItem(Solid::Control::NetworkInterface * iface, NetworkMa
     m_ifaceNameLabel = new Plasma::Label(this);
     m_ifaceNameLabel->nativeWidget()->setWordWrap(false);
     //m_ifaceNameLabel->setMinimumWidth(176);
-    m_layout->addItem(m_ifaceNameLabel, 0, 1, 1, 1);
+    m_layout->addItem(m_ifaceNameLabel, 0, 1, 1, 2);
 
     m_connectButton = new Plasma::IconWidget(this);
     m_connectButton->setMaximumHeight(22);
@@ -188,11 +187,13 @@ InterfaceItem::InterfaceItem(Solid::Control::NetworkInterface * iface, NetworkMa
 
 void InterfaceItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
+    Q_UNUSED( event )
     m_connectButton->show();
 }
 
 void InterfaceItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
+    Q_UNUSED( event )
     m_connectButton->hide();
 }
 
@@ -235,32 +236,41 @@ InterfaceItem::NameDisplayMode InterfaceItem::nameDisplayMode() const
 
 QString InterfaceItem::ssid()
 {
-    return QString("Blaat");
+    return "";
 }
 
 void InterfaceItem::setConnectionInfo()
 {
-    if (m_iface->connectionState() == Solid::Control::NetworkInterface::Activated) {
-        Solid::Control::IPv4Config ip4Config = m_iface->ipV4Config();
-        QList<Solid::Control::IPv4Address> addresses = ip4Config.addresses();
-        if (addresses.isEmpty()) {
-            m_connectionInfoLabel->setText(i18n("ip display error"));
-        } else {
-            QHostAddress addr(addresses.first().address());
-            m_currentIp = addr.toString();
+    if (m_connectionInfoLabel && m_connectionNameLabel) {
+        if (m_iface->connectionState() == Solid::Control::NetworkInterface::Activated) {
             m_connectionNameLabel->setText(i18nc("wireless interface is connected", "Connected"));
-            m_connectionInfoLabel->setText(i18nc("ip address of the network interface", "Address: %1", m_currentIp));
-            kDebug() << "addresses non-empty" << m_currentIp;
-        }
-        if (m_strengthMeter) {
-            m_strengthMeter->show();
-        }
-    } else {
-        if (m_strengthMeter) {
-            m_strengthMeter->hide();
+            m_connectionInfoLabel->setText(i18nc("ip address of the network interface", "Address: %1", currentIpAddress()));
+            //kDebug() << "addresses non-empty" << m_currentIp;
+            if (m_strengthMeter) {
+                m_strengthMeter->show();
+            }
+        } else {
+            if (m_strengthMeter) {
+                m_strengthMeter->hide();
+            }
         }
     }
 }
+
+QString InterfaceItem::currentIpAddress()
+{
+    if (m_iface->connectionState() != Solid::Control::NetworkInterface::Activated) {
+        return i18n("No IP address.");
+    }
+    Solid::Control::IPv4Config ip4Config = m_iface->ipV4Config();
+    QList<Solid::Control::IPv4Address> addresses = ip4Config.addresses();
+    if (addresses.isEmpty()) {
+        return i18n("IP display error.");
+    }
+    QHostAddress addr(addresses.first().address());
+    return addr.toString();
+}
+
 void InterfaceItem::activeConnectionsChanged()
 {
     QList<ActiveConnectionPair > newConnectionList;
@@ -269,27 +279,29 @@ void InterfaceItem::activeConnectionsChanged()
     QDBusObjectPath connectionObjectPath;
     //kDebug() << "... updating active connection list for " << m_iface->uni() << m_iface->interfaceName();
     // find the active connection on this device
-    foreach (QString conn, activeConnections) {
+    foreach (const QString &conn, activeConnections) {
         OrgFreedesktopNetworkManagerConnectionActiveInterface candidate(NM_DBUS_SERVICE,
                                                                         conn, QDBusConnection::systemBus(), 0);
-        foreach (QDBusObjectPath path, candidate.devices()) {
-            if (path.path() == m_iface->uni()) {
-                // this device is using the connection
-                serviceName = candidate.serviceName();
-                connectionObjectPath = candidate.connection();
-                NetworkManagerSettings * service = 0;
-                if (serviceName == NM_DBUS_SERVICE_USER_SETTINGS) {
-                    service = m_userSettings;
-                }
-                if (serviceName == NM_DBUS_SERVICE_SYSTEM_SETTINGS) {
-                    service = m_systemSettings;
-                }
+        if (candidate.isValid()) { // in case the Solid backend is broken and returns bad paths.
+            foreach (const QDBusObjectPath &path, candidate.devices()) {
+                if (path.path() == m_iface->uni()) {
+                    // this device is using the connection
+                    serviceName = candidate.serviceName();
+                    connectionObjectPath = candidate.connection();
+                    NetworkManagerSettings * service = 0;
+                    if (serviceName == NM_DBUS_SERVICE_USER_SETTINGS) {
+                        service = m_userSettings;
+                    }
+                    if (serviceName == NM_DBUS_SERVICE_SYSTEM_SETTINGS) {
+                        service = m_systemSettings;
+                    }
 
-                if (service && service->isValid()) { // it's possible that the service is no longer running
-                                                     // but provided a connection in the past
-                    RemoteConnection * connection = service->findConnection(connectionObjectPath.path());
-                    if (connection) {
-                        newConnectionList.append(ActiveConnectionPair(conn, connection));
+                    if (service && service->isValid()) { // it's possible that the service is no longer running
+                        // but provided a connection in the past
+                        RemoteConnection * connection = service->findConnection(connectionObjectPath.path());
+                        if (connection) {
+                            newConnectionList.append(ActiveConnectionPair(conn, connection));
+                        }
                     }
                 }
             }
@@ -298,7 +310,7 @@ void InterfaceItem::activeConnectionsChanged()
     m_activeConnections = newConnectionList;
     if (!m_activeConnections.isEmpty()) {
         kDebug() << m_iface->interfaceName() << "Active connections:";
-        foreach ( ActiveConnectionPair connection, m_activeConnections) {
+        foreach (const ActiveConnectionPair &connection, m_activeConnections) {
             kDebug() << connection.first << connection.second->path();
         }
     } else {
@@ -436,7 +448,7 @@ void InterfaceItem::setActiveConnection(int state)
     m_icon->setEnabled(true);
     QStringList connectionIds;
     //kDebug();
-    foreach (ActiveConnectionPair connection, m_activeConnections) {
+    foreach (const ActiveConnectionPair &connection, m_activeConnections) {
         if (connection.second->isValid()) {
             //connection name
             connectionIds.append(connection.second->id());
@@ -493,7 +505,7 @@ void InterfaceItem::serviceDisappeared(NetworkManagerSettings* service)
 QList<RemoteConnection*> InterfaceItem::availableConnections() const
 {
     QList<RemoteConnection*> rconnections;
-    foreach (QString conn, m_userSettings->connections()) {
+    foreach (const QString &conn, m_userSettings->connections()) {
        RemoteConnection *rconnection = m_userSettings->findConnection(conn);
        if (rconnection && rconnection->type() == m_iface->type()) {
            rconnections << rconnection;

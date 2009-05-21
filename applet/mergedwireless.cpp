@@ -81,7 +81,9 @@ void WirelessNetworkMerged::addWirelessNetworkInternal(WirelessEnvironment * env
         d->networks.insert(envt, network);
         connect(network, SIGNAL(strengthChanged(const QString&,int)), SLOT(onStrengthChanged(const QString&,int)));
         connect(envt, SIGNAL(networkDisappeared(const QString&)), SLOT(disappeared(const QString)));
-        onStrengthChanged(network->ssid(), network->strength());
+        if (network) {
+            onStrengthChanged(network->ssid(), network->strength());
+        }
     }
 }
 
@@ -162,7 +164,7 @@ void WirelessEnvironmentMerged::addWirelessEnvironment(WirelessEnvironment * wEn
     Q_D(WirelessEnvironmentMerged);
     d->environments.append(wEnv);
 
-    foreach (QString ssid, wEnv->networks()) {
+    foreach (const QString &ssid, wEnv->networks()) {
         addNetworkInternal(wEnv, qobject_cast<WirelessNetwork*>(wEnv->findNetwork(ssid)));
     }
 

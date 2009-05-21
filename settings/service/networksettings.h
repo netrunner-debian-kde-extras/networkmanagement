@@ -1,5 +1,6 @@
 /*  This file is part of the KDE project
     Copyright (C) 2008 Christopher Blauvelt <cblauvelt@gmail.com>
+    Copyright (C) 2008,2009 Will Stephenson <wstephenson@kde.org>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Library General Public
@@ -39,6 +40,14 @@ class Connection;
 
 typedef QMap<QString,QVariantMap> QVariantMapMap;
 
+namespace Solid
+{
+    namespace Control
+    {
+        class NetworkInterface;
+    } // namespace Control
+} // namespace Solid
+
 class NetworkSettings : public QObject
 {
     Q_OBJECT
@@ -69,14 +78,13 @@ class NetworkSettings : public QObject
 
     public Q_SLOTS:
         Q_SCRIPTABLE QList<QDBusObjectPath> ListConnections() const;
-        void onConnectionRemoved();
         /**
-         * Monitor the list of active connections on the daemon
-         * If a connection belonging to this service becomes active,
-         * update its LastUsed timestamp and any secrets that it has 
-         * previously obtained from the user
+         * Monitor the devices in the system to update connections' timestamps when they become
+         * active
          */
-        void activeConnectionsChanged();
+        void networkInterfaceAdded(const QString&);
+        void networkInterfaceConnectionStateChanged(int);
+        void networkInterfaceAccessPointChanged(const QString&);
 
     Q_SIGNALS:
         /**
@@ -85,10 +93,9 @@ class NetworkSettings : public QObject
         Q_SCRIPTABLE void NewConnection(QDBusObjectPath);
 
         /**
-         * Indicates that a connection was activated
+         * Indicates that a connection was changed and should be saved to disk
          */
-        void connectionActivated(const QString & uuid);
-
+        void connectionUpdated(Knm::Connection *);
     private:
         /**
          * Delete all listed connection objects
@@ -99,11 +106,10 @@ class NetworkSettings : public QObject
          * TODO: reuse deleted connections' object paths?
          */
         QString nextObjectPath();
+        QList<BusConnection*> busConnectionForInterface(Solid::Control::NetworkInterface* interface);
 
         QMap<QString, BusConnection*> m_connectionMap;
         uint mNextConnectionId;
-        // List of our connection dbus object paths that are active on the daemon
-        QStringList m_ourActiveConnections;
 };
 
 #endif

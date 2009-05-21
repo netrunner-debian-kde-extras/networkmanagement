@@ -19,6 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include <QWidget>
+#include <QValidator>
 
 #include <KDebug>
 
@@ -40,6 +41,7 @@ public:
     QStringList keys;
     int keyIndex;
     Knm::WirelessSecuritySetting * setting;
+    QRegExpValidator * hexKeyValidator;
 };
 
 WepWidget::WepWidget(KeyFormat format, Knm::Connection * connection, QWidget * parent)
@@ -49,12 +51,21 @@ WepWidget::WepWidget(KeyFormat format, Knm::Connection * connection, QWidget * p
     d->keys << "" << "" << "" << "";
     d->keyIndex = 0;
     d->setting = static_cast<Knm::WirelessSecuritySetting *>(connection->setting(Knm::Setting::WirelessSecurity));
+    d->hexKeyValidator = new QRegExpValidator(QRegExp("^([0-9]|[a-f]|[A-F]){10,26}$"), this);
+
     d->ui.setupUi(this);
     d->ui.passphrase->setEchoMode(QLineEdit::Password);
     d->ui.key->setEchoMode(QLineEdit::Password);
-    keyTypeChanged(0);//initialize for passphrase
+    d->ui.key->setValidator(d->hexKeyValidator);
 
     connect(d->ui.keyType, SIGNAL(currentIndexChanged(int)), this, SLOT(keyTypeChanged(int)));
+
+    if (d->format == WepWidget::Passphrase) {
+        d->ui.keyType->setCurrentIndex(0);
+    } else {
+        d->ui.keyType->setCurrentIndex(1);
+    }
+
     connect(d->ui.weptxkeyindex, SIGNAL(currentIndexChanged(int)), this, SLOT(keyIndexChanged(int)));
     connect(d->ui.chkShowPass, SIGNAL(toggled(bool)), this, SLOT(chkShowPassToggled(bool)));
 }
@@ -72,6 +83,7 @@ void WepWidget::keyTypeChanged(int type)
             d->ui.passphrase->show();
             d->ui.keyLabel->hide();
             d->ui.key->hide();
+            d->ui.passphrase->setText(d->ui.key->text());
             d->format = WepWidget::Passphrase;
             break;
         case 1: //hex key
@@ -79,6 +91,16 @@ void WepWidget::keyTypeChanged(int type)
             d->ui.passphrase->hide();
             d->ui.keyLabel->show();
             d->ui.key->show();
+
+            // if the passphrase entered up until now is valid as hex key, copy it
+            QString pass = d->ui.passphrase->text();
+            int position;
+            if (d->hexKeyValidator->validate(pass, position) == QValidator::Invalid) {
+                d->ui.key->clear();
+            } else {
+                d->ui.key->setText(pass);
+            }
+
             d->format = WepWidget::Hex;
             break;
     }
@@ -101,7 +123,12 @@ void WepWidget::chkShowPassToggled(bool on)
 
 bool WepWidget::validate() const
 {
-    return true;
+    if (d->ui.keyType->currentIndex() == 1) {
+        return d->ui.key->hasAcceptableInput();
+    }
+    else {
+        return true;
+    }
 }
 
 void WepWidget::readConfig()
@@ -109,7 +136,7 @@ void WepWidget::readConfig()
     // tx index
     d->keyIndex = d->setting->weptxkeyindex();
     disconnect(d->ui.weptxkeyindex, SIGNAL(currentIndexChanged(int)), this, SLOT(keyIndexChanged(int)));
-    d->ui.weptxkeyindex->setCurrentIndex(d->keyIndex < 3 ? d->keyIndex : 0 );
+    d->ui.weptxkeyindex->setCurrentIndex(d->keyIndex <= 3 ? d->keyIndex : 0 );
     connect(d->ui.weptxkeyindex, SIGNAL(currentIndexChanged(int)), this, SLOT(keyIndexChanged(int)));
 
     d->ui.chkShowPass->setChecked(false);
@@ -169,9 +196,14 @@ void WepWidget::readSecrets()
     d->keys.replace(3, d->setting->wepkey3());
 
     // passphrase
+    if(d->keys.value(d->keyIndex).isEmpty()) {
+        d->ui.keyType->setCurrentIndex(0);
+    } else {
+        d->ui.keyType->setCurrentIndex(1);
+    }
+
     d->ui.key->setText(d->keys.value(d->keyIndex));
     d->ui.passphrase->setText(d->setting->weppassphrase());
-    keyTypeChanged(d->setting->weppassphrase().isEmpty() ? 1 : 0 );
 }
 
 #include "wepwidget.moc"

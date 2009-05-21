@@ -1,6 +1,6 @@
 /*
 Copyright 2008 Sebastian Kügler <sebas@kde.org>
-Copyright 2008 Will Stephenson <wstephenson@kde.org>
+Copyright 2008,2009 Will Stephenson <wstephenson@kde.org>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -38,9 +38,25 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "wirelessnetwork.h"
 
-WirelessNetworkItem::WirelessNetworkItem(AbstractWirelessNetwork * network, QGraphicsItem * parent)
-: AbstractConnectableItem(parent), m_wirelessNetwork(network), m_security(0), m_securityIcon(0), m_securityIconName(0)
+AbstractWirelessNetworkItem::AbstractWirelessNetworkItem(QGraphicsItem * parent) : AbstractConnectableItem(parent), m_wirelessNetwork(0)
 {
+
+}
+
+AbstractWirelessNetworkItem::~AbstractWirelessNetworkItem()
+{
+
+}
+
+AbstractWirelessNetwork * AbstractWirelessNetworkItem::net() const
+{
+    return m_wirelessNetwork;
+}
+
+WirelessNetworkItem::WirelessNetworkItem(AbstractWirelessNetwork * network, QGraphicsItem * parent)
+: AbstractWirelessNetworkItem(parent), m_security(0), m_securityIcon(0), m_securityIconName(0)
+{
+    m_wirelessNetwork = network;
     m_strengthMeter = new Plasma::Meter(this);
     m_strength = 0;
     m_ssid = network->ssid();
@@ -99,6 +115,9 @@ void WirelessNetworkItem::setupItem()
     m_connectButton->setText(ssid);
     m_connectButton->setMinimumWidth(160);
     m_connectButton->setOrientation(Qt::Horizontal);
+#if KDE_IS_VERSION(4,2,60)
+    m_connectButton->setTextBackgroundColor(QColor());
+#endif
     //m_connectButton->setToolTip(i18nc("icon to connect to wireless network", "Connect to wireless network %1", ssid));
     m_connectButton->setMinimumHeight(rowHeight);
     m_connectButton->setMaximumHeight(rowHeight);
@@ -118,6 +137,7 @@ void WirelessNetworkItem::setupItem()
     m_securityIcon->setIcon(m_securityIconName);
     m_securityIcon->setMinimumHeight(22);
     m_securityIcon->setMaximumHeight(22);
+    m_securityIcon->setToolTip(m_securityIconToolTip);
     m_layout->addItem(m_securityIcon, 0, 2, 1, 1, Qt::AlignLeft);
 
     connect( m_connectButton, SIGNAL(clicked()), this, SLOT(emitClicked()));
@@ -125,11 +145,6 @@ void WirelessNetworkItem::setupItem()
 
 WirelessNetworkItem::~WirelessNetworkItem()
 {
-}
-
-AbstractWirelessNetwork * WirelessNetworkItem::net() const
-{
-    return m_wirelessNetwork;
 }
 
 void WirelessNetworkItem::setStrength(QString ssid, int strength)
@@ -147,18 +162,23 @@ void WirelessNetworkItem::setStrength(QString ssid, int strength)
 void WirelessNetworkItem::readSettings()
 {
     if (m_security.isEmpty()) {
-        m_securityIconName = "object-unlocked";
+        m_securityIconName = "security-low";
+        m_securityIconToolTip = i18nc("wireless network is not encrypted", "Unencrypted network");
     } else if (m_security == QLatin1String("wep")) {
         // security-weak
-        m_securityIconName = "object-locked";
+        m_securityIconName = "security-medium";
+        m_securityIconToolTip = i18nc("tooltip of the security icon in the connection list", "Weakly encrypted network (WEP)");
     } else if (m_security == QLatin1String("wpa-psk")) {
         // security-medium
-        m_securityIconName = "object-locked";
+        m_securityIconName = "security-high";
+        m_securityIconToolTip = i18nc("tooltip of the security icon in the connection list", "Encrypted network (WPA-PSK)");
     } else if (m_security == QLatin1String("wpa-eap")) {
         // security-strong
-        m_securityIconName = "object-locked";
+        m_securityIconName = "security-high";
+        m_securityIconToolTip = i18nc("tooltip of the security icon in the connection list", "Encrypted network (WPA-PSK)");
     } else {
-        m_securityIconName = "object-locked-finished"; // FIXME: Shouldn't we always have a security setting?
+        m_securityIconName = "security-low"; // FIXME: Shouldn't we always have a security setting?
+        m_securityIconToolTip = i18nc("tooltip of the security icon in the connection list", "Encrypted network (WPA-EAP)");
     }
 }
 

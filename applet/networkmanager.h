@@ -1,5 +1,5 @@
 /*
-Copyright 2008 Will Stephenson <wstephenson@kde.org>
+Copyright 2008,2009 Will Stephenson <wstephenson@kde.org>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -120,17 +120,25 @@ public Q_SLOTS:
      * React to manager status changes
      */
     void managerStatusChanged(Solid::Networking::Status);
+
 signals:
     /**
      * Tell the applet to show our KCModule
      */
     //void manageConnections();
 
+public Q_SLOTS:
+    
 protected Q_SLOTS:
+    // called by Plasma::ToolTipManager
+    void toolTipAboutToShow();
     void configAccepted();
 protected:
     void createConfigurationInterface(KConfigDialog *parent);
-
+    /**
+     * Reimplemented from Plasma::PopupApplet
+     */
+    void popupEvent(bool);
 private Q_SLOTS:
     void networkInterfaceAdded(const QString&);
     void networkInterfaceRemoved(const QString&);
@@ -140,7 +148,6 @@ private Q_SLOTS:
     void hideVpnGroup();
 private:
     bool hasInterfaceOfType(Solid::Control::NetworkInterface::Type type);
-    void updateToolTip();
     void updateIcons();
     void paintDefaultInterface(Solid::Control::NetworkInterface*, QPainter *painter, const QStyleOptionGraphicsItem * option, const QRect & rect);
     void paintWiredInterface(Solid::Control::NetworkInterface*, QPainter *painter, const QStyleOptionGraphicsItem * option, const QRect & rect);
@@ -166,7 +173,7 @@ private:
     bool m_showVpn;
     bool m_showCellular;
     bool m_showGeneral;
-    int m_numberOfWlans;
+    int m_numberWirelessShown;
 };
 
 #endif
