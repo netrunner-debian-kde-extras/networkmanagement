@@ -2,17 +2,18 @@
 
 DEB_KDE_LINK_WITH_AS_NEEDED ?= yes
 
-DEB_CMAKE_CUSTOM_FLAGS += -DDBUS_SYSTEM_POLICY_DIR=/etc/dbus-1/system.d
-DEB_KDE_OVERRIDE_DH_AUTO_INSTALL := kde_dh_auto_install
-DH = dh --with quilt
-
-include /usr/share/quilt/quilt.make
+QUILT_PATCH_DIR := debian/patches
 -include /usr/share/topgit/tg2quilt.mk
 .PHONY: /usr/share/topgit/tg2quilt.mk
 
-include debian/debhelper/kde.mk
+include /usr/share/pkg-kde-tools/makefiles/1/debhelper/kde.mk
 
-override_dh_auto_install: kde_dh_auto_install
+DEB_CMAKE_CUSTOM_FLAGS += -DDBUS_SYSTEM_POLICY_DIR=/etc/dbus-1/system.d
+
+override_dh_install:
 	rm debian/plasma-widget-networkmanagement/usr/lib/libknmui.so \
 	   debian/plasma-widget-networkmanagement/usr/lib/libknmstorage.so \
 	   debian/plasma-widget-networkmanagement/usr/lib/libknmdbus.so
+
+%:
+	dh --with quilt $@

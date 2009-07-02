@@ -1,3 +1,12 @@
+plasma-widget-networkmanagement (0.1~svn970021-2) UNRELEASED; urgency=low
+
+  * Use cmake support of debhelper 7.3.0:
+    - drop custom debhelper scripts, no longer needed;
+    - use a basic snippet from pkg-kde-tools 0.4.10;
+    - some changes to debian/rules to improve compatibility with dh 7.3.0.
+
+ -- Modestas Vainius <modestas@vainius.eu>  Thu, 02 Jul 2009 21:04:28 +0300
+
 plasma-widget-networkmanagement (0.1~svn970021-1) experimental; urgency=low
 
   * New upstream development snapshot:
