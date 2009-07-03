@@ -8,7 +8,8 @@ QUILT_PATCH_DIR := debian/patches
 
 include /usr/share/pkg-kde-tools/makefiles/1/debhelper/kde.mk
 
-DEB_CMAKE_CUSTOM_FLAGS += -DDBUS_SYSTEM_POLICY_DIR=/etc/dbus-1/system.d
+DEB_CMAKE_CUSTOM_FLAGS += -DCMAKE_USE_RELATIVE_PATHS=ON \
+                          -DDBUS_SYSTEM_POLICY_DIR=/etc/dbus-1/system.d
 
 override_dh_install:
 	rm debian/plasma-widget-networkmanagement/usr/lib/libknmui.so \
