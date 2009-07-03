@@ -1,4 +1,4 @@
-plasma-widget-networkmanagement (0.1~svn970021-2) UNRELEASED; urgency=low
+plasma-widget-networkmanagement (0.1~svn970021-2) experimental; urgency=low
 
   * Use cmake support of debhelper 7.3.0:
     - drop custom debhelper scripts, no longer needed;
