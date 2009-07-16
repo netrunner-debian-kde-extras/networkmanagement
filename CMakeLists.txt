@@ -10,7 +10,7 @@ if (BIGENDIAN)
 #can't just place WORDS_BIGENDIAN in TEST_BIGENDIAN as our code uses #ifndef
    set(WORDS_BIGENDIAN 1)
 endif (BIGENDIAN)
-configure_file(libs/storage/config-knmstorage.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/libs/storage/config-knmstorage.h )
+configure_file(backends/NetworkManager/config-knmstorage.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/backends/NetworkManager/config-knmstorage.h )
 
 add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 include_directories (${KDE4_INCLUDES})
@@ -32,11 +32,14 @@ include_directories(
 )
 
 add_subdirectory(applet)
+add_subdirectory(backends)
 add_subdirectory(libs)
 add_subdirectory(tests)
 add_subdirectory(settings)
 #disabled pending porting
 add_subdirectory(vpnplugins)
+add_subdirectory(solidcontrolfuture)
+add_subdirectory(monolithic)
 
 install( FILES networkmanagement.notifyrc DESTINATION ${DATA_INSTALL_DIR}/networkmanagement )
 

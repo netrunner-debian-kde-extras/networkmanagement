@@ -1,7 +1,7 @@
 include_directories(
    ${CMAKE_CURRENT_SOURCE_DIR}/..
-   ${CMAKE_CURRENT_SOURCE_DIR}/../storage
-   ${CMAKE_CURRENT_BINARY_DIR}/../storage
+   ${CMAKE_CURRENT_SOURCE_DIR}/../internals
+   ${CMAKE_CURRENT_BINARY_DIR}/../internals
    )
 ## next target: ui library
 
@@ -41,6 +41,7 @@ set(knmui_SRCS
    wiredpreferences.cpp
    wirelesspreferences.cpp
    connectioneditor.cpp
+   connectionsecretsjob.cpp
    )
 
 kde4_add_ui_files(knmui_SRCS cdma.ui gsm.ui ppp.ui pppoe.ui 
@@ -58,7 +59,7 @@ kde4_add_ui_files(knmui_SRCS cdma.ui gsm.ui ppp.ui pppoe.ui
    )
 
 kde4_add_library(knmui SHARED ${knmui_SRCS})
-target_link_libraries(knmui knmstorage ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS} solidcontrol)
+target_link_libraries(knmui knminternals ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS} solidcontrol)
 
 set_target_properties(knmui PROPERTIES
    VERSION ${GENERIC_LIB_VERSION}

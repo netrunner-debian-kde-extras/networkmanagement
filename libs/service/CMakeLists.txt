@@ -1,0 +1,116 @@
+include_directories(
+   ${CMAKE_CURRENT_SOURCE_DIR}
+   ${CMAKE_CURRENT_SOURCE_DIR}/..
+   ${CMAKE_CURRENT_SOURCE_DIR}/../internals
+   ${CMAKE_CURRENT_SOURCE_DIR}/../../solidcontrolfuture
+   ${CMAKE_CURRENT_BINARY_DIR}/../internals
+   )
+
+add_subdirectory(tests)
+
+set(knmservice_SRCS
+   # defines interface for objects observing connections
+   connectionhandler.cpp
+
+   # list of all connections, maintains connectionhandlers
+   connectionlist.cpp
+
+   # loads/saves connections
+   connectionlistpersistence.cpp
+
+   # provides dbus configure() for config UI
+   connectionlistpersistencedbus.cpp
+
+   # list of things that may be connected: connections and unconfigured networks
+   activatablelist.cpp
+
+   # maintains NIC activatable providers
+   networkinterfacemonitor.cpp
+
+   # relates connections to network interfaces
+   networkinterfaceactivatableprovider.cpp
+
+   # subclass of the above, uses ethernet carrier status to select activatables
+   wirednetworkinterfaceactivatableprovider.cpp
+
+   # complex class for managing connections and unconfigured networks for wireless interfaces
+   wirelessnetworkinterfaceactivatableprovider.cpp
+
+   # interface for tracking activatable events
+   activatableobserver.cpp
+
+   # simple debug output observer
+   activatabledebug.cpp
+
+   # configures unconfigured devices and new wireless networks on demand and connects them
+   configurationlauncher.cpp
+
+   # updates connection state as they are used
+   connectionusagemonitor.cpp
+
+   # experimental
+   hiddenwirelessnetworkitem.cpp
+
+   # exports activatables on the session bus to Plasmoids etc
+   sessionabstractedservice.cpp
+
+   # creates vpn activatables
+   vpninterfaceconnectionprovider.cpp
+   )
+
+
+qt4_add_dbus_adaptor(
+    knmservice_SRCS
+    interfaces/org.kde.networkmanagement.activatable.xml
+    activatable.h
+    Knm::Activatable
+    activatableadaptor
+    ActivatableAdaptor
+)
+
+qt4_add_dbus_adaptor(
+    knmservice_SRCS
+    interfaces/org.kde.networkmanagement.interfaceconnection.xml
+    interfaceconnection.h
+    Knm::InterfaceConnection
+    interfaceconnectionadaptor
+    InterfaceConnectionAdaptor
+)
+
+qt4_add_dbus_adaptor(
+    knmservice_SRCS
+    interfaces/org.kde.networkmanagement.wirelessinterfaceconnection.xml
+    wirelessinterfaceconnection.h
+    Knm::WirelessInterfaceConnection
+    wirelessinterfaceconnectionadaptor
+    WirelessInterfaceConnectionAdaptor
+)
+
+qt4_add_dbus_adaptor(
+    knmservice_SRCS
+    interfaces/org.kde.networkmanagement.wirelessnetworkitem.xml
+    wirelessnetworkitem.h
+    Knm::WirelessNetworkItem
+    wirelessnetworkitemadaptor
+    WirelessNetworkItemAdaptor
+)
+
+qt4_add_dbus_adaptor(knmservice_SRCS
+   interfaces/org.kde.networkmanagement.xml
+   sessionabstractedservice.h
+   SessionAbstractedService
+   sessionabstractedserviceadaptor
+   SessionAbstractedServiceAdaptor
+   )
+
+kde4_add_library(knmservice SHARED ${knmservice_SRCS})
+
+target_link_libraries(knmservice knminternals solidcontrol solidcontrolfuture ${KDE4_KDECORE_LIBS})
+
+set_target_properties(knmservice PROPERTIES
+   VERSION ${GENERIC_LIB_VERSION}
+   SOVERSION ${GENERIC_LIB_SOVERSION}
+   )
+
+install(TARGETS knmservice ${INSTALL_TARGETS_DEFAULT_ARGS})
+
