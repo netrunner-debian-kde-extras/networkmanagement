@@ -53,13 +53,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <Plasma/Extender>
 #include <Plasma/ExtenderItem>
 
+#include "remoteactivatablelist.h"
+
 #include "interfacegroup.h"
 #include "../libs/types.h"
-#include "vpnconnectiongroup.h"
-#include "networkmanagersettings.h"
+//#include "vpnconnectiongroup.h"
+//#include "networkmanagersettings.h"
 #include "interfaceitem.h"
 #include "generalextender.h"
 #include "events.h"
+
+
 
 K_EXPORT_PLASMA_APPLET(networkmanagement, NetworkManagerApplet)
 
@@ -101,10 +105,8 @@ NetworkManagerApplet::NetworkManagerApplet(QObject * parent, const QVariantList 
     // not really interesting, for now we only care to kick the load-on-demand
     kDebug() << ref.isValid() << ref.lastError().message() << ref.lastError().name();
 
-    m_userSettings = new NetworkManagerSettings(QLatin1String(NM_DBUS_SERVICE_USER_SETTINGS), this);
-    m_userSettings->setObjectName("user-settings-service");
-    m_systemSettings = new NetworkManagerSettings(QLatin1String(NM_DBUS_SERVICE_SYSTEM_SETTINGS), this);
-    m_systemSettings->setObjectName("system-settings-service");
+    m_activatableList = new RemoteActivatableList(this);
+
     // Now it is safe to create ExtenderItems and therefore InterfaceGroups
 
 }
@@ -133,20 +135,22 @@ void NetworkManagerApplet::init()
 
     // Set up the extender with its various groups.  The first call to extender() triggers calls to
     // initExtenderItem() if there are any detached items.
-    extender()->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
+    //extender()->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
 
-    // calling this initialises the extenderitems
-    networkInterfaceAdded(QString());
+    // Give Plasma some time to start up before we add the network interfaces, we don't want to block
+    // the startup with all the setting up of Extenders and connection items
+    QTimer::singleShot(2000, this, SLOT(networkInterfaceAdded()));
     // add VPN and General Settings last
-    showVpn(cg.readEntry("showVpn", true));
     showGeneral(true);
     QObject::connect(Solid::Control::NetworkManager::notifier(), SIGNAL(statusChanged(Solid::Networking::Status)),
                      this, SLOT(managerStatusChanged(Solid::Networking::Status)));
 
+    m_activatableList->init();
 }
 
 void NetworkManagerApplet::initExtenderItem(Plasma::ExtenderItem * eItem)
 {
+    return;
     const QString WIRED_EXTENDER_ITEM_NAME = QLatin1String("wired");
     const QString WIRELESS_EXTENDER_ITEM_NAME = QLatin1String("wireless");
     const QString GSM_EXTENDER_ITEM_NAME = QLatin1String("gsm");
@@ -155,37 +159,13 @@ void NetworkManagerApplet::initExtenderItem(Plasma::ExtenderItem * eItem)
     const QString GENERAL_EXTENDER_ITEM_NAME = QLatin1String("general");
 
     if (eItem->name() == WIRED_EXTENDER_ITEM_NAME) {
-        InterfaceGroup * ethernetGroup = new InterfaceGroup(Solid::Control::NetworkInterface::Ieee8023, m_userSettings, m_systemSettings, eItem);
-        ethernetGroup->setObjectName("ethernet-interface-group");
-        ethernetGroup->init();
-        eItem->setWidget(ethernetGroup);
+        showWired(true);
     } else if (eItem->name() == WIRELESS_EXTENDER_ITEM_NAME) {
-        m_wifiGroup = new InterfaceGroup(Solid::Control::NetworkInterface::Ieee80211, m_userSettings, m_systemSettings, eItem);
-        m_wifiGroup->setObjectName("wifi-interface-group");
-        m_wifiGroup->init();
-        KConfigGroup cg = config();
-        m_numberWirelessShown = cg.readEntry("numberOfWlans", 4);
-        m_wifiGroup->setNetworksLimit( m_numberWirelessShown );
-
-        eItem->setWidget(m_wifiGroup);
-    } else if (eItem->name() == GSM_EXTENDER_ITEM_NAME) {
-        InterfaceGroup * gsmGroup = new InterfaceGroup(Solid::Control::NetworkInterface::Gsm, m_userSettings, m_systemSettings, eItem);
-        gsmGroup->setObjectName("gsm-interface-group");
-        gsmGroup->init();
-
-        eItem->setWidget(gsmGroup);
-    } else if (eItem->name() == CDMA_EXTENDER_ITEM_NAME) {
-        InterfaceGroup * cdmaGroup = new InterfaceGroup(Solid::Control::NetworkInterface::Cdma, m_userSettings, m_systemSettings, eItem);
-        cdmaGroup->setObjectName("cdma-interface-group");
-        cdmaGroup->init();
-
-        eItem->setWidget(cdmaGroup);
+        showWireless(true);
+    } else if (eItem->name() == CDMA_EXTENDER_ITEM_NAME || eItem->name() == GSM_EXTENDER_ITEM_NAME) {
+        showCellular(true);
     } else if (eItem->name() == VPN_EXTENDER_ITEM_NAME) {
-        VpnConnectionGroup * vpnGroup = new VpnConnectionGroup(m_userSettings, m_systemSettings, eItem);
-        vpnGroup->setObjectName("vpn-interface-group");
-        vpnGroup->init();
-        eItem->setWidget(vpnGroup);
-        connect(vpnGroup, SIGNAL(hideClicked()), SLOT(hideVpnGroup()));
+        showVpn(true);
     } else if (eItem->name() == GENERAL_EXTENDER_ITEM_NAME) {
         GeneralExtender* item = dynamic_cast<GeneralExtender* >(eItem);
         if (item) {
@@ -396,9 +376,11 @@ void NetworkManagerApplet::networkInterfaceAdded(const QString & uni)
     KConfigGroup cg = config();
     showWired(cg.readEntry("showWired", true));
     showWireless(cg.readEntry("showWireless", true));
+    showVpn(cg.readEntry("showVpn", true));
     //showPppoe(cg.readEntry("showPppoe", true));
     showCellular(cg.readEntry("showCellular", true));
     //showCdma(cg.readEntry("showCdma", true));
+    //showGeneral(true);
 
     interfaceConnectionStateChanged();
     update();
@@ -724,27 +706,6 @@ void NetworkManagerApplet::manageConnections()
     hidePopup();
 }
 
-void NetworkManagerApplet::showWired(bool show)
-{
-    m_showWired = show;
-    Plasma::ExtenderItem *eItem = extender()->item("wired");
-    if (show && hasInterfaceOfType(Solid::Control::NetworkInterface::Ieee8023)) {
-        if (!eItem) {
-            kDebug() << "SHOWING";
-            eItem = new Plasma::ExtenderItem(extender());
-            eItem->setName("wired");
-            eItem->setIcon("network-wired");
-            eItem->setTitle(i18nc("Label for ethernet group in popup","Ethernet"));
-            initExtenderItem(eItem);
-        }
-    } else {
-        if (eItem) {
-            kDebug() << "HIDING";
-            eItem->destroy();
-        }
-    }
-}
-
 void NetworkManagerApplet::showGeneral(bool show)
 {
     m_showGeneral = show;
@@ -753,11 +714,33 @@ void NetworkManagerApplet::showGeneral(bool show)
         if (eItem) {
             eItem->destroy(); // Apparently, we need to "refresh the extenderitem
         }
-        eItem = new GeneralExtender(extender());
-        initExtenderItem(eItem);
+        GeneralExtender * eItem = new GeneralExtender(extender());
+        eItem->graphicsWidget();
+        //initExtenderItem(eItem);
     } else {
         if (eItem) {
             kDebug() << "Hiding General Settings extender";
+            eItem->destroy();
+        }
+    }
+}
+
+void NetworkManagerApplet::showWired(bool show)
+{
+    m_showWired = show;
+    Plasma::ExtenderItem *eItem = extender()->item("wired");
+    if (show && hasInterfaceOfType(Solid::Control::NetworkInterface::Ieee8023)) {
+        if (eItem) {
+            eItem->destroy();
+        }
+        kDebug() << "SHOWING";
+        InterfaceGroup * eItem = new InterfaceGroup(Solid::Control::NetworkInterface::Ieee8023, m_activatableList, extender());
+        eItem->setName("wired");
+        eItem->setIcon("network-wired");
+        eItem->setTitle(i18nc("Label for ethernet group in popup","Wired Networking"));
+    } else {
+        if (eItem) {
+            kDebug() << "HIDING";
             eItem->destroy();
         }
     }
@@ -768,17 +751,17 @@ void NetworkManagerApplet::showWireless(bool show)
     m_showWireless = show;
     Plasma::ExtenderItem *eItem = extender()->item("wireless");
     if (show && hasInterfaceOfType(Solid::Control::NetworkInterface::Ieee80211)) {
-        if (!eItem) {
-            kDebug() << "SHOWING";
-            eItem = new Plasma::ExtenderItem(extender());
-            eItem->setName("wireless");
-            eItem->setIcon("network-wireless");
-            eItem->setTitle(i18nc("Label for wifi networks in popup","Wireless"));
-            initExtenderItem(eItem);
+        if (eItem) {
+            eItem->destroy();
         }
+        kDebug() << "Showing wireless";
+        InterfaceGroup *eItem = new InterfaceGroup(Solid::Control::NetworkInterface::Ieee80211, m_activatableList, extender());
+        eItem->setName("wireless");
+        eItem->setIcon("network-wireless");
+        eItem->setTitle(i18nc("Label for wifi networks in popup","Wireless Networking"));
     } else {
         if (eItem) {
-            kDebug() << "HIDING";
+            kDebug() << "Hiding wireless";
             eItem->destroy();
         }
     }
@@ -786,23 +769,26 @@ void NetworkManagerApplet::showWireless(bool show)
 
 void NetworkManagerApplet::showVpn(bool show)
 {
+#if 0
     m_showVpn = show;
     Plasma::ExtenderItem *eItem = extender()->item("vpn");
     if (show) {
-        if (!eItem) {
-            kDebug() << "SHOWING";
-            eItem = new Plasma::ExtenderItem(extender());
-            eItem->setName("vpn");
-            eItem->setIcon("network-server");
-            eItem->setTitle(i18nc("Label for vpn connections in popup","VPN Connections"));
-            initExtenderItem(eItem);
+        if (eItem) {
+            eItem->destroy();
         }
+        kDebug() << "SHOWING";
+        VpnConnectionGroup * eItem = new VpnConnectionGroup(m_userSettings, m_systemSettings, extender());
+        eItem->setName("vpn");
+        eItem->setIcon("network-server");
+        eItem->setTitle(i18nc("Label for vpn connections in popup","VPN Connections"));
+        connect(eItem, SIGNAL(hideClicked()), SLOT(hideVpnGroup()));
     } else {
         if (eItem) {
             kDebug() << "HIDING";
             eItem->destroy();
         }
     }
+#endif
 }
 
 void NetworkManagerApplet::showCellular(bool show)
@@ -811,7 +797,7 @@ void NetworkManagerApplet::showCellular(bool show)
     Plasma::ExtenderItem *gsmItem = extender()->item("gsm");
     if (show && hasInterfaceOfType(Solid::Control::NetworkInterface::Gsm)) {
         if (!gsmItem) {
-            gsmItem = new Plasma::ExtenderItem(extender());
+            InterfaceGroup * gsmItem = new InterfaceGroup(Solid::Control::NetworkInterface::Gsm, m_activatableList, extender());
             gsmItem->setName("gsm");
             gsmItem->setIcon("phone");
             gsmItem->setTitle(i18nc("Label for mobile broadband (GSM/CDMA/UMTS/HDSPA etc)","Mobile Broadband"));
@@ -825,7 +811,7 @@ void NetworkManagerApplet::showCellular(bool show)
     Plasma::ExtenderItem *cdmaItem = extender()->item("cdma");
     if (show && hasInterfaceOfType(Solid::Control::NetworkInterface::Cdma)) {
         if (!cdmaItem) {
-            cdmaItem = new Plasma::ExtenderItem(extender());
+            InterfaceGroup * cdmaItem = new InterfaceGroup(Solid::Control::NetworkInterface::Cdma, m_activatableList, extender());
             cdmaItem->setName("cdma");
             cdmaItem->setIcon("phone");
             cdmaItem->setTitle(i18nc("Label for mobile broadband (GSM/CDMA/UMTS/HDSPA etc)","Mobile Broadband"));
@@ -907,6 +893,7 @@ void NetworkManagerApplet::popupEvent(bool show)
 {
     // Notify the wireless extender of popup events so it can revert its hidden wireless network
     // item to button mode
+    return;
     Plasma::ExtenderItem *eItem = extender()->item("wireless");
     if (eItem) {
         InterfaceGroup * wireless = static_cast<InterfaceGroup*>(eItem->widget());

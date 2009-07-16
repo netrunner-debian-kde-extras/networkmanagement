@@ -23,6 +23,7 @@ X = rejected
     * LEAP
     / WPA-EAP
       * TTLS requires that the certs are decrypted in the service and sent to NM, see libnm-util
+    * Dynamic WEP (802.1x)
   + also for 802.1x
     * Add system cert path property to UI and schema for 802.1x
   . Create Connection.Secrets objects and do lazy secret loading. Change configxml classes to not read wallet on start
@@ -82,6 +83,7 @@ X = rejected
            . Type
            / Extended information (System/user connection; IP config; pppStats bytes up/down stats (FEATURE) etc)
            . Activate button
+            X Prompt for which interface if multiple - solved differently in monolithic 
          / Wireless connection item
            . Signal strength
            * Hide strength meter and security icon on disconnect
@@ -123,6 +125,7 @@ X = rejected
   * Remember wireless/networking state between sessions (#181488)
   *  Reuse same notification when a connection is being brought up (#132000)
   * Detect when NM 0.7 Solid backend not loaded
+  . Guarantee fit when on small res (840x480)
 
 - Update Solid
   * Pass the reason arg in org.freedesktop.NetworkManager.Device.StateChanged through, so the applet can use it for error reporting
@@ -133,14 +136,41 @@ X = rejected
 
 
 Icons & Artwork:
-- small connect (action)
-- small disconnect (action)
-- wireless network connected
-- wireless network disconnected
-- mobile broadband (3g) connected
-- mobile broadband (3g) disconnected
+
+- wireless network connected, actions/network-wireless-connect
+- wireless network disconnected, actions/network-wireless-disconnect
+- network-wired-connected
+- strength-showing wireless SVG for Plasma:
+    - 3 - 4 elements showing signal strength
+    - 3 connection stages
+
+- wired network connected
+- wired network disconnected
+    - 3 connection stages
+
+- mobile broadband (3g / umts) connected
+- mobile broadband (3g / umts) disconnected
+    - 3 - 4 elements showing signal strength
+    - 3 connection stages
+
+- network-connect (action) (independant from device)
+- network-disconnect (action) (independant from device)
+
 - VPN
-- strength-showing wireless
-- connecting wireless
-- connecting wired
-- conecting gsm
+
+
+snippet for http://techbase.kde.org/Projects/Oxygen/Missing_Icons :
+
+||plasma||networkmanager|| network-wireless.svg || panel "icon" for plasma, shows a wireless connection, and 3 - 4 steps of signal strength, 3 steps for connection stages, ad-hoc connection mode ||<span style="color: red">No</span>||
+|-----
+||plasma||networkmanager|| network-wired.svg || panel "icon" for plasma, shows a connected or disconnected wired network device, 3 steps for connection stages||<span style="color: red">No</span>||
+|-----
+||plasma||networkmanager|| network-mobile.svg || panel "icon" for plasma, shows a connected or disconnected mobile broadband device and 3 - 4 steps of signal strength, 3 steps for connection stages ||<span style="color: red">No</span>||
+|-----
+||plasma||networkmanager|| network-VPN.svg || panel "icon" for plasma, shows a connected or disconnected VPN connection, 3 steps for connection stages ||<span style="color: red">No</span>||
+|-----
+||plasma||networkmanager|| actions/network-connect || icon to be used on "connect to this network" buttons ||<span style="color: red">No</span>||
+|-----
+||plasma||networkmanager|| actions/network-disconnect || icon to be used on "disconnect from this network" buttons ||<span style="color: red">No</span>||
+|-----
+

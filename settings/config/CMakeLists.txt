@@ -1,8 +1,8 @@
 include_directories(../../libs)
-include_directories(../../libs/storage)
+include_directories(../../libs/internals)
 include_directories(../../libs/ui)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
-include_directories(${CMAKE_CURRENT_BINARY_DIR}/../../libs/storage)
+include_directories(${CMAKE_CURRENT_BINARY_DIR}/../../libs/internals)
 
 ## next target: connection editor KCM
 
@@ -15,7 +15,7 @@ set(kcm_networkmanagement_SRCS
 kde4_add_ui_files(kcm_networkmanagement_SRCS manageconnectionwidget.ui)
 kde4_add_plugin(kcm_networkmanagement ${kcm_networkmanagement_SRCS})
 
-target_link_libraries(kcm_networkmanagement knmdbus knmui knmstorage solidcontrol ${KDE4_KDEUI_LIBS} ${KDE4_KUTILS_LIBS})
+target_link_libraries(kcm_networkmanagement knmui knminternals solidcontrol ${KDE4_KDEUI_LIBS} ${KDE4_KUTILS_LIBS})
 
 install(TARGETS kcm_networkmanagement DESTINATION ${PLUGIN_INSTALL_DIR})
 

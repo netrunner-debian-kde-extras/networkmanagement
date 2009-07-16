@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<node>
+  <interface name="org.kde.networkmanagement.InterfaceConnection">
+    <method name="connectionUuid">
+      <arg name="uni" type="s" direction="out" />
+    </method>
+    <method name="connectionType">
+      <arg name="type" type="i" direction="out" />
+    </method>
+    <method name="connectionName">
+      <arg name="name" type="s" direction="out" />
+    </method>
+    <method name="activationState">
+      <arg name="uni" type="i" direction="out" />
+    </method>
+    <signal name="activationStateChanged">
+      <arg name="state" type="u" direction="out" />
+    </signal>
+    <property name="type" type="u" access="read"/>
+    <property name="uuid" type="s" access="read"/>
+    <property name="name" type="s" access="read"/>
+    <property name="activationState" type="u" access="read"/>
+  </interface>
+</node>
