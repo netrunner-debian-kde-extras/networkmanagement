@@ -12,9 +12,10 @@ DEB_CMAKE_CUSTOM_FLAGS += -DCMAKE_USE_RELATIVE_PATHS=ON \
                           -DDBUS_SYSTEM_POLICY_DIR=/etc/dbus-1/system.d
 
 override_dh_install:
-	rm debian/plasma-widget-networkmanagement/usr/lib/libknmui.so \
-	   debian/plasma-widget-networkmanagement/usr/lib/libknmstorage.so \
-	   debian/plasma-widget-networkmanagement/usr/lib/libknmdbus.so
+	rm debian/plasma-widget-networkmanagement/usr/lib/libknminternals.so \
+	   debian/plasma-widget-networkmanagement/usr/lib/libknmclient.so \
+	   debian/plasma-widget-networkmanagement/usr/lib/libknmui.so \
+	   debian/plasma-widget-networkmanagement/usr/lib/libknmservice.so
 
 %:
 	dh --with quilt $@
