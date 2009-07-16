@@ -7,7 +7,7 @@ plasma-widget-networkmanagement (0.1~svn998110-0r1) UNRELEASED; urgency=low
   * Build depend on libknotificationitem-1-dev.
   * Do not run tests.
   * Update installed files.
-  * Build depend on kDE 4.3.
+  * Build depend on KDE 4.3.
 
  -- Modestas Vainius <modestas@vainius.eu>  Fri, 17 Jul 2009 02:32:45 +0300
 
