@@ -2,9 +2,10 @@
 
 DEB_KDE_LINK_WITH_AS_NEEDED ?= yes
 
+ifneq (,$(shell which tg))
 QUILT_PATCH_DIR := debian/patches
--include /usr/share/topgit/tg2quilt.mk
-.PHONY: /usr/share/topgit/tg2quilt.mk
+include /usr/share/topgit/tg2quilt.mk
+endif
 
 include /usr/share/pkg-kde-tools/makefiles/1/debhelper/kde.mk
 
