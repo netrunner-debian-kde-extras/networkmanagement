@@ -26,8 +26,9 @@ plasma-widget-networkmanagement (0.1~svn1005432-0r1) UNRELEASED; urgency=low
   * Add install files for all packages and drop dh_install hack from
     debian/rules.
   * Install bug files to all packages.
+  * Update lintian overrides.
 
- -- Modestas Vainius <modestas@vainius.eu>  Sat, 01 Aug 2009 12:23:42 +0300
+ -- Modestas Vainius <modestas@vainius.eu>  Sat, 01 Aug 2009 12:58:35 +0300
 
 plasma-widget-networkmanagement (0.1~svn970021-2) experimental; urgency=low
 
