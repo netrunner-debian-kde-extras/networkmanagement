@@ -11,11 +11,17 @@ include /usr/share/pkg-kde-tools/makefiles/1/debhelper/kde.mk
 DEB_CMAKE_CUSTOM_FLAGS += -DCMAKE_USE_RELATIVE_PATHS=ON \
                           -DDBUS_SYSTEM_POLICY_DIR=/etc/dbus-1/system.d
 
+DEB_BINARY_VERSION := $(shell dpkg-parsechangelog | grep '^Version: ' | sed 's/^Version: //')
+
 override_dh_install:
 	rm debian/plasma-widget-networkmanagement/usr/lib/libknminternals.so \
 	   debian/plasma-widget-networkmanagement/usr/lib/libknmclient.so \
 	   debian/plasma-widget-networkmanagement/usr/lib/libknmui.so \
 	   debian/plasma-widget-networkmanagement/usr/lib/libknmservice.so
+
+override_dh_makeshlibs:
+	dh_makeshlibs -pknm-runtime -V'knm-runtime (= $(DEB_BINARY_VERSION))'
+	dh_makeshlibs --remaining-packages
 
 %:
 	dh --with quilt $@

@@ -18,8 +18,9 @@ plasma-widget-networkmanagement (0.1~svn1005432-0r1) UNRELEASED; urgency=low
       - recommend kwalletmanager and network-manager plugins;
       - recommend either network-manager-kde or plasma widget;
       - replaces previous plasma-widget-networkmanagement.
+      - force shlibs to = binary:Version.
 
- -- Modestas Vainius <modestas@vainius.eu>  Sat, 01 Aug 2009 10:20:54 +0300
+ -- Modestas Vainius <modestas@vainius.eu>  Sat, 01 Aug 2009 10:31:39 +0300
 
 plasma-widget-networkmanagement (0.1~svn970021-2) experimental; urgency=low
 
