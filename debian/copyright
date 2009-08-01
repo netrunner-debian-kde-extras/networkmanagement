@@ -6,6 +6,7 @@ svn://anonsvn.kde.org/home/kde/trunk/playground/base/plasma/applets/networkmanag
 
 Upstream Authors:
 
+  Will Stephenson <wstephenson@kde.org>
   Christopher Blauvelt <cblauvelt@gmail.com>
 
 Upstream copyright holders:
@@ -13,75 +14,60 @@ Upstream copyright holders:
   Copyright: © 2008-2009 Will Stephenson <wstephenson@kde.org>
   Copyright: © 2008 Christopher Blauvelt <cblauvelt@gmail.com>
   Copyright: © 2008 Helmut Schaa <helmut.schaa@googlemail.com>
+  Copyright: © 2008-2009 Sebastian Kügler <sebas@kde.org>
   Copyright: © 2006 Trolltech ASA. All Rights Reserved.
-  Copyright: © 2008 Sebastian Kügler <sebas@kde.org>
+  Copyright: © 2008 Frederik Gladhorn <gladhorn@kde.org>
+  Copyright: © 2006-2007 David Faure <faure@kde.org>
   Copyright: © 2003-2005 Jouni Malinen <jkmaline@cc.hut.fi>
+  Copyright: © 2009 Paul Marchouk <paul.marchouk@gmail.com>
   Copyright: © 2007 Aaron Seigo <aseigo@kde.org>
-  Copyright: © 2003 Cornelius Schumacher <schumacher@kde.org>
-  Copyright: © 2007 David Faure <faure@kde.org>
+  Copyright: © 2009 Dario Freddi <drf54321@gmail.com>
   Copyright: © 2008 Allen Winter <winter@kde.org>
   Copyright: © 2003 Waldo Bastian <bastian@kde.org>
+  Copyright: © 2006 Michaël Larouche <michael.larouche@kdemail.net>
+  Copyright: © 2003 Cornelius Schumacher <schumacher@kde.org>
   Copyright: ©  Tim Niemueller <tim@niemueller.de>
   Copyright: © 2003 Zack Rusin <zack@kde.org>
-  Copyright: © 2006 Michaël Larouche <michael.larouche@kdemail.net>
-  Copyright: © 2008 Nokia Corporation and/or its subsidiary(-ies) <qt-info@nokia.com>
 
 Debian packaging (debian/*) is under:
 
 Copyright: © 2008-2009 Modestas Vainius <modestas@vainius.eu>
-           © Joey Hess <joeyh@debian.org> (debhelper scripts)
 License:   GPL-2+
 
 License for all components unless stated otherwise:
 --
-  GNU General Public License, version 2 or later (GPL-2+)
+  GNU General Public License, version 2 or 3 or later (GPL-2+)
 
-  This program is free software; you can redistribute it and/or
-  modify it under the terms of the GNU General Public License as
-  published by the Free Software Foundation; either version 2 of
-  the License or (at your option) version 3 or any later version
-  accepted by the membership of KDE e.V. (or its successor approved
-  by the membership of KDE e.V.), which shall act as a proxy
-  defined in Section 14 of version 3 of the license.
+  | This program is free software; you can redistribute it and/or
+  | modify it under the terms of the GNU General Public License as
+  | published by the Free Software Foundation; either version 2 of
+  | the License or (at your option) version 3 or any later version
+  | accepted by the membership of KDE e.V. (or its successor approved
+  | by the membership of KDE e.V.), which shall act as a proxy
+  | defined in Section 14 of version 3 of the license.
 
   On Debian systems, the complete text of the
   GNU General Public License version 2 can be found in
   /usr/share/common-licenses/GPL-2
+
+  On Debian systems, the complete text of the
+  GNU General Public License version 3 can be found in
+  /usr/share/common-licenses/GPL-3
+
+  However, as per additional licensing information below, its safe to consider
+  all binaries (and private libraries) to be available only under GNU General
+  Public License, version 2 (GPL-2).
 --
 
 Other used licenses:
 --
-  GNU General Public License, version 2 or 3 (GPL-2or3)
-    The following file is licensed under this license:
-
-    + tests/qdbusfornm.cpp
-
-  Alternatively, this file may be used under the terms of the GNU General
-  Public License versions 2.0 or 3.0 as published by the Free Software
-  Foundation and appearing in the file LICENSE.GPL included in the packaging of
-  this file. Please review the following information to ensure GNU General
-  Public Licensing requirements will be met:
-  http://www.fsf.org/licensing/licenses/info/GPLv2.html and
-  http://www.gnu.org/copyleft/gpl.html. In addition, as a special exception,
-  Nokia gives you certain additional rights. These rights are described in the
-  Nokia Qt GPL Exception version 1.3, included in the file GPL_EXCEPTION.txt in
-  this package.
-
-  On Debian systems, the complete text of the
-  GNU General Public License version 2 and 3 can be found in
-  /usr/share/common-licenses/GPL-2
-  /usr/share/common-licenses/GPL-3
-
-  Nokia Qt GPL Exception version 1.3 is available in
-  /usr/share/doc/libqtcore4/GPL_EXCEPTION_ADDENDUM.TXT.gz
---
-
---
   GNU General Public License, version 2 (GPL-2)
-    2 files are licensed under this license:
+    4 files are licensed under this license:
 
-    + libs/storage/settings/pbkdf2.cpp
-    + libs/storage/settings/pbkdf2.h
+    + backends/NetworkManager/pbkdf2.cpp
+    + backends/NetworkManager/pbkdf2.h
+    + libs/internals/settings/pbkdf2.cpp
+    + libs/internals/settings/pbkdf2.h
 
   On Debian systems, the complete text of the
   GNU General Public License version 2 can be found in
@@ -90,12 +76,18 @@ Other used licenses:
 
 --
   GNU Library General Public License, version 2 (LGPL-2)
-    22 files are licensed under this license:
+    24 files are licensed under this license:
 
+    + backends/NetworkManager/busconnection.cpp
+    + backends/NetworkManager/busconnection.h
+    + backends/NetworkManager/wephash.cpp
+    + backends/NetworkManager/wephash.h
     + libs/marshalarguments.h
     + libs/types.h
-    + libs/storage/settings/wephash.cpp
-    + libs/storage/settings/wephash.h
+    + libs/internals/settings/wephash.cpp
+    + libs/internals/settings/wephash.h
+    + libs/service/connectionlist.cpp
+    + libs/service/connectionlist.h
     + libs/ui/accesspoint.cpp
     + libs/ui/accesspoint.h
     + libs/ui/apitemdelegate.cpp
@@ -109,10 +101,6 @@ Other used licenses:
     + libs/ui/scanwidget.cpp
     + libs/ui/scanwidget.h
     settings/*
-    + settings/service/busconnection.cpp
-    + settings/service/busconnection.h
-    + settings/service/networksettings.cpp
-    + settings/service/networksettings.h
 
   On Debian systems, the complete text of the
   GNU Library General Public License version 2 can be found in
@@ -121,12 +109,16 @@ Other used licenses:
 
 --
   GNU Library General Public License, version 2 or later (LGPL-2+)
-    4 files are licensed under this license:
+    8 files are licensed under this license:
 
+    + backends/NetworkManager/nm07dbus_export.h
     + libs/knm_export.h
-    + libs/storage/configxml.cpp
-    + libs/storage/configxml.h
-    + libs/storage/kconfig_compiler.cpp
+    + libs/client/knmclient_export.h
+    + libs/internals/configxml.cpp
+    + libs/internals/configxml.h
+    + libs/internals/kconfig_compiler.cpp
+    + libs/internals/knminternals_export.h
+    + solidcontrolfuture/solid_control_export.h
 
   On Debian systems, the complete text of the
   GNU Library General Public License version 2 can be found in
@@ -135,9 +127,45 @@ Other used licenses:
 
 --
   GNU Lesser General Public License, version 2.1 or later (LGPL-2.1+)
-    23 files are licensed under this license:
+    104 files are licensed under this license:
 
-    libs/storage/*
+    + backends/NetworkManager/connectiondbus.cpp
+    + backends/NetworkManager/connectiondbus.h
+    + backends/NetworkManager/nmdbusactiveconnectionmonitor.cpp
+    + backends/NetworkManager/nmdbusactiveconnectionmonitor.h
+    + backends/NetworkManager/settingdbus.cpp
+    + backends/NetworkManager/settingdbus.h
+    libs/client/* excluding:
+    -+ libs/client/knmclient_export.h
+    + libs/client/tests/test_remoteactivatablelist.cpp
+    libs/internals/* excluding:
+    -+ libs/internals/activatable.cpp
+    -+ libs/internals/activatable.h
+    -+ libs/internals/configxml.cpp
+    -+ libs/internals/configxml.h
+    -+ libs/internals/interfaceconnection.cpp
+    -+ libs/internals/interfaceconnection.h
+    -+ libs/internals/kconfig_compiler.cpp
+    -+ libs/internals/knminternals_export.h
+    -+ libs/internals/secretstoragehelper.cpp
+    -+ libs/internals/secretstoragehelper.h
+    -+ libs/internals/wirelessinterfaceconnection.cpp
+    -+ libs/internals/wirelessinterfaceconnection.h
+    -+ libs/internals/wirelessnetwork.cpp
+    -+ libs/internals/wirelessnetwork.h
+    libs/service/* excluding:
+    -? libs/service/CMakeLists.txt
+    -? libs/service/activatableobserver.cpp
+    -+ libs/service/connectionlist.cpp
+    -+ libs/service/connectionlist.h
+    -+ libs/service/connectionlistpersistence.cpp
+    -+ libs/service/connectionlistpersistence.h
+    -+ libs/service/events.cpp
+    -+ libs/service/events.h
+    -+ libs/service/sortedactivatablelist.cpp
+    -+ libs/service/sortedactivatablelist.h
+    libs/service/tests/* excluding:
+    -? libs/service/tests/CMakeLists.txt
     + libs/ui/cdmaconnectioneditor.cpp
     + libs/ui/gsmconnectioneditor.cpp
     + libs/ui/pppoepreferences.cpp
@@ -147,6 +175,15 @@ Other used licenses:
     + libs/ui/vpnuiplugin.h
     + libs/ui/wiredpreferences.cpp
     + libs/ui/wirelesspreferences.cpp
+    + monolithic/interfaceconnectionitem_p.h
+    + monolithic/monolithic.cpp
+    settings/config/* excluding:
+    -? settings/config/CMakeLists.txt
+    -+ settings/config/manageconnectionwidget.cpp
+    solidcontrolfuture/* excluding:
+    -? solidcontrolfuture/CMakeLists.txt
+    -+ solidcontrolfuture/solid_control_export.h
+    -+ solidcontrolfuture/wirelessnetworkinterfaceenvironment.h
     + tests/testconfigxml.cpp
     + tests/testnewstorage.cpp
 
@@ -154,3 +191,4 @@ Other used licenses:
   GNU Lesser General Public License version 2.1 can be found in
   /usr/share/common-licenses/LGPL-2.1
 --
+
