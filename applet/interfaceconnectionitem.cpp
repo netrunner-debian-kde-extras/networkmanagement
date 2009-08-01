@@ -53,10 +53,17 @@ void InterfaceConnectionItem::setupItem()
     m_connectButton = new Plasma::IconWidget(this);
     m_connectButton->setDrawBackground(true);
     m_connectButton->setIcon("network-wired");
-    m_connectButton->setText(interfaceConnection()->connectionName());
+    if (interfaceConnection()) {
+        m_connectButton->setText(interfaceConnection()->connectionName());
+    } else {
+        m_connectButton->setText("missing name");
+    }
     m_connectButton->setMinimumWidth(160);
     m_connectButton->setMaximumHeight(rowHeight);
     m_connectButton->setOrientation(Qt::Horizontal);
+#if KDE_IS_VERSION(4,2,60)
+    m_connectButton->setTextBackgroundColor(QColor());
+#endif
 
     //m_connectButton->setToolTip(i18nc("button to connect to wired network",
     //                                  "Connect to wired network %1", m_connection->id()));
@@ -78,9 +85,5 @@ InterfaceConnectionItem::~InterfaceConnectionItem()
 
 }
 
-RemoteInterfaceConnection * InterfaceConnectionItem::interfaceConnection() const
-{
-    return qobject_cast<RemoteInterfaceConnection*>(m_activatable);
-}
 
 // vim: sw=4 sts=4 et tw=100

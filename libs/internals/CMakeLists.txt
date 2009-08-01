@@ -64,10 +64,12 @@ set(knminternals_SRCS
    activatable.cpp
    interfaceconnection.cpp
    wirelessinterfaceconnection.cpp
-   wirelessitem.cpp
-   wirelessnetworkitem.cpp
+   wirelessobject.cpp
+   wirelessnetwork.cpp
    unconfiguredinterface.cpp
    vpninterfaceconnection.cpp
+
+   wpasecretidentifier.cpp
    )
 
 kde4_add_kcfg_files(knminternals_SRCS knmserviceprefs.kcfgc)

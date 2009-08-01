@@ -20,7 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "knetworkmanagertrayicon.h"
 
-#include <QSignalMapper>
+#include <QPointer>
 #include <QVBoxLayout>
 #include <QWidgetAction>
 
@@ -34,53 +34,59 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <solid/control/networkmanager.h>
 
-#include "activatable.h"
-#include "activatabledebug.h"
-#include "activatablelist.h"
-#include "interfaceconnection.h"
-#include "unconfiguredinterface.h"
-#include "vpninterfaceconnection.h"
-#include "wirelessinterfaceconnection.h"
-#include "wirelessnetworkitem.h"
+#include <activatable.h>
+#include <activatabledebug.h>
+#include <sortedactivatablelist.h>
+#include <interfaceconnection.h>
+#include <unconfiguredinterface.h>
+#include <vpninterfaceconnection.h>
+#include <wirelessinterfaceconnection.h>
+#include <wirelessnetwork.h>
 
 #include "interfaceconnectionitem.h"
 #include "vpninterfaceconnectionitem.h"
 #include "wirelessinterfaceconnectionitem.h"
-#include "sortedactivatablelist.h"
 #include "unconfiguredinterfaceitem.h"
-#include "wirelessnetworkitemitem.h"
+#include "wirelessnetworkitem.h"
 
-Q_DECLARE_METATYPE(Knm::Activatable *);
+Q_DECLARE_METATYPE(Knm::Activatable *)
 
 class KNetworkManagerTrayIconPrivate
 {
 public:
     KNetworkManagerTrayIconPrivate()
-        : sortedList(0),
+        : list(0),
         iconName(QLatin1String("networkmanager")),
         flightModeAction(0),
         prefsAction(0),
-        wirelessNetworkItemMenu(0)
+        wirelessNetworkItemMenu(0), active(true)
     { }
     Solid::Control::NetworkInterface::Types interfaceTypes;
-    SortedActivatableList * sortedList;
+    SortedActivatableList * list;
     QHash<Knm::Activatable *, QWidgetAction *> actions;
     QStringList deviceUnis;
     QString iconName;
     KAction * flightModeAction;
     KAction * prefsAction;
     KMenu * wirelessNetworkItemMenu;
+    bool active;
+    // used for updating the tray icon, and indicates whether we are currently displaying a wireless
+    // network interface's state in the tray
+    QPointer<Solid::Control::NetworkInterface> displayedNetworkInterface;
+    QPointer<Solid::Control::AccessPoint> activeAccessPoint;
 };
 
 /* for qSort()ing */
 bool networkInterfaceLessThan(Solid::Control::NetworkInterface * if1, Solid::Control::NetworkInterface * if2);
 bool networkInterfaceSameConnectionStateLessThan(Solid::Control::NetworkInterface * if1, Solid::Control::NetworkInterface * if2);
 
-KNetworkManagerTrayIcon::KNetworkManagerTrayIcon(Solid::Control::NetworkInterface::Types types, const QString & id, ActivatableList * list, QObject * parent)
+KNetworkManagerTrayIcon::KNetworkManagerTrayIcon(Solid::Control::NetworkInterface::Types types, const QString & id, SortedActivatableList * list, bool active, QObject * parent)
     : KNotificationItem(id, parent), d_ptr(new KNetworkManagerTrayIconPrivate)
 {
     Q_D(KNetworkManagerTrayIcon);
     d->interfaceTypes = types;
+    d->active = active;
+    d->wirelessNetworkItemMenu = new KMenu(contextMenu());
 
     setStandardActionsEnabled(false);
     setCategory(Experimental::KNotificationItem::Hardware);
@@ -88,13 +94,14 @@ KNetworkManagerTrayIcon::KNetworkManagerTrayIcon(Solid::Control::NetworkInterfac
     setIconByName(d->iconName);
 
     setAssociatedWidget(contextMenu());
-    setStatus( (Solid::Control::NetworkManager::status() == Solid::Networking::Unknown ? KNotificationItem::Passive : KNotificationItem::Active));
+    setStatus( (!active || Solid::Control::NetworkManager::status() == Solid::Networking::Unknown )? KNotificationItem::Passive : KNotificationItem::Active);
 
     if (types.testFlag(Solid::Control::NetworkInterface::Ieee80211)) {
-        d->flightModeAction = new KAction(i18nc("@action:inmenu turns off wireless networking", "Disable wireless"), this);
+        d->flightModeAction = new KAction(i18nc("@action:inmenu turns off wireless networking", "Enable wireless"), this);
         d->flightModeAction->setCheckable(true);
-        d->flightModeAction->setChecked(!Solid::Control::NetworkManager::isWirelessEnabled());
-        connect(d->flightModeAction, SIGNAL(toggled(bool)), this, SLOT(disableWireless(bool)));
+        d->flightModeAction->setChecked(Solid::Control::NetworkManager::isWirelessEnabled());
+        d->flightModeAction->setEnabled(Solid::Control::NetworkManager::isWirelessHardwareEnabled());
+        connect(d->flightModeAction, SIGNAL(toggled(bool)), this, SLOT(enableWireless(bool)));
         connect(Solid::Control::NetworkManager::notifier(), SIGNAL(wirelessHardwareEnabledChanged(bool)),
                 this, SLOT(wirelessEnabledChanged()));
         connect(Solid::Control::NetworkManager::notifier(), SIGNAL(wirelessEnabledChanged(bool)),
@@ -104,12 +111,7 @@ KNetworkManagerTrayIcon::KNetworkManagerTrayIcon(Solid::Control::NetworkInterfac
     d->prefsAction = KStandardAction::preferences(this, SLOT(slotPreferences()), this);
     d->prefsAction->setText(i18nc("@action:inmenu Preferences action title", "Manage Connections..."));
 
-    d->sortedList = new SortedActivatableList(types, this);
-
-    // HACK - insert a SortedActivatableList before us, so we can use its sort
-    list->unregisterObserver(this);
-    list->registerObserver(d->sortedList);
-    list->registerObserver(this, d->sortedList);
+    d->list = list;
 
     fillPopup();
 
@@ -128,7 +130,7 @@ KNetworkManagerTrayIcon::KNetworkManagerTrayIcon(Solid::Control::NetworkInterfac
     QObject::connect(Solid::Control::NetworkManager::notifier(),
             SIGNAL(networkInterfaceRemoved(const QString&)),
             this,
-            SLOT(updateTrayIcon()));
+            SLOT(updateInterfaceToDisplay()));
 
     // listen to existing devices' state changes
     foreach (Solid::Control::NetworkInterface * iface,
@@ -139,8 +141,7 @@ KNetworkManagerTrayIcon::KNetworkManagerTrayIcon(Solid::Control::NetworkInterfac
         }
     }
 
-    // set initial tray icon appearance [and tooltip]
-    updateTrayIcon();
+    updateInterfaceToDisplay();
 }
 
 KNetworkManagerTrayIcon::~KNetworkManagerTrayIcon()
@@ -158,6 +159,14 @@ void KNetworkManagerTrayIcon::fillPopup()
     Q_D(KNetworkManagerTrayIcon);
     d->deviceUnis.clear();
 
+    // build a list of wireless devices, so we can put its UnconfiguredInterface in the submenu
+    QStringList wirelessDeviceUnis;
+    foreach (Solid::Control::NetworkInterface * interface, Solid::Control::NetworkManager::networkInterfaces()) {
+        if (interface->type() == Solid::Control::NetworkInterface::Ieee80211) {
+            wirelessDeviceUnis.append(interface->uni());
+        }
+    }
+
     // clear the menu without deleting useful actions
     foreach (QAction * action, contextMenu()->actions()) {
         contextMenu()->removeAction(action);
@@ -167,17 +176,35 @@ void KNetworkManagerTrayIcon::fillPopup()
         }
     }
 
-    if (d->wirelessNetworkItemMenu) {
-        foreach (QAction * action, d->wirelessNetworkItemMenu->actions()) {
-            d->wirelessNetworkItemMenu->removeAction(action);
-        }
+    foreach (QAction * action, d->wirelessNetworkItemMenu->actions()) {
+        d->wirelessNetworkItemMenu->removeAction(action);
     }
 
-    QAction * insertionPointForWirelessNetworkItemSubmenu = 0;
+    QAction * insertionPointForWirelessNetworkSubmenu = 0;
 
-    foreach (Knm::Activatable * activatable, d->sortedList->activatables()) {
+    // counter to tell us how to label the wireless network item menu
+    uint wirelessNetworkItemCount = 0;
+
+    // list of wireless unconfigured interface items.  We put these in the main menu if there are
+    // NO wirelessinterfaceconnections, otherwise at the bottom of the wireless network submenu
+    QList<QWidgetAction *> wirelessUnconfiguredInterfaceItems;
+    // counter of wirelessinterfaceconnections, to tell where to put the wireless unconfigured
+    // interface items
+    uint wirelessInterfaceConnectionCount = 0;
+
+    // if not active only add a warning notice
+    if (!d->active) {
+        QAction * passiveAction = new QAction(i18nc("@action:inmenu Disable action text used when it is not possible to actively control networking", "Applet in passive mode"), this);
+        passiveAction->setToolTip(i18nc("@info:tooltip when it is not possible to actively control networking", "Another applet is currently responsible for Network Management"));
+        passiveAction->setEnabled(false);
+        contextMenu()->addAction(passiveAction);
+        return;
+    }
+
+    foreach (Knm::Activatable * activatable, d->list->activatables()) {
         QWidgetAction * action = 0;
         ActivatableItem * widget = 0;
+
         if (d->actions.contains(activatable)) {
             action = d->actions[activatable];
             widget = qobject_cast<ActivatableItem*>(action->defaultWidget());
@@ -186,73 +213,102 @@ void KNetworkManagerTrayIcon::fillPopup()
             action->setData(QVariant::fromValue(activatable));
             if (activatable->activatableType() == Knm::Activatable::InterfaceConnection) {
                 Knm::InterfaceConnection * ic = static_cast<Knm::InterfaceConnection*>(activatable);
-                kDebug() << ic->connectionName();
-                widget = new InterfaceConnectionItem(ic, contextMenu());
+                kDebug() << "IC" << ic->connectionName();
+                widget = new InterfaceConnectionItem(ic, 0);
             } else if ( activatable->activatableType() == Knm::Activatable::WirelessInterfaceConnection) {
                 Knm::WirelessInterfaceConnection * wic = static_cast<Knm::WirelessInterfaceConnection*>(activatable);
-                kDebug() << wic->connectionName();
-                widget = new WirelessInterfaceConnectionItem(wic, contextMenu());
-            } else if ( activatable->activatableType() == Knm::Activatable::WirelessNetworkItem) {
-                Knm::WirelessNetworkItem * wni = static_cast<Knm::WirelessNetworkItem*>(activatable);
-                kDebug() << wni->ssid();
-                widget = new WirelessNetworkItemItem(wni, contextMenu());
+                kDebug() << "WIC" << wic->connectionName();
+                widget = new WirelessInterfaceConnectionItem(wic, 0);
+            } else if ( activatable->activatableType() == Knm::Activatable::WirelessNetwork) {
+                Knm::WirelessNetwork * wni = static_cast<Knm::WirelessNetwork*>(activatable);
+                kDebug() << "WNI" << wni->ssid();
+                widget = new WirelessNetworkItem(wni, 0);
             } else if ( activatable->activatableType() == Knm::Activatable::UnconfiguredInterface) {
                 Knm::UnconfiguredInterface * unco = static_cast<Knm::UnconfiguredInterface*>(activatable);
-                kDebug() << unco->deviceUni();
-                widget = new UnconfiguredInterfaceItem(unco, contextMenu());
+                kDebug() << "UCI" << unco->deviceUni();
+                widget = new UnconfiguredInterfaceItem(unco, 0);
+                widget->setObjectName(unco->deviceUni());
             } else if (activatable->activatableType() == Knm::Activatable::VpnInterfaceConnection) {
                 Knm::VpnInterfaceConnection * vpn = static_cast<Knm::VpnInterfaceConnection*>(activatable);
-                kDebug() << vpn->connectionName();
-                widget = new VpnInterfaceConnectionItem(vpn, contextMenu());
+                kDebug() << "VPN" << vpn->connectionName();
+                widget = new VpnInterfaceConnectionItem(vpn, 0);
             }
             action->setDefaultWidget(widget);
             d->actions.insert(activatable, action);
         }
 
         if (action && widget) {
-            // put all wireless network items into a submenu
-            if (activatable->activatableType() == Knm::Activatable::WirelessNetworkItem) {
-                if (!d->wirelessNetworkItemMenu) {
-                    d->wirelessNetworkItemMenu = new KMenu(contextMenu());
-                }
+            // put all wireless network items and wireless unconfigured items into a submenu
+            if (activatable->activatableType() == Knm::Activatable::WirelessNetwork) {
+
+                wirelessNetworkItemCount++;
+
                 d->wirelessNetworkItemMenu->addAction(action);
+
+            } else if (wirelessDeviceUnis.contains(activatable->deviceUni()) && activatable->activatableType() == Knm::Activatable::UnconfiguredInterface) {
+                // append to list of wireless unconfigured interfaces to be added later
+                wirelessUnconfiguredInterfaceItems.append(action);
             } else {
                 // If we have not seen any activatables for this device before, set its First flag for emphasis
                 // Precede it with a separator if it is not the first action in the menu
                 //
                 // if there are wireless network items in the submenu, and we have reached a non-wireless (network or interfaceconnection)
                 // item, mark the separator as the place to insert the submenu, as long as we have not yet done this
-                if (!d->deviceUnis.contains(activatable->deviceUni())) {
+                if (d->deviceUnis.contains(activatable->deviceUni())) {
+                    widget->setFirst(false);
+                } else {
                     widget->setFirst(true);
                     if (!contextMenu()->actions().isEmpty()) {
                         QAction * sepAction = contextMenu()->addSeparator();
 
                         if (activatable->activatableType() != Knm::Activatable::WirelessInterfaceConnection) {
-                            if (d->wirelessNetworkItemMenu && !d->wirelessNetworkItemMenu->actions().isEmpty() && !insertionPointForWirelessNetworkItemSubmenu ) {
-                                insertionPointForWirelessNetworkItemSubmenu = sepAction;
+                            if (!d->wirelessNetworkItemMenu->actions().isEmpty() && !insertionPointForWirelessNetworkSubmenu ) {
+                                insertionPointForWirelessNetworkSubmenu = sepAction;
                             }
                         }
                     }
-
                     d->deviceUnis.append(activatable->deviceUni());
-
                 }
+                if (activatable->activatableType() == Knm::Activatable::WirelessInterfaceConnection) {
+                    wirelessInterfaceConnectionCount++;
+                }
+
                 contextMenu()->addAction(action);
             }
         }
     }
     // insert the wireless network items submenu at the right place
-    if (d->wirelessNetworkItemMenu) {
-        if (d->wirelessNetworkItemMenu->actions().isEmpty()) {
-            d->wirelessNetworkItemMenu->setTitle(i18nc("@title:menu Wireless network item menu title when no networks found", "No additional networks"));
-            d->wirelessNetworkItemMenu->setEnabled(false);
-        } else {
-            d->wirelessNetworkItemMenu->setTitle(i18nc("@title:menu Wireless network item menu title when additional networks are present", "%1 additional networks", d->wirelessNetworkItemMenu->actions().count()));
-            d->wirelessNetworkItemMenu->setEnabled(true);
-        }
-        contextMenu()->insertAction(insertionPointForWirelessNetworkItemSubmenu, d->wirelessNetworkItemMenu->menuAction());
+    if (wirelessNetworkItemCount) {
+        d->wirelessNetworkItemMenu->setTitle(i18ncp("@title:menu Wireless network item menu title when additional networks are present", "%1 additional network", "%1 additional networks", wirelessNetworkItemCount));
+        d->wirelessNetworkItemMenu->setEnabled(true);
+    } else {
+        d->wirelessNetworkItemMenu->setTitle(i18nc("@title:menu Wireless network item menu title when no networks found", "Other networks"));
     }
 
+    if (d->interfaceTypes.testFlag(Solid::Control::NetworkInterface::Ieee80211)
+            && Solid::Control::NetworkManager::isWirelessEnabled()
+            && Solid::Control::NetworkManager::isWirelessHardwareEnabled()) {
+
+        contextMenu()->insertAction(insertionPointForWirelessNetworkSubmenu, d->wirelessNetworkItemMenu->menuAction());
+
+    }
+
+
+    // insert the unconfigured wireless interface items at the right place in the right menu (see
+    // above)
+    QMenu * targetMenu = 0;
+    QAction * insertionPoint = 0;
+    if (wirelessInterfaceConnectionCount) {
+        targetMenu = d->wirelessNetworkItemMenu;
+    } else {
+        targetMenu = contextMenu();
+        insertionPoint = d->wirelessNetworkItemMenu->menuAction();
+    }
+    foreach (QWidgetAction * action, wirelessUnconfiguredInterfaceItems) {
+        targetMenu->insertAction(insertionPoint, action);
+    }
+
+    // add the housekeeping actions
     contextMenu()->addSeparator();
     if (d->interfaceTypes.testFlag(Solid::Control::NetworkInterface::Ieee80211)) {
         contextMenu()->addAction(d->flightModeAction);
@@ -284,22 +340,25 @@ void KNetworkManagerTrayIcon::networkInterfaceAdded(const QString & uni)
     Q_D(KNetworkManagerTrayIcon);
     Solid::Control::NetworkInterface * iface = Solid::Control::NetworkManager::findNetworkInterface(uni);
     if (iface) {
-        if (!d->interfaceTypes.testFlag(iface->type())) {
-            QObject::connect(iface, SIGNAL(connectionStateChanged(int)), this, SLOT(handleConnectionStateChange(int,int,int)));
+        if (d->interfaceTypes.testFlag(iface->type())) {
+            kDebug() << "connecting" << iface->interfaceName() << "'s signals";
+            QObject::connect(iface, SIGNAL(connectionStateChanged(int,int,int)), this, SLOT(handleConnectionStateChange(int,int,int)));
         }
     }
     //update our state
-    updateTrayIcon();
+    updateInterfaceToDisplay();
 }
 
 void KNetworkManagerTrayIcon::handleConnectionStateChange(int new_state, int old_state, int reason)
 {
     Solid::Control::NetworkInterface * iface = qobject_cast<Solid::Control::NetworkInterface*>(sender());
-    kDebug() << iface->interfaceName() << "has changed state from" << old_state << "to" << new_state << "because of reason" << reason;
-    updateTrayIcon();
+    if (iface) {
+        kDebug() << iface->interfaceName() << "has changed state from" << old_state << "to" << new_state << "because of reason" << reason;
+    }
+    updateInterfaceToDisplay();
 }
 
-void KNetworkManagerTrayIcon::updateTrayIcon()
+void KNetworkManagerTrayIcon::updateInterfaceToDisplay()
 {
     Q_D(KNetworkManagerTrayIcon);
     kDebug();
@@ -321,22 +380,81 @@ void KNetworkManagerTrayIcon::updateTrayIcon()
     }
 
     // get the icon name for the state of the most interesting interface
-    QString iconName, overlayIconName;
     if (!interfaces.isEmpty()) {
         qSort(interfaces.begin(), interfaces.end(), networkInterfaceLessThan);
+
         Solid::Control::NetworkInterface * interface = interfaces.first();
-        switch (interface->type() ) {
+        Solid::Control::WirelessNetworkInterface * wirelessIface = qobject_cast<Solid::Control::WirelessNetworkInterface*>(interface);
+
+        // disconnect the prior displayed interface's signal strength signals
+        if (!d->displayedNetworkInterface.isNull()) {
+            Solid::Control::WirelessNetworkInterface * displayedWirelessIface
+                = qobject_cast<Solid::Control::WirelessNetworkInterface*>(d->displayedNetworkInterface.data());
+
+            QObject::disconnect(displayedWirelessIface,
+                    SIGNAL(activeAccessPointChanged(const QString &)),
+                    this,
+                    SLOT(activeAccessPointChanged(const QString &)));
+        }
+        if (!d->activeAccessPoint.isNull()) {
+            QObject::disconnect(d->activeAccessPoint.data(), 0, this, 0);
+        }
+
+        // set the new displayed interface
+        kDebug() << "interface to display:" << interface;
+        d->displayedNetworkInterface = interface;
+
+        // if wireless listen to its signal strength signals
+        if (wirelessIface) {
+            QObject::connect(wirelessIface,
+                    SIGNAL(activeAccessPointChanged(const QString &)),
+                    this,
+                    SLOT(activeAccessPointChanged(const QString &)));
+
+            activeAccessPointChanged(wirelessIface->activeAccessPoint());
+        } else {
+            d->activeAccessPoint = 0;
+        }
+    }
+    updateTrayIcon();
+    updateToolTip();
+}
+
+void KNetworkManagerTrayIcon::updateTrayIcon()
+{
+    Q_D(KNetworkManagerTrayIcon);
+
+    QString iconName, overlayName;
+
+    if (!d->displayedNetworkInterface.isNull()) {
+
+        switch (d->displayedNetworkInterface->type() ) {
             case Solid::Control::NetworkInterface::Ieee8023:
-                iconName = "network-wired";
+                iconName = QLatin1String("network-wired");
                 break;
             case Solid::Control::NetworkInterface::Ieee80211:
-                iconName = "network-wireless";
+                if (!d->activeAccessPoint.isNull()) {
+                    int strength = d->activeAccessPoint->signalStrength();
+                    if ( strength > 80 )
+                        iconName = QLatin1String("network-wireless-100");
+                    else if ( strength > 55 )
+                        iconName = QLatin1String("network-wireless-75");
+                    else if ( strength > 30 )
+                        iconName = QLatin1String("network-wireless-50");
+                    else if ( strength > 5 )
+                        iconName = QLatin1String("network-wireless-25");
+                    else
+                        iconName = QLatin1String("network-wireless-0");
+                } else {
+                    iconName = QLatin1String("network-wireless");
+                }
                 break;
             case Solid::Control::NetworkInterface::Serial:
-                iconName = "modem";
+                iconName = QLatin1String("modem");
                 break;
             case Solid::Control::NetworkInterface::Gsm:
             case Solid::Control::NetworkInterface::Cdma:
+                //TODO make this work for cellular signal strength
                 iconName = "phone";
                 break;
             default:
@@ -344,31 +462,40 @@ void KNetworkManagerTrayIcon::updateTrayIcon()
                 break;
         }
 
-        switch (interface->connectionState()) {
+        switch (d->displayedNetworkInterface->connectionState()) {
             case Solid::Control::NetworkInterface::Preparing:
-                //overlayIconName = "busy-phase1";
-                overlayIconName = "emblem-mounted";
+                overlayName = QLatin1String("busy-phase1");
+                overlayName = QLatin1String("emblem-mounted");
                 break;
             case Solid::Control::NetworkInterface::Configuring:
-                overlayIconName = "busy-phase2";
-                overlayIconName = "emblem-mounted";
+                overlayName = QLatin1String("busy-phase2");
+                overlayName = QLatin1String("emblem-mounted");
                 break;
             case Solid::Control::NetworkInterface::NeedAuth:
-                overlayIconName = "busy-phase2";
-                overlayIconName = "emblem-mounted";
+                overlayName = QLatin1String("busy-phase2");
+                overlayName = QLatin1String("emblem-mounted");
                 break;
             case Solid::Control::NetworkInterface::IPConfig:
-                overlayIconName = "busy-phase3";
-                overlayIconName = "emblem-mounted";
+                overlayName = QLatin1String("busy-phase3");
+                overlayName = QLatin1String("emblem-mounted");
                 break;
             case Solid::Control::NetworkInterface::Activated:
-                overlayIconName = "checkbox";
+                overlayName = QLatin1String("checkbox");
                 break;
             default:
                 break;
         }
     } else {
         iconName = "networkmanager";
+    }
+
+    foreach (Knm::Activatable * activatable, d->list->activatables()) {
+        if (activatable->activatableType() == Knm::Activatable::VpnInterfaceConnection) {
+            Knm::InterfaceConnection * ic = static_cast<Knm::InterfaceConnection*>(activatable);
+            if (ic->activationState() == Knm::InterfaceConnection::Activated) {
+                overlayName = QLatin1String("nm-vpn-lock"); //TODO real icon name
+            }
+        }
     }
 
     kDebug() << "suggested icon name:" << iconName;
@@ -378,8 +505,51 @@ void KNetworkManagerTrayIcon::updateTrayIcon()
         kDebug() << "setting icon:" << iconName;
         setIconByName(d->iconName);
     }
-    kDebug() << "setting overlay:" << overlayIconName;
-    setOverlayIconByName(overlayIconName);
+    kDebug() << "setting overlay:" << overlayName;
+    setOverlayIconByName(overlayName);
+}
+
+void KNetworkManagerTrayIcon::updateToolTip()
+{
+    Q_D(KNetworkManagerTrayIcon);
+    QString tip;
+    if (d->displayedNetworkInterface) {
+        switch (d->displayedNetworkInterface->connectionState()) {
+            case Solid::Control::NetworkInterface::UnknownState:
+                tip = i18nc("@info:tooltip status string for network interface in unknown state state ", "Unknown");
+                break;
+            case Solid::Control::NetworkInterface::Unmanaged:
+                tip = i18nc("@info:tooltip status string for network interface not managed by networking subsystem", "Not managed");
+                break;
+            case Solid::Control::NetworkInterface::Unavailable:
+                tip = i18nc("@info:tooltip status string for network interface not available for use", "Unavailable");
+                break;
+            case Solid::Control::NetworkInterface::Disconnected:
+                tip = i18nc("@info:tooltip status string for disconnected network interface", "Not connected");
+                break;
+            case Solid::Control::NetworkInterface::Preparing:
+                tip = i18nc("@info:tooltip status string for network interface preparing to connect", "Preparing to connect");
+                break;
+            case Solid::Control::NetworkInterface::Configuring:
+                tip = i18nc("@info:tooltip status string for network interface being configured prior to connection", "Configuring interface");
+                break;
+            case Solid::Control::NetworkInterface::NeedAuth:
+                tip = i18nc("@info:tooltip status string for network interface awaiting authorizatoin", "Waiting for authorization");
+                break;
+            case Solid::Control::NetworkInterface::IPConfig:
+                tip = i18nc("@info:tooltip status string for network interface getting IP address", "Obtaining network address");
+                break;
+            case Solid::Control::NetworkInterface::Activated:
+                tip = i18nc("@info:tooltip status string for active network interface", "Active");
+                break;
+            case Solid::Control::NetworkInterface::Failed:
+                tip = i18nc("@info:tooltip status string for network interface with failed connection", "Connection failed");
+                break;
+        }
+    } else {
+        tip = "<qt>Networking <b>information</b> not available</qt>";
+    }
+    setToolTip(d->iconName, tip, QString());
 }
 
 void KNetworkManagerTrayIcon::networkingStatusChanged(Solid::Networking::Status status)
@@ -391,10 +561,10 @@ void KNetworkManagerTrayIcon::networkingStatusChanged(Solid::Networking::Status 
     }
 }
 
-void KNetworkManagerTrayIcon::disableWireless(bool disabled)
+void KNetworkManagerTrayIcon::enableWireless(bool enabled)
 {
-    kDebug() << disabled;
-    Solid::Control::NetworkManager::setWirelessEnabled(!disabled);
+    kDebug() << enabled;
+    Solid::Control::NetworkManager::setWirelessEnabled(enabled);
 }
 
 void KNetworkManagerTrayIcon::wirelessEnabledChanged()
@@ -402,7 +572,39 @@ void KNetworkManagerTrayIcon::wirelessEnabledChanged()
     Q_D(KNetworkManagerTrayIcon);
     d->flightModeAction->setEnabled(Solid::Control::NetworkManager::isWirelessHardwareEnabled());
 
-    d->flightModeAction->setChecked(!Solid::Control::NetworkManager::isWirelessEnabled());
+    d->flightModeAction->setChecked(Solid::Control::NetworkManager::isWirelessEnabled());
+    if (!(Solid::Control::NetworkManager::isWirelessHardwareEnabled() && Solid::Control::NetworkManager::isWirelessEnabled())) {
+        contextMenu()->removeAction(d->wirelessNetworkItemMenu->menuAction());
+    }
+}
+
+void KNetworkManagerTrayIcon::setActive(bool active)
+{
+    Q_D(KNetworkManagerTrayIcon);
+    d->active = active;
+    setStatus( active ? KNotificationItem::Active : KNotificationItem::Passive);
+    fillPopup();
+}
+
+void KNetworkManagerTrayIcon::activeAccessPointChanged(const QString & uni)
+{
+    kDebug();
+    Q_D(KNetworkManagerTrayIcon);
+
+    if (!d->displayedNetworkInterface.isNull()) {
+        Solid::Control::WirelessNetworkInterface * wirelessIface
+            = qobject_cast<Solid::Control::WirelessNetworkInterface*>(
+                    d->displayedNetworkInterface.data());
+        if (wirelessIface) {
+            d->activeAccessPoint = wirelessIface->findAccessPoint(uni);
+
+            if (!d->activeAccessPoint.isNull()) {
+                QObject::connect(d->activeAccessPoint.data(), SIGNAL(signalStrengthChanged(int)),
+                        this, SLOT(updateTrayIcon()));
+            }
+        }
+    }
+    updateTrayIcon();
 }
 
 bool networkInterfaceLessThan(Solid::Control::NetworkInterface *if1, Solid::Control::NetworkInterface * if2)

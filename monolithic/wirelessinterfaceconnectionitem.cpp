@@ -22,12 +22,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <KDebug>
 
+#include "interfaceconnectionitem_p.h"
 #include "wirelessinterfaceconnection.h"
 
 #include "wirelessstatus.h"
 
+class WirelessInterfaceConnectionItemPrivate : public InterfaceConnectionItemPrivate
+{
+};
+
 WirelessInterfaceConnectionItem::WirelessInterfaceConnectionItem(Knm::WirelessInterfaceConnection * wic, QWidget * parent)
-: InterfaceConnectionItem(wic, parent)
+: InterfaceConnectionItem(*new WirelessInterfaceConnectionItemPrivate, wic, parent)
 {
     new WirelessStatus(this);
 }
@@ -36,9 +41,14 @@ WirelessInterfaceConnectionItem::~WirelessInterfaceConnectionItem()
 {
 }
 
+Knm::WirelessInterfaceConnection* WirelessInterfaceConnectionItem::wirelessInterfaceConnection() const
+{
+    Q_D(const WirelessInterfaceConnectionItem);
+    return qobject_cast<Knm::WirelessInterfaceConnection*>(d->activatable);
+}
+
 QString WirelessInterfaceConnectionItem::iconName() const
 {
-    kDebug();
     return QLatin1String("network-wireless");
 }
 

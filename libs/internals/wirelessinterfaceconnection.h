@@ -23,13 +23,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define KNM_EXTERNALS_WIRELESSINTERFACECONNECTION_H
 
 #include "interfaceconnection.h"
-#include "wirelessitem.h"
+#include "wirelessobject.h"
 
 #include "knminternals_export.h"
 
 namespace Knm {
 
-class KNMINTERNALS_EXPORT WirelessInterfaceConnection : public InterfaceConnection, public WirelessItem
+class KNMINTERNALS_EXPORT WirelessInterfaceConnection : public InterfaceConnection, public WirelessObject
 {
 Q_OBJECT
 Q_PROPERTY(QString ssid READ ssid)
@@ -38,7 +38,7 @@ Q_PROPERTY(uint wpaFlags READ wpaFlags)
 Q_PROPERTY(uint rsnFlags READ rsnFlags)
 
 public:
-    WirelessInterfaceConnection(const QString & ssid, int strength, Solid::Control::AccessPoint::Capabilities capabilities, Solid::Control::AccessPoint::WpaFlags wpaFlags, Solid::Control::AccessPoint::WpaFlags rsnFlags, const QUuid & connectionUuid, const QString & connectionName, const QString & deviceUni, QObject * parent);
+    WirelessInterfaceConnection(const QString & ssid, int strength, Solid::Control::AccessPoint::Capabilities capabilities, Solid::Control::AccessPoint::WpaFlags wpaFlags, Solid::Control::AccessPoint::WpaFlags rsnFlags, Solid::Control::WirelessNetworkInterface::OperationMode mode, const QUuid & connectionUuid, const QString & connectionName, const QString & deviceUni, QObject * parent);
     virtual ~WirelessInterfaceConnection();
 signals:
     void strengthChanged(int);

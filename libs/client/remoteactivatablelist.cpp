@@ -33,7 +33,7 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 #include "remoteunconfiguredinterface.h"
 #include "remotevpninterfaceconnection.h"
 #include "remotewirelessinterfaceconnection.h"
-#include "remotewirelessnetworkitem.h"
+#include "remotewirelessnetwork.h"
 
 class RemoteActivatableListPrivate
 {
@@ -61,17 +61,19 @@ RemoteActivatableList::RemoteActivatableList(QObject * parent)
 void RemoteActivatableList::init()
 {
     Q_D(RemoteActivatableList);
-    if (d->activatables.isEmpty()) {
-        QStringList activatables = d->iface->ListActivatables();
+    if (d->iface->isValid()) {
+        if (d->activatables.isEmpty()) {
+            QStringList activatables = d->iface->ListActivatables();
 
-        kDebug() << "activatables" << activatables;
-        foreach (QString activatable, activatables) {
-            // messy, I know, but making ListActivatables return a(si) is boring
-            QDBusInterface iface(QLatin1String("org.kde.networkmanagement"),
-                    activatable, "org.kde.networkmanagement.Activatable", QDBusConnection::sessionBus());
-            QDBusReply<uint> type = iface.call("activatableType");
-            kDebug() << activatable << type.value();
-            handleActivatableAdded(activatable, type.value());
+            kDebug() << "activatables" << activatables;
+            foreach (QString activatable, activatables) {
+                // messy, I know, but making ListActivatables return a(si) is boring
+                QDBusInterface iface(QLatin1String("org.kde.networkmanagement"),
+                        activatable, "org.kde.networkmanagement.Activatable", QDBusConnection::sessionBus());
+                QDBusReply<uint> type = iface.call("activatableType");
+                kDebug() << activatable << type.value();
+                handleActivatableAdded(activatable, type.value());
+            }
         }
     }
 }
@@ -99,6 +101,10 @@ QList<RemoteActivatable *> RemoteActivatableList::activatables() const
 
 void RemoteActivatableList::handleActivatableAdded(const QString &addedPath, uint type)
 {
+    kDebug() << "...... AddedPath:" << addedPath << type;
+    if (!addedPath.startsWith("/")) {
+        return;
+    }
     Q_D(RemoteActivatableList);
     if (!d->activatables.contains(addedPath)) {
         RemoteActivatable * newActivatable = 0;
@@ -111,9 +117,9 @@ void RemoteActivatableList::handleActivatableAdded(const QString &addedPath, uin
                 newActivatable = new RemoteWirelessInterfaceConnection(addedPath, this);
                 kDebug() << "wirelessconnection at" << addedPath << "with type" << newActivatable->activatableType();
                 break;
-            case Knm::Activatable::WirelessNetworkItem:
-                newActivatable = new RemoteWirelessNetworkItem(addedPath, this);
-                kDebug() << "wirelessnetworkitem at" << addedPath << "with type" << newActivatable->activatableType();
+            case Knm::Activatable::WirelessNetwork:
+                newActivatable = new RemoteWirelessNetwork(addedPath, this);
+                kDebug() << "wirelessnetwork at" << addedPath << "with type" << newActivatable->activatableType();
                 break;
             case Knm::Activatable::UnconfiguredInterface:
                 newActivatable = new RemoteUnconfiguredInterface(addedPath, this);
@@ -148,14 +154,14 @@ void RemoteActivatableList::serviceOwnerChanged(const QString & changedService, 
     kDebug() << changedService << changedService << oldOwner << newOwner;
     if (changedService == d->iface->service()) {
         if (!oldOwner.isEmpty() && newOwner.isEmpty()) {
-            clear();
             emit disappeared();
+            clear();
         } else if (oldOwner.isEmpty() && !newOwner.isEmpty()) {
             init();
             emit appeared();
         } else if (!oldOwner.isEmpty() && !newOwner.isEmpty()) {
-            clear();
             emit disappeared();
+            clear();
             init();
             emit appeared();
         }

@@ -29,20 +29,23 @@ namespace Knm
     class Activatable;
 } // namespace Knm
 
-class ActivatableListPrivate;
+
 class ActivatableObserver;
+class ActivatableListPrivate;
 
 class KNM_EXPORT ActivatableList : public QObject
 {
 Q_OBJECT
-Q_DECLARE_PRIVATE(ActivatableList);
-
+Q_DECLARE_PRIVATE(ActivatableList)
 public:
     ActivatableList(QObject * parent);
-    ~ActivatableList();
-    QList<Knm::Activatable *> activatables() const;
-    void addActivatable(Knm::Activatable *);
-    void removeActivatable(Knm::Activatable *);
+    ActivatableList(ActivatableListPrivate &dd, QObject * parent);
+    virtual ~ActivatableList();
+
+    virtual QList<Knm::Activatable *> activatables() const;
+
+    virtual void addActivatable(Knm::Activatable *);
+    virtual void removeActivatable(Knm::Activatable *);
     /**
      * Register an activatable observer.  ActivatableObservers encapsulate peripheral functionality.
      * ActivatableObservers are called in a defined order.
@@ -52,11 +55,12 @@ public:
      *
      * TODO: do we need separate observer lists for different operations?
      */
-    void registerObserver(ActivatableObserver * observer, ActivatableObserver * insertAfter = 0);
-    void unregisterObserver(ActivatableObserver *);
+    virtual void registerObserver(ActivatableObserver * observer, ActivatableObserver * insertAfter = 0);
+    virtual void unregisterObserver(ActivatableObserver *);
 protected Q_SLOTS:
     void activatableChanged();
-private:
+protected:
+    void addActivatableInternal(Knm::Activatable * activatable);
     ActivatableListPrivate * d_ptr;
 };
 

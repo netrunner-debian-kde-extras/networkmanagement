@@ -40,12 +40,31 @@ class SortedActivatableList;
 
 class KNetworkManagerTrayIconPrivate;
 
+namespace Solid
+{
+    namespace Control
+    {
+        class WirelessNetworkInterface;
+    } // namespace Control
+} // namespace Solid
+
+/**
+ * Tray icon representing one or more network interfaces
+ */
 class KNetworkManagerTrayIcon : public Experimental::KNotificationItem, public ActivatableObserver
 {
 Q_OBJECT
-Q_DECLARE_PRIVATE(KNetworkManagerTrayIcon);
+Q_DECLARE_PRIVATE(KNetworkManagerTrayIcon)
 public:
-    KNetworkManagerTrayIcon(Solid::Control::NetworkInterface::Types types, const QString & id, ActivatableList * list, QObject * parent);
+    /**
+     * Constructor
+     * @param types Set of Solid::Control::NetworkInterface::Type ORed together indicating which network interface types to show and offer status for.
+     * @param id Unique identifier for KNotificationItem management
+     * @param list List of Knm::Activatables to display
+     * @param active If true, show activatables; if false, only show status in the tray and a minimal context menu
+     * @param parent QObject owning this tray icon
+     */
+    KNetworkManagerTrayIcon(Solid::Control::NetworkInterface::Types types, const QString & id, SortedActivatableList * list, bool active = true, QObject * parent = 0);
     virtual ~KNetworkManagerTrayIcon();
     // respond to activatable changes
     void handleAdd(Knm::Activatable *);
@@ -64,9 +83,9 @@ protected Q_SLOTS:
     void networkingStatusChanged(Solid::Networking::Status);
 
     /**
-     * Disable wireless in response to user action
+     * Enable wireless in response to user action
      */
-    void disableWireless(bool);
+    void enableWireless(bool);
 
     /**
      * Update UI in response to system network management state changes
@@ -79,9 +98,23 @@ protected Q_SLOTS:
     void networkInterfaceAdded(const QString&);
     //void networkInterfaceRemoved(const QString&);
     void updateTrayIcon();
+    void updateToolTip();
     void handleConnectionStateChange(int new_state, int old_state, int reason);
+    /**
+     * Switch the icon between active and passive modes
+     */
+    void setActive(bool);
+    /**
+     * Update the network interface currently used for the tray icon
+     */
+    void updateInterfaceToDisplay();
+    /**
+     * Update the access point used for the signal strength indicator on the tray icon
+     */
+    void activeAccessPointChanged(const QString &);
 private:
     void fillPopup();
+    QString iconForWirelessState();
     KNetworkManagerTrayIconPrivate * d_ptr;
 };
 

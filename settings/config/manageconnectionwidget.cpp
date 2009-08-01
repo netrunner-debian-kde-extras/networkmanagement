@@ -26,6 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <NetworkManager.h>
 
 #include <QDBusConnection>
+#include <QDBusInterface>
 #include <QDateTime>
 #include <QFile>
 #include <QMenu>
@@ -39,6 +40,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <KRandom>
 #include <KServiceTypeTrader>
 #include <KStandardDirs>
+#include <KToolInvocation>
 #include <solid/control/networkmanager.h>
 #include <solid/control/networkinterface.h>
 
@@ -50,6 +52,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#include "dbus/nm-active-connectioninterface.h"
 //#include "dbus/nm-exported-connectioninterface.h"
 
+#include "traysettingswidget.h"
+
 #define ConnectionIdRole 1812
 #define ConnectionTypeRole 1066
 #define ConnectionLastUsedRole 1848
@@ -58,12 +62,13 @@ K_PLUGIN_FACTORY( ManageConnectionWidgetFactory, registerPlugin<ManageConnection
 K_EXPORT_PLUGIN( ManageConnectionWidgetFactory( "kcm_networkmanagement" ) )
 
 ManageConnectionWidget::ManageConnectionWidget(QWidget *parent, const QVariantList &args)
-: KCModule( ManageConnectionWidgetFactory::componentData(), parent, args ), mCellularMenu(0), mVpnMenu(0), mEditor(new ConnectionEditor(this))
+: KCModule( ManageConnectionWidgetFactory::componentData(), parent, args ), mCellularMenu(0), mVpnMenu(0), mEditor(new ConnectionEditor(this)), mTraySettingsWidget(0)
 {
     KGlobal::locale()->insertCatalog("libknmui");
     connect(mEditor, SIGNAL(connectionsChanged()), this, SLOT(restoreConnections()));
 
     mConnEditUi.setupUi(this);
+
     KNetworkManagerServicePrefs::instance(Knm::ConnectionPersistence::NETWORKMANAGEMENT_RCFILE);
     connect(mConnEditUi.addConnection, SIGNAL(clicked()), SLOT(addClicked()));
     connect(mConnEditUi.editConnection, SIGNAL(clicked()), SLOT(editClicked()));
@@ -95,6 +100,15 @@ ManageConnectionWidget::ManageConnectionWidget(QWidget *parent, const QVariantLi
     mLastUsedTimer = new QTimer(this);
     connect(mLastUsedTimer, SIGNAL(timeout()), SLOT(updateLastUsed()));
     mLastUsedTimer->start(1000 * 60);
+
+    mTraySettingsWidget  = new TraySettingsWidget(this);
+
+    // KConfigXT magic
+    addConfig(KNetworkManagerServicePrefs::self(), mTraySettingsWidget);
+
+    connect(mTraySettingsWidget, SIGNAL(changed()), SLOT(otherSettingsChanged()));
+
+    mConnEditUi.tabWidget->addTab(mTraySettingsWidget, i18nc("@title:tab tab containing general UI settings", "&Other Settings"));
 
     setButtons(KCModule::Help | KCModule::Apply);
 }
@@ -253,6 +267,7 @@ void ManageConnectionWidget::addClicked()
 {
     // show connection settings widget for the active tab
     mEditor->addConnection(false, connectionTypeForCurrentIndex());
+    emit changed();
 }
 
 void ManageConnectionWidget::editClicked()
@@ -260,6 +275,7 @@ void ManageConnectionWidget::editClicked()
     //edit might be clicked on a system connection, in which case we need a connectionid for it
     QTreeWidgetItem * item = selectedItem();
     editItem(item);
+    emit changed();
 }
 
 void ManageConnectionWidget::editItem(QTreeWidgetItem * item)
@@ -316,6 +332,7 @@ void ManageConnectionWidget::deleteClicked()
         mEditor->updateService();
         restoreConnections();
     }
+    emit changed();
 }
 
 Knm::Connection::Type ManageConnectionWidget::connectionTypeForCurrentIndex() const
@@ -377,7 +394,22 @@ void ManageConnectionWidget::load()
 
 void ManageConnectionWidget::save()
 {
+    if (mTraySettingsWidget) {
+        QList<uint> iconInterfaceAllocations = mTraySettingsWidget->iconInterfaceAllocations();
+        KNetworkManagerServicePrefs::self()->setIconCount(iconInterfaceAllocations.count());
+        for (int i = 0; i < iconInterfaceAllocations.count(); ++i) {
+            KNetworkManagerServicePrefs::self()->setIconTypes(i, iconInterfaceAllocations.at(i));
+        }
+    }
+    KNetworkManagerServicePrefs::self()->writeConfig();
     KCModule::save();
+    QDBusInterface remoteApp("org.kde.knetworkmanager", "/tray",
+                                       "org.kde.knetworkmanager");
+    if (remoteApp.isValid()) {
+        remoteApp.call("reloadConfig");
+    } else if (KNetworkManagerServicePrefs::self()->autostart()) {
+        KToolInvocation::kdeinitExec("knetworkmanager");
+    }
 }
 
 void ManageConnectionWidget::tabChanged(int index)
@@ -497,6 +529,7 @@ void ManageConnectionWidget::updateLastUsed()
     updateLastUsed(mConnEditUi.listCellular);
     updateLastUsed(mConnEditUi.listVpn);
     updateLastUsed(mConnEditUi.listPppoe);
+
 }
 
 void ManageConnectionWidget::updateLastUsed(QTreeWidget * list)
@@ -507,6 +540,11 @@ void ManageConnectionWidget::updateLastUsed(QTreeWidget * list)
         (*it)->setText(1, formatDateRelative(lastUsed));
         ++it;
     }
+}
+
+void ManageConnectionWidget::otherSettingsChanged()
+{
+    emit changed();
 }
 
 #include "manageconnectionwidget.moc"

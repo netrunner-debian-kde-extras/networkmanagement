@@ -60,7 +60,7 @@ UnconfiguredInterfaceItem::UnconfiguredInterfaceItem(Knm::UnconfiguredInterface 
 
     d->subtitleLabel = new QLabel(this);
     d->subtitleLabel->setFont(KGlobalSettings::toolBarFont());
-    d->subtitleLabel->setText(i18nc("Text for menu item for setting up devices which until now do not have any connections", "Not configured..."));
+    d->subtitleLabel->setText(i18nc("Text for menu item for setting up devices which until now do not have any connections", "Configure other network..."));
     d->outerLayout->addWidget(d->subtitleLabel, 1, 1, 1, 1);
 
     d->activeIcon->setPixmap(pixmap());
@@ -81,6 +81,8 @@ Knm::UnconfiguredInterface * UnconfiguredInterfaceItem::unconfiguredInterface() 
 
 QString UnconfiguredInterfaceItem::iconName() const
 {
+    // TODO a more specific icon could be identified using Solid eg external phones, pcmcia cards,
+    // usb adaptors...
     Solid::Control::NetworkInterface * iface = Solid::Control::NetworkManager::findNetworkInterface(activatable()->deviceUni());
     QString icon;
     if (iface) {
