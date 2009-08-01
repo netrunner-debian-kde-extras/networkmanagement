@@ -1,3 +1,4 @@
+etc/dbus-1/system.d/NetworkManager-kde4.conf
 usr/lib/kde4/kcm_networkmanagement.so
 usr/lib/kde4/kded_networkmanagement.so
 usr/lib/kde4/libexec/networkmanagement_configshell
