@@ -1,4 +1,4 @@
-plasma-widget-networkmanagement (0.1~svn100546-0r1) UNRELEASED; urgency=low
+plasma-widget-networkmanagement (0.1~svn1005461-0r1) UNRELEASED; urgency=low
 
   * New upstream development snapshot:
     - Last Changed Author: wstephens
@@ -29,7 +29,7 @@ plasma-widget-networkmanagement (0.1~svn100546-0r1) UNRELEASED; urgency=low
   * Update lintian overrides.
   * Do not build depend or use on quilt, not needed.
 
- -- Modestas Vainius <modestas@vainius.eu>  Sat, 01 Aug 2009 13:00:10 +0300
+ -- Modestas Vainius <modestas@vainius.eu>  Sat, 01 Aug 2009 13:23:13 +0300
 
 plasma-widget-networkmanagement (0.1~svn970021-2) experimental; urgency=low
 
