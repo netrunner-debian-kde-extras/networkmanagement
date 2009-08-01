@@ -13,6 +13,8 @@ plasma-widget-networkmanagement (0.1~svn1005432-0r1) UNRELEASED; urgency=low
       knetworkmanager debian source package.
       - moved to the section net;
       - recommends / custom depends moved to the knm-runtime package;
+      - bump version of this binary package to 1:0.8~... to enable
+        upgrades from the previous package.
     - knm-runtime contains knetworkmanager and plasmoid runtime files:
       - section net;
       - recommend kwalletmanager and network-manager plugins;
@@ -20,7 +22,7 @@ plasma-widget-networkmanagement (0.1~svn1005432-0r1) UNRELEASED; urgency=low
       - replaces previous plasma-widget-networkmanagement.
       - force shlibs to = binary:Version.
 
- -- Modestas Vainius <modestas@vainius.eu>  Sat, 01 Aug 2009 10:31:39 +0300
+ -- Modestas Vainius <modestas@vainius.eu>  Sat, 01 Aug 2009 10:37:36 +0300
 
 plasma-widget-networkmanagement (0.1~svn970021-2) experimental; urgency=low
 

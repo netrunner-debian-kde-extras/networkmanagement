@@ -13,6 +13,7 @@ DEB_CMAKE_CUSTOM_FLAGS += -DCMAKE_USE_RELATIVE_PATHS=ON \
                           -DDBUS_SYSTEM_POLICY_DIR=/etc/dbus-1/system.d
 
 DEB_BINARY_VERSION := $(shell dpkg-parsechangelog | grep '^Version: ' | sed 's/^Version: //')
+DEB_KNETWORKMANAGER_VERSION := $(shell echo '$(DEB_BINARY_VERSION)' | sed 's/^[[:digit:].]\+/1:0.8/')
 
 override_dh_install:
 	rm debian/plasma-widget-networkmanagement/usr/lib/libknminternals.so \
@@ -23,6 +24,10 @@ override_dh_install:
 override_dh_makeshlibs:
 	dh_makeshlibs -pknm-runtime -V'knm-runtime (= $(DEB_BINARY_VERSION))'
 	dh_makeshlibs --remaining-packages
+
+override_dh_gencontrol:
+	dh_gencontrol -pnetwork-manager-kde -- -v'$(DEB_KNETWORKMANAGER_VERSION)'
+	dh_gencontrol --remaining-packages
 
 %:
 	dh --with quilt $@
