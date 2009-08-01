@@ -1,9 +1,9 @@
-plasma-widget-networkmanagement (0.1~svn1005432-0r1) UNRELEASED; urgency=low
+plasma-widget-networkmanagement (0.1~svn100546-0r1) UNRELEASED; urgency=low
 
   * New upstream development snapshot:
-    - Last Changed Author: sebas
-    - Last Changed Rev: 1005432
-    - Last Changed Date: 2009-08-01 03:50:25 +0300
+    - Last Changed Author: wstephens
+    - Last Changed Rev: 1005461
+    - Last Changed Date: 2009-08-01 10:06:24 +0300
   * Build depend on libknotificationitem-1-dev.
   * Do not run tests.
   * Update installed files.
