@@ -24,6 +24,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDBusObjectPath>
 #include <QGraphicsWidget>
 
+#include "interfaceconnection.h"
+
 #include <Plasma/IconWidget>
 #include <Plasma/Label>
 #include <Plasma/Meter>
@@ -57,12 +59,16 @@ public:
     void setNameDisplayMode(NameDisplayMode);
     NameDisplayMode nameDisplayMode() const;
 
-    virtual void setEnabled(bool enable);
-    virtual QString ssid();
+    virtual QString connectionName();
+
+    QString label();
 
 public Q_SLOTS:
     void activeConnectionsChanged();
     void connectionStateChanged(int);
+    virtual void setEnabled(bool enable);
+    // also updates the connection info
+    virtual void setActive(bool active);
     /**
      * The  button to connect the interface has been clicked
      */
@@ -75,26 +81,18 @@ protected Q_SLOTS:
      */
     virtual void hoverEnterEvent(QGraphicsSceneHoverEvent *event);
     virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent *event);
+    void handleConnectionStateChange(int new_state, int old_state, int reason);
+    virtual void itemClicked();
 
 Q_SIGNALS:
     void stateChanged();
+    void clicked(int);
+
 protected:
     /**
      * Fill in interface type connection info
      */
     virtual void setConnectionInfo();
-    /**
-     * The interface is unavailable for connections, update the UI
-     */
-    virtual void setUnavailable();
-    /**
-     * The interface is inactive but could be activated
-     */
-    virtual void setInactive();
-    /**
-     * The interface is currently active, update the UI
-     */
-    //virtual void setActiveConnection(int);
     /**
      * Give us a pixmap for an icon
      */
@@ -109,8 +107,6 @@ protected:
      * Returns all available connections for the device type.
      */
     //QList<RemoteConnection*> availableConnections() const;
-
-    void connectionStateChanged(int, bool silently);
 
     Solid::Control::NetworkInterface * m_iface;
 

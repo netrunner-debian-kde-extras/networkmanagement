@@ -1,5 +1,5 @@
 /*
-Copyright 2008 Sebastian Kügler <sebas@kde.org>
+Copyright 2008,2009 Sebastian Kügler <sebas@kde.org>
 Copyright 2008,2009 Will Stephenson <wstephenson@kde.org>
 
 This program is free software; you can redistribute it and/or
@@ -20,7 +20,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include "wirelessnetworkitem.h"
-#include <nm-setting-wireless.h>
 
 #include <QLabel>
 #include <QGraphicsGridLayout>
@@ -31,48 +30,63 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <Plasma/IconWidget>
 #include <Plasma/Label>
 #include <Plasma/Meter>
-#include <plasma/theme.h>
+#include <Plasma/Theme>
 
 #include <solid/control/wirelessaccesspoint.h>
 #include <solid/control/wirelessnetworkinterface.h>
 
-#include "remotewirelessnetworkitem.h"
+#include "remotewirelessnetwork.h"
+#include "remotewirelessinterfaceconnection.h"
+#include "activatable.h"
 
-WirelessNetworkItem::WirelessNetworkItem(RemoteWirelessNetworkItem * remote, QGraphicsItem * parent)
+WirelessNetworkItem::WirelessNetworkItem(RemoteWirelessNetwork * remote, QGraphicsItem * parent)
 : ActivatableItem(remote, parent), m_security(0), m_securityIcon(0), m_securityIconName(0)
 {
     m_strengthMeter = new Plasma::Meter(this);
     m_strength = 0;
-    m_ssid = remote->ssid();
+
+
+    Solid::Control::AccessPoint::WpaFlags wpaFlags;
+    Solid::Control::AccessPoint::WpaFlags rsnFlags;
+    Solid::Control::AccessPoint::Capabilities capabilities;
+
+    Knm::Activatable::ActivatableType aType = remote->activatableType();
+    if (aType == Knm::Activatable::WirelessInterfaceConnection) {
+        //kDebug() << "adding WirelessInterfaceConnection";
+        RemoteWirelessInterfaceConnection* remoteconnection = static_cast<RemoteWirelessInterfaceConnection*>(m_activatable);
+        m_ssid = remoteconnection->ssid();
+        wpaFlags = remoteconnection->wpaFlags();
+        rsnFlags = remoteconnection->rsnFlags();
+        capabilities = remoteconnection->capabilities();
+    } else if (aType == Knm::Activatable::WirelessNetwork) {
+        m_ssid = remote->ssid();
+        wpaFlags = remote->wpaFlags();
+        rsnFlags = remote->rsnFlags();
+        capabilities = remote->capabilities();
+    }
+
     setStrength(remote->strength());
     connect(remote, SIGNAL(changed()), SLOT(update()));
 
-    // TODO
-    #if 0
-    if ( ap->capabilities().testFlag( Solid::Control::AccessPoint::Privacy ) )
-        m_security = QLatin1String("wep"); // the minimum
-    #endif
-
-    Solid::Control::AccessPoint::WpaFlags wpaFlags = remote->wpaFlags();
-    Solid::Control::AccessPoint::WpaFlags rsnFlags = remote->rsnFlags();
-
-    // TODO: this was done by a clueless (coolo)
+    // this was done by a clueless (coolo)
     if ( wpaFlags.testFlag( Solid::Control::AccessPoint::PairWep40 ) ||
-         wpaFlags.testFlag( Solid::Control::AccessPoint::PairWep104 ) )
+         wpaFlags.testFlag( Solid::Control::AccessPoint::PairWep104 )
+         || (wpaFlags == 0 && capabilities.testFlag(Solid::Control::AccessPoint::Privacy))) {
         m_security = QLatin1String("wep");
 
-    if ( wpaFlags.testFlag( Solid::Control::AccessPoint::KeyMgmtPsk ) ||
-         wpaFlags.testFlag( Solid::Control::AccessPoint::PairTkip ) )
+    } else if ( wpaFlags.testFlag( Solid::Control::AccessPoint::KeyMgmtPsk ) ||
+         wpaFlags.testFlag( Solid::Control::AccessPoint::PairTkip ) ) {
         m_security = QLatin1String("wpa-psk");
 
-    if ( rsnFlags.testFlag( Solid::Control::AccessPoint::KeyMgmtPsk ) ||
+    } else if ( rsnFlags.testFlag( Solid::Control::AccessPoint::KeyMgmtPsk ) ||
          rsnFlags.testFlag( Solid::Control::AccessPoint::PairTkip ) ||
-         rsnFlags.testFlag( Solid::Control::AccessPoint::PairCcmp ) )
+         rsnFlags.testFlag( Solid::Control::AccessPoint::PairCcmp ) ) {
         m_security = QLatin1String("wpa-psk");
 
-    if ( wpaFlags.testFlag( Solid::Control::AccessPoint::KeyMgmt8021x ) ||
-         wpaFlags.testFlag( Solid::Control::AccessPoint::GroupCcmp ) )
+    } else if ( wpaFlags.testFlag( Solid::Control::AccessPoint::KeyMgmt8021x ) ||
+         wpaFlags.testFlag( Solid::Control::AccessPoint::GroupCcmp ) ) {
         m_security = QLatin1String("wpa-eap");
+    }
 }
 
 void WirelessNetworkItem::setupItem()
@@ -99,8 +113,14 @@ void WirelessNetworkItem::setupItem()
     // icon on the left
     m_connectButton = new Plasma::IconWidget(this);
     m_connectButton->setDrawBackground(true);
-    m_connectButton->setIcon("network-wireless");
-    m_connectButton->setText(m_ssid);
+
+    if (interfaceConnection()) {
+        m_connectButton->setIcon("dialog-ok-apply"); // Known connection, we probably have credentials
+        m_connectButton->setText(interfaceConnection()->connectionName());
+    } else {
+        m_connectButton->setText(m_ssid);
+        m_connectButton->setIcon("network-wireless"); // "New" network
+    }
     m_connectButton->setMinimumWidth(160);
     m_connectButton->setOrientation(Qt::Horizontal);
 #if KDE_IS_VERSION(4,2,60)
@@ -128,7 +148,7 @@ void WirelessNetworkItem::setupItem()
     m_securityIcon->setToolTip(m_securityIconToolTip);
     m_layout->addItem(m_securityIcon, 0, 2, 1, 1, Qt::AlignLeft);
 
-    connect( m_connectButton, SIGNAL(clicked()), this, SLOT(emitClicked()));
+    connect(m_connectButton, SIGNAL(clicked()), this, SLOT(emitClicked()));
 }
 
 WirelessNetworkItem::~WirelessNetworkItem()
@@ -137,7 +157,7 @@ WirelessNetworkItem::~WirelessNetworkItem()
 
 void WirelessNetworkItem::setStrength(int strength)
 {
-    //kDebug() << ssid << "signal strength changed to " << strength;
+    kDebug() << m_ssid << "signal strength changed to " << strength;
     if (strength == m_strength) {
         return;
     }
@@ -169,13 +189,14 @@ void WirelessNetworkItem::readSettings()
     }
 }
 
-RemoteWirelessNetworkItem * WirelessNetworkItem::wirelessNetworkItem() const
+RemoteWirelessNetwork * WirelessNetworkItem::wirelessNetworkItem() const
 {
-    return static_cast<RemoteWirelessNetworkItem*>(m_activatable);
+    return static_cast<RemoteWirelessNetwork*>(m_activatable);
 }
 
 void WirelessNetworkItem::update()
 {
+    kDebug() << "updating" << m_ssid << wirelessNetworkItem()->strength();
     setStrength(wirelessNetworkItem()->strength());
 }
 

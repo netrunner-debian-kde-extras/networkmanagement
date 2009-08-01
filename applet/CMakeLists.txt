@@ -5,15 +5,9 @@ include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/../libs/client
 add_subdirectory(pics)
 
 set(networkmanager_SRCS
-    connectionlist.cpp
     activatableitem.cpp
 
     interfaceconnectionitem.cpp
-    wirelessinterfaceconnectionitem.cpp
-
-    interfacegroup.cpp
-
-    generalextender.cpp
 
     networkmanager.cpp
 
@@ -26,9 +20,17 @@ set(networkmanager_SRCS
 
     wirelessinterfaceitem.cpp
     wirelessnetworkitem.cpp
+
+    nmextenderitem.cpp
+    activatablelistwidget.cpp
     )
 
 kde4_add_ui_files(networkmanager_SRCS nmConfig.ui )
+if(NOT DEFINED ${I_KNOW_WHAT_IM_DOING})
+   set(networkmanager_SRCS applet_wip.cpp)
+   message(STATUS ${networkmanager_SRCS})
+endif(NOT DEFINED ${I_KNOW_WHAT_IM_DOING})
+
 kde4_add_plugin(plasma_applet_networkmanagement ${networkmanager_SRCS})
 target_link_libraries(plasma_applet_networkmanagement ${KDE4_PLASMA_LIBS} knmclient knminternals ${KDE4_KIO_LIBS} ${KDE4_SOLID_LIBS} solidcontrol)
 

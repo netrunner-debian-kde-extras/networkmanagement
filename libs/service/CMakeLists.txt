@@ -48,14 +48,20 @@ set(knmservice_SRCS
    # updates connection state as they are used
    connectionusagemonitor.cpp
 
-   # experimental
-   hiddenwirelessnetworkitem.cpp
-
    # exports activatables on the session bus to Plasmoids etc
    sessionabstractedservice.cpp
 
    # creates vpn activatables
    vpninterfaceconnectionprovider.cpp
+
+   # performs KNotifications on events
+   notificationmanager.cpp
+
+   # static global definitions of event string ids
+   events.cpp
+
+   # sort logic for activatables
+   sortedactivatablelist.cpp
    )
 
 
@@ -88,11 +94,11 @@ qt4_add_dbus_adaptor(
 
 qt4_add_dbus_adaptor(
     knmservice_SRCS
-    interfaces/org.kde.networkmanagement.wirelessnetworkitem.xml
-    wirelessnetworkitem.h
-    Knm::WirelessNetworkItem
-    wirelessnetworkitemadaptor
-    WirelessNetworkItemAdaptor
+    interfaces/org.kde.networkmanagement.wirelessnetwork.xml
+    wirelessnetwork.h
+    Knm::WirelessNetwork
+    wirelessnetworkadaptor
+    WirelessNetworkAdaptor
 )
 
 qt4_add_dbus_adaptor(knmservice_SRCS
@@ -105,7 +111,8 @@ qt4_add_dbus_adaptor(knmservice_SRCS
 
 kde4_add_library(knmservice SHARED ${knmservice_SRCS})
 
-target_link_libraries(knmservice knminternals solidcontrol solidcontrolfuture ${KDE4_KDECORE_LIBS})
+target_link_libraries(knmservice knminternals solidcontrol solidcontrolfuture ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS} ${KDE4_SOLID_LIBS}
+   )
 
 set_target_properties(knmservice PROPERTIES
    VERSION ${GENERIC_LIB_VERSION}

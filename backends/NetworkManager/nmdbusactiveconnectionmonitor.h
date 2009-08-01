@@ -29,6 +29,11 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "knm_export.h"
 
+namespace Knm
+{
+    class InterfaceConnection;
+} // namespace Knm
+
 class ActivatableList;
 class NMDBusSystemSettingsMonitor;
 
@@ -37,6 +42,11 @@ class OrgFreedesktopNetworkManagerConnectionActiveInterface;
 
 /**
  * Watches the list of active connections and updates InterfaceConnections' state
+ *
+ * This class is dependent on NMDBusSettingsService and NMDBusConnectionProvider being
+ * instantiated and registered to the activatableList first in order to tag
+ * InterfaceConnections with dbus object path and service so that this can match up
+ * activeconnections.
  */
 class KNM_EXPORT NMDBusActiveConnectionMonitor : public QObject, public ActivatableObserver
 {
@@ -72,8 +82,13 @@ private Q_SLOTS:
     void networkingStatusChanged(Solid::Networking::Status);
 
 private:
+    // locate the interfaceconnection object for a remote active connection (that has signalled)
+    Knm::InterfaceConnection * interfaceConnectionForConnectionActive(OrgFreedesktopNetworkManagerConnectionActiveInterface * connectionActive);
+    // update all properties
+    void activeConnectionChangedInternal(OrgFreedesktopNetworkManagerConnectionActiveInterface *, const QVariantMap&);
+    // just update state
     void activeConnectionChangedInternal(OrgFreedesktopNetworkManagerConnectionActiveInterface *, uint);
-    Q_DECLARE_PRIVATE(NMDBusActiveConnectionMonitor);
+    Q_DECLARE_PRIVATE(NMDBusActiveConnectionMonitor)
     NMDBusActiveConnectionMonitorPrivate * d_ptr;
 };
 

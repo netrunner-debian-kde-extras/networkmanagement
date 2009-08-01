@@ -25,24 +25,28 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <KDebug>
 
+#include "activatablelist.h"
+
 #include "activatableadaptor.h"
 #include "interfaceconnectionadaptor.h"
 #include "wirelessinterfaceconnectionadaptor.h"
-#include "wirelessnetworkitemadaptor.h"
+#include "wirelessnetworkadaptor.h"
 
 class SessionAbstractedServicePrivate
 {
 public:
+    ActivatableList * list;
     QHash<Knm::Activatable *, QString> adaptors;
     uint nextConnectionId;
 };
 
 const QString SessionAbstractedService::SESSION_SERVICE_DBUS_PATH = QLatin1String("/org/kde/networkmanagement/Activatable");
 
-SessionAbstractedService::SessionAbstractedService(QObject *parent)
+SessionAbstractedService::SessionAbstractedService(ActivatableList * list, QObject *parent)
 : QObject(parent), d_ptr(new SessionAbstractedServicePrivate)
 {
     Q_D(SessionAbstractedService);
+    d->list = list;
     d->nextConnectionId = 1;
 
     QDBusConnection::sessionBus().registerService("org.kde.networkmanagement");
@@ -67,10 +71,10 @@ void SessionAbstractedService::handleAdd(Knm::Activatable * added)
             new WirelessInterfaceConnectionAdaptor(realObj);
             new InterfaceConnectionAdaptor(realObj);
             new ActivatableAdaptor(realObj);
-        } else { // WirelessNetworkItem
-            Knm::WirelessNetworkItem * realObj
-                = static_cast<Knm::WirelessNetworkItem*>(added);
-            new WirelessNetworkItemAdaptor(realObj);
+        } else { // WirelessNetwork
+            Knm::WirelessNetwork * realObj
+                = static_cast<Knm::WirelessNetwork*>(added);
+            new WirelessNetworkAdaptor(realObj);
             new ActivatableAdaptor(realObj);
         }
         QString path = nextObjectPath();
@@ -96,9 +100,9 @@ void SessionAbstractedService::handleRemove(Knm::Activatable * removed)
         if (removed->activatableType() == Knm::Activatable::InterfaceConnection ) {
             Knm::InterfaceConnection * realObj = static_cast<Knm::InterfaceConnection*>(removed);
             kDebug() << path << realObj->connectionUuid();
-        } else if (removed->activatableType() == Knm::Activatable::WirelessNetworkItem ) {
-            Knm::WirelessNetworkItem * realObj
-                = static_cast<Knm::WirelessNetworkItem*>(removed);
+        } else if (removed->activatableType() == Knm::Activatable::WirelessNetwork ) {
+            Knm::WirelessNetwork * realObj
+                = static_cast<Knm::WirelessNetwork*>(removed);
             kDebug() << path << realObj->ssid();
         }
 #endif
@@ -109,7 +113,13 @@ void SessionAbstractedService::handleRemove(Knm::Activatable * removed)
 QStringList SessionAbstractedService::ListActivatables() const
 {
     Q_D(const SessionAbstractedService);
-    return d->adaptors.values();
+    QStringList sortedPaths;
+    foreach (Knm::Activatable * a, d->list->activatables()) {
+        if (d->adaptors.contains(a)) {
+            sortedPaths.append(d->adaptors[a]);
+        }
+    }
+    return sortedPaths;
 }
 
 QString SessionAbstractedService::nextObjectPath()

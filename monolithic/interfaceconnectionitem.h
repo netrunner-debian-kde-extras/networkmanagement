@@ -36,9 +36,13 @@ Q_DECLARE_PRIVATE(InterfaceConnectionItem)
 public:
     InterfaceConnectionItem(Knm::InterfaceConnection *, QWidget * parent = 0);
     virtual ~InterfaceConnectionItem();
+    Knm::InterfaceConnection* interfaceConnection() const;
 public Q_SLOTS:
     void changed();
     void setActivationState(Knm::InterfaceConnection::ActivationState state);
+protected Q_SLOTS:
+    void setHasDefaultRoute(bool);
+    void disconnectClicked();
 protected:
     InterfaceConnectionItem(InterfaceConnectionItemPrivate &, Knm::InterfaceConnection *, QWidget * parent = 0);
     virtual QString iconName() const;
