@@ -7,7 +7,7 @@ plasma-widget-networkmanagement (0.1~svn1005432-0r1) UNRELEASED; urgency=low
   * Build depend on libknotificationitem-1-dev.
   * Do not run tests.
   * Update installed files.
-  * Build depend on KDE 4.3 RC2.
+  * Build depend on KDE 4.3 (final).
   * Add network-manager-kde and knm-runtime packages:
     - network-manager-kde package is based on the one from the previous
       knetworkmanager debian source package.
