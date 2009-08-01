@@ -23,8 +23,10 @@ plasma-widget-networkmanagement (0.1~svn1005432-0r1) UNRELEASED; urgency=low
       - recommend either network-manager-kde or plasma widget;
       - replaces previous plasma-widget-networkmanagement.
       - force shlibs to = binary:Version.
+  * Add install files for all packages and drop dh_install hack from
+    debian/rules.
 
- -- Modestas Vainius <modestas@vainius.eu>  Sat, 01 Aug 2009 10:37:36 +0300
+ -- Modestas Vainius <modestas@vainius.eu>  Sat, 01 Aug 2009 11:11:15 +0300
 
 plasma-widget-networkmanagement (0.1~svn970021-2) experimental; urgency=low
 
