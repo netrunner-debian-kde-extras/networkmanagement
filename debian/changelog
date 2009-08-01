@@ -11,6 +11,8 @@ plasma-widget-networkmanagement (0.1~svn1005432-0r1) UNRELEASED; urgency=low
   * Add network-manager-kde and knm-runtime packages:
     - network-manager-kde package is based on the one from the previous
       knetworkmanager debian source package.
+      - take over of this binary package was granted by knetworkmanager
+        maintainer (Michael Biebl); 
       - moved to the section net;
       - recommends / custom depends moved to the knm-runtime package;
       - bump version of this binary package to 1:0.8~... to enable
