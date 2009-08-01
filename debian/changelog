@@ -27,8 +27,9 @@ plasma-widget-networkmanagement (0.1~svn1005432-0r1) UNRELEASED; urgency=low
     debian/rules.
   * Install bug files to all packages.
   * Update lintian overrides.
+  * Do not build depend or use on quilt, not needed.
 
- -- Modestas Vainius <modestas@vainius.eu>  Sat, 01 Aug 2009 12:58:35 +0300
+ -- Modestas Vainius <modestas@vainius.eu>  Sat, 01 Aug 2009 13:00:10 +0300
 
 plasma-widget-networkmanagement (0.1~svn970021-2) experimental; urgency=low
 

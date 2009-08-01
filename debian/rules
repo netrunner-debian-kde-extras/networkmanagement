@@ -27,6 +27,6 @@ override_dh_gencontrol:
 	dh_gencontrol --remaining-packages
 
 %:
-	dh --with quilt $@
+	dh $@
 
 .PHONY: override_dh_auto_test
