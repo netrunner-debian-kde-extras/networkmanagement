@@ -3,6 +3,7 @@ usr/lib/kde4/kded_networkmanagement.so
 usr/lib/kde4/libexec/networkmanagement_configshell
 usr/lib/kde4/networkmanagement_openvpnui.so
 usr/lib/kde4/networkmanagement_vpncui.so
+usr/lib/libknm_nm.so
 usr/lib/libknmclient.so.4
 usr/lib/libknmclient.so.4.3.0
 usr/lib/libknminternals.so.4
