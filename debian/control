@@ -22,10 +22,37 @@ Description: Network Management widget for KDE4 Plasma
  provide a fully featured GUI for managing networks.  Currently, the only
  supported backend is NetworkManager v0.7.  Support for wired, wireless, GSM
  and VPN networks are provided.  The widget is exclusively written for Plasma
- and KDE4 and it is not supposed to work in other environments. The package
- also provides the KDE4 Control Module (kcm) for changing network settings (to
- be used by NetworkManager later).
+ and KDE4 and it is not supposed to work in other environments.
  .
  This widget needs Plasma shell to be usable. Main KDE 4 Plasma shell is
  available in the kdebase-workspace-bin package. The user friendly name of the
  widget is "Network Management" (in e.g. "Add Widgets" dialog).
+
+Package: network-manager-kde
+Architecture: any
+Section: net
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Provides: knetworkmanager
+Description: KDE system tray applet for controlling NetworkManager
+ System tray applet for controlling network connections managed by
+ NetworkManager. It is mainly written for KDE but also works for other desktop
+ environments like GNOME or Xfce.
+
+Package: knm-runtime
+Architecture: any
+Section: net
+Depends: ${shlibs:Depends}, ${misc:Depends}, network-manager (>= 0.7.0)
+Replaces: plasma-widget-networkmanagement (<< 0.1~svn1005432) 
+Recommends: kwalletmanager, network-manager-vpnc, network-manager-openvpn, network-manager-pptp,
+ network-manager-kde | plasma-widget-networkmanager
+Description: KDE NetworkManagement infrastructure runtime files
+ This package contains runtime libraries and binaries needed by both
+ network-manager-kde (knetworkmanager) and plasma-widget-networkmanagement
+ packages. Currently, it provides interface to NetworkManager and the KDE4
+ Control Module (kcm) for managing/storing network settings (to be used by
+ either of the two support applications later).
+ .
+ It is possible to use this package without its frontends (either
+ network-manager-kde or plasma-widget-networkmanagement). It enables
+ notifications under KDE but actual network management functions will be very
+ limited.

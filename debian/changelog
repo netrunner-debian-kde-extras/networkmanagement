@@ -8,8 +8,18 @@ plasma-widget-networkmanagement (0.1~svn1005432-0r1) UNRELEASED; urgency=low
   * Do not run tests.
   * Update installed files.
   * Build depend on KDE 4.3 RC2.
+  * Add network-manager-kde and knm-runtime packages:
+    - network-manager-kde package is based on the one from the previous
+      knetworkmanager debian source package.
+      - moved to the section net;
+      - recommends / custom depends moved to the knm-runtime package;
+    - knm-runtime contains knetworkmanager and plasmoid runtime files:
+      - section net;
+      - recommend kwalletmanager and network-manager plugins;
+      - recommend either network-manager-kde or plasma widget;
+      - replaces previous plasma-widget-networkmanagement.
 
- -- Modestas Vainius <modestas@vainius.eu>  Sat, 01 Aug 2009 09:35:44 +0300
+ -- Modestas Vainius <modestas@vainius.eu>  Sat, 01 Aug 2009 10:20:54 +0300
 
 plasma-widget-networkmanagement (0.1~svn970021-2) experimental; urgency=low
 
