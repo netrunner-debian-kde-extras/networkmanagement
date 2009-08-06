@@ -1,9 +1,9 @@
-plasma-widget-networkmanagement (0.1~svn1005461-0r2) UNRELEASED; urgency=low
+plasma-widget-networkmanagement (0.1~svn1007929-0r1) UNRELEASED; urgency=low
 
   * New upstream development snapshot:
     - Last Changed Author: wstephens
-    - Last Changed Rev: 1005461
-    - Last Changed Date: 2009-08-01 10:06:24 +0300
+    - Last Changed Rev: 1007929
+    - Last Changed Date: 2009-08-06 17:32:52 +0300
   * Build depend on libknotificationitem-1-dev.
   * Do not run tests.
   * Update installed files.
@@ -30,7 +30,7 @@ plasma-widget-networkmanagement (0.1~svn1005461-0r2) UNRELEASED; urgency=low
   * Do not build depend or use on quilt, not needed.
   * Update debian/copyright: many upstream file changes.
 
- -- Modestas Vainius <modestas@vainius.eu>  Sat, 01 Aug 2009 13:23:13 +0300
+ -- Modestas Vainius <modestas@vainius.eu>  Thu, 06 Aug 2009 21:59:30 +0300
 
 plasma-widget-networkmanagement (0.1~svn970021-2) experimental; urgency=low
 
