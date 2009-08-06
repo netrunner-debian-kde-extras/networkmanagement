@@ -29,8 +29,10 @@ plasma-widget-networkmanagement (0.1~svn1007929-0r1) UNRELEASED; urgency=low
   * Update lintian overrides.
   * Do not build depend or use on quilt, not needed.
   * Update debian/copyright: many upstream file changes.
+  * Make plasma-widget-networkmanagement depend on network-manager-kde for the
+    transitional period when actual plasmoid is not available.
 
- -- Modestas Vainius <modestas@vainius.eu>  Thu, 06 Aug 2009 21:59:30 +0300
+ -- Modestas Vainius <modestas@vainius.eu>  Thu, 06 Aug 2009 22:21:08 +0300
 
 plasma-widget-networkmanagement (0.1~svn970021-2) experimental; urgency=low
 
