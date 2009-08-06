@@ -17,17 +17,22 @@ class KNMINTERNALS_EXPORT Security8021xSetting : public Setting
     class EnumPhase1peapver
     {
       public:
-      enum type { zero, one, COUNT };
+      enum type { automatic, zero, one, COUNT };
     };
     class EnumPhase1peaplabel
     {
       public:
-      enum type { zero, one, COUNT };
+      enum type { automatic, zero, one, COUNT };
+    };
+    class EnumPhase2auth
+    {
+      public:
+      enum type { none, pap, mschap, mschapv2, chap, md5, gtc, otp, COUNT };
     };
     class EnumPhase2autheap
     {
       public:
-      enum type { pap, mschap, mschapv2, chap, COUNT };
+      enum type { none, md5, gtc, otp, mschapv2, tls, COUNT };
     };
 
     Security8021xSetting( );
@@ -196,7 +201,7 @@ class KNMINTERNALS_EXPORT Security8021xSetting : public Setting
     /**
       Set Phase 2 auth
     */
-    void setPhase2auth( const QString & v )
+    void setPhase2auth( int v )
     {
         mPhase2auth = v;
     }
@@ -204,7 +209,7 @@ class KNMINTERNALS_EXPORT Security8021xSetting : public Setting
     /**
       Get Phase 2 auth
     */
-    QString phase2auth() const
+    int phase2auth() const
     {
       return mPhase2auth;
     }
@@ -306,6 +311,22 @@ class KNMINTERNALS_EXPORT Security8021xSetting : public Setting
     }
 
     /**
+      Set Private key password
+    */
+    void setPrivatekeypassword( const QString & v )
+    {
+        mPrivatekeypassword = v;
+    }
+
+    /**
+      Get Private key password
+    */
+    QString privatekeypassword() const
+    {
+      return mPrivatekeypassword;
+    }
+
+    /**
       Set Phase 2 private key
     */
     void setPhase2privatekey( const QByteArray & v )
@@ -319,6 +340,22 @@ class KNMINTERNALS_EXPORT Security8021xSetting : public Setting
     QByteArray phase2privatekey() const
     {
       return mPhase2privatekey;
+    }
+
+    /**
+      Set Phase 2 private key password
+    */
+    void setPhase2privatekeypassword( const QString & v )
+    {
+        mPhase2privatekeypassword = v;
+    }
+
+    /**
+      Get Phase 2 private key password
+    */
+    QString phase2privatekeypassword() const
+    {
+      return mPhase2privatekeypassword;
     }
 
     /**
@@ -354,6 +391,22 @@ class KNMINTERNALS_EXPORT Security8021xSetting : public Setting
     }
 
     /**
+      Set Use System CA Certs
+    */
+    void setUseSystemCaCerts( bool v )
+    {
+        mUseSystemCaCerts = v;
+    }
+
+    /**
+      Get Use System CA Certs
+    */
+    bool useSystemCaCerts() const
+    {
+      return mUseSystemCaCerts;
+    }
+
+    /**
       Set Connection uses 802.1x
     */
     void setEnabled( bool v )
@@ -373,7 +426,8 @@ class KNMINTERNALS_EXPORT Security8021xSetting : public Setting
     {
         ttls = 1,
         peap = 2,
-        tls  = 4
+        tls  = 4,
+        leap = 8
     };
     Q_DECLARE_FLAGS(EapMethods, EapMethod)
 
@@ -386,6 +440,8 @@ class KNMINTERNALS_EXPORT Security8021xSetting : public Setting
             eap.append("tls");
         if (methods.testFlag(peap))
             eap.append("peap");
+        if (methods.testFlag(peap))
+            eap.append("leap");
 kDebug() << eap;
         setEap(eap);
     }
@@ -400,6 +456,8 @@ kDebug() << eap;
             eapFlags = eapFlags | tls;
         if (eaps.contains("peap"))
             eapFlags = eapFlags | peap;
+        if (eaps.contains("peap"))
+            eapFlags = eapFlags | leap;
         return eapFlags;
     }
 
@@ -417,16 +475,19 @@ kDebug() << eap;
     int mPhase1peapver;
     QString mPhase1peaplabel;
     QString mPhase1fastprovisioning;
-    QString mPhase2auth;
+    int mPhase2auth;
     int mPhase2autheap;
     QByteArray mPhase2cacert;
     QString mPhase2capath;
     QByteArray mPhase2clientcert;
     QString mPassword;
     QByteArray mPrivatekey;
+    QString mPrivatekeypassword;
     QByteArray mPhase2privatekey;
+    QString mPhase2privatekeypassword;
     QString mPin;
     QString mPsk;
+    bool mUseSystemCaCerts;
     bool mEnabled;
 
   private:

@@ -1,5 +1,6 @@
 /*
 Copyright 2008 Helmut Schaa <helmut.schaa@googlemail.com>
+Copyright 2009 Will Stephenson <wstephenson@kde.org>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -18,40 +19,33 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <nm-setting-8021x.h>
-
 #include "peapwidget.h"
-#include "ui_security_peap.h"
-#include "secretstoragehelper.h"
+
+#include <nm-setting-8021x.h>
+#include <connection.h>
+
+#include "eapmethodstack.h"
+#include "eapmethodsimple.h"
+#include "eapmethodinnerauth_p.h"
 #include "settings/802-1x.h"
 
-class PeapWidget::Private
-{
-public:
-    Ui_Peap ui;
-    Knm::Security8021xSetting* setting;
-};
-
 PeapWidget::PeapWidget(Knm::Connection* connection, QWidget * parent)
-: EapWidget(connection, parent), d(new PeapWidget::Private)
+: EapMethodInnerAuth(connection, parent)
 {
-    d->ui.setupUi(this);
-    d->setting = static_cast<Knm::Security8021xSetting *>(connection->setting(Knm::Setting::Security8021x));
-  
-    d->ui.cacert->setMode(KFile::LocalOnly);
+    Q_D(EapMethodInnerAuth);
+    setupUi(this);
 
-    chkShowPassToggled(false);
-    connect(d->ui.chkShowPassword, SIGNAL(toggled(bool)), this, SLOT(chkShowPassToggled(bool)));
+    d->innerAuth->registerEapMethod(Knm::Security8021xSetting::EnumPhase2auth::mschapv2, new EapMethodSimple(EapMethodSimple::MsChapV2, connection, d->innerAuth),
+            i18nc("MSCHAPv2 inner auth method", "MSCHAPv2"));
+    d->innerAuth->registerEapMethod(Knm::Security8021xSetting::EnumPhase2auth::md5, new EapMethodSimple(EapMethodSimple::MD5, connection, d->innerAuth),
+            i18nc("MD5 inner auth method", "MD5"));
+    gridLayout->addWidget(d->innerAuth, 3, 0, 2, 2);
+
+    kurCaCert->setMode(KFile::LocalOnly);
 }
 
 PeapWidget::~PeapWidget()
 {
-    delete d;
-}
-
-void PeapWidget::chkShowPassToggled(bool on)
-{
-    d->ui.password->setEchoMode(on ? QLineEdit::Normal : QLineEdit::Password);
 }
 
 bool PeapWidget::validate() const
@@ -61,70 +55,44 @@ bool PeapWidget::validate() const
 
 void PeapWidget::readConfig()
 {
-    QString identity;
-    identity = d->setting->identity();
-    if (!identity.isEmpty())
-        d->ui.identity->setText(identity);
+    Q_D(EapMethodInnerAuth);
 
-    QString anonymousidentity = d->setting->anonymousidentity();
-    if (!anonymousidentity.isEmpty())
-        d->ui.anonymousidentity->setText(anonymousidentity);
+    leAnonIdentity->setText(d->setting->anonymousidentity());
 
-    QString capath = d->setting->capath();
-    if (!capath.isEmpty())
-        d->ui.cacert->setUrl(capath);
+    kurCaCert->setUrl(d->setting->capath());
 
-    int phase2autheap = d->setting->phase2autheap();
-    if (phase2autheap == Knm::Security8021xSetting::EnumPhase2autheap::pap)
-        d->ui.phase2autheap->setCurrentIndex(0);
-    else if (phase2autheap == Knm::Security8021xSetting::EnumPhase2autheap::mschap)
-        d->ui.phase2autheap->setCurrentIndex(1);
-    else if (phase2autheap == Knm::Security8021xSetting::EnumPhase2autheap::mschapv2)
-        d->ui.phase2autheap->setCurrentIndex(2);
-    else if (phase2autheap == Knm::Security8021xSetting::EnumPhase2autheap::chap)
-        d->ui.phase2autheap->setCurrentIndex(3);
+    d->innerAuth->setCurrentEapMethod(d->setting->phase2auth());
+    d->innerAuth->readConfig();
 
-    kDebug() << d->setting->phase1peapver();
     if (d->setting->phase1peapver() == Knm::Security8021xSetting::EnumPhase1peapver::zero)
-        d->ui.kcfg_phase1peapver->setCurrentIndex(0);
+        cboPeapVersion->setCurrentIndex(0);
     else
-        d->ui.kcfg_phase1peapver->setCurrentIndex(1);
-
+        cboPeapVersion->setCurrentIndex(1);
 }
 
 void PeapWidget::writeConfig()
 {
-    d->setting->setIdentity(d->ui.identity->text());
-    d->setting->setAnonymousidentity(d->ui.anonymousidentity->text());
-    if (!d->ui.cacert->url().directory().isEmpty() && !d->ui.cacert->url().fileName().isEmpty())
-        d->setting->setCapath(d->ui.cacert->url().directory() + "/" + d->ui.cacert->url().fileName());
+    Q_D(EapMethodInnerAuth);
+    // make the Setting PEAP
+    d->setting->setEapFlags(Knm::Security8021xSetting::peap);
+
+    // PEAP specific config
+    d->setting->setAnonymousidentity(leAnonIdentity->text());
+
+    if (!kurCaCert->url().directory().isEmpty() && !kurCaCert->url().fileName().isEmpty())
+        d->setting->setCapath(kurCaCert->url().directory() + "/" + kurCaCert->url().fileName());
     else
-        d->setting->setCapath("");
+        d->setting->setCapath(QString());
 
-    switch(d->ui.phase2autheap->currentIndex())
-    {
-        case 0:
-            d->setting->setPhase2autheap(Knm::Security8021xSetting::EnumPhase2autheap::pap);
-            break;
-        case 1:
-            d->setting->setPhase2autheap(Knm::Security8021xSetting::EnumPhase2autheap::mschap);
-            break;
-        case 2:
-            d->setting->setPhase2autheap(Knm::Security8021xSetting::EnumPhase2autheap::mschapv2);
-            break;
-        case 3:
-            d->setting->setPhase2autheap(Knm::Security8021xSetting::EnumPhase2autheap::chap);
-            break;
-    }
+    d->innerAuth->writeConfig();
 
-    d->setting->setPhase1peapver(d->ui.kcfg_phase1peapver->currentIndex());
-    d->setting->setPassword(d->ui.password->text());
+    d->setting->setPhase1peapver(cboPeapVersion->currentIndex());
 }
 
 void PeapWidget::readSecrets()
 {
-    QString password = d->setting->password();
-    if (!password.isEmpty())
-        d->ui.password->setText(password);
+    Q_D(EapMethodInnerAuth);
+    d->innerAuth->readConfig();
 }
+
 // vim: sw=4 sts=4 et tw=100
