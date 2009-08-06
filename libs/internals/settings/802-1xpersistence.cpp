@@ -27,7 +27,9 @@ void Security8021xPersistence::load()
   setting->setCapath(m_config->readEntry("capath", ""));
   setting->setClientcert(m_config->readEntry("clientcert", QByteArray()));
   {
-    QString contents = m_config->readEntry("phase1peapver", "zero");
+    QString contents = m_config->readEntry("phase1peapver", "automatic");
+    if (contents == "automatic")
+      setting->setPhase1peapver(Security8021xSetting::EnumPhase1peapver::automatic);
     if (contents == "zero")
       setting->setPhase1peapver(Security8021xSetting::EnumPhase1peapver::zero);
     else     if (contents == "one")
@@ -36,17 +38,40 @@ void Security8021xPersistence::load()
   }
   setting->setPhase1peaplabel(m_config->readEntry("phase1peaplabel", ""));
   setting->setPhase1fastprovisioning(m_config->readEntry("phase1fastprovisioning", ""));
-  setting->setPhase2auth(m_config->readEntry("phase2auth", ""));
   {
-    QString contents = m_config->readEntry("phase2autheap", "pap");
-    if (contents == "pap")
-      setting->setPhase2autheap(Security8021xSetting::EnumPhase2autheap::pap);
+    QString contents = m_config->readEntry("phase2auth", "none");
+    if (contents == "none")
+      setting->setPhase2auth(Security8021xSetting::EnumPhase2auth::none);
+    else     if (contents == "pap")
+      setting->setPhase2auth(Security8021xSetting::EnumPhase2auth::pap);
     else     if (contents == "mschap")
-      setting->setPhase2autheap(Security8021xSetting::EnumPhase2autheap::mschap);
+      setting->setPhase2auth(Security8021xSetting::EnumPhase2auth::mschap);
+    else     if (contents == "mschapv2")
+      setting->setPhase2auth(Security8021xSetting::EnumPhase2auth::mschapv2);
+    else     if (contents == "chap")
+      setting->setPhase2auth(Security8021xSetting::EnumPhase2auth::chap);
+    else     if (contents == "md5")
+      setting->setPhase2auth(Security8021xSetting::EnumPhase2auth::md5);
+    else     if (contents == "gtc")
+      setting->setPhase2auth(Security8021xSetting::EnumPhase2auth::gtc);
+    else     if (contents == "otp")
+      setting->setPhase2auth(Security8021xSetting::EnumPhase2auth::otp);
+
+  }
+  {
+    QString contents = m_config->readEntry("phase2autheap", "none");
+    if (contents == "none")
+      setting->setPhase2autheap(Security8021xSetting::EnumPhase2autheap::none);
+    else     if (contents == "md5")
+      setting->setPhase2autheap(Security8021xSetting::EnumPhase2autheap::md5);
+    else     if (contents == "gtc")
+      setting->setPhase2autheap(Security8021xSetting::EnumPhase2autheap::gtc);
+    else     if (contents == "otp")
+      setting->setPhase2autheap(Security8021xSetting::EnumPhase2autheap::otp);
     else     if (contents == "mschapv2")
       setting->setPhase2autheap(Security8021xSetting::EnumPhase2autheap::mschapv2);
-    else     if (contents == "chap")
-      setting->setPhase2autheap(Security8021xSetting::EnumPhase2autheap::chap);
+    else     if (contents == "tls")
+      setting->setPhase2autheap(Security8021xSetting::EnumPhase2autheap::tls);
 
   }
   setting->setPhase2cacert(m_config->readEntry("phase2cacert", QByteArray()));
@@ -57,9 +82,18 @@ void Security8021xPersistence::load()
     setting->setPassword(m_config->readEntry("password", ""));
   }
   setting->setPrivatekey(m_config->readEntry("privatekey", QByteArray()));
+  // SECRET
+  if (m_storageMode != ConnectionPersistence::Secure) {
+    setting->setPrivatekeypassword(m_config->readEntry("privatekeypassword", ""));
+  }
   setting->setPhase2privatekey(m_config->readEntry("phase2privatekey", QByteArray()));
+  // SECRET
+  if (m_storageMode != ConnectionPersistence::Secure) {
+    setting->setPhase2privatekeypassword(m_config->readEntry("phase2privatekeypassword", ""));
+  }
   setting->setPin(m_config->readEntry("pin", ""));
   setting->setPsk(m_config->readEntry("psk", ""));
+  setting->setUseSystemCaCerts(m_config->readEntry("UseSystemCaCerts", false));
   }
 }
 
@@ -74,6 +108,9 @@ void Security8021xPersistence::save()
   m_config->writeEntry("capath", setting->capath());
   m_config->writeEntry("clientcert", setting->clientcert());
   switch (setting->phase1peapver()) {
+    case Security8021xSetting::EnumPhase1peapver::automatic:
+      m_config->writeEntry("phase1peapver", "automatic");
+      break;
     case Security8021xSetting::EnumPhase1peapver::zero:
       m_config->writeEntry("phase1peapver", "zero");
       break;
@@ -83,19 +120,50 @@ void Security8021xPersistence::save()
   }
   m_config->writeEntry("phase1peaplabel", setting->phase1peaplabel());
   m_config->writeEntry("phase1fastprovisioning", setting->phase1fastprovisioning());
-  m_config->writeEntry("phase2auth", setting->phase2auth());
-  switch (setting->phase2autheap()) {
-    case Security8021xSetting::EnumPhase2autheap::pap:
-      m_config->writeEntry("phase2autheap", "pap");
+  switch (setting->phase2auth()) {
+    case Security8021xSetting::EnumPhase2auth::none:
+      m_config->writeEntry("phase2auth", "none");
       break;
-    case Security8021xSetting::EnumPhase2autheap::mschap:
-      m_config->writeEntry("phase2autheap", "mschap");
+    case Security8021xSetting::EnumPhase2auth::pap:
+      m_config->writeEntry("phase2auth", "pap");
+      break;
+    case Security8021xSetting::EnumPhase2auth::mschap:
+      m_config->writeEntry("phase2auth", "mschap");
+      break;
+    case Security8021xSetting::EnumPhase2auth::mschapv2:
+      m_config->writeEntry("phase2auth", "mschapv2");
+      break;
+    case Security8021xSetting::EnumPhase2auth::chap:
+      m_config->writeEntry("phase2auth", "chap");
+      break;
+    case Security8021xSetting::EnumPhase2auth::md5:
+      m_config->writeEntry("phase2auth", "md5");
+      break;
+    case Security8021xSetting::EnumPhase2auth::gtc:
+      m_config->writeEntry("phase2auth", "gtc");
+      break;
+    case Security8021xSetting::EnumPhase2auth::otp:
+      m_config->writeEntry("phase2auth", "otp");
+      break;
+  }
+  switch (setting->phase2autheap()) {
+    case Security8021xSetting::EnumPhase2autheap::none:
+      m_config->writeEntry("phase2autheap", "none");
+      break;
+    case Security8021xSetting::EnumPhase2autheap::md5:
+      m_config->writeEntry("phase2autheap", "md5");
+      break;
+    case Security8021xSetting::EnumPhase2autheap::gtc:
+      m_config->writeEntry("phase2autheap", "gtc");
+      break;
+    case Security8021xSetting::EnumPhase2autheap::otp:
+      m_config->writeEntry("phase2autheap", "otp");
       break;
     case Security8021xSetting::EnumPhase2autheap::mschapv2:
       m_config->writeEntry("phase2autheap", "mschapv2");
       break;
-    case Security8021xSetting::EnumPhase2autheap::chap:
-      m_config->writeEntry("phase2autheap", "chap");
+    case Security8021xSetting::EnumPhase2autheap::tls:
+      m_config->writeEntry("phase2autheap", "tls");
       break;
   }
   m_config->writeEntry("phase2cacert", setting->phase2cacert());
@@ -106,9 +174,18 @@ void Security8021xPersistence::save()
     m_config->writeEntry("password", setting->password());
   }
   m_config->writeEntry("privatekey", setting->privatekey());
+  // SECRET
+  if (m_storageMode != ConnectionPersistence::Secure) {
+    m_config->writeEntry("privatekeypassword", setting->privatekeypassword());
+  }
   m_config->writeEntry("phase2privatekey", setting->phase2privatekey());
+  // SECRET
+  if (m_storageMode != ConnectionPersistence::Secure) {
+    m_config->writeEntry("phase2privatekeypassword", setting->phase2privatekeypassword());
+  }
   m_config->writeEntry("pin", setting->pin());
   m_config->writeEntry("psk", setting->psk());
+  m_config->writeEntry("UseSystemCaCerts", setting->useSystemCaCerts());
   } else
     m_config->deleteGroup();
 }
@@ -118,6 +195,8 @@ QMap<QString,QString> Security8021xPersistence::secrets() const
   Security8021xSetting * setting = static_cast<Security8021xSetting *>(m_setting);
   QMap<QString,QString> map;
   map.insert(QLatin1String("password"), setting->password());
+  map.insert(QLatin1String("privatekeypassword"), setting->privatekeypassword());
+  map.insert(QLatin1String("phase2privatekeypassword"), setting->phase2privatekeypassword());
   return map;
 }
 
@@ -126,6 +205,8 @@ void Security8021xPersistence::restoreSecrets(QMap<QString,QString> secrets) con
   if (m_storageMode == ConnectionPersistence::Secure) {
   Security8021xSetting * setting = static_cast<Security8021xSetting *>(m_setting);
     setting->setPassword(secrets.value("password"));
+    setting->setPrivatekeypassword(secrets.value("privatekeypassword"));
+    setting->setPhase2privatekeypassword(secrets.value("phase2privatekeypassword"));
     setting->setSecretsAvailable(true);
   }
 }

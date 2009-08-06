@@ -67,6 +67,11 @@ NMExtenderItem::NMExtenderItem(RemoteActivatableList * activatableList, Plasma::
     setTitle(i18nc("Extender title", "Network Management"));
     widget();
     init();
+
+    m_showWired = config().readEntry("showWired", true);
+    m_showWireless = config().readEntry("showWireless", true);
+    m_showCellular = config().readEntry("showCellular", true);
+    m_showVpn = config().readEntry("showVpn", true);
 }
 
 NMExtenderItem::~NMExtenderItem()
@@ -80,8 +85,21 @@ void NMExtenderItem::init()
         addInterfaceInternal(iface);
         kDebug() << "Network Interface:" << iface->interfaceName() << iface->driver() << iface->designSpeed();
     }
-    createTab(Knm::Activatable::InterfaceConnection);
-    createTab(Knm::Activatable::WirelessInterfaceConnection);
+    if (m_showWired) {
+        createTab(Knm::Activatable::InterfaceConnection);
+    }
+    if (m_showWireless) {
+        createTab(Knm::Activatable::WirelessInterfaceConnection);
+    }
+    if (m_showVpn) {
+        createTab(Knm::Activatable::VpnInterfaceConnection);
+    }
+    /*
+    // TODO: doesn't exist in Activatable
+    if (m_showCellular) {
+        createTab(Knm::Activatable::
+    }
+    */
     // hook up signals to allow us to change the connection list depending on APs present, etc
     connect(Solid::Control::NetworkManager::notifier(), SIGNAL(networkInterfaceAdded(const QString&)),
             SLOT(interfaceAdded(const QString&)));
@@ -97,11 +115,11 @@ QGraphicsItem * NMExtenderItem::widget()
         m_widget->setMinimumWidth(500);
         m_widget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
-        //m_mainLayout = new QGraphicsGridLayout(m_widget);
-        m_mainLayout = new QGraphicsLinearLayout(m_widget);
-        m_mainLayout->setOrientation(Qt::Horizontal);
-        //m_mainLayout->setColumnFixedWidth(0, 200);
-        //m_mainLayout->setColumnFixedWidth(1, 260);
+        m_mainLayout = new QGraphicsGridLayout(m_widget);
+        //m_mainLayout = new QGraphicsLinearLayout(m_widget);
+        //m_mainLayout->setOrientation(Qt::Horizontal);
+        m_mainLayout->setColumnMinimumWidth(0, 200);
+        m_mainLayout->setColumnMinimumWidth(1, 340);
         m_widget->setLayout(m_mainLayout);
 
 
@@ -131,7 +149,7 @@ QGraphicsItem * NMExtenderItem::widget()
                 this, SLOT(managerWirelessHardwareEnabledChanged(bool)));
 
         m_leftWidget->setLayout(m_leftLayout);
-        m_mainLayout->addItem(m_leftWidget);
+        m_mainLayout->addItem(m_leftWidget, 0, 0);
 
 
         m_rightWidget = new Plasma::Frame(m_widget);
@@ -162,7 +180,7 @@ QGraphicsItem * NMExtenderItem::widget()
         connect(m_connectionsButton, SIGNAL(activated()), this, SLOT(manageConnections()));
         m_rightLayout->addItem(m_connectionsButton);
 
-        m_mainLayout->addItem(m_rightWidget);
+        m_mainLayout->addItem(m_rightWidget, 0, 1);
         setWidget(m_widget);
     } else {
         //kDebug() << "widget non empty";
@@ -295,7 +313,7 @@ void NMExtenderItem::createTab(Knm::Activatable::ActivatableType type)
                 m_wiredList->init();
                 name = i18nc("title of the wired tab", "Wired");
                 icon = KIcon("network-wired");
-                m_tabIndex[type] = m_connectionTabs->addTab(KIcon(icon), name, m_wiredList);
+                m_tabIndex[type] = m_connectionTabs->addTab(icon, name, m_wiredList);
             }
             break;
         }
@@ -311,11 +329,20 @@ void NMExtenderItem::createTab(Knm::Activatable::ActivatableType type)
                 icon = KIcon("network-wireless");
                 // All wireless stuff goes into one tab, marked as WirelessInterfaceConnection
                 // (no separation between those connections and WirelessNetworks)
-                m_tabIndex[Knm::Activatable::WirelessInterfaceConnection] = m_connectionTabs->addTab(KIcon(icon), name, m_wirelessList);
+                m_tabIndex[Knm::Activatable::WirelessInterfaceConnection] = m_connectionTabs->addTab(icon, name, m_wirelessList);
             }
             break;
+        }
         case Knm::Activatable::UnconfiguredInterface:
         case Knm::Activatable::VpnInterfaceConnection:
+        {
+            m_vpnList = new ActivatableListWidget(m_activatables, m_connectionTabs);
+            m_vpnList->addType(Knm::Activatable::VpnInterfaceConnection);
+            m_vpnList->init();
+            name = i18nc("VPN connections tab", "VPN");
+            icon = KIcon("network-wired"); // FIXME: icon
+            kDebug() << "New VPN:" << name;
+            m_tabIndex[Knm::Activatable::VpnInterfaceConnection] = m_connectionTabs->addTab(icon, name, m_vpnList);
             break;
         }
     }
@@ -347,6 +374,62 @@ void NMExtenderItem::switchToDefaultTab()
         switchTab(defaultInterface()->type());
     }
 }
+
+void NMExtenderItem::showWired(bool show)
+{
+    if (m_showWired == show) {
+        return;
+    }
+    kDebug() << "Show wired?" << show;
+    m_showWired = show;
+    if (!show) {
+        if (m_wiredList) {
+            kDebug() << "deleting the tab" << Knm::Activatable::InterfaceConnection;
+            m_connectionTabs->removeTab(m_tabIndex[Knm::Activatable::InterfaceConnection]);
+            //delete m_wiredList;
+            //m_wiredList = 0; this crashes at some point, but why?
+            m_tabIndex.remove(Knm::Activatable::InterfaceConnection);
+        }
+    } else {
+        createTab(Knm::Activatable::InterfaceConnection);
+    }
+    config().writeEntry("showWired", show);
+    emit configNeedsSaving();
+}
+
+void NMExtenderItem::showWireless(bool show)
+{
+    if (m_showWireless == show) {
+        return;
+    }
+    m_showWireless = show;
+    config().writeEntry("showWireless", show);
+    emit configNeedsSaving();
+    // TODO
+}
+
+void NMExtenderItem::showVpn(bool show)
+{
+    if (m_showVpn == show) {
+        return;
+    }
+    m_showVpn = show;
+    config().writeEntry("showVpn", show);
+    emit configNeedsSaving();
+    // TODO
+}
+
+void NMExtenderItem::showCellular(bool show)
+{
+    if (m_showCellular == show) {
+        return;
+    }
+    m_showCellular = show;
+    config().writeEntry("showCellular", show);
+    emit configNeedsSaving();
+    // TODO
+}
+
 
 void NMExtenderItem::handleConnectionStateChange(int new_state, int old_state, int reason)
 {

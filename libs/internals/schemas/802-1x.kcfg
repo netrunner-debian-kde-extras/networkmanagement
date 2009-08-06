@@ -33,6 +33,7 @@
       <label>Phase 1 PEAP version</label>
       <whatsthis></whatsthis>
       <choices>
+        <choice name="automatic"/>
         <choice name="zero"/>
         <choice name="one"/>
       </choices>
@@ -41,6 +42,7 @@
       <label>Phase 1 PEAP label</label>
       <whatsthis></whatsthis>
       <choices>
+        <choice name="automatic"/>
         <choice name="zero"/>
         <choice name="one"/>
       </choices>
@@ -49,17 +51,30 @@
       <label>Phase 1 fast provisioning</label>
       <whatsthis></whatsthis>
     </entry>
-    <entry name="phase2auth" type="String" dbuskey="NM_SETTING_802_1X_PHASE2_AUTH">
+    <entry name="phase2auth" type="Enum" dbuskey="NM_SETTING_802_1X_PHASE2_AUTH">
       <label>Phase 2 auth</label>
-      <whatsthis></whatsthis>
-    </entry>
-    <entry name="phase2autheap" key="phase2autheap" type="Enum" dbuskey="NM_SETTING_802_1X_PHASE2_AUTHEAP">
-      <label>Phase 2 auth eap</label>
+      <default>none</default>
       <choices>
+        <choice name="none"/>
         <choice name="pap"/>
         <choice name="mschap"/>
         <choice name="mschapv2"/>
         <choice name="chap"/>
+        <choice name="md5"/>
+        <choice name="gtc"/>
+        <choice name="otp"/>
+      </choices>
+    </entry>
+    <entry name="phase2autheap" key="phase2autheap" type="Enum" dbuskey="NM_SETTING_802_1X_PHASE2_AUTHEAP">
+      <label>Phase 2 auth eap</label>
+      <default>none</default>
+      <choices>
+        <choice name="none"/>
+        <choice name="md5"/>
+        <choice name="gtc"/>
+        <choice name="otp"/>
+        <choice name="mschapv2"/>
+        <choice name="tls"/>
       </choices>
       <whatsthis></whatsthis>
     </entry>
@@ -83,8 +98,16 @@
       <label>Private key</label>
       <whatsthis></whatsthis>
     </entry>
+    <entry name="privatekeypassword" type="String" secret="true" dbuskey="NM_SETTING_802_1X_PRIVATE_KEY_PASSWORD">
+      <label>Private key password</label>
+      <whatsthis></whatsthis>
+    </entry>
     <entry name="phase2privatekey" type="ByteArray" dbuskey="NM_SETTING_802_1X_PHASE2_PRIVATE_KEY">
       <label>Phase 2 private key</label>
+      <whatsthis></whatsthis>
+    </entry>
+    <entry name="phase2privatekeypassword" type="String" secret="true" dbuskey="NM_SETTING_802_1X_PHASE2_PRIVATE_KEY_PASSWORD">
+      <label>Phase 2 private key password</label>
       <whatsthis></whatsthis>
     </entry>
     <entry name="pin" type="String">
@@ -94,6 +117,10 @@
     <entry name="psk" type="String">
       <label>PSK</label>
       <whatsthis></whatsthis>
+    </entry>
+    <entry name="UseSystemCaCerts" type="Bool" dbuskey="NM_SETTING_802_1X_SYSTEM_CA_CERTS">
+      <label>Use System CA Certs</label>
+      <default>false</default>
     </entry>
     <entry name="enabled" type="Bool" nodbus="true">
       <label>Connection uses 802.1x</label>
