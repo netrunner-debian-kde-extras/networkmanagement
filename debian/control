@@ -56,3 +56,15 @@ Description: KDE NetworkManagement infrastructure runtime files
  network-manager-kde or plasma-widget-networkmanagement). It enables
  notifications under KDE but actual network management functions will be very
  limited.
+
+Package: plasma-widget-networkmanagement-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: ${misc:Depends}, plasma-widget-networkmanagement (= ${binary:Version})
+Recommends: kdelibs5-dbg
+Suggests: kdebase-workspace-dbg
+Description: debugging symbols for KDE Network Management
+ This package provides debugging symbols for all binary packages built from the
+ plasma-widget-networkmanagement source package. It's highly recommended to
+ have this package installed before reporting any crashes.

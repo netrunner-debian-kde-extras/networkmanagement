@@ -31,8 +31,9 @@ plasma-widget-networkmanagement (0.1~svn1007929-1) experimental; urgency=low
   * Update debian/copyright: many upstream file changes.
   * Make plasma-widget-networkmanagement depend on network-manager-kde for the
     transitional period when actual plasmoid is not available.
+  * Add plasma-widget-networkmanagement-dbg debug package.
 
- -- Modestas Vainius <modestas@vainius.eu>  Thu, 06 Aug 2009 22:21:08 +0300
+ -- Modestas Vainius <modestas@vainius.eu>  Thu, 06 Aug 2009 22:57:13 +0300
 
 plasma-widget-networkmanagement (0.1~svn970021-2) experimental; urgency=low
 
