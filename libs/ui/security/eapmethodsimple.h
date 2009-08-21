@@ -27,7 +27,7 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 class EapMethodSimple : public EapMethod, public Ui_EapMethodSimpleBase
 {
 Q_OBJECT
-Q_DECLARE_PRIVATE(EapMethod);
+Q_DECLARE_PRIVATE(EapMethod)
 public:
     enum Type { Pap = 0, MsChap, MsChapV2, MD5, Chap };
     EapMethodSimple(Type type, Knm::Connection * connection, QWidget * parent = 0);
@@ -36,7 +36,7 @@ public:
     void readConfig();
     void writeConfig();
     void readSecrets();
-    void setPasswordMode(bool on = true);
+    void setShowPasswords(bool on = true);
 private:
     Type m_type;
 };

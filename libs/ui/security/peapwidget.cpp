@@ -39,7 +39,7 @@ PeapWidget::PeapWidget(Knm::Connection* connection, QWidget * parent)
             i18nc("MSCHAPv2 inner auth method", "MSCHAPv2"));
     d->innerAuth->registerEapMethod(Knm::Security8021xSetting::EnumPhase2auth::md5, new EapMethodSimple(EapMethodSimple::MD5, connection, d->innerAuth),
             i18nc("MD5 inner auth method", "MD5"));
-    gridLayout->addWidget(d->innerAuth, 3, 0, 2, 2);
+    gridLayout->addWidget(d->innerAuth, 4, 0, 2, 2);
 
     kurCaCert->setMode(KFile::LocalOnly);
 }
@@ -59,15 +59,26 @@ void PeapWidget::readConfig()
 
     leAnonIdentity->setText(d->setting->anonymousidentity());
 
-    kurCaCert->setUrl(d->setting->capath());
+    if (d->setting->useSystemCaCerts()) {
+        chkUseSystemCaCerts->setChecked(true);
+        kurCaCert->setEnabled(false);
+        kurCaCert->clear();
+    } else {
+        chkUseSystemCaCerts->setChecked(false);
+        QString capath = d->setting->capath();
+        if (!capath.isEmpty())
+            kurCaCert->setUrl(capath);
+    }
 
-    d->innerAuth->setCurrentEapMethod(d->setting->phase2auth());
+    if (d->setting->phase2auth() != Knm::Security8021xSetting::EnumPhase2auth::none) {
+        d->innerAuth->setCurrentEapMethod(d->setting->phase2auth());
+    }
     d->innerAuth->readConfig();
 
     if (d->setting->phase1peapver() == Knm::Security8021xSetting::EnumPhase1peapver::zero)
-        cboPeapVersion->setCurrentIndex(0);
-    else
         cboPeapVersion->setCurrentIndex(1);
+    else if (d->setting->phase1peapver() == Knm::Security8021xSetting::EnumPhase1peapver::one)
+        cboPeapVersion->setCurrentIndex(2);
 }
 
 void PeapWidget::writeConfig()
@@ -79,10 +90,18 @@ void PeapWidget::writeConfig()
     // PEAP specific config
     d->setting->setAnonymousidentity(leAnonIdentity->text());
 
-    if (!kurCaCert->url().directory().isEmpty() && !kurCaCert->url().fileName().isEmpty())
-        d->setting->setCapath(kurCaCert->url().directory() + "/" + kurCaCert->url().fileName());
-    else
-        d->setting->setCapath(QString());
+    if (chkUseSystemCaCerts->isChecked()) {
+        d->setting->setUseSystemCaCerts(true);
+        d->setting->setCapath("");
+    } else {
+        d->setting->setUseSystemCaCerts(false);
+        KUrl url = kurCaCert->url();
+        if (!url.directory().isEmpty() && !url.fileName().isEmpty())
+            d->setting->setCapath(url.directory() + "/" + url.fileName());
+        else {
+            d->setting->setCapath(QString());
+        }
+    }
 
     d->innerAuth->writeConfig();
 
@@ -92,7 +111,7 @@ void PeapWidget::writeConfig()
 void PeapWidget::readSecrets()
 {
     Q_D(EapMethodInnerAuth);
-    d->innerAuth->readConfig();
+    d->innerAuth->readSecrets();
 }
 
 // vim: sw=4 sts=4 et tw=100

@@ -45,10 +45,7 @@ void EapMethodLeap::readConfig()
 {
     Q_D(EapMethod);
 
-    Knm::WirelessSecuritySetting * ws = static_cast<Knm::WirelessSecuritySetting*>(d->connection->setting(Knm::Setting::WirelessSecurity));
-    if (ws) {
-        leUsername->setText(ws->leapusername());
-    }
+    leUsername->setText(d->setting->identity());
 }
 
 void EapMethodLeap::writeConfig()
@@ -57,23 +54,20 @@ void EapMethodLeap::writeConfig()
     // make the Setting LEAP
     d->setting->setEapFlags(Knm::Security8021xSetting::leap);
     // LEAP stuff
-    Knm::WirelessSecuritySetting * ws = static_cast<Knm::WirelessSecuritySetting*>(d->connection->setting(Knm::Setting::WirelessSecurity));
-    ws->setLeapusername(leUsername->text());
-    ws->setLeappassword(lePassword->text());
+    d->setting->setIdentity(leUsername->text());
+    d->setting->setPassword(lePassword->text());
+    d->setting->setUseSystemCaCerts(false);
 }
 
 void EapMethodLeap::readSecrets()
 {
     Q_D(EapMethod);
-    Knm::WirelessSecuritySetting * ws = static_cast<Knm::WirelessSecuritySetting*>(d->connection->setting(Knm::Setting::WirelessSecurity));
-    if (ws) {
-        lePassword->setText(ws->leappassword());
-    }
+    lePassword->setText(d->setting->password());
 }
 
-void EapMethodLeap::setPasswordMode(bool on)
+void EapMethodLeap::setShowPasswords(bool on)
 {
-    lePassword->setPasswordMode(on);
+    lePassword->setPasswordMode(!on);
 }
 
 // vim: sw=4 sts=4 et tw=100

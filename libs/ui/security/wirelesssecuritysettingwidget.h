@@ -25,6 +25,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "knm_export.h"
 
+namespace Solid
+{
+namespace Control
+{
+class AccessPoint;
+class WirelessNetworkInterface;
+} // namespace Control
+} // namespace Solid
+
 namespace Knm
 {
     class Connection;
@@ -41,9 +50,10 @@ public:
      * @param setDefaults if set, the widget sets its individual members according to caps, wpa and
      * rsn
      */
-    WirelessSecuritySettingWidget(bool setDefaults, Knm::Connection * connection,
-                                uint caps, uint wpa, uint rsn,
-                                QWidget * parent = 0 );
+    WirelessSecuritySettingWidget(Knm::Connection * connection,
+            Solid::Control::WirelessNetworkInterface * iface = 0,
+            Solid::Control::AccessPoint * ap = 0,
+            QWidget * parent = 0 );
     virtual ~WirelessSecuritySettingWidget();
     SettingInterface* wpaEapWidget();
     void readConfig();
