@@ -1,4 +1,4 @@
-plasma-widget-networkmanagement (0.1~svn1013816-0r1) UNRELEASED; urgency=low
+plasma-widget-networkmanagement (0.1~svn1013816-1) experimental; urgency=low
 
   * New upstream development snapshot:
    - Last Changed Author: dfaure
@@ -7,7 +7,7 @@ plasma-widget-networkmanagement (0.1~svn1013816-0r1) UNRELEASED; urgency=low
   * Bump Standards-Version to 3.8.3, no changes needed.
   * Update knm-runtime.install.
 
- -- Modestas Vainius <modestas@vainius.eu>  Fri, 21 Aug 2009 22:25:23 +0300
+ -- Modestas Vainius <modestas@vainius.eu>  Fri, 21 Aug 2009 23:44:23 +0300
 
 plasma-widget-networkmanagement (0.1~svn1007929-1) experimental; urgency=low
 
