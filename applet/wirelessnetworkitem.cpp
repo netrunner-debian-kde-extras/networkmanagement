@@ -37,25 +37,34 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "remotewirelessnetwork.h"
 #include "remotewirelessinterfaceconnection.h"
+#include <wirelesssecurityidentifier.h>
 #include "activatable.h"
 
 WirelessNetworkItem::WirelessNetworkItem(RemoteWirelessNetwork * remote, QGraphicsItem * parent)
 : ActivatableItem(remote, parent),
-    m_remote(remote),
     m_security(0),
     m_securityIcon(0),
-    m_securityIconName(0)
+    m_securityIconName(0),
+    m_strength(0),
+    m_remote(remote)
 {
     m_strengthMeter = new Plasma::Meter(this);
     m_strength = 0;
 
+    readSettings();
+}
 
+bool WirelessNetworkItem::readSettings()
+{
     Solid::Control::AccessPoint::WpaFlags wpaFlags;
     Solid::Control::AccessPoint::WpaFlags rsnFlags;
     Solid::Control::AccessPoint::Capabilities capabilities;
+    Solid::Control::WirelessNetworkInterface::Capabilities interfaceCapabilities;
+
+    //Solid::Control::WirelessNetworkInterface::Capabilities interfaceCapabilities() const;
 
     m_state = Knm::InterfaceConnection::Unknown;
-
+    int operationMode = 0;
     Knm::Activatable::ActivatableType aType = m_remote->activatableType();
     if (aType == Knm::Activatable::WirelessInterfaceConnection) {
         //kDebug() << "adding WirelessInterfaceConnection";
@@ -63,46 +72,40 @@ WirelessNetworkItem::WirelessNetworkItem(RemoteWirelessNetwork * remote, QGraphi
         m_ssid = remoteconnection->ssid();
         wpaFlags = remoteconnection->wpaFlags();
         rsnFlags = remoteconnection->rsnFlags();
-        capabilities = remoteconnection->capabilities();
+        capabilities = remoteconnection->apCapabilities();
+        interfaceCapabilities = remoteconnection->interfaceCapabilities();
         kDebug() <<  "========== RemoteActivationState" << remoteconnection->activationState();
         m_state = remoteconnection->activationState();
         connect(remoteconnection, SIGNAL(activationStateChanged(Knm::InterfaceConnection::ActivationState)),
                                     SLOT(activationStateChanged(Knm::InterfaceConnection::ActivationState)));
+        RemoteWirelessObject * wobj  = static_cast<RemoteWirelessObject*>(remoteconnection);
+        operationMode = wobj->operationMode();
     } else if (aType == Knm::Activatable::WirelessNetwork) {
-        m_ssid = remote->ssid();
+        m_ssid = m_remote->ssid();
         wpaFlags = m_remote->wpaFlags();
         rsnFlags = m_remote->rsnFlags();
-        capabilities = m_remote->capabilities();
+        capabilities = m_remote->apCapabilities();
+        interfaceCapabilities = m_remote->interfaceCapabilities();
+        RemoteWirelessObject * wobj  = static_cast<RemoteWirelessObject*>(m_remote);
+        operationMode = wobj->apCapabilities();
+    } else {
+        return false;
     }
 
-    setStrength(remote->strength());
+    setStrength(m_remote->strength());
     connect(m_remote, SIGNAL(changed()), SLOT(update()));
     connect(m_remote, SIGNAL(strengthChanged(int)), SLOT(setStrength(int)));
 
-    // this was done by a clueless (coolo)
-    if ( wpaFlags.testFlag( Solid::Control::AccessPoint::PairWep40 ) ||
-         wpaFlags.testFlag( Solid::Control::AccessPoint::PairWep104 )
-         || (wpaFlags == 0 && capabilities.testFlag(Solid::Control::AccessPoint::Privacy))) {
-        m_security = QLatin1String("wep");
+    Knm::WirelessSecurity::Type best = Knm::WirelessSecurity::best(interfaceCapabilities, true, (operationMode == Solid::Control::WirelessNetworkInterface::Adhoc), capabilities, wpaFlags, rsnFlags);
 
-    } else if ( wpaFlags.testFlag( Solid::Control::AccessPoint::KeyMgmtPsk ) ||
-         wpaFlags.testFlag( Solid::Control::AccessPoint::PairTkip ) ) {
-        m_security = QLatin1String("wpa-psk");
-
-    } else if ( rsnFlags.testFlag( Solid::Control::AccessPoint::KeyMgmtPsk ) ||
-         rsnFlags.testFlag( Solid::Control::AccessPoint::PairTkip ) ||
-         rsnFlags.testFlag( Solid::Control::AccessPoint::PairCcmp ) ) {
-        m_security = QLatin1String("wpa-psk");
-
-    } else if ( wpaFlags.testFlag( Solid::Control::AccessPoint::KeyMgmt8021x ) ||
-         wpaFlags.testFlag( Solid::Control::AccessPoint::GroupCcmp ) ) {
-        m_security = QLatin1String("wpa-eap");
-    }
+    m_securityIconName = Knm::WirelessSecurity::iconName(best);
+    m_securityIconToolTip = Knm::WirelessSecurity::shortToolTip(best);
+    return true;
 }
 
 void WirelessNetworkItem::setupItem()
 {
-    readSettings();
+    //readSettings();
     //kDebug();// << "Connection Settings:" << m_connection->settings();
     //kDebug();// << "Security:" << m_connection->type() << m_security;
     // painting of a non-active wifi network
@@ -123,7 +126,6 @@ void WirelessNetworkItem::setupItem()
 
     // icon on the left
     m_connectButton = new Plasma::IconWidget(this);
-    m_connectButton->setDrawBackground(true);
 
     if (interfaceConnection()) {
         m_connectButton->setIcon("bookmarks"); // Known connection, we probably have credentials
@@ -159,7 +161,19 @@ void WirelessNetworkItem::setupItem()
     m_securityIcon->setToolTip(m_securityIconToolTip);
     m_layout->addItem(m_securityIcon, 0, 2, 1, 1, Qt::AlignLeft);
 
+    connect(m_connectButton, SIGNAL(clicked()), this, SIGNAL(clicked()));
+    connect(this, SIGNAL(clicked()), this, SLOT(emitClicked()));
+
+    // Forward clicks and presses between our widgets and this
+    connect(this, SIGNAL(pressed(bool)), m_connectButton, SLOT(setPressed(bool)));
+    connect(m_connectButton, SIGNAL(pressed(bool)), this, SLOT(setPressed(bool)));
     connect(m_connectButton, SIGNAL(clicked()), this, SLOT(emitClicked()));
+
+    connect(this, SIGNAL(pressed(bool)), m_securityIcon, SLOT(setPressed(bool)));
+    connect(m_securityIcon, SIGNAL(pressed(bool)), this, SLOT(setPressed(bool)));
+    connect(m_securityIcon, SIGNAL(clicked()), this, SLOT(emitClicked()));
+
+
     update();
 }
 
@@ -217,8 +231,14 @@ void WirelessNetworkItem::activationStateChanged(Knm::InterfaceConnection::Activ
     update();
 }
 
+/*
 void WirelessNetworkItem::readSettings()
 {
+
+    Knm::WirelessSecurity::Type best = Knm::WirelessSecurity::best(obj->interfaceCapabilities(), true, (obj->operationMode() == Solid::Control::WirelessNetworkInterface::Adhoc), obj->apCapabilities(), obj->wpaFlags(), obj->rsnFlags());
+    security->setToolTip(Knm::WirelessSecurity::shortToolTip(best));
+    security->setPixmap(SmallIcon(Knm::WirelessSecurity::iconName(best)));
+
     if (m_security.isEmpty()) {
         m_securityIconName = "security-low";
         m_securityIconToolTip = i18nc("wireless network is not encrypted", "Unencrypted network");
@@ -239,7 +259,7 @@ void WirelessNetworkItem::readSettings()
         m_securityIconToolTip = i18nc("tooltip of the security icon in the connection list", "Encrypted network (WPA-EAP)");
     }
 }
-
+*/
 RemoteWirelessNetwork * WirelessNetworkItem::wirelessNetworkItem() const
 {
     return static_cast<RemoteWirelessNetwork*>(m_activatable);

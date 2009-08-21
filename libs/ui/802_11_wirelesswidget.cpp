@@ -42,6 +42,7 @@ Wireless80211Widget::Wireless80211Widget(Knm::Connection* connection, const QStr
     d->proposedSsid = ssid;
     d->setting = static_cast<Knm::WirelessSetting *>(connection->setting(Knm::Setting::Wireless));
     d->ui.ssid->setText(d->proposedSsid);
+    d->ui.mtu->setSuffix(ki18np(" byte", " bytes"));
     connect(d->ui.btnScan, SIGNAL(clicked()), SLOT(scanClicked()));
 }
 
@@ -52,7 +53,7 @@ Wireless80211Widget::~Wireless80211Widget()
 
 void Wireless80211Widget::readConfig()
 {
-    kDebug() << kBacktrace();
+    //kDebug() << kBacktrace();
     switch(d->setting->mode())
     {
         case Knm::WirelessSetting::EnumMode::adhoc:

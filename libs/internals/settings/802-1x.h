@@ -113,17 +113,7 @@ class KNMINTERNALS_EXPORT Security8021xSetting : public Setting
     {
         mCapath = v;
 
-        // also update the ca cert blob
-        QFile ca_cert(v);
-
-        if (ca_cert.open(QIODevice::ReadOnly)) {
-           QByteArray bytes = ca_cert.readAll();
-
-           // FIXME: verify that the ca_cert is a X509 cert
-           // (see libnm-util/nm-setting-8021x.c function nm_setting_802_1x_set_ca_cert_from_file)
-
-           setCacert( bytes );
-        }
+        setCacert( getBytes(v));
     }
 
     /**
@@ -148,6 +138,23 @@ class KNMINTERNALS_EXPORT Security8021xSetting : public Setting
     QByteArray clientcert() const
     {
       return mClientcert;
+    }
+
+    /**
+      Set Client Cert Path
+    */
+    void setClientcertpath( const QString & v )
+    {
+        mClientcertpath = v;
+        setClientcert( getBytes(v));
+    }
+
+    /**
+      Get Client Cert Path
+    */
+    QString clientcertpath() const
+    {
+      return mClientcertpath;
     }
 
     /**
@@ -252,6 +259,7 @@ class KNMINTERNALS_EXPORT Security8021xSetting : public Setting
     void setPhase2capath( const QString & v )
     {
         mPhase2capath = v;
+        setPhase2cacert( getBytes(v));
     }
 
     /**
@@ -276,6 +284,23 @@ class KNMINTERNALS_EXPORT Security8021xSetting : public Setting
     QByteArray phase2clientcert() const
     {
       return mPhase2clientcert;
+    }
+
+    /**
+      Set Phase 2 client cert path
+    */
+    void setPhase2clientcertpath( const QString & v )
+    {
+        mPhase2clientcertpath = v;
+        setPhase2clientcert( getBytes(v));
+    }
+
+    /**
+      Get Phase 2 client cert path
+    */
+    QString phase2clientcertpath() const
+    {
+      return mPhase2clientcertpath;
     }
 
     /**
@@ -311,6 +336,23 @@ class KNMINTERNALS_EXPORT Security8021xSetting : public Setting
     }
 
     /**
+      Set Private key Path
+    */
+    void setPrivatekeypath( const QString & v )
+    {
+        mPrivatekeypath = v;
+        setPrivatekey( getBytes(v));
+    }
+
+    /**
+      Get Private key Path
+    */
+    QString privatekeypath() const
+    {
+      return mPrivatekeypath;
+    }
+
+    /**
       Set Private key password
     */
     void setPrivatekeypassword( const QString & v )
@@ -340,6 +382,23 @@ class KNMINTERNALS_EXPORT Security8021xSetting : public Setting
     QByteArray phase2privatekey() const
     {
       return mPhase2privatekey;
+    }
+
+    /**
+      Set Phase 2 Private key Path
+    */
+    void setPhase2privatekeypath( const QString & v )
+    {
+        mPhase2privatekeypath = v;
+        setPhase2privatekey( getBytes(v));
+    }
+
+    /**
+      Get Phase 2 Private key Path
+    */
+    QString phase2privatekeypath() const
+    {
+      return mPhase2privatekeypath;
     }
 
     /**
@@ -440,7 +499,7 @@ class KNMINTERNALS_EXPORT Security8021xSetting : public Setting
             eap.append("tls");
         if (methods.testFlag(peap))
             eap.append("peap");
-        if (methods.testFlag(peap))
+        if (methods.testFlag(leap))
             eap.append("leap");
 kDebug() << eap;
         setEap(eap);
@@ -456,7 +515,7 @@ kDebug() << eap;
             eapFlags = eapFlags | tls;
         if (eaps.contains("peap"))
             eapFlags = eapFlags | peap;
-        if (eaps.contains("peap"))
+        if (eaps.contains("leap"))
             eapFlags = eapFlags | leap;
         return eapFlags;
     }
@@ -472,6 +531,7 @@ kDebug() << eap;
     QByteArray mCacert;
     QString mCapath;
     QByteArray mClientcert;
+    QString mClientcertpath;
     int mPhase1peapver;
     QString mPhase1peaplabel;
     QString mPhase1fastprovisioning;
@@ -480,10 +540,13 @@ kDebug() << eap;
     QByteArray mPhase2cacert;
     QString mPhase2capath;
     QByteArray mPhase2clientcert;
+    QString mPhase2clientcertpath;
     QString mPassword;
     QByteArray mPrivatekey;
+    QString mPrivatekeypath;
     QString mPrivatekeypassword;
     QByteArray mPhase2privatekey;
+    QString mPhase2privatekeypath;
     QString mPhase2privatekeypassword;
     QString mPin;
     QString mPsk;
@@ -491,6 +554,7 @@ kDebug() << eap;
     bool mEnabled;
 
   private:
+    QByteArray getBytes(const QString & fileName);
 };
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(Security8021xSetting::EapMethods)

@@ -10,9 +10,6 @@
     <height>70</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>Form</string>
-  </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
     <widget class="QLabel" name="label_4">
@@ -44,7 +41,11 @@
     </widget>
    </item>
    <item row="1" column="1">
-    <widget class="KLineEdit" name="lePassword"/>
+    <widget class="KLineEdit" name="lePassword">
+     <property name="passwordMode">
+      <bool>true</bool>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

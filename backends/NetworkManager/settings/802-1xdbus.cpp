@@ -36,7 +36,7 @@ void Security8021xDbus::fromMap(const QVariantMap & map)
             setting->setClientcert(map.value(QLatin1String(NM_SETTING_802_1X_CLIENT_CERT)).value<QByteArray>());
         }
         if (map.contains(QLatin1String(NM_SETTING_802_1X_PHASE1_PEAPVER))) {
-            setting->setPhase1peapver(map.value(QLatin1String(NM_SETTING_802_1X_PHASE1_PEAPVER)).value<int>());
+            setting->setPhase1peapver(map.value(QLatin1String(NM_SETTING_802_1X_PHASE1_PEAPVER)).value<int>() + 1 ); // 0 is automatic
         }
         if (map.contains(QLatin1String(NM_SETTING_802_1X_PHASE1_PEAPLABEL))) {
             setting->setPhase1peaplabel(map.value(QLatin1String(NM_SETTING_802_1X_PHASE1_PEAPLABEL)).value<QString>());
@@ -115,10 +115,10 @@ QVariantMap Security8021xDbus::toMap()
         if (setting->eap().contains(QLatin1String("peap"))) {
             switch (setting->phase1peapver()) {
                 case Knm::Security8021xSetting::EnumPhase1peapver::zero:
-                    map.insert(QLatin1String(NM_SETTING_802_1X_PHASE1_PEAPVER), "zero");
+                    map.insert(QLatin1String(NM_SETTING_802_1X_PHASE1_PEAPVER), "0");
                     break;
                 case Knm::Security8021xSetting::EnumPhase1peapver::one:
-                    map.insert(QLatin1String(NM_SETTING_802_1X_PHASE1_PEAPVER), "one");
+                    map.insert(QLatin1String(NM_SETTING_802_1X_PHASE1_PEAPVER), "1");
                     if (!setting->phase1peaplabel().isEmpty()) {
                         map.insert(QLatin1String(NM_SETTING_802_1X_PHASE1_PEAPLABEL), setting->phase1peaplabel());
                     }
@@ -130,7 +130,6 @@ QVariantMap Security8021xDbus::toMap()
         }
         switch (setting->phase2auth()) {
             case Knm::Security8021xSetting::EnumPhase2auth::none:
-                // not needed on the bus
                 //map.insert(QLatin1String(NM_SETTING_802_1X_PHASE2_AUTH), "none");
                 break;
             case Knm::Security8021xSetting::EnumPhase2auth::pap:
@@ -157,8 +156,7 @@ QVariantMap Security8021xDbus::toMap()
         }
         switch (setting->phase2autheap()) {
             case Knm::Security8021xSetting::EnumPhase2autheap::none:
-                // not needed on the bus
-                // map.insert(QLatin1String(NM_SETTING_802_1X_PHASE2_AUTHEAP), "none");
+                //map.insert(QLatin1String(NM_SETTING_802_1X_PHASE2_AUTHEAP), "none");
                 break;
             case Knm::Security8021xSetting::EnumPhase2autheap::md5:
                 map.insert(QLatin1String(NM_SETTING_802_1X_PHASE2_AUTHEAP), "md5");
@@ -193,7 +191,7 @@ QVariantMap Security8021xDbus::toMap()
         if (!setting->psk().isEmpty()) {
             map.insert("psk", setting->psk());
         }
-        if (setting->useSystemCaCerts()) {
+        if (!setting->eap().contains(QLatin1String("leap"))) {
             map.insert(QLatin1String(NM_SETTING_802_1X_SYSTEM_CA_CERTS), setting->useSystemCaCerts());
         }
     }

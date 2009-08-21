@@ -1,3 +1,5 @@
+add_definitions(-DKDE_DEFAULT_DEBUG_AREA=51020)
+
 include_directories(
    ${CMAKE_CURRENT_SOURCE_DIR}/../../libs
    ${CMAKE_CURRENT_SOURCE_DIR}/../../libs/internals
@@ -44,7 +46,11 @@ set(knm_nm_LIB_SRCS
 
    busconnection.cpp
 
+   #org.freedesktop.NetworkManagerSettings.Connection
    exportedconnection.cpp
+   
+   #org.freedesktop.NetworkManagerSettings.Connection.Secrets
+   exportedconnectionsecrets.cpp
 
    nmdbusactiveconnectionmonitor.cpp
 

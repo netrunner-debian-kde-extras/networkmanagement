@@ -50,7 +50,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "settingwidget.h"
 #include "wiredwidget.h"
 #include "security/wirelesssecuritysettingwidget.h"
-#include "security/802_1x_security_widget.h"
 #include "security/securitywidget.h"
 
 #include "knmserviceprefs.h"
@@ -111,9 +110,7 @@ void ConnectionSecretsJob::doAskUser()
     // popup a dialog showing the appropriate UI for the type of connection
     kDebug();
     if ( mSettingName == QLatin1String(NM_SETTING_802_1X_SETTING_NAME)) {
-        // need a way to identify and only show WpaEapWidget here - perhaps a plain container
-        // SettingWidget?
-        m_settingWidget = new WirelessSecuritySettingWidget(false, m_connection, 0, 0, 0, 0);
+        m_settingWidget = new WirelessSecuritySettingWidget(m_connection /*Need AP and iface here*/ ) ;
     } else if ( mSettingName == QLatin1String(NM_SETTING_CDMA_SETTING_NAME)) {
         m_settingWidget = new CdmaWidget(m_connection, 0);
     } else if ( mSettingName == QLatin1String(NM_SETTING_GSM_SETTING_NAME)) {
@@ -133,7 +130,7 @@ void ConnectionSecretsJob::doAskUser()
     } else if ( mSettingName == QLatin1String(NM_SETTING_WIRED_SETTING_NAME)) {
         m_settingWidget = new WiredWidget(m_connection, 0);
     } else if ( mSettingName == QLatin1String(NM_SETTING_WIRELESS_SECURITY_SETTING_NAME)) {
-        m_settingWidget = new WirelessSecuritySettingWidget(false, m_connection, 0, 0, 0); // TODO: find out
+        m_settingWidget = new WirelessSecuritySettingWidget(m_connection, 0, 0, 0); // TODO: find out AP and device
     } else if ( mSettingName == QLatin1String(NM_SETTING_WIRELESS_SETTING_NAME)) {
         m_settingWidget = new Wireless80211Widget(m_connection, 0);
     } else if ( mSettingName == QLatin1String(NM_SETTING_VPN_SETTING_NAME)) {
@@ -203,5 +200,4 @@ Knm::Connection * ConnectionSecretsJob::connection() const
     return m_connection;
 }
 
-#include "connectionsecretsjob.moc"
 // vim: sw=4 sts=4 et tw=100
