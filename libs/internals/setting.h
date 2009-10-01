@@ -36,11 +36,15 @@ public:
 
     Setting(Setting::Type type);
     virtual ~Setting();
+    bool isNull() const;
+    void setInitialized();
     Setting::Type type() const;
     virtual QString name() const = 0;
     virtual bool hasSecrets() const = 0;
     bool secretsAvailable() const;
     void setSecretsAvailable(bool secretsAvailable);
+protected:
+    bool m_initialized;
 private:
     Setting::Type m_type;
     bool m_secretsAvailable;

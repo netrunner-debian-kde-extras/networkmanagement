@@ -25,6 +25,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <KGlobalSettings>
 #include <KLocale>
+#include <kdeversion.h>
 
 #include <Solid/Device>
 
@@ -48,7 +49,11 @@ UnconfiguredInterfaceItem::UnconfiguredInterfaceItem(Knm::UnconfiguredInterface 
     QString deviceText;
     if (true) /*TODO, add configurability here*/ {
         Solid::Device* dev = new Solid::Device(unconfigured->deviceUni());
-        deviceText = dev->product();
+#if KDE_IS_VERSION(4,3,60)
+            deviceText = dev->description();
+#else
+            deviceText = dev->product();
+#endif
     } else {
         Solid::Control::NetworkInterface * iface = Solid::Control::NetworkManager::findNetworkInterface(unconfigured->deviceUni());
         if (iface) {
@@ -60,11 +65,14 @@ UnconfiguredInterfaceItem::UnconfiguredInterfaceItem(Knm::UnconfiguredInterface 
 
     d->subtitleLabel = new QLabel(this);
     d->subtitleLabel->setFont(KGlobalSettings::toolBarFont());
-    d->subtitleLabel->setText(i18nc("Text for menu item for setting up devices which until now do not have any connections", "Configure other network..."));
+    d->subtitleLabel->setText(i18nc("Text for menu item for setting up devices which until now do not have any connections", "Create network connection..."));
     d->outerLayout->addWidget(d->subtitleLabel, 1, 1, 1, 1);
 
     d->activeIcon->setPixmap(pixmap());
     d->activeIcon->show();
+    // disconnects us from to the activatable's activate slot, because this is handled indirectly by
+    // KnetworkManagerTrayIcon now.
+    disconnect(this, SIGNAL(clicked()), unconfigured, SLOT(activate()));
 }
 
 UnconfiguredInterfaceItem::~UnconfiguredInterfaceItem()

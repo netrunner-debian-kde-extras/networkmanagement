@@ -33,6 +33,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <KLocale>
 #include <KNotification>
 #include <KPushButton>
+#include <kdeversion.h>
 
 #include <solid/device.h>
 #include <solid/networking.h>
@@ -399,9 +400,14 @@ void NetworkManagerApplet::toolTipAboutToShow()
             if (iface->connectionState() != Solid::Control::NetworkInterface::Unavailable) {
                 hasActive = true;
                 Solid::Device* dev = new Solid::Device(iface->uni());
-                QString product = dev->product();
+#if KDE_IS_VERSION(4,3,60)
+                QString description = dev->description();
+#else
+                QString description = dev->product();
+#endif
+
                 QString ifaceName = iface->interfaceName();
-                subText += QString::fromLatin1("<b>%1</b>: %2").arg(product).arg(connectionStateToString(iface->connectionState()));
+                subText += QString::fromLatin1("<b>%1</b>: %2").arg(description).arg(connectionStateToString(iface->connectionState()));
                 Solid::Control::IPv4Config ip4Config = iface->ipV4Config();
                 QList<Solid::Control::IPv4Address> addresses = ip4Config.addresses();
                 if (!addresses.isEmpty()) {

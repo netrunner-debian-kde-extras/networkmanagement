@@ -51,6 +51,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "wiredwidget.h"
 #include "security/wirelesssecuritysettingwidget.h"
 #include "security/securitywidget.h"
+#include "security/securitywired8021x.h"
 
 #include "knmserviceprefs.h"
 #include "connection.h"
@@ -110,7 +111,11 @@ void ConnectionSecretsJob::doAskUser()
     // popup a dialog showing the appropriate UI for the type of connection
     kDebug();
     if ( mSettingName == QLatin1String(NM_SETTING_802_1X_SETTING_NAME)) {
-        m_settingWidget = new WirelessSecuritySettingWidget(m_connection /*Need AP and iface here*/ ) ;
+        if (m_connection->type() == Knm::Connection::Wired) {
+            m_settingWidget = new SecurityWired8021x(m_connection);
+        } else if (m_connection->type() == Knm::Connection::Wireless) {
+            m_settingWidget = new WirelessSecuritySettingWidget(m_connection /*Need AP and iface here*/ ) ;
+        }
     } else if ( mSettingName == QLatin1String(NM_SETTING_CDMA_SETTING_NAME)) {
         m_settingWidget = new CdmaWidget(m_connection, 0);
     } else if ( mSettingName == QLatin1String(NM_SETTING_GSM_SETTING_NAME)) {
@@ -139,10 +144,11 @@ void ConnectionSecretsJob::doAskUser()
 
     if (m_settingWidget) {
         m_settingWidget->readConfig();
+        m_settingWidget->readSecrets();
         m_askUserDialog = new KDialog(0);
         m_askUserDialog->setCaption(i18nc("@title:window for network secrets request", "Secrets for %1", m_connection->name()));
         m_askUserDialog->setMainWidget(m_settingWidget);
-        m_askUserDialog->setButtons( KDialog::Ok | KDialog::Cancel | KDialog::Apply );
+        m_askUserDialog->setButtons(KDialog::Ok | KDialog::Cancel);
 
         connect(m_askUserDialog, SIGNAL(okClicked()), SLOT(dialogAccepted()));
         connect(m_askUserDialog, SIGNAL(cancelClicked()), SLOT(dialogRejected()));

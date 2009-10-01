@@ -20,124 +20,95 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "ipv4widget.h"
 
-#include <QLineEdit>
-#include <QSpinBox>
-#include <QStandardItem>
-#include <QStandardItemModel>
-
 #include <KDebug>
+#include <KEditListBox>
+
+#include <QNetworkAddressEntry>
 
 #include "ui_ipv4.h"
 
 #include "connection.h"
 #include "settings/ipv4.h"
+#include "simpleipv4addressvalidator.h"
+#include "listvalidator.h"
+#include "editlistdialog.h"
+
+//void removeEmptyItems(QStringList &list);
 
 class IpV4Widget::Private
 {
 public:
-    Private() : setting(0), model(0,3)
+    Private() : setting(0), isAdvancedModeOn(false)
     {
-        QStandardItem * headerItem = new QStandardItem(i18nc("Header text for IPv4 address", "Address"));
-        model.setHorizontalHeaderItem(0, headerItem);
-        headerItem = new QStandardItem(i18nc("Header text for IPv4 netmask", "Prefix"));
-        model.setHorizontalHeaderItem(1, headerItem);
-        headerItem = new QStandardItem(i18nc("Header text for IPv4 gateway", "Gateway"));
-        model.setHorizontalHeaderItem(2, headerItem);
     }
-    enum MethodIndex { AutomaticMethodIndex = 0, LinkLocalMethodIndex, ManualMethodIndex, SharedMethodIndex };
+    enum MethodIndex { AutomaticMethodIndex = 0, AutomaticOnlyIPMethodIndex, LinkLocalMethodIndex, ManualMethodIndex, SharedMethodIndex };
     Ui_SettingsIp4Config ui;
     Knm::Ipv4Setting * setting;
-    QStandardItemModel model;
+    bool isAdvancedModeOn;
 };
-
-Ipv4Delegate::Ipv4Delegate(QObject * parent) : QItemDelegate(parent) {}
-Ipv4Delegate::~Ipv4Delegate() {}
-
-QWidget * Ipv4Delegate::createEditor(QWidget *parent, const QStyleOptionViewItem &,
-        const QModelIndex &) const
-{
-    QLineEdit *editor = new QLineEdit(parent);
-    editor->setInputMask(QLatin1String("000.000.000.000;_"));
-
-    return editor;
-}
-
-void Ipv4Delegate::setEditorData(QWidget *editor, const QModelIndex &index) const
-{
-    QString value = index.model()->data(index, Qt::EditRole).toString();
-
-    QLineEdit *le = static_cast<QLineEdit*>(editor);
-    le->setText(value);
-}
-
-void Ipv4Delegate::setModelData(QWidget *editor, QAbstractItemModel *model,
-        const QModelIndex &index) const
-{
-    QLineEdit *le = static_cast<QLineEdit*>(editor);
-
-    model->setData(index, le->text(), Qt::EditRole);
-}
-
-void Ipv4Delegate::updateEditorGeometry(QWidget *editor,
-        const QStyleOptionViewItem &option, const QModelIndex &) const
-{
-    editor->setGeometry(option.rect);
-
-}
-
-NetmaskPrefixDelegate::NetmaskPrefixDelegate(QObject * parent) : QItemDelegate(parent) {}
-NetmaskPrefixDelegate::~NetmaskPrefixDelegate() {}
-
-QWidget * NetmaskPrefixDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &,
-        const QModelIndex &) const
-{
-    QSpinBox *editor = new QSpinBox(parent);
-    editor->setMinimum(1);
-    editor->setMaximum(31);
-
-    return editor;
-}
-
-void NetmaskPrefixDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const
-{
-    int value = index.model()->data(index, Qt::EditRole).toInt();
-
-    QSpinBox *le = static_cast<QSpinBox*>(editor);
-    le->setValue(value);
-}
-
-void NetmaskPrefixDelegate::setModelData(QWidget *editor, QAbstractItemModel *model,
-        const QModelIndex &index) const
-{
-    QSpinBox *spinBox = static_cast<QSpinBox*>(editor);
-    spinBox->interpretText();
-    int value = spinBox->value();
-    model->setData(index, value, Qt::EditRole);
-}
-
-void NetmaskPrefixDelegate::updateEditorGeometry(QWidget *editor,
-        const QStyleOptionViewItem &option, const QModelIndex &) const
-{
-    editor->setGeometry(option.rect);
-}
 
 IpV4Widget::IpV4Widget(Knm::Connection * connection, QWidget * parent)
     : SettingWidget(connection, parent), d(new IpV4Widget::Private)
 {
     d->ui.setupUi(this);
-    d->ui.addresses->setModel(&d->model);
-    Ipv4Delegate * ipDelegate = new Ipv4Delegate(this);
-    NetmaskPrefixDelegate * netmaskPrefixDelegate = new NetmaskPrefixDelegate(this);
-    d->ui.addresses->setItemDelegateForColumn(0, ipDelegate);
-    d->ui.addresses->setItemDelegateForColumn(1, netmaskPrefixDelegate);
-    d->ui.addresses->setItemDelegateForColumn(2, ipDelegate);
+
+    QString str_auto;
+    QString str_auto_only;
+    Knm::Connection::Type connType = connection->type();
+
+    if (Knm::Connection::Vpn == connType) {
+        str_auto = i18nc("@item:inlistbox IPv4 settings configuration method",
+                         "Automatic (VPN)");
+        str_auto_only = i18nc("@item:inlistbox IPv4 settings configuration method",
+                              "Automatic (VPN) addresses only");
+    }
+    else if (Knm::Connection::Gsm == connType
+             || Knm::Connection::Cdma == connType) {
+        str_auto = i18nc("@item:inlistbox IPv4 settings configuration method",
+                         "Automatic (PPP)");
+        str_auto_only = i18nc("@item:inlistbox IPv4 settings configuration method",
+                              "Automatic (PPP) addresses only");
+    }
+    else if (Knm::Connection::Pppoe == connType) {
+        str_auto = i18nc("@item:inlistbox IPv4 settings configuration method",
+                         "Automatic (PPPoE)");
+        str_auto_only = i18nc("@item:inlistbox IPv4 settings configuration method",
+                              "Automatic (PPPoE) addresses only");
+    }
+    else {
+        str_auto = i18nc("@item:inlistbox IPv4 settings configuration method",
+                         "Automatic (DHCP)");
+        str_auto_only = i18nc("@item:inlistbox IPv4 settings configuration method",
+                              "Automatic (DHCP) addresses only");
+    }
+    d->ui.method->setItemText(0, str_auto);
+    d->ui.method->setItemText(1, str_auto_only);
+
+    d->ui.advancedSettings->setVisible(false);
+    d->ui.address->setValidator(new SimpleIpV4AddressValidator(this));
+    // unable to check netmask strictly until user finish the input
+    d->ui.netMask->setValidator(new SimpleIpV4AddressValidator(this));
+    d->ui.gateway->setValidator(new SimpleIpV4AddressValidator(this));
+    
+    ListValidator *dnsEntriesValidator = new ListValidator(this);
+    dnsEntriesValidator->setInnerValidator(new SimpleIpV4AddressValidator(dnsEntriesValidator));
+    d->ui.dns->setValidator(dnsEntriesValidator);
+    
+    ListValidator *dnsSearchEntriesValidator = new ListValidator(this);
+    dnsSearchEntriesValidator->setInnerValidator(new QRegExpValidator(QRegExp("\\S+"), this));
+    d->ui.dnsSearch->setValidator(dnsSearchEntriesValidator);
+
+    connect(d->ui.address, SIGNAL(editingFinished()), this, SLOT(addressEditingFinished()));
+
+    connect(d->ui.dnsMorePushButton, SIGNAL(clicked()), this, SLOT(showDnsEditor()));
+    connect(d->ui.dnsSearchMorePushButton, SIGNAL(clicked()), this, SLOT(showDnsSearchEditor()));
+
+    connect(d->ui.pushButtonSettingsMode, SIGNAL(clicked()), this, SLOT(settingsModeClicked()));
+
     d->setting = static_cast<Knm::Ipv4Setting*>(connection->setting(Knm::Setting::Ipv4));
-    connect(d->ui.addresses->selectionModel(), SIGNAL(selectionChanged(const QItemSelection &, const QItemSelection &)), this,
-            SLOT(selectionChanged(const QItemSelection&)));
-    connect(d->ui.btnAddAddress, SIGNAL(clicked()), this, SLOT(addIpClicked()));
-    connect(d->ui.btnRemoveAddress, SIGNAL(clicked()), this, SLOT(removeIpClicked()));
     connect(d->ui.method, SIGNAL(currentIndexChanged(int)), this, SLOT(methodChanged(int)));
     methodChanged(d->AutomaticMethodIndex);
+    switchSettingsMode();
 }
 
 IpV4Widget::~IpV4Widget()
@@ -147,15 +118,28 @@ IpV4Widget::~IpV4Widget()
 
 void IpV4Widget::readConfig()
 {
+    // The following flags are used to not fill disabled fields.
+    // Setting and handling them is quite redundant, but it's necessary
+    // when we have a connection config in inconsistent state.
+    bool addressPartEnabled = false;
+    bool dnsPartEnabled = false;
+
     switch (d->setting->method()) {
         case Knm::Ipv4Setting::EnumMethod::Automatic:
-            d->ui.method->setCurrentIndex(d->AutomaticMethodIndex);
+            if (d->setting->ignoredhcpdns()) {
+                d->ui.method->setCurrentIndex(d->AutomaticOnlyIPMethodIndex);
+                dnsPartEnabled = true;
+            }
+            else {
+                d->ui.method->setCurrentIndex(d->AutomaticMethodIndex);
+            }
             break;
         case Knm::Ipv4Setting::EnumMethod::LinkLocal:
             d->ui.method->setCurrentIndex(d->LinkLocalMethodIndex);
             break;
         case Knm::Ipv4Setting::EnumMethod::Manual:
             d->ui.method->setCurrentIndex(d->ManualMethodIndex);
+            addressPartEnabled = dnsPartEnabled = true;
             break;
         case Knm::Ipv4Setting::EnumMethod::Shared:
             d->ui.method->setCurrentIndex(d->SharedMethodIndex);
@@ -166,22 +150,41 @@ void IpV4Widget::readConfig()
     }
 
     // ip addresses
-    QList<Solid::Control::IPv4Address> addrList = d->setting->addresses();
-    foreach (Solid::Control::IPv4Address addr, addrList) {
-        QList<QStandardItem*> fields;
-        fields << new QStandardItem(QHostAddress(addr.address()).toString()) << new QStandardItem(QString::number(addr.netMask())) << new QStandardItem(QHostAddress(addr.gateway()).toString());
-        d->model.appendRow(fields);
+    if (addressPartEnabled) {
+        QList<Solid::Control::IPv4Address> addrList = d->setting->addresses();
+        if (!addrList.isEmpty())
+        {
+            // show only the fisrt IP address, the rest addresses will be shown
+            // via "Advanced..."
+            QNetworkAddressEntry entry;
+            // we need to set up IP before prefix/netmask manipulation
+            entry.setIp(QHostAddress(addrList[0].address()));
+            entry.setPrefixLength(addrList[0].netMask());
+
+            d->ui.address->setText(QHostAddress(addrList[0].address()).toString());
+            d->ui.netMask->setText(entry.netmask().toString());
+            if (addrList[0].gateway()) {
+                d->ui.gateway->setText(QHostAddress(addrList[0].gateway()).toString());
+            }
+
+            // remove first item
+            addrList.removeFirst();
+            // put the rest to advanced settings
+            d->ui.advancedSettings->setAdditionalAddresses(addrList);
+        }
     }
 
     // dns
-    QStringList dnsList;
-    foreach (QHostAddress dns, d->setting->dns()) {
-       dnsList << dns.toString();
-    }
-    d->ui.dns->setText(dnsList.join(","));
-    // dns search list
-    if (!d->setting->dnssearch().isEmpty()) {
-        d->ui.dnsSearch->setText(d->setting->dnssearch().join(","));
+    if (dnsPartEnabled) {
+        QStringList dnsList;
+        foreach (QHostAddress dns, d->setting->dns()) {
+           dnsList << dns.toString();
+        }
+        d->ui.dns->setText(dnsList.join(QLatin1String(", ")));
+        // dns search list
+        if (!d->setting->dnssearch().isEmpty()) {
+            d->ui.dnsSearch->setText(d->setting->dnssearch().join(QLatin1String(", ")));
+        }
     }
 }
 
@@ -189,16 +192,19 @@ void IpV4Widget::writeConfig()
 {
     // save method
     switch ( d->ui.method->currentIndex()) {
-        case 0:
+        case IpV4Widget::Private::AutomaticOnlyIPMethodIndex:
+            d->setting->setIgnoredhcpdns(true);
+            // set the same Knm::Ipv4Setting::EnumMethod::Automatic value
+        case IpV4Widget::Private::AutomaticMethodIndex:
             d->setting->setMethod(Knm::Ipv4Setting::EnumMethod::Automatic);
             break;
-        case 1:
+        case IpV4Widget::Private::LinkLocalMethodIndex:
             d->setting->setMethod(Knm::Ipv4Setting::EnumMethod::LinkLocal);
             break;
-        case 2:
+        case IpV4Widget::Private::ManualMethodIndex:
             d->setting->setMethod(Knm::Ipv4Setting::EnumMethod::Manual);
             break;
-        case 3:
+        case IpV4Widget::Private::SharedMethodIndex:
             d->setting->setMethod(Knm::Ipv4Setting::EnumMethod::Shared);
             break;
         default:
@@ -207,23 +213,30 @@ void IpV4Widget::writeConfig()
     }
 
     // addresses
-    QList<Solid::Control::IPv4Address> addresses;
-    while (d->model.rowCount()) {
-        QList<QStandardItem*> row = d->model.takeRow(0);
-        QHostAddress ip(row[0]->text());
-        QHostAddress gateway(row[2]->text());
-        if (ip == QHostAddress::Null
-                || gateway == QHostAddress::Null) {
-            continue;
-        }
-        Solid::Control::IPv4Address addr(ip.toIPv4Address(), row[1]->text().toUInt(), gateway.toIPv4Address());
-        addresses.append(addr);
+    QList<Solid::Control::IPv4Address> addresses = d->ui.advancedSettings->additionalAddresses();
+    // update only the first item, the rest items are already updated
+    QNetworkAddressEntry entry;
+    // we need to set up IP before prefix/netmask manipulation
+    entry.setIp(QHostAddress(d->ui.address->text()));
+    entry.setNetmask(QHostAddress(d->ui.netMask->text()));
+
+    QHostAddress gateway(d->ui.gateway->text());
+    if (entry.ip() != QHostAddress::Null) {
+        Solid::Control::IPv4Address addr(entry.ip().toIPv4Address(),
+                                         entry.prefixLength(), gateway.toIPv4Address());
+
+        addresses.prepend(addr);
     }
+
     d->setting->setAddresses(addresses);
 
-    // dns
+
     QList<QHostAddress> dnsList;
-    QStringList dnsInput = d->ui.dns->text().split(',');
+    QStringList dnsSearchEntries;
+
+    // dns
+    QString tempStr = d->ui.dns->text().remove(QLatin1Char(' '));
+    QStringList dnsInput = tempStr.split(QLatin1Char(','), QString::SkipEmptyParts);
     foreach (QString dns, dnsInput) {
         QHostAddress dnsAddr(dns);
         if (dnsAddr != QHostAddress::Null) {
@@ -231,65 +244,153 @@ void IpV4Widget::writeConfig()
             dnsList << dnsAddr;
         }
     }
-    d->setting->setDns(dnsList);
     // dns search list
     if (!d->ui.dnsSearch->text().isEmpty()) {
-        d->setting->setDnssearch(d->ui.dnsSearch->text().split(','));
+        QString tempStr = d->ui.dnsSearch->text().remove(QLatin1Char(' '));
+        dnsSearchEntries = tempStr.split(QLatin1Char(','), QString::SkipEmptyParts);
     }
+
+    d->setting->setDns(dnsList);
+    d->setting->setDnssearch(dnsSearchEntries);
 }
 
 void IpV4Widget::methodChanged(int currentIndex)
 {
-    if (currentIndex == d->AutomaticMethodIndex) {
-        d->ui.addresses->setEnabled(false);
-        d->ui.dns->setEnabled(false);
-        d->ui.dnsSearch->setEnabled(false);
-        d->ui.btnAddAddress->setEnabled(false);
-        d->ui.btnRemoveAddress->setEnabled(false);
+    bool addressPartEnabled = false;
+    bool dnsPartEnabled = false;
+
+    if (currentIndex == IpV4Widget::Private::ManualMethodIndex) {
+        addressPartEnabled = true;
+        dnsPartEnabled = true;
+        d->ui.pushButtonSettingsMode->setVisible(true);
     }
-    else if (currentIndex == d->LinkLocalMethodIndex) {
-        d->ui.addresses->setEnabled(false);
-        d->ui.dns->setEnabled(false);
-        d->ui.dnsSearch->setEnabled(false);
-        d->ui.btnAddAddress->setEnabled(false);
-        d->ui.btnRemoveAddress->setEnabled(false);
+    else {
+        if (IpV4Widget::Private::AutomaticOnlyIPMethodIndex == currentIndex) {
+            dnsPartEnabled = true;
+        }
+        d->ui.pushButtonSettingsMode->setVisible(false);
     }
-    else if (currentIndex == d->ManualMethodIndex) {
-        d->ui.addresses->setEnabled(true);
-        d->ui.dns->setEnabled(true);
-        d->ui.dnsSearch->setEnabled(true);
-        d->ui.btnAddAddress->setEnabled(true);
-        d->ui.btnRemoveAddress->setEnabled(d->ui.addresses->selectionModel()->hasSelection());
+
+    if (!addressPartEnabled) {
+        d->ui.address->clear();
+        d->ui.netMask->clear();
+        d->ui.gateway->clear();
+        d->ui.advancedSettings->setAdditionalAddresses(QList<Solid::Control::IPv4Address>());
     }
-    else if (currentIndex == d->SharedMethodIndex) {
-        d->ui.addresses->setEnabled(false);
-        d->ui.dns->setEnabled(true);
-        d->ui.dnsSearch->setEnabled(true);
-        d->ui.btnAddAddress->setEnabled(false);
-        d->ui.btnRemoveAddress->setEnabled(false);
+    d->ui.address->setEnabled(addressPartEnabled);
+    d->ui.addressLabel->setEnabled(addressPartEnabled);
+    d->ui.netMask->setEnabled(addressPartEnabled);
+    d->ui.netMaskLabel->setEnabled(addressPartEnabled);
+    d->ui.gateway->setEnabled(addressPartEnabled);
+    d->ui.gatewayLabel->setEnabled(addressPartEnabled);
+
+    if (!dnsPartEnabled) {
+        d->ui.dns->clear();
+        d->ui.dnsSearch->clear();
+    }
+    d->ui.dns->setEnabled(dnsPartEnabled);
+    d->ui.dnsLabel->setEnabled(dnsPartEnabled);
+    d->ui.dnsSearch->setEnabled(dnsPartEnabled);
+    d->ui.dnsSearchLabel->setEnabled(dnsPartEnabled);
+    d->ui.dnsSearchMorePushButton->setEnabled(dnsPartEnabled);
+    d->ui.dnsMorePushButton->setEnabled(dnsPartEnabled);
+}
+
+quint32 suggestNetmask(quint32 ip)
+{
+    /*
+        A   0       0.0.0.0 	127.255.255.255  255.0.0.0 	/8
+        B   10      128.0.0.0 	191.255.255.255  255.255.0.0 	/16
+        C   110     192.0.0.0 	223.255.255.255  255.255.255.0 	/24
+        D   1110    224.0.0.0 	239.255.255.255  not defined 	not defined
+        E   1111    240.0.0.0 	255.255.255.254  not defined 	not defined
+    */
+    quint32 netmask = 0;
+
+    if (!(ip & 0x80000000)) {
+        // test 0 leading bit
+        netmask = 0xFF000000;
+    }
+    else if (!(ip & 0x40000000)) {
+        // test 10 leading bits
+        netmask = 0xFFFF0000;
+    }
+    else if (!(ip & 0x20000000)) {
+        // test 110 leading bits
+        netmask = 0xFFFFFF00;
+    }
+
+    return netmask;
+}
+
+void IpV4Widget::addressEditingFinished()
+{
+    if (d->ui.netMask->text().isEmpty()) {
+        QHostAddress addr(d->ui.address->text());
+        quint32 netmask = suggestNetmask(addr.toIPv4Address());
+        if (netmask) {
+            QHostAddress v(netmask);
+            d->ui.netMask->setText(v.toString());
+        }
     }
 }
 
-void IpV4Widget::addIpClicked()
+void IpV4Widget::settingsModeClicked()
 {
-    QList<QStandardItem *> item;
-    item << new QStandardItem << new QStandardItem << new QStandardItem;
-    d->model.appendRow(item);
-    // TODO select new row and enable editor on IP address
+    d->isAdvancedModeOn ^= true; // XOR toggles value;
+
+    switchSettingsMode();
 }
 
-void IpV4Widget::removeIpClicked()
+void IpV4Widget::switchSettingsMode()
 {
-    QItemSelectionModel * selectionModel = d->ui.addresses->selectionModel();
-    if (selectionModel->hasSelection()) {
-        QModelIndexList indexes = selectionModel->selectedIndexes();
-        d->model.takeRow(indexes[0].row());
+    QString text;
+
+    if (false == d->isAdvancedModeOn) {
+        text = i18nc("@action:button Additional IPv4 addresses (aliases)","&Additional Addresses");
     }
-    d->ui.btnRemoveAddress->setEnabled(false);
+    else {
+        text = i18nc("@action:button Basic IPv4 settings","&Basic settings");
+    }
+
+    d->ui.pushButtonSettingsMode->setText(text);
+    d->ui.basicSettingsWidget->setVisible(!d->isAdvancedModeOn);
+    d->ui.advancedSettings->setVisible(d->isAdvancedModeOn);
 }
 
-void IpV4Widget::selectionChanged(const QItemSelection & selected)
+void IpV4Widget::dnsEdited(QStringList items)
 {
-    d->ui.btnRemoveAddress->setEnabled(!selected.isEmpty());
+    d->ui.dns->setText(items.join(QLatin1String(", ")));
 }
+
+void IpV4Widget::dnsSearchEdited(QStringList items)
+{
+    d->ui.dnsSearch->setText(items.join(QLatin1String(", ")));
+}
+
+void IpV4Widget::showDnsEditor()
+{
+    EditListDialog * dnsEditor = new EditListDialog;
+    // at first remove space characters
+    QString dnsEntries = d->ui.dns->text().remove(QLatin1Char(' '));
+    dnsEditor->setItems(dnsEntries.split(QLatin1Char(','), QString::SkipEmptyParts));
+    connect(dnsEditor, SIGNAL(itemsEdited(QStringList)), this, SLOT(dnsEdited(QStringList)));
+    dnsEditor->setCaption(i18n("DNS Servers"));
+    dnsEditor->setModal(true);
+    dnsEditor->setValidator(new SimpleIpV4AddressValidator(dnsEditor));
+    dnsEditor->show();
+}
+
+void IpV4Widget::showDnsSearchEditor()
+{
+    EditListDialog * dnsSearchEditor = new EditListDialog;
+    // at first remove space characters
+    QString dnsSearchEntries = d->ui.dnsSearch->text().remove(QLatin1Char(' '));
+    dnsSearchEditor->setItems(dnsSearchEntries.split(QLatin1Char(','), QString::SkipEmptyParts));
+    connect(dnsSearchEditor, SIGNAL(itemsEdited(QStringList)), this, SLOT(dnsSearchEdited(QStringList)));
+    dnsSearchEditor->setCaption(i18n("Search domains"));
+    dnsSearchEditor->setModal(true);
+    dnsSearchEditor->show();
+}
+
 // vim: sw=4 sts=4 et tw=100

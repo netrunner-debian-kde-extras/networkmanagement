@@ -36,14 +36,24 @@ set(monolithic_SRCS
 
    # helper class
    tooltipbuilder.cpp
+
+   # other networks dialog
+   otherwirelessnetworkdialog.cpp
    )
 
+kde4_add_ui_files(monolithic_SRCS otherwirelessnetworkwidget.ui)
+
 kde4_add_executable(knetworkmanager ${monolithic_SRCS})
+
+
+if (${KDE_VERSION} VERSION_LESS "4.3.67")
+   set(KNOTIFICATIONITEM_LIB "knotificationitem-1")
+endif (${KDE_VERSION} VERSION_LESS "4.3.67")
 
 target_link_libraries(knetworkmanager
    ${KDE4_KDECORE_LIBS}
    ${KDE4_KDEUI_LIBS}
-   knotificationitem-1
+   ${KNOTIFICATIONITEM_LIB}
    knminternals
    knmservice
    knm_nm

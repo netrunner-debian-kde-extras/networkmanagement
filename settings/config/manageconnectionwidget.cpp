@@ -50,23 +50,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "connectionprefs.h"
 #include <tooltips.h>
 
-//#include "dbus/nm-active-connectioninterface.h"
-//#include "dbus/nm-exported-connectioninterface.h"
-
-#include "menutooltipsettingswidget.h"
-#include "traysettingswidget.h"
-
 #define ConnectionIdRole 1812
 #define ConnectionTypeRole 1066
 #define ConnectionLastUsedRole 1848
 
 K_PLUGIN_FACTORY( ManageConnectionWidgetFactory, registerPlugin<ManageConnectionWidget>();)
-K_EXPORT_PLUGIN( ManageConnectionWidgetFactory( "kcm_networkmanagement" ) )
+K_EXPORT_PLUGIN( ManageConnectionWidgetFactory( "kcm_networkmanagement", "libknetworkmanager" ) )
 
 ManageConnectionWidget::ManageConnectionWidget(QWidget *parent, const QVariantList &args)
-: KCModule( ManageConnectionWidgetFactory::componentData(), parent, args ), mCellularMenu(0), mVpnMenu(0), mEditor(new ConnectionEditor(this)), mTraySettingsWidget(0)
+: KCModule( ManageConnectionWidgetFactory::componentData(), parent, args ), mCellularMenu(0), mVpnMenu(0), mEditor(new ConnectionEditor(this))
 {
-    KGlobal::locale()->insertCatalog("libknmui");
     connect(mEditor, SIGNAL(connectionsChanged()), this, SLOT(restoreConnections()));
 
     mConnEditUi.setupUi(this);
@@ -102,22 +95,6 @@ ManageConnectionWidget::ManageConnectionWidget(QWidget *parent, const QVariantLi
     mLastUsedTimer = new QTimer(this);
     connect(mLastUsedTimer, SIGNAL(timeout()), SLOT(updateLastUsed()));
     mLastUsedTimer->start(1000 * 60);
-
-    mTraySettingsWidget  = new TraySettingsWidget(this);
-
-    // KConfigXT magic
-    addConfig(KNetworkManagerServicePrefs::self(), mTraySettingsWidget);
-
-    connect(mTraySettingsWidget, SIGNAL(changed()), SLOT(otherSettingsChanged()));
-
-    mConnEditUi.tabWidget->addTab(mTraySettingsWidget, i18nc("@title:tab tab containing general UI settings", "&Other Settings"));
-
-
-    QStringList selectedKeys = KNetworkManagerServicePrefs::self()->toolTipKeys();
-    mMenuToolTipSettingsWidget = new MenuToolTipSettingsWidget(Knm::ToolTips::allKeys(), selectedKeys, this);
-    connect(mMenuToolTipSettingsWidget, SIGNAL(changed()), SLOT(otherSettingsChanged()));
-
-    mConnEditUi.tabWidget->addTab(mMenuToolTipSettingsWidget, i18nc("@title:tab tab containing menu tooltip settings", "&ToolTips"));
 
     setButtons(KCModule::Help | KCModule::Apply);
 }
@@ -159,7 +136,7 @@ QString ManageConnectionWidget::formatDateRelative(const QDateTime & lastUsed)
             lastUsedText = KGlobal::locale()->formatDate(lastUsed.date(), KLocale::ShortDate);
         }
     } else {
-        lastUsedText =  i18nc("Label for last used time for a"
+        lastUsedText =  i18nc("Label for last used time for a "
                 "network connection that has never been used", "Never");
     }
     return lastUsedText;
@@ -269,7 +246,7 @@ void ManageConnectionWidget::updateTabStates()
     } else {
         mConnEditUi.tabWidget->setTabEnabled(3, true);
     }
-    mConnEditUi.tabWidget->setTabEnabled(4, (hasDsl || mConnEditUi.listPppoe->topLevelItemCount()));
+    mConnEditUi.tabWidget->setTabEnabled(4, (hasWired || hasDsl || mConnEditUi.listPppoe->topLevelItemCount()));
 }
 
 void ManageConnectionWidget::addClicked()
@@ -403,25 +380,8 @@ void ManageConnectionWidget::load()
 
 void ManageConnectionWidget::save()
 {
-    if (mTraySettingsWidget) {
-        QList<uint> iconInterfaceAllocations = mTraySettingsWidget->iconInterfaceAllocations();
-        KNetworkManagerServicePrefs::self()->setIconCount(iconInterfaceAllocations.count());
-        for (int i = 0; i < iconInterfaceAllocations.count(); ++i) {
-            KNetworkManagerServicePrefs::self()->setIconTypes(i, iconInterfaceAllocations.at(i));
-        }
-    }
-
-    KNetworkManagerServicePrefs::self()->setToolTipKeys(mMenuToolTipSettingsWidget->toolTipKeys());
-
     KNetworkManagerServicePrefs::self()->writeConfig();
     KCModule::save();
-    QDBusInterface remoteApp("org.kde.knetworkmanager", "/tray",
-                                       "org.kde.knetworkmanager");
-    if (remoteApp.isValid()) {
-        remoteApp.call("reloadConfig");
-    } else if (KNetworkManagerServicePrefs::self()->autostart()) {
-        KToolInvocation::kdeinitExec("knetworkmanager");
-    }
 }
 
 void ManageConnectionWidget::tabChanged(int index)
@@ -552,10 +512,5 @@ void ManageConnectionWidget::updateLastUsed(QTreeWidget * list)
         (*it)->setText(1, formatDateRelative(lastUsed));
         ++it;
     }
-}
-
-void ManageConnectionWidget::otherSettingsChanged()
-{
-    emit changed();
 }
 
