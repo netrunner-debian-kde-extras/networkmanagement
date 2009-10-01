@@ -1,4 +1,4 @@
-plasma-widget-networkmanagement (0.1~svn1029786-0r2) UNRELEASED; urgency=low
+plasma-widget-networkmanagement (0.1~svn1029786-1) experimental; urgency=low
 
   * New upstream development snapshot:
     - Last Changed Author: wstephens
@@ -7,7 +7,7 @@ plasma-widget-networkmanagement (0.1~svn1029786-0r2) UNRELEASED; urgency=low
   * Use debhelper kde addon, bump build dependencies accordingly.
   * Update install files.
 
- -- Modestas Vainius <modestas@vainius.eu>  Thu, 01 Oct 2009 16:35:39 +0300
+ -- Modestas Vainius <modestas@vainius.eu>  Thu, 01 Oct 2009 20:37:01 +0300
 
 plasma-widget-networkmanagement (0.1~svn1013816-1) experimental; urgency=low
 
