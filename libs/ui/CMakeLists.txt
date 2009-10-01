@@ -18,6 +18,7 @@ set(knmui_SRCS
    settingwidget.cpp
    connectionwidget.cpp
    ipv4widget.cpp
+   ipv4advancedwidget.cpp
    wiredwidget.cpp
    802_11_wirelesswidget.cpp
    accesspoint.cpp
@@ -60,6 +61,10 @@ set(knmui_SRCS
    wirelesspreferences.cpp
    connectioneditor.cpp
    connectionsecretsjob.cpp
+   
+   simpleipv4addressvalidator.cpp
+   listvalidator.cpp
+   editlistdialog.cpp
    )
 
 kde4_add_ui_files(knmui_SRCS
@@ -73,6 +78,7 @@ kde4_add_ui_files(knmui_SRCS
    connection.ui
    wired.ui
    ipv4.ui
+   ipv4advanced.ui
    802-11-wireless.ui
 
    # Scan widget for wireless
@@ -101,7 +107,7 @@ kde4_add_ui_files(knmui_SRCS
    )
 
 kde4_add_library(knmui SHARED ${knmui_SRCS})
-target_link_libraries(knmui knminternals ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS} solidcontrol)
+target_link_libraries(knmui knminternals ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS} ${KDE4_SOLID_LIBS} solidcontrol)
 
 set_target_properties(knmui PROPERTIES
    VERSION ${GENERIC_LIB_VERSION}

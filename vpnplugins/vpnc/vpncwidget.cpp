@@ -151,11 +151,11 @@ void VpncSettingWidget::writeConfig()
     }
 
     //   user password
-    if (!d->ui.leUserPassword->text().isEmpty() && d->ui.cboUserPassOptions->currentIndex() == 0) {
+    if (!d->ui.leUserPassword->text().isEmpty() && d->ui.cboUserPassOptions->currentIndex() == 1) {
         secretData.insert(NM_VPNC_KEY_XAUTH_PASSWORD, d->ui.leUserPassword->text());
     }
     //   group password
-    if (!d->ui.leGroupPassword->text().isEmpty() && d->ui.cboGroupPassOptions->currentIndex() == 0) {
+    if (!d->ui.leGroupPassword->text().isEmpty() && d->ui.cboGroupPassOptions->currentIndex() == 1) {
         secretData.insert(NM_VPNC_KEY_SECRET, d->ui.leGroupPassword->text());
     }
     handleOnePasswordType(d->ui.cboUserPassOptions, NM_VPNC_KEY_XAUTH_PASSWORD_TYPE, data);
@@ -205,7 +205,6 @@ void VpncSettingWidget::writeConfig()
         data.insert(NM_VPNC_KEY_DPD_IDLE_TIMEOUT, QString::number(0));
     }
 
-    d->setting->setUserName(d->ui.leUserName->text());
     d->setting->setData(data);
     d->setting->setVpnSecrets(secretData);
 }
