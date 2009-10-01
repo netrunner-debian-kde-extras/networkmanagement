@@ -5,6 +5,7 @@ plasma-widget-networkmanagement (0.1~svn1029786-0r1) UNRELEASED; urgency=low
     - Last Changed Rev: 1029786
     - Last Changed Date: 2009-09-30 21:29:12 +0300
   * Use debhelper kde addon, bump build dependencies accordingly.
+  * Update install files.
 
  -- Modestas Vainius <modestas@vainius.eu>  Thu, 01 Oct 2009 16:35:39 +0300
 

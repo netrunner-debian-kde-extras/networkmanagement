@@ -1,8 +1,10 @@
 etc/dbus-1/system.d/NetworkManager-kde4.conf
 usr/lib/kde4/kcm_networkmanagement.so
+usr/lib/kde4/kcm_networkmanagement_tray.so
 usr/lib/kde4/kded_networkmanagement.so
 usr/lib/kde4/libexec/networkmanagement_configshell
 usr/lib/kde4/networkmanagement_openvpnui.so
+usr/lib/kde4/networkmanagement_pptpui.so
 usr/lib/kde4/networkmanagement_vpncui.so
 usr/lib/libknm_nm.so
 usr/lib/libknmclient.so.4
@@ -24,6 +26,7 @@ usr/share/kde4/apps/desktoptheme/default/networkmanagement/networkmanagement-wir
 usr/share/kde4/apps/desktoptheme/default/networkmanagement/networkmanagement.svg
 usr/share/kde4/apps/networkmanagement/networkmanagement.notifyrc
 usr/share/kde4/services/kcm_networkmanagement.desktop
+usr/share/kde4/services/kcm_networkmanagement_tray.desktop
 usr/share/kde4/services/kded/networkmanagement.desktop
 usr/share/kde4/services/networkmanagement_openvpnui.desktop
 usr/share/kde4/services/networkmanagement_pptpui.desktop
