@@ -1,4 +1,4 @@
-plasma-widget-networkmanagement (0.1~svn1054632-0r1) UNRELEASED; urgency=low
+plasma-widget-networkmanagement (0.1~svn1054632-1) experimental; urgency=low
 
   * New upstream development snapshot:
     - Last Changed Author: scripty
@@ -12,7 +12,7 @@ plasma-widget-networkmanagement (0.1~svn1054632-0r1) UNRELEASED; urgency=low
     However, the widget itself is not very usable at the moment.
   * Bump libqt4-dev build dependency to 4.6.0~.
 
- -- Modestas Vainius <modestas@vainius.eu>  Thu, 26 Nov 2009 22:08:01 +0200
+ -- Modestas Vainius <modestas@vainius.eu>  Thu, 26 Nov 2009 23:39:48 +0200
 
 plasma-widget-networkmanagement (0.1~svn1029786-1) experimental; urgency=low
 
