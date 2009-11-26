@@ -1,5 +1,6 @@
 /*
 Copyright 2008,2009 Will Stephenson <wstephenson@kde.org>
+Copyright 2008, 2009 Sebastian K?gler <sebas@kde.org>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -24,8 +25,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDBusObjectPath>
 #include <QGraphicsWidget>
 
+#include <solid/control/networkinterface.h>
+
 #include "interfaceconnection.h"
 
+#include <Plasma/Frame>
 #include <Plasma/IconWidget>
 #include <Plasma/Label>
 #include <Plasma/Meter>
@@ -48,12 +52,12 @@ class RemoteInterfaceConnection;
  * Displays status, updates itself
  * Allows deactivating any active connection
  */
-class InterfaceItem : public Plasma::IconWidget
+class InterfaceItem : public Plasma::Frame
 {
 Q_OBJECT
 public:
     enum NameDisplayMode {InterfaceName, HardwareName};
-    InterfaceItem(Solid::Control::NetworkInterface * iface, NameDisplayMode mode = InterfaceName, QGraphicsItem* parent = 0);
+    InterfaceItem(Solid::Control::NetworkInterface * iface, NameDisplayMode mode = InterfaceName, QGraphicsWidget* parent = 0);
     virtual ~InterfaceItem();
 
     void setNameDisplayMode(NameDisplayMode);
@@ -65,27 +69,23 @@ public:
 
 public Q_SLOTS:
     void activeConnectionsChanged();
-    void connectionStateChanged(int);
+    void connectionStateChanged(Solid::Control::NetworkInterface::ConnectionState);
     virtual void setEnabled(bool enable);
     // also updates the connection info
     virtual void setActive(bool active);
-    /**
-     * The  button to connect the interface has been clicked
-     */
-    virtual void connectButtonClicked() = 0;
 
 protected Q_SLOTS:
     /**
      * Remove any connections that were provided by this service
      * from our active connection list
      */
+    void handleConnectionStateChange(int new_state);
     void handleConnectionStateChange(int new_state, int old_state, int reason);
-    virtual void itemClicked();
     void pppStats(uint in, uint out);
 
 Q_SIGNALS:
     void stateChanged();
-    void clicked(int);
+    void disconnectInterface();
 
 protected:
     /**
@@ -107,18 +107,16 @@ protected:
     QGraphicsGridLayout * m_layout;
     QGraphicsLinearLayout * m_infoLayout;
     Plasma::IconWidget * m_icon;
-    Plasma::IconWidget* m_connectButton;
+    Plasma::IconWidget* m_disconnectButton;
     Plasma::Label * m_ifaceNameLabel;
     Plasma::Label * m_connectionNameLabel;
     QGraphicsLinearLayout * m_connectionInfoLayout;
     Plasma::Label * m_connectionInfoLabel;
-    Plasma::Meter * m_strengthMeter;
     Plasma::Label * m_connectionInfoStrengthLabel;
     Plasma::IconWidget * m_connectionInfoIcon;
     NameDisplayMode m_nameMode;
     bool m_enabled;
 
-    QString m_unavailableText;
     QString m_interfaceName;
     bool m_disconnect;
 };

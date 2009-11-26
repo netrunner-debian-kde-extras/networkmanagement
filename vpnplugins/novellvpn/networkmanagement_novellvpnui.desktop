@@ -1,0 +1,34 @@
+[Desktop Entry]
+Type=Service
+Icon=
+ServiceTypes=NetworkManagement/VpnUiPlugin
+X-KDE-Library=networkmanagement_novellvpnui
+X-NetworkManager-Services=novellvpn
+X-KDE-PluginInfo-Author=Will Stephenson
+X-KDE-PluginInfo-Email=wstephenson@kde.org
+X-KDE-PluginInfo-Name=networkmanagement_novellvpnui
+X-KDE-PluginInfo-Version=0.1
+X-KDE-PluginInfo-Website=
+X-KDE-PluginInfo-Category=VPNService
+X-KDE-PluginInfo-Depends=
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-EnabledByDefault=false
+Name=Novell VPN (turnpike)
+Name[da]=Novell VPN (turnpike)
+Name[en_GB]=Novell VPN (turnpike)
+Name[es]=Novell VPN (turnpike)
+Name[et]=Novell VPN (turnpike)
+Name[pt]=VPN da Novell (turnpike)
+Name[sv]=Novell VPN (turnpike)
+Name[uk]=Novell VPN (turnpike)
+Name[x-test]=xxNovell VPN (turnpike)xx
+Comment=Allows KNetworkManager to connect to Novell VPN (turnpike) VPNs.
+Comment[da]=Lader KNetworkManager forbinde VPN med Novell VPN (turnpike).
+Comment[en_GB]=Allows KNetworkManager to connect to Novell VPN (turnpike) VPNs.
+Comment[es]=Permite a KNetworkManager conectarse a las redes privadas virtuales Novell VPN (turnpike).
+Comment[et]=Võimaldab KNetworkManageril ühenduda Novell VPN (turnpike) VPN-idega.
+Comment[pt]=Permite ao KNetworkManager ligar-se a VPN's da Novell (turnpike).
+Comment[sv]=Tillåter nätverkshantering att ansluta till Novell VPN (turnpike).
+Comment[uk]=Надає змогу KNetworkManager з’єднуватися з Novell VPN (turnpike).
+Comment[x-test]=xxAllows KNetworkManager to connect to Novell VPN (turnpike) VPNs.xx
+

@@ -1,5 +1,6 @@
 /*
 Copyright 2008,2009 Will Stephenson <wstephenson@kde.org>
+Copyright 2008, 2009 Sebastian K?gler <sebas@kde.org>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -21,29 +22,29 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef PLASMA_NETWORKMANAGER_APPLET_H
 #define PLASMA_NETWORKMANAGER_APPLET_H
 
+class QAction;
+
 #include <kdeversion.h>
 
 #include <plasma/svg.h>
 #include <solid/networking.h>
 #include <solid/control/networking.h>
 #include <solid/control/networkinterface.h>
+#include <solid/control/wirelessaccesspoint.h>
 
 #include "../libs/types.h"
-//#include "vpnconnectiongroup.h"
-
-#include "ui_nmConfig.h"
 
 #include <plasma/popupapplet.h>
 
 #include <Plasma/ToolTipManager>
-
-#include <solid/control/networkinterface.h>
 
 namespace Plasma
 {
     class Applet;
     class Extender;
 } // namespace Plasma
+
+class QTimeLine;
 
 class NMExtenderItem;
 class RemoteActivatableList;
@@ -66,8 +67,6 @@ public:
     void constraintsEvent(Plasma::Constraints constraints);
     virtual QList<QAction*> contextualActions();
     virtual void initExtenderItem(Plasma::ExtenderItem *);
-
-    static QString connectionStateToString(Solid::Control::NetworkInterface::ConnectionState state);
 
     void loadExtender();
 
@@ -104,41 +103,41 @@ public Q_SLOTS:
 protected Q_SLOTS:
     // called by Plasma::ToolTipManager
     void toolTipAboutToShow();
-    void configAccepted();
-protected:
-    void createConfigurationInterface(KConfigDialog *parent);
-    /**
-     * Reimplemented from Plasma::PopupApplet
-     */
-    void popupEvent(bool);
+
 private Q_SLOTS:
     void networkInterfaceAdded(const QString& = QString());
     void networkInterfaceRemoved(const QString&);
     void interfaceConnectionStateChanged();
     void manageConnections();
-    // used to let the user easily hide VPN
-    void hideVpnGroup();
+    void updatePixmap();
+    void repaint();
+
 private:
     bool hasInterfaceOfType(Solid::Control::NetworkInterface::Type type);
-    void updateIcons();
-    void paintDefaultInterface(Solid::Control::NetworkInterface*, QPainter *painter, const QStyleOptionGraphicsItem * option, const QRect & rect);
-    void paintWiredInterface(Solid::Control::NetworkInterface*, QPainter *painter, const QStyleOptionGraphicsItem * option, const QRect & rect);
-    void paintWirelessInterface(Solid::Control::NetworkInterface*, QPainter *painter, const QStyleOptionGraphicsItem * option, const QRect & rect);
+    Solid::Control::NetworkInterface* activeInterface();
+    void setupInterfaceSignals();
+
+    void paintPixmap(QPainter *painter, QPixmap pixmap,
+                     const QRectF &rect, qreal opacity = 1.0);
+    void paintOkOverlay(QPainter *p, const QRectF &rect, qreal opacity = 1.0);
+    void paintProgress(QPainter *p);
+
     Solid::Control::NetworkInterfaceList sortInterfacesByImportance(const Solid::Control::NetworkInterfaceList& interfaces) const;
     bool m_iconPerDevice;
-    Plasma::Svg *m_svg;
-    Plasma::Svg *m_wirelessSvg;
-    QPixmap m_pixmapWiredConnected;
-    QPixmap m_pixmapWiredDisconnected;
     Solid::Control::NetworkInterfaceList m_interfaces;
-    QString m_elementName;
     Plasma::ToolTipContent m_toolTip;
-    // Configuration dialog
-    Ui::nmConfig ui;
 
-    int m_numberWirelessShown;
     RemoteActivatableList * m_activatableList;
     NMExtenderItem* m_extenderItem;
+
+    QPixmap m_pixmap;
+
+    // For tracking which status we should show
+    Solid::Control::NetworkInterface *m_activeInterface;
+    Solid::Control::AccessPoint *m_accessPoint;
+
+    QTimeLine m_overlayTimeline;
+    int m_currentState;
 };
 
 #endif

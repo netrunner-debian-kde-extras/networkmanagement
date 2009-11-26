@@ -39,9 +39,18 @@ set(monolithic_SRCS
 
    # other networks dialog
    otherwirelessnetworkdialog.cpp
+
+   # connection info
+   connectioninfodialog.cpp
+   connectioninfoipv4tab.cpp
+   connectioninfowiredtab.cpp
+   connectioninfowirelesstab.cpp
    )
 
-kde4_add_ui_files(monolithic_SRCS otherwirelessnetworkwidget.ui)
+kde4_add_ui_files(monolithic_SRCS
+   otherwirelessnetworkwidget.ui
+   connectioninfowidget.ui
+   )
 
 kde4_add_executable(knetworkmanager ${monolithic_SRCS})
 
@@ -54,9 +63,11 @@ target_link_libraries(knetworkmanager
    ${KDE4_KDECORE_LIBS}
    ${KDE4_KDEUI_LIBS}
    ${KNOTIFICATIONITEM_LIB}
+   ${QT_QTNETWORK_LIBRARY}
    knminternals
    knmservice
    knm_nm
+   solid
    solidcontrol
    )
 

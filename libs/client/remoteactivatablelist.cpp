@@ -66,7 +66,7 @@ void RemoteActivatableList::init()
             QStringList activatables = d->iface->ListActivatables();
 
             //kDebug() << "activatables" << activatables;
-            foreach (QString activatable, activatables) {
+            foreach (const QString &activatable, activatables) {
                 // messy, I know, but making ListActivatables return a(si) is boring
                 QDBusInterface iface(QLatin1String("org.kde.networkmanagement"),
                         activatable, "org.kde.networkmanagement.Activatable", QDBusConnection::sessionBus());
@@ -101,7 +101,7 @@ QList<RemoteActivatable *> RemoteActivatableList::activatables() const
 
 void RemoteActivatableList::handleActivatableAdded(const QString &addedPath, uint type)
 {
-    if (!addedPath.startsWith("/")) {
+    if (!addedPath.startsWith('/')) {
         kDebug() << "Invalid path:" << addedPath << type;
         return;
     }
@@ -151,7 +151,7 @@ void RemoteActivatableList::handleActivatableRemoved(const QString &removed)
 void RemoteActivatableList::serviceOwnerChanged(const QString & changedService, const QString & oldOwner, const QString & newOwner)
 {
     Q_D(RemoteActivatableList);
-    kDebug() << changedService << changedService << oldOwner << newOwner;
+    //kDebug() << changedService << changedService << oldOwner << newOwner;
     if (changedService == d->iface->service()) {
         if (!oldOwner.isEmpty() && newOwner.isEmpty()) {
             emit disappeared();

@@ -19,6 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include "ipv4widget.h"
+#include "settingwidget_p.h"
 
 #include <KDebug>
 #include <KEditListBox>
@@ -35,10 +36,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 //void removeEmptyItems(QStringList &list);
 
-class IpV4Widget::Private
+class IpV4WidgetPrivate : public SettingWidgetPrivate
 {
 public:
-    Private() : setting(0), isAdvancedModeOn(false)
+    IpV4WidgetPrivate() : setting(0), isAdvancedModeOn(false)
     {
     }
     enum MethodIndex { AutomaticMethodIndex = 0, AutomaticOnlyIPMethodIndex, LinkLocalMethodIndex, ManualMethodIndex, SharedMethodIndex };
@@ -48,8 +49,9 @@ public:
 };
 
 IpV4Widget::IpV4Widget(Knm::Connection * connection, QWidget * parent)
-    : SettingWidget(connection, parent), d(new IpV4Widget::Private)
+    : SettingWidget(*new IpV4WidgetPrivate, connection, parent)
 {
+    Q_D(IpV4Widget);
     d->ui.setupUi(this);
 
     QString str_auto;
@@ -84,16 +86,15 @@ IpV4Widget::IpV4Widget(Knm::Connection * connection, QWidget * parent)
     d->ui.method->setItemText(0, str_auto);
     d->ui.method->setItemText(1, str_auto_only);
 
-    d->ui.advancedSettings->setVisible(false);
     d->ui.address->setValidator(new SimpleIpV4AddressValidator(this));
     // unable to check netmask strictly until user finish the input
     d->ui.netMask->setValidator(new SimpleIpV4AddressValidator(this));
     d->ui.gateway->setValidator(new SimpleIpV4AddressValidator(this));
-    
+
     ListValidator *dnsEntriesValidator = new ListValidator(this);
     dnsEntriesValidator->setInnerValidator(new SimpleIpV4AddressValidator(dnsEntriesValidator));
     d->ui.dns->setValidator(dnsEntriesValidator);
-    
+
     ListValidator *dnsSearchEntriesValidator = new ListValidator(this);
     dnsSearchEntriesValidator->setInnerValidator(new QRegExpValidator(QRegExp("\\S+"), this));
     d->ui.dnsSearch->setValidator(dnsSearchEntriesValidator);
@@ -103,21 +104,18 @@ IpV4Widget::IpV4Widget(Knm::Connection * connection, QWidget * parent)
     connect(d->ui.dnsMorePushButton, SIGNAL(clicked()), this, SLOT(showDnsEditor()));
     connect(d->ui.dnsSearchMorePushButton, SIGNAL(clicked()), this, SLOT(showDnsSearchEditor()));
 
-    connect(d->ui.pushButtonSettingsMode, SIGNAL(clicked()), this, SLOT(settingsModeClicked()));
-
     d->setting = static_cast<Knm::Ipv4Setting*>(connection->setting(Knm::Setting::Ipv4));
     connect(d->ui.method, SIGNAL(currentIndexChanged(int)), this, SLOT(methodChanged(int)));
     methodChanged(d->AutomaticMethodIndex);
-    switchSettingsMode();
 }
 
 IpV4Widget::~IpV4Widget()
 {
-    delete d;
 }
 
 void IpV4Widget::readConfig()
 {
+    Q_D(IpV4Widget);
     // The following flags are used to not fill disabled fields.
     // Setting and handling them is quite redundant, but it's necessary
     // when we have a connection config in inconsistent state.
@@ -154,7 +152,7 @@ void IpV4Widget::readConfig()
         QList<Solid::Control::IPv4Address> addrList = d->setting->addresses();
         if (!addrList.isEmpty())
         {
-            // show only the fisrt IP address, the rest addresses will be shown
+            // show only the first IP address, the rest addresses will be shown
             // via "Advanced..."
             QNetworkAddressEntry entry;
             // we need to set up IP before prefix/netmask manipulation
@@ -177,7 +175,7 @@ void IpV4Widget::readConfig()
     // dns
     if (dnsPartEnabled) {
         QStringList dnsList;
-        foreach (QHostAddress dns, d->setting->dns()) {
+        foreach (const QHostAddress &dns, d->setting->dns()) {
            dnsList << dns.toString();
         }
         d->ui.dns->setText(dnsList.join(QLatin1String(", ")));
@@ -186,25 +184,31 @@ void IpV4Widget::readConfig()
             d->ui.dnsSearch->setText(d->setting->dnssearch().join(QLatin1String(", ")));
         }
     }
+    // dhcp client ID
+    d->ui.dhcpClientId->setText(d->setting->dhcpclientid());
+    // routing
+    d->ui.cbNeverDefault->setChecked(d->setting->neverdefault());
+    d->ui.cbIgnoreAutoRoutes->setChecked(d->setting->ignoreautoroute());
 }
 
 void IpV4Widget::writeConfig()
 {
+    Q_D(IpV4Widget);
     // save method
     switch ( d->ui.method->currentIndex()) {
-        case IpV4Widget::Private::AutomaticOnlyIPMethodIndex:
+        case IpV4WidgetPrivate::AutomaticOnlyIPMethodIndex:
             d->setting->setIgnoredhcpdns(true);
             // set the same Knm::Ipv4Setting::EnumMethod::Automatic value
-        case IpV4Widget::Private::AutomaticMethodIndex:
+        case IpV4WidgetPrivate::AutomaticMethodIndex:
             d->setting->setMethod(Knm::Ipv4Setting::EnumMethod::Automatic);
             break;
-        case IpV4Widget::Private::LinkLocalMethodIndex:
+        case IpV4WidgetPrivate::LinkLocalMethodIndex:
             d->setting->setMethod(Knm::Ipv4Setting::EnumMethod::LinkLocal);
             break;
-        case IpV4Widget::Private::ManualMethodIndex:
+        case IpV4WidgetPrivate::ManualMethodIndex:
             d->setting->setMethod(Knm::Ipv4Setting::EnumMethod::Manual);
             break;
-        case IpV4Widget::Private::SharedMethodIndex:
+        case IpV4WidgetPrivate::SharedMethodIndex:
             d->setting->setMethod(Knm::Ipv4Setting::EnumMethod::Shared);
             break;
         default:
@@ -237,7 +241,7 @@ void IpV4Widget::writeConfig()
     // dns
     QString tempStr = d->ui.dns->text().remove(QLatin1Char(' '));
     QStringList dnsInput = tempStr.split(QLatin1Char(','), QString::SkipEmptyParts);
-    foreach (QString dns, dnsInput) {
+    foreach (const QString &dns, dnsInput) {
         QHostAddress dnsAddr(dns);
         if (dnsAddr != QHostAddress::Null) {
             //kDebug() << "Address parses to: " << dnsAddr.toString();
@@ -252,23 +256,29 @@ void IpV4Widget::writeConfig()
 
     d->setting->setDns(dnsList);
     d->setting->setDnssearch(dnsSearchEntries);
+
+    // dhcp client ID
+    d->setting->setDhcpclientid(d->ui.dhcpClientId->text());
+    // routing
+    d->setting->setNeverdefault(d->ui.cbNeverDefault->isChecked());
+    d->setting->setIgnoreautoroute(d->ui.cbIgnoreAutoRoutes->isChecked());
 }
 
 void IpV4Widget::methodChanged(int currentIndex)
 {
+    Q_D(IpV4Widget);
     bool addressPartEnabled = false;
     bool dnsPartEnabled = false;
+    bool dhcpClientIdEnabled = false;
 
-    if (currentIndex == IpV4Widget::Private::ManualMethodIndex) {
+    if (IpV4WidgetPrivate::ManualMethodIndex == currentIndex) {
         addressPartEnabled = true;
         dnsPartEnabled = true;
-        d->ui.pushButtonSettingsMode->setVisible(true);
-    }
-    else {
-        if (IpV4Widget::Private::AutomaticOnlyIPMethodIndex == currentIndex) {
-            dnsPartEnabled = true;
-        }
-        d->ui.pushButtonSettingsMode->setVisible(false);
+    } else if (IpV4WidgetPrivate::AutomaticOnlyIPMethodIndex == currentIndex) {
+        dnsPartEnabled = true;
+        dhcpClientIdEnabled = true;
+    } else if (IpV4WidgetPrivate::AutomaticMethodIndex == currentIndex) {
+        dhcpClientIdEnabled = true;
     }
 
     if (!addressPartEnabled) {
@@ -277,6 +287,8 @@ void IpV4Widget::methodChanged(int currentIndex)
         d->ui.gateway->clear();
         d->ui.advancedSettings->setAdditionalAddresses(QList<Solid::Control::IPv4Address>());
     }
+
+    d->ui.advancedSettings->setEnabled(addressPartEnabled);
     d->ui.address->setEnabled(addressPartEnabled);
     d->ui.addressLabel->setEnabled(addressPartEnabled);
     d->ui.netMask->setEnabled(addressPartEnabled);
@@ -294,6 +306,9 @@ void IpV4Widget::methodChanged(int currentIndex)
     d->ui.dnsSearchLabel->setEnabled(dnsPartEnabled);
     d->ui.dnsSearchMorePushButton->setEnabled(dnsPartEnabled);
     d->ui.dnsMorePushButton->setEnabled(dnsPartEnabled);
+
+    d->ui.labelDhcpClientId->setEnabled(dhcpClientIdEnabled);
+    d->ui.dhcpClientId->setEnabled(dhcpClientIdEnabled);
 }
 
 quint32 suggestNetmask(quint32 ip)
@@ -325,6 +340,7 @@ quint32 suggestNetmask(quint32 ip)
 
 void IpV4Widget::addressEditingFinished()
 {
+    Q_D(IpV4Widget);
     if (d->ui.netMask->text().isEmpty()) {
         QHostAddress addr(d->ui.address->text());
         quint32 netmask = suggestNetmask(addr.toIPv4Address());
@@ -335,41 +351,21 @@ void IpV4Widget::addressEditingFinished()
     }
 }
 
-void IpV4Widget::settingsModeClicked()
-{
-    d->isAdvancedModeOn ^= true; // XOR toggles value;
-
-    switchSettingsMode();
-}
-
-void IpV4Widget::switchSettingsMode()
-{
-    QString text;
-
-    if (false == d->isAdvancedModeOn) {
-        text = i18nc("@action:button Additional IPv4 addresses (aliases)","&Additional Addresses");
-    }
-    else {
-        text = i18nc("@action:button Basic IPv4 settings","&Basic settings");
-    }
-
-    d->ui.pushButtonSettingsMode->setText(text);
-    d->ui.basicSettingsWidget->setVisible(!d->isAdvancedModeOn);
-    d->ui.advancedSettings->setVisible(d->isAdvancedModeOn);
-}
-
 void IpV4Widget::dnsEdited(QStringList items)
 {
+    Q_D(IpV4Widget);
     d->ui.dns->setText(items.join(QLatin1String(", ")));
 }
 
 void IpV4Widget::dnsSearchEdited(QStringList items)
 {
+    Q_D(IpV4Widget);
     d->ui.dnsSearch->setText(items.join(QLatin1String(", ")));
 }
 
 void IpV4Widget::showDnsEditor()
 {
+    Q_D(IpV4Widget);
     EditListDialog * dnsEditor = new EditListDialog;
     // at first remove space characters
     QString dnsEntries = d->ui.dns->text().remove(QLatin1Char(' '));
@@ -383,6 +379,7 @@ void IpV4Widget::showDnsEditor()
 
 void IpV4Widget::showDnsSearchEditor()
 {
+    Q_D(IpV4Widget);
     EditListDialog * dnsSearchEditor = new EditListDialog;
     // at first remove space characters
     QString dnsSearchEntries = d->ui.dnsSearch->text().remove(QLatin1Char(' '));
@@ -393,4 +390,8 @@ void IpV4Widget::showDnsSearchEditor()
     dnsSearchEditor->show();
 }
 
+void IpV4Widget::validate()
+{
+
+}
 // vim: sw=4 sts=4 et tw=100

@@ -33,17 +33,21 @@ namespace Knm
     class Connection;
 } // namespace Knm
 
+class ConnectionWidgetPrivate;
 class KNM_EXPORT ConnectionWidget : public SettingWidget
 {
-    Q_OBJECT
-
+Q_OBJECT
+Q_DECLARE_PRIVATE(ConnectionWidget)
 public:
     /**
      * @param defaultName a default name to set on the connection, if the supplied connection does
      * not have a name.
      */
-    ConnectionWidget(Knm::Connection * connection, const QString & defaultName, QWidget * parent = 0);
+    ConnectionWidget(QWidget * parent = 0);
     ~ConnectionWidget();
+
+    void setConnection(Knm::Connection * connection);
+    void setDefaultName(const QString & defaultName);
     QTabWidget * connectionSettingsWidget();
     QString settingName() const;
 
@@ -57,14 +61,10 @@ public:
     /**
      * guarantee that the connection name is not empty
      */
-    bool validate() const;
+    void validate();
 
 private slots:
     void buttonChooseIconClicked();
-
-private:
-    class Private;
-    Private * d;
 };
 
 #endif // CONNECTIONWIDGET_H

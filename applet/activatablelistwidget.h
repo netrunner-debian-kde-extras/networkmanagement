@@ -23,7 +23,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QGraphicsWidget>
 
-#include <solid/control/networkinterface.h>
 #include "activatable.h"
 #include <Plasma/ScrollWidget>
 
@@ -44,11 +43,11 @@ public:
     bool accept(RemoteActivatable* activatable) const;
 
 public Q_SLOTS:
-    //virtual void activate(ActivatableItem*) = 0;
     void activatableAdded(RemoteActivatable *);
     void activatableRemoved(RemoteActivatable *);
     void listDisappeared();
     void listAppeared();
+    void deactivateConnection();
 
 Q_SIGNALS:
     void connectionListUpdated();
@@ -60,7 +59,6 @@ private:
 
     QHash<RemoteActivatable*, ActivatableItem*> m_itemIndex;
     RemoteActivatableList* m_activatables;
-    //Solid::Control::NetworkInterface* m_iface;
     QGraphicsLinearLayout* m_layout;
     QGraphicsWidget* m_widget;
 

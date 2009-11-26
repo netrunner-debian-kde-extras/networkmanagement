@@ -1,5 +1,5 @@
 /*
-Copyright 2008,2009 Sebastian Kügler <sebas@kde.org>
+Copyright 2008,2009 Sebastian K?gler <sebas@kde.org>
 Copyright 2008,2009 Will Stephenson <wstephenson@kde.org>
 
 This program is free software; you can redistribute it and/or
@@ -21,10 +21,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "wirelessnetworkitem.h"
 
+#include <QAction>
 #include <QLabel>
 #include <QGraphicsGridLayout>
 
 #include <KGlobalSettings>
+#include <KIcon>
 #include <KIconLoader>
 
 #include <Plasma/IconWidget>
@@ -42,6 +44,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 WirelessNetworkItem::WirelessNetworkItem(RemoteWirelessNetwork * remote, QGraphicsItem * parent)
 : ActivatableItem(remote, parent),
+    m_connectButton(0),
     m_security(0),
     m_securityIcon(0),
     m_securityIconName(0),
@@ -74,8 +77,9 @@ bool WirelessNetworkItem::readSettings()
         rsnFlags = remoteconnection->rsnFlags();
         capabilities = remoteconnection->apCapabilities();
         interfaceCapabilities = remoteconnection->interfaceCapabilities();
-        kDebug() <<  "========== RemoteActivationState" << remoteconnection->activationState();
+        //kDebug() <<  "========== RemoteActivationState" << remoteconnection->activationState();
         m_state = remoteconnection->activationState();
+        activationStateChanged(m_state);
         connect(remoteconnection, SIGNAL(activationStateChanged(Knm::InterfaceConnection::ActivationState)),
                                     SLOT(activationStateChanged(Knm::InterfaceConnection::ActivationState)));
         RemoteWirelessObject * wobj  = static_cast<RemoteWirelessObject*>(remoteconnection);
@@ -94,6 +98,7 @@ bool WirelessNetworkItem::readSettings()
 
     setStrength(m_remote->strength());
     connect(m_remote, SIGNAL(changed()), SLOT(update()));
+    connect(m_remote, SIGNAL(changed()), SLOT(stateChanged()));
     connect(m_remote, SIGNAL(strengthChanged(int)), SLOT(setStrength(int)));
 
     Knm::WirelessSecurity::Type best = Knm::WirelessSecurity::best(interfaceCapabilities, true, (operationMode == Solid::Control::WirelessNetworkInterface::Adhoc), capabilities, wpaFlags, rsnFlags);
@@ -127,12 +132,13 @@ void WirelessNetworkItem::setupItem()
     // icon on the left
     m_connectButton = new Plasma::IconWidget(this);
 
+    m_connectButton->setIcon("network-wireless"); // Known connection, we probably have credentials
     if (interfaceConnection()) {
-        m_connectButton->setIcon("bookmarks"); // Known connection, we probably have credentials
         m_connectButton->setText(interfaceConnection()->connectionName());
+        QAction *a = new QAction(KIcon("emblem-favorite"), QString(), m_connectButton);
+        m_connectButton->addIconAction(a);
     } else {
         m_connectButton->setText(m_ssid);
-        m_connectButton->setIcon("network-wireless"); // "New" network
     }
     m_connectButton->setMinimumWidth(160);
     m_connectButton->setOrientation(Qt::Horizontal);
@@ -143,6 +149,11 @@ void WirelessNetworkItem::setupItem()
     m_connectButton->setMinimumHeight(rowHeight);
     m_connectButton->setMaximumHeight(rowHeight);
     m_layout->addItem(m_connectButton, 0, 0, 1, 1 );
+
+    m_routeIcon = new Plasma::IconWidget(this);
+    m_routeIcon->setIcon("emblem-favorite");
+    m_routeIcon->setGeometry(QRectF(m_connectButton->geometry().topLeft(), QSizeF(16, 16)));
+    m_routeIcon->hide(); // this will be shown in handleHasDefaultRouteChanged(bool);
 
     m_strengthMeter = new Plasma::Meter(this);
     m_strengthMeter->setMinimum(0);
@@ -172,7 +183,7 @@ void WirelessNetworkItem::setupItem()
     connect(this, SIGNAL(pressed(bool)), m_securityIcon, SLOT(setPressed(bool)));
     connect(m_securityIcon, SIGNAL(pressed(bool)), this, SLOT(setPressed(bool)));
     connect(m_securityIcon, SIGNAL(clicked()), this, SLOT(emitClicked()));
-
+    activationStateChanged(m_state);
 
     update();
 }
@@ -181,9 +192,17 @@ WirelessNetworkItem::~WirelessNetworkItem()
 {
 }
 
+void WirelessNetworkItem::stateChanged()
+{
+    RemoteWirelessInterfaceConnection* remoteconnection = static_cast<RemoteWirelessInterfaceConnection*>(m_activatable);
+    if (remoteconnection) {
+        activationStateChanged(remoteconnection->activationState());
+    }
+}
+
 void WirelessNetworkItem::setStrength(int strength)
 {
-    kDebug() << m_ssid << "signal strength changed from " << m_strength << "to " << strength;
+    //kDebug() << m_ssid << "signal strength changed from " << m_strength << "to " << strength;
     if (strength == m_strength) {
         return;
     }
@@ -193,81 +212,64 @@ void WirelessNetworkItem::setStrength(int strength)
 
 void WirelessNetworkItem::activationStateChanged(Knm::InterfaceConnection::ActivationState state)
 {
-    kDebug() << m_state << "changes to" << state;
-    if (m_state == state) {
+    if (!m_connectButton) {
         return;
     }
     // Indicate the active interface
     QString t;
     if (interfaceConnection()) {
         t = interfaceConnection()->connectionName();
+        if (interfaceConnection()->hasDefaultRoute()) {
+            m_routeIcon->show();
+        } else {
+            m_routeIcon->hide();
+        }
     } else {
         t = m_ssid;
+        m_connectButton->setText(m_ssid);
+        return;
     }
-    //enum ActivationState { Unknown, Activating, Activated };
-    if (interfaceConnection()) {
-        m_connectButton->setIcon("bookmarks"); // Known connection, we probably have credentials
-        m_connectButton->setText(interfaceConnection()->connectionName());
 
-        switch (m_state) {
-            //Knm::InterfaceConnection::ActivationState
+    if (m_state != state && interfaceConnection()) {
+        //m_connectButton->setIcon("bookmarks"); // Known connection, we probably have credentials
+        switch (state) {
+            //Knm::InterfaceConnectihon::ActivationState
             case Knm::InterfaceConnection::Activated:
                 m_connectButton->setIcon("dialog-ok-apply"); // The active connection
-                t = QString("%1 (connected)").arg(t);
+                t = i18nc("label on the connectabel button", "%1 (connected)", t);
+                //m_connectButton->setInfoText(i18nc("subtext on connection button", "Connected"));
+                //kDebug() << "active" << t;
                 break;
             case Knm::InterfaceConnection::Unknown:
+                //m_connectButton->setInfoText(QString());
                 break;
             case Knm::InterfaceConnection::Activating:
-                t = QString("%1 (connecting...)").arg(t);
+                t = i18nc("label on the connectabel button", "%1 (connecting...)", t);
+                m_connectButton->setInfoText(i18nc("subtext on connection button", "Connecting..."));
         }
+        m_connectButton->setIcon(interfaceConnection()->iconName());
+
     } else {
         m_connectButton->setText(m_ssid);
         m_connectButton->setIcon("network-wireless"); // "New" network
     }
-    if (m_connectButton->text() != t) {
+    if (!t.isEmpty()) {
         m_connectButton->setText(t);
     }
+    handleHasDefaultRouteChanged(interfaceConnection()->hasDefaultRoute());
+
+    kDebug() << "state updated" << t;
     m_state = state;
     update();
 }
 
-/*
-void WirelessNetworkItem::readSettings()
-{
-
-    Knm::WirelessSecurity::Type best = Knm::WirelessSecurity::best(obj->interfaceCapabilities(), true, (obj->operationMode() == Solid::Control::WirelessNetworkInterface::Adhoc), obj->apCapabilities(), obj->wpaFlags(), obj->rsnFlags());
-    security->setToolTip(Knm::WirelessSecurity::shortToolTip(best));
-    security->setPixmap(SmallIcon(Knm::WirelessSecurity::iconName(best)));
-
-    if (m_security.isEmpty()) {
-        m_securityIconName = "security-low";
-        m_securityIconToolTip = i18nc("wireless network is not encrypted", "Unencrypted network");
-    } else if (m_security == QLatin1String("wep")) {
-        // security-weak
-        m_securityIconName = "security-medium";
-        m_securityIconToolTip = i18nc("tooltip of the security icon in the connection list", "Weakly encrypted network (WEP)");
-    } else if (m_security == QLatin1String("wpa-psk")) {
-        // security-medium
-        m_securityIconName = "security-high";
-        m_securityIconToolTip = i18nc("tooltip of the security icon in the connection list", "Encrypted network (WPA-PSK)");
-    } else if (m_security == QLatin1String("wpa-eap")) {
-        // security-strong
-        m_securityIconName = "security-high";
-        m_securityIconToolTip = i18nc("tooltip of the security icon in the connection list", "Encrypted network (WPA-PSK)");
-    } else {
-        m_securityIconName = "security-low"; // FIXME: Shouldn't we always have a security setting?
-        m_securityIconToolTip = i18nc("tooltip of the security icon in the connection list", "Encrypted network (WPA-EAP)");
-    }
-}
-*/
 RemoteWirelessNetwork * WirelessNetworkItem::wirelessNetworkItem() const
 {
     return static_cast<RemoteWirelessNetwork*>(m_activatable);
 }
-
 void WirelessNetworkItem::update()
 {
-    kDebug() << "updating" << m_ssid << wirelessNetworkItem()->strength();
+    //kDebug() << "updating" << m_ssid << wirelessNetworkItem()->strength();
     setStrength(wirelessNetworkItem()->strength());
     return;
 }

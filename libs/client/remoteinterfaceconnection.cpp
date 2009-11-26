@@ -28,6 +28,8 @@ RemoteInterfaceConnection::RemoteInterfaceConnection(RemoteInterfaceConnectionPr
     d->interfaceConnectionIface = new InterfaceConnectionInterface("org.kde.networkmanagement", dbusPath, QDBusConnection::sessionBus(), this);
     connect(d->interfaceConnectionIface, SIGNAL(activationStateChanged(uint)),
             this, SLOT(handleActivationStateChange(uint)));
+    connect(d->interfaceConnectionIface, SIGNAL(hasDefaultRouteChanged(bool)),
+            this, SIGNAL(hasDefaultRouteChanged(bool)));
 }
 
 RemoteInterfaceConnection::RemoteInterfaceConnection(const QString &dbusPath, QObject * parent)
@@ -37,6 +39,8 @@ RemoteInterfaceConnection::RemoteInterfaceConnection(const QString &dbusPath, QO
     d->interfaceConnectionIface = new InterfaceConnectionInterface("org.kde.networkmanagement", dbusPath, QDBusConnection::sessionBus(), this);
     connect(d->interfaceConnectionIface, SIGNAL(activationStateChanged(uint)),
             this, SLOT(handleActivationStateChange(uint)));
+    connect(d->interfaceConnectionIface, SIGNAL(hasDefaultRouteChanged(bool)),
+            this, SIGNAL(hasDefaultRouteChanged(bool)));
 }
 
 RemoteInterfaceConnection::~RemoteInterfaceConnection()
@@ -63,6 +67,12 @@ QString RemoteInterfaceConnection::connectionName() const
     return d->interfaceConnectionIface->connectionName();
 }
 
+QString RemoteInterfaceConnection::iconName() const
+{
+    Q_D(const RemoteInterfaceConnection);
+    return d->interfaceConnectionIface->iconName();
+}
+
 Knm::InterfaceConnection::ActivationState RemoteInterfaceConnection::activationState() const
 {
     Q_D(const RemoteInterfaceConnection);
@@ -70,9 +80,22 @@ Knm::InterfaceConnection::ActivationState RemoteInterfaceConnection::activationS
     return (Knm::InterfaceConnection::ActivationState)aState;
 }
 
+bool RemoteInterfaceConnection::hasDefaultRoute() const
+{
+    Q_D(const RemoteInterfaceConnection);
+    return d->interfaceConnectionIface->hasDefaultRoute();
+}
+
 void RemoteInterfaceConnection::handleActivationStateChange(uint state)
 {
     emit activationStateChanged((Knm::InterfaceConnection::ActivationState)state);
+}
+
+
+void RemoteInterfaceConnection::deactivate()
+{
+    Q_D(RemoteInterfaceConnection);
+    d->interfaceConnectionIface->deactivate();
 }
 
 // vim: sw=4 sts=4 et tw=100

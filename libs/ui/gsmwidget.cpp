@@ -19,12 +19,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include "gsmwidget.h"
-
+#include "settingwidget_p.h"
 #include "ui_gsm.h"
 #include "connection.h"
 #include "settings/gsm.h"
 
-class GsmWidget::Private
+class GsmWidgetPrivate : public SettingWidgetPrivate
 {
 public:
     Ui_Gsm ui;
@@ -32,8 +32,9 @@ public:
 };
 
 GsmWidget::GsmWidget(Knm::Connection * connection, QWidget * parent)
-: SettingWidget(connection, parent), d(new GsmWidget::Private)
+: SettingWidget(*new GsmWidgetPrivate, connection, parent)
 {
+    Q_D(GsmWidget);
     d->ui.setupUi(this);
     d->setting = static_cast<Knm::GsmSetting *>(connection->setting(Knm::Setting::Gsm));
     connect(d->ui.chkShowPass, SIGNAL(stateChanged(int)), this, SLOT(chkShowPassToggled()));
@@ -48,21 +49,23 @@ GsmWidget::GsmWidget(Knm::Connection * connection, QWidget * parent)
 
 GsmWidget::~GsmWidget()
 {
-    delete d;
 }
 
 void GsmWidget::readConfig()
 {
+    Q_D(GsmWidget);
     d->ui.number->setText(d->setting->number());
     d->ui.username->setText(d->setting->username());
     d->ui.apn->setText(d->setting->apn());
     d->ui.network->setText(d->setting->networkid());
+    d->ui.type->setCurrentIndex(qBound(0, d->setting->networktype() + 1, d->ui.type->count() - 1));
     d->ui.band->setValue(d->setting->band());
     d->ui.password->setEchoMode(QLineEdit::Password);
 }
 
 void GsmWidget::chkShowPassToggled()
 {
+    Q_D(GsmWidget);
     bool on = d->ui.chkShowPass->isChecked();
     d->ui.password->setEchoMode(on ? QLineEdit::Normal : QLineEdit::Password);
     d->ui.pin->setEchoMode(on ? QLineEdit::Normal : QLineEdit::Password);
@@ -72,11 +75,13 @@ void GsmWidget::chkShowPassToggled()
 
 void GsmWidget::writeConfig()
 {
+    Q_D(GsmWidget);
     d->setting->setNumber(d->ui.number->text());
     d->setting->setUsername(d->ui.username->text());
     d->setting->setPassword(d->ui.password->text());
     d->setting->setApn(d->ui.apn->text());
     d->setting->setNetworkid(d->ui.network->text());
+    d->setting->setNetworktype(d->ui.type->currentIndex() - 1);
     d->setting->setBand(d->ui.band->value());
     d->setting->setPin(d->ui.pin->text());
     d->setting->setPuk(d->ui.puk->text());
@@ -84,9 +89,14 @@ void GsmWidget::writeConfig()
 
 void GsmWidget::readSecrets()
 {
+    Q_D(GsmWidget);
     d->ui.password->setText(d->setting->password());
     d->ui.pin->setText(d->setting->pin());
     d->ui.puk->setText(d->setting->puk());
+}
+
+void GsmWidget::validate()
+{
 
 }
 

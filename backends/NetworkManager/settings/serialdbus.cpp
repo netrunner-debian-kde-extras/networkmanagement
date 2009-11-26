@@ -23,7 +23,7 @@ void SerialDbus::fromMap(const QVariantMap & map)
     setting->setBits(map.value("bits").value<uint>());
   }
   if (map.contains("parity")) {
-    setting->setParity(map.value("parity").value<QString>());
+    setting->setParity(map.value("parity").value<int>());
   }
   if (map.contains("stopbits")) {
     setting->setStopbits(map.value("stopbits").value<uint>());
@@ -33,27 +33,23 @@ void SerialDbus::fromMap(const QVariantMap & map)
   }
 }
 
-void SerialDbus::insertIfTrue(QVariantMap& map, const char * key, bool setting)
-{
-    if (setting) {
-        map.insert(QLatin1String(key), true);
-    }
-}
-
-void SerialDbus::insertIfNonZero(QVariantMap& map, const char * key, uint setting)
-{
-    if (setting != 0) {
-        map.insert(QLatin1String(key), setting);
-    }
-}
-
 QVariantMap SerialDbus::toMap()
 {
   QVariantMap map;
   Knm::SerialSetting * setting = static_cast<Knm::SerialSetting *>(m_setting);
   insertIfNonZero(map, "baud", setting->baud());
   insertIfNonZero(map, "bits", setting->bits());
-  map.insert("parity", setting->parity());
+  switch (setting->parity()) {
+//X     case Knm::SerialSetting::EnumParity::None:
+//X       map.insert("parity", "n");
+//X       break;
+    case Knm::SerialSetting::EnumParity::Even:
+      map.insert("parity", "E");
+      break;
+    case Knm::SerialSetting::EnumParity::Odd:
+      map.insert("parity", "o");
+      break;
+  }
   insertIfNonZero(map, "stopbits", setting->stopbits());
   insertIfNonZero(map, NM_SETTING_SERIAL_SEND_DELAY, setting->senddelay());
   return map;
