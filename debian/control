@@ -27,6 +27,9 @@ Description: Network Management widget for KDE4 Plasma
  This widget needs Plasma shell to be usable. Main KDE 4 Plasma shell is
  available in the kdebase-workspace-bin package. The user friendly name of the
  widget is "Network Management" (in e.g. "Add Widgets" dialog).
+ .
+ CAUTION: plasma widget is not very usable at the moment. Consider using
+ network-manager-kde instead.
 
 Package: network-manager-kde
 Architecture: any
