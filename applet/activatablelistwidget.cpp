@@ -1,5 +1,5 @@
 /*
-Copyright 2008, 2009 Sebastian Kügler <sebas@kde.org>
+Copyright 2008, 2009 Sebastian K?gler <sebas@kde.org>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -26,6 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // KDE
 #include <KDebug>
+#include <solid/control/networkmanager.h>
 
 // Plasma
 #include <Plasma/Label>
@@ -41,21 +42,21 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // networkmanagement applet
 #include "interfaceconnectionitem.h"
 #include "wirelessnetworkitem.h"
+#include "hiddenwirelessnetworkitem.h"
 
 ActivatableListWidget::ActivatableListWidget(RemoteActivatableList* activatables, QGraphicsWidget* parent) : Plasma::ScrollWidget(parent),
     m_activatables(activatables),
     m_layout(0)
 {
-    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn); // for testing
+    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff); // for testing
     //setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-    setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-    //setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Expanding);
     m_widget = new QGraphicsWidget(this);
-    m_widget->setMinimumSize(240, 50);
+    //m_widget->setMinimumSize(240, 50);
     m_layout = new QGraphicsLinearLayout(m_widget);
     m_layout->setOrientation(Qt::Vertical);
     m_layout->setSpacing(1);
-    m_widget->setLayout(m_layout);
     setWidget(m_widget);
 }
 
@@ -65,7 +66,7 @@ void ActivatableListWidget::init()
     connect(m_activatables, SIGNAL(activatableAdded(RemoteActivatable*)),
             SLOT(activatableAdded(RemoteActivatable *)));
     connect(m_activatables, SIGNAL(activatableRemoved(RemoteActivatable*)),
-                    SLOT(activatableRemoved(RemoteActivatable *)));
+            SLOT(activatableRemoved(RemoteActivatable *)));
 
     connect(m_activatables, SIGNAL(appeared()), SLOT(listAppeared()));
     connect(m_activatables, SIGNAL(disappeared()), SLOT(listDisappeared()));
@@ -77,7 +78,7 @@ ActivatableListWidget::~ActivatableListWidget()
 
 void ActivatableListWidget::addType(Knm::Activatable::ActivatableType type)
 {
-    if (!m_types.contains(type)) {
+    if (!(m_types.contains(type))) {
         m_types.append(type);
     }
 }
@@ -94,18 +95,23 @@ ActivatableItem * ActivatableListWidget::createItem(RemoteActivatable * activata
         case Knm::Activatable::WirelessNetwork:
         case Knm::Activatable::WirelessInterfaceConnection:
         { // Wireless
-            kDebug() << "Creating Wireless thingie" << activatable->deviceUni();
             WirelessNetworkItem* wni = new WirelessNetworkItem(static_cast<RemoteWirelessNetwork*>(activatable), m_widget);
             ai = wni;
             break;
         }
-        default:
         case Knm::Activatable::InterfaceConnection:
+        case Knm::Activatable::VpnInterfaceConnection:
         {
-            kDebug() << "Creating InterfaceConnection" << activatable->deviceUni();
             ai = new InterfaceConnectionItem(static_cast<RemoteInterfaceConnection*>(activatable), m_widget);
             break;
         }
+        case Knm::Activatable::HiddenWirelessInterfaceConnection:
+        {
+            ai = new HiddenWirelessNetworkItem(static_cast<RemoteInterfaceConnection*>(activatable), m_widget);
+            break;
+        }
+        default:
+            break;
     }
 
     Q_ASSERT(ai);
@@ -124,6 +130,17 @@ void ActivatableListWidget::listAppeared()
     }
 }
 
+void ActivatableListWidget::deactivateConnection()
+{
+    foreach (ActivatableItem* item, m_itemIndex) {
+        RemoteInterfaceConnection *conn = item->interfaceConnection();
+        if (conn) {
+            kDebug() << "deactivating ...";
+            conn->deactivate();
+        }
+    }
+}
+
 void ActivatableListWidget::listDisappeared()
 {
     foreach (ActivatableItem* item, m_itemIndex) {
@@ -135,7 +152,7 @@ void ActivatableListWidget::listDisappeared()
 
 void ActivatableListWidget::activatableAdded(RemoteActivatable * added)
 {
-    kDebug();
+    //kDebug();
     if (accept(added)) {
         createItem(added);
     }

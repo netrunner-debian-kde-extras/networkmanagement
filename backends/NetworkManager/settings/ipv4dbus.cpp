@@ -32,53 +32,64 @@ void Ipv4Dbus::fromMap(const QVariantMap & map)
   if (map.contains(QLatin1String(NM_SETTING_IP4_CONFIG_IGNORE_AUTO_DNS))) {
     setting->setIgnoredhcpdns(map.value(QLatin1String(NM_SETTING_IP4_CONFIG_IGNORE_AUTO_DNS)).value<bool>());
   }
+  if (map.contains(QLatin1String(NM_SETTING_IP4_CONFIG_IGNORE_AUTO_ROUTES))) {
+    setting->setIgnoreautoroute(map.value(QLatin1String(NM_SETTING_IP4_CONFIG_IGNORE_AUTO_ROUTES)).value<bool>());
+  }
+  if (map.contains(QLatin1String(NM_SETTING_IP4_CONFIG_NEVER_DEFAULT))) {
+    setting->setNeverdefault(map.value(QLatin1String(NM_SETTING_IP4_CONFIG_NEVER_DEFAULT)).value<bool>());
+  }
+  if (map.contains(QLatin1String(NM_SETTING_IP4_CONFIG_DHCP_CLIENT_ID))) {
+    setting->setDhcpclientid(map.value(QLatin1String(NM_SETTING_IP4_CONFIG_DHCP_CLIENT_ID)).value<QString>());
+  }
+  if (map.contains(QLatin1String(NM_SETTING_IP4_CONFIG_DHCP_HOSTNAME))) {
+    setting->setDhcphostname(map.value(QLatin1String(NM_SETTING_IP4_CONFIG_DHCP_HOSTNAME)).value<QString>());
+  }
 }
 
 QVariantMap Ipv4Dbus::toMap()
 {
   QVariantMap map;
   Knm::Ipv4Setting * setting = static_cast<Knm::Ipv4Setting *>(m_setting);
-  if (setting->method() != Knm::Ipv4Setting::EnumMethod::Automatic) {
-      switch (setting->method()) {
-          case Knm::Ipv4Setting::EnumMethod::Automatic:
-              // default, not needed
-              //map.insert("method", "auto");
-              break;
-          case Knm::Ipv4Setting::EnumMethod::LinkLocal:
-              map.insert("method", "link-local");
-              break;
-          case Knm::Ipv4Setting::EnumMethod::Manual:
-              map.insert("method", "manual");
-              break;
-          case Knm::Ipv4Setting::EnumMethod::Shared:
-              map.insert("method", "shared");
-              break;
-      }
+  switch (setting->method()) {
+      case Knm::Ipv4Setting::EnumMethod::Automatic:
+          map.insert("method", "auto");
+          break;
+      case Knm::Ipv4Setting::EnumMethod::LinkLocal:
+          map.insert("method", "link-local");
+          break;
+      case Knm::Ipv4Setting::EnumMethod::Manual:
+          map.insert("method", "manual");
+          break;
+      case Knm::Ipv4Setting::EnumMethod::Shared:
+          map.insert("method", "shared");
+          break;
+  }
 
-      if (!setting->dns().isEmpty()) {
-          QList<uint> dbusDns;
-          foreach (QHostAddress dns, setting->dns()) {
-              dbusDns << htonl(dns.toIPv4Address());
-          }
-          map.insert("dns", QVariant::fromValue(dbusDns));
+  if (!setting->dns().isEmpty()) {
+      QList<uint> dbusDns;
+      foreach (const QHostAddress &dns, setting->dns()) {
+          dbusDns << htonl(dns.toIPv4Address());
       }
+      map.insert("dns", QVariant::fromValue(dbusDns));
+  }
 
-      if (!setting->dnssearch().isEmpty()) {
-          map.insert(QLatin1String(NM_SETTING_IP4_CONFIG_DNS_SEARCH), setting->dnssearch());
+  if (!setting->dnssearch().isEmpty()) {
+      map.insert(QLatin1String(NM_SETTING_IP4_CONFIG_DNS_SEARCH), setting->dnssearch());
+  }
+  if (!setting->addresses().isEmpty()) {
+      QList<QList<uint> > dbusAddresses;
+      foreach (const Solid::Control::IPv4Address &addr, setting->addresses()) {
+          QList<uint> dbusAddress;
+          dbusAddress << htonl(addr.address())
+              << addr.netMask()
+              << htonl(addr.gateway());
+          dbusAddresses << dbusAddress;
       }
-      if (!setting->addresses().isEmpty()) {
-          QList<QList<uint> > dbusAddresses;
-          foreach (Solid::Control::IPv4Address addr, setting->addresses()) {
-              QList<uint> dbusAddress;
-              dbusAddress << htonl(addr.address())
-                  << addr.netMask()
-                  << htonl(addr.gateway());
-              dbusAddresses << dbusAddress;
-          }
-          map.insert("addresses", QVariant::fromValue(dbusAddresses));
-      }
+      map.insert("addresses", QVariant::fromValue(dbusAddresses));
+  }
+  if (!setting->routes().isEmpty()) {
       QList<QList<uint> > dbusRoutes;
-      foreach (Solid::Control::IPv4Route route, setting->routes()) {
+      foreach (const Solid::Control::IPv4Route &route, setting->routes()) {
           QList<uint> dbusRoute;
           dbusRoute << htonl(route.route())
               << route.prefix()
@@ -86,11 +97,16 @@ QVariantMap Ipv4Dbus::toMap()
               << route.metric();
           dbusRoutes << dbusRoute;
       }
-      map.insert("routes", QVariant::fromValue(dbusRoutes));
 
+      map.insert("routes", QVariant::fromValue(dbusRoutes));
   }
 
+
   //map.insert(QLatin1String(NM_SETTING_IP4_CONFIG_IGNORE_AUTO_DNS), setting->ignoredhcpdns());
+  insertIfTrue(map, NM_SETTING_IP4_CONFIG_IGNORE_AUTO_ROUTES, setting->ignoreautoroute());
+  insertIfTrue(map, NM_SETTING_IP4_CONFIG_NEVER_DEFAULT, setting->neverdefault());
+  insertIfNonEmpty(map, NM_SETTING_IP4_CONFIG_DHCP_CLIENT_ID, setting->dhcpclientid());
+  insertIfNonEmpty(map, NM_SETTING_IP4_CONFIG_DHCP_HOSTNAME, setting->dhcphostname());
   return map;
 }
 

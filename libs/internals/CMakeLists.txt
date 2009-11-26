@@ -84,13 +84,15 @@ set(knminternals_SRCS
 
    # helper functions for storing tooltip keys and UI strings
    tooltips.cpp
+   # helper functions to obtain UI strings for various enums
+   uiutils.cpp
    )
 
 kde4_add_kcfg_files(knminternals_SRCS knmserviceprefs.kcfgc)
 
 kde4_add_library(knminternals SHARED ${knminternals_SRCS})
 
-target_link_libraries(knminternals solidcontrolfuture ${KDE4_KDEUI_LIBS} ${QT_QTXML_LIBRARY} solidcontrol ${QT_QTNETWORK_LIBRARY})
+target_link_libraries(knminternals solidcontrolfuture ${KDE4_KDEUI_LIBS} ${QT_QTXML_LIBRARY} ${KDE4_SOLID_LIBS} solidcontrol ${QT_QTNETWORK_LIBRARY})
 
 set_target_properties(knminternals PROPERTIES
    VERSION ${GENERIC_LIB_VERSION}

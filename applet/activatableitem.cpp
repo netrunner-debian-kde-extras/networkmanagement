@@ -1,5 +1,6 @@
 /*
 Copyright 2008 Will Stephenson <wstephenson@kde.org>
+Copyright 2008, 2009 Sebastian K?gler <sebas@kde.org>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -22,9 +23,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <kdebug.h>
 #include "remoteactivatable.h"
 
-ActivatableItem::ActivatableItem(RemoteActivatable * remote, QGraphicsItem * parent) : Plasma::IconWidget(parent), m_activatable(remote)
+ActivatableItem::ActivatableItem(RemoteActivatable *remote, QGraphicsItem * parent) : Plasma::IconWidget(parent),
+    m_activatable(remote),
+    m_routeIcon(0)
 {
     setDrawBackground(true);
+    RemoteInterfaceConnection *remoteconnection = interfaceConnection();
+    if (remoteconnection) {
+        connect(remoteconnection, SIGNAL(hasDefaultRouteChanged(bool)), SLOT(handleHasDefaultRouteChanged(bool)));
+    }
 }
 
 ActivatableItem::~ActivatableItem()
@@ -34,14 +41,29 @@ ActivatableItem::~ActivatableItem()
 void ActivatableItem::emitClicked()
 {
     //HACK this slot needs renaming
-    kDebug() << "EMIT CLICKED";
-    m_activatable->activate();
+    //kDebug() << "EMIT CLICKED";
+    if (m_activatable) {
+        m_activatable->activate();
+    }
     emit clicked(this);
 }
 
 RemoteInterfaceConnection * ActivatableItem::interfaceConnection() const
 {
     return qobject_cast<RemoteInterfaceConnection*>(m_activatable);
+}
+
+void ActivatableItem::handleHasDefaultRouteChanged(bool has)
+{
+    if (m_routeIcon) {
+        // do something nice to show that this connection has the default route
+        if (has) {
+            kDebug() << "We now have the default route";
+            m_routeIcon->show();
+        } else {
+            m_routeIcon->hide();
+        }
+    }
 }
 
 // vim: sw=4 sts=4 et tw=100

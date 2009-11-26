@@ -33,6 +33,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <solid/control/networkinterface.h>
 
 #include <unconfiguredinterface.h>
+#include <uiutils.h>
 
 #include "activatableitem_p.h"
 
@@ -46,20 +47,7 @@ UnconfiguredInterfaceItem::UnconfiguredInterfaceItem(Knm::UnconfiguredInterface 
 : ActivatableItem(*new UnconfiguredInterfaceItemPrivate, unconfigured, parent)
 {
     Q_D(UnconfiguredInterfaceItem);
-    QString deviceText;
-    if (true) /*TODO, add configurability here*/ {
-        Solid::Device* dev = new Solid::Device(unconfigured->deviceUni());
-#if KDE_IS_VERSION(4,3,60)
-            deviceText = dev->description();
-#else
-            deviceText = dev->product();
-#endif
-    } else {
-        Solid::Control::NetworkInterface * iface = Solid::Control::NetworkManager::findNetworkInterface(unconfigured->deviceUni());
-        if (iface) {
-        }
-        deviceText = iface->interfaceName();
-    }
+    QString deviceText = UiUtils::interfaceNameLabel(unconfigured->deviceUni());
 
     setText(deviceText);
 
@@ -72,7 +60,12 @@ UnconfiguredInterfaceItem::UnconfiguredInterfaceItem(Knm::UnconfiguredInterface 
     d->activeIcon->show();
     // disconnects us from to the activatable's activate slot, because this is handled indirectly by
     // KnetworkManagerTrayIcon now.
-    disconnect(this, SIGNAL(clicked()), unconfigured, SLOT(activate()));
+    Solid::Control::NetworkInterface * iface = Solid::Control::NetworkManager::findNetworkInterface(unconfigured->deviceUni());
+    if (iface) {
+        if (iface->type() == Solid::Control::NetworkInterface::Ieee80211) {
+            disconnect(this, SIGNAL(clicked()), unconfigured, SLOT(activate()));
+        }
+    }
 }
 
 UnconfiguredInterfaceItem::~UnconfiguredInterfaceItem()

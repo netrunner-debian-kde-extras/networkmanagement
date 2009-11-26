@@ -24,6 +24,13 @@
     <entry name="Autostart" type="Bool">
       <default>true</default>
     </entry>
+    <entry name="InterfaceNamingStyle" type="Enum">
+      <choices name="InterfaceNamingChoices">
+        <choice name="DescriptiveNames"/>
+        <choice name="SystemNames"/>
+        <choice name="VendorProductNames"/>
+      </choices>
+    </entry>
   </group>
   <group name="SystemTray">
       <entry name="IconCount" type="UInt">

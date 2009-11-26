@@ -1,5 +1,6 @@
 /*
 Copyright 2008,2009 Will Stephenson <wstephenson@kde.org>
+Copyright 2008, 2009 Sebastian Kügler <sebas@kde.org>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -43,7 +44,7 @@ class WirelessInterfaceItem : public InterfaceItem
 {
 Q_OBJECT
 public:
-    WirelessInterfaceItem(Solid::Control::WirelessNetworkInterface * iface, InterfaceItem::NameDisplayMode mode, QGraphicsItem* parent = 0);
+    WirelessInterfaceItem(Solid::Control::WirelessNetworkInterface * iface, InterfaceItem::NameDisplayMode mode, QGraphicsWidget* parent = 0);
     virtual ~WirelessInterfaceItem();
     /**
      * The name of the connection, the SSID of any active network,

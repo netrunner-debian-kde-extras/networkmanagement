@@ -19,30 +19,65 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include "settingwidget.h"
+#include "settingwidget_p.h"
+#include <connection.h>
 
-class SettingWidget::Private
+SettingWidgetPrivate::SettingWidgetPrivate()
+: valid(true)
 {
-public:
-
-};
-
+}
 
 SettingWidget::SettingWidget(Knm::Connection * connection, QWidget* parent)
 : QWidget(parent)
-, SettingInterface(connection)
-, d(new Private)
+, d_ptr(new SettingWidgetPrivate)
 {
+    d_ptr->connection = connection;
+}
 
+SettingWidget::SettingWidget(SettingWidgetPrivate &dd, Knm::Connection * connection, QWidget* parent)
+: QWidget(parent)
+, d_ptr(&dd)
+{
+    d_ptr->connection = connection;
+}
+
+SettingWidget::SettingWidget(SettingWidgetPrivate &dd, QWidget* parent)
+: QWidget(parent)
+, d_ptr(&dd)
+{
 }
 
 SettingWidget::~SettingWidget()
 {
-    delete d;
+    delete d_ptr;
 }
 
-QWidget* SettingWidget::widget()
+void SettingWidget::setConnection(Knm::Connection * connection)
 {
-    return this;
+    d_ptr->connection = connection;
+}
+
+Knm::Connection * SettingWidget::connection() const
+{
+    Q_D(const SettingWidget);
+    return d->connection;
+}
+
+void SettingWidget::readSecrets()
+{
+    //default impl does nothing
+}
+
+bool SettingWidget::isValid() const
+{
+    Q_D(const SettingWidget);
+    return d->valid;
+}
+
+void SettingWidget::setValid(bool valid)
+{
+    Q_D(SettingWidget);
+    d->valid = valid;
 }
 
 // vim: sw=4 sts=4 et tw=100

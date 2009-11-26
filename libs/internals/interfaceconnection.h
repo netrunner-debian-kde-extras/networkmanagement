@@ -73,7 +73,7 @@ public:
      */
     void setHasDefaultRoute(bool hasDefault);
     bool hasDefaultRoute() const;
-    void disconnect();
+    void deactivate();
 
 Q_SIGNALS:
     void activationStateChanged(Knm::InterfaceConnection::ActivationState);

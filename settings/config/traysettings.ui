@@ -6,20 +6,54 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>446</width>
     <height>390</height>
    </rect>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
-    <widget class="QCheckBox" name="kcfg_Autostart">
-     <property name="text">
-      <string>Show tray icon</string>
-     </property>
-     <property name="checked">
-      <bool>true</bool>
-     </property>
-    </widget>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="interfaceNamingLabel">
+         <property name="text">
+          <string>Show network interfaces using:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="kcfg_InterfaceNamingStyle">
+         <item>
+          <property name="text">
+           <string>Descriptive Name</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>System Name</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Vendor's Name</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="kcfg_Autostart">
+       <property name="text">
+        <string>Show tray icon</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
     <widget class="Line" name="line">

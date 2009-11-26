@@ -38,10 +38,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <solid/control/networkmanager.h>
 
+#include <connectioninfodialog.h>
+
 #include <activatable.h>
 #include <activatabledebug.h>
 #include <sortedactivatablelist.h>
 #include <interfaceconnection.h>
+#include <uiutils.h>
 #include <unconfiguredinterface.h>
 #include <vpninterfaceconnection.h>
 #include <wirelessinterfaceconnection.h>
@@ -53,6 +56,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "wirelessinterfaceconnectionitem.h"
 #include "unconfiguredinterfaceitem.h"
 #include "wirelessnetworkitem.h"
+
 
 Q_DECLARE_METATYPE(Knm::Activatable *)
 
@@ -85,6 +89,8 @@ public:
     QPointer<Solid::Control::NetworkInterface> displayedNetworkInterface;
     QPointer<Solid::Control::AccessPoint> activeAccessPoint;
     QHostAddress hoveredActionIpAddress;
+    QHash<Knm::Activatable *, QPointer<ConnectionInfoDialog> > connectionPropertiesDialogs;
+    Knm::InterfaceConnection *hoveredActionInterfaceConnection;
 };
 
 /* for qSort()ing */
@@ -92,27 +98,19 @@ bool networkInterfaceLessThan(Solid::Control::NetworkInterface * if1, Solid::Con
 bool networkInterfaceSameConnectionStateLessThan(Solid::Control::NetworkInterface * if1, Solid::Control::NetworkInterface * if2);
 
 KNetworkManagerTrayIcon::KNetworkManagerTrayIcon(Solid::Control::NetworkInterface::Types types, const QString & id, SortedActivatableList * list, bool serviceAvailable, QObject * parent)
-    : KNotificationItem(id, parent), d_ptr(new KNetworkManagerTrayIconPrivate)
+    : PARENT_ICON_CLASS(id, parent), d_ptr(new KNetworkManagerTrayIconPrivate)
 {
     Q_D(KNetworkManagerTrayIcon);
     d->interfaceTypes = types;
     d->active = serviceAvailable;
 
     setStandardActionsEnabled(false);
-#if KDE_IS_VERSION(4,3,67)
-    setCategory(KNotificationItem::Hardware);
-#else
-    setCategory(Experimental::KNotificationItem::Hardware);
-#endif
+    setCategory(PARENT_ICON_CLASS::Hardware);
     setTitle(i18nc("@title:window KNotificationItem tray icon title", "Network Management"));
     setIconByName(d->iconName);
 
     setAssociatedWidget(contextMenu());
-#if KDE_IS_VERSION(4,3,67)
-    setStatus( (!d->active || Solid::Control::NetworkManager::status() == Solid::Networking::Unknown )? KNotificationItem::Passive : KNotificationItem::Active);
-#else
-    setStatus( (!d->active || Solid::Control::NetworkManager::status() == Solid::Networking::Unknown )? Experimental::KNotificationItem::Passive : Experimental::KNotificationItem::Active);
-#endif
+    setStatus( (!d->active || Solid::Control::NetworkManager::status() == Solid::Networking::Unknown )? PARENT_ICON_CLASS::Passive : PARENT_ICON_CLASS::Active);
 
     if (types.testFlag(Solid::Control::NetworkInterface::Ieee80211)) {
         d->flightModeAction = new KAction(i18nc("@action:inmenu turns off wireless networking", "Enable wireless"), this);
@@ -248,7 +246,13 @@ void KNetworkManagerTrayIcon::fillPopup()
                 kDebug() << "UCI" << unco->deviceUni();
                 widget = new UnconfiguredInterfaceItem(unco, 0);
                 widget->setObjectName(unco->deviceUni());
-                connect (widget, SIGNAL(clicked()), this, SLOT(showOtherWirelessDialog()));
+                Solid::Control::NetworkInterface * iface
+                    = Solid::Control::NetworkManager::findNetworkInterface(unco->deviceUni());
+                if (iface) {
+                    if (iface->type() == Solid::Control::NetworkInterface::Ieee80211) {
+                        connect (widget, SIGNAL(clicked()), this, SLOT(showOtherWirelessDialog()));
+                    }
+                }
             } else if (activatable->activatableType() == Knm::Activatable::VpnInterfaceConnection) {
                 Knm::VpnInterfaceConnection * vpn = static_cast<Knm::VpnInterfaceConnection*>(activatable);
                 kDebug() << "VPN" << vpn->connectionName();
@@ -292,21 +296,22 @@ void KNetworkManagerTrayIcon::fillPopup()
         }
     }
 
-    if (d->interfaceTypes.testFlag(Solid::Control::NetworkInterface::Ieee80211)
-            && Solid::Control::NetworkManager::isWirelessEnabled()
-            && Solid::Control::NetworkManager::isWirelessHardwareEnabled()) {
-
-        contextMenu()->insertAction(insertionPointForConnectToOtherWireless, d->otherWirelessNetworksAction);
-    }
-
     if (!wirelessInterfaceConnectionCount) {
         foreach (QWidgetAction * action, wirelessUnconfiguredInterfaceItems) {
             contextMenu()->insertAction(insertionPointForConnectToOtherWireless, action);
         }
     }
+
+    if (d->interfaceTypes.testFlag(Solid::Control::NetworkInterface::Ieee80211)
+            && Solid::Control::NetworkManager::isWirelessEnabled()
+            && Solid::Control::NetworkManager::isWirelessHardwareEnabled() && wirelessInterfaceConnectionCount) {
+        contextMenu()->insertAction(insertionPointForConnectToOtherWireless, d->otherWirelessNetworksAction);
+    }
+
     // add the housekeeping actions
     contextMenu()->addSeparator();
-    if (d->interfaceTypes.testFlag(Solid::Control::NetworkInterface::Ieee80211)) {
+
+    if (!wirelessDeviceUnis.isEmpty() /*TODO Bluetooth too */ && d->interfaceTypes.testFlag(Solid::Control::NetworkInterface::Ieee80211)) {
         contextMenu()->addAction(d->flightModeAction);
     }
     contextMenu()->addAction(d->prefsAction);
@@ -461,22 +466,26 @@ void KNetworkManagerTrayIcon::updateTrayIcon()
         switch (d->displayedNetworkInterface->connectionState()) {
             case Solid::Control::NetworkInterface::Preparing:
                 overlayName = QLatin1String("busy-phase1");
-                overlayName = QLatin1String("emblem-mounted");
+                overlayName = QLatin1String("emblem-link");
                 break;
             case Solid::Control::NetworkInterface::Configuring:
                 overlayName = QLatin1String("busy-phase2");
-                overlayName = QLatin1String("emblem-mounted");
+                overlayName = QLatin1String("emblem-link");
                 break;
             case Solid::Control::NetworkInterface::NeedAuth:
                 overlayName = QLatin1String("busy-phase2");
-                overlayName = QLatin1String("emblem-mounted");
+                overlayName = QLatin1String("emblem-link");
                 break;
             case Solid::Control::NetworkInterface::IPConfig:
                 overlayName = QLatin1String("busy-phase3");
-                overlayName = QLatin1String("emblem-mounted");
+                overlayName = QLatin1String("emblem-link");
                 break;
             case Solid::Control::NetworkInterface::Activated:
-                overlayName = QLatin1String("checkbox");
+                if (iconName == QLatin1String("network-wired"))
+                    iconName = QLatin1String("network-wired-activated");
+                else
+
+                    overlayName = QLatin1String("emblem-mounted");
                 break;
             default:
                 break;
@@ -507,38 +516,7 @@ void KNetworkManagerTrayIcon::updateToolTip()
     Q_D(KNetworkManagerTrayIcon);
     QString tip;
     if (d->displayedNetworkInterface) {
-        switch (d->displayedNetworkInterface->connectionState()) {
-            case Solid::Control::NetworkInterface::UnknownState:
-                tip = i18nc("@info:tooltip status string for network interface in unknown state state ", "Unknown");
-                break;
-            case Solid::Control::NetworkInterface::Unmanaged:
-                tip = i18nc("@info:tooltip status string for network interface not managed by networking subsystem", "Not managed");
-                break;
-            case Solid::Control::NetworkInterface::Unavailable:
-                tip = i18nc("@info:tooltip status string for network interface not available for use", "Unavailable");
-                break;
-            case Solid::Control::NetworkInterface::Disconnected:
-                tip = i18nc("@info:tooltip status string for disconnected network interface", "Not connected");
-                break;
-            case Solid::Control::NetworkInterface::Preparing:
-                tip = i18nc("@info:tooltip status string for network interface preparing to connect", "Preparing to connect");
-                break;
-            case Solid::Control::NetworkInterface::Configuring:
-                tip = i18nc("@info:tooltip status string for network interface being configured prior to connection", "Configuring interface");
-                break;
-            case Solid::Control::NetworkInterface::NeedAuth:
-                tip = i18nc("@info:tooltip status string for network interface awaiting authorizatoin", "Waiting for authorization");
-                break;
-            case Solid::Control::NetworkInterface::IPConfig:
-                tip = i18nc("@info:tooltip status string for network interface getting IP address", "Obtaining network address");
-                break;
-            case Solid::Control::NetworkInterface::Activated:
-                tip = i18nc("@info:tooltip status string for active network interface", "Active");
-                break;
-            case Solid::Control::NetworkInterface::Failed:
-                tip = i18nc("@info:tooltip status string for network interface with failed connection", "Connection failed");
-                break;
-        }
+        tip = UiUtils::connectionStateToString(d->displayedNetworkInterface->connectionState());
     } else {
         tip = "<qt>Networking <b>information</b> not available</qt>";
     }
@@ -548,18 +526,10 @@ void KNetworkManagerTrayIcon::updateToolTip()
 void KNetworkManagerTrayIcon::networkingStatusChanged(Solid::Networking::Status status)
 {
     if (status == Solid::Networking::Unknown) {
-#if KDE_IS_VERSION(4,3,67)
-        setStatus(KNotificationItem::Passive);
-#else
-        setStatus(Experimental::KNotificationItem::Passive);
-#endif
+        setStatus(PARENT_ICON_CLASS::Passive);
         fillPopup();
     } else {
-#if KDE_IS_VERSION(4,3,67)
-        setStatus(KNotificationItem::Active);
-#else
-        setStatus(Experimental::KNotificationItem::Active);
-#endif
+        setStatus(PARENT_ICON_CLASS::Active);
     }
 }
 
@@ -584,7 +554,7 @@ void KNetworkManagerTrayIcon::setActive(bool active)
 {
     Q_D(KNetworkManagerTrayIcon);
     d->active = active;
-    setStatus( active ? KNotificationItem::Active : KNotificationItem::Passive);
+    setStatus( active ? PARENT_ICON_CLASS::Active : PARENT_ICON_CLASS::Passive);
     fillPopup();
 }
 
@@ -624,14 +594,12 @@ void KNetworkManagerTrayIcon::aboutToShowMenuContextMenu(KMenu * menu, QAction *
                         d->copyIpAddrAction = KStandardAction::copy(this, SLOT(copyIpAddress()), this);
                         d->copyIpAddrAction->setText(i18nc("@action:inmenu copy ip address to clipboard", "Copy IP Address"));
                         d->propertiesAction = new KAction(i18nc("@action:inmenu interface connection properties", "Properties"), this);
-                        connect(d->propertiesAction, SIGNAL(triggered(bool)), this, SLOT(showConnectionProperties(bool)));
-                        // TODO implement
-                        d->propertiesAction->setEnabled(false);
-
+                        connect(d->propertiesAction, SIGNAL(triggered(Qt::MouseButtons,Qt::KeyboardModifiers)), this, SLOT(showConnectionProperties()));
                     }
+                    d->hoveredActionInterfaceConnection = ic;
+                    QString deviceUni = ic->deviceUni();
+                    Solid::Control::NetworkInterface * iface = Solid::Control::NetworkManager::findNetworkInterface(deviceUni);
                     if (ic->activationState() == Knm::InterfaceConnection::Activated) {
-                        QString deviceUni = ic->deviceUni();
-                        Solid::Control::NetworkInterface * iface = Solid::Control::NetworkManager::findNetworkInterface(deviceUni);
                         QHostAddress addr;
                         if (iface) {
                             Solid::Control::IPv4Config cfg = iface->ipV4Config();
@@ -672,8 +640,19 @@ void KNetworkManagerTrayIcon::copyIpAddress()
 
 void KNetworkManagerTrayIcon::showConnectionProperties()
 {
-    // This is not yet implemented.  When it is implemented, remove the setEnabled(false) call to
-    // d->propertiesAction
+    Q_D(KNetworkManagerTrayIcon);
+    ConnectionInfoDialog *connectionInfoDialog;
+    
+    connectionInfoDialog = d->connectionPropertiesDialogs[d->hoveredActionInterfaceConnection];
+    if (connectionInfoDialog == 0) {
+        connectionInfoDialog = new ConnectionInfoDialog(d->hoveredActionInterfaceConnection);
+        d->connectionPropertiesDialogs[d->hoveredActionInterfaceConnection] = connectionInfoDialog;
+        connectionInfoDialog->show();
+    } else {
+        connectionInfoDialog->show();
+        connectionInfoDialog->raise();
+    }
+    contextMenu()->hide();
 }
 
 void KNetworkManagerTrayIcon::showOtherWirelessDialog()

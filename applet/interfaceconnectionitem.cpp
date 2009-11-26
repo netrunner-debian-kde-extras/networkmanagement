@@ -32,32 +32,23 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 InterfaceConnectionItem::InterfaceConnectionItem(RemoteInterfaceConnection * conn, QGraphicsItem * parent)
 : ActivatableItem(conn, parent)
 {
+    if (interfaceConnection()) {
+        if (interfaceConnection()->iconName().startsWith("No such interface 'org.kde.networkmanagement.InterfaceConnection'")) {
+            kDebug() << "Houston ...";
+        }
+    }
 }
 
 void InterfaceConnectionItem::setupItem()
 {
-    /*
-    // painting of a non-active connection wired connection
-
-    +----+------------------+------+
-    |icon| connection name  |status|
-    +----+------------------+------+
-    */
     int rowHeight = 24;
 
     m_layout = new QGraphicsGridLayout(this);
     // last colunm has fixed width for the icon
-    m_layout->setColumnFixedWidth(2, rowHeight);
+    //m_layout->setColumnFixedWidth(2, rowHeight);
 
     // icon on the left
     m_connectButton = new Plasma::IconWidget(this);
-    m_connectButton->setIcon("network-wired");
-    if (interfaceConnection()) {
-        m_connectButton->setText(interfaceConnection()->connectionName());
-    } else {
-        m_connectButton->setText("missing name");
-    }
-    kDebug() << "====> init face connection" << m_connectButton->text();
     m_connectButton->setMinimumWidth(160);
     m_connectButton->setMaximumHeight(rowHeight);
     m_connectButton->setOrientation(Qt::Horizontal);
@@ -65,18 +56,24 @@ void InterfaceConnectionItem::setupItem()
     m_connectButton->setTextBackgroundColor(QColor());
 #endif
 
-    //m_connectButton->setToolTip(i18nc("button to connect to wired network",
-    //                                  "Connect to wired network %1", m_connection->id()));
     m_connectButton->setMinimumHeight(rowHeight);
     m_connectButton->setMaximumHeight(rowHeight);
     m_layout->addItem(m_connectButton, 0, 0, 1, 1 );
 
-    m_icon = new Plasma::IconWidget(this);
-    m_icon->setIcon("network-disconnect");
-    m_icon->setMinimumHeight(22);
-    m_icon->setMaximumHeight(22);
-    m_layout->addItem(m_icon, 0, 2, 1, 1, Qt::AlignLeft);
+    m_routeIcon = new Plasma::IconWidget(this);
+    m_routeIcon->setIcon("emblem-favorite");
+    m_routeIcon->setGeometry(QRectF(m_connectButton->geometry().topLeft(), QSizeF(8, 8)));
+    m_routeIcon->hide(); // this will be shown in handleHasDefaultRouteChanged(bool);
 
+    if (interfaceConnection()) {
+        m_connectButton->setIcon(interfaceConnection()->iconName());
+        m_connectButton->setText(interfaceConnection()->connectionName());
+        kDebug() << interfaceConnection()->connectionName() << interfaceConnection()->iconName();
+        handleHasDefaultRouteChanged(interfaceConnection()->hasDefaultRoute());
+    } else {
+        m_connectButton->setIcon("network-wired");
+        m_connectButton->setText(i18nc("name of the connection not known", "Unknown"));
+    }
     connect(m_connectButton, SIGNAL(clicked()), this, SIGNAL(clicked()));
     connect(this, SIGNAL(clicked()), this, SLOT(emitClicked()));
     connect(this, SIGNAL(pressed(bool)), m_connectButton, SLOT(setPressed(bool)));

@@ -19,6 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include "wiredwidget.h"
+#include "settingwidget_p.h"
 
 #include <QComboBox>
 
@@ -29,11 +30,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <connection.h>
 #include <settings/802-3-ethernet.h>
+#include <uiutils.h>
 
 #include "ui_wired.h"
 
+#include "knmserviceprefs.h"
 
-class WiredWidget::Private
+
+
+class WiredWidgetPrivate : public SettingWidgetPrivate
 {
 public:
     Ui_Settings8023Ethernet ui;
@@ -41,32 +46,28 @@ public:
 };
 
 WiredWidget::WiredWidget(Knm::Connection * connection, QWidget * parent)
-: SettingWidget(connection, parent), d(new WiredWidget::Private)
+: SettingWidget(*new WiredWidgetPrivate, connection, parent)
 {
+    Q_D(WiredWidget);
     d->ui.setupUi(this);
     d->setting = static_cast<Knm::WiredSetting *>(connection->setting(Knm::Setting::Wired));
     d->ui.mtu->setSuffix(ki18np(" byte", " bytes"));
     foreach (Solid::Control::NetworkInterface * iface, Solid::Control::NetworkManager::networkInterfaces()) {
         if (iface->type() == Solid::Control::NetworkInterface::Ieee8023) {
-            Solid::Device * dev = new Solid::Device(iface->uni());
-#if KDE_IS_VERSION(4,3,60)
-            QString deviceText = dev->description();
-#else
-            QString deviceText = dev->product();
-#endif
+            QString deviceText = UiUtils::interfaceNameLabel(iface->uni());
             Solid::Control::WiredNetworkInterface * wired = static_cast<Solid::Control::WiredNetworkInterface*>(iface);
-            d->ui.cmbMacAddress->addItem(i18nc("@item:inlist Solid Device Name (kernel interface name)", "%1 (%2)", deviceText, wired->interfaceName()), wired->hardwareAddress().toLatin1());
+            d->ui.cmbMacAddress->addItem(deviceText, wired->hardwareAddress().toLatin1());
         }
     }
 }
 
 WiredWidget::~WiredWidget()
 {
-    delete d;
 }
 
 void WiredWidget::readConfig()
 {
+    Q_D(WiredWidget);
     if (!d->setting->macaddress().isEmpty()) {
         int i = d->ui.cmbMacAddress->findData(d->setting->macaddress());
         if (i == -1) {
@@ -83,6 +84,7 @@ void WiredWidget::readConfig()
 
 void WiredWidget::writeConfig()
 {
+    Q_D(WiredWidget);
     d->setting->setMtu(d->ui.mtu->value());
     int i = d->ui.cmbMacAddress->currentIndex();
     if ( i == 0) {
@@ -92,4 +94,8 @@ void WiredWidget::writeConfig()
     }
 }
 
+void WiredWidget::validate()
+{
+
+}
 // vim: sw=4 sts=4 et tw=100

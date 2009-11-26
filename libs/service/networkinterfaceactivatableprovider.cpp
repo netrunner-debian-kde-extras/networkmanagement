@@ -59,7 +59,7 @@ void NetworkInterfaceActivatableProvider::init()
 {
     Q_D(NetworkInterfaceActivatableProvider);
     // assess all connections
-    foreach (QString uuid, d->connectionList->connections()) {
+    foreach (const QString &uuid, d->connectionList->connections()) {
         Knm::Connection * connection = d->connectionList->findConnection(uuid);
         handleAdd(connection);
     }
@@ -178,8 +178,8 @@ void NetworkInterfaceActivatableProvider::handleAdd(Knm::Connection * addedConne
 void NetworkInterfaceActivatableProvider::handleUpdate(Knm::Connection * updatedConnection)
 {
     Q_D(NetworkInterfaceActivatableProvider);
-    QMultiHash<QString, Knm::InterfaceConnection*>::const_iterator i = d->activatables.find(updatedConnection->uuid());
-    while (i != d->activatables.end() && i.key() == updatedConnection->uuid()) {
+    QMultiHash<QString, Knm::InterfaceConnection*>::const_iterator i = d->activatables.constFind(updatedConnection->uuid());
+    while (i != d->activatables.constEnd() && i.key() == updatedConnection->uuid()) {
         Knm::InterfaceConnection * ifaceConnection = dynamic_cast<Knm::InterfaceConnection *>(i.value());
         if (ifaceConnection) {
             Knm::InterfaceConnectionHelpers::syncInterfaceConnection(ifaceConnection, updatedConnection);

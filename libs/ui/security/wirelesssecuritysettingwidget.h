@@ -55,14 +55,14 @@ public:
             Solid::Control::AccessPoint * ap = 0,
             QWidget * parent = 0 );
     virtual ~WirelessSecuritySettingWidget();
-    SettingInterface* wpaEapWidget();
     void readConfig();
     void writeConfig();
     void readSecrets();
+public Q_SLOTS:
+    void setIfaceAndAccessPoint(Solid::Control::WirelessNetworkInterface * iface, Solid::Control::AccessPoint * ap);
 protected Q_SLOTS:
     void securityTypeChanged(int);
-private:
-    WirelessSecuritySettingWidgetPrivate * d_ptr;
+    void validate();
 };
 
 #endif // WIRELESSSECURITYSETTINGWIDGET_H

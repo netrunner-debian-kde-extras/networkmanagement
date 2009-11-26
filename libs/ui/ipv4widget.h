@@ -25,14 +25,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "knm_export.h"
 
-namespace Knm
-{
-    class Connection;
-} // namespace Knm
-
+class IpV4WidgetPrivate;
 class KNM_EXPORT IpV4Widget : public SettingWidget
 {
 Q_OBJECT
+Q_DECLARE_PRIVATE(IpV4Widget)
 public:
     IpV4Widget(Knm::Connection * connection, QWidget * parent = 0 );
     virtual ~IpV4Widget();
@@ -44,18 +41,11 @@ protected Q_SLOTS:
      */
     void methodChanged(int);
     void addressEditingFinished();
-    void settingsModeClicked();
     void dnsEdited(QStringList addresses);
     void dnsSearchEdited(QStringList addresses);
     void showDnsEditor();
     void showDnsSearchEditor();
-
-private:
-    void switchSettingsMode();
-
-private:
-    class Private;
-    Private * d;
+    void validate();
 };
 
 #endif

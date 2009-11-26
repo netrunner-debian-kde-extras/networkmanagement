@@ -25,14 +25,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "knm_export.h"
 
-namespace Knm
-{
-    class Connection;
-}
-
+class GsmWidgetPrivate;
 class KNM_EXPORT GsmWidget : public SettingWidget
 {
 Q_OBJECT
+Q_DECLARE_PRIVATE(GsmWidget)
 public:
     GsmWidget(Knm::Connection *, QWidget * parent = 0 );
     virtual ~GsmWidget();
@@ -41,10 +38,8 @@ public:
     void writeConfig();
     void readSecrets();
 protected Q_SLOTS:
+    void validate();
     void chkShowPassToggled();
-private:
-    class Private;
-    Private * d;
 };
 
 #endif

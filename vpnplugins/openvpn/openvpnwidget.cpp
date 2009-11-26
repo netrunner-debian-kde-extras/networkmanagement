@@ -62,6 +62,14 @@ OpenVpnSettingWidget::OpenVpnSettingWidget(Knm::Connection * connection, QWidget
     connect(d->openvpnProcess, SIGNAL(finished(int,QProcess::ExitStatus)), this, SLOT(openVpnFinished(int,QProcess::ExitStatus)));
 
     d->openvpnProcess->setProgram(openVpnBinary, args);
+
+    // use requesters' urlSelected signals to set other requester's startDirs to save clicking
+    // around the filesystem
+    QList<const KUrlRequester *> requesters;
+    requesters << d->ui.x509CaFile << d->ui.x509Cert << d->ui.x509Key << d->ui.pskSharedKey << d->ui.passCaFile << d->ui.x509PassCaFile << d->ui.x509PassCert << d->ui.x509PassKey << d->ui.kurlTlsAuthKey;
+    foreach (const KUrlRequester * requester, requesters) {
+        connect(requester, SIGNAL(urlSelected(const KUrl &)), this, SLOT(updateStartDir(const KUrl&)));
+    }
 }
 
 OpenVpnSettingWidget::~OpenVpnSettingWidget()
@@ -83,7 +91,7 @@ void OpenVpnSettingWidget::gotOpenVpnOutput()
 void OpenVpnSettingWidget::openVpnError(QProcess::ProcessError)
 {
     d->ui.cboCipher->removeItem(0);
-    d->ui.cboCipher->addItem(i18nc("@item:inlist Item added when openvpn cipher lookup failed", "Openvpn cipher lookup failed"));
+    d->ui.cboCipher->addItem(i18nc("@item:inlist Item added when OpenVPN cipher lookup failed", "OpenVPN cipher lookup failed"));
 }
 
 void OpenVpnSettingWidget::openVpnFinished(int exitCode, QProcess::ExitStatus exitStatus)
@@ -94,7 +102,7 @@ void OpenVpnSettingWidget::openVpnFinished(int exitCode, QProcess::ExitStatus ex
         QList<QByteArray> rawOutputLines = d->openVpnCiphers.split('\n');
         QStringList ciphers;
         bool foundFirstSpace = false;;
-        foreach (QByteArray cipher, rawOutputLines) {
+        foreach (const QByteArray &cipher, rawOutputLines) {
             if (cipher.length() == 0) {
                 foundFirstSpace = true;
             } else if (foundFirstSpace) {
@@ -105,10 +113,10 @@ void OpenVpnSettingWidget::openVpnFinished(int exitCode, QProcess::ExitStatus ex
         if (d->ui.cboCipher->count()) {
             d->ui.cboCipher->setEnabled(true);
         } else {
-            d->ui.cboCipher->addItem(i18nc("@item:inlist Item added when openvpn cipher lookup failed", "No openvpn ciphers found"));
+            d->ui.cboCipher->addItem(i18nc("@item:inlist Item added when OpenVPN cipher lookup failed", "No OpenVPN ciphers found"));
         }
     } else {
-        d->ui.cboCipher->addItem(i18nc("@item:inlist Item added when openvpn cipher lookup failed", "openvpn cipher lookup failed"));
+        d->ui.cboCipher->addItem(i18nc("@item:inlist Item added when OpenVPN cipher lookup failed", "OpenVPN cipher lookup failed"));
     }
     delete d->openvpnProcess;
     d->openvpnProcess = 0;
@@ -171,7 +179,7 @@ void OpenVpnSettingWidget::readConfig()
         d->ui.cboHmac->setCurrentIndex(1);
     } else if (hmacKeyAuth == QLatin1String(NM_OPENVPN_AUTH_MD5)) {
         d->ui.cboHmac->setCurrentIndex(2);
-    } else if (hmacKeyAuth == QLatin1String(NM_OPENVPN_AUTH_MD5)) {
+    } else if (hmacKeyAuth == QLatin1String(NM_OPENVPN_AUTH_SHA1)) {
         d->ui.cboHmac->setCurrentIndex(3);
     }
     // ciphers populated above?
@@ -211,6 +219,9 @@ void OpenVpnSettingWidget::writeConfig()
         data.insert( NM_OPENVPN_KEY_CA, d->ui.x509CaFile->url().path().toUtf8());
         data.insert( NM_OPENVPN_KEY_CERT, d->ui.x509Cert->url().path().toUtf8());
         data.insert( NM_OPENVPN_KEY_KEY, d->ui.x509Key->url().path().toUtf8());
+        // The OpenVPN NetworkManager plugin requires that the secrets map be
+        // nonempty, even if there's no real password,
+        secretData.insert(NM_OPENVPN_KEY_NOSECRET, "");
         break;
     case 1:
         contype = NM_OPENVPN_CONTYPE_STATIC_KEY;
@@ -293,6 +304,20 @@ void OpenVpnSettingWidget::readSecrets()
     QVariantMap secrets = d->setting->vpnSecrets();
     d->ui.x509PassPassword->setText(secrets.value(QLatin1String(NM_OPENVPN_KEY_PASSWORD)).toString());
     d->ui.passPassword->setText(secrets.value(QLatin1String(NM_OPENVPN_KEY_PASSWORD)).toString());
+}
+
+void OpenVpnSettingWidget::validate()
+{
+
+}
+
+void OpenVpnSettingWidget::updateStartDir(const KUrl & url)
+{
+    QList<KUrlRequester *> requesters;
+    requesters << d->ui.x509CaFile << d->ui.x509Cert << d->ui.x509Key << d->ui.pskSharedKey << d->ui.passCaFile << d->ui.x509PassCaFile << d->ui.x509PassCert << d->ui.x509PassKey << d->ui.kurlTlsAuthKey;
+    foreach (KUrlRequester * requester, requesters) {
+        requester->setStartDir(KUrl(url.directory()));
+    }
 }
 
 // vim: sw=4 sts=4 et tw=100

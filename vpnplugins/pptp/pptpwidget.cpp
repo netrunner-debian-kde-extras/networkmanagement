@@ -86,7 +86,7 @@ void PptpSettingWidget::readConfig()
     // General settings
     QStringMap dataMap = d->setting->data();
 
-    // Authentification
+    // Authentication
     QString sGateway = dataMap[NM_PPTP_KEY_GATEWAY];
     if (!sGateway.isEmpty())
     {
@@ -265,6 +265,11 @@ void PptpSettingWidget::readSecrets()
     QVariantMap secrets = d->setting->vpnSecrets();
 
     d->ui.edt_password->setText(secrets.value(QLatin1String(NM_PPTP_KEY_PASSWORD)).toString());
+}
+
+void PptpSettingWidget::validate()
+{
+
 }
 
 // vim: sw=4 sts=4 et tw=100

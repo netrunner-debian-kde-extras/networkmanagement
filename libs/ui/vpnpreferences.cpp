@@ -20,7 +20,6 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "vpnpreferences.h"
 
-#include <QVBoxLayout>
 #include <QFile>
 
 #include <KDebug>
@@ -34,38 +33,35 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 #include <nm-setting-connection.h>
 #include <nm-setting-vpn.h>
 
-//#include "pppwidget.h"
+#include "ipv4widget.h"
 #include "connectionwidget.h"
 #include "vpnuiplugin.h"
 
 #include "connection.h"
 #include "settings/vpn.h"
 
-VpnPreferences::VpnPreferences(QWidget *parent, const QVariantList &args)
-: ConnectionPreferences( KGlobal::mainComponent(), parent, args ), m_uiPlugin(0)
+VpnPreferences::VpnPreferences(const QVariantList &args, QWidget *parent)
+: ConnectionPreferences(args, parent ), m_uiPlugin(0)
 {
     QString connectionId = args[0].toString();
     m_connection = new Knm::Connection(QUuid(connectionId), Knm::Connection::Vpn);
+    m_contents->setConnection(m_connection);
+    m_contents->setDefaultName(i18n("New VPN Connection"));
 
-    QVBoxLayout * layout = new QVBoxLayout(this);
-    m_contents = new ConnectionWidget(m_connection, i18n("New VPN Connection"), this);
-    layout->addWidget(m_contents);
-    //PppWidget * pppWidget = new PppWidget(m_connection, this);
     // load the plugin in m_vpnType, get its SettingWidget and add it
-    
     QString error;
     if (args.count() > 1) {  // if we have a vpn type in the args, we are creating a new connection
         m_vpnPluginName = args[1].toString();
         m_uiPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>( QString::fromLatin1( "NetworkManagement/VpnUiPlugin" ), QString::fromLatin1( "[X-KDE-PluginInfo-Name]=='%1'" ).arg( m_vpnPluginName ), this, QVariantList(), &error );
         if (error.isEmpty()) {
             SettingWidget * vpnWidget = m_uiPlugin->widget(m_connection, this);
-            Knm::VpnSetting * vpnSetting = static_cast<Knm::VpnSetting*>(m_connection->setting(Knm::Setting::Vpn));
             addToTabWidget(vpnWidget);
         } else {
             kDebug() << error;
         }
     }
-    //addToTabWidget(pppWidget);
+    IpV4Widget * ipv4Widget = new IpV4Widget(m_connection, this);
+    addToTabWidget(ipv4Widget);
 }
 
 VpnPreferences::~VpnPreferences()
@@ -86,7 +82,6 @@ void VpnPreferences::load()
                 addToTabWidget(vpnWidget);
                 // load this widget manually, as it was not present when ConnectionPreferences::load() ran
                 vpnWidget->readConfig();
-                vpnWidget->readSecrets();
             }
         }
     } else { // we are loading a new connection's settings.  Set the plugin name after the load so this can be saved later

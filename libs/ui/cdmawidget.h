@@ -25,14 +25,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "knm_export.h"
 
-namespace Knm
-{
-    class Connection;
-} // namespace Knm
-
+class CdmaWidgetPrivate;
 class KNM_EXPORT CdmaWidget : public SettingWidget
 {
 Q_OBJECT
+Q_DECLARE_PRIVATE(CdmaWidget)
 public:
     CdmaWidget(Knm::Connection * connection, QWidget * parent = 0 );
     virtual ~CdmaWidget();
@@ -40,10 +37,8 @@ public:
     void writeConfig();
     void readSecrets();
 protected Q_SLOTS:
+    void validate();
     void chkShowPassToggled();
-private:
-    class Private;
-    Private * d;
 };
 
 #endif

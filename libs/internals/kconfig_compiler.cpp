@@ -47,7 +47,7 @@ static inline std::ostream &operator<<(std::ostream &o, const QString &str)
 static void parseArgs(const QStringList &args, QString &directory, QString &file1, QString &file2)
 {
     int fileCount = 0;
-    directory = ".";
+    directory = '.';
 
     for (int i = 1; i < args.count(); ++i) {
         if (args.at(i) == "-d" ||  args.at(i) == "--directory") {
@@ -2306,7 +2306,7 @@ int main( int argc, char **argv )
             pC << "  m_config->writeEntry(\"" << (*itEntry)->key() << "\", setting->" << getFunction(n) << "());" << endl;
         } else { // switch the value and write the choice name as string instead of the enum's int value
             pC << "  switch (setting->" << getFunction(n) << "()) {" << endl;
-            foreach (CfgEntry::Choice ch, chlist) {
+            foreach (const CfgEntry::Choice &ch, chlist) {
                 pC << "    case " << className << "Setting::" << enumName(n, choices) << "::" << choices.prefix << ch.name << ":" << endl;
                 pC << "      m_config->writeEntry(\"" << (*itEntry)->key() << "\", \"" << ch.name << "\");" << endl;
                 pC << "      break;" << endl;
@@ -2370,7 +2370,7 @@ int main( int argc, char **argv )
 
   // NM DBUS classes are not part of the namespace
   QString savedNameSpace = nameSpace;
-  nameSpace = QString();
+  nameSpace.clear();
 
   QString dbusHeaderFilename = baseName + "dbus.h";
   QString dbusFileName = baseName + "dbus.cpp";
@@ -2505,7 +2505,7 @@ int main( int argc, char **argv )
             dC << "  map.insert(" << (*itEntry)->dbusKey() << ", setting->" << getFunction(n) << "());" << endl;
         } else {
             dC << "  switch (setting->" << getFunction(n) << "()) {" << endl;
-            foreach (CfgEntry::Choice ch, chlist) {
+            foreach (const CfgEntry::Choice &ch, chlist) {
                 dC << "    case Knm::" << className << "Setting::" << enumName(n, choices) << "::" << choices.prefix << ch.name << ":" << endl;
                 dC << "      map.insert(" << (*itEntry)->dbusKey() << ", \"" << (ch.dbusValue.isEmpty() ? ch.name : ch.dbusValue) << "\");" << endl;
                 dC << "      break;" << endl;

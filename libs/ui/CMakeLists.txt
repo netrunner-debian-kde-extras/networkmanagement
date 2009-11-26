@@ -2,6 +2,7 @@ add_definitions(-DKDE_DEFAULT_DEBUG_AREA=51012)
 
 include_directories(
    ${CMAKE_CURRENT_SOURCE_DIR}/..
+   ${CMAKE_CURRENT_SOURCE_DIR}/../../solidcontrolfuture
    ${CMAKE_CURRENT_SOURCE_DIR}/../internals
    ${CMAKE_CURRENT_BINARY_DIR}/security
    ${CMAKE_CURRENT_BINARY_DIR}/../internals
@@ -14,7 +15,6 @@ set(knmui_SRCS
    pppwidget.cpp
    pppoewidget.cpp
    security/securitywidget.cpp
-   settinginterface.cpp
    settingwidget.cpp
    connectionwidget.cpp
    ipv4widget.cpp
@@ -107,7 +107,7 @@ kde4_add_ui_files(knmui_SRCS
    )
 
 kde4_add_library(knmui SHARED ${knmui_SRCS})
-target_link_libraries(knmui knminternals ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS} ${KDE4_SOLID_LIBS} solidcontrol)
+target_link_libraries(knmui knminternals ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS} ${KDE4_SOLID_LIBS} solidcontrol solidcontrolfuture)
 
 set_target_properties(knmui PROPERTIES
    VERSION ${GENERIC_LIB_VERSION}

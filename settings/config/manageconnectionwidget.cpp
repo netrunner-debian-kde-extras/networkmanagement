@@ -153,7 +153,7 @@ void ManageConnectionWidget::restoreConnections()
 
     QStringList connectionIds = KNetworkManagerServicePrefs::self()->connections();
     QList<QTreeWidgetItem *> wiredItems, wirelessItems, cellularItems, vpnItems, pppoeItems;
-    foreach (QString connectionId, connectionIds) {
+    foreach (const QString &connectionId, connectionIds) {
         // look in the corresponding group
         // read name, type, last used
         kDebug() << connectionId;
@@ -404,7 +404,7 @@ void ManageConnectionWidget::tabChanged(int index)
             mVpnMenu = new QMenu(this);
             // foreach vpn service, add one of these
             KPluginInfo::List vpnServices = KPluginInfo::fromServices(KServiceTypeTrader::self()->query(QLatin1String("NetworkManagement/VpnUiPlugin")));
-            foreach (KPluginInfo pi, vpnServices) {
+            foreach (const KPluginInfo &pi, vpnServices) {
                 QAction * vpnAction = new QAction(pi.name(), this);
                 vpnAction->setData(QVariant(pi.pluginName()));
                 mVpnMenu->addAction(vpnAction);

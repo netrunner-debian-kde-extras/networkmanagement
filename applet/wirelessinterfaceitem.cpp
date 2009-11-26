@@ -1,5 +1,6 @@
 /*
 Copyright 2008,2009 Will Stephenson <wstephenson@kde.org>
+Copyright 2008, 2009 Sebastian Kügler <sebas@kde.org>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -19,6 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include "wirelessinterfaceitem.h"
+#include "uiutils.h"
 
 #include <QGraphicsGridLayout>
 
@@ -28,7 +30,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <solid/control/networkipv4config.h>
 #include <solid/control/networkmanager.h>
 
-WirelessInterfaceItem::WirelessInterfaceItem(Solid::Control::WirelessNetworkInterface * iface,  InterfaceItem::NameDisplayMode mode, QGraphicsItem* parent)
+WirelessInterfaceItem::WirelessInterfaceItem(Solid::Control::WirelessNetworkInterface * iface,  InterfaceItem::NameDisplayMode mode, QGraphicsWidget* parent)
 : InterfaceItem(iface, mode, parent), m_wirelessIface(iface), m_activeAccessPoint(0)
 {
     // for updating our UI
@@ -44,7 +46,7 @@ WirelessInterfaceItem::~WirelessInterfaceItem()
 
 void WirelessInterfaceItem::activeAccessPointChanged(const QString &uni)
 {
-    kDebug() << "*** AP changed:" << uni << "***";
+    //kDebug() << "*** AP changed:" << uni << "***";
     // this is not called when the device is deactivated..
     if (m_activeAccessPoint) {
         m_activeAccessPoint->disconnect(this);
@@ -52,7 +54,7 @@ void WirelessInterfaceItem::activeAccessPointChanged(const QString &uni)
     }
     if (uni != "/") {
         m_activeAccessPoint = m_wirelessIface->findAccessPoint(uni);
-        kDebug() << "new:" << m_activeAccessPoint;
+        //kDebug() << "new:" << m_activeAccessPoint;
         if (m_activeAccessPoint) {
             connect(m_activeAccessPoint, SIGNAL(signalStrengthChanged(int)), SLOT(activeSignalStrengthChanged(int)));
             connect(m_activeAccessPoint, SIGNAL(destroyed(QObject*)),
@@ -77,7 +79,7 @@ void WirelessInterfaceItem::activeSignalStrengthChanged(int)
 
 void WirelessInterfaceItem::accessPointDestroyed(QObject* ap)
 {
-    kDebug() << "*** AP gone ***";
+    //kDebug() << "*** AP gone ***";
     if (ap == m_activeAccessPoint) {
         m_activeAccessPoint = 0;
     }
@@ -95,21 +97,17 @@ void WirelessInterfaceItem::setConnectionInfo()
         case Solid::Control::NetworkInterface::Unavailable:
         case Solid::Control::NetworkInterface::Disconnected:
         case Solid::Control::NetworkInterface::Failed:
-            m_strengthMeter->hide();
             m_connectionInfoIcon->hide();
             break;
         default:
         {
             if (m_activeAccessPoint) {
-                if (m_strengthMeter) {
-                    m_strengthMeter->setValue(m_activeAccessPoint->signalStrength());
-                    m_strengthMeter->show();
-                    m_connectionInfoIcon->show();
-                }
+                m_connectionInfoIcon->show();
             }
             break;
         }
     }
+    m_icon->setIcon(UiUtils::iconName(m_iface));
 }
 
 QList<Solid::Control::AccessPoint*> WirelessInterfaceItem::availableAccessPoints() const
@@ -127,7 +125,6 @@ QList<Solid::Control::AccessPoint*> WirelessInterfaceItem::availableAccessPoints
 
 void WirelessInterfaceItem::setEnabled(bool enable)
 {
-    m_strengthMeter->setEnabled(enable);
     InterfaceItem::setEnabled(enable);
 }
 
