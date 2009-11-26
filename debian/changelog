@@ -7,6 +7,7 @@ plasma-widget-networkmanagement (0.1~svn1054632-0r1) UNRELEASED; urgency=low
   * Bump network-manager-kde version to 0.9~.
   * Switch to dpkg-source format 3.0 (quilt).
   * Update svn URL in debian/copyright.
+  * Update install files.
 
  -- Modestas Vainius <modestas@vainius.eu>  Thu, 26 Nov 2009 22:08:01 +0200
 
