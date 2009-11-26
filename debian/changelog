@@ -10,6 +10,7 @@ plasma-widget-networkmanagement (0.1~svn1054632-0r1) UNRELEASED; urgency=low
   * Update install files.
   * Make plasma-widget-networkmanagement no longer pull in network-manager-kde.
     However, the widget itself is not very usable at the moment.
+  * Bump libqt4-dev build dependency to 4.6.0~.
 
  -- Modestas Vainius <modestas@vainius.eu>  Thu, 26 Nov 2009 22:08:01 +0200
 
