@@ -1,3 +1,8 @@
+plasma-widget-networkmanagement (0.1~svn1054632-2) UNRELEASED; urgency=low
+
+
+ -- Modestas Vainius <modestas@vainius.eu>  Mon, 07 Dec 2009 00:58:46 +0200
+
 plasma-widget-networkmanagement (0.1~svn1054632-1) experimental; urgency=low
 
   * New upstream development snapshot:
