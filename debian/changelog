@@ -1,4 +1,4 @@
-plasma-widget-networkmanagement (0.1~svn1075616-1) UNRELEASED; urgency=low
+plasma-widget-networkmanagement (0.1~svn1075616-1) experimental; urgency=low
 
   [ Modestas Vainius ]
   * Remove DMUA field from debian/control. I'm a DD now.
@@ -10,7 +10,7 @@ plasma-widget-networkmanagement (0.1~svn1075616-1) UNRELEASED; urgency=low
     - Last Changed Rev: 1075616
     - Last Changed Date: 2010-01-16 12:54:07 +0100
 
- -- Michael Biebl <biebl@debian.org>  Sun, 17 Jan 2010 04:24:37 +0100
+ -- Michael Biebl <biebl@debian.org>  Sun, 17 Jan 2010 11:06:58 +0100
 
 plasma-widget-networkmanagement (0.1~svn1054632-1) experimental; urgency=low
 
