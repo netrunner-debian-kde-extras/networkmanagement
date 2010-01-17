@@ -19,8 +19,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef APITEMMODEL_H
-#define APITEMMODEL_H
+#ifndef NETWORKITEMMODEL_H
+#define NETWORKITEMMODEL_H
 
 #include <QAbstractItemModel>
 #include <QModelIndex>
@@ -32,15 +32,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <solid/control/wirelessaccesspoint.h>
 #include "wirelessnetworkinterfaceenvironment.h"
 
-class ApItemModel : public QAbstractItemModel
+/**
+ * Uses Solid::Control::WirelessNetworkInterfaceEnvironment to model logical networks,
+ * as opposed to Access Points
+ */
+class NetworkItemModel : public QAbstractItemModel
 {
     Q_OBJECT
 
     public:
         enum UserRoles { SignalStrength=Qt::UserRole, MacAddress, ConnectionType, EncryptionRole };
 
-        ApItemModel(QString uni, QObject *parent=0);
-        ~ApItemModel();
+        NetworkItemModel(const QString & uni, QObject *parent=0);
+        ~NetworkItemModel();
 
         QModelIndex index(int row, int column, const QModelIndex &parent=QModelIndex()) const;
         QModelIndex parent(const QModelIndex &index) const;
@@ -53,12 +57,13 @@ class ApItemModel : public QAbstractItemModel
         void scan();
 
     private Q_SLOTS:
-        void accessPointAdded(const QString &);
-        void accessPointRemoved(const QString &);
+        void networkAdded(const QString &);
+        void networkRemoved(const QString &);
 
     private:
-        QStringList m_accessPoints;
+        QStringList m_networks;
         Solid::Control::WirelessNetworkInterface *m_networkInterface;
+        Solid::Control::WirelessNetworkInterfaceEnvironment *m_environment;
 
         static const int s_numColumns = 4;
 };
