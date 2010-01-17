@@ -33,13 +33,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 class ApItemView : public QWidget
 {
     Q_OBJECT
-            
+
     public:
         ApItemView(QWidget *parent=0);
         ~ApItemView();
 
-        void setModel(ApItemModel *model);
-        ApItemModel* model();
+        void setModel(QAbstractItemModel *model);
+        QAbstractItemModel * model();
         void setItemDelegate(QAbstractItemDelegate *delegate);
         QAbstractItemDelegate* delegate() const;
 
@@ -61,7 +61,7 @@ class ApItemView : public QWidget
         //mouse events
         void mouseReleaseEvent(QMouseEvent *event);
 
-        ApItemModel *m_model;
+        QAbstractItemModel *m_model;
         QAbstractItemDelegate *m_delegate;
         QItemSelectionModel *m_selectionModel;
         QPixmap *m_background;
