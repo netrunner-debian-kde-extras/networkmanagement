@@ -8,6 +8,7 @@ plasma-widget-networkmanagement (0.1~svn1088283-1) UNRELEASED; urgency=low
     - Remove Qt 4.6 specific features so it compiles with Qt 4.5.
   * debian/control
     - Lower Build-Depends on libqt4-dev to (>= 4:4.5.0).
+    - Bump Standards-Version to 3.8.4. No further changes.
 
  -- Michael Biebl <biebl@debian.org>  Sun, 14 Feb 2010 14:39:58 +0100
 
