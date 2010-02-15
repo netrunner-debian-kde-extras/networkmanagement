@@ -16,6 +16,7 @@ plasma-widget-networkmanagement (0.1~svn1088283-1) UNRELEASED; urgency=low
     on upgrades.
 
   [ Modestas Vainius ]
+  * Enable parallel building - pass --parallel to dh.
 
  -- Michael Biebl <biebl@debian.org>  Sun, 14 Feb 2010 14:39:58 +0100
 

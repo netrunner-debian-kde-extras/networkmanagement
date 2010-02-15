@@ -27,6 +27,6 @@ override_dh_gencontrol:
         -V'knetworkmanager:Version=$(DEB_KNETWORKMANAGER_VERSION)'
 
 %:
-	dh --with kde --dbg-package=plasma-widget-networkmanagement-dbg $@
+	dh --parallel --with kde --dbg-package=plasma-widget-networkmanagement-dbg $@
 
 .PHONY: override_dh_auto_test
