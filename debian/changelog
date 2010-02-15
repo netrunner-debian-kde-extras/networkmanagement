@@ -4,6 +4,8 @@ plasma-widget-networkmanagement (0.1~svn1088283-1) UNRELEASED; urgency=low
     - Last Changed Author: scripty
     - Last Changed Rev: 1088283
     - Last Changed Date: 2010-02-10 14:11:26 +0100
+
+  [ Michael Biebl ]
   * debian/patches/01-qt4.5-compat.patch
     - Remove Qt 4.6 specific features so it compiles with Qt 4.5.
   * debian/control
@@ -12,6 +14,8 @@ plasma-widget-networkmanagement (0.1~svn1088283-1) UNRELEASED; urgency=low
   * Drop the plasma-widget-networkmanagement binary package for now as it not
     yet stable enough. Add Conflicts to network-manager-kde so it is removed
     on upgrades.
+
+  [ Modestas Vainius ]
 
  -- Michael Biebl <biebl@debian.org>  Sun, 14 Feb 2010 14:39:58 +0100
 
