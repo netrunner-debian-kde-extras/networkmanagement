@@ -9,6 +9,9 @@ plasma-widget-networkmanagement (0.1~svn1088283-1) UNRELEASED; urgency=low
   * debian/control
     - Lower Build-Depends on libqt4-dev to (>= 4:4.5.0).
     - Bump Standards-Version to 3.8.4. No further changes.
+  * Drop the plasma-widget-networkmanagement binary package for now as it not
+    yet stable enough. Add Conflicts to network-manager-kde so it is removed
+    on upgrades.
 
  -- Michael Biebl <biebl@debian.org>  Sun, 14 Feb 2010 14:39:58 +0100
 
