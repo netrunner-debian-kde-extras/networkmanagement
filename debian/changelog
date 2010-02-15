@@ -1,4 +1,4 @@
-plasma-widget-networkmanagement (0.1~svn1088283-1) UNRELEASED; urgency=medium
+plasma-widget-networkmanagement (0.1~svn1088283-1) unstable; urgency=medium
 
   * New upstream development snapshot:
     - Last Changed Author: scripty
@@ -18,7 +18,7 @@ plasma-widget-networkmanagement (0.1~svn1088283-1) UNRELEASED; urgency=medium
   [ Modestas Vainius ]
   * Enable parallel building - pass --parallel to dh.
 
- -- Michael Biebl <biebl@debian.org>  Sun, 14 Feb 2010 14:39:58 +0100
+ -- Michael Biebl <biebl@debian.org>  Mon, 15 Feb 2010 14:46:25 +0100
 
 plasma-widget-networkmanagement (0.1~svn1075616-1) experimental; urgency=low
 
