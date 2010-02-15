@@ -21,8 +21,10 @@ override_dh_makeshlibs:
 	dh_makeshlibs --remaining-packages
 
 override_dh_gencontrol:
-	dh_gencontrol -pnetwork-manager-kde -- -v'$(DEB_KNETWORKMANAGER_VERSION)'
-	dh_gencontrol --remaining-packages
+	dh_gencontrol -pnetwork-manager-kde -- -v'$(DEB_KNETWORKMANAGER_VERSION)' \
+        -V'knetworkmanager:Version=$(DEB_KNETWORKMANAGER_VERSION)'
+	dh_gencontrol --remaining-packages \
+        -V'knetworkmanager:Version=$(DEB_KNETWORKMANAGER_VERSION)'
 
 %:
 	dh --with kde --dbg-package=plasma-widget-networkmanagement-dbg $@

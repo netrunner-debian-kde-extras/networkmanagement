@@ -44,7 +44,7 @@ Package: plasma-widget-networkmanagement-dbg
 Architecture: any
 Section: debug
 Priority: extra
-Depends: ${misc:Depends}, network-manager-kde (= ${binary:Version})
+Depends: ${misc:Depends}, network-manager-kde (= ${knetworkmanager:Version})
 Recommends: kdelibs5-dbg
 Suggests: kdebase-workspace-dbg
 Description: debugging symbols for KDE Network Management
