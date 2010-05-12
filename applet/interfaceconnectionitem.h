@@ -42,13 +42,14 @@ class InterfaceConnectionItem : public ActivatableItem
     public:
         InterfaceConnectionItem(RemoteInterfaceConnection *, QGraphicsItem * parent = 0);
         virtual ~InterfaceConnectionItem();
-        //RemoteInterfaceConnection * interfaceConnection() const;
         void setupItem();
-
 
     protected:
         QGraphicsGridLayout * m_layout;
         Plasma::IconWidget * m_connectButton;
+
+    private Q_SLOTS:
+        void stateChanged();
 
 };
 

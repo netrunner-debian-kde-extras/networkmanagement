@@ -25,6 +25,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "activatable.h"
 #include <Plasma/ScrollWidget>
+#include <solid/control/networkmanager.h>
 
 class QGraphicsLinearLayout;
 class ActivatableItem;
@@ -40,27 +41,37 @@ public:
 
     void init();
     void addType(Knm::Activatable::ActivatableType type);
+    void removeType(Knm::Activatable::ActivatableType type);
     bool accept(RemoteActivatable* activatable) const;
+    void setShowAllTypes(bool show);
 
 public Q_SLOTS:
-    void activatableAdded(RemoteActivatable *);
-    void activatableRemoved(RemoteActivatable *);
+    void activatableAdded(RemoteActivatable*);
+    void activatableRemoved(RemoteActivatable*);
     void listDisappeared();
     void listAppeared();
-    void deactivateConnection();
+    void deactivateConnection(const QString& deviceUni);
+    void addInterface(Solid::Control::NetworkInterface*);
+    void clearInterfaces();
+    void toggleVpn();
 
 Q_SIGNALS:
     void connectionListUpdated();
 
 private:
-    ActivatableItem* createItem(RemoteActivatable* conn);
+    void filter();
+    void createItem(RemoteActivatable* conn);
     int m_connectionType;
     QList<Knm::Activatable::ActivatableType> m_types;
+    QStringList m_interfaces;
 
     QHash<RemoteActivatable*, ActivatableItem*> m_itemIndex;
     RemoteActivatableList* m_activatables;
     QGraphicsLinearLayout* m_layout;
     QGraphicsWidget* m_widget;
+
+    bool m_showAllTypes;
+    bool m_vpn;
 
 };
 #endif // ACTIVATABLELISTWIDGET_H

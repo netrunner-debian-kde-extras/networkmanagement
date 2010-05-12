@@ -1,5 +1,5 @@
 /*
-Copyright 2008, 2009 Sebastian K?gler <sebas@kde.org>
+Copyright 2008-2010 Sebastian Kügler <sebas@kde.org>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -137,7 +137,7 @@ int UiUtils::iconSize(const QSizeF size)
     return s;
 }
 
-QString UiUtils::connectionStateToString(Solid::Control::NetworkInterface::ConnectionState state)
+QString UiUtils::connectionStateToString(Solid::Control::NetworkInterface::ConnectionState state, const QString &connectionName)
 {
     QString stateString;
     switch (state) {
@@ -166,13 +166,17 @@ QString UiUtils::connectionStateToString(Solid::Control::NetworkInterface::Conne
             stateString = i18nc("network interface doing dhcp request in most cases", "Setting network address");
             break;
         case Solid::Control::NetworkInterface::Activated:
-            stateString = i18nc("network interface connected state label", "Connected");
+            if (connectionName.isEmpty()) {
+                stateString = i18nc("network interface connected state label", "Connected");
+            } else {
+                stateString = i18nc("network interface connected state label", "Connected to %1", connectionName);
+            }
             break;
         case Solid::Control::NetworkInterface::Failed:
             stateString = i18nc("network interface connection failed state label", "Connection Failed");
             break;
         default:
-            stateString = I18N_NOOP("UNKNOWN STATE FIX ME");
+            stateString = i18nc("interface state", "Error: Invalid state");
     }
     return stateString;
 }
@@ -189,12 +193,8 @@ QString UiUtils::interfaceNameLabel(const QString & uni)
     } else {
         Solid::Device* dev = new Solid::Device(uni);
         if (KNetworkManagerServicePrefs::self()->interfaceNamingStyle() == KNetworkManagerServicePrefs::DescriptiveNames) {
-#if KDE_IS_VERSION(4,3,60)
             label = dev->description();
-#else
-            label = dev->product();
-#endif
-        //kDebug() << "Vendor, Product:" << dev->vendor() << dev->product();
+            //kDebug() << "Vendor, Product:" << dev->vendor() << dev->product();
         } else {
             label = QString(i18nc("Format for <Vendor> <Product>", "%1 - %2", dev->vendor(), dev->product()));
         }
@@ -208,6 +208,24 @@ QString UiUtils::interfaceNameLabel(const QString & uni)
     }
     return label;
 }
+
+RemoteInterfaceConnection* UiUtils::connectionForInterface(RemoteActivatableList* activatables, Solid::Control::NetworkInterface *interface)
+{
+    foreach (RemoteActivatable* activatable, activatables->activatables()) {
+        if (activatable->deviceUni() == interface->uni()) {
+            RemoteInterfaceConnection* remoteconnection = static_cast<RemoteInterfaceConnection*>(activatable);
+            if (remoteconnection) {
+                if (remoteconnection->activationState() == Knm::InterfaceConnection::Activated
+                            || remoteconnection->activationState() == Knm::InterfaceConnection::Activating) {
+                    return remoteconnection;
+                }
+            }
+
+        }
+    }
+    return 0;
+}
+
 
 qreal UiUtils::interfaceState(const Solid::Control::NetworkInterface *interface)
 {
@@ -300,6 +318,19 @@ QStringList UiUtils::wpaFlagsToStringList(Solid::Control::AccessPoint::WpaFlags 
         flagList.append(i18nc("wireless network cipher", "802.1x"));
 
     return flagList;
+}
+
+QString UiUtils::connectionSpeed(double bitrate)
+{
+    QString out;
+    if (bitrate < 1000) {
+        out = i18nc("connection speed", "%1 Bit/s", QString::number(bitrate));
+    } else if (bitrate < 1000000) {
+        out = i18nc("connection speed", "%1 MBit/s", QString::number(bitrate/1000));
+    } else {
+        out = i18nc("connection speed", "%1 GBit/s", QString::number(bitrate/1000000));
+    }
+    return out;
 }
 
 // vim: sw=4 sts=4 et tw=100

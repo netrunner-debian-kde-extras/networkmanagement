@@ -1,6 +1,6 @@
 /*
 Copyright 2008, 2009 Will Stephenson <wstephenson@kde.org>
-Copyright 2008, 2009 Sebastian K?gler <sebas@kde.org>
+Copyright 2008, 2009 Sebastian Kügler <sebas@kde.org>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -32,6 +32,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QGraphicsBlurEffect>
 
+#include <KCModuleProxy>
+#include <KCModuleInfo>
 #include <KIcon>
 #include <KIconLoader>
 #include <KToolInvocation>
@@ -52,15 +54,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <Plasma/Animator>
 #include <Plasma/CheckBox>
-#include <Plasma/Extender>
-#include <Plasma/ExtenderItem>
 #include <Plasma/Theme>
 
 #include "../libs/types.h"
 #include "knmserviceprefs.h"
 #include "remoteactivatablelist.h"
-
-#include "nmextenderitem.h"
+#include "nmpopup.h"
 #include "uiutils.h"
 
 
@@ -74,34 +73,129 @@ bool networkInterfaceSameConnectionStateLessThan(Solid::Control::NetworkInterfac
 NetworkManagerApplet::NetworkManagerApplet(QObject * parent, const QVariantList & args)
     : Plasma::PopupApplet(parent, args),
         m_iconPerDevice(false),
+        m_popup(0),
         m_activeInterface(0)
 {
-    setHasConfigurationInterface(false);
+    setHasConfigurationInterface(true);
     setPopupIcon(QIcon());
-    setPassivePopup(true); // FIXME: disable, only true for testing ...
+    //setPassivePopup(true); // FIXME: disable, only true for testing ...
     m_overlayTimeline.setEasingCurve(QEasingCurve::OutExpo);
-    m_currentState = 0;
+    m_currentState = Solid::Control::NetworkInterface::UnknownState;
     connect(&m_overlayTimeline, SIGNAL(valueChanged(qreal)), this, SLOT(repaint()));
 
     Plasma::ToolTipManager::self()->registerWidget(this);
     setAspectRatioMode(Plasma::ConstrainedSquare);
 
+    m_svg = new Plasma::Svg(this);
+    m_svg->setImagePath("widgets/wireless");
+    m_svg->setContainsMultipleImages(true);
+    setStatus(Plasma::ActiveStatus);
     m_interfaces = Solid::Control::NetworkManager::networkInterfaces();
     if (activeInterface()) {
         m_currentState = activeInterface()->connectionState();
     }
     interfaceConnectionStateChanged();
-    m_activatableList = new RemoteActivatableList(this);
+    m_activatables = new RemoteActivatableList(this);
     setMinimumSize(16, 16);
     resize(64, 64);
     updatePixmap();
-    // TODO: read config into m_extenderItem ...
-    // Now it is safe to create ExtenderItems and therefore InterfaceGroups
-
+    //(void)graphicsWidget();
 }
 
 NetworkManagerApplet::~NetworkManagerApplet()
 {
+}
+
+QString NetworkManagerApplet::svgElement(Solid::Control::NetworkInterface *iface)
+{
+    if (iface->type() != Solid::Control::NetworkInterface::Ieee80211) {
+        return QString();
+    }
+
+    int _s = qMin(contentsRect().width(), contentsRect().height());
+    int s;
+    // Figure out the maximum size of the element
+    // those pixelsizes are taken from the svg
+    if (_s >= 19) {
+        s = 19;
+    }
+    if (_s >= 24) {
+        s = 24;
+    }
+    if (_s >= 38) {
+        s = 38;
+    }
+    if (_s >= 50) {
+        s = 50;
+    }
+    if (_s >= 76) {
+        s = 76;
+    }
+    // For our fixed sizes, we want a fixed rect to render into
+    if (_s >= 19 && _s <= 76) {
+        m_contentSquare = QRect(contentsRect().x() + (contentsRect().width() - s) / 2,
+                                contentsRect().y() + (contentsRect().height() - s) / 2,
+                                s, s);
+    } else { // .... otherwise, for free scaling, we just want a square that fits in 
+        m_contentSquare = QRect(contentsRect().x() + (contentsRect().width() - _s) / 2,
+                                contentsRect().y() + (contentsRect().height() - _s) / 2,
+                                _s, _s);
+    }
+
+    // Now figure out which exact element we'll use
+    QString strength = "00";
+    Solid::Control::WirelessNetworkInterface *wiface = qobject_cast<Solid::Control::WirelessNetworkInterface*>(iface);
+
+    if (wiface) {
+        QString uni = wiface->activeAccessPoint();
+        Solid::Control::AccessPoint *ap = wiface->findAccessPoint(uni);
+        if (ap) {
+            int str = ap->signalStrength();
+            if (s == 19) {
+                // The size 19 in the svg only has 4 states
+                if (str < 13) {
+                    strength = "0";
+                } else if (str < 38) {
+                    strength = "25";
+                } else if (str < 63) {
+                    strength = "50";
+                } else if (str < 88) {
+                    strength = "75";
+                } else if (str >= 88) {
+                    strength = "100";
+                }
+            } else { // ... the other sizes have more states.
+                if (str < 13) {
+                    strength = "0";
+                } else if (str < 30) {
+                    strength = "20";
+                } else if (str < 50) {
+                    strength = "40";
+                } else if (str < 70) {
+                    strength = "60";
+                } else if (str < 90) {
+                    strength = "80";
+                } else {
+                    strength = "100";
+                }
+            }
+        } else {
+                strength = "0";
+        }
+    } else {
+        return QString("dialog-error");
+    }
+    QString w = QString::number(s);
+
+    // The format in the SVG looks like this: <width>-<height>-wireless-signal-<strenght>
+    QString icon;
+    if (_s < 19 || _s > 76) {
+        icon = QString("wireless-signal-%1").arg(strength);
+    } else {
+        icon = QString("%1-%2-wireless-signal-%3").arg(w, w, strength);
+    }
+    //kDebug() << "Icon:" << icon;
+    return icon;
 }
 
 void NetworkManagerApplet::setupInterfaceSignals()
@@ -140,6 +234,8 @@ void NetworkManagerApplet::setupInterfaceSignals()
 
 void NetworkManagerApplet::init()
 {
+    // bogus, just to make sure we have some remotely sensible value
+    m_contentSquare = contentsRect().toRect();
     kDebug();
     KConfigGroup cg = config();
     m_iconPerDevice = cg.readEntry("IconPerDevice", false);
@@ -151,21 +247,29 @@ void NetworkManagerApplet::init()
     QObject::connect(Solid::Control::NetworkManager::notifier(), SIGNAL(statusChanged(Solid::Networking::Status)),
                      this, SLOT(managerStatusChanged(Solid::Networking::Status)));
 
-    m_activatableList->init();
+    m_activatables->init();
     setupInterfaceSignals();
-
-    m_extenderItem = new NMExtenderItem(m_activatableList, extender());
-    connect(m_extenderItem, SIGNAL(configNeedsSaving()), this, SIGNAL(configNeedsSaving()));
 }
 
-
-void NetworkManagerApplet::initExtenderItem(Plasma::ExtenderItem * eItem)
+QGraphicsWidget* NetworkManagerApplet::graphicsWidget()
 {
-    // Let's just load a new one, hackish but works for now
-    if (eItem->name() == "nmextenderitem") {
-        eItem->destroy();
+    if (!m_popup) {
+        m_popup = new NMPopup(m_activatables, this);
+        connect(m_popup, SIGNAL(configNeedsSaving()), this, SIGNAL(configNeedsSaving()));
     }
-    return;
+    return m_popup;
+
+}
+
+void NetworkManagerApplet::createConfigurationInterface(KConfigDialog *parent)
+{
+    // Add the networkmanager KCM pages to the applet's configdialog
+    m_kcmNM = new KCModuleProxy("kcm_networkmanagement");
+    m_kcmNMTray = new KCModuleProxy("kcm_networkmanagement_tray");
+    parent->addPage(m_kcmNM, m_kcmNM->moduleInfo().moduleName(),
+                    m_kcmNM->moduleInfo().icon());
+    parent->addPage(m_kcmNMTray, m_kcmNMTray->moduleInfo().moduleName(),
+                    m_kcmNMTray->moduleInfo().icon());
 }
 
 void NetworkManagerApplet::constraintsEvent(Plasma::Constraints constraints)
@@ -187,113 +291,75 @@ void NetworkManagerApplet::updatePixmap()
     update();
 }
 
-QList<QAction*> NetworkManagerApplet::contextualActions()
-{
-    QAction* configAction = new QAction(KIcon("networkmanager"), i18n("Manage Connections..."), this);
-    connect(configAction, SIGNAL(triggered(bool)), this, SLOT(manageConnections()));
-    QList<QAction*> tempActions;
-    tempActions << configAction;
-    return tempActions;
-}
-
 void NetworkManagerApplet::paintInterface(QPainter * p, const QStyleOptionGraphicsItem *option, const QRect &contentsRect)
 {
     Q_UNUSED( option );
 
-    paintPixmap(p, m_pixmap, contentsRect);
-    paintProgress(p);
-    paintOverlay(p);
-}
-
-void NetworkManagerApplet::paintProgress(QPainter *p)
-{
-    bool bar = false;
-    qreal state = UiUtils::interfaceState(activeInterface());
-
-    qreal opacity = m_overlayTimeline.currentValue();
-    if (opacity == 0) {
-        return;
-    } else if (state == 1) {
-        //kDebug() << "painting OK overlay with opacity: " << opacity;
-        paintOkOverlay(p, contentsRect(), opacity);
-        return;
+    Solid::Control::NetworkInterface* interface = activeInterface();
+    bool useSvg = false;
+    if (interface) {
+        useSvg = interface->type() == Solid::Control::NetworkInterface::Ieee80211;
     }
 
-    QColor fgColor = Plasma::Theme::defaultTheme()->color(Plasma::Theme::TextColor);
-    QColor bgColor = Plasma::Theme::defaultTheme()->color(Plasma::Theme::BackgroundColor);
-
-    bgColor.setAlphaF(.7 * opacity);
-    fgColor.setAlphaF(.6 * opacity);
-
-    //p->translate(0.5, 0.5);
-
-    if (bar) {
-        // paint a progress bar
-        // height, space and width and position of the bar
-        int fh = contentsRect().height();
-        int fw = contentsRect().width();
-        int h = qMax((qreal)(2.0), (qreal)(fh/20));
-        int s = 1;
-        int w = (contentsRect().width() - s*2) * state;
-        QRectF background = QRectF(QPoint(0, fh - h - s - s ) + contentsRect().topLeft(), QSizeF(fw, h+2*s));
-        QRectF progress = QRectF(QPoint(s, fh - h - s) + contentsRect().topLeft(), QSizeF(w, h));
-        kDebug() << contentsRect() << background;
-
-
-        QPen linePen(bgColor);
-
-        p->setPen(linePen);
-        p->drawRect(background);
-
-        p->setPen(QPen(fgColor));
-        p->setBrush(QBrush(fgColor));
-        p->drawRect(progress);
-
+    if (useSvg) {
+        QString el = svgElement(interface);
+        m_svg->paint(p, m_contentSquare, el);
     } else {
-        // paint an arc completing a circle
-        // 1 degree = 16 ticks, that's how drawArc() works
-        // 0 is at 3 o'clock
-        int top = 90 * 16;
-        int progress = -360 * 16 * state;
-        QPen pen(fgColor, 2); // color and line width
-
-        //kDebug() << "progress circle" << top << progress;
-        p->setPen(pen);
-        p->setBrush(QBrush(bgColor));
-
-        p->drawArc(contentsRect(), top, progress);
+        paintPixmap(p, m_pixmap, contentsRect);
     }
+    paintStatusOverlay(p);
+    paintNeedAuthOverlay(p);
 }
 
-void NetworkManagerApplet::paintOverlay(QPainter *p)
+void NetworkManagerApplet::paintNeedAuthOverlay(QPainter *p)
 {
     // Needs authentication, show this in the panel
     if (!activeInterface()) {
+        kDebug() << "No active interface";
         return;
     }
-    if (activeInterface()->connectionState() == Solid::Control::NetworkInterface::NeedAuth) {
+    /*
+    enum ConnectionState{ UnknownState, Unmanaged, Unavailable, Disconnected, Preparing,
+                              Configuring, NeedAuth, IPConfig, Activated, Failed };
+    kDebug() << "UnknownState: " << Solid::Control::NetworkInterface::UnknownState;
+    kDebug() << "Unmanaged   : " << Solid::Control::NetworkInterface::Unmanaged;
+    kDebug() << "Unavailable : " << Solid::Control::NetworkInterface::Unavailable;
+    kDebug() << "Disconnected: " << Solid::Control::NetworkInterface::Disconnected;
+    kDebug() << "Preparing   : " << Solid::Control::NetworkInterface::Preparing;
+    kDebug() << "Configuring : " << Solid::Control::NetworkInterface::Configuring;
+    kDebug() << "NeeAuth     : " << Solid::Control::NetworkInterface::NeedAuth;
+    kDebug() << "IPConfig    : " << Solid::Control::NetworkInterface::IPConfig;
+    kDebug() << "Activated   : " << Solid::Control::NetworkInterface::Activated;
+    kDebug() << "Failed      : " << Solid::Control::NetworkInterface::Failed;
+    kDebug() << "Painting overlay ...>" << activeInterface()->connectionState();
+    */
+    if (activeInterface() && activeInterface()->connectionState() == Solid::Control::NetworkInterface::NeedAuth) {
+        kDebug() << "Needing auth ...>";
         int i_s = (int)contentsRect().width()/4;
         int iconsize = qMax(UiUtils::iconSize(QSizeF(i_s, i_s)), 8);
-        kDebug() << "iconsize" << iconsize;
-        QPixmap icon = KIcon("dialog-password").pixmap(QSize(iconsize, iconsize));
-        QPointF pos = QPointF(contentsRect().bottomRight().x() - iconsize,
-                            contentsRect().bottomRight().y() - iconsize);
-        p->drawPixmap(pos, icon);
 
-    };
+        kDebug() << "Security:iconsize" << iconsize;
+        QPixmap icon = KIcon("dialog-password").pixmap(iconsize);
+        QPoint pos = QPoint(contentsRect().right() - iconsize,
+                            contentsRect().bottom() - iconsize);
+
+        p->drawPixmap(pos, icon);
+    }
 }
 
-void NetworkManagerApplet::paintOkOverlay(QPainter *p, const QRectF &rect, qreal opacity)
+void NetworkManagerApplet::paintStatusOverlay(QPainter *p)
 {
-    QColor color = QColor("#37B237");
-    if (UiUtils::interfaceState(activeInterface()) == 0) {
-        color = QColor("#B23636");
+    int oldOpacity = p->opacity();
+    qreal opacity = m_overlayTimeline.currentValue();
+    if (!qFuzzyCompare(opacity, 1) && !m_previousStatusOverlay.isNull()) {
+        p->setOpacity(1 - opacity);
+        p->drawPixmap(contentsRect().left(), contentsRect().bottom() - m_previousStatusOverlay.height(), m_previousStatusOverlay);
     }
-
-    color.setAlphaF(opacity * 0.6);
-    QPen pen(color, 2); // green, px width
-    p->setPen(pen);
-    p->drawEllipse(rect);
+    if (!m_statusOverlay.isNull()) {
+        p->setOpacity(opacity);
+        p->drawPixmap(contentsRect().left(), contentsRect().bottom() - m_statusOverlay.height(), m_statusOverlay);
+    }
+    p->setOpacity(oldOpacity);
 }
 
 void NetworkManagerApplet::paintPixmap(QPainter *painter, QPixmap pixmap, const QRectF &rect, qreal opacity)
@@ -305,7 +371,14 @@ void NetworkManagerApplet::paintPixmap(QPainter *painter, QPixmap pixmap, const 
     painter->setRenderHint(QPainter::SmoothPixmapTransform);
     painter->setRenderHint(QPainter::Antialiasing);
 
-    if (!painter->paintEngine()->hasFeature(QPaintEngine::ConstantOpacity)) {
+    if (painter->paintEngine()->hasFeature(QPaintEngine::ConstantOpacity)) {
+        // NOTE: Works, but makes hw acceleration impossible, use below code path
+        //kWarning() << "You don't really want to hit this path, it means slow painting. Your paintengine is not good enough.";
+        qreal old = painter->opacity();
+        painter->setOpacity(opacity);
+        painter->drawPixmap(iconOrigin, pixmap);
+        painter->setOpacity(old);
+    } else {
         QPixmap temp(QSize(size, size));
         temp.fill(Qt::transparent);
 
@@ -321,12 +394,6 @@ void NetworkManagerApplet::paintPixmap(QPainter *painter, QPixmap pixmap, const 
 
         // draw the pixmap
         painter->drawPixmap(iconOrigin, temp);
-    } else {
-        // FIXME: Works, but makes hw acceleration impossible, use above code path
-        qreal old = painter->opacity();
-        painter->setOpacity(opacity);
-        painter->drawPixmap(iconOrigin, pixmap);
-        painter->setOpacity(old);
     }
 }
 
@@ -353,7 +420,6 @@ void NetworkManagerApplet::networkInterfaceRemoved(const QString & uni)
     Q_UNUSED(uni);
     // update the tray icon
     m_interfaces = Solid::Control::NetworkManager::networkInterfaces();
-    // update extender visibility
     KConfigGroup cg = config();
 
     setupInterfaceSignals();
@@ -370,6 +436,7 @@ Solid::Control::NetworkInterface* NetworkManagerApplet::activeInterface()
     } else {
         return 0;
     }
+
 }
 
 void NetworkManagerApplet::interfaceConnectionStateChanged()
@@ -377,29 +444,40 @@ void NetworkManagerApplet::interfaceConnectionStateChanged()
     //kDebug() << " +++ +++ +++ Connection State Changed +++ +++ +++";
     if (activeInterface()) {
         //kDebug() << "busy ... ?";
-        int state = activeInterface()->connectionState();
+        Solid::Control::NetworkInterface::ConnectionState state = activeInterface()->connectionState();
         switch (state) {
             case Solid::Control::NetworkInterface::Preparing:
             case Solid::Control::NetworkInterface::Configuring:
             case Solid::Control::NetworkInterface::IPConfig:
                 if (m_currentState != state) {
-                    m_overlayTimeline.stop();
-                    m_overlayTimeline.setDuration(2000);
-                    m_overlayTimeline.setDirection(QTimeLine::Forward);
-                    m_overlayTimeline.start();
+                    setStatusOverlay(generateProgressStatusOverlay());
                 }
-                setBusy(true);
+                //setBusy(true);
                 break;
             case Solid::Control::NetworkInterface::NeedAuth:
-                setBusy(false);
+                //setBusy(false);
                 break;
-            default:
-                setBusy(false);
+            case Solid::Control::NetworkInterface::Activated:
+                //setBusy(false);
                 if (m_currentState != state) {
-                    m_overlayTimeline.stop();
-                    m_overlayTimeline.setDirection(QTimeLine::Backward);
-                    m_overlayTimeline.setDuration(10000);
-                    m_overlayTimeline.start();
+                    // We want to show the full circle a bit
+                    setStatusOverlay(generateProgressStatusOverlay());
+                    setStatusOverlay("task-complete");
+                    QTimer::singleShot(4000, this, SLOT(clearActivatedOverlay()));
+                }
+                break;
+            case Solid::Control::NetworkInterface::UnknownState:
+                kDebug() << "UnknownState! should this happen?";
+            case Solid::Control::NetworkInterface::Unmanaged:
+            case Solid::Control::NetworkInterface::Unavailable:
+            case Solid::Control::NetworkInterface::Failed:
+                if (m_currentState != state) {
+                    setStatusOverlay("dialog-error");
+                }
+                break;
+            case Solid::Control::NetworkInterface::Disconnected:
+                if (m_currentState != state) {
+                    setStatusOverlay("dialog-cancel");
                 }
                 break;
         }
@@ -418,28 +496,35 @@ void NetworkManagerApplet::toolTipAboutToShow()
                                         KIcon("networkmanager").pixmap(IconSize(KIconLoader::Desktop))
                                         );
     } else {
-        QString subText;
         qSort(interfaces.begin(), interfaces.end(), networkInterfaceLessThan);
         bool hasActive = false;
         bool iconChanged = false;
         QString icon = "networkmanager";
+        QStringList lines;
         foreach (Solid::Control::NetworkInterface *iface, interfaces) {
-            if (!subText.isEmpty()) {
-                subText += QLatin1String("<br><br>");
-            }
             if (iface->connectionState() != Solid::Control::NetworkInterface::Unavailable) {
+                if (!lines.isEmpty()) {
+                    lines << QString();
+                }
                 hasActive = true;
 
                 QString deviceText = UiUtils::interfaceNameLabel(iface->uni());
 
                 QString ifaceName = iface->interfaceName();
-                subText += QString::fromLatin1("<b>%1</b>: %2").arg(deviceText).arg(UiUtils::connectionStateToString(iface->connectionState()));
+                lines << QString::fromLatin1("<b>%1</b>").arg(deviceText);
+                QString connectionName;
+                RemoteInterfaceConnection *conn = UiUtils::connectionForInterface(m_activatables, iface);
+                if (conn) {
+                    connectionName = conn->connectionName();
+                }
+
+                lines << QString("<font size=\"-1\">%1</font>").arg(UiUtils::connectionStateToString(iface->connectionState(), connectionName));
                 Solid::Control::IPv4Config ip4Config = iface->ipV4Config();
                 QList<Solid::Control::IPv4Address> addresses = ip4Config.addresses();
                 if (!addresses.isEmpty()) {
                     QHostAddress addr(addresses.first().address());
                     QString currentIp = addr.toString();
-                    subText += QString::fromLatin1("<br>") + i18nc("Display of the IP (network) address in the tooltip", "<font size=\"-1\">Address: %1</font>", currentIp);
+                    lines << i18nc("Display of the IP (network) address in the tooltip", "<font size=\"-1\">Address: %1</font>", currentIp);
                 }
                 // Show the first active connection's icon, otherwise the networkmanager icon
                 if (!iconChanged && iface->connectionState() == Solid::Control::NetworkInterface::Activated) {
@@ -448,8 +533,11 @@ void NetworkManagerApplet::toolTipAboutToShow()
                 }
             }
         }
-        if (!hasActive) {
-            subText += i18nc("tooltip, all interfaces are down", "Disconnected");
+        QString subText;
+        if (hasActive) {
+            subText = lines.join(QLatin1String("<br>"));
+        } else {
+            subText = i18nc("tooltip, all interfaces are down", "Disconnected");
         }
         m_toolTip = Plasma::ToolTipContent(QString(),
                                            subText,
@@ -643,27 +731,6 @@ bool networkInterfaceSameConnectionStateLessThan(Solid::Control::NetworkInterfac
     return lessThan;
 }
 
-void NetworkManagerApplet::manageConnections()
-{
-    //kDebug() << "opening connection management dialog";
-    QStringList args;
-    args << "--icon" << "networkmanager" << "kcm_networkmanagement" << "kcm_networkmanagement_tray";
-    KToolInvocation::kdeinitExec("kcmshell4", args);
-    hidePopup();
-}
-
-void NetworkManagerApplet::loadExtender()
-{
-    Plasma::ExtenderItem *eItem = extender()->item("networkmanagement");
-    if (eItem) {
-        eItem->destroy(); // Apparently, we need to "refresh the extenderitem
-    }
-    eItem = new NMExtenderItem(m_activatableList, extender());
-    eItem->setName("networkmanagement");
-    eItem->setTitle(i18nc("Label for extender","Network Management"));
-    eItem->widget();
-}
-
 void NetworkManagerApplet::managerWirelessEnabledChanged(bool)
 {
     setupInterfaceSignals();
@@ -710,6 +777,65 @@ bool NetworkManagerApplet::hasInterfaceOfType(Solid::Control::NetworkInterface::
         }
     }
     return false;
+}
+
+void NetworkManagerApplet::setStatusOverlay(const QPixmap& pix)
+{
+    m_previousStatusOverlay = m_statusOverlay;
+    m_statusOverlay = pix;
+    if (m_overlayTimeline.state() == QTimeLine::Running) {
+        m_overlayTimeline.stop();
+    }
+    m_overlayTimeline.start();
+}
+
+void NetworkManagerApplet::setStatusOverlay(const QString& name)
+{
+    int i_s = (int)contentsRect().width()/4;
+    int size = qMax(UiUtils::iconSize(QSizeF(i_s, i_s)), 8);
+    QPixmap pix = KIcon(name).pixmap(size);
+    setStatusOverlay(pix);
+}
+
+QPixmap NetworkManagerApplet::generateProgressStatusOverlay()
+{
+    // FIXME: Duplicated from setStatusOverlay()
+    int i_s = (int)contentsRect().width()/4;
+    int size = qMax(UiUtils::iconSize(QSizeF(i_s, i_s)), 8);
+
+    QPixmap pix(size, size);
+    pix.fill(Qt::transparent);
+    qreal state = UiUtils::interfaceState(activeInterface());
+
+    QColor fgColor = Plasma::Theme::defaultTheme()->color(Plasma::Theme::TextColor);
+    QColor bgColor = Plasma::Theme::defaultTheme()->color(Plasma::Theme::BackgroundColor);
+
+    bgColor.setAlphaF(.6);
+    fgColor.setAlphaF(.4);
+
+    // paint an arc completing a circle
+    // 1 degree = 16 ticks, that's how drawArc() works
+    // 0 is at 3 o'clock
+    int top = 90 * 16;
+    int progress = -360 * 16 * state;
+    QPen pen(fgColor, 1); // color and line width
+
+    QPainter p(&pix);
+    p.setRenderHint(QPainter::Antialiasing);
+    p.setPen(pen);
+    p.setBrush(fgColor);
+    //p.drawArc(contentsRect(), top, progress);
+    p.drawPie(pix.rect().adjusted(.5, .5, -.5, -.5), top, progress);
+
+    return pix;
+}
+
+void NetworkManagerApplet::clearActivatedOverlay()
+{
+    if (activeInterface() && activeInterface()->connectionState() == Solid::Control::NetworkInterface::Activated) {
+        // Clear the overlay, but only if we are still activated
+        setStatusOverlay(QPixmap());
+    }
 }
 
 #include "networkmanager.moc"
