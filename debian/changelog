@@ -4,6 +4,9 @@ plasma-widget-networkmanagement (0.1~svn1125524-1) UNRELEASED; urgency=low
     - Last Changed Author: lvsouza
     - Last Changed Rev: 1125524
     - Last Changed Date: 2010-05-11 18:34:09 +0200
+  * debian/patches/01-qt4.5-compat.patch
+    - Drop the Qt 4.5 compat patch again now that we have a recent enough
+      version in unstable and testing.
 
  -- Michael Biebl <biebl@debian.org>  Wed, 12 May 2010 02:24:05 +0200
 
