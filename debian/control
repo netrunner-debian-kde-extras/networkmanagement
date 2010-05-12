@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>
 Uploaders: Modestas Vainius <modestas@vainius.eu>, Michael Biebl <biebl@debian.org>
 Build-Depends: debhelper (>= 7.3.16), cmake (>= 2.6.2), pkg-kde-tools (>= 0.5),
- libqt4-dev (>= 4:4.6.0), kdelibs5-dev (>= 4:4.3.0), kdebase-workspace-dev (>= 4:4.3.0), libknotificationitem-1-dev,
+ libqt4-dev (>= 4:4.6.0), kdelibs5-dev (>= 4:4.4.0), kdebase-workspace-dev (>= 4:4.4.0), libknotificationitem-1-dev,
  network-manager-dev (>= 0.7.0), libnm-util-dev (>= 0.7.0)
 Standards-Version: 3.8.4
 Vcs-Git: git://git.debian.org/git/pkg-kde/kde-extras/plasma-widget-networkmanagement.git
