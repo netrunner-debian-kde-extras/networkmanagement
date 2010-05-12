@@ -1,5 +1,5 @@
 /*
-Copyright 2008 Sebastian Kügler <sebas@kde.org>
+Copyright 2008-2010 Sebastian Kügler <sebas@kde.org>
 Copyright 2008,2009 Will Stephenson <wstephenson@kde.org>
 
 This program is free software; you can redistribute it and/or
@@ -33,8 +33,11 @@ namespace Plasma
     class Meter;
 }
 
+
 class RemoteWirelessNetwork;
-/** * Represents an wireless network for which no connection exists
+class WirelessStatus;
+/**
+    Represents a wireless network or a known connection
  */
 class WirelessNetworkItem : public ActivatableItem
 {
@@ -51,21 +54,15 @@ class WirelessNetworkItem : public ActivatableItem
         void stateChanged();
 
     private:
-        RemoteWirelessNetwork * wirelessNetworkItem() const;
-        bool readSettings();
-        QGraphicsGridLayout * m_layout;
-        Plasma::IconWidget * m_icon;
-        Plasma::Label * m_ssidLabel;
-        Plasma::Meter * m_strengthMeter;
-        Plasma::IconWidget * m_connectButton;
+        //bool readSettings();
+        QGraphicsGridLayout* m_layout;
+        Plasma::Label* m_ssidLabel;
+        Plasma::Meter* m_strengthMeter;
+        Plasma::IconWidget* m_connectButton;
         QString m_security;
-        Plasma::IconWidget * m_securityIcon;
-        QString m_securityIconName;
-        QString m_securityIconToolTip;
-        int m_strength;
-        QString m_ssid;
-        RemoteWirelessNetwork * m_remote;
-        Knm::InterfaceConnection::ActivationState m_state;
+        Plasma::Label* m_securityIcon;
+        RemoteWirelessNetwork* m_remote;
+        WirelessStatus* m_wirelessStatus;
 };
 
 #endif //#define APPLET_WIRELESSCONNECTIONITEM_H

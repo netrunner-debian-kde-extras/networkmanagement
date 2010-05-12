@@ -29,14 +29,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "remoteinterfaceconnection.h"
 
-InterfaceConnectionItem::InterfaceConnectionItem(RemoteInterfaceConnection * conn, QGraphicsItem * parent)
+InterfaceConnectionItem::InterfaceConnectionItem(RemoteInterfaceConnection* conn, QGraphicsItem* parent)
 : ActivatableItem(conn, parent)
 {
-    if (interfaceConnection()) {
-        if (interfaceConnection()->iconName().startsWith("No such interface 'org.kde.networkmanagement.InterfaceConnection'")) {
-            kDebug() << "Houston ...";
-        }
-    }
+    connect(conn, SIGNAL(changed()), SLOT(stateChanged()));
 }
 
 void InterfaceConnectionItem::setupItem()
@@ -52,23 +48,17 @@ void InterfaceConnectionItem::setupItem()
     m_connectButton->setMinimumWidth(160);
     m_connectButton->setMaximumHeight(rowHeight);
     m_connectButton->setOrientation(Qt::Horizontal);
-#if KDE_IS_VERSION(4,2,60)
     m_connectButton->setTextBackgroundColor(QColor(Qt::transparent));
-#endif
+    m_connectButton->setZValue(100); // FIXME: doesn't work
 
     m_connectButton->setMinimumHeight(rowHeight);
     m_connectButton->setMaximumHeight(rowHeight);
     m_layout->addItem(m_connectButton, 0, 0, 1, 1 );
 
-    m_routeIcon = new Plasma::IconWidget(this);
-    m_routeIcon->setIcon("emblem-favorite");
-    m_routeIcon->setGeometry(QRectF(m_connectButton->geometry().topLeft(), QSizeF(8, 8)));
-    m_routeIcon->hide(); // this will be shown in handleHasDefaultRouteChanged(bool);
-
     if (interfaceConnection()) {
         m_connectButton->setIcon(interfaceConnection()->iconName());
         m_connectButton->setText(interfaceConnection()->connectionName());
-        kDebug() << interfaceConnection()->connectionName() << interfaceConnection()->iconName();
+        //kDebug() << interfaceConnection()->connectionName() << interfaceConnection()->iconName();
         handleHasDefaultRouteChanged(interfaceConnection()->hasDefaultRoute());
     } else {
         m_connectButton->setIcon("network-wired");
@@ -78,11 +68,23 @@ void InterfaceConnectionItem::setupItem()
     connect(this, SIGNAL(clicked()), this, SLOT(emitClicked()));
     connect(this, SIGNAL(pressed(bool)), m_connectButton, SLOT(setPressed(bool)));
     connect(m_connectButton, SIGNAL(pressed(bool)), this, SLOT(setPressed(bool)));
+
+    stateChanged();
+
 }
 
 InterfaceConnectionItem::~InterfaceConnectionItem()
 {
 
+}
+
+void InterfaceConnectionItem::stateChanged()
+{
+    //kDebug() << "activatable State Changed!" << interfaceConnection()->connectionName();
+    RemoteInterfaceConnection* remoteconnection = static_cast<RemoteInterfaceConnection*>(m_activatable);
+    if (remoteconnection) {
+        activationStateChanged(remoteconnection->activationState());
+    }
 }
 
 

@@ -46,14 +46,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ActivatableListWidget::ActivatableListWidget(RemoteActivatableList* activatables, QGraphicsWidget* parent) : Plasma::ScrollWidget(parent),
     m_activatables(activatables),
-    m_layout(0)
+    m_layout(0),
+    m_vpn(false)
 {
-    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff); // for testing
-    //setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-    setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Expanding);
+    //setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     m_widget = new QGraphicsWidget(this);
-    //m_widget->setMinimumSize(240, 50);
+    //m_widget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     m_layout = new QGraphicsLinearLayout(m_widget);
     m_layout->setOrientation(Qt::Vertical);
     m_layout->setSpacing(1);
@@ -81,15 +80,82 @@ void ActivatableListWidget::addType(Knm::Activatable::ActivatableType type)
     if (!(m_types.contains(type))) {
         m_types.append(type);
     }
+    filter();
+}
+
+void ActivatableListWidget::removeType(Knm::Activatable::ActivatableType type)
+{
+    if (m_types.contains(type)) {
+        m_types.removeAll(type);
+    }
+    filter();
+}
+
+void ActivatableListWidget::addInterface(Solid::Control::NetworkInterface* iface)
+{
+    if (iface) {
+        m_interfaces << iface->uni();
+        m_showAllTypes = true;
+        filter();
+    }
+}
+
+void ActivatableListWidget::clearInterfaces()
+{
+    m_interfaces = QStringList();
+    m_showAllTypes = false;
+    filter();
+}
+
+void ActivatableListWidget::setShowAllTypes(bool show)
+{
+    m_showAllTypes = show;
+    filter();
+}
+
+void ActivatableListWidget::toggleVpn()
+{
+    kDebug() << "VPN toggled";
+    m_vpn = !m_vpn;
+    filter();
 }
 
 bool ActivatableListWidget::accept(RemoteActivatable * activatable) const
 {
-    return m_types.contains(activatable->activatableType());
+    if (m_vpn) {
+        if (activatable->activatableType() == Knm::Activatable::VpnInterfaceConnection) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    // Policy wether an activatable should be shown or not.
+    if (m_interfaces.count()) {
+        // If interfaces are set, activatables for other interfaces are not shown
+        if (m_interfaces.contains(activatable->deviceUni())) {
+        } else {
+            return false;
+        }
+    }
+    if (!m_showAllTypes) {
+    // when no filter is set, only show activatables of a certain type
+        if (!(m_types.contains(activatable->activatableType()))) {
+            return false;
+        }
+    }
+    return true;
 }
 
-ActivatableItem * ActivatableListWidget::createItem(RemoteActivatable * activatable)
+void ActivatableListWidget::createItem(RemoteActivatable * activatable)
 {
+    // FIXME: m_itemIndex.contains()?
+    foreach (RemoteActivatable* a, m_itemIndex.keys()) {
+        if (activatable == a) {
+            //kDebug() << "activatable already in the layout, not creating an item" << a;
+            return;
+        }
+    }
+
     ActivatableItem* ai = 0;
     switch (activatable->activatableType()) {
         case Knm::Activatable::WirelessNetwork:
@@ -118,7 +184,6 @@ ActivatableItem * ActivatableListWidget::createItem(RemoteActivatable * activata
     ai->setupItem();
     m_layout->addItem(ai);
     m_itemIndex[activatable] = ai;
-    return ai;
 }
 
 void ActivatableListWidget::listAppeared()
@@ -130,12 +195,12 @@ void ActivatableListWidget::listAppeared()
     }
 }
 
-void ActivatableListWidget::deactivateConnection()
+void ActivatableListWidget::deactivateConnection(const QString& deviceUni)
 {
     foreach (ActivatableItem* item, m_itemIndex) {
         RemoteInterfaceConnection *conn = item->interfaceConnection();
-        if (conn) {
-            kDebug() << "deactivating ...";
+        if (conn && conn->deviceUni() == deviceUni) {
+            //kDebug() << "deactivating" << conn->connectionName();
             conn->deactivate();
         }
     }
@@ -156,6 +221,18 @@ void ActivatableListWidget::activatableAdded(RemoteActivatable * added)
     if (accept(added)) {
         createItem(added);
     }
+}
+
+void ActivatableListWidget::filter()
+{
+    foreach (RemoteActivatable *act, m_activatables->activatables()) {
+        if (accept(act)) {
+            createItem(act);
+        } else {
+            activatableRemoved(act);
+        }
+    }
+    m_layout->invalidate();
 }
 
 void ActivatableListWidget::activatableRemoved(RemoteActivatable * removed)

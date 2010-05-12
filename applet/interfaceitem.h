@@ -1,6 +1,6 @@
 /*
 Copyright 2008,2009 Will Stephenson <wstephenson@kde.org>
-Copyright 2008, 2009 Sebastian K?gler <sebas@kde.org>
+Copyright 2008, 2009 Sebastian Kügler <sebas@kde.org>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -34,6 +34,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <Plasma/Label>
 #include <Plasma/Meter>
 #include <Plasma/CheckBox>
+#include <Plasma/PushButton>
 
 class QGraphicsGridLayout;
 class QGraphicsLinearLayout;
@@ -42,8 +43,11 @@ namespace Solid
     namespace Control
     {
         class NetworkInterface;
-    } // namespace Control
-} // namespace Solid
+    }
+}
+
+class RemoteInterfaceConnection;
+class RemoteActivatableList;
 
 
 /**
@@ -51,24 +55,26 @@ namespace Solid
  * Displays status, updates itself
  * Allows deactivating any active connection
  */
-class InterfaceItem : public Plasma::Frame
+class InterfaceItem : public Plasma::IconWidget
 {
 Q_OBJECT
 public:
     enum NameDisplayMode {InterfaceName, HardwareName};
-    InterfaceItem(Solid::Control::NetworkInterface * iface, NameDisplayMode mode = InterfaceName, QGraphicsWidget* parent = 0);
+    InterfaceItem(Solid::Control::NetworkInterface* iface, RemoteActivatableList* activatables, NameDisplayMode mode = InterfaceName,  QGraphicsWidget* parent = 0);
     virtual ~InterfaceItem();
 
     void setNameDisplayMode(NameDisplayMode);
     NameDisplayMode nameDisplayMode() const;
-
+    Solid::Control::NetworkInterface* interface();
     virtual QString connectionName();
-    //void paint ( QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget = 0 );
     QString label();
+    virtual void setActivatableList(RemoteActivatableList* activatables);
+    virtual QString currentIpAddress();
+
 
 public Q_SLOTS:
     void activeConnectionsChanged();
-    void connectionStateChanged(Solid::Control::NetworkInterface::ConnectionState);
+    virtual void connectionStateChanged(Solid::Control::NetworkInterface::ConnectionState);
     virtual void setEnabled(bool enable);
     // also updates the connection info
     virtual void setActive(bool active);
@@ -80,43 +86,59 @@ protected Q_SLOTS:
      */
     void handleConnectionStateChange(int new_state);
     void handleConnectionStateChange(int new_state, int old_state, int reason);
+    void handleHasDefaultRouteChanged(bool);
     void pppStats(uint in, uint out);
+    void slotClicked();
+    virtual void setConnectionInfo();
 
 Q_SIGNALS:
     void stateChanged();
-    void disconnectInterface();
+    void disconnectInterfaceRequested(const QString& deviceUni);
+    void clicked(Solid::Control::NetworkInterface*);
 
 protected:
     /**
      * Fill in interface type connection info
      */
-    virtual void setConnectionInfo();
     /**
      * Give us a pixmap for an icon
      */
-    virtual QPixmap statePixmap(const QString &icon);
+    virtual QPixmap interfacePixmap(const QString &icon = QString());
 
     /**
     * The current IP address when the connection is active.
     */
-    virtual QString currentIpAddress();
+   //----- virtual QString currentIpAddress();
+    virtual RemoteInterfaceConnection* currentConnection();
 
-    Solid::Control::NetworkInterface * m_iface;
+    RemoteInterfaceConnection* m_currentConnection;
 
-    QGraphicsGridLayout * m_layout;
-    QGraphicsLinearLayout * m_infoLayout;
-    Plasma::IconWidget * m_icon;
-    Plasma::IconWidget* m_disconnectButton;
-    Plasma::Label * m_ifaceNameLabel;
-    Plasma::Label * m_connectionNameLabel;
-    QGraphicsLinearLayout * m_connectionInfoLayout;
-    Plasma::Label * m_connectionInfoLabel;
-    Plasma::Label * m_connectionInfoStrengthLabel;
-    Plasma::IconWidget * m_connectionInfoIcon;
+    Solid::Control::NetworkInterface* m_iface;
+    RemoteActivatableList* m_activatables;
+
+    QGraphicsGridLayout* m_layout;
+    QGraphicsLinearLayout* m_infoLayout;
+    Plasma::Label* m_icon;
+    QPixmap* m_pixmap;
+    Plasma::PushButton* m_disconnectButton;
+    Plasma::Label* m_ifaceNameLabel;
+    Plasma::Label* m_connectionNameLabel;
+    QGraphicsLinearLayout* m_connectionInfoLayout;
+    Plasma::Label* m_connectionInfoLabel;
+    Plasma::Label* m_connectionInfoStrengthLabel;
+    Plasma::Label* m_connectionInfoIcon;
     NameDisplayMode m_nameMode;
     bool m_enabled;
-
+    Solid::Control::NetworkInterface::ConnectionState m_state;
     QString m_interfaceName;
     bool m_disconnect;
+    bool m_hasDefaultRoute;
+    QSize m_pixmapSize;
+
+protected Q_SLOTS:
+    virtual void currentConnectionChanged();
+
+private Q_SLOTS:
+    void emitDisconnectInterfaceRequest();
 };
 #endif // APPLET_INTERFACEWIDGET_H

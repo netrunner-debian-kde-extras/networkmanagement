@@ -1,6 +1,6 @@
 /*
 Copyright 2008,2009 Will Stephenson <wstephenson@kde.org>
-Copyright 2008, 2009 Sebastian K?gler <sebas@kde.org>
+Copyright 2008, 2009 Sebastian Kügler <sebas@kde.org>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -23,6 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PLASMA_NETWORKMANAGER_APPLET_H
 
 class QAction;
+class KCModuleProxy;
 
 #include <kdeversion.h>
 
@@ -34,14 +35,13 @@ class QAction;
 
 #include "../libs/types.h"
 
-#include <plasma/popupapplet.h>
+#include <Plasma/PopupApplet>
 
 #include <Plasma/ToolTipManager>
 
 namespace Plasma
 {
     class Applet;
-    class Extender;
 } // namespace Plasma
 
 class QTimeLine;
@@ -65,10 +65,11 @@ public:
     //Qt::Orientations expandingDirections() const;
     /* reimp Plasma::Applet */
     void constraintsEvent(Plasma::Constraints constraints);
-    virtual QList<QAction*> contextualActions();
-    virtual void initExtenderItem(Plasma::ExtenderItem *);
+    QGraphicsWidget *graphicsWidget();
 
-    void loadExtender();
+    //virtual void initExtenderItem(Plasma::ExtenderItem *);
+
+    //void loadExtender();
 
 public Q_SLOTS:
     /**
@@ -92,14 +93,10 @@ public Q_SLOTS:
      */
     void managerStatusChanged(Solid::Networking::Status);
 
-signals:
-    /**
-     * Tell the applet to show our KCModule
-     */
-    //void manageConnections();
+protected:
+    void createConfigurationInterface(KConfigDialog *parent);
 
-public Q_SLOTS:
-
+    
 protected Q_SLOTS:
     // called by Plasma::ToolTipManager
     void toolTipAboutToShow();
@@ -108,37 +105,50 @@ private Q_SLOTS:
     void networkInterfaceAdded(const QString& = QString());
     void networkInterfaceRemoved(const QString&);
     void interfaceConnectionStateChanged();
-    void manageConnections();
     void updatePixmap();
     void repaint();
+    void clearActivatedOverlay();
 
 private:
     bool hasInterfaceOfType(Solid::Control::NetworkInterface::Type type);
     Solid::Control::NetworkInterface* activeInterface();
     void setupInterfaceSignals();
+    QString svgElement(Solid::Control::NetworkInterface *iface);
 
-    void paintPixmap(QPainter *painter, QPixmap pixmap,
+    void paintPixmap(QPainter* painter, QPixmap pixmap,
                      const QRectF &rect, qreal opacity = 1.0);
-    void paintOkOverlay(QPainter *p, const QRectF &rect, qreal opacity = 1.0);
-    void paintProgress(QPainter *p);
-    void paintOverlay(QPainter *p);
+    void paintStatusOverlay(QPainter* p);
+    void paintNeedAuthOverlay(QPainter* p);
+    QPixmap generateProgressStatusOverlay();
+    void setStatusOverlay(const QPixmap&);
+    void setStatusOverlay(const QString&);
 
-    Solid::Control::NetworkInterfaceList sortInterfacesByImportance(const Solid::Control::NetworkInterfaceList& interfaces) const;
     bool m_iconPerDevice;
     Solid::Control::NetworkInterfaceList m_interfaces;
     Plasma::ToolTipContent m_toolTip;
 
-    RemoteActivatableList * m_activatableList;
-    NMExtenderItem* m_extenderItem;
+    RemoteActivatableList* m_activatables;
+    QGraphicsWidget* m_popup;
 
     QPixmap m_pixmap;
 
     // For tracking which status we should show
-    Solid::Control::NetworkInterface *m_activeInterface;
-    Solid::Control::AccessPoint *m_accessPoint;
+    Solid::Control::NetworkInterface* m_activeInterface;
+    Solid::Control::AccessPoint* m_accessPoint;
 
+    // Timeline controlling a connection progress overlay on the main icon
     QTimeLine m_overlayTimeline;
-    int m_currentState;
+    QPixmap m_previousStatusOverlay;
+    QPixmap m_statusOverlay;
+    Solid::Control::NetworkInterface::ConnectionState m_currentState;
+
+    ///embedded KCM modules in the configuration dialog
+    KCModuleProxy* m_kcmNM;
+    KCModuleProxy* m_kcmNMTray;
+
+    Plasma::Svg* m_svg;
+    QRect m_contentSquare;
+
 };
 
 #endif

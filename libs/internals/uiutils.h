@@ -1,5 +1,5 @@
 /*
-Copyright 2008,2009 Sebastian K?gler <sebas@kde.org>
+Copyright 2008-2010 Sebastian Kügler <sebas@kde.org>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -24,6 +24,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 class QSizeF;
 
 #include "knminternals_export.h"
+#include "../client/remoteinterfaceconnection.h"
+#include "../client/remoteactivatablelist.h"
 
 #include <solid/control/networkinterface.h>
 #include <solid/control/wirelessnetworkinterface.h>
@@ -50,7 +52,14 @@ public:
      * @return a human-readable description of the connection state of a given network interface
      * @param state The connection state
      */
-    static QString connectionStateToString(Solid::Control::NetworkInterface::ConnectionState state);
+    static QString connectionStateToString(Solid::Control::NetworkInterface::ConnectionState state, const QString &connectionName = QString());
+
+    /**
+     * @return the RemoteInterfaceConnection for a given network interface
+     * @param interface the Solid::Control::NetworkInterface state
+     * @param activatables the RemoteActivatableList of all connections
+     */
+    static RemoteInterfaceConnection* connectionForInterface(RemoteActivatableList* activatables, Solid::Control::NetworkInterface *interface);
 
     /**
      * @return an icon name suitable for the interface type
@@ -82,10 +91,16 @@ public:
     static QString operationModeToString(Solid::Control::WirelessNetworkInterface::OperationMode mode);
 
     /**
-     * @return string list with a human-readable description of wpa flags. 
+     * @return string list with a human-readable description of wpa flags.
      * @param flags the wpa flags
      */
     static QStringList wpaFlagsToStringList(Solid::Control::AccessPoint::WpaFlags flags);
+
+    /**
+     * @return localized string showing a human-readable connection speed. 1000 is used as base.
+     * @param bitrate bitrate of the connection per second
+     */
+    static QString connectionSpeed(double bitrate);
 
 };
 #endif // UIUTILS_H

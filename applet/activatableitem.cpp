@@ -23,28 +23,49 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <kdebug.h>
 #include "remoteactivatable.h"
 
+#include <QPainter>
+
+#include <KIcon>
+
+#include <Plasma/Animation>
+#include <Plasma/Animator>
+
 ActivatableItem::ActivatableItem(RemoteActivatable *remote, QGraphicsItem * parent) : Plasma::IconWidget(parent),
     m_activatable(remote),
-    m_routeIcon(0)
+    m_hasDefaultRoute(false)
 {
     setDrawBackground(true);
-#if KDE_IS_VERSION(4,2,60)
     setTextBackgroundColor(QColor(Qt::transparent));
-#endif
     RemoteInterfaceConnection *remoteconnection = interfaceConnection();
     if (remoteconnection) {
-        connect(remoteconnection, SIGNAL(hasDefaultRouteChanged(bool)), SLOT(handleHasDefaultRouteChanged(bool)));
+        connect(remoteconnection, SIGNAL(hasDefaultRouteChanged(bool)),
+                SLOT(handleHasDefaultRouteChanged(bool)));
+        connect(remoteconnection, SIGNAL(activationStateChanged(Knm::InterfaceConnection::ActivationState)),
+                SLOT(activationStateChanged(Knm::InterfaceConnection::ActivationState)));
     }
+
+    // Fade in when this widget appears
+    Plasma::Animation* fadeAnimation = Plasma::Animator::create(Plasma::Animator::FadeAnimation);
+    fadeAnimation->setTargetWidget(this);
+    fadeAnimation->setProperty("startOpacity", 0.0);
+    fadeAnimation->setProperty("targetOpacity", 1.0);
+    fadeAnimation->start();
 }
 
 ActivatableItem::~ActivatableItem()
 {
+    // Fade out when this widget appears
+    Plasma::Animation* fadeAnimation = Plasma::Animator::create(Plasma::Animator::FadeAnimation);
+    fadeAnimation->setTargetWidget(this);
+    fadeAnimation->setProperty("startOpacity", 1.0);
+    fadeAnimation->setProperty("targetOpacity", 0.0);
+    fadeAnimation->setProperty("Duration", 2000);
+    fadeAnimation->start();
+
 }
 
 void ActivatableItem::emitClicked()
 {
-    //HACK this slot needs renaming
-    //kDebug() << "EMIT CLICKED";
     if (m_activatable) {
         m_activatable->activate();
     }
@@ -58,15 +79,42 @@ RemoteInterfaceConnection * ActivatableItem::interfaceConnection() const
 
 void ActivatableItem::handleHasDefaultRouteChanged(bool has)
 {
-    if (m_routeIcon) {
-        // do something nice to show that this connection has the default route
-        if (has) {
-            kDebug() << "We now have the default route";
-            m_routeIcon->show();
-        } else {
-            m_routeIcon->hide();
-        }
+    // do something nice to show that this connection has the default route
+    m_hasDefaultRoute = has;
+    update();
+}
+
+void ActivatableItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
+{
+    Plasma::IconWidget::paint(painter, option, widget);
+    if (m_hasDefaultRoute) {
+        painter->drawPixmap(QRect(4,4,12,12), KIcon("face-smile").pixmap(QSize(16,16)));
     }
+}
+
+void ActivatableItem::activationStateChanged(Knm::InterfaceConnection::ActivationState state)
+{
+    // Update the view of the connection, manipulate font based on activation state.
+    kDebug() << state;
+    QFont f = font();
+    switch (state) {
+        //Knm::InterfaceConnectihon::ActivationState
+        case Knm::InterfaceConnection::Activated:
+            kDebug() << "activated";
+            f.setBold(true);
+            f.setItalic(false);
+            break;
+        case Knm::InterfaceConnection::Unknown:
+            kDebug() << "unknown";
+            f.setBold(false);
+            f.setItalic(false);
+            break;
+        case Knm::InterfaceConnection::Activating:
+            kDebug() << "activatING....";
+            f.setBold(false);
+            f.setItalic(true);
+    }
+    setFont(f);
 }
 
 // vim: sw=4 sts=4 et tw=100
