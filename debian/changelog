@@ -4,6 +4,7 @@ plasma-widget-networkmanagement (0.1~svn1125524-1) UNRELEASED; urgency=low
     - Last Changed Author: lvsouza
     - Last Changed Rev: 1125524
     - Last Changed Date: 2010-05-11 18:34:09 +0200
+    - Fixes placement of the systray applet context menu. (Closes: #580530)
   * debian/patches/01-qt4.5-compat.patch
     - Drop the Qt 4.5 compat patch again now that we have a recent enough
       version in unstable and testing.
