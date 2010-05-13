@@ -1,4 +1,4 @@
-plasma-widget-networkmanagement (0.1~svn1125524-1) UNRELEASED; urgency=low
+plasma-widget-networkmanagement (0.1~svn1125524-1) unstable; urgency=low
 
   * New upstream development snapshot:
     - Last Changed Author: lvsouza
@@ -16,7 +16,7 @@ plasma-widget-networkmanagement (0.1~svn1125524-1) UNRELEASED; urgency=low
     - Simplify install file by using wildcards where appropriate.
     - Install new strongswan VPN plugin.
 
- -- Michael Biebl <biebl@debian.org>  Wed, 12 May 2010 02:24:05 +0200
+ -- Michael Biebl <biebl@debian.org>  Thu, 13 May 2010 02:02:57 +0200
 
 plasma-widget-networkmanagement (0.1~svn1088283-1) unstable; urgency=medium
 
