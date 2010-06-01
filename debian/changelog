@@ -10,6 +10,8 @@ plasma-widget-networkmanagement (0.1~svn1133205-1) UNRELEASED; urgency=low
   * debian/network-manager-kde.install
     - No longer install the autostart file for knetworkmanager. Upstream
       recommends to use the plasma-widgets-networkmanagment frontend.
+  * Re-add plasma-widget-networkmanagement package and remove the Conflicts
+    from network-manager-kde as both packages should now be co-installable.
 
  -- Michael Biebl <biebl@debian.org>  Wed, 02 Jun 2010 00:04:11 +0200
 

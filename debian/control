@@ -14,12 +14,28 @@ Package: network-manager-kde
 Architecture: any
 Section: net
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Conflicts: plasma-widget-networkmanagement
 Provides: knetworkmanager
 Description: KDE system tray applet for controlling NetworkManager
  System tray applet for controlling network connections managed by
  NetworkManager. It is mainly written for KDE but also works for other desktop
  environments like GNOME or Xfce.
+
+Package: plasma-widget-networkmanagement
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: kdebase-workspace-bin
+Conflicts: plasma-applet-networkmanager
+Replaces: plasma-applet-networkmanager
+Description: Network Management widget for KDE4 Plasma
+ This package contains the Network Management plasma widget which aims to
+ provide a fully featured GUI for managing networks.  Currently, the only
+ supported backend is NetworkManager.  Support for wired, wireless, GSM
+ and VPN networks are provided.  The widget is exclusively written for Plasma
+ and KDE4 and it is not supposed to work in other environments.
+ .
+ This widget needs Plasma shell to be usable. Main KDE 4 Plasma shell is
+ available in the kdebase-workspace-bin package. The user friendly name of the
+ widget is "Network Management" (in e.g. "Add Widgets" dialog).
 
 Package: knm-runtime
 Architecture: any
