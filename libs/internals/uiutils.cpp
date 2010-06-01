@@ -27,7 +27,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <KLocale>
 #include <kdeversion.h>
 
-#include <Solid/Device>
 #include <solid/control/networkmanager.h>
 #include <solid/control/networkinterface.h>
 #include <solid/control/wirelessaccesspoint.h>
@@ -181,24 +180,57 @@ QString UiUtils::connectionStateToString(Solid::Control::NetworkInterface::Conne
     return stateString;
 }
 
+Solid::Device* UiUtils::findSolidDevice(const QString & uni)
+{
+    Solid::Control::NetworkInterface * iface = Solid::Control::NetworkManager::findNetworkInterface(uni);
+
+    if (!iface) {
+        return 0;
+    }
+
+    QList<Solid::Device> list = Solid::Device::listFromQuery(QString::fromLatin1("NetworkInterface.ifaceName == '%1'").arg(iface->interfaceName()));
+    QList<Solid::Device>::iterator it = list.begin();
+
+    if (it != list.end()) {
+        Solid::Device* dev = new Solid::Device(*it);
+	return dev;
+    }
+
+    return 0;
+}
+
 QString UiUtils::interfaceNameLabel(const QString & uni)
 {
     KNetworkManagerServicePrefs::instance(Knm::ConnectionPersistence::NETWORKMANAGEMENT_RCFILE);
     QString label;
     Solid::Control::NetworkInterface * iface = Solid::Control::NetworkManager::findNetworkInterface(uni);
-    if (KNetworkManagerServicePrefs::self()->interfaceNamingStyle() == KNetworkManagerServicePrefs::SystemNames) {
-        if (iface) {
-            label = iface->interfaceName();
-        }
-    } else {
-        Solid::Device* dev = new Solid::Device(uni);
-        if (KNetworkManagerServicePrefs::self()->interfaceNamingStyle() == KNetworkManagerServicePrefs::DescriptiveNames) {
-            label = dev->description();
-            //kDebug() << "Vendor, Product:" << dev->vendor() << dev->product();
-        } else {
-            label = QString(i18nc("Format for <Vendor> <Product>", "%1 - %2", dev->vendor(), dev->product()));
-        }
+    Solid::Device* dev = findSolidDevice(uni);
+
+    switch (KNetworkManagerServicePrefs::self()->interfaceNamingStyle()) {
+        case KNetworkManagerServicePrefs::SystemNames:
+            if (iface) {
+                label = iface->interfaceName();
+            }
+	    break;
+        case KNetworkManagerServicePrefs::DescriptiveNames:
+	    if (dev) {
+                label = dev->description();
+                //kDebug() << "Vendor, Product:" << dev->vendor() << dev->product();
+	        delete dev;
+	    }
+	    break;
+        case KNetworkManagerServicePrefs::VendorProductNames:
+	    if (dev) {
+    	        if (!dev->vendor().isEmpty() && !dev->product().isEmpty()) {
+                    label = QString(i18nc("Format for <Vendor> <Product>", "%1 - %2", dev->vendor(), dev->product()));
+    	        }
+	        delete dev;
+	    }
+	    break;
+        case KNetworkManagerServicePrefs::TypeNames:
+	    break;
     }
+
     if (label.isEmpty()) {
         // if we don't get sensible information from Solid,
         // let's try to use the type of the interface

@@ -27,6 +27,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <solid/control/networkinterface.h>
 #include <Plasma/Label>
+#include <Plasma/PushButton>
+#include <Plasma/SignalPlotter>
 
 class RemoteActivatable;
 class RemoteInterfaceConnection;
@@ -39,35 +41,53 @@ Q_OBJECT
         InterfaceDetailsWidget(QGraphicsItem* parent = 0);
         virtual ~InterfaceDetailsWidget();
         void setInterface(Solid::Control::NetworkInterface* iface);
-        void setMAC(Solid::Control::NetworkInterface* iface);
-        void setIP(QString ip);
+        void setUpdateEnabled(bool enable);
+        void resetUi();
+        QString getLastIfaceUni();
+
+    public Q_SLOTS:
+        void dataUpdated(const QString &sourceName, const Plasma::DataEngine::Data &data);
+        //void dataUpdated(const QString&, const Plasma::DataEngine::Data&);
+        void sourceAdded(const QString&);
+        void handleConnectionStateChange(int new_state, int old_state, int reason);
 
     Q_SIGNALS:
         void back();
 
     private:
+        Plasma::DataEngine* engine();
+        void updateWidgets();
+        QString bitRate();
+        QString currentIpAddress();
+        QString getMAC();
+        void updateInfo(bool reset);
+        QSizeF sizeHint (Qt::SizeHint which, const QSizeF & constraint = QSizeF()) const;
+
         Solid::Control::NetworkInterface* m_iface;
+        QString m_ifaceUni;
 
         QGraphicsGridLayout *m_gridLayout;
-        Plasma::Label* m_interfaceNameLabel;
-        Plasma::Label* m_interfaceLabel;
-        Plasma::Label* m_interface;
-        Plasma::Label* m_macLabel;
-        Plasma::Label* m_mac;
-        Plasma::Label* m_ipLabel;
-        Plasma::Label* m_ip;
-        Plasma::Label* m_driverLabel;
-        Plasma::Label* m_driver;
-        Plasma::Label* m_typeLabel;
-        Plasma::Label* m_type;
-        //Plasma::Label* m_speedLabel;
-        //Plasma::Label* m_speed;
-        Plasma::Label* m_stateLabel;
-        Plasma::Label* m_state;
-        Plasma::Label* m_bitLabel;
-        Plasma::Label* m_bit;
-        //Plasma::Label* m_otherLabel;
-        //Plasma::Label* m_other;
+        Plasma::Label* m_info;
+        Plasma::Label* m_trafficNameLabel;
+        Plasma::SignalPlotter *m_trafficPlotter;
+        QColor m_rxColor;
+        QColor m_txColor;
+        Plasma::Label* m_traffic;
+
+        Plasma::PushButton* m_backButton;
+
+        QString m_tx;
+        QString m_txSource;
+        QString m_txTotalSource;
+        QString m_txUnit;
+        QString m_rx;
+        QString m_rxSource;
+        QString m_rxTotalSource;
+        QString m_rxUnit;
+        qlonglong m_rxTotal;
+        qlonglong m_txTotal;
+
+        bool m_updateEnabled;
 };
 
 #endif // INTERFACEDETAILSWIDGET_H
