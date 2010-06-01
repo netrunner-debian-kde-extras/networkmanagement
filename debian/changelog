@@ -4,6 +4,9 @@ plasma-widget-networkmanagement (0.1~svn1133205-1) UNRELEASED; urgency=low
     - Last Changed Author: scripty
     - Last Changed Rev: 1133205
     - Last Changed Date: 2010-06-01 10:39:08 +0200
+  * debian/control
+    - Drop Build-Depends on libknotificationitem-1-dev which was merged and
+      renamed in kde4libs 4.4.
 
  -- Michael Biebl <biebl@debian.org>  Wed, 02 Jun 2010 00:04:11 +0200
 
