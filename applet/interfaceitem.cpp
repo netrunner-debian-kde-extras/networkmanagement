@@ -63,6 +63,9 @@ InterfaceItem::InterfaceItem(Solid::Control::NetworkInterface * iface, RemoteAct
     m_enabled(false),
     m_hasDefaultRoute(false)
 {
+    setDrawBackground(true);
+    setTextBackgroundColor(QColor(Qt::transparent));
+
     m_pixmapSize = QSize(48, 48);
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 
@@ -132,10 +135,12 @@ InterfaceItem::InterfaceItem(Solid::Control::NetworkInterface * iface, RemoteAct
     }
     setNameDisplayMode(mode);
 
-    if (m_iface && m_iface->type() == Solid::Control::NetworkInterface::Ieee8023) {
-        Solid::Control::WiredNetworkInterface* wirediface =
-                        static_cast<Solid::Control::WiredNetworkInterface*>(m_iface);
-        connect(wirediface, SIGNAL(carrierChanged(bool)), this, SLOT(setActive(bool)));
+    if (m_iface) {
+        if (m_iface->type() == Solid::Control::NetworkInterface::Ieee8023) {
+            Solid::Control::WiredNetworkInterface* wirediface =
+                            static_cast<Solid::Control::WiredNetworkInterface*>(m_iface);
+            connect(wirediface, SIGNAL(carrierChanged(bool)), this, SLOT(setActive(bool)));
+	}
         connectionStateChanged(m_iface->connectionState());
     }
 
@@ -234,6 +239,7 @@ QString InterfaceItem::connectionName()
 void InterfaceItem::setConnectionInfo()
 {
     if (m_iface) {
+        currentConnectionChanged();
         connectionStateChanged(m_iface->connectionState());
     }
 }
@@ -255,6 +261,7 @@ QString InterfaceItem::currentIpAddress()
 
 RemoteInterfaceConnection* InterfaceItem::currentConnection()
 {
+    kDebug() << m_currentConnection;
     if (m_currentConnection && m_currentConnection->activationState() != Knm::InterfaceConnection::Unknown) {
         return m_currentConnection;
     } else {
@@ -359,7 +366,7 @@ void InterfaceItem::connectionStateChanged(Solid::Control::NetworkInterface::Con
         case Solid::Control::NetworkInterface::NeedAuth:
         case Solid::Control::NetworkInterface::IPConfig:
             setEnabled(true);
-            m_disconnect = true;
+            m_disconnect = false;
             break;
         case Solid::Control::NetworkInterface::Activated:
             m_disconnect = true;
@@ -395,14 +402,14 @@ QPixmap InterfaceItem::interfacePixmap(const QString &icon) {
     // Which pixmap should we display with the notification?
     QString overlayIcon = icon;
     if (overlayIcon.isEmpty()) {
-        overlayIcon = "face-smile";
+        overlayIcon = "network-defaultroute";
     }
     //kDebug() << "painting icon" << overlayIcon;
     QPixmap pmap = KIcon(UiUtils::iconName(m_iface)).pixmap(m_pixmapSize);
     //QPixmap pmap = KIcon(icon).pixmap(QSize(KIconLoader::SizeMedium, KIconLoader::SizeMedium));
     if (m_hasDefaultRoute && !pmap.isNull()) {
         QPainter p(&pmap);
-        p.drawPixmap(QRect(2,2,18,18), KIcon(overlayIcon).pixmap(QSize(16,16)));
+        p.drawPixmap(QRect(2,2,18,18), KIcon(overlayIcon).pixmap(QSize(18,18)));
     }
     return pmap;
 }

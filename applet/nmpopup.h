@@ -67,16 +67,17 @@ public Q_SLOTS:
     void networkingEnabledToggled(bool checked);
     void manageConnections();
     void showMore();
+    void showMore(bool);
     void handleConnectionStateChange(int new_state, int old_state, int reason);
     void toggleInterfaceTab();
 
 Q_SIGNALS:
-    void connectionListUpdated();
     void configNeedsSaving();
 
 private:
     void addInterfaceInternal(Solid::Control::NetworkInterface *);
     void addVpnInterface();
+    QSizeF sizeHint ( Qt::SizeHint which, const QSizeF & constraint = QSizeF() ) const;
 
     RemoteActivatableList* m_activatables;
 

@@ -45,6 +45,9 @@ set(monolithic_SRCS
    connectioninfoipv4tab.cpp
    connectioninfowiredtab.cpp
    connectioninfowirelesstab.cpp
+
+   # static global definitions of event string ids
+   ../libs/service/events.cpp
    )
 
 kde4_add_ui_files(monolithic_SRCS
@@ -75,4 +78,7 @@ install(TARGETS knetworkmanager ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES knetworkmanager.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 
-install(FILES kde4-knetworkmanager-autostart.desktop DESTINATION ${AUTOSTART_INSTALL_DIR})
+if (INSTALL_KNM_AUTOSTART)
+    install(FILES kde4-knetworkmanager-autostart.desktop DESTINATION ${AUTOSTART_INSTALL_DIR})
+endif (INSTALL_KNM_AUTOSTART)
+

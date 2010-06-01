@@ -52,6 +52,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "vpninterfaceitem.h"
 #include "activatablelistwidget.h"
 #include "interfacedetailswidget.h"
+#include "uiutils.h"
 
 NMPopup::NMPopup(RemoteActivatableList * activatableList, QGraphicsWidget* parent)
 : QGraphicsWidget(parent),
@@ -163,13 +164,15 @@ void NMPopup::init()
     m_connectionList->setPreferredHeight(240);
 
     m_connectionList->setMinimumWidth(320);
+    m_connectionList->setShowAllTypes(false);
 
     m_rightLayout->addItem(m_connectionList);
 
     m_connectionsButton = new Plasma::PushButton(m_rightWidget);
     m_connectionsButton->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    m_connectionsButton->setIcon(KIcon("networkmanager"));
+    m_connectionsButton->setIcon(KIcon("configure"));
     m_connectionsButton->setText(i18nc("manage connections button in the applet's popup", "Manage Connections..."));
+    m_connectionsButton->setMinimumHeight(28);
     m_connectionsButton->setMaximumHeight(28);
     connect(m_connectionsButton, SIGNAL(clicked()), this, SLOT(manageConnections()));
 
@@ -177,7 +180,8 @@ void NMPopup::init()
     m_showMoreButton->setCheckable(true);
     m_showMoreButton->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     m_showMoreButton->setIcon(KIcon("list-add"));
-    m_showMoreButton->setText(i18nc("manage connections button in the applet's popup", "Show More..."));
+    m_showMoreButton->setText(i18nc("show more button in the applet's popup", "Show More..."));
+    m_showMoreButton->setMinimumHeight(28);
     m_showMoreButton->setMaximumHeight(28);
     connect(m_showMoreButton, SIGNAL(clicked()), this, SLOT(showMore()));
 
@@ -222,6 +226,15 @@ void NMPopup::interfaceAdded(const QString& uni)
 void NMPopup::interfaceRemoved(const QString& uni)
 {
     if (m_interfaces.contains(uni)) {
+        // To prevent crashes when the interface removed is the one in interfaceDetailsWidget.
+        // the m_iface pointer in interfaceDetailsWidget become invalid in this case.
+        if (uni == m_interfaceDetailsWidget->getLastIfaceUni()) {
+            m_interfaceDetailsWidget->setInterface(0);
+    
+            // Since it is invalid go back to "main" window. 
+            m_leftWidget->setCurrentIndex(0);
+        }
+
         InterfaceItem * item = m_interfaces.take(uni);
         m_interfaceLayout->removeItem(item);
         delete item;
@@ -339,12 +352,31 @@ void NMPopup::wirelessEnabledToggled(bool checked)
 {
     kDebug() << "Applet wireless enable switch toggled" << checked;
     Solid::Control::NetworkManager::setWirelessEnabled(checked);
+    showMore(false);
+    if (checked && Solid::Control::NetworkManager::isNetworkingEnabled()) {
+        showMore(false);
+        m_showMoreButton->show();
+    } else {
+        m_showMoreButton->hide();
+    }
 }
 
 void NMPopup::networkingEnabledToggled(bool checked)
 {
-    kDebug() << "Applet networking enable switch toggled" << checked;
+    // Switch networking on / off
     Solid::Control::NetworkManager::setNetworkingEnabled(checked);
+    // Update wireless checkbox
+    m_rfCheckBox->setEnabled(checked);
+    m_rfCheckBox->setChecked(Solid::Control::NetworkManager::isWirelessHardwareEnabled() &&  Solid::Control::NetworkManager::isWirelessEnabled());
+    m_showMoreButton->setChecked(false);
+    if (checked && Solid::Control::NetworkManager::isWirelessHardwareEnabled() &&
+                   Solid::Control::NetworkManager::isWirelessEnabled()) {
+        showMore(false);
+        m_showMoreButton->show();
+    } else {
+        m_showMoreButton->hide();
+    }
+
 }
 
 void NMPopup::managerWirelessEnabledChanged(bool enabled)
@@ -364,28 +396,21 @@ void NMPopup::managerWirelessHardwareEnabledChanged(bool enabled)
 
 void NMPopup::showMore()
 {
-    if (m_showMoreButton->isChecked()) {
-        /*
-        Knm::Activatable::WirelessNetwork,
-        UnconfiguredInterface,
-        VpnInterfaceConnection,
-        HiddenWirelessInterfaceConnection
-        */
-        //kDebug() << "show more!";
+    showMore(m_showMoreButton->isChecked());
+}
+
+void NMPopup::showMore(bool more)
+{
+    if (more) {
         m_showMoreButton->setText(i18nc("pressed show more button", "Show Less..."));
         m_showMoreButton->setIcon(KIcon("list-remove"));
+        m_showMoreButton->setChecked(true);
         m_connectionList->setShowAllTypes(true);
-        //m_connectionList->addType(Knm::Activatable::WirelessNetwork);
-        //m_connectionList->addType(Knm::Activatable::HiddenWirelessInterfaceConnection);
-        //m_connectionList->addType(Knm::Activatable::VpnInterfaceConnection);
     } else {
-        //kDebug() << "show less";
         m_showMoreButton->setText(i18nc("unpressed show more button", "Show More..."));
+        m_showMoreButton->setChecked(false);
         m_connectionList->setShowAllTypes(false);
         m_showMoreButton->setIcon(KIcon("list-add"));
-        //m_connectionList->removeType(Knm::Activatable::WirelessNetwork);
-        //m_connectionList->removeType(Knm::Activatable::HiddenWirelessInterfaceConnection);
-        //m_connectionList->removeType(Knm::Activatable::VpnInterfaceConnection);
     }
 }
 
@@ -402,23 +427,39 @@ void NMPopup::toggleInterfaceTab()
     InterfaceItem* item = qobject_cast<InterfaceItem*>(sender());
     if (item) {
     m_interfaceDetailsWidget->setInterface(item->interface());
-    m_interfaceDetailsWidget->setIP(item->currentIpAddress());
-    m_interfaceDetailsWidget->setMAC(item->interface());
     }
 
     if (m_leftWidget->currentIndex() == 0) {
-        m_showMoreButton->setChecked(true);
+        showMore(true);
         m_leftWidget->setCurrentIndex(1);
-        m_leftLabel->setText(i18nc("title on the LHS of the plasmoid", "<h3>Interface Details</h3>"));
+        // Enable / disable updating of the details widget
+        m_interfaceDetailsWidget->setUpdateEnabled(true);
 
+	if (item->interface()) {
+	  m_leftLabel->setText(QString("<h3>%1</h3>").arg(
+			      UiUtils::interfaceNameLabel(item->interface()->uni())));
+	}
     } else {
         m_leftLabel->setText(i18nc("title on the LHS of the plasmoid", "<h3>Interfaces</h3>"));
-        m_showMoreButton->setChecked(false);
+        showMore(false);
+        m_interfaceDetailsWidget->setUpdateEnabled(false);
         m_leftWidget->setCurrentIndex(0);
     }
-    showMore();
+    //showMore();
 }
 
+QSizeF NMPopup::sizeHint (Qt::SizeHint which, const QSizeF & constraint) const
+{
+    QSizeF sh = QGraphicsWidget::sizeHint(which, constraint);
+    qreal temp1 = m_interfaceDetailsWidget->size().rwidth();
 
+    if (temp1 < 300) {
+        temp1 = 300;
+    }
+
+    m_leftWidget->setPreferredWidth(temp1);
+
+    return sh;
+}
 // vim: sw=4 sts=4 et tw=100
 
