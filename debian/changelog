@@ -7,6 +7,9 @@ plasma-widget-networkmanagement (0.1~svn1133205-1) UNRELEASED; urgency=low
   * debian/control
     - Drop Build-Depends on libknotificationitem-1-dev which was merged and
       renamed in kde4libs 4.4.
+  * debian/network-manager-kde.install
+    - No longer install the autostart file for knetworkmanager. Upstream
+      recommends to use the plasma-widgets-networkmanagment frontend.
 
  -- Michael Biebl <biebl@debian.org>  Wed, 02 Jun 2010 00:04:11 +0200
 
