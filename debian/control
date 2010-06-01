@@ -42,8 +42,7 @@ Architecture: any
 Section: net
 Depends: ${shlibs:Depends}, ${misc:Depends}, network-manager (>= 0.7.0)
 Replaces: plasma-widget-networkmanagement (<< 0.1~svn1005432)
-Recommends: kwalletmanager, network-manager-vpnc, network-manager-openvpn, network-manager-pptp,
- network-manager-kde | plasma-widget-networkmanager
+Recommends: kwalletmanager, network-manager-vpnc, network-manager-openvpn, network-manager-pptp
 Description: KDE NetworkManagement infrastructure runtime files
  This package contains runtime libraries and binaries needed by both
  network-manager-kde (knetworkmanager) and plasma-widget-networkmanagement
