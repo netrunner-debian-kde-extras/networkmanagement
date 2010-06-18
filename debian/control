@@ -14,6 +14,7 @@ Package: network-manager-kde
 Architecture: any
 Section: net
 Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: plasma-widget-networkmanagement
 Provides: knetworkmanager
 Description: KDE system tray applet for controlling NetworkManager
  System tray applet for controlling network connections managed by

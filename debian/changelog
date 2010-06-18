@@ -10,8 +10,7 @@ plasma-widget-networkmanagement (0.1~svn1133205-1) UNRELEASED; urgency=low
   * debian/rules
     - Set -DINSTALL_KNM_AUTOSTART=ON to enable installation of knetworkmanager
       autostart file.
-  * Re-add plasma-widget-networkmanagement package and remove the Conflicts
-    from network-manager-kde as both packages should now be co-installable.
+  * Re-add plasma-widget-networkmanagement package.
 
  -- Michael Biebl <biebl@debian.org>  Wed, 02 Jun 2010 00:04:11 +0200
 
