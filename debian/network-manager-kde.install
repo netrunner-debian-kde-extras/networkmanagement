@@ -1,3 +1,4 @@
 usr/bin/knetworkmanager
 usr/share/applications/kde4/knetworkmanager.desktop
+usr/share/autostart/kde4-knetworkmanager-autostart.desktop
 usr/share/icons/hicolor/32x32/apps/knetworkmanager.png
