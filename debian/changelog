@@ -1,4 +1,4 @@
-plasma-widget-networkmanagement (0.1~svn1133205-1) UNRELEASED; urgency=low
+plasma-widget-networkmanagement (0.1~svn1133205-1) unstable; urgency=low
 
   * New upstream development snapshot:
     - Last Changed Author: scripty
@@ -16,7 +16,7 @@ plasma-widget-networkmanagement (0.1~svn1133205-1) UNRELEASED; urgency=low
     knetworkmanager and actually breaks knetworkmanager due to being
     auto-loaded and claiming the NetworkManagerUserSettings bus name.
 
- -- Michael Biebl <biebl@debian.org>  Wed, 02 Jun 2010 00:04:11 +0200
+ -- Michael Biebl <biebl@debian.org>  Fri, 18 Jun 2010 12:39:10 +0200
 
 plasma-widget-networkmanagement (0.1~svn1125524-1) unstable; urgency=low
 
