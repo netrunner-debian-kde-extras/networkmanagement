@@ -11,6 +11,10 @@ plasma-widget-networkmanagement (0.1~svn1133205-1) UNRELEASED; urgency=low
     - Set -DINSTALL_KNM_AUTOSTART=ON to enable installation of knetworkmanager
       autostart file.
   * Re-add plasma-widget-networkmanagement package.
+  * Move the networkmanagement kded module from knm-runtime to
+    plasma-widget-networkmanagement. The kded service is not used by
+    knetworkmanager and actually breaks knetworkmanager due to being
+    auto-loaded and claiming the NetworkManagerUserSettings bus name.
 
  -- Michael Biebl <biebl@debian.org>  Wed, 02 Jun 2010 00:04:11 +0200
 
