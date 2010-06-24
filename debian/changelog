@@ -1,11 +1,11 @@
-plasma-widget-networkmanagement (0.1~svn1141976-1) UNRELEASED; urgency=low
+plasma-widget-networkmanagement (0.1~svn1141976-1) unstable; urgency=low
 
   * New upstream development snapshot:
     - Last Changed Author: pino
     - Last Changed Rev: 1141976
     - Last Changed Date: 2010-06-24 00:51:12 +0200
 
- -- Michael Biebl <biebl@debian.org>  Thu, 24 Jun 2010 03:35:26 +0200
+ -- Michael Biebl <biebl@debian.org>  Thu, 24 Jun 2010 03:52:15 +0200
 
 plasma-widget-networkmanagement (0.1~svn1133205-1) unstable; urgency=low
 
