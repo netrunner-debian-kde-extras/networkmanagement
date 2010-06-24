@@ -325,9 +325,9 @@ void InterfaceDetailsWidget::updateWidgets()
     QString temp;
 
     temp = QString("<qt><table align=\"center\" border=\"0\"><tr><td align=\"right\" width=\"50%\">");
-    temp += QString(format).arg(i18nc("", "Received")).arg(KGlobal::locale()->formatByteSize(m_rxTotal*1000, 2));
+    temp += QString(format).arg(i18n("Received")).arg(KGlobal::locale()->formatByteSize(m_rxTotal*1000, 2));
     temp += QString("</td><td width=\"50%\">&nbsp;");
-    temp += QString(format).arg(i18nc("", "Transmitted")).arg(KGlobal::locale()->formatByteSize(m_txTotal*1000, 2));
+    temp += QString(format).arg(i18n("Transmitted")).arg(KGlobal::locale()->formatByteSize(m_txTotal*1000, 2));
     temp += QString("</td></tr></table></qt>");
     m_traffic->setText(temp);
 }
@@ -473,7 +473,7 @@ QSizeF InterfaceDetailsWidget::sizeHint (Qt::SizeHint which, const QSizeF & cons
     QSize infoMinSh = m_info->nativeWidget()->minimumSizeHint();
 
     qreal temp = (infoSh.width() - infoMinSh.width()) / 2 + infoMinSh.width();
-    sh.setWidth(qMax(temp, 330.0));
+    sh.setWidth(qMax(temp, qreal(330.0)));
 
     return sh;
 }
