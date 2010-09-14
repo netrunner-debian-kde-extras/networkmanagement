@@ -41,7 +41,8 @@ public:
         WirelessNetwork,
         UnconfiguredInterface,
         VpnInterfaceConnection,
-        HiddenWirelessInterfaceConnection
+        HiddenWirelessInterfaceConnection,
+        GsmInterfaceConnection
     };
 
     virtual ~Activatable();
@@ -63,5 +64,7 @@ private:
 };
 
 } // namespace
+
+Q_DECLARE_METATYPE(Knm::Activatable*)
 
 #endif

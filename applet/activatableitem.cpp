@@ -24,6 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "remoteactivatable.h"
 
 #include <QPainter>
+#include <QGraphicsSceneHoverEvent>
 
 #include <KIcon>
 
@@ -32,10 +33,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ActivatableItem::ActivatableItem(RemoteActivatable *remote, QGraphicsItem * parent) : Plasma::IconWidget(parent),
     m_activatable(remote),
-    m_hasDefaultRoute(false)
+    m_hasDefaultRoute(false),
+    m_deleting(false)
 {
     setDrawBackground(true);
     setTextBackgroundColor(QColor(Qt::transparent));
+
     RemoteInterfaceConnection *remoteconnection = interfaceConnection();
     if (remoteconnection) {
         connect(remoteconnection, SIGNAL(hasDefaultRouteChanged(bool)),
@@ -54,14 +57,22 @@ ActivatableItem::ActivatableItem(RemoteActivatable *remote, QGraphicsItem * pare
 
 ActivatableItem::~ActivatableItem()
 {
-    // Fade out when this widget appears
-    Plasma::Animation* fadeAnimation = Plasma::Animator::create(Plasma::Animator::FadeAnimation);
-    fadeAnimation->setTargetWidget(this);
-    fadeAnimation->setProperty("startOpacity", 1.0);
-    fadeAnimation->setProperty("targetOpacity", 0.0);
-    fadeAnimation->setProperty("Duration", 2000);
-    fadeAnimation->start();
+}
 
+void ActivatableItem::disappear()
+{
+    if (m_deleting) {
+        return;
+    }
+    m_deleting = true;
+    // Fade out when this widget appears
+    Plasma::Animation* disappearAnimation = Plasma::Animator::create(Plasma::Animator::FadeAnimation);
+    disappearAnimation->setTargetWidget(this);
+    disappearAnimation->setProperty("startOpacity", 1.0);
+    disappearAnimation->setProperty("targetOpacity", 0.0);
+    //disappearAnimation->setProperty("duration", 2000);
+    disappearAnimation->start();
+    connect(disappearAnimation, SIGNAL(finished()), this, SIGNAL(disappearAnimationFinished()));
 }
 
 void ActivatableItem::emitClicked()
@@ -72,7 +83,7 @@ void ActivatableItem::emitClicked()
     emit clicked(this);
 }
 
-RemoteInterfaceConnection * ActivatableItem::interfaceConnection() const
+RemoteInterfaceConnection* ActivatableItem::interfaceConnection() const
 {
     return qobject_cast<RemoteInterfaceConnection*>(m_activatable);
 }
@@ -117,4 +128,13 @@ void ActivatableItem::activationStateChanged(Knm::InterfaceConnection::Activatio
     setFont(f);
 }
 
+void ActivatableItem::hoverEnter()
+{
+    hoverEnterEvent(new QGraphicsSceneHoverEvent());
+}
+
+void ActivatableItem::hoverLeave()
+{
+    hoverLeaveEvent(new QGraphicsSceneHoverEvent());
+}
 // vim: sw=4 sts=4 et tw=100

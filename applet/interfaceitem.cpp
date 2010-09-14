@@ -22,7 +22,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "interfaceitem.h"
 #include "uiutils.h"
 #include "remoteinterfaceconnection.h"
-#include "remoteactivatable.h"
 #include "remoteactivatablelist.h"
 #include "remoteinterfaceconnection.h"
 
@@ -61,10 +60,12 @@ InterfaceItem::InterfaceItem(Solid::Control::NetworkInterface * iface, RemoteAct
     m_connectionNameLabel(0),
     m_nameMode(mode),
     m_enabled(false),
-    m_hasDefaultRoute(false)
+    m_hasDefaultRoute(false),
+    m_starting(true)
 {
     setDrawBackground(true);
     setTextBackgroundColor(QColor(Qt::transparent));
+    QString tt = i18nc("tooltip on the LHS widgets", "Click here for interface details");
 
     m_pixmapSize = QSize(48, 48);
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
@@ -82,6 +83,7 @@ InterfaceItem::InterfaceItem(Solid::Control::NetworkInterface * iface, RemoteAct
     m_layout->setColumnFixedWidth(2, 16); // FIXME: spacing?
 
     m_icon = new Plasma::Label(this);
+    m_icon->setToolTip(tt);
     m_icon->setMinimumHeight(m_pixmapSize.height());
     m_icon->setMaximumHeight(m_pixmapSize.height());
 
@@ -96,9 +98,10 @@ InterfaceItem::InterfaceItem(Solid::Control::NetworkInterface * iface, RemoteAct
 
     //     interface layout
     m_ifaceNameLabel = new Plasma::Label(this);
+    m_ifaceNameLabel->setToolTip(tt);
     m_ifaceNameLabel->setText(m_interfaceName);
     m_ifaceNameLabel->nativeWidget()->setWordWrap(false);
-    m_ifaceNameLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    m_ifaceNameLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     m_layout->addItem(m_ifaceNameLabel, 0, 1, 1, 1);
 
     m_disconnectButton = new Plasma::PushButton(this);
@@ -107,6 +110,7 @@ InterfaceItem::InterfaceItem(Solid::Control::NetworkInterface * iface, RemoteAct
     m_disconnectButton->setIcon(KIcon("dialog-close"));
     m_disconnectButton->setToolTip(i18n("Disconnect"));
     m_disconnectButton->hide();
+    m_disconnect = false;
     // forward disconnect signal
     connect(m_disconnectButton, SIGNAL(clicked()), this, SLOT(emitDisconnectInterfaceRequest()));
 
@@ -114,6 +118,8 @@ InterfaceItem::InterfaceItem(Solid::Control::NetworkInterface * iface, RemoteAct
 
     //     active connection name
     m_connectionNameLabel = new Plasma::Label(this);
+    m_connectionNameLabel->setToolTip(tt);
+    m_connectionNameLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     m_connectionNameLabel->nativeWidget()->setFont(KGlobalSettings::smallestReadableFont());
     m_connectionNameLabel->nativeWidget()->setWordWrap(false);
     m_layout->addItem(m_connectionNameLabel, 1, 1, 1, 1);
@@ -140,7 +146,7 @@ InterfaceItem::InterfaceItem(Solid::Control::NetworkInterface * iface, RemoteAct
             Solid::Control::WiredNetworkInterface* wirediface =
                             static_cast<Solid::Control::WiredNetworkInterface*>(m_iface);
             connect(wirediface, SIGNAL(carrierChanged(bool)), this, SLOT(setActive(bool)));
-	}
+        }
         connectionStateChanged(m_iface->connectionState());
     }
 
@@ -150,25 +156,42 @@ InterfaceItem::InterfaceItem(Solid::Control::NetworkInterface * iface, RemoteAct
 
     connect(this, SIGNAL(clicked()), this, SLOT(slotClicked()));
 
+    qreal targetOpacity = m_enabled ? 1.0 : 0.7;
     // Fade in when this widget appears
     Plasma::Animation* fadeAnimation = Plasma::Animator::create(Plasma::Animator::FadeAnimation);
     fadeAnimation->setTargetWidget(this);
     fadeAnimation->setProperty("startOpacity", 0.0);
-    fadeAnimation->setProperty("targetOpacity", 1.0);
-    fadeAnimation->setProperty("Duration", 2000);
-
+    fadeAnimation->setProperty("targetOpacity", targetOpacity);
     fadeAnimation->start();
+    m_starting = false;
 }
 
 InterfaceItem::~InterfaceItem()
+{
+}
+
+void InterfaceItem::disappear()
 {
     Plasma::Animation* fadeAnimation = Plasma::Animator::create(Plasma::Animator::FadeAnimation);
     fadeAnimation->setTargetWidget(this);
     fadeAnimation->setProperty("startOpacity", 1.0);
     fadeAnimation->setProperty("targetOpacity", 0.0);
-    fadeAnimation->setProperty("Duration", 2000);
+    fadeAnimation->start();
+    connect(fadeAnimation, SIGNAL(finished()), this, SIGNAL(disappearAnimationFinished()));
+}
 
-    //fadeAnimation->setTargetOpacity(1.0);
+void InterfaceItem::showItem(QGraphicsWidget* widget, bool show)
+{
+    Plasma::Animation* fadeAnimation = Plasma::Animator::create(Plasma::Animator::FadeAnimation);
+    fadeAnimation->setTargetWidget(widget);
+    widget->show();
+    if (show) {
+        fadeAnimation->setProperty("startOpacity", 0.0);
+        fadeAnimation->setProperty("targetOpacity", 1.0);
+    } else {
+        fadeAnimation->setProperty("startOpacity", 1.0);
+        fadeAnimation->setProperty("targetOpacity", 0.0);
+    }
     fadeAnimation->start();
 }
 
@@ -184,7 +207,6 @@ Solid::Control::NetworkInterface* InterfaceItem::interface()
 
 void InterfaceItem::setActive(bool active)
 {
-    kDebug() << "+ + + + + + Active?" << active;
     if (m_iface) {
         connectionStateChanged(m_iface->connectionState());
     }
@@ -193,14 +215,20 @@ void InterfaceItem::setActive(bool active)
 void InterfaceItem::setEnabled(bool enable)
 {
     m_enabled = enable;
-    m_icon->setEnabled(enable);
-    //m_connectionInfoLabel->setEnabled(enable);
-    m_connectionNameLabel->setEnabled(enable);
-    m_ifaceNameLabel->setEnabled(enable);
-    m_disconnectButton->setEnabled(enable);
-    m_connectionInfoIcon->setEnabled(enable);
-    if (!enable) {
-        m_connectionInfoIcon->hide();
+    Plasma::Animation* fadeAnimation = Plasma::Animator::create(Plasma::Animator::FadeAnimation);
+    fadeAnimation->setTargetWidget(this);
+    if (enable) {
+        showItem(m_connectionInfoIcon, false);
+        fadeAnimation->setProperty("startOpacity", 0.7);
+        fadeAnimation->setProperty("targetOpacity", 1.0);
+    } else {
+        fadeAnimation->setProperty("startOpacity", 1.0);
+        fadeAnimation->setProperty("targetOpacity", 0.7);
+    }
+    if (!m_starting) {
+        // we only animate when setEnabled is not called during initialization,
+        // as that would conflict with the appear animation
+        fadeAnimation->start();
     }
 }
 
@@ -261,7 +289,7 @@ QString InterfaceItem::currentIpAddress()
 
 RemoteInterfaceConnection* InterfaceItem::currentConnection()
 {
-    kDebug() << m_currentConnection;
+    //kDebug() << m_currentConnection;
     if (m_currentConnection && m_currentConnection->activationState() != Knm::InterfaceConnection::Unknown) {
         return m_currentConnection;
     } else {
@@ -346,6 +374,8 @@ void InterfaceItem::connectionStateChanged(Solid::Control::NetworkInterface::Con
     // check if any of them affect our interface
     // setActiveConnection on ourself
     // button to connect, disconnect
+    bool old_disco = m_disconnect;
+
     m_disconnect = false;
     // Name and info labels
     QString lname = UiUtils::connectionStateToString(state, connectionName());
@@ -380,20 +410,19 @@ void InterfaceItem::connectionStateChanged(Solid::Control::NetworkInterface::Con
     }
 
     // Update connect button
-    if (!m_disconnect) {
-        //m_disconnectButton->setIcon("dialog-ok");
-        //m_disconnectButton->setToolTip(i18n("Connect"));
-        m_disconnectButton->hide();
-    } else {
-        m_disconnectButton->setIcon(KIcon("dialog-close"));
-        m_disconnectButton->setToolTip(i18nc("tooltip on disconnect icon", "Disconnect"));
-        m_disconnectButton->show();
+    if (old_disco != m_disconnect) {
+        if (!m_disconnect) {
+            showItem(m_disconnectButton, false);
+        } else {
+            m_disconnectButton->setIcon(KIcon("dialog-close"));
+            m_disconnectButton->setToolTip(i18nc("tooltip on disconnect icon", "Disconnect"));
+            showItem(m_disconnectButton, true);
+        }
     }
-
     m_connectionNameLabel->setText(lname);
     m_icon->nativeWidget()->setPixmap(interfacePixmap());
 
-    kDebug() << "State changed" << lname;
+    //kDebug() << "State changed" << lname;
     currentConnectionChanged();
     emit stateChanged();
 }
@@ -417,9 +446,25 @@ QPixmap InterfaceItem::interfacePixmap(const QString &icon) {
 void InterfaceItem::emitDisconnectInterfaceRequest()
 {
     if (m_iface) {
-        kDebug() << m_iface->uni();
+        //kDebug() << m_iface->uni();
         emit disconnectInterfaceRequested(m_iface->uni());
     }
+}
+
+void InterfaceItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
+{
+    if (m_iface) {
+        emit hoverEnter(m_iface->uni());
+    }
+    IconWidget::hoverEnterEvent(event);
+}
+
+void InterfaceItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
+{
+    if (m_iface) {
+        emit hoverLeave(m_iface->uni());
+    }
+    IconWidget::hoverLeaveEvent(event);
 }
 
 // vim: sw=4 sts=4 et tw=100

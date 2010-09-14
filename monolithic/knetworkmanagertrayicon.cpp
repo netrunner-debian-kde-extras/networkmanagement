@@ -58,8 +58,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "wirelessnetworkitem.h"
 
 
-Q_DECLARE_METATYPE(Knm::Activatable *)
-
 class KNetworkManagerTrayIconPrivate
 {
 public:
@@ -198,7 +196,7 @@ void KNetworkManagerTrayIcon::fillPopup()
         contextMenu()->removeAction(action);
         // throw away separators, easier than tracking them
         if (action->isSeparator()) {
-            delete action;
+            action->deleteLater();
         }
     }
 

@@ -1,5 +1,6 @@
 /*
 Copyright 2009 Will Stephenson <wstephenson@kde.org>
+Copyright 2010 Sebastian Kügler <sebas@kde.org>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -9,7 +10,7 @@ accepted by the membership of KDE e.V. (or its successor approved
 by the membership of KDE e.V.), which shall act as a proxy
 defined in Section 14 of version 3 of the license.
 
-This program is distributed in the hope that it will be useful,
+Thsis program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
@@ -18,38 +19,26 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef ACTIVATABLEITEM_P_H
-#define ACTIVATABLEITEM_P_H
+#include "othersettingswidget.h"
+#include "knmserviceprefs.h"
 
-#include "activatableitem.h"
-
-#include "activatable.h"
-
-class QGridLayout;
-class QHBoxLayout;
-class QLabel;
-
-class ActivatableItemPrivate
+class OtherSettingsWidgetPrivate
 {
-Q_DECLARE_PUBLIC(ActivatableItem)
-protected:
-    ActivatableItem *q_ptr;
 public:
-    ActivatableItemPrivate();
-    virtual ~ActivatableItemPrivate();
-    void init(QWidget * widgetParent);
-    Knm::Activatable * activatable;
-
-    QGridLayout * outerLayout;
-    QHBoxLayout * innerLayout;
-
-    QLabel * activeIcon;
-    QLabel * mainLabel;
-
-    IconSizedSpacer * spacer;
-
-    bool hovered;
-    bool first;
+    OtherSettingsWidgetPrivate()
+    { }
+    Ui_OtherSettings ui;
 };
 
-#endif
+OtherSettingsWidget::OtherSettingsWidget(QWidget * parent)
+: QWidget(parent), d_ptr(new OtherSettingsWidgetPrivate)
+{
+    Q_D(OtherSettingsWidget);
+    d->ui.setupUi(this);
+}
+
+OtherSettingsWidget::~OtherSettingsWidget()
+{
+}
+
+// vim: sw=4 sts=4 et tw=100

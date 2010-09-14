@@ -43,7 +43,7 @@ public:
     void addType(Knm::Activatable::ActivatableType type);
     void removeType(Knm::Activatable::ActivatableType type);
     bool accept(RemoteActivatable* activatable) const;
-    void setShowAllTypes(bool show);
+    void setShowAllTypes(bool show, bool refresh = false);
 
 public Q_SLOTS:
     void activatableAdded(RemoteActivatable*);
@@ -55,8 +55,10 @@ public Q_SLOTS:
     void clearInterfaces();
     void toggleVpn();
 
-Q_SIGNALS:
-    //void connectionListUpdated();
+private Q_SLOTS:
+    void deleteItem();
+    void hoverEnter(const QString& uni);
+    void hoverLeave(const QString& uni);
 
 private:
     void filter();
