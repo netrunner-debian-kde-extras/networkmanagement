@@ -4,6 +4,7 @@ plasma-widget-networkmanagement (0.1~svn1175124-1) UNRELEASED; urgency=low
     - Last Changed Author: scripty
     - Last Changed Rev: 1175124
     - Last Changed Date: 2010-09-14 11:30:18 +0200
+  * Bump Standards-Version to 3.9.1. No further changes.
 
  -- Michael Biebl <biebl@debian.org>  Tue, 14 Sep 2010 22:29:07 +0200
 
