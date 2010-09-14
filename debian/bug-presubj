@@ -1,7 +1,0 @@
-You are using experimental version of the Network Management Plasma widget
-which is still in pretty early development stage. Please do not report upstream
-bugs to Debian Bug Tracking System, but only suggestions or issues with Debian
-packaging of the widget.
-
-To report upstream bugs, please go to http://bugs.kde.org/ and search for
-NetworkManager plasma widget in the application list.
