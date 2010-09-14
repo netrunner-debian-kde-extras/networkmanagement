@@ -64,6 +64,10 @@ void ConnectionWidget::setConnection(Knm::Connection * connection)
 void ConnectionWidget::setDefaultName(const QString & defaultName)
 {
     Q_D(ConnectionWidget);
+
+    if (connection()->name() == i18n("New Wireless Connection"))
+        d->ui.id->setText(defaultName);
+
     d->defaultName = defaultName;
 }
 

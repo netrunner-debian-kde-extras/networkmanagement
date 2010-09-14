@@ -37,12 +37,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "remoteactivatablelist.h"
 #include "remoteinterfaceconnection.h"
 #include "remotewirelessnetwork.h"
+#include "remotegsminterfaceconnection.h"
 #include "activatableitem.h"
 
 // networkmanagement applet
 #include "interfaceconnectionitem.h"
 #include "wirelessnetworkitem.h"
 #include "hiddenwirelessnetworkitem.h"
+#include "gsminterfaceconnectionitem.h"
 
 ActivatableListWidget::ActivatableListWidget(RemoteActivatableList* activatables, QGraphicsWidget* parent) : Plasma::ScrollWidget(parent),
     m_activatables(activatables),
@@ -93,6 +95,7 @@ void ActivatableListWidget::removeType(Knm::Activatable::ActivatableType type)
 
 void ActivatableListWidget::addInterface(Solid::Control::NetworkInterface* iface)
 {
+    kDebug() << "interface added";
     if (iface) {
         m_interfaces << iface->uni();
         m_showAllTypes = true;
@@ -107,16 +110,21 @@ void ActivatableListWidget::clearInterfaces()
     filter();
 }
 
-void ActivatableListWidget::setShowAllTypes(bool show)
+void ActivatableListWidget::setShowAllTypes(bool show, bool refresh)
 {
     m_showAllTypes = show;
-    filter();
+    if (show) {
+        m_vpn = false;
+    }
+    if (refresh) {
+        filter();
+    }
 }
 
 void ActivatableListWidget::toggleVpn()
 {
     kDebug() << "VPN toggled";
-    m_vpn = !m_vpn;
+    m_vpn = true;
     filter();
 }
 
@@ -129,7 +137,7 @@ bool ActivatableListWidget::accept(RemoteActivatable * activatable) const
             return false;
         }
     }
-    // Policy wether an activatable should be shown or not.
+    // Policy whether an activatable should be shown or not.
     if (m_interfaces.count()) {
         // If interfaces are set, activatables for other interfaces are not shown
         if (m_interfaces.contains(activatable->deviceUni())) {
@@ -176,6 +184,14 @@ void ActivatableListWidget::createItem(RemoteActivatable * activatable)
             ai = new HiddenWirelessNetworkItem(static_cast<RemoteInterfaceConnection*>(activatable), m_widget);
             break;
         }
+#ifdef COMPILE_MODEM_MANAGER_SUPPORT
+        case Knm::Activatable::GsmInterfaceConnection:
+        { // Gsm (2G, 3G, etc)
+            GsmInterfaceConnectionItem* gici = new GsmInterfaceConnectionItem(static_cast<RemoteGsmInterfaceConnection*>(activatable), m_widget);
+            ai = gici;
+            break;
+        }
+#endif
         default:
             break;
     }
@@ -184,6 +200,9 @@ void ActivatableListWidget::createItem(RemoteActivatable * activatable)
     ai->setupItem();
     m_layout->addItem(ai);
     m_itemIndex[activatable] = ai;
+    connect(ai, SIGNAL(disappearAnimationFinished()),
+            this, SLOT(deleteItem()));
+
 }
 
 void ActivatableListWidget::listAppeared()
@@ -198,6 +217,9 @@ void ActivatableListWidget::listAppeared()
 void ActivatableListWidget::deactivateConnection(const QString& deviceUni)
 {
     foreach (ActivatableItem* item, m_itemIndex) {
+        if (!item) { // the item might be gone here
+            continue;
+        }
         RemoteInterfaceConnection *conn = item->interfaceConnection();
         if (conn && conn->deviceUni() == deviceUni) {
             //kDebug() << "deactivating" << conn->connectionName();
@@ -229,7 +251,9 @@ void ActivatableListWidget::filter()
         if (accept(act)) {
             createItem(act);
         } else {
-            activatableRemoved(act);
+            if (m_itemIndex.keys().contains(act)) {
+                activatableRemoved(act);
+            }
         }
     }
     m_layout->invalidate();
@@ -237,9 +261,49 @@ void ActivatableListWidget::filter()
 
 void ActivatableListWidget::activatableRemoved(RemoteActivatable * removed)
 {
-    m_layout->removeItem(m_itemIndex[removed]);
-    delete m_itemIndex[removed];
-    m_itemIndex.remove(removed);
+    ActivatableItem *it = m_itemIndex[removed];
+    if (!it) {
+        return;
+    }
+    it->disappear();
+}
+
+void ActivatableListWidget::deleteItem()
+{
+    ActivatableItem* ai = dynamic_cast<ActivatableItem*>(sender());
+    m_layout->removeItem(ai);
+    m_itemIndex.remove(m_itemIndex.key(ai));
+    delete ai;
+}
+
+void ActivatableListWidget::hoverEnter(const QString& uni)
+{
+    foreach (ActivatableItem* item, m_itemIndex) {
+        if (!item) { // the item might be gone here
+            continue;
+        }
+
+        RemoteInterfaceConnection *conn = item->interfaceConnection();
+        if (conn && conn->deviceUni() == uni) {
+            item->hoverEnter();
+            break;
+        }
+    }
+}
+
+void ActivatableListWidget::hoverLeave(const QString& uni)
+{
+    foreach (ActivatableItem* item, m_itemIndex) {
+        if (!item) { // the item might be gone here
+            continue;
+        }
+
+        RemoteInterfaceConnection *conn = item->interfaceConnection();
+        if (conn && conn->deviceUni() == uni) {
+            item->hoverLeave();
+            break;
+        }
+    }
 }
 
 // vim: sw=4 sts=4 et tw=100

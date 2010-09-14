@@ -163,7 +163,7 @@ QString NetworkManagerApplet::svgElement(Solid::Control::NetworkInterface *iface
         if (ap) {
             int str = ap->signalStrength();
             if (str < 13) {
-                strength = "0";
+                strength = '0';
             } else if (str < 30) {
                 strength = "20";
             } else if (str < 50) {
@@ -176,7 +176,7 @@ QString NetworkManagerApplet::svgElement(Solid::Control::NetworkInterface *iface
                 strength = "100";
             }
         } else {
-                strength = "0";
+                strength = '0';
         }
     } else {
         return QString("dialog-error");
@@ -227,9 +227,8 @@ void NetworkManagerApplet::init()
 {
     // bogus, just to make sure we have some remotely sensible value
     m_contentSquare = contentsRect().toRect();
-    kDebug();
-    KConfigGroup cg = config();
-    m_iconPerDevice = cg.readEntry("IconPerDevice", false);
+    //kDebug();
+    configChanged();
     QObject::connect(Solid::Control::NetworkManager::notifier(), SIGNAL(networkInterfaceAdded(const QString&)),
             this, SLOT(networkInterfaceAdded(const QString&)));
     QObject::connect(Solid::Control::NetworkManager::notifier(), SIGNAL(networkInterfaceRemoved(const QString&)),
@@ -241,6 +240,14 @@ void NetworkManagerApplet::init()
     m_activatables->init();
     setupInterfaceSignals();
 }
+
+void NetworkManagerApplet::configChanged()
+{
+    KConfigGroup cg = config();
+    m_iconPerDevice = cg.readEntry("IconPerDevice", false);
+}
+
+
 
 QGraphicsWidget* NetworkManagerApplet::graphicsWidget()
 {
@@ -325,11 +332,11 @@ void NetworkManagerApplet::paintNeedAuthOverlay(QPainter *p)
     kDebug() << "Painting overlay ...>" << activeInterface()->connectionState();
     */
     if (activeInterface() && activeInterface()->connectionState() == Solid::Control::NetworkInterface::NeedAuth) {
-        kDebug() << "Needing auth ...>";
+        //kDebug() << "Needing auth ...>";
         int i_s = (int)contentsRect().width()/4;
         int iconsize = qMax(UiUtils::iconSize(QSizeF(i_s, i_s)), 8);
 
-        kDebug() << "Security:iconsize" << iconsize;
+        //kDebug() << "Security:iconsize" << iconsize;
         QPixmap icon = KIcon("dialog-password").pixmap(iconsize);
         QPoint pos = QPoint(contentsRect().right() - iconsize,
                             contentsRect().bottom() - iconsize);
@@ -509,7 +516,8 @@ void NetworkManagerApplet::toolTipAboutToShow()
                     connectionName = conn->connectionName();
                 }
 
-                lines << QString("<font size=\"-1\">%1</font>").arg(UiUtils::connectionStateToString(iface->connectionState(), connectionName));
+                lines << QString("%1").arg(UiUtils::connectionStateToString(iface->connectionState(), connectionName));
+                /*
                 Solid::Control::IPv4Config ip4Config = iface->ipV4Config();
                 QList<Solid::Control::IPv4Address> addresses = ip4Config.addresses();
                 if (!addresses.isEmpty()) {
@@ -517,6 +525,7 @@ void NetworkManagerApplet::toolTipAboutToShow()
                     QString currentIp = addr.toString();
                     lines << i18nc("Display of the IP (network) address in the tooltip", "<font size=\"-1\">Address: %1</font>", currentIp);
                 }
+                */
                 // Show the first active connection's icon, otherwise the networkmanager icon
                 if (!iconChanged && iface->connectionState() == Solid::Control::NetworkInterface::Activated) {
                     icon = UiUtils::iconName(iface);
@@ -750,7 +759,7 @@ void NetworkManagerApplet::userWirelessEnabledChanged(bool enabled)
 
 void NetworkManagerApplet::managerStatusChanged(Solid::Networking::Status status)
 {
-    kDebug() << "managerstatuschanged";
+    //kDebug() << "managerstatuschanged";
     if (Solid::Networking::Unknown == status ) {
         // FIXME: Do something smart
     } else {
@@ -809,14 +818,16 @@ QPixmap NetworkManagerApplet::generateProgressStatusOverlay()
     // 0 is at 3 o'clock
     int top = 90 * 16;
     int progress = -360 * 16 * state;
-    QPen pen(fgColor, 1); // color and line width
+    QPen pen(bgColor, 2); // color and line width
 
     QPainter p(&pix);
     p.setRenderHint(QPainter::Antialiasing);
+    p.setRenderHint(QPainter::SmoothPixmapTransform);
     p.setPen(pen);
     p.setBrush(fgColor);
     //p.drawArc(contentsRect(), top, progress);
-    p.drawPie(pix.rect().adjusted(.5, .5, -.5, -.5), top, progress);
+    p.drawPie(pix.rect().adjusted(1.5, 1.5, -2.5, -2.5), top, progress);
+    //p.drawPie(pix.rect().adjusted(1.0, 1.0, -2.0, -2.0), top, progress);
 
     return pix;
 }

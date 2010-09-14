@@ -97,7 +97,7 @@ void NMPopup::init()
     m_mainLayout->setRowFixedHeight(0, 24);
 
     m_leftWidget = new Plasma::TabBar(this);
-    m_leftWidget->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Expanding);
+    m_leftWidget->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     m_leftLayout = new QGraphicsLinearLayout;
     m_leftLayout->setOrientation(Qt::Vertical);
 
@@ -146,7 +146,7 @@ void NMPopup::init()
     m_mainLayout->addItem(m_leftWidget, 1, 0);
 
     m_rightWidget = new QGraphicsWidget(this);
-    m_rightWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::MinimumExpanding);
+    m_rightWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::MinimumExpanding);
     m_rightLayout = new QGraphicsLinearLayout(m_rightWidget);
     m_rightLayout->setOrientation(Qt::Vertical);
 
@@ -155,7 +155,7 @@ void NMPopup::init()
     m_connectionList->addType(Knm::Activatable::InterfaceConnection);
     m_connectionList->addType(Knm::Activatable::WirelessInterfaceConnection);
     m_connectionList->addType(Knm::Activatable::VpnInterfaceConnection);
-    // FIXME: Mobile broadband
+    m_connectionList->addType(Knm::Activatable::GsmInterfaceConnection);
     m_connectionList->init();
     connect(m_interfaceDetailsWidget, SIGNAL(back()), m_connectionList, SLOT(clearInterfaces()));
 
@@ -164,7 +164,7 @@ void NMPopup::init()
     m_connectionList->setPreferredHeight(240);
 
     m_connectionList->setMinimumWidth(320);
-    m_connectionList->setShowAllTypes(false);
+    m_connectionList->setShowAllTypes(false, true);
 
     m_rightLayout->addItem(m_connectionList);
 
@@ -181,6 +181,7 @@ void NMPopup::init()
     m_showMoreButton->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     m_showMoreButton->setIcon(KIcon("list-add"));
     m_showMoreButton->setText(i18nc("show more button in the applet's popup", "Show More..."));
+    m_showMoreButton->setChecked(false);
     m_showMoreButton->setMinimumHeight(28);
     m_showMoreButton->setMaximumHeight(28);
     connect(m_showMoreButton, SIGNAL(clicked()), this, SLOT(showMore()));
@@ -229,16 +230,23 @@ void NMPopup::interfaceRemoved(const QString& uni)
         // To prevent crashes when the interface removed is the one in interfaceDetailsWidget.
         // the m_iface pointer in interfaceDetailsWidget become invalid in this case.
         if (uni == m_interfaceDetailsWidget->getLastIfaceUni()) {
-            m_interfaceDetailsWidget->setInterface(0);
-    
+            m_interfaceDetailsWidget->setInterface(0, false);
             // Since it is invalid go back to "main" window. 
             m_leftWidget->setCurrentIndex(0);
         }
 
-        InterfaceItem * item = m_interfaces.take(uni);
-        m_interfaceLayout->removeItem(item);
-        delete item;
+        InterfaceItem* item = m_interfaces.take(uni);
+        connect(item, SIGNAL(disappearAnimationFinished()), this, SLOT(deleteInterfaceItem()));
+        item->disappear();
     }
+}
+
+void NMPopup::deleteInterfaceItem()
+{
+    // slot is called from animation's finished()
+    InterfaceItem* item = dynamic_cast<InterfaceItem*>(sender());
+    m_interfaceLayout->removeItem(item);
+    delete item;
 }
 
 Solid::Control::NetworkInterface* NMPopup::defaultInterface()
@@ -296,6 +304,8 @@ void NMPopup::addInterfaceInternal(Solid::Control::NetworkInterface* iface)
         connect(ifaceItem, SIGNAL(clicked()), this, SLOT(toggleInterfaceTab()));
         connect(ifaceItem, SIGNAL(clicked(Solid::Control::NetworkInterface*)),
                 m_connectionList,  SLOT(addInterface(Solid::Control::NetworkInterface*)));
+        connect(ifaceItem, SIGNAL(hoverEnter(const QString&)), m_connectionList, SLOT(hoverEnter(const QString&)));
+        connect(ifaceItem, SIGNAL(hoverLeave(const QString&)), m_connectionList, SLOT(hoverLeave(const QString&)));
 
         // Catch connection changes
         connect(iface, SIGNAL(connectionStateChanged(int,int,int)), this, SLOT(handleConnectionStateChange(int,int,int)));
@@ -405,13 +415,14 @@ void NMPopup::showMore(bool more)
         m_showMoreButton->setText(i18nc("pressed show more button", "Show Less..."));
         m_showMoreButton->setIcon(KIcon("list-remove"));
         m_showMoreButton->setChecked(true);
-        m_connectionList->setShowAllTypes(true);
+        m_connectionList->setShowAllTypes(true, true); // also refresh list
     } else {
         m_showMoreButton->setText(i18nc("unpressed show more button", "Show More..."));
         m_showMoreButton->setChecked(false);
-        m_connectionList->setShowAllTypes(false);
+        m_connectionList->setShowAllTypes(false, true); // also refresh list
         m_showMoreButton->setIcon(KIcon("list-add"));
     }
+    kDebug() << m_showMoreButton->text();
 }
 
 void NMPopup::manageConnections()
@@ -426,7 +437,7 @@ void NMPopup::toggleInterfaceTab()
 {
     InterfaceItem* item = qobject_cast<InterfaceItem*>(sender());
     if (item) {
-    m_interfaceDetailsWidget->setInterface(item->interface());
+        m_interfaceDetailsWidget->setInterface(item->interface());
     }
 
     if (m_leftWidget->currentIndex() == 0) {
@@ -435,12 +446,13 @@ void NMPopup::toggleInterfaceTab()
         // Enable / disable updating of the details widget
         m_interfaceDetailsWidget->setUpdateEnabled(true);
 
-	if (item->interface()) {
-	  m_leftLabel->setText(QString("<h3>%1</h3>").arg(
-			      UiUtils::interfaceNameLabel(item->interface()->uni())));
-	}
+        if (item && item->interface()) {
+            m_leftLabel->setText(QString("<h3>%1</h3>").arg(
+                                UiUtils::interfaceNameLabel(item->interface()->uni())));
+        }
     } else {
         m_leftLabel->setText(i18nc("title on the LHS of the plasmoid", "<h3>Interfaces</h3>"));
+        m_connectionList->setShowAllTypes(true);
         showMore(false);
         m_interfaceDetailsWidget->setUpdateEnabled(false);
         m_leftWidget->setCurrentIndex(0);

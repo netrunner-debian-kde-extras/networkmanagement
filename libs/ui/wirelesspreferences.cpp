@@ -52,18 +52,19 @@ WirelessPreferences::WirelessPreferences(bool setDefaults, const QVariantList &a
     Q_ASSERT(args.count());
 
     QString connectionId = args[0].toString();
+    kDebug() << "connection ID from arg" << connectionId << QUuid(connectionId);
     m_connection = new Knm::Connection(QUuid(connectionId), Knm::Connection::Wireless);
 
     QString ssid;
     QString deviceUni;
     QString apUni;
 
-    if (args.count() == 3) {
+    if (args.count() >= 3) {
         deviceUni = args[1].toString();
         apUni = args[2].toString();
         kDebug() << "DeviceUni" << deviceUni << "AP UNI" << apUni;
     } else {
-        kDebug() << args;
+        kWarning() << "Could not find deviceUni or AP UNI in args:" << args;
     }
 
     Solid::Control::AccessPoint * ap = 0;
@@ -85,6 +86,8 @@ WirelessPreferences::WirelessPreferences(bool setDefaults, const QVariantList &a
     m_contents->setDefaultName(ssid.isEmpty() ? i18n("New Wireless Connection") : ssid);
 
     m_wirelessWidget = new Wireless80211Widget(m_connection, ssid, this);
+    connect(m_wirelessWidget, SIGNAL(ssidSelected(const QString &)), m_contents, SLOT(setDefaultName(const QString &)));
+
     m_securityWidget = new WirelessSecuritySettingWidget(m_connection, iface, ap, this);
 
     IpV4Widget * ipv4Widget = new IpV4Widget(m_connection, this);

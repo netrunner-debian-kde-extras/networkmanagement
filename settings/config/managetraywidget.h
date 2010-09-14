@@ -1,5 +1,6 @@
 /*
 Copyright 2008,2009 Will Stephenson <wstephenson@kde.org>
+Copyright 2010 Sebastian Kügler <sebas@kde.org>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -23,9 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <KCModule>
 
-
-class TraySettingsWidget;
-class MenuToolTipSettingsWidget;
+#include "othersettingswidget.h"
 
 class ManageTrayWidget : public KCModule
 {
@@ -34,14 +33,8 @@ public:
     ManageTrayWidget(QWidget * parent = 0, const QVariantList & args = QVariantList());
     virtual ~ManageTrayWidget();
     virtual void save();
-private slots:
-    /**
-     * Used by the tray settings widget to indicate when its unmanaged widgets change
-     */
-    void otherSettingsChanged();
 private:
-    TraySettingsWidget * mTraySettingsWidget;
-    MenuToolTipSettingsWidget * mMenuToolTipSettingsWidget;
+    OtherSettingsWidget* ui;
 };
 
 #endif // NM07_MANAGE_TRAY_WIDGET_H

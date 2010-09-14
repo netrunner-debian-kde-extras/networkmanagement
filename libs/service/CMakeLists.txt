@@ -38,6 +38,9 @@ set(knmservice_SRCS
    # complex class for managing connections and unconfigured networks for wireless interfaces
    wirelessnetworkinterfaceactivatableprovider.cpp
 
+   # relates gsm connections to network interfaces
+   gsmnetworkinterfaceactivatableprovider.cpp
+
    # interface for tracking activatable events
    activatableobserver.cpp
 
@@ -102,6 +105,17 @@ qt4_add_dbus_adaptor(
     wirelessnetworkadaptor
     WirelessNetworkAdaptor
 )
+
+if (KDE4_MM_BACKEND_FOUND)
+	qt4_add_dbus_adaptor(
+	    knmservice_SRCS
+	    interfaces/org.kde.networkmanagement.gsminterfaceconnection.xml
+	    gsminterfaceconnection.h
+	    Knm::GsmInterfaceConnection
+	    gsminterfaceconnectionadaptor
+	    GsmInterfaceConnectionAdaptor
+	)
+endif (KDE4_MM_BACKEND_FOUND)
 
 qt4_add_dbus_adaptor(knmservice_SRCS
    interfaces/org.kde.networkmanagement.xml

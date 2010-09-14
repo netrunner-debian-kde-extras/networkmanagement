@@ -26,6 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QGraphicsLinearLayout>
 
 #include <solid/control/networkinterface.h>
+#include <solid/control/networkgsminterface.h>
 #include <Plasma/Label>
 #include <Plasma/PushButton>
 #include <Plasma/SignalPlotter>
@@ -33,6 +34,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 class RemoteActivatable;
 class RemoteInterfaceConnection;
 class RemoteInterfaceList;
+class InterfaceDetails;
 
 class InterfaceDetailsWidget : public QGraphicsWidget
 {
@@ -40,7 +42,7 @@ Q_OBJECT
     public:
         InterfaceDetailsWidget(QGraphicsItem* parent = 0);
         virtual ~InterfaceDetailsWidget();
-        void setInterface(Solid::Control::NetworkInterface* iface);
+        void setInterface(Solid::Control::NetworkInterface* iface, bool disconnectOld = true);
         void setUpdateEnabled(bool enable);
         void resetUi();
         QString getLastIfaceUni();
@@ -57,11 +59,13 @@ Q_OBJECT
     private:
         Plasma::DataEngine* engine();
         void updateWidgets();
-        QString bitRate();
+        int bitRate();
         QString currentIpAddress();
         QString getMAC();
-        void updateInfo(bool reset);
-        QSizeF sizeHint (Qt::SizeHint which, const QSizeF & constraint = QSizeF()) const;
+        void getDetails();
+        void showDetails(bool reset = false);
+        void connectSignals();
+        void disconnectSignals();
 
         Solid::Control::NetworkInterface* m_iface;
         QString m_ifaceUni;
@@ -70,8 +74,6 @@ Q_OBJECT
         Plasma::Label* m_info;
         Plasma::Label* m_trafficNameLabel;
         Plasma::SignalPlotter *m_trafficPlotter;
-        QColor m_rxColor;
-        QColor m_txColor;
         Plasma::Label* m_traffic;
 
         Plasma::PushButton* m_backButton;
@@ -80,14 +82,30 @@ Q_OBJECT
         QString m_txSource;
         QString m_txTotalSource;
         QString m_txUnit;
+        QColor m_txColor;
         QString m_rx;
         QString m_rxSource;
         QString m_rxTotalSource;
         QString m_rxUnit;
+        QColor m_rxColor;
         qlonglong m_rxTotal;
         qlonglong m_txTotal;
 
         bool m_updateEnabled;
+        InterfaceDetails * details;
+
+    private Q_SLOTS:
+        void updateIpAddress();
+        void updateBitRate(int bitRate);
+#ifdef COMPILE_MODEM_MANAGER_SUPPORT
+        void modemUpdateEnabled(const bool enabled);
+        void modemUpdateBand();
+        void modemUpdateUnlockRequired(const QString &);
+        void modemUpdateRegistrationInfo(const Solid::Control::ModemGsmNetworkInterface::RegistrationInfoType & registrationInfo);
+        void modemUpdateAccessTechnology(const Solid::Control::ModemInterface::AccessTechnology & tech);
+        void modemUpdateSignalQuality(const uint signalQuality);
+        void modemUpdateAllowedMode(const Solid::Control::ModemInterface::AllowedMode mode);
+#endif
 };
 
 #endif // INTERFACEDETAILSWIDGET_H
