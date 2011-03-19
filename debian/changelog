@@ -1,6 +1,9 @@
 plasma-widget-networkmanagement (0.1+git20110318.941cde9-1) UNRELEASED; urgency=low
 
   * New upstream Git snapshot 941cde971277611da2575fc2dfccde01c4bbe564.
+    - Fixes crash on NetworkManager restart. (Closes: #590589)
+    - Correctly enable/disable wireless depending on the rfkill state and the
+      user settting. (Closes: #618761)
   * debian/plasma-widget-networkmanagement.install
     - Install new plasma_engine_networkmanagement.
 
