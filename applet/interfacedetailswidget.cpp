@@ -119,7 +119,6 @@ InterfaceDetailsWidget::InterfaceDetailsWidget(QGraphicsItem * parent) : QGraphi
     m_txColor = QColor("#91FF00"); // green
     m_txColor.setAlphaF(0.6);
     m_trafficPlotter = new Plasma::SignalPlotter(this);
-    m_trafficPlotter->setMinimumHeight(50);
     m_trafficPlotter->setFont(KGlobalSettings::smallestReadableFont());
     m_trafficPlotter->addPlot(m_rxColor); // receiver green
     m_trafficPlotter->addPlot(m_txColor); // transmitter yellow
@@ -234,11 +233,16 @@ void InterfaceDetailsWidget::getDetails()
             details->unlockRequired = modemNetworkIface->unlockRequired();
         }
 
-        Solid::Control::ModemGsmCardInterface *modemCardIface = giface->getModemCardIface();
+        /*
+	 * These calls are protectec by policy kit. Without proper configuration policy kit agent
+	 * will ask por password, which is bothering users (BUG #266807).
+	 * Plasma NM still does not use this information, so I will leave them
+	 * commented until I really need them.
+	Solid::Control::ModemGsmCardInterface *modemCardIface = giface->getModemCardIface();
         if (modemCardIface) {
             details->imei = modemCardIface->getImei();
             details->imsi = modemCardIface->getImsi();
-        }
+        }*/
     }
 #endif
 }
@@ -545,7 +549,8 @@ void InterfaceDetailsWidget::setInterface(Solid::Control::NetworkInterface* ifac
 
         /* TODO: ugly and error prone if more than one 3G modem/cellphone is connected to the Internet.
          * If anyone knows a way to convert a serial device name to a network interface name let me know. */
-        if (interfaceName.contains("ttyACM") || interfaceName.contains("ttyUSB")) {
+        if (interfaceName.contains("ttyACM") || interfaceName.contains("ttyUSB") || // USB modems
+	    interfaceName.contains("rfcomm")) { // bluetooth modems
             interfaceName = "ppp0";
         }
 

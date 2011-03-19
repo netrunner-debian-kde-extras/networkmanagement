@@ -35,10 +35,12 @@ namespace Knm
 
 class KNMINTERNALS_EXPORT Connection
 {
+
 public:
     enum Type { Wired = 1, Wireless, Gsm, Cdma, Vpn, Pppoe };
     static QString typeAsString(Connection::Type);
     static Connection::Type typeFromString(const QString & type);
+    static QString iconName(const Connection::Type type);
 
     /**
      * Create a connection with a new Uuid
@@ -54,7 +56,6 @@ public:
     QString iconName() const;
     QUuid uuid() const;
     Connection::Type type() const;
-    void setType(Connection::Type);
     bool autoConnect() const;
     QDateTime timestamp() const;
 
@@ -65,6 +66,7 @@ public:
      * Access all settings
      */
     QList<Setting*> settings() const;
+
     /**
      * Access a specific setting
      * @param the type of setting to retrieve
@@ -77,6 +79,15 @@ public:
     void setUuid(const QUuid &);
     void setAutoConnect(bool);
     void setTimestamp(const QDateTime&);
+
+    /**
+     * Sets connection type. If type to be set and the type of the connection is already the 
+     * same, then this method will do nothing, otherwise m_settings will be cleared and 
+     * m_type will be set as given parameter.
+     * @param type Type of the connection to be set
+     */
+    void setType(Connection::Type type);
+
     /**
      *  Syntactic sugar for setTimestamp(QDateTime::currentDateTime())
      */
@@ -86,6 +97,13 @@ public:
      * Check if any of the settings in this connection have secrets
      */
     bool hasSecrets() const;
+
+    /**
+     * Check if this connection has volatile secrets; if yes,
+     * ask user every time secrets are requested
+     * Connections which have no volatile secrets always return false
+     */
+    bool hasVolatileSecrets() const;
 
     /**
      * Check if this connection's secrets are currently loaded (secrets may be lazy loaded)

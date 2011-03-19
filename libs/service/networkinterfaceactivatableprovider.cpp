@@ -111,7 +111,6 @@ bool NetworkInterfaceActivatableProvider::matches(Knm::Connection::Type connType
 {
      return ( (connType == Knm::Connection::Wired && ifaceType == Solid::Control::NetworkInterface::Ieee8023)
              || (connType == Knm::Connection::Wireless && ifaceType == Solid::Control::NetworkInterface::Ieee80211)
-             || (connType == Knm::Connection::Wireless && ifaceType == Solid::Control::NetworkInterface::Ieee80211)
              || (connType == Knm::Connection::Gsm && ifaceType == Solid::Control::NetworkInterface::Gsm)
              || (connType == Knm::Connection::Cdma && ifaceType == Solid::Control::NetworkInterface::Cdma)
              || (connType == Knm::Connection::Pppoe && ifaceType == Solid::Control::NetworkInterface::Serial)
@@ -166,10 +165,11 @@ void NetworkInterfaceActivatableProvider::handleAdd(Knm::Connection * addedConne
                 d->activatables.insert(addedConnection->uuid(), ifaceConnection);
                 d->activatableList->addActivatable(ifaceConnection);
             } else {
-                kDebug() << "connection type mismatch: " << addedConnection->type() << d->interface->type();
+                kDebug() << "Connection type mismatch!";
+               kDebug() << "Added connection is " << addedConnection->typeAsString(addedConnection->type()) << " interface type: " << d->interface->type() << " name: " << d->interface->interfaceName() << " driver: " << d->interface->driver();
             }
         } else {
-            kDebug() << "hardware address mismatch!";
+            kDebug() << "Hardware address mismatch!";
         }
     }
     maintainActivatableForUnconfigured();

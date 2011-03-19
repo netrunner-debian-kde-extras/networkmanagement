@@ -97,7 +97,7 @@ NMDBusSettingsService::NMDBusSettingsService(QObject * parent)
 NMDBusSettingsService::~NMDBusSettingsService()
 {
     Q_D(const NMDBusSettingsService);
-    if ((d->status == Available) && !QDBusConnection::systemBus().unregisterService( "org.freedesktop.NetworkManagerUserSettings" ) ) {
+    if ((d->status == Available) && !QDBusConnection::systemBus().unregisterService(SERVICE_USER_SETTINGS) ) {
         // trouble;
         kDebug() << "Unable to unregister service";
     }
@@ -234,7 +234,16 @@ void NMDBusSettingsService::interfaceConnectionActivated()
 void NMDBusSettingsService::interfaceConnectionDeactivated()
 {
     Knm::InterfaceConnection * ic = qobject_cast<Knm::InterfaceConnection*>(sender());
+#ifdef NM_0_8
+    Solid::Control::NetworkInterface *iface = Solid::Control::NetworkManager::findNetworkInterface(ic->deviceUni());
+    if (iface) {
+        iface->disconnectInterface();
+    } else {
+        Solid::Control::NetworkManager::deactivateConnection(ic->property("NMDBusActiveConnectionObject").toString());
+    }
+#else
     Solid::Control::NetworkManager::deactivateConnection(ic->property("NMDBusActiveConnectionObject").toString());
+#endif
 }
 
 void NMDBusSettingsService::handleUpdate(Knm::Activatable *)

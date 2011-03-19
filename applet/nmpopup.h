@@ -30,6 +30,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <Plasma/PushButton>
 #include <Plasma/TabBar>
 
+#include <solid/networking.h>
 #include <solid/control/networkinterface.h>
 
 #include "activatable.h"
@@ -55,6 +56,7 @@ public:
     void init();
     Solid::Control::NetworkInterface* defaultInterface();
     bool available(int state);
+    bool hasWireless();
 
     QHash<QString, InterfaceItem*> m_interfaces;
 
@@ -64,7 +66,13 @@ public Q_SLOTS:
     void managerWirelessEnabledChanged(bool);
     void managerWirelessHardwareEnabledChanged(bool);
     void wirelessEnabledToggled(bool checked);
+#ifdef NM_0_8
+    void managerWwanEnabledChanged(bool);
+    void managerWwanHardwareEnabledChanged(bool);
+    void wwanEnabledToggled(bool checked);
+#endif
     void networkingEnabledToggled(bool checked);
+    void managerNetworkingEnabledChanged(bool);
     void manageConnections();
     void showMore();
     void showMore(bool);
@@ -75,13 +83,25 @@ public Q_SLOTS:
 Q_SIGNALS:
     void configNeedsSaving();
 
+private Q_SLOTS:
+#ifdef NM_0_8
+    void enableWwan();
+    void disableWwan();
+#endif
+    void readConfig();
+    void saveConfig();
+
 private:
     void addInterfaceInternal(Solid::Control::NetworkInterface *);
     void addVpnInterface();
+    void updateHasWireless();
+#ifdef NM_0_8
+    void updateHasWwan();
+#endif
     QSizeF sizeHint ( Qt::SizeHint which, const QSizeF & constraint = QSizeF() ) const;
 
     RemoteActivatableList* m_activatables;
-
+    bool m_hasWirelessInterface;
     QGraphicsWidget* m_widget;
     QGraphicsGridLayout* m_mainLayout;
     // Interfaces label
@@ -103,7 +123,10 @@ private:
     QGraphicsLinearLayout* m_rightLayout;
 
     Plasma::CheckBox* m_networkingCheckBox;
-    Plasma::CheckBox* m_rfCheckBox;
+    Plasma::CheckBox* m_wifiCheckBox;
+#ifdef NM_0_8
+    Plasma::CheckBox* m_wwanCheckBox;
+#endif
     Plasma::PushButton* m_connectionsButton;
     Plasma::PushButton* m_showMoreButton;
 

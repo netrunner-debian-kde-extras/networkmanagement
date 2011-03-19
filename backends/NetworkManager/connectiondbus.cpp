@@ -160,6 +160,11 @@ QVariantMapMap ConnectionDbus::toDbusMap()
     if (m_connection->timestamp().isValid()) {
         connectionMap.insert(QLatin1String(NM_SETTING_CONNECTION_TIMESTAMP), m_connection->timestamp().toTime_t());
     }
+
+    //kDebug() << "Printing connection map: ";
+    //foreach(QString key, connectionMap.keys())
+        //kDebug() << key << " : " << connectionMap.value(key);
+
     mapMap.insert(QLatin1String(NM_SETTING_CONNECTION_SETTING_NAME), connectionMap);
 
     // all other settings
@@ -177,11 +182,14 @@ QVariantMapMap ConnectionDbus::toDbusMap()
                     || (m_connection->type() == Knm::Connection::Cdma && setting->type() == Knm::Setting::Ppp)
                     || (m_connection->type() == Knm::Connection::Pppoe && setting->type() == Knm::Setting::Ppp)) {
                 mapMap.insert(setting->name(), map);
+                //kDebug() << "  Settings: " << setting->name();
+                //foreach(QString key, map.keys())
+                    //kDebug() << "    " << key << " : " << map.value(key);
             }
         }
     }
     if (!mapMap.contains(dbusConnectionType)) {
-        kDebug() << "The setting group for the specified connection type" << dbusConnectionType << "is missing, expect a bumpy ride!";
+        kWarning() << "The setting group for the specified connection type" << dbusConnectionType << "is missing, expect a bumpy ride!";
     }
     return mapMap;
 }
@@ -203,9 +211,18 @@ void ConnectionDbus::fromDbusMap(const QVariantMapMap &settings)
 {
     // connection settings
     QVariantMap connectionSettings = settings.value(QLatin1String(NM_SETTING_CONNECTION_SETTING_NAME));
+
+    kDebug() << "Printing connection map: ";
+    foreach(QString key, connectionSettings.keys())
+        kDebug() << key << " : " << connectionSettings.value(key);
+
     QString connName = connectionSettings.value(QLatin1String(NM_SETTING_CONNECTION_ID)).toString();
     QUuid uuid(connectionSettings.value(QLatin1String(NM_SETTING_CONNECTION_UUID)).toString());
     QString dbusConnectionType = connectionSettings.value(QLatin1String(NM_SETTING_CONNECTION_TYPE)).toString();
+    bool autoconnect = true; //default value must be true according to NM settings spec
+
+    if (connectionSettings.contains(QLatin1String(NM_SETTING_CONNECTION_AUTOCONNECT)))
+        autoconnect = connectionSettings.value(QLatin1String(NM_SETTING_CONNECTION_AUTOCONNECT)).toBool();
 
     Connection::Type type = Connection::Wired;
     if (dbusConnectionType == QLatin1String(NM_SETTING_WIRED_SETTING_NAME)) {
@@ -225,6 +242,7 @@ void ConnectionDbus::fromDbusMap(const QVariantMapMap &settings)
     m_connection->setName(connName);
     m_connection->setUuid(uuid);
     m_connection->setType(type);
+    m_connection->setAutoConnect(autoconnect);
 
     // all other settings
     foreach (Setting * setting, m_connection->settings()) {
