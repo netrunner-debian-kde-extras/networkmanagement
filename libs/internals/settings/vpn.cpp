@@ -7,6 +7,7 @@ using namespace Knm;
 
 VpnSetting::VpnSetting() : Setting(Setting::Vpn)
 {
+  mSecretsStorageType = QStringMap();
 }
 
 VpnSetting::~VpnSetting()
@@ -20,4 +21,13 @@ QString VpnSetting::name() const
 bool VpnSetting::hasSecrets() const
 {
   return true;
+}
+
+bool VpnSetting::hasVolatileSecrets() const
+{
+  foreach(const QString & s, mSecretsStorageType.keys())
+    if (mSecretsStorageType.value(s) == QLatin1String(NM_VPN_PW_TYPE_ASK))
+      return true;
+
+  return false;
 }

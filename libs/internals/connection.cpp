@@ -18,6 +18,9 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+
+#include <kdebug.h>
+
 #include "connection.h"
 
 #include "settings/802-11-wireless-security.h"
@@ -102,6 +105,8 @@ Connection::~Connection()
 
 void Connection::init()
 {
+    m_settings.clear();
+
     switch (m_type) {
         case Cdma:
             addSetting(new CdmaSetting());
@@ -144,34 +149,38 @@ QString Connection::name() const
     return m_name;
 }
 
-QString Connection::iconName() const
+QString Connection::iconName(const Connection::Type type)
 {
     QString iconName;
-    if (m_iconName.isEmpty()) {
-        switch (m_type) {
-            case Connection::Wired:
-                iconName = QLatin1String("network-wired");
-                break;
-            case Connection::Wireless:
-                iconName = QLatin1String("network-wireless");
-                break;
-            case Connection::Pppoe:
-                iconName = QLatin1String("modem");
-                break;
-            case Connection::Gsm:
-            case Connection::Cdma:
-                iconName = QLatin1String("phone");
-                break;
-            case Connection::Vpn:
-                iconName = QLatin1String("network-server");
+    switch (type) {
+        case Connection::Wired:
+            iconName = QLatin1String("network-wired");
+            break;
+        case Connection::Wireless:
+            iconName = QLatin1String("network-wireless");
+            break;
+        case Connection::Pppoe:
+            iconName = QLatin1String("modem");
+            break;
+        case Connection::Gsm:
+        case Connection::Cdma:
+            iconName = QLatin1String("phone");
+            break;
+        case Connection::Vpn:
+            iconName = QLatin1String("network-server");
 
-            default:
-                break;
-        }
-    } else {
-        iconName = m_iconName;
+        default:
+            break;
     }
     return iconName;
+}
+
+QString Connection::iconName() const
+{
+    if (m_iconName.isEmpty()) {
+        return iconName(m_type);
+    }
+    return m_iconName;
 }
 
 QUuid Connection::uuid() const
@@ -282,7 +291,24 @@ QString Connection::origin() const
 
 void Connection::setType(Connection::Type type)
 {
+    if (type == m_type)
+        return;
+
     m_type = type;
+
+    init();
+
+    kDebug() << "Connection type is set as " << typeAsString(type) << ". Settings of the connection removed since its type has been changed.";
+}
+
+bool Connection::hasVolatileSecrets() const
+{
+    foreach (Setting * setting, m_settings) {
+        if (setting->hasVolatileSecrets()) {
+            return true;
+        }
+    }
+    return false;
 }
 
 // vim: sw=4 sts=4 et tw=100

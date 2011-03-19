@@ -28,6 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "connectioneditor.h"
 
 #include "ui_manageconnectionwidget.h"
+#include "mobileconnectionwizard.h"
 
 class QMenu;
 class QTreeWidget;
@@ -106,6 +107,8 @@ private:
     QString formatDateRelative(const QDateTime & lastUsed);
     void updateLastUsed(QTreeWidget *);
 
+    bool event(QEvent *ev);
+
     Ui_ManageConnectionWidget mConnEditUi;
     QTreeWidget * mWiredList;
     QMenu * mCellularMenu;
@@ -113,6 +116,7 @@ private:
     ConnectionEditor * mEditor;
     QHash<QString,QTreeWidgetItem*> mUuidItemHash;
     QTimer * mLastUsedTimer;
+    MobileConnectionWizard * mMobileConnectionWizard;
 
     /**
      * Connect add/edit/delete button signals to relevant slots

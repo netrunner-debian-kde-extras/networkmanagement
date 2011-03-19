@@ -31,6 +31,7 @@ class QGraphicsLinearLayout;
 class ActivatableItem;
 class RemoteActivatableList;
 class RemoteActivatable;
+class HiddenWirelessNetworkItem;
 
 class ActivatableListWidget: public Plasma::ScrollWidget
 {
@@ -44,6 +45,7 @@ public:
     void removeType(Knm::Activatable::ActivatableType type);
     bool accept(RemoteActivatable* activatable) const;
     void setShowAllTypes(bool show, bool refresh = false);
+    void setHasWireless(bool hasWireless); // Used to decide wether or not to show the hidden item
 
 public Q_SLOTS:
     void activatableAdded(RemoteActivatable*);
@@ -59,21 +61,27 @@ private Q_SLOTS:
     void deleteItem();
     void hoverEnter(const QString& uni);
     void hoverLeave(const QString& uni);
+    void connectToHiddenNetwork(const QString &ssid);
 
 private:
     void filter();
     void createItem(RemoteActivatable* conn);
+    void createHiddenItem();
     int m_connectionType;
     QList<Knm::Activatable::ActivatableType> m_types;
     QStringList m_interfaces;
 
     QHash<RemoteActivatable*, ActivatableItem*> m_itemIndex;
+    HiddenWirelessNetworkItem* m_hiddenItem;
     RemoteActivatableList* m_activatables;
     QGraphicsLinearLayout* m_layout;
     QGraphicsWidget* m_widget;
 
     bool m_showAllTypes;
     bool m_vpn;
+    bool m_hasWireless; // Used to determine wether or not to show hidden config
+
+    QStringList m_hiddenConnectionInProgress;
 
 };
 #endif // ACTIVATABLELISTWIDGET_H

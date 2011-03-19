@@ -105,7 +105,8 @@ void ConnectionSecretsJob::gotPersistedSecrets(uint result)
     m_connectionPersistence->deleteLater();
     m_connectionPersistence = 0;
     setError(result);
-    if (result == Knm::ConnectionPersistence::EnumError::NoError) {
+    if (result == Knm::ConnectionPersistence::EnumError::NoError &&
+        !m_connection->hasVolatileSecrets()) {
         emitResult();
     } else {
         doAskUser();
@@ -149,7 +150,7 @@ void ConnectionSecretsJob::doAskUser()
         QString error;
         VpnUiPlugin * uiPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>( QString::fromLatin1( "NetworkManagement/VpnUiPlugin" ), QString::fromLatin1( "[X-KDE-PluginInfo-Name]=='%1'" ).arg(vpnSetting->pluginName() ), this, QVariantList(), &error );
         if (uiPlugin && error.isEmpty()) {
-            m_settingWidget= uiPlugin->widget(m_connection, 0);
+            m_settingWidget= uiPlugin->askUser(m_connection, 0);
         }
     } else if ( mSettingName == QLatin1String(NM_SETTING_WIRED_SETTING_NAME)) {
         m_settingWidget = new WiredWidget(m_connection, 0);
@@ -157,8 +158,6 @@ void ConnectionSecretsJob::doAskUser()
         m_settingWidget = new WirelessSecuritySettingWidget(m_connection, 0, 0, 0); // TODO: find out AP and device
     } else if ( mSettingName == QLatin1String(NM_SETTING_WIRELESS_SETTING_NAME)) {
         m_settingWidget = new Wireless80211Widget(m_connection, 0);
-    } else if ( mSettingName == QLatin1String(NM_SETTING_VPN_SETTING_NAME)) {
-        // todo: vpn secrets!
     }
 
     if (m_settingWidget) {
@@ -193,6 +192,7 @@ void ConnectionSecretsJob::dialogAccepted()
             KSharedConfig::openConfig(configFile, KConfig::NoGlobals),
             (Knm::ConnectionPersistence::SecretStorageMode)KNetworkManagerServicePrefs::self()->secretStorageMode());
     cp.save();
+    setError(EnumError::NoError);
     m_settingWidget->deleteLater();
     m_askUserDialog->deleteLater();
     emitResult();

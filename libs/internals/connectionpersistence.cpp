@@ -187,6 +187,9 @@ void ConnectionPersistence::save()
 
 void ConnectionPersistence::load()
 {
+    // In case the kcm module has changed something
+    m_config->reparseConfiguration();
+
     // load connection settings
     KConfigGroup cg(m_config, "connection");
     if (cg.exists()) { // don't bother to try if the KConfigGroup doesn't exist, save opening the wallet too
@@ -216,9 +219,10 @@ void ConnectionPersistence::loadSecrets()
         EnumError::type errorCode = EnumError::NoError;
 
         if (m_storageMode != ConnectionPersistence::Secure) {
+            /* This implicitly covers DontStore as well */
 
-            foreach (Setting * setting, m_connection->settings()) {
-                setting->setSecretsAvailable(true);
+            if (!m_connection->secretsAvailable()){
+                errorCode = EnumError::MissingContents;
             }
 
         } else if (!m_connection->hasSecrets() ||

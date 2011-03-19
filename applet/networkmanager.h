@@ -27,6 +27,7 @@ class KCModuleProxy;
 
 #include <kdeversion.h>
 
+#include <plasma/framesvg.h>
 #include <plasma/svg.h>
 #include <solid/networking.h>
 #include <solid/control/networking.h>
@@ -46,7 +47,7 @@ namespace Plasma
 
 class QTimeLine;
 
-class NMExtenderItem;
+class NMPopup;
 class RemoteActivatableList;
 
 class NetworkManagerApplet : public Plasma::PopupApplet
@@ -129,7 +130,7 @@ private:
     Plasma::ToolTipContent m_toolTip;
 
     RemoteActivatableList* m_activatables;
-    QGraphicsWidget* m_popup;
+    NMPopup* m_popup;
 
     QPixmap m_pixmap;
 
@@ -148,6 +149,8 @@ private:
     KCModuleProxy* m_kcmNMTray;
 
     Plasma::Svg* m_svg;
+    Plasma::FrameSvg* m_meterBgSvg;
+    Plasma::FrameSvg* m_meterFgSvg;
     QRect m_contentSquare;
 
 };

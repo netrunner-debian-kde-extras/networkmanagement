@@ -24,6 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "settingwidget.h"
 
 #include "ui_vpncprop.h"
+#include "ui_vpncauth.h"
 #include "settings/vpn.h"
 
 namespace Knm
@@ -48,7 +49,7 @@ protected Q_SLOTS:
     void groupPasswordTypeChanged(int);
     void validate();
 private:
-    void fillOnePasswordCombo(QComboBox * combo, const QString & key, const QStringMap & data, bool hasPassword);
+    void fillOnePasswordCombo(QComboBox * combo, const QString & type, bool hasPassword);
     uint handleOnePasswordType(const QComboBox * combo, const QString & key, QStringMap & data);
     VpncSettingWidgetPrivate * d_ptr;
 };

@@ -16,13 +16,13 @@ Security8021xSetting::~Security8021xSetting()
 
 QString Security8021xSetting::name() const
 {
-  return QLatin1String("802-1x");
-}
-bool Security8021xSetting::hasSecrets() const
-{
-  return true;
+    return QLatin1String("802-1x");
 }
 
+bool Security8021xSetting::hasSecrets() const
+{
+    return mEnabled;
+}
 
 QByteArray Security8021xSetting::getBytes(const QString & fileName)
 {

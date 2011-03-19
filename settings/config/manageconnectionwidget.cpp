@@ -31,6 +31,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QFile>
 #include <QMenu>
 #include <QTimer>
+#include <QEvent>
+#include <QKeyEvent>
 
 #include <KCModuleProxy>
 #include <KLocale>
@@ -100,6 +102,7 @@ ManageConnectionWidget::ManageConnectionWidget(QWidget *parent, const QVariantLi
     mLastUsedTimer->start(1000 * 60);
 
     setButtons(KCModule::Help | KCModule::Apply);
+    mMobileConnectionWizard = 0;
 }
 
 ManageConnectionWidget::~ManageConnectionWidget()
@@ -147,13 +150,17 @@ QString ManageConnectionWidget::formatDateRelative(const QDateTime & lastUsed)
 
 void ManageConnectionWidget::restoreConnections()
 {
-    //clean up the lists
+    // clean up the lists
     mConnEditUi.listWired->clear();
     mConnEditUi.listWireless->clear();
     mConnEditUi.listCellular->clear();
     mConnEditUi.listVpn->clear();
     mConnEditUi.listPppoe->clear();
 
+    // if settings are accessed from plasma applet settings, KNetworkManagerServicePrefs reads the configuration once
+    // and always displays the same connection list, even if connections are updated from systemsettings. Line below,
+    // always makes the list up-to-date by reading configuration from disk.
+    KNetworkManagerServicePrefs::self()->readConfig();
     QStringList connectionIds = KNetworkManagerServicePrefs::self()->connections();
     QList<QTreeWidgetItem *> wiredItems, wirelessItems, cellularItems, vpnItems, pppoeItems;
     foreach (const QString &connectionId, connectionIds) {
@@ -254,8 +261,20 @@ void ManageConnectionWidget::updateTabStates()
 
 void ManageConnectionWidget::addClicked()
 {
-    // show connection settings widget for the active tab
-    mEditor->addConnection(false, connectionTypeForCurrentIndex());
+    if (connectionTypeForCurrentIndex() == Knm::Connection::Gsm) {
+        delete mMobileConnectionWizard;
+        mMobileConnectionWizard = new MobileConnectionWizard();
+
+        if (mMobileConnectionWizard->exec() == QDialog::Accepted) {
+            if (mMobileConnectionWizard->getError() == MobileProviders::Success) {
+                mEditor->addConnection(false, mMobileConnectionWizard->type(), mMobileConnectionWizard->args(), true);
+            } else { // fallback to old manual editing if something wrong happened with the wizard
+                mEditor->addConnection(false, mMobileConnectionWizard->type());
+            }
+        }
+    } else { // show connection settings widget for the active tab
+         mEditor->addConnection(false, connectionTypeForCurrentIndex());
+    }
     emit changed();
 }
 
@@ -393,20 +412,7 @@ void ManageConnectionWidget::save()
 
 void ManageConnectionWidget::tabChanged(int index)
 {
-    if (index == 2) {
-        if ( !mCellularMenu ) {
-            mCellularMenu = new QMenu(this);
-            QAction * gsmAction = new QAction(i18nc("Menu item for GSM connections", "GSM Connection"), this);
-            gsmAction->setData(Knm::Connection::Gsm);
-            QAction * cdmaAction = new QAction(i18nc("Menu item for CDMA connections", "CDMA Connection"), this);
-            cdmaAction->setData(Knm::Connection::Cdma);
-
-            mCellularMenu->addAction(gsmAction);
-            mCellularMenu->addAction(cdmaAction);
-            connect(mCellularMenu, SIGNAL(triggered(QAction*)), SLOT(connectionTypeMenuTriggered(QAction*)));
-            mConnEditUi.buttonSetCellular->addButton()->setMenu(mCellularMenu);
-        }
-    } else if (index == 3) {
+    if (index == 3) {
         if ( !mVpnMenu ) {
             mVpnMenu = new QMenu(this);
             // foreach vpn service, add one of these
@@ -522,3 +528,16 @@ void ManageConnectionWidget::connectButtonSet(AddEditDeleteButtonSet* buttonSet,
     connect(buttonSet->deleteButton(), SIGNAL(clicked()), SLOT(deleteClicked()));
 }
 
+bool ManageConnectionWidget::event(QEvent *ev)
+{
+    if (ev->type() == QEvent::KeyPress) {
+        int key = static_cast<QKeyEvent*>(ev)->key();
+
+	if (key == Qt::Key_Delete) {
+	    deleteClicked();
+	    return true;
+	}
+    }
+
+    return KCModule::event(ev);
+}

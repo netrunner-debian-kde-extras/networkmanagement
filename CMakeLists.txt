@@ -17,8 +17,12 @@ endif (BIGENDIAN)
 
 find_file(KDE4_MM_BACKEND_FOUND solid/control/modeminterface.h ${KDE4_INCLUDE_DIR} NO_DEFAULT_PATH)
 if (KDE4_MM_BACKEND_FOUND)
-	message("Compiling Modem Manager support.")
-	add_definitions(-DCOMPILE_MODEM_MANAGER_SUPPORT=1)
+    message("Compiling Modem Manager support.")
+    add_definitions(-DCOMPILE_MODEM_MANAGER_SUPPORT=1)
+
+    set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR} ${CMAKE_MODULE_PATH})
+    macro_optional_find_package(MobileBroadbandProviderInfo)
+    macro_log_feature(MOBILEBROADBANDPROVIDERINFO_FOUND "mobile-broadband-provider-info" "Database of mobile broadband service providers" "http://live.gnome.org/NetworkManager/MobileBroadband/ServiceProviders" FALSE "" "Needed for Mobile Connection Wizard support in Broadband Modem Management")
 endif (KDE4_MM_BACKEND_FOUND)
 
 add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
@@ -36,6 +40,20 @@ find_package(GLIB2 REQUIRED)
 
 configure_file(backends/NetworkManager/config-nm07backend.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/backends/NetworkManager/config-nm07backend.h )
 
+# Check if Solid has been compiled with NetworkManager 0.8 support.
+set (CMAKE_REQUIRED_DEFINITIONS ${KDE4_DEFINITIONS})
+set (CMAKE_REQUIRED_INCLUDES ${KDE4_INCLUDES})
+set (CMAKE_REQUIRED_LIBRARIES -L${KDE4_LIB_DIR} -lsolidcontrol)
+CHECK_CXX_SOURCE_COMPILES("#include <solid/control/networkmanager.h>
+int main()
+{
+    Solid::Control::NetworkManager::isWwanEnabled();
+    return 0;
+}" NM_0_8)
+if (NM_0_8)
+    add_definitions(-DNM_0_8=1)
+endif (NM_0_8)
+
 if (NM_0_7)
 
 include_directories(
@@ -47,6 +65,7 @@ include_directories(
 
 add_subdirectory(applet)
 add_subdirectory(backends)
+add_subdirectory(dataengine)
 add_subdirectory(libs)
 add_subdirectory(tests)
 add_subdirectory(settings)
