@@ -1,3 +1,9 @@
+plasma-widget-networkmanagement (0.1+git20110318.941cde9-1) UNRELEASED; urgency=low
+
+  * New upstream Git snapshot 941cde971277611da2575fc2dfccde01c4bbe564.
+
+ -- Michael Biebl <biebl@debian.org>  Sat, 19 Mar 2011 12:57:21 +0100
+
 plasma-widget-networkmanagement (0.1~svn1175124-1) unstable; urgency=low
 
   * New upstream development snapshot:
