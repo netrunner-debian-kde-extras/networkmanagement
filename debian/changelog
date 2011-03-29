@@ -2,6 +2,10 @@ plasma-widget-networkmanagement (0.1+git20110318.941cde9-2) UNRELEASED; urgency=
 
   * Drop topgit support.
   * Drop README.source, obsolelte and not needed anymore.
+  * Ship usr/share/kde4/apps/desktoptheme/default/icons/network.svgz
+    uncompressed as network.svg in order to avoid file conflict with
+    kdebase-runtime-data (>= 4:4.5) but still keep compatibility with
+    KDE SC 4.4
 
  -- Modestas Vainius <modax@debian.org>  Wed, 30 Mar 2011 02:41:19 +0300
 

@@ -4,4 +4,4 @@ usr/lib/kde4/kded_networkmanagement.so
 usr/share/kde4/services/plasma-applet-networkmanagement.desktop
 usr/share/kde4/services/plasma-engine-networkmanagement.desktop
 usr/share/kde4/services/kded/networkmanagement.desktop
-usr/share/kde4/apps/desktoptheme/default/icons/network.svgz
+usr/share/kde4/apps/desktoptheme/default/icons/network.svg

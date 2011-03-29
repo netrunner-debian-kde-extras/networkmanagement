@@ -8,6 +8,14 @@ DEB_KNETWORKMANAGER_VERSION := $(shell echo '$(DEB_BINARY_VERSION)' | sed 's/^[[
 override_dh_auto_configure:
 	dh_auto_configure -Skde -- -DCMAKE_USE_RELATIVE_PATHS=ON -DDBUS_SYSTEM_POLICY_DIR=/etc/dbus-1/system.d -DINSTALL_KNM_AUTOSTART=ON
 
+override_dh_auto_install:
+	dh_auto_install
+	# Ship network.svgz uncompressed as network.svg in order to avoid file
+	# conflict with kdebase-runtime-data (>= 4:4.5) but still keep
+	# compatibility with KDE SC 4.4
+	( cd debian/tmp/usr/share/kde4/apps/desktoptheme/default/icons && \
+	  gunzip -c network.svgz > network.svg && rm -f network.svgz )
+
 override_dh_makeshlibs:
 	dh_makeshlibs -pknm-runtime -V'knm-runtime (= $(DEB_BINARY_VERSION))'
 	dh_makeshlibs --remaining-packages
