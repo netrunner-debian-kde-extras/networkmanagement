@@ -1,5 +1,6 @@
 plasma-widget-networkmanagement (0.1+git20110318.941cde9-2) UNRELEASED; urgency=low
 
+  * Drop topgit support.
 
  -- Modestas Vainius <modax@debian.org>  Wed, 30 Mar 2011 02:41:19 +0300
 

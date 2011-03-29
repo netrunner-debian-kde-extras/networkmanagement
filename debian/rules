@@ -2,11 +2,6 @@
 
 # DEB_KDE_LINK_WITH_AS_NEEDED ?= yes
 
-ifneq (,$(shell which tg))
-QUILT_PATCH_DIR := debian/patches
-include /usr/share/topgit/tg2quilt.mk
-endif
-
 DEB_BINARY_VERSION := $(shell dpkg-parsechangelog | grep '^Version: ' | sed 's/^Version: //')
 DEB_KNETWORKMANAGER_VERSION := $(shell echo '$(DEB_BINARY_VERSION)' | sed 's/^[[:digit:].]\+/1:0.9/')
 
