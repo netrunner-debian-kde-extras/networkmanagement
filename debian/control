@@ -5,7 +5,7 @@ Maintainer: Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>
 Uploaders: Modestas Vainius <modestas@vainius.eu>, Michael Biebl <biebl@debian.org>
 Build-Depends: debhelper (>= 7.3.16), cmake (>= 2.6.2), pkg-kde-tools (>= 0.5),
  libqt4-dev (>= 4:4.6.0), kdelibs5-dev (>= 4:4.4.0), kdebase-workspace-dev (>= 4:4.4.0),
- network-manager-dev (>= 0.7.0), libnm-util-dev (>= 0.7.0)
+ network-manager-dev (>= 0.7.0), libnm-util-dev (>= 0.7.0), mobile-broadband-provider-info
 Standards-Version: 3.9.1
 Vcs-Git: git://git.debian.org/git/pkg-kde/kde-extras/plasma-widget-networkmanagement.git
 Vcs-Browser: http://git.debian.org/?p=pkg-kde/kde-extras/plasma-widget-networkmanagement.git
@@ -39,7 +39,8 @@ Description: Network Management widget for KDE4 Plasma
 Package: knm-runtime
 Architecture: any
 Section: net
-Depends: ${shlibs:Depends}, ${misc:Depends}, network-manager (>= 0.7.0)
+Depends: ${shlibs:Depends}, ${misc:Depends}, network-manager (>= 0.7.0),
+ mobile-broadband-provider-info
 Replaces: plasma-widget-networkmanagement (<< 0.1~svn1005432)
 Recommends: kwalletmanager, network-manager-vpnc, network-manager-openvpn, network-manager-pptp
 Description: KDE NetworkManagement infrastructure runtime files
