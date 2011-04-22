@@ -1,0 +1,3 @@
+plasma-widget-networkmanagement: package-name-doesnt-match-sonames
+plasma-widget-networkmanagement: shlib-without-versioned-soname usr/lib/libknm_nm.so libknm_nm.so
+plasma-widget-networkmanagement: shlib-without-versioned-soname usr/lib/libsolidcontrolfuture.so libsolidcontrolfuture.so

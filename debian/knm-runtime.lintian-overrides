@@ -1,3 +1,0 @@
-knm-runtime: package-name-doesnt-match-sonames
-knm-runtime: shlib-without-versioned-soname usr/lib/libknm_nm.so libknm_nm.so
-knm-runtime: shlib-without-versioned-soname usr/lib/libsolidcontrolfuture.so libsolidcontrolfuture.so

@@ -13,6 +13,8 @@ networkmanagement (0.1+git20110422.810bc16-0r1) UNRELEASED; urgency=low
   * Update packaging section in debian/copyright.
   * Convert network-manager-kde to the transitional package for
     plasma-widget-networkmanagement.
+  * Merge knm-runtime package into plasma-widget-networkmanager. It no longer
+    makes sense after sunset of the network-manager-kde package.
 
  -- Modestas Vainius <modax@debian.org>  Sat, 02 Apr 2011 00:25:25 +0300
 

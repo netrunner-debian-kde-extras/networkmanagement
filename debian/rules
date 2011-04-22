@@ -13,15 +13,9 @@ override_dh_install:
 	    $(wildcard debian/tmp/usr/share/kde4/apps/desktoptheme/default/icons/network.svgz)
 	dh_install --remaining-packages
 
-override_dh_makeshlibs:
-	dh_makeshlibs -pknm-runtime -V'knm-runtime (= $(DEB_BINARY_VERSION))'
-	dh_makeshlibs --remaining-packages
-
 override_dh_gencontrol:
-	dh_gencontrol -pnetwork-manager-kde -- -v'$(DEB_KNETWORKMANAGER_VERSION)' \
-        -V'knetworkmanager:Version=$(DEB_KNETWORKMANAGER_VERSION)'
-	dh_gencontrol --remaining-packages -- \
-        -V'knetworkmanager:Version=$(DEB_KNETWORKMANAGER_VERSION)'
+	dh_gencontrol -pnetwork-manager-kde -- -v'$(DEB_KNETWORKMANAGER_VERSION)'
+	dh_gencontrol --remaining-packages
 
 %:
 	dh --parallel --with kde --dbg-package=plasma-widget-networkmanagement-dbg $@
