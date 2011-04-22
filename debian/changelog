@@ -1,5 +1,6 @@
-plasma-widget-networkmanagement (0.1+git20110318.941cde9-3) UNRELEASED; urgency=low
+plasma-widget-networkmanagement (0.1+git20110422.810bc16-0r1) UNRELEASED; urgency=low
 
+  * New upstream Git snapshot 810bc16 (from master branch).
   * Build-Depend on mobile-broadband-provider-info and add it to knm-runtime
     Depends.
   * network.svgz is not shipped when plasma-widget-networkmanager is
