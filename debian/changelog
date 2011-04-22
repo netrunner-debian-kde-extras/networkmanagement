@@ -1,10 +1,12 @@
-plasma-widget-networkmanagement (0.1+git20110422.810bc16-0r1) UNRELEASED; urgency=low
+networkmanagement (0.1+git20110422.810bc16-0r1) UNRELEASED; urgency=low
 
   * New upstream Git snapshot 810bc16 (from master branch).
   * Build-Depend on mobile-broadband-provider-info and add it to knm-runtime
     Depends.
   * network.svgz is not shipped when plasma-widget-networkmanager is
     built against KDE SC 4.5. Install it only if it exists.
+  * Rename source package to networkmanagement (according to the name of the
+    upstream git repository).
 
  -- Modestas Vainius <modax@debian.org>  Sat, 02 Apr 2011 00:25:25 +0300
 

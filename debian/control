@@ -1,4 +1,4 @@
-Source: plasma-widget-networkmanagement
+Source: networkmanagement
 Section: kde
 Priority: optional
 Maintainer: Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>
