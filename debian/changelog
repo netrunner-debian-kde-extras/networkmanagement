@@ -1,4 +1,4 @@
-networkmanagement (0.1+git20110422.810bc16-0r1) UNRELEASED; urgency=low
+networkmanagement (0.1+git20110422.810bc16-1) unstable; urgency=low
 
   * New upstream Git snapshot 810bc16 (from master branch).
   * Make the package binNMUable against KDE SC 4.6:
@@ -19,7 +19,7 @@ networkmanagement (0.1+git20110422.810bc16-0r1) UNRELEASED; urgency=low
   * Make some consmetic changes in debian/rules.
   * Bump Standards-Version to 3.8.2: no changes needed.
 
- -- Modestas Vainius <modax@debian.org>  Sat, 02 Apr 2011 00:25:25 +0300
+ -- Modestas Vainius <modax@debian.org>  Fri, 22 Apr 2011 23:29:42 +0300
 
 plasma-widget-networkmanagement (0.1+git20110318.941cde9-2) unstable; urgency=medium
 
