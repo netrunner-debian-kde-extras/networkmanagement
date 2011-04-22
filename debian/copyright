@@ -33,6 +33,7 @@ Upstream copyright holders:
 Debian packaging (debian/*) is under:
 
 Copyright: © 2008-2011 Modestas Vainius <modax@debian.org>
+           © 2010-2011 Michael Biebl <biebl@debian.org>
 License:   GPL-2+
 
 License for all components unless stated otherwise:
