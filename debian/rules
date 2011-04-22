@@ -6,7 +6,8 @@ DEB_BINARY_VERSION := $(shell dpkg-parsechangelog | grep '^Version: ' | sed 's/^
 DEB_KNETWORKMANAGER_VERSION := $(shell echo '$(DEB_BINARY_VERSION)' | sed 's/^[[:digit:].]\+/1:0.9/')
 
 override_dh_auto_configure:
-	dh_auto_configure -Skde -- -DCMAKE_USE_RELATIVE_PATHS=ON -DDBUS_SYSTEM_POLICY_DIR=/etc/dbus-1/system.d -DINSTALL_KNM_AUTOSTART=ON
+	dh_auto_configure -Skde -- -DCMAKE_USE_RELATIVE_PATHS=ON \
+	                           -DDBUS_SYSTEM_POLICY_DIR=/etc/dbus-1/system.d
 
 override_dh_install:
 	dh_install -pplasma-widget-networkmanagement --autodest -- \
@@ -18,6 +19,6 @@ override_dh_gencontrol:
 	dh_gencontrol --remaining-packages
 
 %:
-	dh --parallel --with kde --dbg-package=plasma-widget-networkmanagement-dbg $@
+	dh $@ --parallel --with kde --dbg-package=plasma-widget-networkmanagement-dbg
 
 .PHONY: override_dh_auto_test
