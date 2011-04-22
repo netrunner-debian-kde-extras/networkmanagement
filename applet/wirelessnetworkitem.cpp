@@ -73,9 +73,6 @@ void WirelessNetworkItem::setupItem()
     |icon essid        |meter|sec|
     +----+-------------+-----+---+
     */
-    int rowHeight = 24;
-    int spacing = 4;
-
     m_layout = new QGraphicsGridLayout(this);
     // First, third and fourth colunm are fixed width for the icons
     m_layout->setColumnPreferredWidth(0, 160);
@@ -98,24 +95,23 @@ void WirelessNetworkItem::setupItem()
     m_connectButton->setOrientation(Qt::Horizontal);
     m_connectButton->setTextBackgroundColor(QColor(Qt::transparent));
     //m_connectButton->setToolTip(i18nc("icon to connect to wireless network", "Connect to wireless network %1", ssid));
-    m_connectButton->setMinimumHeight(rowHeight);
-    m_connectButton->setMaximumHeight(rowHeight);
     m_layout->addItem(m_connectButton, 0, 0, 1, 1 );
 
-    m_strengthMeter = new Plasma::Meter(this);
-    m_strengthMeter->setMinimum(0);
-    m_strengthMeter->setMaximum(100);
-    m_strengthMeter->setValue(m_wirelessStatus->strength());
-    m_strengthMeter->setMeterType(Plasma::Meter::BarMeterHorizontal);
-    m_strengthMeter->setPreferredSize(QSizeF(60, rowHeight/2));
-    m_strengthMeter->setMaximumHeight(rowHeight/2);
-    m_strengthMeter->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-    m_layout->addItem(m_strengthMeter, 0, 1, 1, 1, Qt::AlignCenter);
+    if (m_remote->strength() >= 0)
+    {
+        m_strengthMeter = new Plasma::Meter(this);
+        m_strengthMeter->setMinimum(0);
+        m_strengthMeter->setMaximum(100);
+        m_strengthMeter->setValue(m_wirelessStatus->strength());
+        m_strengthMeter->setMeterType(Plasma::Meter::BarMeterHorizontal);
+        m_strengthMeter->setPreferredSize(QSizeF(60, rowHeight/2));
+        m_strengthMeter->setMaximumHeight(rowHeight/2);
+        m_strengthMeter->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        m_layout->addItem(m_strengthMeter, 0, 1, 1, 1, Qt::AlignCenter);
+    }
 
     m_securityIcon = new Plasma::Label(this);
     m_securityIcon->nativeWidget()->setPixmap(KIcon(m_wirelessStatus->securityIcon()).pixmap(22,22));
-    m_securityIcon->setMinimumHeight(22);
-    m_securityIcon->setMaximumHeight(22);
     m_securityIcon->setToolTip(m_wirelessStatus->securityTooltip());
     m_layout->addItem(m_securityIcon, 0, 2, 1, 1, Qt::AlignLeft);
 

@@ -200,13 +200,19 @@ void NMPopup::init()
 
     m_showMoreButton = new Plasma::PushButton(m_rightWidget);
     m_showMoreButton->setCheckable(true);
-    m_showMoreButton->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    m_showMoreButton->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     m_showMoreButton->setIcon(KIcon("list-add"));
     m_showMoreButton->setText(i18nc("show more button in the applet's popup", "Show More..."));
-    m_showMoreButton->setChecked(false);
     m_showMoreButton->setMinimumHeight(28);
     m_showMoreButton->setMaximumHeight(28);
+    QSizeF sMore = m_showMoreButton->size();
+    m_showMoreButton->setText(i18nc("show more button in the applet's popup", "Show Less..."));
+    QSizeF sLess = m_showMoreButton->size();
+    QSizeF sMax = sMore.width() > sLess.width() ? sMore : sLess;
+    m_showMoreButton->setMinimumSize(sMax);
+    m_showMoreButton->setMaximumSize(sMax);
     connect(m_showMoreButton, SIGNAL(clicked()), this, SLOT(showMore()));
+    showMore(false);
 
     QGraphicsLinearLayout* connectionLayout = new QGraphicsLinearLayout;
     //connectionLayout->addStretch();
@@ -307,9 +313,6 @@ void NMPopup::interfaceAdded(const QString& uni)
     kDebug() << "Interface Added.";
     Solid::Control::NetworkInterface * iface = Solid::Control::NetworkManager::findNetworkInterface(uni);
     addInterfaceInternal(iface);
-#ifdef NM_0_8
-    updateHasWwan();
-#endif
 }
 
 void NMPopup::interfaceRemoved(const QString& uni)
@@ -405,6 +408,9 @@ void NMPopup::addInterfaceInternal(Solid::Control::NetworkInterface* iface)
         m_interfaces.insert(iface->uni(), ifaceItem);
     }
     updateHasWireless();
+#ifdef NM_0_8
+    updateHasWwan();
+#endif
 }
 
 void NMPopup::addVpnInterface()
@@ -461,7 +467,6 @@ void NMPopup::wirelessEnabledToggled(bool checked)
     if (Solid::Control::NetworkManager::isWirelessEnabled() != checked) {
         Solid::Control::NetworkManager::setWirelessEnabled(checked);
     }
-    showMore(false);
     if (checked && Solid::Control::NetworkManager::isNetworkingEnabled()) {
         showMore(false);
         m_showMoreButton->show();
@@ -501,7 +506,6 @@ void NMPopup::networkingEnabledToggled(bool checked)
     m_wwanCheckBox->setEnabled(Solid::Control::NetworkManager::isWwanHardwareEnabled());
 
 #endif
-    m_showMoreButton->setChecked(false);
     if (checked && Solid::Control::NetworkManager::isWirelessHardwareEnabled() &&
                    Solid::Control::NetworkManager::isWirelessEnabled()) {
         showMore(false);
@@ -533,7 +537,7 @@ void NMPopup::updateHasWireless()
 
     foreach (InterfaceItem* ifaceitem, m_interfaces) {
         Solid::Control::NetworkInterface* iface = ifaceitem->interface();
-        if (iface->type() == Solid::Control::NetworkInterface::Ieee80211) {
+        if (iface && iface->type() == Solid::Control::NetworkInterface::Ieee80211) {
             //kDebug() << "there's a wifi iface" << ifaceitem->connectionName() << iface->interfaceName();
             m_hasWirelessInterface = true; // at least one interface is wireless. We're happy.
             m_wifiCheckBox->show();
@@ -554,8 +558,8 @@ void NMPopup::updateHasWwan()
     bool hasWwan = false;
     foreach (InterfaceItem* ifaceitem, m_interfaces) {
         Solid::Control::NetworkInterface* iface = ifaceitem->interface();
-        if (iface->type() == Solid::Control::NetworkInterface::Gsm ||
-            iface->type() == Solid::Control::NetworkInterface::Cdma) {
+        if (iface && (iface->type() == Solid::Control::NetworkInterface::Gsm ||
+                      iface->type() == Solid::Control::NetworkInterface::Cdma)) {
             hasWwan = true;
             break;
         }

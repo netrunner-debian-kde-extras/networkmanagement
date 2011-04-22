@@ -1,11 +1,15 @@
 [Desktop Entry]
 Comment=Connect to the Internet
+Comment[ca]=Connecta a Internet
 Comment[da]=Forbind til internettet
+Comment[el]=Σύνδεση με το Διαδίκτυο
 Comment[et]=Ühendumine internetti
+Comment[hu]=Kapcsolódás az Internethez
 Comment[nl]=Met internet verbinden
 Comment[pt]=Ligar-se à Internet
 Comment[pt_BR]=Conectar à Internet
 Comment[sv]=Anslut till Internet
+Comment[tr]=Internet'e bağlan
 Comment[uk]=Встановити з’єднання з мережею Інтернет
 Comment[x-test]=xxConnect to the Internetxx
 Comment[zh_TW]=連線到網際網路
@@ -17,6 +21,7 @@ Name[ca@valencia]=Connexions de xarxa
 Name[cs]=Síťová spojení
 Name[da]=Netværksforbindelser
 Name[de]=Netzwerkverbindungen
+Name[el]=Συνδέσεις δικτύου
 Name[en_GB]=Network Connections
 Name[es]=Conexiones de red
 Name[et]=Võrguühendused

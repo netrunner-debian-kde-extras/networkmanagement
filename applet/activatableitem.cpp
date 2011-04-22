@@ -34,7 +34,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ActivatableItem::ActivatableItem(RemoteActivatable *remote, QGraphicsItem * parent) : Plasma::IconWidget(parent),
     m_activatable(remote),
     m_hasDefaultRoute(false),
-    m_deleting(false)
+    m_deleting(false),
+    rowHeight(24),
+    spacing(4)
 {
     setDrawBackground(true);
     setTextBackgroundColor(QColor(Qt::transparent));
@@ -53,6 +55,8 @@ ActivatableItem::ActivatableItem(RemoteActivatable *remote, QGraphicsItem * pare
     fadeAnimation->setProperty("startOpacity", 0.0);
     fadeAnimation->setProperty("targetOpacity", 1.0);
     fadeAnimation->start();
+    setMinimumHeight(rowHeight);
+    setMaximumHeight(rowHeight);
 }
 
 ActivatableItem::~ActivatableItem()
@@ -85,9 +89,6 @@ void ActivatableItem::emitClicked()
 
 RemoteInterfaceConnection* ActivatableItem::interfaceConnection() const
 {
-    if (m_deleting) {
-        return 0;
-    }
     return dynamic_cast<RemoteInterfaceConnection*>(m_activatable);
 }
 

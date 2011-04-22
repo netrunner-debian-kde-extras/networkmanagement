@@ -35,8 +35,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Qt
 #include <QSizeF>
 
-#include "knmserviceprefs.h"
-
 QString UiUtils::interfaceTypeLabel(const Solid::Control::NetworkInterface::Type type)
 {
     QString deviceText;
@@ -128,7 +126,7 @@ int UiUtils::iconSize(const QSizeF size)
         s = KIconLoader::SizeLarge;
     } else if (c >= KIconLoader::SizeMedium) { // 32
         s = KIconLoader::SizeMedium;
-    } else if (c >= KIconLoader::SizeSmallMedium) { // 32
+    } else if (c >= KIconLoader::SizeSmallMedium) { // 22
         s = KIconLoader::SizeSmallMedium;
     } else { // 16
         s = KIconLoader::SizeSmall;
@@ -193,42 +191,39 @@ Solid::Device* UiUtils::findSolidDevice(const QString & uni)
 
     if (it != list.end()) {
         Solid::Device* dev = new Solid::Device(*it);
-	return dev;
+        return dev;
     }
 
     return 0;
 }
 
-QString UiUtils::interfaceNameLabel(const QString & uni)
+QString UiUtils::interfaceNameLabel(const QString & uni, const KNetworkManagerServicePrefs::InterfaceNamingChoices interfaceNamingStyle)
 {
-    KNetworkManagerServicePrefs::instance(Knm::ConnectionPersistence::NETWORKMANAGEMENT_RCFILE);
     QString label;
     Solid::Control::NetworkInterface * iface = Solid::Control::NetworkManager::findNetworkInterface(uni);
     Solid::Device* dev = findSolidDevice(uni);
 
-    switch (KNetworkManagerServicePrefs::self()->interfaceNamingStyle()) {
+    switch (interfaceNamingStyle) {
         case KNetworkManagerServicePrefs::SystemNames:
             if (iface) {
                 label = iface->interfaceName();
             }
-	    break;
+            break;
         case KNetworkManagerServicePrefs::DescriptiveNames:
-	    if (dev) {
+            if (dev) {
                 label = dev->description();
                 //kDebug() << "Vendor, Product:" << dev->vendor() << dev->product();
-	        delete dev;
-	    }
-	    break;
+            }
+            break;
         case KNetworkManagerServicePrefs::VendorProductNames:
-	    if (dev) {
-    	        if (!dev->vendor().isEmpty() && !dev->product().isEmpty()) {
+            if (dev) {
+                if (!dev->vendor().isEmpty() && !dev->product().isEmpty()) {
                     label = QString(i18nc("Format for <Vendor> <Product>", "%1 - %2", dev->vendor(), dev->product()));
-    	        }
-	        delete dev;
-	    }
-	    break;
+                }
+            }
+            break;
         case KNetworkManagerServicePrefs::TypeNames:
-	    break;
+            break;
     }
 
     if (label.isEmpty()) {
@@ -238,7 +233,17 @@ QString UiUtils::interfaceNameLabel(const QString & uni)
             label = UiUtils::interfaceTypeLabel(iface->type());
         }
     }
+    if (dev) {
+        delete dev;
+    }
     return label;
+}
+
+QString UiUtils::interfaceNameLabel(const QString & uni)
+{
+    KNetworkManagerServicePrefs::instance(Knm::ConnectionPersistence::NETWORKMANAGEMENT_RCFILE);
+
+    return interfaceNameLabel(uni, static_cast<KNetworkManagerServicePrefs::InterfaceNamingChoices>(KNetworkManagerServicePrefs::self()->interfaceNamingStyle()));
 }
 
 RemoteInterfaceConnection* UiUtils::connectionForInterface(RemoteActivatableList* activatables, Solid::Control::NetworkInterface *interface)

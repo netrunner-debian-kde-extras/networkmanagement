@@ -20,6 +20,7 @@ void WirelessSecurityPersistence::load()
     WirelessSecuritySetting * setting = static_cast<WirelessSecuritySetting *>(m_setting);
     if (m_config->exists()) { // this persistence saves nothing if there is no security, so the 
       // group won't exist.  not indenting the code inside this test to keep the diff clean ;)
+    setting->setEnabled(true);
     QString contents = m_config->readEntry("securityType", "None");
     if (contents == "None")
       setting->setSecurityType(WirelessSecuritySetting::EnumSecurityType::None);
@@ -89,8 +90,13 @@ void WirelessSecurityPersistence::load()
 void WirelessSecurityPersistence::save()
 {
   WirelessSecuritySetting * setting = static_cast<WirelessSecuritySetting *>(m_setting);
+  if (!setting->enabled()) {
+      m_config->deleteGroup();
+      return;
+  }
   switch (setting->securityType()) {
     case WirelessSecuritySetting::EnumSecurityType::None:
+      m_config->deleteGroup();
       return; // don't save anything if no encryption
       break;
     case WirelessSecuritySetting::EnumSecurityType::StaticWep:

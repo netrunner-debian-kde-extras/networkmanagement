@@ -26,7 +26,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QPaintEngine>
 #include <QPainter>
 #include <QDesktopWidget>
-#include <QGraphicsLinearLayout>
 #include <QGraphicsPixmapItem>
 #include <QTimeLine>
 
@@ -106,7 +105,6 @@ NetworkManagerApplet::NetworkManagerApplet(QObject * parent, const QVariantList 
     interfaceConnectionStateChanged();
     m_activatables = new RemoteActivatableList(this);
     setMinimumSize(16, 16);
-    resize(64, 64);
     updatePixmap();
     //(void)graphicsWidget();
 }
@@ -277,6 +275,18 @@ void NetworkManagerApplet::createConfigurationInterface(KConfigDialog *parent)
                     m_kcmNM->moduleInfo().icon());
     parent->addPage(m_kcmNMTray, m_kcmNMTray->moduleInfo().moduleName(),
                     m_kcmNMTray->moduleInfo().icon());
+
+    connect(parent, SIGNAL(applyClicked()), this, SLOT(saveConfiguration()));
+    connect(parent, SIGNAL(okClicked()), this, SLOT(saveConfiguration()));
+}
+
+void NetworkManagerApplet::saveConfiguration()
+{
+    // kcm_networkmanagement implicitly saves connection definition after
+    // editing is finished, so no need to call its save() method
+    // FIXME This just writes out changed values to ini file. kded module
+    // still continues to use old value
+    m_kcmNMTray->save();
 }
 
 void NetworkManagerApplet::constraintsEvent(Plasma::Constraints constraints)
@@ -550,13 +560,13 @@ void NetworkManagerApplet::toolTipAboutToShow()
             text = i18nc("tooltip, all interfaces are down", "Disconnected");
 
             if (m_popup->hasWireless() && !Solid::Control::NetworkManager::isWirelessEnabled()) {
-                subText = i18nc("tooltip, wireless is disabled in software", "Wireless is disabled");
+                subText = i18nc("tooltip, wireless is disabled in software", "Wireless disabled in software");
             }
             if (!Solid::Control::NetworkManager::isNetworkingEnabled()) {
-                subText = i18nc("tooltip, all interfaces are down", "Networking is disabled");
+                subText = i18nc("tooltip, all interfaces are down", "Networking disabled");
             }
             if (m_popup->hasWireless() && !Solid::Control::NetworkManager::isWirelessHardwareEnabled()) {
-                subText = i18nc("tooltip, all interfaces are down", "Wireless killswitch is disabled");
+                subText = i18nc("tooltip, wireless is disabled by hardware", "Wireless disabled by hardware");
             }
 
         }

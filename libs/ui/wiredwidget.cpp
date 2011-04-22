@@ -54,7 +54,7 @@ WiredWidget::WiredWidget(Knm::Connection * connection, QWidget * parent)
     d->ui.mtu->setSuffix(ki18np(" byte", " bytes"));
     foreach (Solid::Control::NetworkInterface * iface, Solid::Control::NetworkManager::networkInterfaces()) {
         if (iface->type() == Solid::Control::NetworkInterface::Ieee8023) {
-            QString deviceText = UiUtils::interfaceNameLabel(iface->uni());
+            QString deviceText = UiUtils::interfaceNameLabel(iface->uni(), KNetworkManagerServicePrefs::SystemNames);
             Solid::Control::WiredNetworkInterface * wired = static_cast<Solid::Control::WiredNetworkInterface*>(iface);
             d->ui.cmbMacAddress->addItem(deviceText, wired->hardwareAddress().toLatin1());
         }
@@ -69,9 +69,9 @@ void WiredWidget::readConfig()
 {
     Q_D(WiredWidget);
     if (!d->setting->macaddress().isEmpty()) {
-        int i = d->ui.cmbMacAddress->findData(d->setting->macaddress());
+        int i = d->ui.cmbMacAddress->findData(QVariant(d->setting->macaddressAsString()));
         if (i == -1) {
-            d->ui.cmbMacAddress->addItem(i18nc("@item:inlist item for hardware that is currently not attached to the machine with MAC address", "Disconnected interface (%1)", QLatin1String(d->setting->macaddress())));
+            d->ui.cmbMacAddress->addItem(i18nc("@item:inlist item for hardware that is currently not attached to the machine with MAC address", "Disconnected interface (%1)", d->setting->macaddressAsString()));
             d->ui.cmbMacAddress->setCurrentIndex(d->ui.cmbMacAddress->count() - 1);
         } else {
             d->ui.cmbMacAddress->setCurrentIndex(i);
@@ -89,9 +89,8 @@ void WiredWidget::writeConfig()
     int i = d->ui.cmbMacAddress->currentIndex();
     if ( i == 0) {
         d->setting->setMacaddress(QByteArray());
-    } else {
-        d->setting->setMacaddress(d->ui.cmbMacAddress->itemData(i).toByteArray());
-    }
+    } else
+        d->setting->setMacaddressFromString(d->ui.cmbMacAddress->itemData(i).toString());
 }
 
 void WiredWidget::validate()
