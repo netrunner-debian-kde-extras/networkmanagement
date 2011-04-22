@@ -17,7 +17,7 @@ networkmanagement (0.1+git20110422.810bc16-1) unstable; urgency=low
   * Merge knm-runtime package into plasma-widget-networkmanager. It no longer
     makes sense after sunset of the network-manager-kde package.
   * Make some consmetic changes in debian/rules.
-  * Bump Standards-Version to 3.8.2: no changes needed.
+  * Bump Standards-Version to 3.9.2: no changes needed.
 
  -- Modestas Vainius <modax@debian.org>  Fri, 22 Apr 2011 23:29:42 +0300
 
