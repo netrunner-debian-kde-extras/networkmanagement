@@ -8,6 +8,7 @@ networkmanagement (0.1+git20110422.810bc16-0r1) UNRELEASED; urgency=low
   * Rename source package to networkmanagement (according to the name of the
     upstream git repository).
   * Fix links to the upstream VCS repository in debian/copyright.
+  * Point Vcs-* fields to the new location of packaging VCS.
 
  -- Modestas Vainius <modax@debian.org>  Sat, 02 Apr 2011 00:25:25 +0300
 
