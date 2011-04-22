@@ -2,7 +2,8 @@ This package was debianized by Modestas Vainius <modestas@vainius.eu>
 on Tue, 20 Jan 2009 00:16:35 +0200
 
 The original source was downloaded from
-svn://anonsvn.kde.org/home/kde/trunk/kdereview/networkmanagement
+git://anongit.kde.org/networkmanagement.git
+http://quickgit.kde.org/?p=networkmanagement.git
 
 Upstream Authors:
 
