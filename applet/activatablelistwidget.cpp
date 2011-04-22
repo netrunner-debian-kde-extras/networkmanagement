@@ -29,6 +29,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <KDebug>
 #include <solid/control/networkmanager.h>
 #include <KToolInvocation>
+#include <KStandardDirs>
 
 // Plasma
 #include <Plasma/Label>
@@ -38,6 +39,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "remoteactivatable.h"
 #include "remoteactivatablelist.h"
 #include "remoteinterfaceconnection.h"
+#include "remotewirelessinterfaceconnection.h"
 #include "remotewirelessnetwork.h"
 #include "remotegsminterfaceconnection.h"
 #include "activatableitem.h"
@@ -52,6 +54,7 @@ ActivatableListWidget::ActivatableListWidget(RemoteActivatableList* activatables
     m_hiddenItem(0),
     m_activatables(activatables),
     m_layout(0),
+    m_showAllTypes(true),
     m_vpn(false)
 {
     setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
@@ -149,7 +152,16 @@ bool ActivatableListWidget::accept(RemoteActivatable * activatable) const
         }
     }
     if (!m_showAllTypes) {
-    // when no filter is set, only show activatables of a certain type
+        // hide unconnected adhoc networks
+        if (activatable->activatableType() == Knm::Activatable::WirelessInterfaceConnection)
+        {
+            RemoteWirelessInterfaceConnection * wic = qobject_cast<RemoteWirelessInterfaceConnection*>(activatable);
+            if (wic->operationMode() == Solid::Control::WirelessNetworkInterface::Adhoc && wic->activationState() == Knm::InterfaceConnection::Unknown)
+            {
+                return false;
+            }
+        }
+        // when no filter is set, only show activatables of a certain type
         if (!(m_types.contains(activatable->activatableType()))) {
             return false;
         }
@@ -238,9 +250,7 @@ void ActivatableListWidget::listAppeared()
     createHiddenItem(); // TODO: move to end
 
     foreach (RemoteActivatable* remote, m_activatables->activatables()) {
-        if (accept(remote)) {
-            createItem(remote);
-        }
+        activatableAdded(remote);
     }
 }
 
@@ -276,6 +286,8 @@ void ActivatableListWidget::activatableAdded(RemoteActivatable * added)
     if (accept(added)) {
         createItem(added);
     }
+    if(added->activatableType() == Knm::Activatable::WirelessInterfaceConnection && static_cast<RemoteWirelessInterfaceConnection*>(added)->operationMode() == Solid::Control::WirelessNetworkInterface::Adhoc)
+        connect(added,SIGNAL(changed()),SLOT(filter()));
 }
 
 void ActivatableListWidget::setHasWireless(bool hasWireless)
@@ -356,6 +368,6 @@ void ActivatableListWidget::connectToHiddenNetwork(const QString &ssid)
     m_hiddenConnectionInProgress << ssid;
     QStringList args = QStringList(ssid) << "create";
     kDebug() << "invoking networkmanagement_configshell" << args;
-    KToolInvocation::kdeinitExec("networkmanagement_configshell", args);
+    KToolInvocation::kdeinitExec(KGlobal::dirs()->findResource("exe", "networkmanagement_configshell"), args);
 }
 // vim: sw=4 sts=4 et tw=100

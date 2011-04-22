@@ -102,7 +102,7 @@ InterfaceItem::InterfaceItem(Solid::Control::NetworkInterface * iface, RemoteAct
     m_disconnectButton->setMaximumHeight(16);
     m_disconnectButton->setMaximumWidth(16);
     m_disconnectButton->setIcon(KIcon("dialog-close"));
-    m_disconnectButton->setToolTip(i18n("Disconnect"));
+    m_disconnectButton->setToolTip(i18nc("tooltip on disconnect icon", "Disconnect"));
     m_disconnectButton->hide();
     m_disconnect = false;
     // forward disconnect signal
@@ -142,6 +142,7 @@ InterfaceItem::InterfaceItem(Solid::Control::NetworkInterface * iface, RemoteAct
                             static_cast<Solid::Control::WiredNetworkInterface*>(m_iface);
             connect(wirediface, SIGNAL(carrierChanged(bool)), this, SLOT(setActive(bool)));
         }
+        m_state = Solid::Control::NetworkInterface::UnknownState;
         connectionStateChanged(m_iface->connectionState());
     }
 
@@ -201,6 +202,7 @@ Solid::Control::NetworkInterface* InterfaceItem::interface()
 
 void InterfaceItem::setActive(bool active)
 {
+    Q_UNUSED(active);
     if (m_iface) {
         connectionStateChanged(m_iface->connectionState());
     }
@@ -305,8 +307,7 @@ void InterfaceItem::currentConnectionChanged()
     RemoteInterfaceConnection* remoteconnection = UiUtils::connectionForInterface(m_activatables, m_iface);
     if (remoteconnection) {
         if (m_currentConnection) {
-            QObject::disconnect(m_currentConnection, SIGNAL(hasDefaultRouteChanged(bool)),
-                                this, SLOT(handleHasDefaultRouteChanged(bool)));
+            QObject::disconnect(m_currentConnection, 0, this, 0);
         }
         m_currentConnection = remoteconnection;
 
@@ -409,13 +410,7 @@ void InterfaceItem::connectionStateChanged(Solid::Control::NetworkInterface::Con
 
     // Update connect button
     if (old_disco != m_disconnect) {
-        if (!m_disconnect) {
-            showItem(m_disconnectButton, false);
-        } else {
-            m_disconnectButton->setIcon(KIcon("dialog-close"));
-            m_disconnectButton->setToolTip(i18nc("tooltip on disconnect icon", "Disconnect"));
-            showItem(m_disconnectButton, true);
-        }
+        showItem(m_disconnectButton, m_disconnect);
     }
     m_connectionNameLabel->setText(lname);
     m_icon->nativeWidget()->setPixmap(interfacePixmap());

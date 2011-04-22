@@ -65,6 +65,7 @@ class InterfaceDetails
         QString interfaceName;
         QString mac;
         QString driver;
+        QString activeAccessPoint;
 
 #ifdef COMPILE_MODEM_MANAGER_SUPPORT
         Solid::Control::ModemGsmNetworkInterface::RegistrationInfoType registrationInfo;
@@ -214,6 +215,13 @@ void InterfaceDetailsWidget::getDetails()
     details->mac = getMAC();
     details->driver = m_iface->driver();
 
+    Solid::Control::WirelessNetworkInterface *wiface = qobject_cast<Solid::Control::WirelessNetworkInterface*>(m_iface);
+    if (wiface) {
+        details->activeAccessPoint = wiface->activeAccessPoint();
+    } else {
+        details->activeAccessPoint = QString();
+    }
+
 #ifdef COMPILE_MODEM_MANAGER_SUPPORT
     Solid::Control::GsmNetworkInterface *giface = qobject_cast<Solid::Control::GsmNetworkInterface*>(m_iface);
     if (giface) {
@@ -234,11 +242,11 @@ void InterfaceDetailsWidget::getDetails()
         }
 
         /*
-	 * These calls are protectec by policy kit. Without proper configuration policy kit agent
-	 * will ask por password, which is bothering users (BUG #266807).
-	 * Plasma NM still does not use this information, so I will leave them
-	 * commented until I really need them.
-	Solid::Control::ModemGsmCardInterface *modemCardIface = giface->getModemCardIface();
+         * These calls are protectec by policy kit. Without proper configuration policy kit agent
+         * will ask por password, which is bothering users (BUG #266807).
+         * Plasma NM still does not use this information, so I will leave them
+         * commented until I really need them.
+        Solid::Control::ModemGsmCardInterface *modemCardIface = giface->getModemCardIface();
         if (modemCardIface) {
             details->imei = modemCardIface->getImei();
             details->imsi = modemCardIface->getImsi();
@@ -279,10 +287,27 @@ void InterfaceDetailsWidget::showDetails(bool reset)
                        .arg(i18nc("interface details", "Driver"))
                        .arg(details->driver);
 
+        Solid::Control::WirelessNetworkInterface *wiface = qobject_cast<Solid::Control::WirelessNetworkInterface*>(m_iface);
+        if (wiface) {
+            Solid::Control::AccessPoint *ap = wiface->findAccessPoint(details->activeAccessPoint);
+            if (ap) {
+                info += QString(format)
+                               .arg(i18nc("interface details", "Access Point (SSID)"))
+                               .arg(ap->ssid());
+                info += QString(format)
+                               .arg(i18nc("interface details", "Access Point (MAC)"))
+                               .arg(ap->hardwareAddress());
+            }
+        }
+
 #ifdef COMPILE_MODEM_MANAGER_SUPPORT
         Solid::Control::GsmNetworkInterface *giface = qobject_cast<Solid::Control::GsmNetworkInterface*>(m_iface);
 
         if (giface) {
+            info += QString(format)
+                           .arg(i18nc("interface details", "Enabled"))
+                           .arg(details->enabled ? i18n("Yes") : i18n("No"));
+
             info += QString(format)
                            .arg(i18nc("interface details", "Operator"))
                            .arg(details->registrationInfo.operatorName);
@@ -303,10 +328,6 @@ void InterfaceDetailsWidget::showDetails(bool reset)
             info += QString(format)
                            .arg(i18nc("interface details", "Allowed Mode"))
                            .arg(Solid::Control::ModemInterface::convertAllowedModeToString(details->allowedMode));
-
-            info += QString(format)
-                           .arg(i18nc("interface details", "Enabled"))
-                           .arg(details->enabled ? i18n("Yes") : i18n("No"));
 
             info += QString(format)
                            .arg(i18nc("interface details", "UDI"))
@@ -550,7 +571,7 @@ void InterfaceDetailsWidget::setInterface(Solid::Control::NetworkInterface* ifac
         /* TODO: ugly and error prone if more than one 3G modem/cellphone is connected to the Internet.
          * If anyone knows a way to convert a serial device name to a network interface name let me know. */
         if (interfaceName.contains("ttyACM") || interfaceName.contains("ttyUSB") || // USB modems
-	    interfaceName.contains("rfcomm")) { // bluetooth modems
+            interfaceName.contains("rfcomm")) { // bluetooth modems
             interfaceName = "ppp0";
         }
 
@@ -558,6 +579,7 @@ void InterfaceDetailsWidget::setInterface(Solid::Control::NetworkInterface* ifac
         m_txSource = QString("network/interfaces/%1/transmitter/data").arg(interfaceName);
         m_rxTotalSource = QString("network/interfaces/%1/receiver/dataTotal").arg(interfaceName);
         m_txTotalSource = QString("network/interfaces/%1/transmitter/dataTotal").arg(interfaceName);
+        m_rxTotal = m_txTotal = 0;
 
         /* Usb network interfaces are hotpluggable and Plasma::DataEngine seems to have difficulty
          * to recognise them after the engine is loaded, reloading the engine does the trick.
@@ -646,6 +668,10 @@ void InterfaceDetailsWidget::connectSignals()
     if (m_iface->type() == Solid::Control::NetworkInterface::Ieee8023 ||
         m_iface->type() == Solid::Control::NetworkInterface::Ieee80211) {
         connect(m_iface, SIGNAL(bitRateChanged(int)), this, SLOT(updateBitRate(int)));
+
+        if (m_iface->type() == Solid::Control::NetworkInterface::Ieee80211) {
+            connect(m_iface, SIGNAL(activeAccessPointChanged(const QString &)), this, SLOT(updateActiveAccessPoint(QString &)));
+        }
     }
 
 #ifdef COMPILE_MODEM_MANAGER_SUPPORT
@@ -675,8 +701,7 @@ void InterfaceDetailsWidget::disconnectSignals()
         return;
     }
 
-    disconnect(m_iface, SIGNAL(connectionStateChanged(int,int,int)), this, SLOT(handleConnectionStateChange(int,int,int)));
-    disconnect(m_iface, SIGNAL(bitRateChanged(int)), this, SLOT(updateBitRate(int)));
+    disconnect(m_iface, 0, this, 0);
 
 #ifdef COMPILE_MODEM_MANAGER_SUPPORT
     if (m_iface && m_iface->type() == Solid::Control::NetworkInterface::Gsm) {
@@ -686,12 +711,7 @@ void InterfaceDetailsWidget::disconnectSignals()
             Solid::Control::ModemGsmNetworkInterface *modemNetworkIface = giface->getModemNetworkIface();
 
             if (modemNetworkIface) {
-                disconnect(modemNetworkIface, SIGNAL(enabledChanged(const bool)), this, SLOT(modemUpdateEnabled(const bool)));
-                disconnect(modemNetworkIface, SIGNAL(unlockRequiredChanged(const QString &)), this, SLOT(modemUpdateUnlockRequired(const QString &)));
-
-                disconnect(modemNetworkIface, SIGNAL(registrationInfoChanged(const Solid::Control::ModemGsmNetworkInterface::RegistrationInfoType &)), this, SLOT(modemUpdateRegistrationInfo(const Solid::Control::ModemGsmNetworkInterface::RegistrationInfoType &)));
-                disconnect(modemNetworkIface, SIGNAL(accessTechnologyChanged(Solid::Control::ModemInterface::AccessTechnology)), this, SLOT(modemUpdateAccessTechnology(const Solid::Control::ModemInterface::AccessTechnology &)));
-                disconnect(modemNetworkIface, SIGNAL(signalQualityChanged(const uint)), this, SLOT(modemUpdateSignalQuality(const uint)));
+                disconnect(modemNetworkIface, 0, this, 0);
             }
         }
     }
@@ -709,6 +729,13 @@ void InterfaceDetailsWidget::updateBitRate(int bitRate)
     details->bitRate = bitRate;
     showDetails();
 }
+
+void InterfaceDetailsWidget::updateActiveAccessPoint(const QString &ap)
+{
+    details->activeAccessPoint = ap;
+    showDetails();
+}
+
 
 #ifdef COMPILE_MODEM_MANAGER_SUPPORT
 void InterfaceDetailsWidget::modemUpdateEnabled(const bool enabled)

@@ -41,6 +41,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <KLocale>
 #include <KServiceTypeTrader>
 #include <KStandardDirs>
+#include <KWindowSystem>
 
 #include "802_11_wirelesswidget.h"
 #include "cdmawidget.h"
@@ -148,7 +149,7 @@ void ConnectionSecretsJob::doAskUser()
         Knm::VpnSetting * vpnSetting = static_cast<Knm::VpnSetting*>(m_connection->setting(Knm::Setting::Vpn));
         // load the plugin and get its setting widget
         QString error;
-        VpnUiPlugin * uiPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>( QString::fromLatin1( "NetworkManagement/VpnUiPlugin" ), QString::fromLatin1( "[X-KDE-PluginInfo-Name]=='%1'" ).arg(vpnSetting->pluginName() ), this, QVariantList(), &error );
+        VpnUiPlugin * uiPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>( QString::fromLatin1( "NetworkManagement/VpnUiPlugin" ), QString::fromLatin1( "[X-NetworkManager-Services]=='%1'" ).arg(vpnSetting->serviceType() ), this, QVariantList(), &error );
         if (uiPlugin && error.isEmpty()) {
             m_settingWidget= uiPlugin->askUser(m_connection, 0);
         }
@@ -173,6 +174,7 @@ void ConnectionSecretsJob::doAskUser()
         connect(m_askUserDialog, SIGNAL(cancelClicked()), SLOT(dialogRejected()));
 
         m_askUserDialog->show();
+        KWindowSystem::forceActiveWindow(m_askUserDialog->winId());
     } else {
         kDebug() << "Setting widget for" << mSettingName << "not yet ported, rejecting secrets request.";
         dialogRejected();

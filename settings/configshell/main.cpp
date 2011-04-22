@@ -32,6 +32,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "connectioneditor.h"
 #include "connectionpersistence.h"
 #include "knmserviceprefs.h"
+#include "../config/mobileconnectionwizard.h"
+#include "nmdbussettingsconnectionprovider.h"
+#include "nmdbussettingsservice.h"
+#include "connectionlist.h"
 
 int main(int argc, char **argv)
 {
@@ -80,7 +84,28 @@ int main(int argc, char **argv)
     if (args->arg(0) == QLatin1String("create")) {
         if (args->isSet("type")) {
             const QString type = args->getOption("type");
-            QString cid = editor.addConnection(true, Knm::Connection::typeFromString(args->getOption("type")), specificArgs);
+            Knm::Connection *con = 0;
+            if (type == QLatin1String("cellular")) {
+                MobileConnectionWizard *mobileConnectionWizard = new MobileConnectionWizard();
+
+                if (mobileConnectionWizard->exec() == QDialog::Accepted) {
+                    if (mobileConnectionWizard->getError() == MobileProviders::Success) {
+                        con = editor.createConnection(true, mobileConnectionWizard->type(), mobileConnectionWizard->args(), false);
+                    } else {
+                        con = editor.createConnection(true, Knm::Connection::typeFromString(type), specificArgs);
+                    }
+                }
+                delete mobileConnectionWizard;
+            } else {
+                con = editor.createConnection(true, Knm::Connection::typeFromString(type), specificArgs);
+            }
+
+            if(!con)
+            {
+                kDebug() << Knm::Connection::typeFromString(type) << "type connection cannot be created.";
+                return -1;
+            }
+            QString cid = con->uuid().toString();
             QDBusInterface ref( "org.kde.kded", "/modules/knetworkmanager",
                                 "org.kde.knetworkmanagerd", QDBusConnection::sessionBus() );
 
@@ -108,5 +133,6 @@ int main(int argc, char **argv)
     }
     return 0;
 }
+
 // vim: sw=4 et sts=4
 

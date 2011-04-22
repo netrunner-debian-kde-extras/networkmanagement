@@ -182,6 +182,14 @@ void NMDBusSettingsService::handleAdd(Knm::Activatable * added)
             // its connections.
             if (d->uuidToPath.contains(ic->connectionUuid())) {
                 kDebug() << "tagging local InterfaceConnection " << ic->connectionName() << SERVICE_USER_SETTINGS << d->uuidToPath[ic->connectionUuid()].path();
+                kDebug() << "is default: " << ic->hasDefaultRoute();
+                Knm::Connection * conn = d->uuidToConnections[ic->connectionUuid()]->connection();
+                if (conn->autoConnect() != conn->originalAutoConnect())
+                {
+                    conn->setAutoConnect(conn->originalAutoConnect());
+                    handleUpdate(conn);
+                }
+                
                 ic->setProperty("NMDBusService", SERVICE_USER_SETTINGS);
                 ic->setProperty("NMDBusObjectPath", d->uuidToPath[ic->connectionUuid()].path());
             }

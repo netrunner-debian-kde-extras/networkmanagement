@@ -38,14 +38,17 @@ class KNMINTERNALS_EXPORT Connection
 
 public:
     enum Type { Wired = 1, Wireless, Gsm, Cdma, Vpn, Pppoe };
+    enum Scope { User = 1, System };
     static QString typeAsString(Connection::Type);
     static Connection::Type typeFromString(const QString & type);
+    static QString scopeAsString(Connection::Scope);
+    static Connection::Scope scopeFromString(const QString & scope);    
     static QString iconName(const Connection::Type type);
 
     /**
      * Create a connection with a new Uuid
      */
-    Connection(const QString & name, Connection::Type type);
+    Connection(const QString & name, Connection::Type type, Connection::Scope = User);
     /**
      * Create a connection with a given Uuid
      */
@@ -56,7 +59,9 @@ public:
     QString iconName() const;
     QUuid uuid() const;
     Connection::Type type() const;
+    Connection::Scope scope() const;
     bool autoConnect() const;
+    bool originalAutoConnect() const;
     QDateTime timestamp() const;
 
     QString origin() const;
@@ -78,6 +83,7 @@ public:
     void setIconName(const QString &);
     void setUuid(const QUuid &);
     void setAutoConnect(bool);
+    void setOriginalAutoConnect(bool);
     void setTimestamp(const QDateTime&);
 
     /**
@@ -87,6 +93,9 @@ public:
      * @param type Type of the connection to be set
      */
     void setType(Connection::Type type);
+
+
+    void setScope(Connection::Scope scope);
 
     /**
      *  Syntactic sugar for setTimestamp(QDateTime::currentDateTime())
@@ -112,6 +121,8 @@ public:
      */
     bool secretsAvailable() const;
 
+    QStringList secretSettings() const;
+
 private:
     /**
      * Set up internal structure, including all settings specific to this connection type
@@ -125,11 +136,14 @@ private:
      */
     void addSetting(Setting*);
 
+    
     QString m_name;
     QString m_iconName;
     QUuid m_uuid;
     Connection::Type m_type;
+    Connection::Scope m_scope;
     bool m_autoConnect;
+    bool m_originalAutoConnect;
     QDateTime m_timestamp;
     QString m_origin;
     QList<Setting*> m_settings;
