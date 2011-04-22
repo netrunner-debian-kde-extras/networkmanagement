@@ -1,10 +1,11 @@
 networkmanagement (0.1+git20110422.810bc16-0r1) UNRELEASED; urgency=low
 
   * New upstream Git snapshot 810bc16 (from master branch).
-  * Build-Depend on mobile-broadband-provider-info and add it to knm-runtime
-    Depends.
-  * network.svgz is not shipped when plasma-widget-networkmanager is
-    built against KDE SC 4.5. Install it only if it exists.
+  * Make the package binNMUable against KDE SC 4.6:
+    - build depend on mobile-broadband-provider-info and add it to knm-runtime
+      Depends (KDE SC 4.6 only);
+    - network.svgz is not shipped when plasma-widget-networkmanager is
+      built against KDE SC 4.5. Install it only if it exists.
   * Rename source package to networkmanagement (according to the name of the
     upstream git repository).
   * Fix links to the upstream VCS repository in debian/copyright.
