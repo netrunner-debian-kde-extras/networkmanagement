@@ -10,17 +10,6 @@ Standards-Version: 3.9.1
 Vcs-Git: git://git.debian.org/git/pkg-kde/kde-extras/networkmanagement.git
 Vcs-Browser: http://git.debian.org/?p=pkg-kde/kde-extras/networkmanagement.git
 
-Package: network-manager-kde
-Architecture: any
-Section: net
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Conflicts: plasma-widget-networkmanagement
-Provides: knetworkmanager
-Description: KDE system tray applet for controlling NetworkManager
- System tray applet for controlling network connections managed by
- NetworkManager. It is mainly written for KDE but also works for other desktop
- environments like GNOME or Xfce.
-
 Package: plasma-widget-networkmanagement
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
@@ -55,11 +44,18 @@ Description: KDE NetworkManagement infrastructure runtime files
  notifications under KDE but actual network management functions will be very
  limited.
 
+Package: network-manager-kde
+Architecture: any
+Depends: ${misc:Depends}, plasma-widget-networkmanagement
+Description: transitional package for plasma-widget-networkmanagement
+ This is a dummy transitional package for plasma-widget-networkmanagement. You
+ may safely remove it.
+
 Package: plasma-widget-networkmanagement-dbg
 Architecture: any
 Section: debug
 Priority: extra
-Depends: ${misc:Depends}, network-manager-kde (= ${knetworkmanager:Version})
+Depends: ${misc:Depends}, plasma-widget-networkmanagement (= ${binary:Version})
 Recommends: kdelibs5-dbg
 Suggests: kdebase-workspace-dbg
 Description: debugging symbols for KDE Network Management
