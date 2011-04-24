@@ -18,16 +18,15 @@ Suggests: kdebase-workspace-bin
 Recommends: kwalletmanager, network-manager-vpnc, network-manager-openvpn, network-manager-pptp
 Replaces: knm-runtime
 Breaks: knm-runtime
-Description: Network Management widget for KDE4 Plasma
+Description: Network Management widget for KDE Plasma workspaces
  This package contains the Network Management plasma widget which aims to
- provide a fully featured GUI for managing networks.  Currently, the only
- supported backend is NetworkManager.  Support for wired, wireless, GSM
- and VPN networks are provided.  The widget is exclusively written for Plasma
- and KDE4 and it is not supposed to work in other environments.
+ provide a fully featured GUI for managing networks. Currently, the only
+ supported backend is NetworkManager. Support for wired, wireless, mobile
+ and VPN networks are provided. The widget is exclusively written for KDE
+ Plasma workspaces and it is not supposed to work in other environments.
  .
- This widget needs Plasma shell to be usable. Main KDE 4 Plasma shell is
- available in the kdebase-workspace-bin package. The user friendly name of the
- widget is "Network Management" (in e.g. "Add Widgets" dialog).
+ In order to start using the widget, look for "Network Management" in the "Add
+ Widgets" dialog of the Plasma workspace you're using.
 
 Package: network-manager-kde
 Architecture: any
