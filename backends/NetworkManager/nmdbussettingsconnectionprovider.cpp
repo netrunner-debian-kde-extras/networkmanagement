@@ -18,6 +18,8 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <unistd.h>
+
 #include "nmdbussettingsconnectionprovider.h"
 
 #include <NetworkManager.h>
@@ -26,6 +28,10 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 #include <QUuid>
 
 #include <KDebug>
+#include <KAuth/Action>
+#include <kauthactionreply.h>
+#include <KMessageBox>
+#include <KLocale>
 
 // knminternals includes
 #include "connection.h"
@@ -76,6 +82,7 @@ NMDBusSettingsConnectionProvider::NMDBusSettingsConnectionProvider(ConnectionLis
 
 NMDBusSettingsConnectionProvider::~NMDBusSettingsConnectionProvider()
 {
+   delete d_ptr;
 }
 
 void NMDBusSettingsConnectionProvider::initConnections()
@@ -146,7 +153,12 @@ void NMDBusSettingsConnectionProvider::onRemoteConnectionRemoved()
         QPair<Knm::Connection *, RemoteConnection *> removed = d->connections.take(removedPath);
         d->uuidToPath.remove(removed.first->uuid());
         delete removed.second;
-        d->connectionList->removeConnection(removed.first);
+        // If connection changed scope do not delete it because it is still needed in the other scope.
+        if ((d->serviceName.contains("NetworkManagerSystemSettings") && removed.first->scope() == Knm::Connection::System) ||
+            (d->serviceName.contains("NetworkManagerUserSettings") && removed.first->scope() == Knm::Connection::User)) {
+            removed.first->removeCertificates();
+            d->connectionList->removeConnection(removed.first);
+        }
 
         emit connectionsChanged();
     }
@@ -196,7 +208,12 @@ void NMDBusSettingsConnectionProvider::clearConnections()
         // NMDBusSettingsConnectionProvider::onRemoteConnectionRemoved(), which deletes
         // toDelete.second again.
         QPair<Knm::Connection*, RemoteConnection*> toDelete = d->connections.take(key);
-        d->connectionList->removeConnection(toDelete.first);
+
+        // If connection changed scope do not delete it because it is still needed in the other scope.
+        if ((d->serviceName.contains("NetworkManagerSystemSettings") && toDelete.first->scope() == Knm::Connection::System) ||
+            (d->serviceName.contains("NetworkManagerUserSettings") && toDelete.first->scope() == Knm::Connection::User)) {
+            d->connectionList->removeConnection(toDelete.first);
+        }
         delete toDelete.second;
     }
     // Just to make sure d->connections is really clear.
@@ -229,17 +246,50 @@ void NMDBusSettingsConnectionProvider::handleRemove(Knm::Activatable *)
 
 }
 
+bool NMDBusSettingsConnectionProvider::checkAuthorization(const Operation oper)
+{
+    // See /usr/share/polkit-1/actions/org.freedesktop.network-manager-settings.system.policy
+    // KAuth is the KDE's Polkit wrapper.
+    KAuth::Action action(QLatin1String("org.freedesktop.network-manager-settings.system.modify"));
+
+    QWidget *w = qobject_cast<QWidget *>(parent());
+    if (w) {
+        action.setParentWidget(w);
+    }
+
+    KAuth::ActionReply reply = action.execute(QLatin1String("org.freedesktop.network-manager-settings.system"));
+    if (reply.failed()) {
+        QString errorMessage;
+        switch (oper) {
+            case Add: errorMessage = i18n("Adding connection failed. Error code is %1/%2 (%3).", QString::number(reply.type()), QString::number(reply.errorCode()), reply.errorDescription());
+            break;
+
+            case Remove: errorMessage = i18n("Removing connection failed. Error code is %1/%2 (%3).", QString::number(reply.type()), QString::number(reply.errorCode()), reply.errorDescription());
+            break;
+
+            case Update: errorMessage = i18n("Updating connection failed. Error code is %1/%2 (%3).", QString::number(reply.type()), QString::number(reply.errorCode()), reply.errorDescription());
+            break;
+        }
+        KMessageBox::error(0, errorMessage, i18n("Error"));
+        return false;
+    }
+    return true;
+}
+
 void NMDBusSettingsConnectionProvider::updateConnection(const QString &uuid, Knm::Connection *newConnection)
 {
     Q_D(NMDBusSettingsConnectionProvider);
 
     if ( d->uuidToPath.contains(QUuid(uuid))) {
-
         QDBusObjectPath objPath = d->uuidToPath.value(QUuid(uuid));
 
         if (!d->connections.contains(objPath.path()))
         {
-            kWarning() << "Connection could not found!" << uuid << objPath.path();
+            kWarning() << "Connection not found!" << uuid << objPath.path();
+            return;
+        }
+
+        if (getuid() != 0 && !checkAuthorization(Update)) {
             return;
         }
 
@@ -248,24 +298,47 @@ void NMDBusSettingsConnectionProvider::updateConnection(const QString &uuid, Knm
 
         kDebug() << "Updating connection "<< remote->id() << pair.first->uuid().toString();
 
+        newConnection->saveCertificates();
         ConnectionDbus converter(newConnection);
         QVariantMapMap map = converter.toDbusMap();
 
         remote->Update(map);
 
+        // FIXME: if connection's name (id in NM termonology) changed in the Update call above,
+        // NM will leave the old connection file intact and create/update a new connection file
+        // in /etc/NetworkManager/system-connections/ with the same uuid, which is wrong in my oppinion.
+        // Furthermore the old connection is not shown in kcm's because we use the uuid as connection identifier.
+
         // don't do any processing on d->connections and d->connectionList here
         // because onRemoteConnectionUpdated() method will take care of them
-        //
-
         return;
     }
 
-    kWarning() << "Connection could not found!"<< uuid;
+    kWarning() << "Connection not found!"<< uuid;
 }
 
-void NMDBusSettingsConnectionProvider::addConnection(Knm::Connection *newConnection)
+void NMDBusSettingsConnectionProvider::checkConnectionAdded()
 {
     Q_D(NMDBusSettingsConnectionProvider);
+    kDebug() << d->connections;
+    QDBusPendingReply<QList<QDBusObjectPath> > reply = d->iface->ListConnections();
+    reply.waitForFinished();
+    if (reply.isValid()) {
+        QList<QDBusObjectPath> connections = reply.value();
+        foreach (const QDBusObjectPath &op, connections) {
+            kDebug() << op.path();
+            if (!d->connections.contains(op.path())) {
+                kDebug() << "Adding missing connection.";
+                initialiseAndRegisterRemoteConnection(op.path());
+            }
+        }
+    }
+}
+
+bool NMDBusSettingsConnectionProvider::addConnection(Knm::Connection *newConnection)
+{
+    Q_D(NMDBusSettingsConnectionProvider);
+    newConnection->saveCertificates();
     ConnectionDbus converter(newConnection);
     QVariantMapMap map = converter.toDbusMap();
     kDebug() << "Adding connection " << newConnection->name() << newConnection->uuid().toString();
@@ -274,12 +347,39 @@ void NMDBusSettingsConnectionProvider::addConnection(Knm::Connection *newConnect
     if(newConnection && newConnection->name().isEmpty())
         kWarning() << "Trying to add connection without a name!";
 
+    if (getuid() != 0 && !checkAuthorization(Add)) {
+        return false;
+    }
+
     QDBusPendingCall reply = d->iface->AddConnection(map);
+    reply.waitForFinished();
+
+    if (reply.isError())
+    {
+        kWarning() << "Adding connection failed:" << reply.error().message();
+        emit addConnectionCompleted(false, reply.error().message());
+        return false;
+    }
+    else
+    {
+        kDebug() << "Connection added successfully.";
+
+        // NM's ifnet plugin does not emit the changed signal for a connection that has been updated
+        // and kept its uuid. As consequency the onConnectionAdded is not ativated.
+        // So check here if our connection was added.
+        QTimer::singleShot(2000, this, SLOT(checkConnectionAdded()));
+
+        emit addConnectionCompleted(true, QString());
+        return true;
+    }
+
+/*
     //do not check if reply is valid or not because it's an async call and invalid till reply is really arrived
 
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
 
     connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)), this, SLOT(onConnectionAddArrived(QDBusPendingCallWatcher*)));
+*/
 }
 
 void NMDBusSettingsConnectionProvider::onConnectionAddArrived(QDBusPendingCallWatcher *watcher)
@@ -378,7 +478,7 @@ void NMDBusSettingsConnectionProvider::onConnectionSecretsArrived(QDBusPendingCa
     watcher->deleteLater();
 }
 
-void NMDBusSettingsConnectionProvider::removeConnection(const QString &uuid)
+bool NMDBusSettingsConnectionProvider::removeConnection(const QString &uuid)
 {
     Q_D(NMDBusSettingsConnectionProvider);
 
@@ -388,8 +488,12 @@ void NMDBusSettingsConnectionProvider::removeConnection(const QString &uuid)
 
         if (!d->connections.contains(objPath.path()))
         {
-            kWarning() << "Connection could not found!" << uuid << objPath.path();
-            return;
+            kWarning() << "Connection not found!" << uuid << objPath.path();
+            return false;
+        }
+
+        if (getuid() != 0 && !checkAuthorization(Remove)) {
+            return false;
         }
 
         QPair<Knm::Connection *, RemoteConnection *> pair = d->connections.value(objPath.path());
@@ -402,9 +506,9 @@ void NMDBusSettingsConnectionProvider::removeConnection(const QString &uuid)
         // because onRemoteConnectionRemoved() method will take care of them
         //
 
-        return;
+        return true;
     }
-
+    return false;
     kWarning() << "Connection could not found!"<< uuid;
 }
 

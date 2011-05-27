@@ -39,12 +39,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <KStandardDirs>
 #include <KSharedConfig>
 #include <KLocale>
+#include <KPushButton>
 
 #include "connectionprefs.h"
 #include "wiredpreferences.h"
 #include "wirelesspreferences.h"
 #include "gsmconnectioneditor.h"
 #include "cdmaconnectioneditor.h"
+#include "bluetoothconnectioneditor.h"
 #include "pppoepreferences.h"
 #include "vpnpreferences.h"
 
@@ -74,6 +76,9 @@ void ConnectionEditor::editConnection(Knm::Connection::Type type, const QVariant
 
     cprefs->load();
     cprefs->validate();
+
+    // For KAuth (KDE's Polkit wrapper): this seems to have no effect in the Ok button though.
+    configDialog.button(KDialog::Ok)->setAuthAction(QLatin1String("org.freedesktop.network-manager-settings.system.modify"));
 
     if ( cprefs && configDialog.exec() == QDialog::Accepted ) {
         QStringList changedConnections;
@@ -193,7 +198,7 @@ void ConnectionEditor::persist(Knm::Connection* connection)
     QString name = connection->name();
     QString type = Knm::Connection::typeAsString(connection->type());
     KNetworkManagerServicePrefs * prefs = KNetworkManagerServicePrefs::self();
-    KConfigGroup config(prefs->config(), QLatin1String("Connection_") + connection->uuid());
+    KConfigGroup config(prefs->config(), QLatin1String("Connection_") + QString(connection->uuid()));
     QStringList connectionIds = prefs->connections();
     // check if already present, we may be editing an existing Connection
     if (!connectionIds.contains(connection->uuid()))
@@ -225,6 +230,9 @@ ConnectionPreferences * ConnectionEditor::editorForConnectionType(bool setDefaul
         case Knm::Connection::Gsm:
             wid = new GsmConnectionEditor(args, parent);
             break;
+        case Knm::Connection::Bluetooth:
+            wid = new BluetoothConnectionEditor(args, parent);
+            break;
         case Knm::Connection::Vpn:
             wid = new VpnPreferences(args, parent);
             break;
@@ -252,6 +260,9 @@ ConnectionPreferences * ConnectionEditor::editorForConnectionType(QWidget * pare
             break;
         case Knm::Connection::Gsm:
             wid = new GsmConnectionEditor(con, parent);
+            break;
+        case Knm::Connection::Bluetooth:
+            wid = new BluetoothConnectionEditor(con, parent);
             break;
         case Knm::Connection::Vpn:
             wid = new VpnPreferences(con, parent);

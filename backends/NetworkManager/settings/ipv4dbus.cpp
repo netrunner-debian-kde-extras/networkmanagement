@@ -20,20 +20,22 @@ void Ipv4Dbus::fromMap(const QVariantMap & map)
 
   kDebug() << "IPv4 map: " << map;
 
-  Knm::Ipv4Setting * setting = static_cast<Knm::Ipv4Setting*>(m_setting); 
+  Knm::Ipv4Setting * setting = static_cast<Knm::Ipv4Setting*>(m_setting);
 
   if (map.contains("method")) {
       setting->setMethod(methodStringToEnum(map.value("method").value<QString>())); }
 
   if (map.contains("dns")) {
-      QDBusArgument dnsArg = map.value("dns").value< QDBusArgument>();
       QList<QHostAddress> dbusDns;
-
-      dnsArg.beginArray();
-      while(!dnsArg.atEnd())
-      {
-          uint utmp = 0;
-          dnsArg >> utmp;
+      QList<uint> temp;
+      if (map.value(QLatin1String("dns")).canConvert<QDBusArgument>()) {
+          QDBusArgument dnsArg = map.value(QLatin1String("dns")).value<QDBusArgument>();
+          temp = qdbus_cast<QList<uint> >(dnsArg);
+      } else {
+          temp = map.value(QLatin1String("dns")).value<QList<uint> >();
+      }
+    
+      foreach(const uint utmp, temp) {
           QHostAddress tmpHost(ntohl(utmp));
           dbusDns << tmpHost;
           kDebug() << "DNS IP is " << tmpHost.toString();
@@ -66,15 +68,16 @@ void Ipv4Dbus::fromMap(const QVariantMap & map)
   }
 
   if (map.contains("addresses")) {
-      QDBusArgument addressArg = map.value("addresses").value< QDBusArgument>();
       QList<Solid::Control::IPv4Address> addresses;
+      QList<QList<uint> > temp;
+      if (map.value("addresses").canConvert< QDBusArgument>()) {
+          QDBusArgument addressArg = map.value("addresses").value<QDBusArgument>();
+          temp = qdbus_cast<QList<QList<uint> > >(addressArg);
+      } else {
+          temp = map.value("addresses").value<QList<QList<uint> > >();
+      }
 
-      addressArg.beginArray();
-      while(!addressArg.atEnd())
-      {
-          QList<uint> uintList;
-          addressArg >> uintList;
-
+      foreach(const QList<uint> uintList, temp) {
           if (uintList.count() != 3)
           {
             kWarning() << "Invalid address format detected. UInt count is " << uintList.count();
@@ -120,6 +123,36 @@ void Ipv4Dbus::fromMap(const QVariantMap & map)
           setting->setAddresses(addresses);
   }
 
+  if (map.contains("routes"))
+  {
+      QList<Solid::Control::IPv4Route> routes;
+      QList<QList<uint> > temp;
+      if (map.value("routes").canConvert< QDBusArgument>()) {
+          QDBusArgument routeArg = map.value("routes").value<QDBusArgument>();
+          temp = qdbus_cast<QList<QList<uint> > >(routeArg);
+      } else {
+          temp = map.value("routes").value<QList<QList<uint> > >();
+      }
+
+      foreach(const QList<uint> uintList, temp) {
+          if (uintList.count() != 4)
+          {
+              kWarning() << "Invalid route format detected. UInt count is " << uintList.count();
+              continue;
+          }
+
+          Solid::Control::IPv4Route route((quint32)ntohl(uintList.at(0)), (quint32)uintList.at(1), (quint32)ntohl(uintList.at(2)), (quint32)uintList.at(3));
+          if (!route.isValid())
+          {
+              kWarning() << "Invalid route format detected.";
+              continue;
+          }
+          routes << route;
+      }
+      if (!routes.isEmpty())
+          setting->setRoutes(routes);
+  }
+
   if (map.contains(QLatin1String(NM_SETTING_IP4_CONFIG_IGNORE_AUTO_DNS))) {
     setting->setIgnoredhcpdns(map.value(QLatin1String(NM_SETTING_IP4_CONFIG_IGNORE_AUTO_DNS)).value<bool>());
   }
@@ -135,6 +168,9 @@ void Ipv4Dbus::fromMap(const QVariantMap & map)
   if (map.contains(QLatin1String(NM_SETTING_IP4_CONFIG_DHCP_HOSTNAME))) {
     setting->setDhcphostname(map.value(QLatin1String(NM_SETTING_IP4_CONFIG_DHCP_HOSTNAME)).value<QString>());
   }
+  if (map.contains(QLatin1String(NM_SETTING_IP4_CONFIG_MAY_FAIL))) {
+    setting->setMayfail(map.value(QLatin1String(NM_SETTING_IP4_CONFIG_MAY_FAIL)).value<bool>());
+  }
 }
 
 Knm::Ipv4Setting::EnumMethod::type Ipv4Dbus::methodStringToEnum(QString method)
@@ -147,6 +183,8 @@ Knm::Ipv4Setting::EnumMethod::type Ipv4Dbus::methodStringToEnum(QString method)
         return Knm::Ipv4Setting::EnumMethod::Manual;
     else if (method.toLower() == "shared")
         return Knm::Ipv4Setting::EnumMethod::Shared;
+    else if (method.toLower() == "disabled")
+        return Knm::Ipv4Setting::EnumMethod::Disabled;
     else
     {
         kDebug() << "Unknown method given:" << method;
@@ -170,6 +208,9 @@ QVariantMap Ipv4Dbus::toMap()
           break;
       case Knm::Ipv4Setting::EnumMethod::Shared:
           map.insert("method", "shared");
+          break;
+       case Knm::Ipv4Setting::EnumMethod::Disabled:
+          map.insert("method", "disabled");
           break;
   }
 
@@ -218,6 +259,7 @@ QVariantMap Ipv4Dbus::toMap()
   insertIfTrue(map, NM_SETTING_IP4_CONFIG_NEVER_DEFAULT, setting->neverdefault());
   insertIfNonEmpty(map, NM_SETTING_IP4_CONFIG_DHCP_CLIENT_ID, setting->dhcpclientid());
   insertIfNonEmpty(map, NM_SETTING_IP4_CONFIG_DHCP_HOSTNAME, setting->dhcphostname());
+  insertIfTrue(map, NM_SETTING_IP4_CONFIG_MAY_FAIL, setting->mayfail());
   return map;
 }
 

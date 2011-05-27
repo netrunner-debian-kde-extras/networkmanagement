@@ -13,6 +13,7 @@
         <choice name="LinkLocal" dbusvalue="link-local"/>
         <choice name="Manual" dbusvalue="manual"/>
         <choice name="Shared" dbusvalue="shared"/>
+        <choice name="Disabled" dbusvalue="disabled"/>
       </choices>
       <default>42</default><!-- invalid default so that the choice is always sent; NM requires this -->
     </entry>
@@ -51,6 +52,9 @@
     -->
     <entry name="dhcphostname" type="String" dbuskey="NM_SETTING_IP4_CONFIG_DHCP_HOSTNAME">
       <label>DHCP hostname</label>
+    </entry>
+    <entry name="mayfail" type="Bool" dbuskey="NM_SETTING_IP4_CONFIG_MAY_FAIL">
+      <label>Required for this connection</label>
     </entry>
   </group>
 </kcfg>

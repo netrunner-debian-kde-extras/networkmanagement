@@ -90,18 +90,22 @@ private Q_SLOTS:
 #endif
     void readConfig();
     void saveConfig();
+    void checkShowMore(RemoteActivatable *);
+    void uncheckShowMore(RemoteActivatable *);
+    void refresh();
 
 private:
     void addInterfaceInternal(Solid::Control::NetworkInterface *);
     void addVpnInterface();
-    void updateHasWireless();
+    void updateHasWireless(bool checked = true);
 #ifdef NM_0_8
     void updateHasWwan();
 #endif
-    QSizeF sizeHint ( Qt::SizeHint which, const QSizeF & constraint = QSizeF() ) const;
 
     RemoteActivatableList* m_activatables;
     bool m_hasWirelessInterface;
+    bool m_showMoreChecked, m_oldShowMoreChecked;
+    int wicCount;
     QGraphicsWidget* m_widget;
     QGraphicsGridLayout* m_mainLayout;
     // Interfaces label
@@ -124,9 +128,7 @@ private:
 
     Plasma::CheckBox* m_networkingCheckBox;
     Plasma::CheckBox* m_wifiCheckBox;
-#ifdef NM_0_8
     Plasma::CheckBox* m_wwanCheckBox;
-#endif
     Plasma::PushButton* m_connectionsButton;
     Plasma::PushButton* m_showMoreButton;
 

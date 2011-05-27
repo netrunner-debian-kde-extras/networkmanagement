@@ -29,12 +29,18 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 #include <KLocale>
 #include <kdeversion.h>
 #include "kglobal.h"
+#ifdef COMPILE_MODEM_MANAGER_SUPPORT
+#include <KToolInvocation>
+#include <KStandardDirs>
+#include <KIconLoader>
+#endif
 
 #include <Solid/Device>
 #include <solid/control/networkmanager.h>
 #include <solid/control/wirelessnetworkinterface.h>
 
 #include <interfaceconnection.h>
+#include <vpninterfaceconnection.h>
 #include <uiutils.h>
 #include <wirelessnetworkinterfaceenvironment.h>
 
@@ -42,7 +48,6 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 #include "../internals/connection.h"
 
 static const int iconSize = 48;
-Knm::Connection::Type solidToKnmType(const Solid::Control::NetworkInterface::Type sType);
 
 K_GLOBAL_STATIC_WITH_ARGS(KComponentData, s_networkManagementComponentData, ("networkmanagement", "networkmanagement", KComponentData::SkipMainComponentRegistration))
 
@@ -322,7 +327,7 @@ void InterfaceNotificationHost::interfaceConnectionStateChanged(int new_state, i
             text = i18nc("@info:status Notification when an interface changes state (%1) due to CarrierReason","%1 because the cable was disconnected", stateString);
             break;
     }
-    performInterfaceNotification(title, text, KIcon(Knm::Connection::iconName(solidToKnmType(m_interface->type()))).pixmap(QSize(iconSize,iconSize)), flag);
+    performInterfaceNotification(title, text, KIcon(Knm::Connection::iconName(Knm::Connection::typeFromSolidType(m_interface->type()))).pixmap(QSize(iconSize,iconSize)), flag);
 }
 
 void InterfaceNotificationHost::performInterfaceNotification(const QString & title, const QString & text, const QPixmap & pixmap, KNotification::NotificationFlag flag)
@@ -355,19 +360,6 @@ void InterfaceNotificationHost::performInterfaceNotification(const QString & tit
     notification->sendEvent();
 }
 
-Knm::Connection::Type solidToKnmType(const Solid::Control::NetworkInterface::Type sType)
-{
-    Knm::Connection::Type type;
-    switch (sType) {
-        case Solid::Control::NetworkInterface::Ieee80211: type = Knm::Connection::Wireless; break;
-        case Solid::Control::NetworkInterface::Gsm: type = Knm::Connection::Gsm; break;
-        case Solid::Control::NetworkInterface::Cdma: type = Knm::Connection::Cdma; break;
-        case Solid::Control::NetworkInterface::Serial: type = Knm::Connection::Pppoe; break;
-        default: type = Knm::Connection::Wired;
-    }
-    return type;
-}
-
 class NotificationManagerPrivate
 {
 public:
@@ -377,12 +369,14 @@ public:
     QStringList newWirelessNetworks;
     QStringList disappearedWirelessNetworks;
     QHash<QString, InterfaceNotificationHost *> interfaceHosts;
+    ConnectionList * connectionList;
 };
 
-NotificationManager::NotificationManager(QObject * parent)
+NotificationManager::NotificationManager(ConnectionList *connectionList, QObject * parent)
 : QObject(parent), d_ptr (new NotificationManagerPrivate)
 {
     Q_D(NotificationManager);
+    d->connectionList = connectionList;
     d->suppressHardwareEvents = true;
     d->newNetworkTimer = new QTimer(this);
     d->disappearedNetworkTimer = new QTimer(this);
@@ -431,8 +425,30 @@ void NotificationManager::handleAdd(Knm::Activatable * activatable)
     }
 }
 
-void NotificationManager::handleUpdate(Knm::Activatable *)
+void NotificationManager::handleUpdate(Knm::Activatable *activatable)
 {
+    if (activatable->activatableType() == Knm::Activatable::VpnInterfaceConnection) {
+        Knm::VpnInterfaceConnection * ic = qobject_cast<Knm::VpnInterfaceConnection *>(activatable);
+        if (ic) {
+            switch (ic->activationState()) {
+                case Knm::InterfaceConnection::Activating: 
+                    kDebug() << ic->connectionName() << "is activating";
+                    KNotification::event(Event::Connecting, QString(), i18nc("@info:status Notification text when connecting","Activating %1", ic->connectionName()), KIcon(Knm::Connection::iconName(ic->connectionType())).pixmap(QSize(iconSize,iconSize)), 0, KNotification::CloseOnTimeout, componentData());
+                    break;
+                case Knm::InterfaceConnection::Activated:
+                    kDebug() << ic->connectionName() << "is activated";
+                    KNotification::event(Event::Connected, QString(), i18nc("@info:status Notification text when a connection has been activated","%1 activated", ic->connectionName()), KIcon(Knm::Connection::iconName(ic->connectionType())).pixmap(QSize(iconSize,iconSize)), 0, KNotification::CloseOnTimeout, componentData());
+                    break;
+                case Knm::InterfaceConnection::Unknown:
+                    kDebug() << ic->connectionName() << "is unknown";
+                    if (ic->oldActivationState() == Knm::InterfaceConnection::Activating)
+                        KNotification::event(Event::ConnectFailed, QString(), i18nc("@info:status Notification text when connection has failed","Connection %1 failed", ic->connectionName()), KIcon(Knm::Connection::iconName(ic->connectionType())).pixmap(QSize(iconSize,iconSize)), 0, KNotification::CloseOnTimeout, componentData());
+                    else
+                        KNotification::event(Event::Disconnected, QString(), i18nc("@info:status Notification text when deactivating a connection","%1 deactivated", ic->connectionName()), KIcon(Knm::Connection::iconName(ic->connectionType())).pixmap(QSize(iconSize,iconSize)), 0, KNotification::CloseOnTimeout, componentData());
+                    break;
+            }
+        }
+    }
 }
 
 void NotificationManager::handleRemove(Knm::Activatable * activatable)
@@ -446,6 +462,15 @@ void NotificationManager::handleRemove(Knm::Activatable * activatable)
         }
     }
 }
+
+#ifdef COMPILE_MODEM_MANAGER_SUPPORT
+void NotificationManager::createCellularConnection()
+{
+    QStringList args;
+    args << QLatin1String("create") << QLatin1String("--type") << QLatin1String("cellular");
+    KToolInvocation::kdeinitExec(KGlobal::dirs()->findResource("exe", "networkmanagement_configshell"), args);
+}
+#endif
 
 void NotificationManager::networkInterfaceAdded(const QString & uni)
 {
@@ -462,7 +487,39 @@ void NotificationManager::networkInterfaceAdded(const QString & uni)
 
             // notify hardware added
             if (!d->suppressHardwareEvents) {
-                KNotification::event(Event::HwAdded, i18nc("@info:status Notification for hardware added", "%1 attached", host->label()), KIcon(Knm::Connection::iconName(solidToKnmType(iface->type()))).pixmap(QSize(iconSize,iconSize)), 0, KNotification::CloseOnTimeout, componentData());
+#ifdef COMPILE_MODEM_MANAGER_SUPPORT
+                if (iface->type() == Solid::Control::NetworkInterface::Gsm ||
+                    iface->type() == Solid::Control::NetworkInterface::Cdma) {
+        
+                    bool hasCellular = false;
+                    foreach (const QString uuid, d->connectionList->connections()) {
+                        const Knm::Connection *c = d->connectionList->findConnection(uuid);
+                        if ((c->type() == Knm::Connection::Gsm && iface->type() == Solid::Control::NetworkInterface::Gsm) ||
+                            (c->type() == Knm::Connection::Cdma && iface->type() == Solid::Control::NetworkInterface::Cdma)) {
+                            hasCellular = true;
+                            break;
+                        }
+                    }
+        
+                    if (!hasCellular) {
+                        // KNotification::CloseOnTimeout sometimes breaks the activation of slot createCellularConnection,
+                        // so using Persistent here and closing the notification using QTimer::singleShot() below.
+                        KNotification *notification= new KNotification(Event::HwAdded, 0, KNotification::Persistent);
+                        notification->setComponentData(componentData());
+                        notification->setText(i18nc("@info:status Notification for hardware added", "%1 attached.<br />You do not have a cellular connection yet.", host->label()));
+                        notification->setActions(( QStringList() << i18nc("@action", "Create Connection" ) << i18nc("@action", "Ignore" )) );
+                        notification->setPixmap(KIcon(Knm::Connection::iconName(Knm::Connection::typeFromSolidType(iface->type()))).pixmap(QSize(iconSize,iconSize)));
+                        QObject::connect(notification,SIGNAL(activated()), this , SLOT(createCellularConnection()) );
+                        QObject::connect(notification,SIGNAL(action1Activated()), this, SLOT(createCellularConnection()) );
+                        QObject::connect(notification,SIGNAL(action2Activated()), notification, SLOT(close()) );
+                        QObject::connect(notification,SIGNAL(ignored()), notification, SLOT(close()) );
+                        notification->sendEvent();
+                        QTimer::singleShot(10000, notification, SLOT(close()));
+                        return;
+                    }
+                }
+#endif
+                KNotification::event(Event::HwAdded, i18nc("@info:status Notification for hardware added", "%1 attached", host->label()), KIcon(Knm::Connection::iconName(Knm::Connection::typeFromSolidType(iface->type()))).pixmap(QSize(iconSize,iconSize)), 0, KNotification::CloseOnTimeout, componentData());
             }
 
             // if wireless, listen for new networks
@@ -499,7 +556,7 @@ void NotificationManager::networkInterfaceRemoved(const QString &uni)
         Knm::Connection::Type type = Knm::Connection::Wired;
         if (host) {
             notificationText = i18nc("@info:status Notification for hardware removed giving vendor supplied product name", "%1 removed", host->label());
-            type = solidToKnmType(host->type());
+            type = Knm::Connection::typeFromSolidType(host->type());
             delete host;
         } else {
             notificationText = i18nc("@info:status Notification for hardware removed used if we don't have its user-visible name", "Network interface removed");
@@ -576,7 +633,7 @@ void NotificationManager::wirelessHardwareEnabledChanged(bool enabled)
         d->newWirelessNetworks.clear();
         d->disappearedNetworkTimer->stop();
         d->disappearedWirelessNetworks.clear();
-        KNotification::event(Event::RfOff, i18nc("@info:status Notification for radio kill switch turned on", "Wireless hardware disabled"), KIcon("network-wireless").pixmap(QSize(iconSize,iconSize)), 0, KNotification::CloseOnTimeout, componentData());
+        KNotification::event(Event::RfOff, i18nc("@info:status Notification for radio kill switch turned off", "Wireless hardware disabled"), KIcon("network-wireless").pixmap(QSize(iconSize,iconSize)), 0, KNotification::CloseOnTimeout, componentData());
     }
 }
 

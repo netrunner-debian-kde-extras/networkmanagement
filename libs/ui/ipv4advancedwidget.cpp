@@ -20,7 +20,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include <QLineEdit>
-#include <QStandardItem>
 #include <QStandardItemModel>
 #include <QNetworkAddressEntry>
 //#include <QHostAddress>
@@ -31,6 +30,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "ipv4advancedwidget.h"
 #include "simpleipv4addressvalidator.h"
+#include "ipv4delegate.h"
 
 class IpV4AdvancedWidget::Private
 {
@@ -48,41 +48,6 @@ public:
     QStandardItemModel model;
 };
 
-Ipv4Delegate::Ipv4Delegate(QObject * parent) : QStyledItemDelegate(parent) {}
-Ipv4Delegate::~Ipv4Delegate() {}
-
-QWidget * Ipv4Delegate::createEditor(QWidget *parent, const QStyleOptionViewItem &,
-        const QModelIndex &) const
-{
-    QLineEdit *editor = new QLineEdit(parent);
-    editor->setValidator(new SimpleIpV4AddressValidator(editor));
-
-    return editor;
-}
-
-void Ipv4Delegate::setEditorData(QWidget *editor, const QModelIndex &index) const
-{
-    QString value = index.model()->data(index, Qt::EditRole).toString();
-
-    QLineEdit *le = static_cast<QLineEdit*>(editor);
-    le->setText(value);
-}
-
-void Ipv4Delegate::setModelData(QWidget *editor, QAbstractItemModel *model,
-        const QModelIndex &index) const
-{
-    QLineEdit *le = static_cast<QLineEdit*>(editor);
-
-    model->setData(index, le->text(), Qt::EditRole);
-}
-
-void Ipv4Delegate::updateEditorGeometry(QWidget *editor,
-        const QStyleOptionViewItem &option, const QModelIndex &) const
-{
-    editor->setGeometry(option.rect);
-
-}
-
 IpV4AdvancedWidget::IpV4AdvancedWidget(QWidget * parent)
 : QWidget(parent), d(new IpV4AdvancedWidget::Private())
 {
@@ -92,7 +57,7 @@ IpV4AdvancedWidget::IpV4AdvancedWidget(QWidget * parent)
     d->ui.tableViewAddresses->horizontalHeader()->setResizeMode(QHeaderView::ResizeToContents);
     d->ui.tableViewAddresses->horizontalHeader()->setStretchLastSection(true);
 
-    Ipv4Delegate *ipDelegate = new Ipv4Delegate(this);
+    IpV4Delegate *ipDelegate = new IpV4Delegate(this);
     d->ui.tableViewAddresses->setItemDelegateForColumn(0, ipDelegate);
     d->ui.tableViewAddresses->setItemDelegateForColumn(1, ipDelegate);
     d->ui.tableViewAddresses->setItemDelegateForColumn(2, ipDelegate);

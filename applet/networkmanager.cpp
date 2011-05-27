@@ -246,6 +246,12 @@ void NetworkManagerApplet::init()
 
     m_activatables->init();
     setupInterfaceSignals();
+
+    // Just to make sure the kded module is loaded.
+    QDBusInterface kded(QLatin1String("org.kde.kded"), QLatin1String("/kded"),
+                        QLatin1String("org.kde.kded"), QDBusConnection::sessionBus());
+
+    kded.call(QLatin1String("loadModule"), QLatin1String("networkmanagement"));
 }
 
 void NetworkManagerApplet::configChanged()
@@ -429,7 +435,6 @@ void NetworkManagerApplet::networkInterfaceAdded(const QString & uni)
     setupInterfaceSignals();
     interfaceConnectionStateChanged();
     updatePixmap();
-    update();
 }
 
 void NetworkManagerApplet::networkInterfaceRemoved(const QString & uni)
@@ -530,7 +535,7 @@ void NetworkManagerApplet::toolTipAboutToShow()
                 QString ifaceName = iface->interfaceName();
                 lines << QString::fromLatin1("<b>%1</b>").arg(deviceText);
                 QString connectionName;
-                RemoteInterfaceConnection *conn = UiUtils::connectionForInterface(m_activatables, iface);
+                RemoteInterfaceConnection *conn = m_activatables->connectionForInterface(iface);
                 if (conn) {
                     connectionName = conn->connectionName();
                 }

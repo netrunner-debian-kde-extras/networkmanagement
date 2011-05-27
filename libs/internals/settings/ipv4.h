@@ -22,7 +22,7 @@ class KNMINTERNALS_EXPORT Ipv4Setting : public Setting
     class EnumMethod
     {
       public:
-      enum type { Automatic, LinkLocal, Manual, Shared, COUNT };
+      enum type { Automatic, LinkLocal, Manual, Shared, Disabled, COUNT };
     };
 
     Ipv4Setting( );
@@ -185,7 +185,24 @@ class KNMINTERNALS_EXPORT Ipv4Setting : public Setting
     {
         mRoutes = routes;
     }
-    
+
+    /**
+    Set May Fail
+    */
+    void setMayfail( bool v )
+    {
+        mMayfail = v;
+    }
+
+    /**
+      Get May Fail
+    */
+    bool mayfail() const
+    {
+      return mMayfail;
+    }
+
+
   protected:
 
     // ipv4
@@ -199,6 +216,7 @@ class KNMINTERNALS_EXPORT Ipv4Setting : public Setting
     bool mNeverdefault;
     QString mDhcpclientid;
     QString mDhcphostname;
+    bool mMayfail;
   private:
 };
 

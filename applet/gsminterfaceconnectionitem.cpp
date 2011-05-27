@@ -40,14 +40,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "activatable.h"
 
+using namespace Solid::Control;
+
 GsmInterfaceConnectionItem::GsmInterfaceConnectionItem(RemoteGsmInterfaceConnection * remote, QGraphicsItem * parent)
 : ActivatableItem(remote, parent),
     m_strengthMeter(0),
-    m_connectButton(0),
-    m_remote(remote)
+    m_connectButton(0)
 {
     connect(remote, SIGNAL(signalQualityChanged(int)), this, SLOT(setQuality(int)));
-    connect(remote, SIGNAL(accessTechnologyChanged(const QString)), this, SLOT(setAccessTechnology(const QString)));
+    connect(remote, SIGNAL(accessTechnologyChanged(const int)), this, SLOT(setAccessTechnology(const int)));
     connect(remote, SIGNAL(changed()), SLOT(update()));
     connect(remote, SIGNAL(changed()), SLOT(stateChanged()));
     m_state = remote->activationState();
@@ -65,7 +66,7 @@ void GsmInterfaceConnectionItem::setupItem()
     */
     m_layout = new QGraphicsGridLayout(this);
     // First, third and fourth colunm are fixed width for the icons
-    m_layout->setColumnPreferredWidth(0, 160);
+    m_layout->setColumnPreferredWidth(0, 150);
     m_layout->setColumnFixedWidth(1, 60);
     m_layout->setColumnFixedWidth(2, rowHeight);
     m_layout->setColumnSpacing(1, spacing);
@@ -73,29 +74,28 @@ void GsmInterfaceConnectionItem::setupItem()
     // icon on the left
     m_connectButton = new Plasma::IconWidget(this);
     m_connectButton->setAcceptsHoverEvents(false);
-    if (interfaceConnection()) {
-        m_connectButton->setIcon(interfaceConnection()->iconName());
-        setAccessTechnology(m_remote->getAccessTechnology());
-        handleHasDefaultRouteChanged(interfaceConnection()->hasDefaultRoute());
+    RemoteGsmInterfaceConnection * remote = qobject_cast<RemoteGsmInterfaceConnection*>(m_activatable);
+    if (remote) {
+        m_connectButton->setIcon(remote->iconName());
+        setAccessTechnology(remote->getAccessTechnology());
+        handleHasDefaultRouteChanged(remote->hasDefaultRoute());
         QAction *a = new QAction(KIcon("emblem-favorite"), QString(), m_connectButton);
         m_connectButton->addIconAction(a);
     } else {
         m_connectButton->setIcon("network-wired");
     }
-    m_connectButton->setMinimumWidth(160);
     m_connectButton->setOrientation(Qt::Horizontal);
     m_connectButton->setTextBackgroundColor(QColor(Qt::transparent));
-    //m_connectButton->setToolTip(i18nc("icon to connect to wireless network", "Connect to wireless network %1", ssid));
+    //m_connectButton->setToolTip(i18nc("icon to connect to mobile broadband network", "Connect to mobile broadband network %1", ssid));
     m_layout->addItem(m_connectButton, 0, 0, 1, 1 );
 
     m_strengthMeter = new Plasma::Meter(this);
     m_strengthMeter->setMinimum(0);
     m_strengthMeter->setMaximum(100);
-    m_strengthMeter->setValue(m_remote->getSignalQuality());
-    m_strengthMeter->setValue(0);
+    if (remote) m_strengthMeter->setValue(remote->getSignalQuality());
     m_strengthMeter->setMeterType(Plasma::Meter::BarMeterHorizontal);
-    m_strengthMeter->setPreferredSize(QSizeF(60, rowHeight/2));
-    m_strengthMeter->setMaximumHeight(rowHeight/2);
+    m_strengthMeter->setPreferredSize(QSizeF(60, 12));
+    m_strengthMeter->setMaximumHeight(12);
     m_strengthMeter->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     m_layout->addItem(m_strengthMeter, 0, 1, 1, 1, Qt::AlignCenter);
 
@@ -122,19 +122,19 @@ void GsmInterfaceConnectionItem::setQuality(int quality)
     }
 }
 
-void GsmInterfaceConnectionItem::setAccessTechnology(const QString tech)
+void GsmInterfaceConnectionItem::setAccessTechnology(const int tech)
 {
-    if (!m_connectButton) {
+    RemoteGsmInterfaceConnection * remote = qobject_cast<RemoteGsmInterfaceConnection*>(m_activatable);
+    if (!m_connectButton || !remote) {
         return;
     }
 
-    if (tech != Solid::Control::ModemInterface::convertAccessTechnologyToString(Solid::Control::ModemInterface::UnknownTechnology)) {
+    if (tech != ModemInterface::UnknownTechnology) {
         m_connectButton->setText(QString("%1 (%2)").
-                                 arg(interfaceConnection()->connectionName()).
-                                 arg(tech));
-    }
-    else {
-        m_connectButton->setText(interfaceConnection()->connectionName());
+                                 arg(remote->connectionName(),
+                                     ModemInterface::convertAccessTechnologyToString(static_cast<ModemInterface::AccessTechnology>(tech))));
+    } else {
+        m_connectButton->setText(remote->connectionName());
     }
 }
 
@@ -152,7 +152,11 @@ void GsmInterfaceConnectionItem::activationStateChanged(Knm::InterfaceConnection
         return;
     }
 
-    handleHasDefaultRouteChanged(interfaceConnection()->hasDefaultRoute());
+    RemoteGsmInterfaceConnection * remote = qobject_cast<RemoteGsmInterfaceConnection*>(m_activatable);
+
+    if (remote) {
+        handleHasDefaultRouteChanged(remote->hasDefaultRoute());
+    }
     m_state = state;
     update();
     ActivatableItem::activationStateChanged(state);
@@ -160,8 +164,11 @@ void GsmInterfaceConnectionItem::activationStateChanged(Knm::InterfaceConnection
 
 void GsmInterfaceConnectionItem::update()
 {
-    setQuality(m_remote->getSignalQuality());
-    setAccessTechnology(m_remote->getAccessTechnology());
+    RemoteGsmInterfaceConnection * remote = qobject_cast<RemoteGsmInterfaceConnection*>(m_activatable);
+    if (remote) {
+        setQuality(remote->getSignalQuality());
+        setAccessTechnology(remote->getAccessTechnology());
+    }
 }
 
 #endif
