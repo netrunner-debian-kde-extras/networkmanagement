@@ -1,4 +1,4 @@
-networkmanagement (0.1+git20110526.911025d-1) UNRELEASED; urgency=low
+networkmanagement (0.1+git20110526.911025d-1) unstable; urgency=low
 
   [ Modestas Vainius ]
   * Use official KDE branding in the package descriptions.
@@ -12,7 +12,7 @@ networkmanagement (0.1+git20110526.911025d-1) UNRELEASED; urgency=low
       (>= 0.8.1).
     - Bump Depends on network-manager to (>= 0.8.1).
 
- -- Michael Biebl <biebl@debian.org>  Fri, 27 May 2011 10:38:35 +0200
+ -- Michael Biebl <biebl@debian.org>  Fri, 27 May 2011 12:18:25 +0200
 
 networkmanagement (0.1+git20110422.810bc16-1) unstable; urgency=low
 
