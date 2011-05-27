@@ -5,6 +5,12 @@ networkmanagement (0.1+git20110526.911025d-1) UNRELEASED; urgency=low
 
   [ Michael Biebl ]
   * New upstream Git snapshot 911025d81fdfbe09b64705e94e5411f521c38e3e.
+  * debian/control
+    - Bump Build-Depends on kdelibs5-dev and kdebase-workspace-dev to
+      (>= 4:4.6.0).
+    - Bump Build-Depends on network-manager-dev and libnm-util-dev to
+      (>= 0.8.1).
+    - Bump Depends on network-manager to (>= 0.8.1).
 
  -- Michael Biebl <biebl@debian.org>  Fri, 27 May 2011 10:38:35 +0200
 
