@@ -33,7 +33,6 @@ class QGraphicsGridLayout;
 namespace Plasma
 {
     class IconWidget;
-    class Label;
     class Meter;
 }
 
@@ -51,7 +50,7 @@ class GsmInterfaceConnectionItem : public ActivatableItem
 
     private Q_SLOTS:
         void setQuality(int quality);
-        void setAccessTechnology(const QString tech);
+        void setAccessTechnology(const int tech);
 	void update();
         void activationStateChanged(Knm::InterfaceConnection::ActivationState state);
 	void stateChanged();
@@ -61,7 +60,6 @@ class GsmInterfaceConnectionItem : public ActivatableItem
         QGraphicsGridLayout* m_layout;
         Plasma::Meter* m_strengthMeter;
         Plasma::IconWidget* m_connectButton;
-        RemoteGsmInterfaceConnection* m_remote;
 };
 
 #endif //#define APPLET_GSMCONNECTIONITEM_H

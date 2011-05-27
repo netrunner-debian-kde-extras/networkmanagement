@@ -18,24 +18,12 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <QDBusInterface>
 #include <kaboutdata.h>
 #include <kapplication.h>
 #include <kcmdlineargs.h>
 #include <kdebug.h>
-#include <kdialog.h>
-#include <kiconloader.h>
-#include <klocale.h>
 
-#include <kicon.h>
-
-#include "connectioneditor.h"
-#include "connectionpersistence.h"
-#include "knmserviceprefs.h"
-#include "../config/mobileconnectionwizard.h"
-#include "nmdbussettingsconnectionprovider.h"
-#include "nmdbussettingsservice.h"
-#include "connectionlist.h"
+#include "bluetooth.h"
 
 int main(int argc, char **argv)
 {
@@ -52,8 +40,8 @@ int main(int argc, char **argv)
     KCmdLineOptions options;
     options.add("connection <connection-id>", ki18n("Connection ID to edit"));
     options.add("hiddennetwork <ssid>", ki18n("Connect to a hidden wireless network"));
-    options.add("type <type>", ki18n("Connection type to create, must be one of '802-3-ethernet', '802-11-wireless', 'pppoe', 'vpn', 'cellular'"));
-    options.add("specific-args <args>", ki18n("Space-separated connection type-specific arguments, may be either 'gsm' or 'cdma' for cellular, or 'openvpn' or 'vpnc' for vpn connections, and interface and AP identifiers for wireless connections"));
+    options.add("type <type>", ki18n("Connection type to create, must be one of '802-3-ethernet', '802-11-wireless', 'pppoe', 'vpn', 'cellular', 'bluetooth'"));
+    options.add("specific-args <args>", ki18n("Space-separated connection type-specific arguments, may be either 'gsm' or 'cdma' for cellular connections,\n'openvpn' or 'vpnc' for vpn connections,\ninterface and AP identifiers for wireless connections,\nbluetooth mac address and service ('dun' or 'nap') for bluetooth connections.\n\nYou can also pass the serial device (i.e. 'rfcomm0') instead of service for dun bluetooth connections,\nin that case this program will block waiting for that device to be registered in ModemManager."));
     options.add("+mode", ki18n("Operation mode, may be either 'create' or 'edit'"), "create");
     KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
     KApplication app;
@@ -88,15 +76,31 @@ int main(int argc, char **argv)
             if (type == QLatin1String("cellular")) {
                 MobileConnectionWizard *mobileConnectionWizard = new MobileConnectionWizard();
 
-                if (mobileConnectionWizard->exec() == QDialog::Accepted) {
-                    if (mobileConnectionWizard->getError() == MobileProviders::Success) {
-                        con = editor.createConnection(true, mobileConnectionWizard->type(), mobileConnectionWizard->args(), false);
-                    } else {
-                        con = editor.createConnection(true, Knm::Connection::typeFromString(type), specificArgs);
-                    }
+                if (mobileConnectionWizard->exec() == QDialog::Accepted &&
+                    mobileConnectionWizard->getError() == MobileProviders::Success) {
+                    con = editor.createConnection(true, mobileConnectionWizard->type(), mobileConnectionWizard->args(), false);
                 }
                 delete mobileConnectionWizard;
-            } else {
+            }
+#ifdef COMPILE_MODEM_MANAGER_SUPPORT
+            /* To create a bluetooth DUN connection:
+             * networkmanagement_configshell create --type bluetooth --specific-args "00:11:22:33:44:55 dun"
+             *     or
+             * networkmanagement_configshell create --type bluetooth --specific-args "00:11:22:33:44:55 rfcomm0"
+             *
+             * in the latter case networkmanagement_configshell will block waiting for the device rfcomm0 to be
+             * registered in ModemManager.
+             */
+            else if (type == QLatin1String("bluetooth")) {
+                if (specificArgs.count() == 2) {
+                    new Bluetooth(specificArgs[0].toString(), specificArgs[1].toString());
+                    return app.exec();
+                } else {
+                    return -1;
+                }
+            }
+#endif
+            else {
                 con = editor.createConnection(true, Knm::Connection::typeFromString(type), specificArgs);
             }
 
@@ -105,13 +109,8 @@ int main(int argc, char **argv)
                 kDebug() << Knm::Connection::typeFromString(type) << "type connection cannot be created.";
                 return -1;
             }
-            QString cid = con->uuid().toString();
-            QDBusInterface ref( "org.kde.kded", "/modules/knetworkmanager",
-                                "org.kde.knetworkmanagerd", QDBusConnection::sessionBus() );
 
-            QStringList ids(cid);
-            ref.call( QLatin1String( "configure" ), ids );
-            kDebug() << ref.isValid() << ref.lastError().message() << ref.lastError().name();
+            saveConnection(con);
         } else if (args->isSet("hiddennetwork")) {
             QString ssidOfHiddenNetwork = args->getOption("hiddennetwork");
             kDebug() << "I have been told to setup a connection to a hidden network..." << ssidOfHiddenNetwork;

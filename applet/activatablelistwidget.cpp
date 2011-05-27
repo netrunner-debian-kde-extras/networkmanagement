@@ -63,7 +63,7 @@ ActivatableListWidget::ActivatableListWidget(RemoteActivatableList* activatables
     //m_widget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     m_layout = new QGraphicsLinearLayout(m_widget);
     m_layout->setOrientation(Qt::Vertical);
-    m_layout->setSpacing(1);
+    m_layout->setSpacing(0);
     setWidget(m_widget);
 }
 
@@ -103,7 +103,7 @@ void ActivatableListWidget::addInterface(Solid::Control::NetworkInterface* iface
 {
     kDebug() << "interface added";
     if (iface) {
-        m_interfaces << iface->uni();
+        m_interfaces.insert(iface->uni(), iface->type());
         m_showAllTypes = true;
         filter();
     }
@@ -111,9 +111,8 @@ void ActivatableListWidget::addInterface(Solid::Control::NetworkInterface* iface
 
 void ActivatableListWidget::clearInterfaces()
 {
-    m_interfaces = QStringList();
-    m_showAllTypes = false;
-    filter();
+    m_interfaces.clear();
+    m_vpn = false;
 }
 
 void ActivatableListWidget::setShowAllTypes(bool show, bool refresh)
@@ -171,12 +170,9 @@ bool ActivatableListWidget::accept(RemoteActivatable * activatable) const
 
 void ActivatableListWidget::createItem(RemoteActivatable * activatable)
 {
-    // FIXME: m_itemIndex.contains()?
-    foreach (RemoteActivatable* a, m_itemIndex.keys()) {
-        if (activatable == a) {
-            //kDebug() << "activatable already in the layout, not creating an item" << a;
-            return;
-        }
+    if (m_itemIndex.contains(activatable)) {
+        //kDebug() << "activatable already in the layout, not creating an item" << a;
+        return;
     }
 
     ActivatableItem* ai = 0;
@@ -237,7 +233,7 @@ void ActivatableListWidget::createHiddenItem()
     m_hiddenItem = new HiddenWirelessNetworkItem(m_widget);
     Q_ASSERT(m_hiddenItem);
     m_hiddenItem->setupItem();
-    m_layout->insertItem(1337, m_hiddenItem);
+    m_layout->addItem(m_hiddenItem);
     //m_itemIndex[activatable] = ai;
     connect(m_hiddenItem, SIGNAL(disappearAnimationFinished()),
             this, SLOT(deleteItem()));
@@ -247,11 +243,10 @@ void ActivatableListWidget::createHiddenItem()
 
 void ActivatableListWidget::listAppeared()
 {
-    createHiddenItem(); // TODO: move to end
-
     foreach (RemoteActivatable* remote, m_activatables->activatables()) {
         activatableAdded(remote);
     }
+    filter();
 }
 
 void ActivatableListWidget::deactivateConnection(const QString& deviceUni)
@@ -294,12 +289,7 @@ void ActivatableListWidget::setHasWireless(bool hasWireless)
 {
     kDebug() << "++++++++++++++" << hasWireless;
     m_hasWireless = hasWireless;
-    if (hasWireless) {
-        createHiddenItem();
-    } else {
-        delete m_hiddenItem;
-        m_hiddenItem = 0;
-    }
+    filter();
 }
 
 void ActivatableListWidget::filter()
@@ -312,6 +302,27 @@ void ActivatableListWidget::filter()
                 activatableRemoved(act);
             }
         }
+    }
+
+    if (m_interfaces.count() && m_hasWireless) {
+        bool found = false;
+        foreach (QString uni, m_interfaces.keys())
+        {
+            if (m_interfaces.value(uni) == Solid::Control::NetworkInterface::Ieee80211) {
+                createHiddenItem();
+                found = true;
+                break;
+            }
+        }
+        if (!found && m_hiddenItem) {
+            m_hiddenItem->disappear();
+            m_hiddenItem = 0;
+        }
+    } else if (m_showAllTypes && m_hasWireless && !m_vpn) {
+        createHiddenItem();
+    } else if (m_hiddenItem) {
+        m_hiddenItem->disappear();
+        m_hiddenItem = 0;
     }
     m_layout->invalidate();
 }
@@ -329,7 +340,8 @@ void ActivatableListWidget::deleteItem()
 {
     ActivatableItem* ai = dynamic_cast<ActivatableItem*>(sender());
     m_layout->removeItem(ai);
-    m_itemIndex.remove(m_itemIndex.key(ai));
+    if (m_itemIndex.key(ai))
+        m_itemIndex.remove(m_itemIndex.key(ai));
     delete ai;
 }
 
@@ -343,7 +355,6 @@ void ActivatableListWidget::hoverEnter(const QString& uni)
         RemoteInterfaceConnection *conn = item->interfaceConnection();
         if (conn && conn->deviceUni() == uni) {
             item->hoverEnter();
-            break;
         }
     }
 }
@@ -358,7 +369,6 @@ void ActivatableListWidget::hoverLeave(const QString& uni)
         RemoteInterfaceConnection *conn = item->interfaceConnection();
         if (conn && conn->deviceUni() == uni) {
             item->hoverLeave();
-            break;
         }
     }
 }
@@ -368,6 +378,7 @@ void ActivatableListWidget::connectToHiddenNetwork(const QString &ssid)
     m_hiddenConnectionInProgress << ssid;
     QStringList args = QStringList(ssid) << "create";
     kDebug() << "invoking networkmanagement_configshell" << args;
+    // TODO: make this really work.
     KToolInvocation::kdeinitExec(KGlobal::dirs()->findResource("exe", "networkmanagement_configshell"), args);
 }
 // vim: sw=4 sts=4 et tw=100

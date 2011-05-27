@@ -12,6 +12,7 @@ include_directories(
 set(knmui_SRCS
    cdmawidget.cpp
    gsmwidget.cpp
+   bluetoothwidget.cpp
    pppwidget.cpp
    pppoewidget.cpp
    security/securitywidget.cpp
@@ -19,6 +20,12 @@ set(knmui_SRCS
    connectionwidget.cpp
    ipv4widget.cpp
    ipv4advancedwidget.cpp
+   ipv4routeswidget.cpp
+   ipv4delegate.cpp
+   ipv6widget.cpp
+   ipv6advancedwidget.cpp
+   ipv6routeswidget.cpp
+   ipv6delegate.cpp
    wiredwidget.cpp
    802_11_wirelesswidget.cpp
    accesspoint.cpp
@@ -54,6 +61,7 @@ set(knmui_SRCS
    vpnuiplugin.cpp
    connectionprefs.cpp
    gsmconnectioneditor.cpp
+   bluetoothconnectioneditor.cpp
    cdmaconnectioneditor.cpp
    pppoepreferences.cpp
    vpnpreferences.cpp
@@ -61,22 +69,31 @@ set(knmui_SRCS
    wirelesspreferences.cpp
    connectioneditor.cpp
    connectionsecretsjob.cpp
-   
+
    simpleipv4addressvalidator.cpp
+   simpleipv6addressvalidator.cpp
    listvalidator.cpp
+   intvalidator.cpp
    editlistdialog.cpp
+   delegate.cpp
+   intdelegate.cpp
    )
 
 kde4_add_ui_files(knmui_SRCS
    # Settings
    cdma.ui
    gsm.ui
+   bluetooth.ui
    ppp.ui
    pppoe.ui
    connection.ui
    wired.ui
    ipv4.ui
    ipv4advanced.ui
+   ipv4routes.ui
+   ipv6.ui
+   ipv6advanced.ui
+   ipv6routes.ui
    802-11-wireless.ui
 
    # Scan widget for wireless

@@ -42,11 +42,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <solid/control/networkmanager.h>
 #include <solid/control/wirelessnetworkinterface.h>
 #include <solid/control/wirednetworkinterface.h>
+#include <solid/control/networkserialinterface.h>
 
 // client lib
 #include "activatableitem.h"
 #include "remoteactivatable.h"
 #include "remoteactivatablelist.h"
+#include "remotewirelessinterfaceconnection.h"
 
 // More own includes
 #include "interfaceitem.h"
@@ -69,7 +71,6 @@ NMPopup::NMPopup(RemoteActivatableList * activatableList, QGraphicsWidget* paren
     m_connectionList(0),
     m_vpnItem(0)
 {
-    //setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     init();
 }
 
@@ -82,14 +83,12 @@ void NMPopup::init()
     m_mainLayout = new QGraphicsGridLayout(this);
 
     m_leftLabel = new Plasma::Label(this);
-    //m_leftLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
     m_leftLabel->setMaximumHeight(24);
     m_leftLabel->setMinimumHeight(24);
     m_leftLabel->setText(i18nc("title on the LHS of the plasmoid", "<h3>Interfaces</h3>"));
     m_mainLayout->addItem(m_leftLabel, 0, 0);
 
     m_rightLabel = new Plasma::Label(this);
-    //m_rightLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
     m_rightLabel->setMaximumHeight(24);
     m_rightLabel->setMinimumHeight(24);
     m_rightLabel->setText(i18nc("title on the RHS of the plasmoid", "<h3>Connections</h3>"));
@@ -97,7 +96,7 @@ void NMPopup::init()
 
     Plasma::Separator* sep = new Plasma::Separator(this);
     sep->setOrientation(Qt::Vertical);
-    m_mainLayout->addItem(sep, 0, 1, 2, 1);
+    m_mainLayout->addItem(sep, 0, 1, 2, 1, Qt::AlignRight);
     m_mainLayout->setRowFixedHeight(0, 24);
 
     m_leftWidget = new Plasma::TabBar(this);
@@ -127,13 +126,13 @@ void NMPopup::init()
     connect(Solid::Control::NetworkManager::notifier(), SIGNAL(networkingEnabledChanged(bool)),
             this, SLOT(managerNetworkingEnabledChanged(bool)));
 
-#ifdef NM_0_8
     // flight-mode checkbox
     m_wwanCheckBox = new Plasma::CheckBox(m_leftWidget);
     m_wwanCheckBox->setText(i18nc("CheckBox to enable or disable wwan (mobile broadband) interface)", "Enable mobile broadband"));
     m_wwanCheckBox->hide();
     checkboxLayout->addItem(m_wwanCheckBox, 0, 1);
 
+#ifdef NM_0_8
     connect(m_wwanCheckBox, SIGNAL(toggled(bool)), SLOT(wwanEnabledToggled(bool)));
     connect(Solid::Control::NetworkManager::notifier(), SIGNAL(wwanEnabledChanged(bool)),
             this, SLOT(managerWwanEnabledChanged(bool)));
@@ -155,20 +154,22 @@ void NMPopup::init()
 
     m_leftLayout->addItem(checkboxWidget);
 
-    //m_leftWidget->setLayout(m_leftLayout);
     m_leftWidget->addTab(i18nc("tabbar on the left side", "Interfaces"), m_leftLayout);
     m_leftWidget->setTabBarShown(false); // TODO: enable
 
     m_interfaceDetailsWidget = new InterfaceDetailsWidget(m_leftWidget);
+    m_interfaceDetailsWidget->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     connect(m_interfaceDetailsWidget, SIGNAL(back()), this, SLOT(toggleInterfaceTab()));
 
+    // Hack to prevent graphical artifacts during tab transition.
+    connect(m_leftWidget, SIGNAL(currentChanged(int)), SLOT(refresh()));
+
     m_leftWidget->addTab(i18nc("details for the interface", "Details"), m_interfaceDetailsWidget);
-    m_leftWidget->setPreferredWidth(300);
 
     m_mainLayout->addItem(m_leftWidget, 1, 0);
 
     m_rightWidget = new QGraphicsWidget(this);
-    m_rightWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::MinimumExpanding);
+    m_rightWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
     m_rightLayout = new QGraphicsLinearLayout(m_rightWidget);
     m_rightLayout->setOrientation(Qt::Vertical);
 
@@ -177,15 +178,14 @@ void NMPopup::init()
     m_connectionList->addType(Knm::Activatable::InterfaceConnection);
     m_connectionList->addType(Knm::Activatable::WirelessInterfaceConnection);
     m_connectionList->addType(Knm::Activatable::VpnInterfaceConnection);
+#ifdef COMPILE_MODEM_MANAGER_SUPPORT
     m_connectionList->addType(Knm::Activatable::GsmInterfaceConnection);
+#endif
     m_connectionList->init();
-    connect(m_interfaceDetailsWidget, SIGNAL(back()), m_connectionList, SLOT(clearInterfaces()));
 
     m_connectionList->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    //m_connectionList->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Expanding);
     m_connectionList->setPreferredHeight(240);
 
-    m_connectionList->setMinimumWidth(320);
     m_connectionList->setShowAllTypes(false, true);
 
     m_rightLayout->addItem(m_connectionList);
@@ -199,7 +199,8 @@ void NMPopup::init()
     connect(m_connectionsButton, SIGNAL(clicked()), this, SLOT(manageConnections()));
 
     m_showMoreButton = new Plasma::PushButton(m_rightWidget);
-    m_showMoreButton->setCheckable(true);
+    // Do not use this according to KDE HIG. Bug #272492
+    //m_showMoreButton->setCheckable(true);
     m_showMoreButton->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     m_showMoreButton->setIcon(KIcon("list-add"));
     m_showMoreButton->setText(i18nc("show more button in the applet's popup", "Show More..."));
@@ -212,10 +213,10 @@ void NMPopup::init()
     m_showMoreButton->setMinimumSize(sMax);
     m_showMoreButton->setMaximumSize(sMax);
     connect(m_showMoreButton, SIGNAL(clicked()), this, SLOT(showMore()));
-    showMore(false);
+    connect(m_activatables, SIGNAL(activatableAdded(RemoteActivatable *)), this, SLOT(uncheckShowMore(RemoteActivatable *)));
+    connect(m_activatables, SIGNAL(activatableRemoved(RemoteActivatable *)), this, SLOT(checkShowMore(RemoteActivatable *)));
 
     QGraphicsLinearLayout* connectionLayout = new QGraphicsLinearLayout;
-    //connectionLayout->addStretch();
     connectionLayout->addItem(m_showMoreButton);
     connectionLayout->addItem(m_connectionsButton);
 
@@ -236,13 +237,29 @@ void NMPopup::init()
     connect(Solid::Control::NetworkManager::notifier(), SIGNAL(networkInterfaceRemoved(const QString&)),
             SLOT(interfaceRemoved(const QString&)));
 
-    //setPreferredSize(640, 400);
+    m_showMoreChecked = false;
+    m_oldShowMoreChecked = true;
+    wicCount = 0; // number of wireless networks which user explicitly configured using the kcm module.
+    foreach (RemoteActivatable *ra, m_activatables->activatables()) {
+        RemoteWirelessInterfaceConnection * wic = qobject_cast<RemoteWirelessInterfaceConnection*>(ra);
+        if (wic) {
+            if (wic->operationMode() == Solid::Control::WirelessNetworkInterface::Adhoc &&
+                wic->activationState() == Knm::InterfaceConnection::Unknown) {
+                continue;
+            }
+            uncheckShowMore(ra);
+        }
+    }
+    m_oldShowMoreChecked = false;
+    showMore(m_oldShowMoreChecked);
 
     readConfig();
 
     QDBusConnection dbus = QDBusConnection::sessionBus();
     dbus.connect("org.kde.Solid.PowerManagement", "/org/kde/Solid/PowerManagement", "org.kde.Solid.PowerManagement", "resumingFromSuspend", this, SLOT(readConfig()));
     dbus.connect("org.kde.kded", "/org/kde/networkmanagement", "org.kde.networkmanagement", "ReloadConfig", this, SLOT(readConfig()));
+
+    adjustSize();
 }
 
 void NMPopup::readConfig()
@@ -310,9 +327,11 @@ void NMPopup::interfaceAdded(const QString& uni)
     if (m_interfaces.contains(uni)) {
         return;
     }
-    kDebug() << "Interface Added.";
     Solid::Control::NetworkInterface * iface = Solid::Control::NetworkManager::findNetworkInterface(uni);
-    addInterfaceInternal(iface);
+    if (iface) {
+        kDebug() << "Interface Added:" << iface->interfaceName() << iface->driver() << iface->designSpeed();
+        addInterfaceInternal(iface);
+    }
 }
 
 void NMPopup::interfaceRemoved(const QString& uni)
@@ -322,7 +341,7 @@ void NMPopup::interfaceRemoved(const QString& uni)
         // the m_iface pointer in interfaceDetailsWidget become invalid in this case.
         if (uni == m_interfaceDetailsWidget->getLastIfaceUni()) {
             m_interfaceDetailsWidget->setInterface(0, false);
-            // Since it is invalid go back to "main" window. 
+            // Since it is invalid go back to "main" window.
             m_leftWidget->setCurrentIndex(0);
         }
 
@@ -468,12 +487,11 @@ void NMPopup::wirelessEnabledToggled(bool checked)
         Solid::Control::NetworkManager::setWirelessEnabled(checked);
     }
     if (checked && Solid::Control::NetworkManager::isNetworkingEnabled()) {
-        showMore(false);
         m_showMoreButton->show();
     } else {
         m_showMoreButton->hide();
     }
-    updateHasWireless();
+    updateHasWireless(checked);
     saveConfig();
 }
 
@@ -508,22 +526,21 @@ void NMPopup::networkingEnabledToggled(bool checked)
 #endif
     if (checked && Solid::Control::NetworkManager::isWirelessHardwareEnabled() &&
                    Solid::Control::NetworkManager::isWirelessEnabled()) {
-        showMore(false);
         m_showMoreButton->show();
     } else {
         m_showMoreButton->hide();
     }
-    updateHasWireless();
+    updateHasWireless(checked);
     saveConfig();
 }
 
-void NMPopup::updateHasWireless()
+void NMPopup::updateHasWireless(bool checked)
 {
     //kDebug() << "UPDATE!!!!!!!!!!!!";
     bool hasWireless = true;
     if (!Solid::Control::NetworkManager::isWirelessHardwareEnabled() ||
         !Solid::Control::NetworkManager::isNetworkingEnabled() ||
-        !Solid::Control::NetworkManager::isWirelessEnabled()) {
+        !Solid::Control::NetworkManager::isWirelessEnabled() || !checked) {
 
         //kDebug () << "networking enabled?" << Solid::Control::NetworkManager::isNetworkingEnabled();
         //kDebug () << "wireless hardware enabled?" << Solid::Control::NetworkManager::isWirelessHardwareEnabled();
@@ -531,8 +548,10 @@ void NMPopup::updateHasWireless()
 
         // either networking is disabled, or wireless is disabled
         hasWireless = false;
-        m_connectionList->setHasWireless(hasWireless);
     }
+    //solid is too slow, we need to see if the checkbox was checked by the user
+    if (checked)
+        hasWireless = true;
     kDebug() << "After chckboxn" << hasWireless;
 
     foreach (InterfaceItem* ifaceitem, m_interfaces) {
@@ -557,9 +576,8 @@ void NMPopup::updateHasWwan()
 {
     bool hasWwan = false;
     foreach (InterfaceItem* ifaceitem, m_interfaces) {
-        Solid::Control::NetworkInterface* iface = ifaceitem->interface();
-        if (iface && (iface->type() == Solid::Control::NetworkInterface::Gsm ||
-                      iface->type() == Solid::Control::NetworkInterface::Cdma)) {
+        Solid::Control::SerialNetworkInterface* iface = qobject_cast<Solid::Control::SerialNetworkInterface *>(ifaceitem->interface());
+        if (iface) {
             hasWwan = true;
             break;
         }
@@ -579,13 +597,16 @@ void NMPopup::managerWirelessEnabledChanged(bool enabled)
     // it might have changed because we toggled the switch,
     // but it might have been changed externally, so set it anyway
     m_wifiCheckBox->setChecked(enabled);
+    if (enabled) {
+        m_wifiCheckBox->setEnabled(enabled);
+    }
 }
 
 void NMPopup::managerWirelessHardwareEnabledChanged(bool enabled)
 {
     kDebug() << "Hardware wireless enable switch state changed" << enabled;
     m_wifiCheckBox->setEnabled(enabled);
-    updateHasWireless();
+    updateHasWireless(enabled);
 }
 
 void NMPopup::managerNetworkingEnabledChanged(bool enabled)
@@ -627,6 +648,9 @@ void NMPopup::managerWwanEnabledChanged(bool enabled)
         // it might have changed because we toggled the switch,
         // but it might have been changed externally, so set it anyway
         m_wwanCheckBox->setChecked(enabled);
+        if (enabled) {
+            m_wwanCheckBox->setEnabled(enabled);
+        }
     }
 }
 
@@ -639,7 +663,10 @@ void NMPopup::managerWwanHardwareEnabledChanged(bool enabled)
 
 void NMPopup::showMore()
 {
-    showMore(m_showMoreButton->isChecked());
+    // Simulate button toggling.
+    m_showMoreChecked = !m_showMoreChecked;
+    m_oldShowMoreChecked = m_showMoreChecked;
+    showMore(m_oldShowMoreChecked);
 }
 
 void NMPopup::showMore(bool more)
@@ -647,15 +674,51 @@ void NMPopup::showMore(bool more)
     if (more) {
         m_showMoreButton->setText(i18nc("pressed show more button", "Show Less..."));
         m_showMoreButton->setIcon(KIcon("list-remove"));
-        m_showMoreButton->setChecked(true);
+        m_showMoreChecked = true;
         m_connectionList->setShowAllTypes(true, true); // also refresh list
     } else {
         m_showMoreButton->setText(i18nc("unpressed show more button", "Show More..."));
-        m_showMoreButton->setChecked(false);
+        m_showMoreChecked = false;
         m_connectionList->setShowAllTypes(false, true); // also refresh list
         m_showMoreButton->setIcon(KIcon("list-add"));
     }
     kDebug() << m_showMoreButton->text();
+}
+
+void NMPopup::checkShowMore(RemoteActivatable * ra)
+{
+    RemoteWirelessInterfaceConnection * wic = qobject_cast<RemoteWirelessInterfaceConnection*>(ra);
+    if (wic) {
+        if (wic->operationMode() == Solid::Control::WirelessNetworkInterface::Adhoc &&
+            wic->activationState() == Knm::InterfaceConnection::Unknown) {
+            return;
+        }
+        if (wicCount > 0) {
+            wicCount--;
+        }
+        if (wicCount == 0 &&  !m_showMoreChecked) {
+            // There is no wireless network which the user had explicitly configured around,
+            // so temporaly show all the others wireless networks available.
+            showMore(true);
+        }
+    }
+}
+
+void NMPopup::uncheckShowMore(RemoteActivatable *ra)
+{
+    RemoteWirelessInterfaceConnection * wic = qobject_cast<RemoteWirelessInterfaceConnection*>(ra);
+    if (wic) {
+        if (wic->operationMode() == Solid::Control::WirelessNetworkInterface::Adhoc &&
+            wic->activationState() == Knm::InterfaceConnection::Unknown) {
+            return;
+        }
+        wicCount++;
+        if (m_oldShowMoreChecked != m_showMoreChecked) {
+            // One wireless network explicity configured by the user appeared, reset "Show More" button
+            // state to the value before the checkShowMore method above took action.
+            showMore(m_oldShowMoreChecked);
+        }
+    }
 }
 
 void NMPopup::manageConnections()
@@ -674,37 +737,35 @@ void NMPopup::toggleInterfaceTab()
     }
 
     if (m_leftWidget->currentIndex() == 0) {
-        showMore(true);
-        m_leftWidget->setCurrentIndex(1);
         // Enable / disable updating of the details widget
         m_interfaceDetailsWidget->setUpdateEnabled(true);
 
         if (item && item->interface()) {
+            // Temporaly disables hightlight for all connections of this interface.
+            QMetaObject::invokeMethod(item, "hoverLeave", Qt::QueuedConnection,
+                                      Q_ARG(QString, item->interface()->uni()));
+
             m_leftLabel->setText(QString("<h3>%1</h3>").arg(
                                 UiUtils::interfaceNameLabel(item->interface()->uni())));
         }
+        showMore(true);
+
+        // Hack to prevent graphical artifact during tab transition.
+        // m_interfaceDetailsWidget will be shown again when transition finishes.
+        m_interfaceDetailsWidget->hide();
+        m_leftWidget->setCurrentIndex(1);
     } else {
         m_leftLabel->setText(i18nc("title on the LHS of the plasmoid", "<h3>Interfaces</h3>"));
-        m_connectionList->setShowAllTypes(true);
-        showMore(false);
+        m_connectionList->clearInterfaces();
+        showMore(m_oldShowMoreChecked);
         m_interfaceDetailsWidget->setUpdateEnabled(false);
         m_leftWidget->setCurrentIndex(0);
     }
-    //showMore();
 }
 
-QSizeF NMPopup::sizeHint (Qt::SizeHint which, const QSizeF & constraint) const
+void NMPopup::refresh()
 {
-    QSizeF sh = QGraphicsWidget::sizeHint(which, constraint);
-    qreal temp1 = m_interfaceDetailsWidget->size().rwidth();
-
-    if (temp1 < 300) {
-        temp1 = 300;
-    }
-
-    m_leftWidget->setPreferredWidth(temp1);
-
-    return sh;
+    m_interfaceDetailsWidget->show();
 }
 // vim: sw=4 sts=4 et tw=100
 

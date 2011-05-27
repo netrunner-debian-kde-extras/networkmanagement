@@ -31,9 +31,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <Plasma/PushButton>
 #include <Plasma/SignalPlotter>
 
-class RemoteActivatable;
-class RemoteInterfaceConnection;
-class RemoteInterfaceList;
 class InterfaceDetails;
 
 class InterfaceDetailsWidget : public QGraphicsWidget
@@ -50,7 +47,7 @@ Q_OBJECT
     public Q_SLOTS:
         void dataUpdated(const QString &sourceName, const Plasma::DataEngine::Data &data);
         //void dataUpdated(const QString&, const Plasma::DataEngine::Data&);
-        void sourceAdded(const QString&);
+        //void sourceAdded(const QString&);
         void handleConnectionStateChange(int new_state, int old_state, int reason);
 
     Q_SIGNALS:
@@ -62,6 +59,7 @@ Q_OBJECT
         int bitRate();
         QString currentIpAddress();
         QString getMAC();
+        QString connectionStateToString(Solid::Control::NetworkInterface::ConnectionState connectionState);
         void getDetails();
         void showDetails(bool reset = false);
         void connectSignals();
@@ -95,6 +93,7 @@ Q_OBJECT
         InterfaceDetails * details;
 
     private Q_SLOTS:
+        void resetInterfaceDetails();
         void updateIpAddress();
         void updateBitRate(int bitRate);
         void updateActiveAccessPoint(const QString &ap);

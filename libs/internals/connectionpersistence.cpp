@@ -23,6 +23,7 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 #include <KConfigGroup>
 #include <kwallet.h>
 
+#include "knmserviceprefs.h"
 #include "connection.h"
 #include "setting.h"
 #include "settingpersistence.h"
@@ -39,8 +40,12 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 #include "settings/cdmapersistence.h"
 #include "settings/gsm.h"
 #include "settings/gsmpersistence.h"
+#include "settings/bluetooth.h"
+#include "settings/bluetoothpersistence.h"
 #include "settings/ipv4.h"
 #include "settings/ipv4persistence.h"
+#include "settings/ipv6.h"
+#include "settings/ipv6persistence.h"
 #include "settings/ppp.h"
 #include "settings/ppppersistence.h"
 #include "settings/pppoe.h"
@@ -100,8 +105,14 @@ SettingPersistence * ConnectionPersistence::persistenceFor(Setting * setting)
             case Setting::Gsm:
                 sp = new GsmPersistence(static_cast<GsmSetting*>(setting), m_config, m_storageMode);
                 break;
+            case Setting::Bluetooth:
+                sp = new BluetoothPersistence(static_cast<BluetoothSetting*>(setting), m_config, m_storageMode);
+                break;
             case Setting::Ipv4:
                 sp = new Ipv4Persistence(static_cast<Ipv4Setting*>(setting), m_config, m_storageMode);
+                break;
+            case Setting::Ipv6:
+                sp = new Ipv6Persistence(static_cast<Ipv6Setting*>(setting), m_config, m_storageMode);
                 break;
             case Setting::Ppp:
                 sp = new PppPersistence(static_cast<PppSetting*>(setting), m_config, m_storageMode);
@@ -129,9 +140,6 @@ SettingPersistence * ConnectionPersistence::persistenceFor(Setting * setting)
                         static_cast<WirelessSecuritySetting*>(setting), m_config, m_storageMode
                         );
                 break;
-	    case Setting::Ipv6:
-	    	kDebug() << "IPv6 persistence is not handled" << endl;
-		break;
         }
     if (sp) {
         m_persistences.insert(setting, sp);
@@ -151,11 +159,11 @@ void ConnectionPersistence::save()
         cg.writeEntry("timestamp", m_connection->timestamp());
     cg.writeEntry("icon", m_connection->iconName());
 
+    m_connection->saveCertificates();
     // save each setting
     foreach (Setting * setting, m_connection->settings()) {
         SettingPersistence * sp = persistenceFor(setting);
         sp->save();
-
     }
     m_config->sync();
 
@@ -177,9 +185,27 @@ void ConnectionPersistence::save()
             foreach (Setting * setting, m_connection->settings()) {
                 SettingPersistence * sp = persistenceFor(setting);
                 QMap<QString,QString> secrets = sp->secrets();
+
+                // Do not save pin.
+                secrets.take("pin");
+
                 if (!secrets.isEmpty()) {
                     wallet->writeMap(walletKeyFor(setting), secrets);
                 }
+            }
+        }
+    }
+}
+
+/* FIXME move into separate class for secrets persistence */
+void ConnectionPersistence::deleteSecrets(QString &id)
+{
+    if (KNetworkManagerServicePrefs::self()->secretStorageMode() == ConnectionPersistence::Secure) {
+        KWallet::Wallet * wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(), walletWid(), KWallet::Wallet::Synchronous );
+        if( wallet && wallet->isOpen() && wallet->hasFolder( s_walletFolderName ) && wallet->setFolder( s_walletFolderName )) {
+            foreach (const QString & k, wallet->entryList()) {
+                if (k.startsWith(id + ';'))
+                    wallet->removeEntry(k);
             }
         }
     }
@@ -210,7 +236,7 @@ void ConnectionPersistence::load()
 
 QString ConnectionPersistence::walletKeyFor(const Setting * setting) const
 {
-    return m_connection->uuid() + ';' + setting->name();
+    return QString(m_connection->uuid()) + QLatin1Char(';') + setting->name();
 }
 
 void ConnectionPersistence::loadSecrets()
@@ -260,7 +286,7 @@ void ConnectionPersistence::walletOpenedForRead(bool success)
         if (wallet->isOpen() && wallet->hasFolder(s_walletFolderName) && wallet->setFolder(s_walletFolderName)) {
             kDebug() << "Reading all entries for connection";
             QMap<QString,QMap<QString,QString> > entries;
-            QString key = m_connection->uuid() + QLatin1String("*");
+            QString key = QString(m_connection->uuid()) + QLatin1String("*");
             bool missingEntry = false;
 
             if (wallet->readMapList(key, entries) == 0) {

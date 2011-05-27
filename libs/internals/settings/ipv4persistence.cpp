@@ -28,6 +28,8 @@ void Ipv4Persistence::load()
       setting->setMethod(Ipv4Setting::EnumMethod::Manual);
     else     if (contents == "Shared")
       setting->setMethod(Ipv4Setting::EnumMethod::Shared);
+    else     if (contents == "Disabled")
+      setting->setMethod(Ipv4Setting::EnumMethod::Disabled);
 
   }
 
@@ -77,6 +79,7 @@ void Ipv4Persistence::load()
   setting->setNeverdefault(m_config->readEntry("neverdefault", false));
   setting->setDhcpclientid(m_config->readEntry("dhcpclientid", ""));
   setting->setDhcphostname(m_config->readEntry("dhcphostname", ""));
+  setting->setMayfail(m_config->readEntry("mayfail", true));
   setting->setInitialized();
 }
 
@@ -95,6 +98,9 @@ void Ipv4Persistence::save()
       break;
     case Ipv4Setting::EnumMethod::Shared:
       m_config->writeEntry("method", "Shared");
+      break;
+    case Ipv4Setting::EnumMethod::Disabled:
+      m_config->writeEntry("method", "Disabled");
       break;
   }
 
@@ -124,7 +130,7 @@ void Ipv4Persistence::save()
           << QString::number(route.prefix())
           << QHostAddress(route.nextHop()).toString()
           << QString::number(route.metric());
-      rawRoutes << rawRoute;
+      rawRoutes << rawRoute.join(";");
   }
   m_config->writeEntry("routes", rawRoutes);
 
@@ -133,6 +139,7 @@ void Ipv4Persistence::save()
   m_config->writeEntry("neverdefault", setting->neverdefault());
   m_config->writeEntry("dhcpclientid", setting->dhcpclientid());
   m_config->writeEntry("dhcphostname", setting->dhcphostname());
+  m_config->writeEntry("mayfail", setting->mayfail());
 }
 
 QMap<QString,QString> Ipv4Persistence::secrets() const

@@ -1,6 +1,7 @@
 /*
 Copyright 2010 Sebastian Kügler <sebas@kde.org>
 Copyright 2010 Alexander Naumov <posix.ru@gmail.com>
+Copyright 2010-2011 Lamarque Souza <lamarque@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -49,6 +50,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifdef COMPILE_MODEM_MANAGER_SUPPORT
     #include <solid/control/modemmanager.h>
 #endif
+#ifdef NM_0_8
+    #include <solid/control/networkbtinterface.h>
+#endif
 #include <Solid/Device>
 
 #include <uiutils.h>
@@ -85,7 +89,7 @@ class InterfaceDetails
 };
 
 InterfaceDetailsWidget::InterfaceDetailsWidget(QGraphicsItem * parent) : QGraphicsWidget(parent, 0),
-    m_iface(0)
+    m_iface(0), m_updateEnabled(false)
 {
     m_gridLayout = new QGraphicsGridLayout(this);
 
@@ -93,6 +97,7 @@ InterfaceDetailsWidget::InterfaceDetailsWidget(QGraphicsItem * parent) : QGraphi
     //Info
     //row++;
     m_info = new Plasma::Label(this);
+    m_info->nativeWidget()->setTextFormat(Qt::RichText);
     m_info->setFont(KGlobalSettings::smallestReadableFont());
 #if KDE_IS_VERSION(4, 5, 0)
     m_info->setTextSelectable(true);
@@ -102,7 +107,7 @@ InterfaceDetailsWidget::InterfaceDetailsWidget(QGraphicsItem * parent) : QGraphi
     // when we depend on 4.5
     m_info->nativeWidget()->setTextInteractionFlags(Qt::TextSelectableByMouse);
 #endif
-    m_info->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    m_info->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
     m_gridLayout->addItem(m_info, row, 0);
 
     // Traffic
@@ -201,6 +206,14 @@ void InterfaceDetailsWidget::resetUi()
     */
 }
 
+void InterfaceDetailsWidget::resetInterfaceDetails()
+{
+    delete details;
+    details = new InterfaceDetails();
+    getDetails();
+    showDetails();
+}
+
 void InterfaceDetailsWidget::getDetails()
 {
     if (!m_iface) {
@@ -211,7 +224,14 @@ void InterfaceDetailsWidget::getDetails()
     details->connectionState = m_iface->connectionState();
     details->ipAddress = currentIpAddress();
     details->bitRate = bitRate();
+#ifdef NM_0_8
+    details->interfaceName = m_iface->ipInterfaceName();
+    if (details->interfaceName.isEmpty()) {
+        details->interfaceName = m_iface->interfaceName();
+    }
+#else
     details->interfaceName = m_iface->interfaceName();
+#endif
     details->mac = getMAC();
     details->driver = m_iface->driver();
 
@@ -255,48 +275,42 @@ void InterfaceDetailsWidget::getDetails()
 #endif
 }
 
+QString InterfaceDetailsWidget::connectionStateToString(Solid::Control::NetworkInterface::ConnectionState connectionState)
+{
+#ifdef COMPILE_MODEM_MANAGER_SUPPORT
+    Solid::Control::GsmNetworkInterface *giface = qobject_cast<Solid::Control::GsmNetworkInterface*>(m_iface);
+    if (giface && !details->enabled) {
+        return i18nc("state of mobile broadband connection", "not enabled");
+    }
+#endif
+
+    return UiUtils::connectionStateToString(connectionState);
+}
+
 void InterfaceDetailsWidget::showDetails(bool reset)
 {
     QString info;
     QString na = i18nc("entry not available", "not available");
-    QString format = "<tr><td align=\"right\" width=\"50%\" style=\"white-space: nowrap\"><b>%1:</b></td><td width=\"50%\">&nbsp;%2</td></tr>";
+    QString format = "<tr><td align=\"right\" width=\"30%\" style=\"white-space: nowrap\"><b>%1:</b></td><td width=\"30%\">&nbsp;%2</td></tr>";
 
     // generate html table header
-    info = QLatin1String("<qt><table align=\"center\" border=\"0\">");
+    info = QString("<qt><table align=\"center\" border=\"0\">");
 
     if (!reset && m_iface) {
-        info += QString(format)
-                       .arg(i18nc("interface details", "Type"))
-                       .arg(UiUtils::interfaceTypeLabel(details->type));
-        info += QString(format)
-                       .arg(i18nc("interface details", "Connection State"))
-                       .arg(UiUtils::connectionStateToString(details->connectionState));
-        info += QString(format)
-                       .arg(i18nc("interface details", "IP Address"))
-                       .arg(details->ipAddress);
-        info += QString(format)
-                       .arg(i18nc("interface details", "Connection Speed"))
-                       .arg(details->bitRate ? UiUtils::connectionSpeed(details->bitRate) : i18nc("bitrate", "Unknown"));
-        info += QString(format)
-                       .arg(i18nc("interface details", "System Name"))
-                       .arg(details->interfaceName);
-        info += QString(format)
-                       .arg(i18nc("interface details", "MAC Address"))
-                       .arg(details->mac);
-        info += QString(format)
-                       .arg(i18nc("interface details", "Driver"))
-                       .arg(details->driver);
+        info += QString(format).arg(i18nc("interface details", "Type"), UiUtils::interfaceTypeLabel(details->type));
+        info += QString(format).arg(i18nc("interface details", "Connection State"), connectionStateToString(details->connectionState));
+        info += QString(format).arg(i18nc("interface details", "IP Address"), details->ipAddress);
+        info += QString(format).arg(i18nc("interface details", "Connection Speed"), details->bitRate ? UiUtils::connectionSpeed(details->bitRate) : i18nc("bitrate", "Unknown"));
+        info += QString(format).arg(i18nc("interface details", "System Name"), details->interfaceName);
+        info += QString(format).arg(i18nc("interface details", "MAC Address"), details->mac);
+        info += QString(format).arg(i18nc("interface details", "Driver"), details->driver);
 
         Solid::Control::WirelessNetworkInterface *wiface = qobject_cast<Solid::Control::WirelessNetworkInterface*>(m_iface);
         if (wiface) {
             Solid::Control::AccessPoint *ap = wiface->findAccessPoint(details->activeAccessPoint);
             if (ap) {
-                info += QString(format)
-                               .arg(i18nc("interface details", "Access Point (SSID)"))
-                               .arg(ap->ssid());
-                info += QString(format)
-                               .arg(i18nc("interface details", "Access Point (MAC)"))
-                               .arg(ap->hardwareAddress());
+                info += QString(format).arg(i18nc("interface details", "Access Point (SSID)"), ap->ssid());
+                info += QString(format).arg(i18nc("interface details", "Access Point (MAC)"), ap->hardwareAddress());
             }
         }
 
@@ -304,85 +318,37 @@ void InterfaceDetailsWidget::showDetails(bool reset)
         Solid::Control::GsmNetworkInterface *giface = qobject_cast<Solid::Control::GsmNetworkInterface*>(m_iface);
 
         if (giface) {
-            info += QString(format)
-                           .arg(i18nc("interface details", "Enabled"))
-                           .arg(details->enabled ? i18n("Yes") : i18n("No"));
-
-            info += QString(format)
-                           .arg(i18nc("interface details", "Operator"))
-                           .arg(details->registrationInfo.operatorName);
-
-            info += QString(format)
-                           .arg(i18nc("interface details", "Signal Quality"))
-                           .arg(QString("%1 %").arg(details->signalQuality));
-
-            info += QString(format)
-                           .arg(i18nc("interface details", "Access Technology"))
-                           .arg(QString("%1/%2").arg(Solid::Control::ModemInterface::convertTypeToString(details->modemType)).arg(Solid::Control::ModemInterface::convertAccessTechnologyToString(details->accessTechnology)));
+            info += QString(format).arg(i18nc("interface details", "Operator"), details->registrationInfo.operatorName);
+            info += QString(format).arg(i18nc("interface details", "Signal Quality"), QString("%1 %").arg(details->signalQuality));
+            info += QString(format).arg(i18nc("interface details", "Access Technology"), QString("%1/%2").arg(Solid::Control::ModemInterface::convertTypeToString(details->modemType), Solid::Control::ModemInterface::convertAccessTechnologyToString(details->accessTechnology)));
 
             /* TODO: create another tab to show this stuff
-            info += QString(format)
-                           .arg(i18nc("interface details", "Frequency Band"))
-                           .arg(Solid::Control::ModemInterface::convertBandToString(details->band));
-
-            info += QString(format)
-                           .arg(i18nc("interface details", "Allowed Mode"))
-                           .arg(Solid::Control::ModemInterface::convertAllowedModeToString(details->allowedMode));
-
-            info += QString(format)
-                           .arg(i18nc("interface details", "UDI"))
-                           .arg(details->udi);
-
-            info += QString(format)
-                           .arg(i18nc("interface details", "Device"))
-                           .arg(details->device);
-
-            info += QString(format)
-                           .arg(i18nc("interface details", "Master Device"))
-                           .arg(details->masterDevice);
-
-            info += QString(format)
-                           .arg(i18nc("interface details", "Unlock Required"))
-                           .arg(details->unlockRequired.isEmpty() ? i18n("No") : QString("%1: %2").arg(i18n("Yes")).arg(details->unlockRequired));*/
+            info += QString(format).arg(i18nc("interface details", "Frequency Band"), Solid::Control::ModemInterface::convertBandToString(details->band));
+            info += QString(format).arg(i18nc("interface details", "Allowed Mode"), Solid::Control::ModemInterface::convertAllowedModeToString(details->allowedMode));
+            info += QString(format).arg(i18nc("interface details", "UDI"), details->udi);
+            info += QString(format).arg(i18nc("interface details", "Device"), details->device);
+            info += QString(format).arg(i18nc("interface details", "Master Device"), details->masterDevice);
+            info += QString(format).arg(i18nc("interface details", "Unlock Required"), details->unlockRequired.isEmpty() ? i18n("No") : QString("%1: %2").arg(i18n("Yes"), details->unlockRequired));*/
 
             /* TODO: create another tab to show this stuff
-            info += QString(format)
-                           .arg(i18nc("interface details", "IMEI"))
-                           .arg(details->imei);
-
-            info += QString(format)
-                           .arg(i18nc("interface details", "IMSI"))
-                           .arg(details->imsi);
+            info += QString(format).arg(i18nc("interface details", "IMEI"), details->imei);
+            info += QString(format).arg(i18nc("interface details", "IMSI"), details->imsi);
             */
         }
 #endif
     } else {
-        info += QString(format)
-                       .arg(i18nc("interface details", "Type"))
-                       .arg(na);
-        info += QString(format)
-                       .arg(i18nc("interface details", "Connection State"))
-                       .arg(na);
-        info += QString(format)
-                       .arg(i18nc("interface details", "Network Address (IP)"))
-                       .arg(na);
-        info += QString(format)
-                       .arg(i18nc("interface details", "Connection Speed"))
-                       .arg(na);
-        info += QString(format)
-                       .arg(i18nc("interface details", "System Name"))
-                       .arg(na);
-        info += QString(format)
-                       .arg(i18nc("interface details", "Hardware Address (MAC)"))
-                       .arg(na);
-        info += QString(format)
-                       .arg(i18nc("interface details", "Driver"))
-                       .arg(na);
+        info += QString(format).arg(i18nc("interface details", "Type"), na);
+        info += QString(format).arg(i18nc("interface details", "Connection State"), na);
+        info += QString(format).arg(i18nc("interface details", "Network Address (IP)"), na);
+        info += QString(format).arg(i18nc("interface details", "Connection Speed"), na);
+        info += QString(format).arg(i18nc("interface details", "System Name"), na);
+        info += QString(format).arg(i18nc("interface details", "Hardware Address (MAC)"), na);
+        info += QString(format).arg(i18nc("interface details", "Driver"), na);
     }
 
     // For same reason the last row sometimes is not shown when there is a certain number of rows in the html table.
     format.remove(QChar(':'));
-    info += QString(format).arg("").arg("");
+    info += QString(format).arg("", "");
 
     info += QLatin1String("</table></qt>");
     m_info->setText(info);
@@ -411,12 +377,12 @@ int InterfaceDetailsWidget::bitRate()
 
     //wifi?
     Solid::Control::WirelessNetworkInterface * wliface =
-                    dynamic_cast<Solid::Control::WirelessNetworkInterface*>(m_iface);
+                    qobject_cast<Solid::Control::WirelessNetworkInterface*>(m_iface);
     if (wliface) {
         bitRate = wliface->bitRate(); //Bit
     } else {     // wired?
         Solid::Control::WiredNetworkInterface * wdiface =
-                                    dynamic_cast<Solid::Control::WiredNetworkInterface*> (m_iface);
+                                    qobject_cast<Solid::Control::WiredNetworkInterface*> (m_iface);
         if (wdiface) {
             bitRate = wdiface->bitRate();
         }
@@ -424,10 +390,10 @@ int InterfaceDetailsWidget::bitRate()
     return bitRate;
 }
 
-void InterfaceDetailsWidget::sourceAdded(const QString &source)
+/*void InterfaceDetailsWidget::sourceAdded(const QString &source)
 {
     kDebug() << "Source added:" << source;
-}
+}*/
 
 InterfaceDetailsWidget::~InterfaceDetailsWidget()
 {
@@ -491,10 +457,10 @@ void InterfaceDetailsWidget::updateWidgets()
     temp = QString("<qt><table align=\"center\" border=\"0\"><tr>");
     temp += QString("<td width=\"20pt\" bgcolor=\"%1\">&nbsp;&nbsp;").arg(m_rxColor.name());
     temp += QString("</td><td width=\"50%\">");
-    temp += QString(format).arg(i18n("Received")).arg(KGlobal::locale()->formatByteSize(m_rxTotal*1000, 2));
+    temp += QString(format).arg(i18n("Received"), KGlobal::locale()->formatByteSize(m_rxTotal*1000, 2));
     temp += QString("&nbsp;&nbsp;</td><td width=\"20pt\" bgcolor=\"%1\">&nbsp;&nbsp;").arg(m_txColor.name());
     temp += QString("</td><td width=\"50%\">");
-    temp += QString(format).arg(i18n("Transmitted")).arg(KGlobal::locale()->formatByteSize(m_txTotal*1000, 2));
+    temp += QString(format).arg(i18n("Transmitted"), KGlobal::locale()->formatByteSize(m_txTotal*1000, 2));
     temp += QString("</td></tr></table></qt>");
     m_traffic->setText(temp);
 }
@@ -544,6 +510,21 @@ void InterfaceDetailsWidget::handleConnectionStateChange(int new_state, int old_
     } else {
         details->ipAddress = currentIpAddress();
         details->connectionState = static_cast<Solid::Control::NetworkInterface::ConnectionState>(new_state);
+#ifdef NM_0_8
+        if (m_iface->type() == Solid::Control::NetworkInterface::Bluetooth) {
+            QString interfaceName = m_iface->ipInterfaceName();
+            if (interfaceName != details->interfaceName) {
+                // Hack to force updating interfaceName and traffic plot source.
+                Solid::Control::NetworkInterface *temp = m_iface;
+                m_iface = 0;
+                kDebug() << "Reseting interface " << temp->uni() << "(" << interfaceName << ")";
+                setInterface(temp);
+                setUpdateEnabled(m_updateEnabled);
+            } else {
+                showDetails();
+            }
+        } else
+#endif
         showDetails();
     }
 }
@@ -566,14 +547,21 @@ void InterfaceDetailsWidget::setInterface(Solid::Control::NetworkInterface* ifac
         showDetails();
         connectSignals();
 
+#ifdef NM_0_8
+        QString interfaceName = m_iface->ipInterfaceName();
+        if (details->interfaceName.isEmpty()) {
+            details->interfaceName = m_iface->interfaceName();
+        }
+#else
         QString interfaceName = m_iface->interfaceName();
 
-        /* TODO: ugly and error prone if more than one 3G modem/cellphone is connected to the Internet.
-         * If anyone knows a way to convert a serial device name to a network interface name let me know. */
+        /* Ugly and error prone hack: if more than one 3G modem/cellphone is connected to the Internet this
+         * will make Plasma NM always report connection speed for the first one. */
         if (interfaceName.contains("ttyACM") || interfaceName.contains("ttyUSB") || // USB modems
             interfaceName.contains("rfcomm")) { // bluetooth modems
             interfaceName = "ppp0";
         }
+#endif
 
         m_rxSource = QString("network/interfaces/%1/receiver/data").arg(interfaceName);
         m_txSource = QString("network/interfaces/%1/transmitter/data").arg(interfaceName);
@@ -606,7 +594,7 @@ QString InterfaceDetailsWidget::getMAC()
 {
     //wifi?
     Solid::Control::WirelessNetworkInterface * wliface =
-                    dynamic_cast<Solid::Control::WirelessNetworkInterface*>(m_iface);
+                    qobject_cast<Solid::Control::WirelessNetworkInterface*>(m_iface);
     if (wliface) {
         return wliface->hardwareAddress();
         /*
@@ -617,12 +605,20 @@ QString InterfaceDetailsWidget::getMAC()
             kDebug() << "temp = " << temp;
         }
         */
-    } else {     // wired?
+    } else {
+#ifdef NM_0_8
+        Solid::Control::BtNetworkInterface * btiface =
+                    qobject_cast<Solid::Control::BtNetworkInterface*>(m_iface);
+        if (btiface) {
+            return btiface->interfaceName();
+        }
+#endif
+
+        // wired?
         Solid::Control::WiredNetworkInterface * wdiface =
-                                    dynamic_cast<Solid::Control::WiredNetworkInterface*> (m_iface);
+                                    qobject_cast<Solid::Control::WiredNetworkInterface*> (m_iface);
         if (wdiface) {
-            QString temp = wdiface->hardwareAddress();
-            return temp;
+            return wdiface->hardwareAddress();
         } else {
             // prevent crash for unconnected devices
             if (m_iface) { // last resort, although using ifaceName is not portable
@@ -639,7 +635,7 @@ QString InterfaceDetailsWidget::getMAC()
                         for (int i = meta->propertyOffset(); i<meta->propertyCount(); i++) {
                             QMetaProperty property = meta->property(i);
             
-                            if (QString(meta->className()).mid(7) + '.' + property.name() == QString::fromLatin1("NetworkInterface.hwAddress")) {
+                            if (QString(QString(meta->className()).mid(7) + '.' + property.name()) == QString::fromLatin1("NetworkInterface.hwAddress")) {
                                 QVariant value = property.read(interface);
                                 return value.toString();
                             }
@@ -670,18 +666,23 @@ void InterfaceDetailsWidget::connectSignals()
         connect(m_iface, SIGNAL(bitRateChanged(int)), this, SLOT(updateBitRate(int)));
 
         if (m_iface->type() == Solid::Control::NetworkInterface::Ieee80211) {
-            connect(m_iface, SIGNAL(activeAccessPointChanged(const QString &)), this, SLOT(updateActiveAccessPoint(QString &)));
+            connect(m_iface, SIGNAL(activeAccessPointChanged(const QString &)), this, SLOT(updateActiveAccessPoint(const QString &)));
         }
     }
-
 #ifdef COMPILE_MODEM_MANAGER_SUPPORT
-    if (m_iface->type() == Solid::Control::NetworkInterface::Gsm) {
+    if (m_iface->type() == Solid::Control::NetworkInterface::Gsm
+#ifdef NM_0_8
+        || m_iface->type() == Solid::Control::NetworkInterface::Bluetooth
+#endif
+       ) {
             Solid::Control::GsmNetworkInterface *giface = qobject_cast<Solid::Control::GsmNetworkInterface*>(m_iface);
 
             if (giface) {
                 Solid::Control::ModemGsmNetworkInterface *modemNetworkIface = giface->getModemNetworkIface();
 
                 if (modemNetworkIface) {
+                    // this one is for bluetooth devices, which always have a NetworkManager object but do not always have a ModemManager object.
+                    connect(Solid::Control::ModemManager::notifier(), SIGNAL(modemInterfaceRemoved(const QString &)), this, SLOT(resetInterfaceDetails()));
                     connect(modemNetworkIface, SIGNAL(enabledChanged(const bool)), this, SLOT(modemUpdateEnabled(const bool)));
                     connect(modemNetworkIface, SIGNAL(unlockRequiredChanged(const QString &)), this, SLOT(modemUpdateUnlockRequired(const QString &)));
 
@@ -704,7 +705,11 @@ void InterfaceDetailsWidget::disconnectSignals()
     disconnect(m_iface, 0, this, 0);
 
 #ifdef COMPILE_MODEM_MANAGER_SUPPORT
-    if (m_iface && m_iface->type() == Solid::Control::NetworkInterface::Gsm) {
+    if (m_iface && (m_iface->type() == Solid::Control::NetworkInterface::Gsm
+#ifdef NM_0_8
+                 || m_iface->type() == Solid::Control::NetworkInterface::Bluetooth
+#endif
+       )) {
         Solid::Control::GsmNetworkInterface *giface = qobject_cast<Solid::Control::GsmNetworkInterface*>(m_iface);
 
         if (giface) {

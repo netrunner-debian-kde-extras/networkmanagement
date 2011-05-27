@@ -30,7 +30,7 @@ namespace Knm
 class KNMINTERNALS_EXPORT Setting
 {
 public:
-    enum Type { Cdma, Gsm, Ipv4, Ipv6, Ppp, Pppoe, Security8021x, Serial, Vpn, Wired, Wireless, WirelessSecurity };
+    enum Type { Cdma, Gsm, Ipv4, Ipv6, Ppp, Pppoe, Security8021x, Serial, Vpn, Wired, Wireless, WirelessSecurity, Bluetooth };
     static QString typeAsString(Setting::Type);
     static Setting::Type typeFromString(const QString & type);
 
@@ -44,6 +44,11 @@ public:
     virtual bool hasVolatileSecrets() const { return false; }
     bool secretsAvailable() const;
     void setSecretsAvailable(bool secretsAvailable);
+
+    /*scope must be one of Knm::Connection::Scope, cant't include connection.h
+    here because it is already including setting.h */
+    virtual void save(int scope);
+    virtual void remove();
 protected:
     bool m_initialized;
 private:

@@ -22,7 +22,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "settingwidget_p.h"
 
 #include <KDebug>
-#include <KEditListBox>
 
 #include <QNetworkAddressEntry>
 
@@ -44,7 +43,7 @@ public:
     }
 
     // Make sure that this order is same as the combobox shown in ipv4.ui file
-    enum MethodIndex { AutomaticMethodIndex = 0, AutomaticOnlyIPMethodIndex, ManualMethodIndex, LinkLocalMethodIndex, SharedMethodIndex };
+    enum MethodIndex { AutomaticMethodIndex = 0, AutomaticOnlyIPMethodIndex, ManualMethodIndex, LinkLocalMethodIndex, SharedMethodIndex, DisabledMethodIndex};
     Ui_SettingsIp4Config ui;
     Knm::Ipv4Setting * setting;
     bool isAdvancedModeOn;
@@ -160,6 +159,10 @@ void IpV4Widget::readConfig()
             kDebug() << "Method: Shared";
             d->ui.method->setCurrentIndex(d->SharedMethodIndex);
             break;
+        case Knm::Ipv4Setting::EnumMethod::Disabled:
+            kDebug() << "Method: Shared";
+            d->ui.method->setCurrentIndex(d->DisabledMethodIndex);
+            break;
         default:
             kDebug() << "Unrecognised value for method:" << d->setting->method();
             break;
@@ -207,9 +210,17 @@ void IpV4Widget::readConfig()
     }
     // dhcp client ID
     d->ui.dhcpClientId->setText(d->setting->dhcpclientid());
+
     // routing
-    d->ui.cbNeverDefault->setChecked(d->setting->neverdefault());
-    d->ui.cbIgnoreAutoRoutes->setChecked(d->setting->ignoreautoroute());
+    if (advancedSettingsPartEnabled)
+    {
+        d->ui.routesSettings->setNeverDefault(d->setting->neverdefault());
+        d->ui.routesSettings->setIgnoreAutoRoutes(d->setting->ignoreautoroute());
+        d->ui.routesSettings->setRoutes(d->setting->routes());
+    }
+
+    //required or not
+    d->ui.cbMayFail->setChecked(!d->setting->mayfail());
 }
 
 void IpV4Widget::writeConfig()
@@ -235,6 +246,10 @@ void IpV4Widget::writeConfig()
             break;
         case IpV4WidgetPrivate::SharedMethodIndex:
             d->setting->setMethod(Knm::Ipv4Setting::EnumMethod::Shared);
+            d->setting->setIgnoredhcpdns(false);
+            break;
+        case IpV4WidgetPrivate::DisabledMethodIndex:
+            d->setting->setMethod(Knm::Ipv4Setting::EnumMethod::Disabled);
             d->setting->setIgnoredhcpdns(false);
             break;
         default:
@@ -286,8 +301,12 @@ void IpV4Widget::writeConfig()
     // dhcp client ID
     d->setting->setDhcpclientid(d->ui.dhcpClientId->text());
     // routing
-    d->setting->setNeverdefault(d->ui.cbNeverDefault->isChecked());
-    d->setting->setIgnoreautoroute(d->ui.cbIgnoreAutoRoutes->isChecked());
+    d->setting->setNeverdefault(d->ui.routesSettings->neverdefault());
+    d->setting->setIgnoreautoroute(d->ui.routesSettings->ignoreautoroutes());
+    d->setting->setRoutes(d->ui.routesSettings->routes());
+
+    //required or not
+    d->setting->setMayfail(!d->ui.cbMayFail->isChecked());
 }
 
 void IpV4Widget::methodChanged(int currentIndex)
@@ -360,6 +379,7 @@ void IpV4Widget::methodChanged(int currentIndex)
     }
 
     d->ui.advancedSettings->setEnabled(advancedSettingsPartEnabled);
+    d->ui.routesSettings->setEnabled(advancedSettingsPartEnabled);
     d->ui.address->setEnabled(addressPartEnabled);
     d->ui.addressLabel->setEnabled(addressPartEnabled);
     d->ui.netMask->setEnabled(addressPartEnabled);

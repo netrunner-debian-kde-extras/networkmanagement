@@ -25,7 +25,9 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 #include "networkinterfaceactivatableprovider_p.h"
 
 #include <solid/control/modemmanager.h>
-#include <solid/control/networkgsminterface.h>
+#ifdef NM_0_8
+#include <solid/control/networkbtinterface.h>
+#endif
 
 #include <gsminterfaceconnection.h>
 #include <gsminterfaceconnectionhelpers.h>

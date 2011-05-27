@@ -5,6 +5,8 @@ include_directories(
    ${CMAKE_CURRENT_BINARY_DIR}
    ${CMAKE_CURRENT_SOURCE_DIR}/../../solidcontrolfuture
    ${CMAKE_CURRENT_SOURCE_DIR}/../libs/client
+   ${CMAKE_CURRENT_SOURCE_DIR}/../../backends/NetworkManager
+   ${CMAKE_CURRENT_SOURCE_DIR}/../../libs
    )
 
 ## next target: internals layer library
@@ -49,6 +51,10 @@ set(knminternals_SRCS
    #settings/ipv4dbus.cpp
    settings/ipv4persistence.cpp
 
+   settings/ipv6.cpp
+   #settings/ipv6dbus.cpp
+   settings/ipv6persistence.cpp
+
    settings/ppp.cpp
    #settings/pppdbus.cpp
    settings/ppppersistence.cpp
@@ -64,6 +70,10 @@ set(knminternals_SRCS
    settings/vpn.cpp
    #settings/vpndbus.cpp
    settings/vpnpersistence.cpp
+
+   settings/bluetooth.cpp
+   #settings/bluetoothdbus.cpp
+   settings/bluetoothpersistence.cpp
 
    activatable.cpp
    interfaceconnection.cpp

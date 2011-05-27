@@ -19,6 +19,8 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#ifdef COMPILE_MODEM_MANAGER_SUPPORT
+
 #ifndef REMOTEGSMINTERFACECONNECTION_H
 #define REMOTEGSMINTERFACECONNECTION_H
 
@@ -33,21 +35,23 @@ class RemoteGsmInterfaceConnectionPrivate;
 class KNMCLIENT_EXPORT RemoteGsmInterfaceConnection : public RemoteInterfaceConnection
 {
 Q_OBJECT
-Q_PROPERTY(QString getAccessTechnology READ getAccessTechnology)
+Q_PROPERTY(int getAccessTechnology READ getAccessTechnology)
 Q_PROPERTY(int getSignalQuality READ getSignalQuality)
 
 friend class RemoteActivatableList;
 
 public:
     virtual ~RemoteGsmInterfaceConnection();
-    QString getAccessTechnology() const;
+    int getAccessTechnology() const;
     int getSignalQuality() const;
 Q_SIGNALS:
     void signalQualityChanged(int);
-    void accessTechnologyChanged(const QString);
+    void accessTechnologyChanged(const int);
 protected:
     RemoteGsmInterfaceConnection(const QString & dbusPath, QObject * parent);
     Q_DECLARE_PRIVATE(RemoteGsmInterfaceConnection)
 };
 
 #endif // REMOTEGSMINTERFACECONNECTION_H
+
+#endif // COMPILE_MODEM_MANAGER_SUPPORT

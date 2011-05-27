@@ -105,7 +105,7 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
     d->connectionList->registerConnectionHandler(d->vpnInterfaceConnectionProvider);
 
     // watches events and creates KNotifications
-    d->notificationManager = new NotificationManager(this);
+    d->notificationManager = new NotificationManager(d->connectionList, this);
 
     d->nmDBusConnectionProvider = new NMDBusSettingsConnectionProvider(d->connectionList, NMDBusSettingsService::SERVICE_SYSTEM_SETTINGS, d->connectionList);
 
@@ -135,7 +135,11 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
          | Solid::Control::NetworkInterface::Ieee80211
          | Solid::Control::NetworkInterface::Serial
          | Solid::Control::NetworkInterface::Gsm
-         | Solid::Control::NetworkInterface::Cdma);
+         | Solid::Control::NetworkInterface::Cdma
+#ifdef NM_0_8
+         | Solid::Control::NetworkInterface::Bluetooth
+#endif
+	 );
 
     d->sortedList = new SortedActivatableList(types, this);
     d->activatableList->registerObserver(d->sortedList);
