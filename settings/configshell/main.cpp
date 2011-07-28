@@ -19,7 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include <kaboutdata.h>
-#include <kapplication.h>
+#include <KUniqueApplication>
 #include <kcmdlineargs.h>
 #include <kdebug.h>
 
@@ -27,7 +27,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 int main(int argc, char **argv)
 {
-    KAboutData aboutData( "networkmanagement_configshell", "kcm_networkmanagement", ki18n("Network Management"),
+    KAboutData aboutData( "networkmanagement_configshell", "libknetworkmanager", ki18n("Network Management"),
                           0,
                           ki18n("Create network connections standalone"),
                           KAboutData::License_GPL,
@@ -44,7 +44,7 @@ int main(int argc, char **argv)
     options.add("specific-args <args>", ki18n("Space-separated connection type-specific arguments, may be either 'gsm' or 'cdma' for cellular connections,\n'openvpn' or 'vpnc' for vpn connections,\ninterface and AP identifiers for wireless connections,\nbluetooth mac address and service ('dun' or 'nap') for bluetooth connections.\n\nYou can also pass the serial device (i.e. 'rfcomm0') instead of service for dun bluetooth connections,\nin that case this program will block waiting for that device to be registered in ModemManager."));
     options.add("+mode", ki18n("Operation mode, may be either 'create' or 'edit'"), "create");
     KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
-    KApplication app;
+    KUniqueApplication app;
 
     const KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
@@ -54,7 +54,6 @@ int main(int argc, char **argv)
         return -1;
     }
 
-    KGlobal::locale()->insertCatalog("libknmui");
     ConnectionEditor editor(0);
     QString specifics = args->getOption("specific-args");
     QString ssid;
@@ -66,6 +65,7 @@ int main(int argc, char **argv)
 
     kDebug() << specificArgs;
 
+    QTextStream qout(stdout, QIODevice::WriteOnly);
     KNetworkManagerServicePrefs::instance(Knm::ConnectionPersistence::NETWORKMANAGEMENT_RCFILE);
     kDebug() << args;
 
@@ -96,6 +96,7 @@ int main(int argc, char **argv)
                     new Bluetooth(specificArgs[0].toString(), specificArgs[1].toString());
                     return app.exec();
                 } else {
+                    qout << i18n("Expected two specific args, found %1: %2", specificArgs.count(), specifics) << "\n"; 
                     return -1;
                 }
             }

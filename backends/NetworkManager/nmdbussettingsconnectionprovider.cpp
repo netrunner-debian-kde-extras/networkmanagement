@@ -28,8 +28,6 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 #include <QUuid>
 
 #include <KDebug>
-#include <KAuth/Action>
-#include <kauthactionreply.h>
 #include <KMessageBox>
 #include <KLocale>
 
@@ -246,36 +244,6 @@ void NMDBusSettingsConnectionProvider::handleRemove(Knm::Activatable *)
 
 }
 
-bool NMDBusSettingsConnectionProvider::checkAuthorization(const Operation oper)
-{
-    // See /usr/share/polkit-1/actions/org.freedesktop.network-manager-settings.system.policy
-    // KAuth is the KDE's Polkit wrapper.
-    KAuth::Action action(QLatin1String("org.freedesktop.network-manager-settings.system.modify"));
-
-    QWidget *w = qobject_cast<QWidget *>(parent());
-    if (w) {
-        action.setParentWidget(w);
-    }
-
-    KAuth::ActionReply reply = action.execute(QLatin1String("org.freedesktop.network-manager-settings.system"));
-    if (reply.failed()) {
-        QString errorMessage;
-        switch (oper) {
-            case Add: errorMessage = i18n("Adding connection failed. Error code is %1/%2 (%3).", QString::number(reply.type()), QString::number(reply.errorCode()), reply.errorDescription());
-            break;
-
-            case Remove: errorMessage = i18n("Removing connection failed. Error code is %1/%2 (%3).", QString::number(reply.type()), QString::number(reply.errorCode()), reply.errorDescription());
-            break;
-
-            case Update: errorMessage = i18n("Updating connection failed. Error code is %1/%2 (%3).", QString::number(reply.type()), QString::number(reply.errorCode()), reply.errorDescription());
-            break;
-        }
-        KMessageBox::error(0, errorMessage, i18n("Error"));
-        return false;
-    }
-    return true;
-}
-
 void NMDBusSettingsConnectionProvider::updateConnection(const QString &uuid, Knm::Connection *newConnection)
 {
     Q_D(NMDBusSettingsConnectionProvider);
@@ -289,25 +257,30 @@ void NMDBusSettingsConnectionProvider::updateConnection(const QString &uuid, Knm
             return;
         }
 
-        if (getuid() != 0 && !checkAuthorization(Update)) {
-            return;
-        }
-
         QPair<Knm::Connection *, RemoteConnection *> pair = d->connections.value(objPath.path());
         RemoteConnection *remote = pair.second;
 
         kDebug() << "Updating connection "<< remote->id() << pair.first->uuid().toString();
 
+        newConnection->setUuid(uuid);
         newConnection->saveCertificates();
         ConnectionDbus converter(newConnection);
         QVariantMapMap map = converter.toDbusMap();
 
-        remote->Update(map);
-
-        // FIXME: if connection's name (id in NM termonology) changed in the Update call above,
-        // NM will leave the old connection file intact and create/update a new connection file
-        // in /etc/NetworkManager/system-connections/ with the same uuid, which is wrong in my oppinion.
-        // Furthermore the old connection is not shown in kcm's because we use the uuid as connection identifier.
+        if (newConnection->name() == remote->id()) {
+            remote->Update(map);
+        } else {
+            /* If connection's name (id in NM's termonology) changes during an Update
+             * NM will leave the old connection file intact and create a new connection file
+             * in /etc/NetworkManager/system-connections/ with the same uuid, which is wrong in my oppinion.
+             * Furthermore the old connection will not be shown in connection list because we use the uuid
+             * as connection identifier.
+             * Deleting the old connection and creating a new one seems to work.
+             */
+            QDBusPendingCall reply = remote->Delete();
+            reply.waitForFinished();
+            addConnection(newConnection);
+        }
 
         // don't do any processing on d->connections and d->connectionList here
         // because onRemoteConnectionUpdated() method will take care of them
@@ -346,10 +319,6 @@ bool NMDBusSettingsConnectionProvider::addConnection(Knm::Connection *newConnect
 
     if(newConnection && newConnection->name().isEmpty())
         kWarning() << "Trying to add connection without a name!";
-
-    if (getuid() != 0 && !checkAuthorization(Add)) {
-        return false;
-    }
 
     QDBusPendingCall reply = d->iface->AddConnection(map);
     reply.waitForFinished();
@@ -489,10 +458,6 @@ bool NMDBusSettingsConnectionProvider::removeConnection(const QString &uuid)
         if (!d->connections.contains(objPath.path()))
         {
             kWarning() << "Connection not found!" << uuid << objPath.path();
-            return false;
-        }
-
-        if (getuid() != 0 && !checkAuthorization(Remove)) {
             return false;
         }
 

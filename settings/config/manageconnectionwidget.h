@@ -84,6 +84,14 @@ private slots:
      */
     void tabChanged(int);
     /**
+     * Imports a connection of the selected subtype
+     */
+    void importClicked();
+    /**
+     * Exports a connection of the selected subtype
+     */
+    void exportClicked();
+    /**
      * adds a connection of the selected subtype
      */
     void connectionTypeMenuTriggered(QAction* action);
@@ -134,11 +142,6 @@ private:
      * ConnectionList for user-wide and system-wide settings
      */
     ConnectionList * mConnections;
-
-    /**
-     * ConnectionProvider to add/remove/update user wide settings
-     */
-    NMDBusSettingsConnectionProvider *mUserSettings;
 
     /**
      * ConnectionProvider to add/remove/update system wide settings

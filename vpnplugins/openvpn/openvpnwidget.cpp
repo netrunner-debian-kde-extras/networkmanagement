@@ -23,6 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <KDebug>
 #include <KProcess>
+#include <KStandardDirs>
 #include <nm-setting-vpn.h>
 #include "settings/vpn.h"
 #include "connection.h"
@@ -52,7 +53,7 @@ OpenVpnSettingWidget::OpenVpnSettingWidget(Knm::Connection * connection, QWidget
     d->readConfig = false;
 
     // start openVPN process and get its cipher list
-    QString openVpnBinary = "/usr/sbin/openvpn";
+    QString openVpnBinary = KStandardDirs::findExe("openvpn", "/sbin:/usr/sbin");
     QStringList args(QLatin1String("--show-ciphers"));
     d->openvpnProcess = new KProcess(this);
     d->openvpnProcess->setOutputChannelMode(KProcess::OnlyStdoutChannel);
@@ -238,7 +239,9 @@ void OpenVpnSettingWidget::writeConfig()
     case 2:
         contype = NM_OPENVPN_CONTYPE_PASSWORD;
         // username
-        data.insert( NM_OPENVPN_KEY_USERNAME, d->ui.passUserName->text());
+        if (!d->ui.passUserName->text().isEmpty()) {
+            data.insert( NM_OPENVPN_KEY_USERNAME, d->ui.passUserName->text());
+        }
         d->setting->setUserName(d->ui.passUserName->text());
         // password
         secretData.insert(QLatin1String( NM_OPENVPN_KEY_PASSWORD ), d->ui.passPassword->text());
@@ -248,7 +251,9 @@ void OpenVpnSettingWidget::writeConfig()
     case 3:
         contype = NM_OPENVPN_CONTYPE_PASSWORD_TLS;
         // username
-        data.insert(NM_OPENVPN_KEY_USERNAME, d->ui.x509PassUsername->text());
+        if (!d->ui.x509PassUsername->text().isEmpty()) {
+            data.insert(NM_OPENVPN_KEY_USERNAME, d->ui.x509PassUsername->text());
+        }
         d->setting->setUserName(d->ui.x509PassUsername->text());
         // ca
         data.insert(NM_OPENVPN_KEY_CA, d->ui.x509PassCaFile->url().path().toUtf8());
