@@ -104,9 +104,6 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
     d->vpnInterfaceConnectionProvider = new VpnInterfaceConnectionProvider(d->connectionList, d->activatableList, d->activatableList);
     d->connectionList->registerConnectionHandler(d->vpnInterfaceConnectionProvider);
 
-    // watches events and creates KNotifications
-    d->notificationManager = new NotificationManager(d->connectionList, this);
-
     d->nmDBusConnectionProvider = new NMDBusSettingsConnectionProvider(d->connectionList, NMDBusSettingsService::SERVICE_SYSTEM_SETTINGS, d->connectionList);
 
     // generic observers
@@ -115,16 +112,6 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
 
     d->activatableList->registerObserver(d->nmSettingsService);
     d->activatableList->registerObserver(d->nmDBusConnectionProvider);
-    d->activatableList->registerObserver(d->notificationManager);
-
-    // create ActiveConnectionMonitor after construction of NMDBusSettingsConnectionProvider and observer registrations 
-    // because, activatableList is filled in NetworkInterfaceMonitor and updated in registerObservers above. This is why "Auto eth0" connection created automatically by NM has 
-    // Unknown activationState in its /org/kde/networkmanagement/Activatable interface
-    d->nmActiveConnectionMonitor = new NMDBusActiveConnectionMonitor(d->activatableList, d->nmSettingsService);
-
-    // register after nmSettingsService and nmDBusConnectionProvider because it relies on changes they
-    // make to interfaceconnections
-    d->activatableList->registerObserver(d->nmActiveConnectionMonitor);
 
     // debug activatable changes
     //ActivatableDebug debug;
@@ -155,9 +142,35 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
     // in its dtor (needed so it cleans up when removed by the monitor)
     // ideally this will always be deleted before the other list
     d->networkInterfaceMonitor = new NetworkInterfaceMonitor(d->connectionList, d->activatableList, d->activatableList);
+
+    // create ActiveConnectionMonitor after construction of NMDBusSettingsConnectionProvider and observer registrations 
+    // because, activatableList is filled in NetworkInterfaceMonitor and updated in registerObservers above. This is why "Auto eth0" connection created automatically by NM has 
+    // Unknown activationState in its /org/kde/networkmanagement/Activatable interface
+    d->nmActiveConnectionMonitor = new NMDBusActiveConnectionMonitor(d->activatableList, d->nmSettingsService);
+
+    // register after nmSettingsService and nmDBusConnectionProvider because it relies on changes they
+    // make to interfaceconnections
+    d->activatableList->registerObserver(d->nmActiveConnectionMonitor);
+
+    d->notificationManager = 0;
+    connect(d->sessionAbstractedService, SIGNAL(DoFinishInitialization()), SLOT(finishInitialization()));
 }
 
 
 NetworkManagementService::~NetworkManagementService()
 {
+}
+
+void NetworkManagementService::finishInitialization()
+{
+    Q_D(NetworkManagementService);
+    QObject::disconnect(d->sessionAbstractedService, SIGNAL(DoFinishInitialization()), this, 0);
+
+    if (d->notificationManager) {
+        return;
+    }
+
+    // watches events and creates KNotifications
+    d->notificationManager = new NotificationManager(d->connectionList, this);
+    d->activatableList->registerObserver(d->notificationManager);
 }

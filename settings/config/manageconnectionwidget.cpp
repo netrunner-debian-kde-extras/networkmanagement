@@ -1,5 +1,6 @@
 /*
 Copyright 2008,2009 Will Stephenson <wstephenson@kde.org>
+Copyright 2011 Rajeesh K Nambiar <rajeeshknambiar@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -46,6 +47,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <KServiceTypeTrader>
 #include <KStandardDirs>
 #include <KToolInvocation>
+#include <kfiledialog.h>
+#include <KUser>
+
 #include <solid/control/networkmanager.h>
 #include <solid/control/networkinterface.h>
 
@@ -54,6 +58,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "connectionlist.h"
 #include "connectionpersistence.h"
 #include "connectionprefs.h"
+#include "vpnuiplugin.h"
+#include "settings/vpn.h"
+
 #include <tooltips.h>
 
 #define ConnectionIdRole Qt::UserRole + 1
@@ -83,13 +90,10 @@ ManageConnectionWidget::ManageConnectionWidget(QWidget *parent, const QVariantLi
 
     KNetworkManagerServicePrefs::instance(Knm::ConnectionPersistence::NETWORKMANAGEMENT_RCFILE);
     mConnections = new ConnectionList(this);
-    //mUserSettings = new NMDBusSettingsConnectionProvider(mConnections, NMDBusSettingsService::SERVICE_USER_SETTINGS, this);
     mSystemSettings = new NMDBusSettingsConnectionProvider(mConnections, NMDBusSettingsService::SERVICE_SYSTEM_SETTINGS, this);
 
     connect(mSystemSettings, SIGNAL(getConnectionSecretsCompleted(bool, const QString &)), this, SLOT(editGotSecrets(bool, const QString&)) );
     connect(mSystemSettings, SIGNAL(addConnectionCompleted(bool, const QString &)), this, SLOT(addGotConnection(bool, const QString&)) );
-
-    //connect(mUserSettings, SIGNAL(connectionsChanged()), this, SLOT(restoreConnections()));
     connect(mSystemSettings, SIGNAL(connectionsChanged()), this, SLOT(restoreConnections()));
 
     connectButtonSet(mConnEditUi.buttonSetWired, mConnEditUi.listWired);
@@ -118,14 +122,18 @@ ManageConnectionWidget::ManageConnectionWidget(QWidget *parent, const QVariantLi
             SLOT(editClicked()));
 
     restoreConnections();
+
+    if (!Solid::Control::NetworkManager::isWirelessEnabled()) {
+        mConnEditUi.tabWidget->setCurrentIndex(0);
+    }
+
     if (QDBusConnection::sessionBus().registerService(QLatin1String("org.kde.NetworkManager.KCModule"))) {
         bool result = QDBusConnection::sessionBus().registerObject(QLatin1String("/default"), this, QDBusConnection::ExportScriptableSlots);
         if (result)
             kDebug() << "/default interface succesfully registered.";
         else
             kWarning() << "/default interface could not be registered.";
-    }
-    else
+    } else
         kWarning() << "org.kde.NetworkManager.KCModule interface cannot be registered!";
 
     mLastUsedTimer = new QTimer(this);
@@ -143,9 +151,7 @@ ManageConnectionWidget::~ManageConnectionWidget()
     //(prevents crashes when closing kcmshell too fast after adding/editing
     //a connection, as this is then deleted from another thread)
     usleep(100000);
-    delete mSystemSettings;
-    delete mConnections;
-    delete mEditor;
+    QDBusConnection::sessionBus().unregisterService(QLatin1String("org.kde.NetworkManager.KCModule"));
 }
 
 void ManageConnectionWidget::createConnection(const QString &connectionType, const QVariantList &args)
@@ -155,7 +161,6 @@ void ManageConnectionWidget::createConnection(const QString &connectionType, con
     kDebug() << "con is " << con;
 
     if (con) {
-
         kDebug() << "Connection pointer is set, connection will be added.";
 
         if (con->scope() == Knm::Connection::User)
@@ -284,6 +289,7 @@ void ManageConnectionWidget::restoreUserConnections()
 void ManageConnectionWidget::restoreConnections()
 {
     // clean up the lists
+    mUuidItemHash.clear();
     mConnEditUi.listWired->clear();
     mConnEditUi.listWireless->clear();
     mConnEditUi.listCellular->clear();
@@ -446,7 +452,6 @@ void ManageConnectionWidget::addClicked()
     kDebug() << "Add clicked, currentIndex is " << connectionTypeForCurrentIndex();
 
     if (connectionTypeForCurrentIndex() == Knm::Connection::Gsm) {
-
         kDebug() << "GSM tab selected, connection wizard will be shown.";
 
         delete mMobileConnectionWizard;
@@ -469,7 +474,6 @@ void ManageConnectionWidget::addClicked()
     }
 
     if (con) {
-
         kDebug() << "Connection pointer is set, connection will be added.";
 
         if (con->scope() == Knm::Connection::User)
@@ -482,6 +486,95 @@ void ManageConnectionWidget::addClicked()
     else
         kDebug() << "Connection pointer is not set, connection will not be added!";
 
+}
+
+void ManageConnectionWidget::importClicked()
+{
+    //Get the file from which connection is to be imported
+    QString impFile = KFileDialog::getOpenFileName(KUser().homeDir(),"*.pcf",this,i18nc("File chooser dialog title for importing VPN","Import VPN connection settings"));
+    if (impFile.isEmpty())
+        return;
+
+    //Try to import the connection with each VPN plugin found
+    Knm::Connection * con = 0;
+    QString pluginError;
+    KPluginInfo::List vpnServices = KPluginInfo::fromServices(KServiceTypeTrader::self()->query(QLatin1String("NetworkManagement/VpnUiPlugin")));
+    foreach (const KPluginInfo &pi, vpnServices) {
+        QString serviceType = pi.service()->property("X-NetworkManager-Services", QVariant::String).toString();
+        VpnUiPlugin * vpnUi = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>( QString::fromLatin1( "NetworkManagement/VpnUiPlugin" ), QString::fromLatin1( "[X-NetworkManager-Services]=='%1'" ).arg( serviceType ), this, QVariantList(), &pluginError );
+        if (pluginError.isEmpty()) {
+            QVariantList conArgs = vpnUi->importConnectionSettings(impFile);
+
+            if (!conArgs.isEmpty()) {
+                conArgs.insert(0, serviceType);        //VPN service
+                con = mEditor->createConnection(false, Knm::Connection::Vpn, conArgs);
+            }
+            if (con) {
+                kDebug() << "VPN Connection pointer is set, connection will be added.";
+
+                if (con->scope() == Knm::Connection::User)
+                    saveConnection(con);
+                else
+                    mSystemSettings->addConnection(con);
+
+                updateServiceAndUi(con);
+                delete vpnUi;
+                break;
+            }
+        }
+        delete vpnUi;
+    }
+    if (!con) {
+        kDebug() << "VPN import failed";
+        KMessageBox::error(this, i18n("Could not import VPN connection settings"), i18n("Error"), KMessageBox::Notify) ;
+    }
+
+}
+
+void ManageConnectionWidget::exportClicked()
+{
+    QTreeWidgetItem * item = selectedItem();
+    Knm::Connection * con = 0;
+    QString connectionId = item->data(0, ConnectionIdRole).toString();
+    Knm::Connection::Type type = (Knm::Connection::Type)item->data(0, ConnectionTypeRole).toUInt();
+    if (connectionId.isEmpty()) {
+        kDebug() << "selected item had no connectionId!";
+        return;
+    }
+
+    Knm::Connection::Scope scope = (Knm::Connection::Scope)item->data(0, ConnectionScopeRole).toUInt();
+    if (scope == Knm::Connection::User) {
+        con = new Knm::Connection(QUuid(connectionId), type);
+        loadConnection(con);
+    } else {
+        //find clicked connection from our connection list
+        // FIXME: we should create a copy here like above instead of using the original.
+        con = mConnections->findConnection(connectionId);
+    }
+    if (!con) {
+        kWarning() << "Clicked connection with id" << connectionId << " could not be found in connection list!";
+        return;
+    }
+
+    QString serviceType = static_cast<Knm::VpnSetting*>(con->setting(Knm::Setting::Vpn))->serviceType();
+    QString pluginError;
+    VpnUiPlugin * vpnUi = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>( QString::fromLatin1( "NetworkManagement/VpnUiPlugin" ), QString::fromLatin1( "[X-NetworkManager-Services]=='%1'" ).arg( serviceType ), this, QVariantList(), &pluginError );
+    if (pluginError.isEmpty()) {
+        QString expFile = KFileDialog::getSaveFileName(KUser().homeDir().append("/" + vpnUi->suggestedFileName(con)),"",this,i18nc("File chooser dialog title for exporting VPN","Export VPN"));
+        if (expFile.isEmpty()) {
+            delete vpnUi;
+            return;
+        }
+
+        vpnUi->exportConnectionSettings(con, expFile);
+
+        KMessageBox::information(this, i18n("VPN connection successfully exported"), i18n("Success"), i18n("Do not show again"), KMessageBox::Notify);
+    } else {
+        KMessageBox::error(this, i18n("Could not export VPN connection settings"), i18n("Error"), KMessageBox::Notify);
+    }
+
+    delete vpnUi;
+    return;
 }
 
 void ManageConnectionWidget::loadConnection(Knm::Connection *con)
@@ -513,9 +606,9 @@ void ManageConnectionWidget::saveConnection(Knm::Connection *con)
     KNetworkManagerServicePrefs * prefs = KNetworkManagerServicePrefs::self();
     KConfigGroup config(prefs->config(), QLatin1String("Connection_") + QString(con->uuid()));
     QStringList connectionIds = prefs->connections();
+
     // check if already present, we may be editing an existing Connection
-    if (!connectionIds.contains(con->uuid()))
-    {
+    if (!connectionIds.contains(con->uuid())) {
         connectionIds << con->uuid();
         prefs->setConnections(connectionIds);
     }
@@ -548,9 +641,7 @@ void ManageConnectionWidget::editClicked()
 
         Knm::Connection::Scope scope = (Knm::Connection::Scope)item->data(0, ConnectionScopeRole).toUInt();
         if (scope == Knm::Connection::User) {
-
             con = new Knm::Connection(QUuid(connectionId), type);
-
             loadConnection(con);
 
         } else
@@ -558,8 +649,7 @@ void ManageConnectionWidget::editClicked()
             // FIXME: we should create a copy here like above instead of using the original.
             con = mConnections->findConnection(connectionId);
 
-        if (!con)
-        {
+        if (!con) {
             kWarning() << "Clicked connection with id" << connectionId << " could not be found in connection list!";
             return;
         }
@@ -570,8 +660,7 @@ void ManageConnectionWidget::editClicked()
             if (scope == Knm::Connection::System) {
                 bool rep = mSystemSettings->getConnectionSecrets(con);
 
-                if (!rep)
-                {
+                if (!rep) {
                     KMessageBox::error(this, i18n("Connection edit option failed, make sure that NetworkManager is properly running."));
                     return;
                 }
@@ -581,9 +670,7 @@ void ManageConnectionWidget::editClicked()
                 connect(connectionPersistence, SIGNAL(loadSecretsResult(uint)), SLOT(gotSecrets(uint)));
                 connectionPersistence->loadSecrets();
             }
-        }
-        else
-        {
+        } else {
             kDebug() << "This connection has no secrets, good.";
             editGotSecrets(true, QString());
             if (scope == Knm::Connection::User) {
@@ -596,8 +683,7 @@ void ManageConnectionWidget::editClicked()
 
 void ManageConnectionWidget::editGotSecrets(bool valid, const QString &errorMessage)
 {
-    if (!valid)
-    {
+    if (!valid) {
         if (errorMessage.isEmpty())
             KMessageBox::error(this, i18n("Error"));
         else
@@ -611,8 +697,7 @@ void ManageConnectionWidget::editGotSecrets(bool valid, const QString &errorMess
         return;
 
     con = mEditor->editConnection(con); //starts editor window
-    if (con)
-    {
+    if (con) {
         if (oldScope == con->scope()) {
             if (con->scope() == Knm::Connection::User)
                 saveConnection(con);
@@ -651,8 +736,7 @@ void ManageConnectionWidget::editGotSecrets(bool valid, const QString &errorMess
 
 void ManageConnectionWidget::addGotConnection(bool valid, const QString &errorMessage)
 {
-    if (!valid)
-    {
+    if (!valid) {
         if (errorMessage.isEmpty())
             KMessageBox::error(this, i18n("Connection create operation failed."));
         else
@@ -668,9 +752,6 @@ bool ManageConnectionWidget::deleteConnection(QString id, Knm::Connection::Scope
     if (scope == Knm::Connection::System)
         mSystemSettings->removeConnection(id);
     else {
-        // remove secrets from wallet if using encrypted storage
-        Knm::ConnectionPersistence::deleteSecrets(id);
-
         // delete everything related, like certificates
         QFile connFile(KStandardDirs::locateLocal("data",
                     Knm::ConnectionPersistence::CONNECTION_PERSISTENCE_PATH + id));
@@ -683,6 +764,12 @@ bool ManageConnectionWidget::deleteConnection(QString id, Knm::Connection::Scope
             (Knm::ConnectionPersistence::SecretStorageMode)KNetworkManagerServicePrefs::self()->secretStorageMode());
         connectionPersistence->load();
         con->removeCertificates();
+
+        if (con->hasSecrets()) {
+            // remove secrets from wallet if using encrypted storage
+            Knm::ConnectionPersistence::deleteSecrets(id);
+        }
+
         delete(connectionPersistence);
         delete(con);
 
@@ -812,6 +899,11 @@ void ManageConnectionWidget::tabChanged(int index)
             mConnEditUi.buttonSetVpn->addButton()->setMenu(mVpnMenu);
         }
         mConnEditUi.buttonSetVpn->addButton()->setEnabled(!mVpnMenu->isEmpty());
+        mConnEditUi.buttonSetVpn->importButton()->setEnabled(!mVpnMenu->isEmpty());
+        mConnEditUi.buttonSetVpn->importButton()->setVisible(!mVpnMenu->isEmpty());
+        mConnEditUi.buttonSetVpn->exportButton()->setVisible(!mVpnMenu->isEmpty());
+        connect(mConnEditUi.buttonSetVpn->importButton(),SIGNAL(clicked()),SLOT(importClicked()));
+        connect(mConnEditUi.buttonSetVpn->exportButton(),SIGNAL(clicked()),SLOT(exportClicked()));
     }
 }
 
@@ -835,7 +927,6 @@ void ManageConnectionWidget::connectionTypeMenuTriggered(QAction* action)
         con = mEditor->createConnection(false, tabType, vl);
     }
     if (con) {
-
         kDebug() << "Connection pointer is set, connection will be added.";
 
         if (con->scope() == Knm::Connection::User)
@@ -846,7 +937,6 @@ void ManageConnectionWidget::connectionTypeMenuTriggered(QAction* action)
         updateServiceAndUi(con);
     }
 }
-
 
 void ManageConnectionWidget::activeConnectionsChanged()
 {

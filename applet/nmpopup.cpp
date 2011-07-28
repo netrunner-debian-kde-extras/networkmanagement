@@ -27,6 +27,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QGraphicsGridLayout>
 #include <QTimer>
 #include <QDBusConnection>
+#include <QDBusInterface>
 
 // KDE
 #include <KDebug>
@@ -223,6 +224,7 @@ void NMPopup::init()
     m_rightLayout->addItem(connectionLayout);
 
     m_mainLayout->addItem(m_rightWidget, 1, 2);
+    m_mainLayout->setColumnFixedWidth(2, m_showMoreButton->size().rwidth() + m_connectionsButton->size().rwidth());
 
     //createTab(Knm::Activatable::WirelessInterfaceConnection);
     kDebug() << "Adding interfaces initially";
@@ -253,6 +255,7 @@ void NMPopup::init()
     m_oldShowMoreChecked = false;
     showMore(m_oldShowMoreChecked);
 
+    KNetworkManagerServicePrefs::instance(Knm::ConnectionPersistence::NETWORKMANAGEMENT_RCFILE);
     readConfig();
 
     QDBusConnection dbus = QDBusConnection::sessionBus();
@@ -262,26 +265,39 @@ void NMPopup::init()
     adjustSize();
 }
 
+static int compareVersions(const QString & version1, const QString & version2)
+{
+    QStringList sl1 = version1.split('.');
+    QStringList sl2 = version2.split('.');
+
+    if (sl1.size() > 2 && sl2.size() > 2) {
+        int v1[3] = { sl1[0].toInt(), sl1[1].toInt(), sl1[2].toInt() };
+        int v2[3] = { sl2[0].toInt(), sl2[1].toInt(), sl2[2].toInt() };
+
+        if (v1[0] > v2[0]) {
+            return 1;
+        } else if (v1[0] < v2[0]) {
+            return -1;
+        } else if (v1[1] > v2[1]) {
+            return 1;
+        } else if (v1[1] < v2[1]) {
+            return -1;
+        } else if (v1[2] > v2[2]) {
+            return 1;
+        } else if (v1[2] < v2[2]) {
+            return -1;
+        } else {
+            return 0;
+        }
+    }
+    return 0;
+}
+
 void NMPopup::readConfig()
 {
     kDebug();
-    KNetworkManagerServicePrefs::instance(Knm::ConnectionPersistence::NETWORKMANAGEMENT_RCFILE);
     KNetworkManagerServicePrefs::self()->readConfig();
-    KConfigGroup config(KNetworkManagerServicePrefs::self()->config(), QLatin1String("SystemTray"));
-    if (config.exists()) {
-        bool networkingEnabled = config.readEntry("NetworkingEnabled",
-                                                  Solid::Control::NetworkManager::isNetworkingEnabled());
-        bool wirelessEnabled = config.readEntry("WirelessEnabled",
-                                                Solid::Control::NetworkManager::isWirelessEnabled());
 
-        Solid::Control::NetworkManager::setNetworkingEnabled(networkingEnabled);
-        Solid::Control::NetworkManager::setWirelessEnabled(wirelessEnabled);
-#ifdef NM_0_8
-        bool wwanEnabled = config.readEntry("WwanEnabled",
-                                            Solid::Control::NetworkManager::isWwanEnabled());
-        Solid::Control::NetworkManager::setWwanEnabled(wwanEnabled);
-#endif
-    }
     m_networkingCheckBox->setChecked(Solid::Control::NetworkManager::isNetworkingEnabled());
     m_wifiCheckBox->setChecked(Solid::Control::NetworkManager::isWirelessEnabled());
 
@@ -298,26 +314,22 @@ void NMPopup::readConfig()
     m_wwanCheckBox->setEnabled(Solid::Control::NetworkManager::isWwanHardwareEnabled());
 #endif
 
+    m_showMoreButton->setEnabled(Solid::Control::NetworkManager::isNetworkingEnabled() &&
+                                 Solid::Control::NetworkManager::isWirelessEnabled());
+
     foreach(InterfaceItem * i, m_interfaces) {
         i->setNameDisplayMode(InterfaceItem::InterfaceName);
     }
-}
 
-void NMPopup::saveConfig()
-{
-    kDebug();
-    /* If networking is disabled system is probably suspending to ram/disk.
-       When it resumes we want to put NetworkManager at the same state as before the suspend,
-       so we do not save config now. */
-    if (Solid::Control::NetworkManager::isNetworkingEnabled()) {
-        kDebug() << "Saving config";
-        KConfigGroup config(KNetworkManagerServicePrefs::self()->config(), QLatin1String("SystemTray"));
-        config.writeEntry("NetworkingEnabled", m_networkingCheckBox->isChecked());
-        config.writeEntry("WirelessEnabled", m_wifiCheckBox->isChecked());
-#ifdef NM_0_8
-        config.writeEntry("WwanEnabled", m_wwanCheckBox->isChecked());
-#endif
-        KNetworkManagerServicePrefs::self()->writeConfig();
+    QDBusInterface nmIface("org.freedesktop.NetworkManager", "/org/freedesktop/NetworkManager",
+                           "org.freedesktop.NetworkManager", QDBusConnection::systemBus());
+    QString version = qvariant_cast<QString>(nmIface.property("Version"));
+    if (!version.isEmpty()) {
+        if (compareVersions(version, QString(MINIMUM_NM_VERSION_REQUIRED)) < 0 || compareVersions(version, QString(MAXIMUM_NM_VERSION_SUPPORTED)) > 0) {
+            Plasma::Label * warning = new Plasma::Label(this);
+            warning->setText(i18nc("Warning about wrong NetworkManager version", "We need NetworkManager version between %1 and %2 to work, found %3", QString(MINIMUM_NM_VERSION_REQUIRED), QString(MAXIMUM_NM_VERSION_SUPPORTED), version));
+            m_interfaceLayout->addItem(warning);
+        }
     }
 }
 
@@ -486,13 +498,7 @@ void NMPopup::wirelessEnabledToggled(bool checked)
     if (Solid::Control::NetworkManager::isWirelessEnabled() != checked) {
         Solid::Control::NetworkManager::setWirelessEnabled(checked);
     }
-    if (checked && Solid::Control::NetworkManager::isNetworkingEnabled()) {
-        m_showMoreButton->show();
-    } else {
-        m_showMoreButton->hide();
-    }
     updateHasWireless(checked);
-    saveConfig();
 }
 
 #ifdef NM_0_8
@@ -502,7 +508,6 @@ void NMPopup::wwanEnabledToggled(bool checked)
     if (Solid::Control::NetworkManager::isWwanEnabled() != checked) {
         Solid::Control::NetworkManager::setWwanEnabled(checked);
     }
-    saveConfig();
 }
 #endif
 
@@ -524,14 +529,7 @@ void NMPopup::networkingEnabledToggled(bool checked)
     m_wwanCheckBox->setEnabled(Solid::Control::NetworkManager::isWwanHardwareEnabled());
 
 #endif
-    if (checked && Solid::Control::NetworkManager::isWirelessHardwareEnabled() &&
-                   Solid::Control::NetworkManager::isWirelessEnabled()) {
-        m_showMoreButton->show();
-    } else {
-        m_showMoreButton->hide();
-    }
     updateHasWireless(checked);
-    saveConfig();
 }
 
 void NMPopup::updateHasWireless(bool checked)
@@ -600,6 +598,8 @@ void NMPopup::managerWirelessEnabledChanged(bool enabled)
     if (enabled) {
         m_wifiCheckBox->setEnabled(enabled);
     }
+
+    m_showMoreButton->setEnabled(enabled && Solid::Control::NetworkManager::isNetworkingEnabled());
 }
 
 void NMPopup::managerWirelessHardwareEnabledChanged(bool enabled)
@@ -607,12 +607,14 @@ void NMPopup::managerWirelessHardwareEnabledChanged(bool enabled)
     kDebug() << "Hardware wireless enable switch state changed" << enabled;
     m_wifiCheckBox->setEnabled(enabled);
     updateHasWireless(enabled);
+    m_showMoreButton->setEnabled(enabled && Solid::Control::NetworkManager::isNetworkingEnabled());
 }
 
 void NMPopup::managerNetworkingEnabledChanged(bool enabled)
 {
     kDebug() << "NM daemon changed networking enable state" << enabled;
     m_networkingCheckBox->setChecked(enabled);
+    m_showMoreButton->setEnabled(enabled);
 }
 
 #ifdef NM_0_8

@@ -247,8 +247,6 @@ void NMDBusSettingsService::interfaceConnectionActivated()
                 // Try to pin-unlock the modem.
                 QMetaObject::invokeMethod(modem, "unlockRequiredChanged", Qt::DirectConnection,
                                           Q_ARG(QString, modem->unlockRequired()));
-                kDebug() << "Trying to enable modem";
-                modem->enable(true);
             }
         }
 #endif
@@ -267,10 +265,14 @@ void NMDBusSettingsService::interfaceConnectionDeactivated()
     Solid::Control::NetworkInterface *iface = Solid::Control::NetworkManager::findNetworkInterface(ic->deviceUni());
     if (iface) {
         iface->disconnectInterface();
-    } else {
+    } else { // VPN connections do have NetworkInterface objects.
         Solid::Control::NetworkManager::deactivateConnection(ic->property("NMDBusActiveConnectionObject").toString());
     }
 #else
+    QDBusInterface devIface(QLatin1String(NM_DBUS_SERVICE), ic->deviceUni(), "org.freedesktop.NetworkManager.Device", QDBusConnection::systemBus());
+    devIface.call("Disconnect");
+
+    // The command above does not work for VPN connections, this one does.
     Solid::Control::NetworkManager::deactivateConnection(ic->property("NMDBusActiveConnectionObject").toString());
 #endif
 }
