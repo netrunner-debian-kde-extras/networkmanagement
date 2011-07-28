@@ -1,10 +1,10 @@
-networkmanagement (0.1+git20110727.96f5505-0r1) UNRELEASED; urgency=low
+networkmanagement (0.1+git20110727.96f5505-1) unstable; urgency=low
 
   * New upstream Git snapshot 96f55055cc0651dbaaa405b5c6468ed6fa620e2c:
     - WPA Enterprise is reported working in this release. (Closes: #578101)
     - OpenVPN support can ask for a password now. (Closes: #574901)
 
- -- Modestas Vainius <modax@debian.org>  Thu, 28 Jul 2011 10:37:45 +0300
+ -- Modestas Vainius <modax@debian.org>  Thu, 28 Jul 2011 15:07:43 +0300
 
 networkmanagement (0.1+git20110526.911025d-1) unstable; urgency=low
 
