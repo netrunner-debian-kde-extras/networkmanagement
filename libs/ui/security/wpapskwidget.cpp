@@ -49,12 +49,10 @@ WpaPskWidget::WpaPskWidget(Knm::Connection* connection, QWidget * parent)
 : SecurityWidget(connection, parent), d(new WpaPskWidget::Private)
 {
     d->ui.setupUi(this);
-    setValid(false);
     d->setting = static_cast<Knm::WirelessSecuritySetting *>(connection->setting(Knm::Setting::WirelessSecurity));
     d->wsetting = static_cast<Knm::WirelessSetting *>(connection->setting(Knm::Setting::Wireless));
 
     connect(d->ui.chkShowPass, SIGNAL(stateChanged(int)), this, SLOT(chkShowPassToggled()));
-    connect(d->ui.psk, SIGNAL(textChanged ( const QString &)), this, SLOT(pskTextChanged()));
     d->ui.psk->setEchoMode(QLineEdit::Password);
 }
 
@@ -69,20 +67,10 @@ void WpaPskWidget::chkShowPassToggled()
     d->ui.psk->setEchoMode(on ? QLineEdit::Normal : QLineEdit::Password);
 }
 
-void WpaPskWidget::pskTextChanged()
-{
-    validate();
-}
-
-bool WpaPskWidget::validate()
+bool WpaPskWidget::validate() const
 {
     WpaSecretIdentifier::WpaSecretType secretType = WpaSecretIdentifier::identify(d->ui.psk->text());
-    bool result = (secretType == WpaSecretIdentifier::Passphrase || secretType == WpaSecretIdentifier::PreSharedKey);
-    kDebug() << "Validate called!!!" << result;
-
-    setValid(result);
-    emit valid(result);
-    return result;
+    return (secretType == WpaSecretIdentifier::Passphrase || secretType == WpaSecretIdentifier::PreSharedKey);
 }
 
 void WpaPskWidget::readConfig()

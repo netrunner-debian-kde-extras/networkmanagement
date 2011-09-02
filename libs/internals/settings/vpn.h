@@ -10,10 +10,6 @@
 #include "knminternals_export.h"
 #include "../types.h"
 
-#define NM_VPN_PW_TYPE_SAVE   "save"
-#define NM_VPN_PW_TYPE_ASK    "ask"
-#define NM_VPN_PW_TYPE_UNUSED "unused"
-
 namespace Knm {
 
 class KNMINTERNALS_EXPORT VpnSetting : public Setting
@@ -21,11 +17,19 @@ class KNMINTERNALS_EXPORT VpnSetting : public Setting
   public:
 
     VpnSetting( );
+    VpnSetting(VpnSetting *);
     ~VpnSetting();
 
     QString name() const;
 
-    bool hasSecrets() const;
+    QMap<QString,QString> secretsToMap() const;
+    void secretsFromMap(QMap<QString,QString>);
+    static QStringList variantMapToStringList(const QVariantMap &);
+    static QVariantMap variantMapFromStringList(const QStringList & list);
+    static QStringMap stringMapFromStringList(const QStringList & list);
+    static QStringList stringMapToStringList(const QStringMap & map);
+    QStringList needSecrets() const;
+    bool hasPersistentSecrets() const;
 
     /**
       Set Service Type
@@ -78,7 +82,7 @@ class KNMINTERNALS_EXPORT VpnSetting : public Setting
     /**
       Set Vpnsecrets
     */
-    void setVpnSecrets( const QVariantMap & v )
+    void setVpnSecrets( const QStringMap & v )
     {
         mVpnSecrets = v;
     }
@@ -86,7 +90,7 @@ class KNMINTERNALS_EXPORT VpnSetting : public Setting
     /**
       Get Vpnsecrets
     */
-    QVariantMap vpnSecrets() const
+    QStringMap vpnSecrets() const
     {
       return mVpnSecrets;
     }
@@ -107,33 +111,14 @@ class KNMINTERNALS_EXPORT VpnSetting : public Setting
       return mPluginName;
     }
 
-    /**
-      Set secret storage type
-    */
-    void setSecretsStorageType( const QStringMap & v )
-    {
-      mSecretsStorageType = v;
-    }
-
-    /**
-      Get secret storage type
-    */
-    QStringMap secretsStorageType() const
-    {
-      return mSecretsStorageType;
-    }
-
-    bool hasVolatileSecrets() const;
-
   protected:
-
+    static QVariantMap secretsToSave(const QStringMap &, const QStringMap &);
     // vpn
     QString mServiceType;
     QStringMap mData;
     QString mUserName;
-    QVariantMap mVpnSecrets;
+    QStringMap mVpnSecrets;
     QString mPluginName;
-    QStringMap mSecretsStorageType;
 
   private:
 };

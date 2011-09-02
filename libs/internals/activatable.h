@@ -35,16 +35,18 @@ Q_OBJECT
 Q_PROPERTY(QString deviceUni READ deviceUni)
 Q_PROPERTY(QString type READ activatableType)
 public:
+    /* Keep this list sorted by priority:
+     * the first types will appear first in
+     * connection list widget.
+     */
     enum ActivatableType {
-        InterfaceConnection,
         WirelessInterfaceConnection,
-        WirelessNetwork,
-        UnconfiguredInterface,
-        VpnInterfaceConnection,
         HiddenWirelessInterfaceConnection,
-#ifdef COMPILE_MODEM_MANAGER_SUPPORT
-        GsmInterfaceConnection
-#endif
+        VpnInterfaceConnection,
+        GsmInterfaceConnection,
+        InterfaceConnection,
+        WirelessNetwork,
+        UnconfiguredInterface
     };
 
     virtual ~Activatable();

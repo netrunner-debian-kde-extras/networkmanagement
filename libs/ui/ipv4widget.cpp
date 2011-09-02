@@ -79,9 +79,9 @@ IpV4Widget::IpV4Widget(Knm::Connection * connection, QWidget * parent)
     }
     else if (Knm::Connection::Pppoe == connType) {
         str_auto = i18nc("@item:inlistbox IPv4 settings configuration method",
-                         "Automatic (PPPoE)");
+                         "Automatic (DSL)");
         str_auto_only = i18nc("@item:inlistbox IPv4 settings configuration method",
-                              "Automatic (PPPoE) addresses only");
+                              "Automatic (DSL) addresses only");
     }
     else {
         str_auto = i18nc("@item:inlistbox IPv4 settings configuration method",
@@ -115,7 +115,11 @@ IpV4Widget::IpV4Widget(Knm::Connection * connection, QWidget * parent)
     kDebug() << "Method is" << d->setting->method() << d->setting->dhcpclientid();
 
     connect(d->ui.method, SIGNAL(currentIndexChanged(int)), this, SLOT(methodChanged(int)));
-    methodChanged(d->AutomaticMethodIndex);
+    if (d->setting->method() == Knm::Ipv4Setting::EnumMethod::Shared) {
+        methodChanged(d->SharedMethodIndex);
+    } else {
+        methodChanged(d->AutomaticMethodIndex);
+    }
 }
 
 IpV4Widget::~IpV4Widget()
@@ -170,7 +174,7 @@ void IpV4Widget::readConfig()
 
     // ip addresses
     if (advancedSettingsPartEnabled) {
-        QList<Solid::Control::IPv4Address> addrList = d->setting->addresses();
+        QList<Solid::Control::IPv4AddressNm09> addrList = d->setting->addresses();
         if (!addrList.isEmpty())
         {
             if (addressPartEnabled)
@@ -258,7 +262,7 @@ void IpV4Widget::writeConfig()
     }
 
     // addresses
-    QList<Solid::Control::IPv4Address> addresses = d->ui.advancedSettings->additionalAddresses();
+    QList<Solid::Control::IPv4AddressNm09> addresses = d->ui.advancedSettings->additionalAddresses();
     // update only the first item, the rest items are already updated
     QNetworkAddressEntry entry;
     // we need to set up IP before prefix/netmask manipulation
@@ -267,7 +271,7 @@ void IpV4Widget::writeConfig()
 
     QHostAddress gateway(d->ui.gateway->text());
     if (entry.ip() != QHostAddress::Null) {
-        Solid::Control::IPv4Address addr(entry.ip().toIPv4Address(),
+        Solid::Control::IPv4AddressNm09 addr(entry.ip().toIPv4Address(),
                                          entry.prefixLength(), gateway.toIPv4Address());
 
         addresses.prepend(addr);
@@ -332,7 +336,7 @@ void IpV4Widget::methodChanged(int currentIndex)
 
     if (!addressPartEnabled && advancedSettingsPartEnabled)
     {
-        QList<Solid::Control::IPv4Address> addresses = d->ui.advancedSettings->additionalAddresses();
+        QList<Solid::Control::IPv4AddressNm09> addresses = d->ui.advancedSettings->additionalAddresses();
         QNetworkAddressEntry entry;
         // we need to set up IP before prefix/netmask manipulation
         entry.setIp(QHostAddress(d->ui.address->text()));
@@ -341,7 +345,7 @@ void IpV4Widget::methodChanged(int currentIndex)
         QHostAddress gateway(d->ui.gateway->text());
         if (entry.ip() != QHostAddress::Null)
         {
-            Solid::Control::IPv4Address addr(entry.ip().toIPv4Address(),
+            Solid::Control::IPv4AddressNm09 addr(entry.ip().toIPv4Address(),
                                             entry.prefixLength(), gateway.toIPv4Address());
             addresses.prepend(addr);
         }
@@ -349,10 +353,10 @@ void IpV4Widget::methodChanged(int currentIndex)
     }
     else if (addressPartEnabled && advancedSettingsPartEnabled)
     {
-        QList<Solid::Control::IPv4Address> addresses = d->ui.advancedSettings->additionalAddresses();
+        QList<Solid::Control::IPv4AddressNm09> addresses = d->ui.advancedSettings->additionalAddresses();
         if (!addresses.isEmpty())
         {
-            Solid::Control::IPv4Address addr = addresses.takeFirst();
+            Solid::Control::IPv4AddressNm09 addr = addresses.takeFirst();
             QNetworkAddressEntry entry;
             // we need to set up IP before prefix/netmask manipulation
             entry.setIp(QHostAddress(addr.address()));
@@ -375,7 +379,7 @@ void IpV4Widget::methodChanged(int currentIndex)
     }
     if (!advancedSettingsPartEnabled)
     {
-        d->ui.advancedSettings->setAdditionalAddresses(QList<Solid::Control::IPv4Address>());
+        d->ui.advancedSettings->setAdditionalAddresses(QList<Solid::Control::IPv4AddressNm09>());
     }
 
     d->ui.advancedSettings->setEnabled(advancedSettingsPartEnabled);

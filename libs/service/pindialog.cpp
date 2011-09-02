@@ -18,7 +18,6 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifdef COMPILE_MODEM_MANAGER_SUPPORT
 #include "pindialog.h"
 #include "ui_pinwidget.h"
 
@@ -202,4 +201,3 @@ void PinDialog::accept()
 
     QDialog::accept();
 }
-#endif

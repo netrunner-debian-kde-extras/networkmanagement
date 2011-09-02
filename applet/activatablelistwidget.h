@@ -53,7 +53,7 @@ public Q_SLOTS:
     void listDisappeared();
     void listAppeared();
     void deactivateConnection(const QString& deviceUni);
-    void addInterface(Solid::Control::NetworkInterface*);
+    void addInterface(Solid::Control::NetworkInterfaceNm09*);
     void clearInterfaces();
     void toggleVpn();
 
@@ -65,11 +65,11 @@ private Q_SLOTS:
     void filter();
 
 private:
-    void createItem(RemoteActivatable* conn);
+    void createItem(RemoteActivatable* conn, const bool addIfAlreadyCached = false);
     void createHiddenItem();
     int m_connectionType;
     QList<Knm::Activatable::ActivatableType> m_types;
-    QHash<QString, Solid::Control::NetworkInterface::Type> m_interfaces;
+    QHash<QString, Solid::Control::NetworkInterfaceNm09::Type> m_interfaces;
 
     QHash<RemoteActivatable*, ActivatableItem*> m_itemIndex;
     HiddenWirelessNetworkItem* m_hiddenItem;

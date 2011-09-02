@@ -99,7 +99,7 @@ void ActivatableListWidget::removeType(Knm::Activatable::ActivatableType type)
     filter();
 }
 
-void ActivatableListWidget::addInterface(Solid::Control::NetworkInterface* iface)
+void ActivatableListWidget::addInterface(Solid::Control::NetworkInterfaceNm09* iface)
 {
     kDebug() << "interface added";
     if (iface) {
@@ -145,21 +145,11 @@ bool ActivatableListWidget::accept(RemoteActivatable * activatable) const
     // Policy whether an activatable should be shown or not.
     if (m_interfaces.count()) {
         // If interfaces are set, activatables for other interfaces are not shown
-        if (m_interfaces.contains(activatable->deviceUni())) {
-        } else {
+        if (!m_interfaces.contains(activatable->deviceUni())) {
             return false;
         }
     }
     if (!m_showAllTypes) {
-        // hide unconnected adhoc networks
-        if (activatable->activatableType() == Knm::Activatable::WirelessInterfaceConnection)
-        {
-            RemoteWirelessInterfaceConnection * wic = qobject_cast<RemoteWirelessInterfaceConnection*>(activatable);
-            if (wic->operationMode() == Solid::Control::WirelessNetworkInterface::Adhoc && wic->activationState() == Knm::InterfaceConnection::Unknown)
-            {
-                return false;
-            }
-        }
         // when no filter is set, only show activatables of a certain type
         if (!(m_types.contains(activatable->activatableType()))) {
             return false;
@@ -168,14 +158,18 @@ bool ActivatableListWidget::accept(RemoteActivatable * activatable) const
     return true;
 }
 
-void ActivatableListWidget::createItem(RemoteActivatable * activatable)
+void ActivatableListWidget::createItem(RemoteActivatable * activatable, const bool addIfAlreadyCached)
 {
-    if (m_itemIndex.contains(activatable)) {
+    ActivatableItem* ai = m_itemIndex.value(activatable, 0);
+    if (ai) {
+        if (addIfAlreadyCached) {
+            m_layout->addItem(ai);
+            ai->show();
+        }
         //kDebug() << "activatable already in the layout, not creating an item" << a;
         return;
     }
 
-    ActivatableItem* ai = 0;
     switch (activatable->activatableType()) {
         case Knm::Activatable::WirelessNetwork:
         case Knm::Activatable::WirelessInterfaceConnection:
@@ -203,14 +197,12 @@ void ActivatableListWidget::createItem(RemoteActivatable * activatable)
             //ai = new HiddenWirelessNetworkItem(static_cast<RemoteInterfaceConnection*>(activatable), m_widget);
             break;
         }
-#ifdef COMPILE_MODEM_MANAGER_SUPPORT
         case Knm::Activatable::GsmInterfaceConnection:
         { // Gsm (2G, 3G, etc)
             GsmInterfaceConnectionItem* gici = new GsmInterfaceConnectionItem(static_cast<RemoteGsmInterfaceConnection*>(activatable), m_widget);
             ai = gici;
             break;
         }
-#endif
         default:
             break;
     }
@@ -221,11 +213,12 @@ void ActivatableListWidget::createItem(RemoteActivatable * activatable)
     m_itemIndex[activatable] = ai;
     connect(ai, SIGNAL(disappearAnimationFinished()),
             this, SLOT(deleteItem()));
-
 }
 
 void ActivatableListWidget::createHiddenItem()
 {
+    return; // TODO: make hidden essid work first before enabling this again.
+
     if (m_hiddenItem) {
         return;
     }
@@ -281,7 +274,7 @@ void ActivatableListWidget::activatableAdded(RemoteActivatable * added)
     if (accept(added)) {
         createItem(added);
     }
-    if(added->activatableType() == Knm::Activatable::WirelessInterfaceConnection && static_cast<RemoteWirelessInterfaceConnection*>(added)->operationMode() == Solid::Control::WirelessNetworkInterface::Adhoc)
+    if(added->activatableType() == Knm::Activatable::WirelessInterfaceConnection && static_cast<RemoteWirelessInterfaceConnection*>(added)->operationMode() == Solid::Control::WirelessNetworkInterfaceNm09::Adhoc)
         connect(added,SIGNAL(changed()),SLOT(filter()));
 }
 
@@ -294,13 +287,23 @@ void ActivatableListWidget::setHasWireless(bool hasWireless)
 
 void ActivatableListWidget::filter()
 {
+    // Clear connection list first, but do not delete the items.
+    foreach (ActivatableItem* item, m_itemIndex) {
+        if (!item) { // the item might be gone here
+            continue;
+        }
+
+        // Hide them first to prevent glitches in GUI.
+        item->hide();
+        m_layout->removeItem(item);
+    }
+
     foreach (RemoteActivatable *act, m_activatables->activatables()) {
         if (accept(act)) {
-            createItem(act);
+            // The "true" parameter means add the item to m_layout if it is already cached in m_itemIndex.
+            createItem(act, true);
         } else {
-            if (m_itemIndex.keys().contains(act)) {
-                activatableRemoved(act);
-            }
+            activatableRemoved(act);
         }
     }
 
@@ -308,7 +311,7 @@ void ActivatableListWidget::filter()
         bool found = false;
         foreach (QString uni, m_interfaces.keys())
         {
-            if (m_interfaces.value(uni) == Solid::Control::NetworkInterface::Ieee80211) {
+            if (m_interfaces.value(uni) == Solid::Control::NetworkInterfaceNm09::Wifi) {
                 createHiddenItem();
                 found = true;
                 break;

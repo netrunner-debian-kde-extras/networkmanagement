@@ -1,5 +1,5 @@
 /*
-Copyright 2010 Lamarque Souza <lamarque@gmail.com>
+Copyright 2010-2011 Lamarque Souza <lamarque@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -22,8 +22,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QTextStream>
 
 #include <KDebug>
-#include <KGlobal>
-#include <KLocale>
 
 #include "mobileproviders.h"
 
@@ -43,14 +41,7 @@ MobileProviders::MobileProviders()
                 continue;
             }
             QStringList pieces = line.split('\t');
-
-            //try to translate country name from KDE
-            QString countryName = KGlobal::locale()->countryCodeToName(pieces.at(0).trimmed());
-
-            if (!countryName.isEmpty())
-                mCountries.insert(pieces.at(0), countryName);
-            else
-                mCountries.insert(pieces.at(0), pieces.at(1));
+            mCountries.insert(pieces.at(0), pieces.at(1));
         }
         file.close();
     } else {
@@ -236,15 +227,9 @@ QVariantMap MobileProviders::getApnInfo(const QString apn)
                 temp.insert("username", e.text());
             } else if (e.tagName().toLower() == "password") {
                 temp.insert("password", e.text());
-            }
-
-            // we've problems with getting/setting DNS, GNOME NM also does'not use DNS values from providers
-            // use DNS IPs from DHCP instead
-
-            /*else if (e.tagName().toLower() == "dns") {  
+            } else if (e.tagName().toLower() == "dns") {
                 dnsList.append(e.text());
             }
-            */
         }
 
         n = n.nextSibling();
@@ -252,7 +237,7 @@ QVariantMap MobileProviders::getApnInfo(const QString apn)
 
     temp.insert("number", getGsmNumber());
     temp.insert("apn", apn);
-    //temp.insert("dnsList", dnsList);
+    temp.insert("dnsList", dnsList);
 
     return temp;
 }

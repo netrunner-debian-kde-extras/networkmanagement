@@ -34,8 +34,6 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "activatablelist.h"
 
-#include "nmdbussettingsservice.h"
-
 #include "nm-active-connectioninterface.h"
 #include "nm-vpn-connectioninterface.h"
 
@@ -132,11 +130,11 @@ NMDBusActiveConnectionMonitor::NMDBusActiveConnectionMonitor(ActivatableList * a
     Q_D(NMDBusActiveConnectionMonitor);
     d->activatableList = activatables;
 
-    connect(Solid::Control::NetworkManager::notifier(),
+    connect(Solid::Control::NetworkManagerNm09::notifier(),
             SIGNAL(activeConnectionsChanged()),
             this, SLOT(activeConnectionListChanged()));
 
-    connect(Solid::Control::NetworkManager::notifier(),
+    connect(Solid::Control::NetworkManagerNm09::notifier(),
             SIGNAL(statusChanged(Solid::Networking::Status)),
             this, SLOT(networkingStatusChanged(Solid::Networking::Status)));
 
@@ -153,7 +151,7 @@ void NMDBusActiveConnectionMonitor::activeConnectionListChanged()
     // update all InterfaceConnections we know about
     Q_D(NMDBusActiveConnectionMonitor);
 
-    QStringList currentActiveConnections = Solid::Control::NetworkManager::activeConnections();
+    QStringList currentActiveConnections = Solid::Control::NetworkManagerNm09::activeConnections();
 
     // delete any stale interfaces
     foreach (const QString &key, d->activeConnections.keys()) {
@@ -170,7 +168,7 @@ void NMDBusActiveConnectionMonitor::activeConnectionListChanged()
         if (!d->activeConnections.contains(activeConnectionPath)) {
             kDebug() << "Adding active connection interface for " << activeConnectionPath;
 
-            OrgFreedesktopNetworkManagerConnectionActiveInterface * active = new OrgFreedesktopNetworkManagerConnectionActiveInterface("org.freedesktop.NetworkManager", activeConnectionPath, QDBusConnection::systemBus(), 0);
+            OrgFreedesktopNetworkManagerConnectionActiveInterface * active = new OrgFreedesktopNetworkManagerConnectionActiveInterface(NM_DBUS_INTERFACE, activeConnectionPath, QDBusConnection::systemBus(), 0);
 
             Knm::InterfaceConnection * ic = interfaceConnectionForConnectionActive(active);
             if (ic) {
@@ -182,8 +180,8 @@ void NMDBusActiveConnectionMonitor::activeConnectionListChanged()
                 }
                 d->activeConnections.insert(activeConnectionPath, proxy);
             }
-            // put the service and the object path into a list of active connections
-            kDebug() << "Connection active at" << active->serviceName() << active->connection().path() << (active->vpn() ? "is" : "is not") << "a VPN connection";
+            // put the object path into a list of active connections
+            kDebug() << "Connection active at" << active->connection().path() << (active->vpn() ? "is" : "is not") << "a VPN connection";
         }
     }
 }
@@ -198,8 +196,7 @@ Knm::InterfaceConnection * NMDBusActiveConnectionMonitor::interfaceConnectionFor
         Knm::InterfaceConnection * candidate = qobject_cast<Knm::InterfaceConnection*>(activatable);
         // ignore HiddenWICs, we don't set status on these
         if (candidate && candidate->activatableType() != Knm::Activatable::HiddenWirelessInterfaceConnection) {
-            if (candidate->property("NMDBusService") == connectionActive->serviceName()
-                    && candidate->property("NMDBusObjectPath") == connectionActive->connection().path()
+              if (candidate->property("NMDBusObjectPath") == connectionActive->connection().path()
                     && (candidate->activatableType() == Knm::Activatable::VpnInterfaceConnection
                         || connectionActive->devices().contains(QDBusObjectPath(candidate->deviceUni())))
                     ) {
