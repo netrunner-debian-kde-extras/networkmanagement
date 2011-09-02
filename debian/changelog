@@ -5,6 +5,7 @@ networkmanagement (0.9~git20110901.2144cb1-1) UNRELEASED; urgency=low
   * Bump Build-Depends on network-manager-dev and libnm-util-dev to
     (>= 0.9.0).
   * Bump Depends on network-manager to (>= 0.9.0).
+  * Bump debhelper compatibililty level to 8.
 
  -- Michael Biebl <biebl@debian.org>  Fri, 02 Sep 2011 19:08:37 +0200
 
