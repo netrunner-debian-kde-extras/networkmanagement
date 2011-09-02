@@ -27,12 +27,7 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 
 class SecurityWidgetPrivate
 {
-    public:
-    SecurityWidgetPrivate();
-
-    private:
     Knm::Connection * connection;
-    bool valid;
     Q_DECLARE_PUBLIC(SecurityWidget)
     protected:
         SecurityWidget *q_ptr;

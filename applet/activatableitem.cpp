@@ -29,6 +29,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <KIcon>
 #include <KNotification>
+#include <KGlobalSettings>
 
 #include <Plasma/Animation>
 #include <Plasma/Animator>
@@ -39,12 +40,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 K_GLOBAL_STATIC_WITH_ARGS(KComponentData, s_networkManagementComponentData, ("networkmanagement", "networkmanagement", KComponentData::SkipMainComponentRegistration))
 static const int m_iconSize = 48;
+int rowHeight = qMax(28, QFontMetrics(KGlobalSettings::generalFont()).height()+10);
 
 ActivatableItem::ActivatableItem(RemoteActivatable *remote, QGraphicsItem * parent) : Plasma::IconWidget(parent),
     m_activatable(remote),
     m_hasDefaultRoute(false),
     m_deleting(false),
-    rowHeight(28), // TODO: try not to use hard coded value.
     spacing(4)
 {
     setDrawBackground(true);
@@ -96,9 +97,9 @@ void ActivatableItem::emitClicked()
     }
     emit clicked(this);
 
-    if (!Solid::Control::NetworkManager::isNetworkingEnabled()) {
+    if (!Solid::Control::NetworkManagerNm09::isNetworkingEnabled()) {
         KNotification::event(Event::NetworkingDisabled, i18nc("@info:status Notification when the networking subsystem (NetworkManager, etc) is disabled", "Networking system disabled"), QPixmap(), 0, KNotification::CloseOnTimeout, *s_networkManagementComponentData)->sendEvent();
-    } else if (!Solid::Control::NetworkManager::isWirelessEnabled() &&
+    } else if (!Solid::Control::NetworkManagerNm09::isWirelessEnabled() &&
                m_activatable &&
                m_activatable->activatableType() == Knm::Activatable::WirelessInterfaceConnection) {
         KNotification::event(Event::RfOff, i18nc("@info:status Notification for radio kill switch turned off", "Wireless hardware disabled"), KIcon("network-wireless").pixmap(QSize(m_iconSize,m_iconSize)), 0, KNotification::CloseOnTimeout, *s_networkManagementComponentData)->sendEvent();

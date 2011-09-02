@@ -44,19 +44,17 @@ public:
     QStringList keys;
     int keyIndex;
     Knm::WirelessSecuritySetting * setting;
-    QRegExpValidator * hexKeyValidator;
+    QRegExpValidator * wepKeyValidator;
 };
 
 WepWidget::WepWidget(KeyFormat format, Knm::Connection * connection, QWidget * parent)
 : SecurityWidget(connection, parent), d(new WepWidget::Private)
 {
     d->format = format;
-    setValid(false);
     d->keys << "" << "" << "" << "";
     d->keyIndex = 0;
     d->setting = static_cast<Knm::WirelessSecuritySetting *>(connection->setting(Knm::Setting::WirelessSecurity));
-    QString hexRegExp = "((([0-9]|[a-f]|[A-F]){10})|(([0-9]|[a-f]|[A-F]){26}))"; //10 or 26 hex characters
-
+    QString hexRegExp = "([0-9]|[a-f]|[A-F]){10}|([0-9]|[a-f]|[A-F]){26}"; // 10 or 26 Hex digits
     QString asciiRegExp = "[-";
     for (char ch = ASCII_MIN; ch <= ASCII_MAX; ++ch) {
         if (ch != '-') {
@@ -67,15 +65,12 @@ WepWidget::WepWidget(KeyFormat format, Knm::Connection * connection, QWidget * p
         }
     }
     asciiRegExp.append("]");
-    QString realAsciiRegExp(QString("(%1{5}|%2{13})").arg(asciiRegExp).arg(asciiRegExp));
-
-    QRegExp regExp(QString("^(%1|%2)$").arg(hexRegExp).arg(realAsciiRegExp));
-    d->hexKeyValidator = new QRegExpValidator(regExp, this);
+    asciiRegExp = asciiRegExp + "{5}|" + asciiRegExp + "{13}";  // 5 or 13 ASCII characters
+    QRegExp regExp(QString("^(%1|%2)$").arg(hexRegExp).arg(asciiRegExp));
+    d->wepKeyValidator = new QRegExpValidator(regExp, this);
 
     d->ui.setupUi(this);
-    d->ui.passphrase->setEchoMode(QLineEdit::Password);
     d->ui.key->setEchoMode(QLineEdit::Password);
-    d->ui.key->setValidator(d->hexKeyValidator);
 
     connect(d->ui.keyType, SIGNAL(currentIndexChanged(int)), this, SLOT(keyTypeChanged(int)));
 
@@ -89,9 +84,8 @@ WepWidget::WepWidget(KeyFormat format, Knm::Connection * connection, QWidget * p
 
     connect(d->ui.weptxkeyindex, SIGNAL(currentIndexChanged(int)), this, SLOT(keyIndexChanged(int)));
     connect(d->ui.chkShowPass, SIGNAL(toggled(bool)), this, SLOT(chkShowPassToggled(bool)));
-    connect(d->ui.chkShowPass, SIGNAL(toggled(bool)), this, SLOT(chkShowPassToggled(bool)));
-    connect(d->ui.key, SIGNAL(textChanged(const QString &)), this, SLOT(secretTextChanged()));
-    connect(d->ui.passphrase, SIGNAL(textChanged(const QString &)), this, SLOT(secretTextChanged()));
+    // Validate the key when changed, which is used to enable/disable OK button
+    connect(d->ui.key, SIGNAL(textChanged(QString)), this, SLOT(validateKey(QString)));
 }
 
 WepWidget::~WepWidget()
@@ -103,26 +97,18 @@ void WepWidget::keyTypeChanged(int index)
 {
     switch (index) {
         case 0: //passphrase
-            d->ui.passphraseLabel->show();
-            d->ui.passphrase->show();
-            d->ui.keyLabel->hide();
-            d->ui.key->hide();
+            d->ui.keyLabel->setText(i18n("&Passphrase:"));
             d->format = WepWidget::Passphrase;
+            d->ui.key->setValidator(0); // Clear the validator
             break;
-        case 1: //hex key
-            d->ui.passphraseLabel->hide();
-            d->ui.passphrase->hide();
-            d->ui.keyLabel->show();
-            d->ui.key->show();
+        case 1: //hex/ascii key
+            d->ui.keyLabel->setText(i18n("&Key:"));
             d->format = WepWidget::Hex;
+            d->ui.key->setValidator(d->wepKeyValidator);
             break;
     }
-    validate();
-}
-
-void WepWidget::secretTextChanged()
-{
-    validate();
+    // Ensure any existing key is validated too
+    validateKey(d->ui.key->text());
 }
 
 void WepWidget::keyIndexChanged(int index)
@@ -134,24 +120,24 @@ void WepWidget::keyIndexChanged(int index)
     d->keyIndex = index;
 }
 
+void WepWidget::validateKey(QString key)
+{
+    Q_UNUSED(key);
+    emit valid( validate() );
+}
+
 void WepWidget::chkShowPassToggled(bool on)
 {
-    d->ui.passphrase->setEchoMode(on ? QLineEdit::Normal : QLineEdit::Password);
     d->ui.key->setEchoMode(on ? QLineEdit::Normal : QLineEdit::Password);
 }
 
-bool WepWidget::validate()
+bool WepWidget::validate() const
 {
-    if (d->ui.keyType->currentIndex() == 1) {
-        bool result = d->ui.key->hasAcceptableInput();
-        setValid(result);
-        emit valid(result);
-        return result;
+    if (d->ui.keyType->currentIndex() == 1) {   // Hex/ASCII key
+        return d->ui.key->hasAcceptableInput();
     }
-    else {
-        setValid(true);
-        emit valid(true);
-        return true;
+    else {  // Passphrase
+        return (!d->ui.key->text().isEmpty() && d->ui.key->text().length() <= 64);
     }
 }
 
@@ -185,29 +171,17 @@ void WepWidget::writeConfig()
 
     d->setting->setWeptxkeyindex(d->ui.weptxkeyindex->currentIndex());
 
-    //FIXME: Handling of hex/ascii and passphrase is wrong, users must be able to specify 4 different passphrases 
-    //       in wep-key[0-3]
-
     // keys
-    if (d->format == WepWidget::Passphrase)
-    {
-        QString passphrase = d->ui.passphrase->text();
-        d->setting->setWeppassphrase(passphrase);
-        d->setting->setWepkey0(QString());
-        d->setting->setWepkey1(QString());
-        d->setting->setWepkey2(QString());
-        d->setting->setWepkey3(QString());
+    d->setting->setWepkey0(d->keys[0]);
+    d->setting->setWepkey1(d->keys[1]);
+    d->setting->setWepkey2(d->keys[2]);
+    d->setting->setWepkey3(d->keys[3]);
+    if (d->format == WepWidget::Passphrase) {
         d->setting->setWepKeyType(Knm::WirelessSecuritySetting::Passphrase);
     } else {
-        d->setting->setWeppassphrase(QString());
-        d->setting->setWepkey0(d->keys[0]);
-        d->setting->setWepkey1(d->keys[1]);
-        d->setting->setWepkey2(d->keys[2]);
-        d->setting->setWepkey3(d->keys[3]);
         d->setting->setWepKeyType(Knm::WirelessSecuritySetting::Hex);
     }
 
-    QString authAlg;
     if (d->ui.authalg->currentIndex() == 0 ) {
         d->setting->setAuthalg(Knm::WirelessSecuritySetting::EnumAuthalg::open);
     } else {
@@ -231,7 +205,6 @@ void WepWidget::readSecrets()
     }
 
     d->ui.key->setText(d->keys.value(d->keyIndex));
-    d->ui.passphrase->setText(d->setting->weppassphrase());
 }
 
 // vim: sw=4 sts=4 et tw=100

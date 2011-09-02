@@ -1,7 +1,7 @@
 /*
 Copyright 2008-2010 Sebastian Kügler <sebas@kde.org>
 Copyright 2008,2009 Will Stephenson <wstephenson@kde.org>
-Copyright 2010 Lamarque Souza <lamarque@gmail.com>
+Copyright 2010-2011 Lamarque Souza <lamarque@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -20,8 +20,6 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifdef COMPILE_MODEM_MANAGER_SUPPORT
-
 #ifndef APPLET_GSMINTERFACECONNECTIONITEM_H
 #define APPLET_GSMINTERFACECONNECTIONITEM_H
 
@@ -33,6 +31,7 @@ class QGraphicsGridLayout;
 namespace Plasma
 {
     class IconWidget;
+    class Label;
     class Meter;
 }
 
@@ -63,5 +62,3 @@ class GsmInterfaceConnectionItem : public ActivatableItem
 };
 
 #endif //#define APPLET_GSMCONNECTIONITEM_H
-
-#endif

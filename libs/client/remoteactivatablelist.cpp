@@ -81,7 +81,7 @@ void RemoteActivatableList::init()
     }
 }
 
-RemoteInterfaceConnection* RemoteActivatableList::connectionForInterface(Solid::Control::NetworkInterface *interface)
+RemoteInterfaceConnection* RemoteActivatableList::connectionForInterface(Solid::Control::NetworkInterfaceNm09 *interface)
 {
     foreach (RemoteActivatable* activatable, activatables()) {
         if (activatable->deviceUni() == interface->uni()) {
@@ -158,10 +158,39 @@ RemoteActivatableList::~RemoteActivatableList()
     delete d_ptr;
 }
 
+/* Sort first by type and then by activation state. */
+static bool lessThan(RemoteActivatable * a, RemoteActivatable * b)
+{
+    if (a->activatableType() == b->activatableType()) {
+        RemoteInterfaceConnection * aic = qobject_cast<RemoteInterfaceConnection*>(a);
+        RemoteInterfaceConnection * bic = qobject_cast<RemoteInterfaceConnection*>(b);
+
+        if (aic && bic) {
+            if (aic->activationState() == bic->activationState()) {
+                return (QString::localeAwareCompare(aic->connectionName(), bic->connectionName()) < 0);
+            } else {
+                return (aic->activationState() > bic->activationState());
+            }
+        } else {
+            RemoteWirelessNetwork * arwn = qobject_cast<RemoteWirelessNetwork*>(a);
+            RemoteWirelessNetwork * brwn = qobject_cast<RemoteWirelessNetwork*>(b);
+
+            if (arwn && brwn) {
+                return (QString::localeAwareCompare(arwn->ssid(), brwn->ssid()) < 0);
+            }
+        }
+    } else {
+        return (a->activatableType() < b->activatableType());
+    }
+    return false;
+}
+
 QList<RemoteActivatable *> RemoteActivatableList::activatables() const
 {
     Q_D(const RemoteActivatableList);
-    return d->activatables.values();
+    QList<RemoteActivatable *> list = d->activatables.values();
+    qSort(list.begin(), list.end(), lessThan);
+    return list;
 }
 
 void RemoteActivatableList::handleActivatableAdded(const QString &addedPath, uint type)
@@ -194,12 +223,10 @@ void RemoteActivatableList::handleActivatableAdded(const QString &addedPath, uin
                 newActivatable = new RemoteVpnInterfaceConnection(addedPath, this);
                 //kDebug() << "vpnconnection at" << addedPath << "with type" << newActivatable->activatableType();
                 break;
-#ifdef COMPILE_MODEM_MANAGER_SUPPORT
             case Knm::Activatable::GsmInterfaceConnection:
                 newActivatable = new RemoteGsmInterfaceConnection(addedPath, this);
                 //kDebug() << "gsminterfaceconnection at" << addedPath << "with type" << newActivatable->activatableType();
                 break;
-#endif
         }
         if (newActivatable) {
             kDebug() << "RemoteActivatable Added " << addedPath;
