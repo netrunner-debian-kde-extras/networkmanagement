@@ -1,4 +1,4 @@
-networkmanagement (0.9~git20110901.2144cb1-1) UNRELEASED; urgency=low
+networkmanagement (0.9~git20110901.2144cb1-1) experimental; urgency=low
 
   * New upstream Git snapshot 2144cb1b554d6b3e9b9e7fb54bcf579d2336524d from
     the nm09 branch.
@@ -10,7 +10,7 @@ networkmanagement (0.9~git20110901.2144cb1-1) UNRELEASED; urgency=low
   * debian/patches/01-no-x11-libs.patch: Avoid linking against libX11 and
     libXrandr as the solidcontrol library does not actually need it.
 
- -- Michael Biebl <biebl@debian.org>  Fri, 02 Sep 2011 19:08:37 +0200
+ -- Michael Biebl <biebl@debian.org>  Fri, 02 Sep 2011 23:17:12 +0200
 
 networkmanagement (0.1+git20110727.96f5505-1) unstable; urgency=low
 
