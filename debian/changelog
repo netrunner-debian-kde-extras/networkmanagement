@@ -2,6 +2,7 @@ networkmanagement (0.9~git20110904.06145dc-1) UNRELEASED; urgency=low
 
   * New upstream Git snapshot 06145dcffeb34cb68f7ff098db8cf590d63fa52e from
     the nm09 branch.
+  * Remove debian/patches/01-no-x11-libs.patch, merged upstream.
 
  -- Michael Biebl <biebl@debian.org>  Tue, 06 Sep 2011 22:46:29 +0200
 
