@@ -1,12 +1,13 @@
-networkmanagement (0.9~git20110916.28b3101-1) UNRELEASED; urgency=low
+networkmanagement (0.9~git20110916.28b3101-1) unstable; urgency=low
 
   * New upstream Git snapshot 28b3101aa4a25dc15e13fed926aff27d62d9346c from
     the nm09 branch.
   * On upgrades tell update-notifier to show a reboot-required notification
     since older versions of plasma-widget-networkmanagement will no longer
     work with network-manager 0.9 and need to be restarted.
+  * Upload to unstable.
 
- -- Michael Biebl <biebl@debian.org>  Sat, 17 Sep 2011 21:16:00 +0200
+ -- Michael Biebl <biebl@debian.org>  Sat, 17 Sep 2011 21:20:12 +0200
 
 networkmanagement (0.9~git20110904.06145dc-1) experimental; urgency=low
 
