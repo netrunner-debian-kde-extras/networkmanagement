@@ -49,6 +49,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "wirelessnetworkitem.h"
 #include "hiddenwirelessnetworkitem.h"
 #include "gsminterfaceconnectionitem.h"
+#include "../solidcontrolfuture/wirelessnetworkinterfaceenvironment.h"
 
 ActivatableListWidget::ActivatableListWidget(RemoteActivatableList* activatables, QGraphicsWidget* parent) : Plasma::ScrollWidget(parent),
     m_hiddenItem(0),
@@ -217,8 +218,6 @@ void ActivatableListWidget::createItem(RemoteActivatable * activatable, const bo
 
 void ActivatableListWidget::createHiddenItem()
 {
-    return; // TODO: make hidden essid work first before enabling this again.
-
     if (m_hiddenItem) {
         return;
     }
@@ -226,7 +225,7 @@ void ActivatableListWidget::createHiddenItem()
     m_hiddenItem = new HiddenWirelessNetworkItem(m_widget);
     Q_ASSERT(m_hiddenItem);
     m_hiddenItem->setupItem();
-    m_layout->addItem(m_hiddenItem);
+    m_layout->insertItem(0, m_hiddenItem);
     //m_itemIndex[activatable] = ai;
     connect(m_hiddenItem, SIGNAL(disappearAnimationFinished()),
             this, SLOT(deleteItem()));
@@ -236,7 +235,7 @@ void ActivatableListWidget::createHiddenItem()
 
 void ActivatableListWidget::listAppeared()
 {
-    foreach (RemoteActivatable* remote, m_activatables->activatables()) {
+    foreach (RemoteActivatable* remote, m_activatables->sortedActivatables()) {
         activatableAdded(remote);
     }
     filter();
@@ -298,7 +297,7 @@ void ActivatableListWidget::filter()
         m_layout->removeItem(item);
     }
 
-    foreach (RemoteActivatable *act, m_activatables->activatables()) {
+    foreach (RemoteActivatable *act, m_activatables->sortedActivatables()) {
         if (accept(act)) {
             // The "true" parameter means add the item to m_layout if it is already cached in m_itemIndex.
             createItem(act, true);
@@ -321,7 +320,7 @@ void ActivatableListWidget::filter()
             m_hiddenItem->disappear();
             m_hiddenItem = 0;
         }
-    } else if (m_showAllTypes && m_hasWireless && !m_vpn) {
+    } else if (m_hasWireless && !m_vpn) {
         createHiddenItem();
     } else if (m_hiddenItem) {
         m_hiddenItem->disappear();
@@ -378,10 +377,39 @@ void ActivatableListWidget::hoverLeave(const QString& uni)
 
 void ActivatableListWidget::connectToHiddenNetwork(const QString &ssid)
 {
+    Solid::Control::WirelessNetworkInterfaceNm09 * wiface = 0;
+    foreach (Solid::Control::NetworkInterfaceNm09 * iface, Solid::Control::NetworkManagerNm09::networkInterfaces()) {
+        if (iface->type() == Solid::Control::NetworkInterfaceNm09::Wifi && iface->connectionState() > Solid::Control::NetworkInterfaceNm09::Unavailable) {
+            wiface = qobject_cast<Solid::Control::WirelessNetworkInterfaceNm09 *>(iface);
+            break;
+        }
+    }
+
+    if (!wiface) {
+        return;
+    }
+
     m_hiddenConnectionInProgress << ssid;
-    QStringList args = QStringList(ssid) << "create";
+    QStringList args;
+    QString moduleArgs;
+
+    Solid::Control::WirelessNetworkInterfaceEnvironment envt(wiface);
+    Solid::Control::WirelessNetwork * network = envt.findNetwork(ssid);
+
+    if (network) {
+        moduleArgs = QString::fromLatin1("%1 %2")
+            .arg(wiface->uni())
+            .arg(network->referenceAccessPoint());
+
+    } else {
+        moduleArgs = QString::fromLatin1("%1 %2")
+            .arg(wiface->uni())
+            .arg(ssid);
+    }
+
+    args << QLatin1String("create") << QLatin1String("--type") << QLatin1String("802-11-wireless") << QLatin1String("--specific-args") << moduleArgs << QLatin1String("wifi_pass");
     kDebug() << "invoking networkmanagement_configshell" << args;
-    // TODO: make this really work.
-    KToolInvocation::kdeinitExec(KGlobal::dirs()->findResource("exe", "networkmanagement_configshell"), args);
+    int ret = KToolInvocation::kdeinitExec(KGlobal::dirs()->findResource("exe", "networkmanagement_configshell"), args);
+    kDebug() << ret << args;
 }
 // vim: sw=4 sts=4 et tw=100
