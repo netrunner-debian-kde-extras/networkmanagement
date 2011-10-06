@@ -41,6 +41,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 K_GLOBAL_STATIC_WITH_ARGS(KComponentData, s_networkManagementComponentData, ("networkmanagement", "networkmanagement", KComponentData::SkipMainComponentRegistration))
 static const int m_iconSize = 48;
 int rowHeight = qMax(28, QFontMetrics(KGlobalSettings::generalFont()).height()+10);
+int maxConnectionNameWidth = QFontMetrics(KGlobalSettings::generalFont()).width("12345678901234567890123");
 
 ActivatableItem::ActivatableItem(RemoteActivatable *remote, QGraphicsItem * parent) : Plasma::IconWidget(parent),
     m_activatable(remote),
@@ -55,8 +56,8 @@ ActivatableItem::ActivatableItem(RemoteActivatable *remote, QGraphicsItem * pare
     if (remoteconnection) {
         connect(remoteconnection, SIGNAL(hasDefaultRouteChanged(bool)),
                 SLOT(handleHasDefaultRouteChanged(bool)));
-        connect(remoteconnection, SIGNAL(activationStateChanged(Knm::InterfaceConnection::ActivationState)),
-                SLOT(activationStateChanged(Knm::InterfaceConnection::ActivationState)));
+        connect(remoteconnection, SIGNAL(activationStateChanged(Knm::InterfaceConnection::ActivationState, Knm::InterfaceConnection::ActivationState)),
+                SLOT(activationStateChanged(Knm::InterfaceConnection::ActivationState, Knm::InterfaceConnection::ActivationState)));
     }
 
     // Fade in when this widget appears
@@ -96,7 +97,7 @@ void ActivatableItem::emitClicked()
         RemoteInterfaceConnection * remote = interfaceConnection();
         if (remote && (remote->activationState() == Knm::InterfaceConnection::Activating ||
                        remote->activationState() == Knm::InterfaceConnection::Activated)) {
-            remote->deactivate();
+            emit showInterfaceDetails(remote->deviceUni());
         } else {
             m_activatable->activate();
         }
@@ -128,16 +129,18 @@ void ActivatableItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* o
 {
     Plasma::IconWidget::paint(painter, option, widget);
     if (m_hasDefaultRoute) {
+        // TODO: this draws the pixmap behind the connection icon. This is the same
+        // problem described in a comment in networkmanager.cpp:NetworkManagerApplet::paintInterface.
         painter->drawPixmap(QRect(4,4,12,12), KIcon("network-defaultroute").pixmap(QSize(16,16)));
     }
 }
 
-void ActivatableItem::activationStateChanged(Knm::InterfaceConnection::ActivationState state)
+void ActivatableItem::activationStateChanged(Knm::InterfaceConnection::ActivationState oldState, Knm::InterfaceConnection::ActivationState newState)
 {
     // Update the view of the connection, manipulate font based on activation state.
-    kDebug() << state;
+    kDebug() << newState;
     QFont f = font();
-    switch (state) {
+    switch (newState) {
         //Knm::InterfaceConnectihon::ActivationState
         case Knm::InterfaceConnection::Activated:
             kDebug() << "activated";

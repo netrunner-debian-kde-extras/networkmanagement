@@ -48,9 +48,10 @@ GsmInterfaceConnectionItem::GsmInterfaceConnectionItem(RemoteGsmInterfaceConnect
     connect(remote, SIGNAL(signalQualityChanged(int)), this, SLOT(setQuality(int)));
     connect(remote, SIGNAL(accessTechnologyChanged(const int)), this, SLOT(setAccessTechnology(const int)));
     connect(remote, SIGNAL(changed()), SLOT(update()));
-    connect(remote, SIGNAL(changed()), SLOT(stateChanged()));
+    connect(remote, SIGNAL(activationStateChanged(Knm::InterfaceConnection::ActivationState, Knm::InterfaceConnection::ActivationState)),
+            this, SLOT(activationStateChanged(Knm::InterfaceConnection::ActivationState, Knm::InterfaceConnection::ActivationState)));
     m_state = remote->activationState();
-    stateChanged();
+    activationStateChanged(remote->oldActivationState(), m_state);
     update();
 }
 
@@ -65,12 +66,15 @@ void GsmInterfaceConnectionItem::setupItem()
     m_layout = new QGraphicsGridLayout(this);
     // First, third and fourth colunm are fixed width for the icons
     m_layout->setColumnPreferredWidth(0, 150);
-    m_layout->setColumnFixedWidth(1, 60);
-    m_layout->setColumnFixedWidth(2, rowHeight);
+    m_layout->setColumnFixedWidth(2, 60);
+    m_layout->setColumnFixedWidth(3, rowHeight);
     m_layout->setColumnSpacing(1, spacing);
 
     // icon on the left
     m_connectButton = new Plasma::IconWidget(this);
+    m_connectButton->setMaximumWidth(maxConnectionNameWidth);
+    // to make default route overlay really be over the connection's icon.
+    m_connectButton->setFlags(ItemStacksBehindParent);
     m_connectButton->setAcceptsHoverEvents(false);
     RemoteGsmInterfaceConnection * remote = qobject_cast<RemoteGsmInterfaceConnection*>(m_activatable);
     if (remote) {
@@ -85,7 +89,12 @@ void GsmInterfaceConnectionItem::setupItem()
     m_connectButton->setOrientation(Qt::Horizontal);
     m_connectButton->setTextBackgroundColor(QColor(Qt::transparent));
     //m_connectButton->setToolTip(i18nc("icon to connect to mobile broadband network", "Connect to mobile broadband network %1", ssid));
-    m_layout->addItem(m_connectButton, 0, 0, 1, 1 );
+    m_layout->addItem(m_connectButton, 0, 0, 2, 2, Qt::AlignVCenter | Qt::AlignLeft);
+
+    // spacer to force the strength meter to the right.
+    QGraphicsWidget *widget = new QGraphicsWidget(this);
+    widget->setMaximumHeight(12);
+    m_layout->addItem(widget, 0, 1);
 
     m_strengthMeter = new Plasma::Meter(this);
     m_strengthMeter->setMinimum(0);
@@ -95,7 +104,7 @@ void GsmInterfaceConnectionItem::setupItem()
     m_strengthMeter->setPreferredSize(QSizeF(60, 12));
     m_strengthMeter->setMaximumHeight(12);
     m_strengthMeter->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-    m_layout->addItem(m_strengthMeter, 0, 1, 1, 1, Qt::AlignCenter);
+    m_layout->addItem(m_strengthMeter, 0, 2, 1, 1, Qt::AlignVCenter | Qt::AlignRight);
 
     connect(this, SIGNAL(clicked()), this, SLOT(emitClicked()));
 
@@ -103,8 +112,6 @@ void GsmInterfaceConnectionItem::setupItem()
     connect(this, SIGNAL(pressed(bool)), m_connectButton, SLOT(setPressed(bool)));
     connect(m_connectButton, SIGNAL(pressed(bool)), this, SLOT(setPressed(bool)));
     connect(m_connectButton, SIGNAL(clicked()), this, SLOT(emitClicked()));
-
-    activationStateChanged(m_state);
 
     update();
 }
@@ -136,15 +143,7 @@ void GsmInterfaceConnectionItem::setAccessTechnology(const int tech)
     }
 }
 
-void GsmInterfaceConnectionItem::stateChanged()
-{
-    RemoteGsmInterfaceConnection* remoteconnection = static_cast<RemoteGsmInterfaceConnection*>(m_activatable);
-    if (remoteconnection) {
-        activationStateChanged(remoteconnection->activationState());
-    }
-}
-
-void GsmInterfaceConnectionItem::activationStateChanged(Knm::InterfaceConnection::ActivationState state)
+void GsmInterfaceConnectionItem::activationStateChanged(Knm::InterfaceConnection::ActivationState oldState, Knm::InterfaceConnection::ActivationState newState)
 {
     if (!m_connectButton) {
         return;
@@ -155,9 +154,9 @@ void GsmInterfaceConnectionItem::activationStateChanged(Knm::InterfaceConnection
     if (remote) {
         handleHasDefaultRouteChanged(remote->hasDefaultRoute());
     }
-    m_state = state;
+    m_state = newState;
     update();
-    ActivatableItem::activationStateChanged(state);
+    ActivatableItem::activationStateChanged(oldState, newState);
 }
 
 void GsmInterfaceConnectionItem::update()

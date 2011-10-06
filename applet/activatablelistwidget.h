@@ -47,8 +47,11 @@ public:
     void setShowAllTypes(bool show, bool refresh = false);
     void setHasWireless(bool hasWireless); // Used to decide wether or not to show the hidden item
 
+Q_SIGNALS:
+    void showInterfaceDetails(QString);
+
 public Q_SLOTS:
-    void activatableAdded(RemoteActivatable*);
+    void activatableAdded(RemoteActivatable*, int);
     void activatableRemoved(RemoteActivatable*);
     void listDisappeared();
     void listAppeared();
@@ -61,11 +64,13 @@ private Q_SLOTS:
     void deleteItem();
     void hoverEnter(const QString& uni);
     void hoverLeave(const QString& uni);
+    void vpnHoverEnter();
+    void vpnHoverLeave();
     void connectToHiddenNetwork(const QString &ssid);
     void filter();
 
 private:
-    void createItem(RemoteActivatable* conn, const bool addIfAlreadyCached = false);
+    void createItem(RemoteActivatable* conn, int index);
     void createHiddenItem();
     int m_connectionType;
     QList<Knm::Activatable::ActivatableType> m_types;
@@ -80,8 +85,5 @@ private:
     bool m_showAllTypes;
     bool m_vpn;
     bool m_hasWireless; // Used to determine wether or not to show hidden config
-
-    QStringList m_hiddenConnectionInProgress;
-
 };
 #endif // ACTIVATABLELISTWIDGET_H
