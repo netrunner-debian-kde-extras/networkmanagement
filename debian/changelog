@@ -1,3 +1,10 @@
+networkmanagement (0.9~git20111002.90c59c3-1) UNRELEASED; urgency=low
+
+  * New upstream Git snapshot 90c59c37c68920a44860ff5b8f7bcc146850efcf from
+    the nm09 branch (0.9.0 beta1).
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 06 Oct 2011 04:11:25 +0200
+
 networkmanagement (0.9~git20110916.28b3101-1) unstable; urgency=low
 
   * New upstream Git snapshot 28b3101aa4a25dc15e13fed926aff27d62d9346c from
