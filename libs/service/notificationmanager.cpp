@@ -69,8 +69,8 @@ void InterfaceNotificationHost::addInterfaceConnection(Knm::InterfaceConnection 
 {
     if (ic) {
         m_interfaceConnections.insert(ic);
-        connect(ic, SIGNAL(activationStateChanged(Knm::InterfaceConnection::ActivationState)),
-                this, SLOT(interfaceConnectionActivationStateChanged(Knm::InterfaceConnection::ActivationState)));
+        connect(ic, SIGNAL(activationStateChanged(Knm::InterfaceConnection::ActivationState, Knm::InterfaceConnection::ActivationState)),
+                this, SLOT(interfaceConnectionActivationStateChanged(Knm::InterfaceConnection::ActivationState, Knm::InterfaceConnection::ActivationState)));
 
         switch (ic->connectionType()) {
             case Knm::Connection::Wireless: connect(ic, SIGNAL(strengthChanged(int)), this, SLOT(strengthChanged(int))); break;
@@ -100,13 +100,14 @@ void InterfaceNotificationHost::removeInterfaceConnection(Knm::InterfaceConnecti
     m_activating.remove(ic);
 }
 
-void InterfaceNotificationHost::interfaceConnectionActivationStateChanged(Knm::InterfaceConnection::ActivationState state)
+void InterfaceNotificationHost::interfaceConnectionActivationStateChanged(Knm::InterfaceConnection::ActivationState oldState, Knm::InterfaceConnection::ActivationState newState)
 {
-    kDebug() << state;
+    Q_UNUSED(oldState)
+    kDebug() << newState;
 
     Knm::InterfaceConnection * ic = qobject_cast<Knm::InterfaceConnection *>(sender());
 
-    switch (state) {
+    switch (newState) {
         case Knm::InterfaceConnection::Activating:
             kDebug() << ic->connectionName() << "is activating";
             m_activating.insert(ic);
@@ -583,7 +584,7 @@ void NotificationManager::networkDisappeared(const QString & ssid)
 void NotificationManager::notifyNewNetworks()
 {
     Q_D(NotificationManager);
-    if (d->newWirelessNetworks.count() == 0) {
+    if (d->newWirelessNetworks.isEmpty()) {
         return;
     } else if (d->newWirelessNetworks.count() == 1) {
         KNotification::event(Event::NetworkAppeared, i18nc("@info:status Notification text when a single wireless network was found","Wireless network %1 found", d->newWirelessNetworks[0]), KIcon("network-wireless").pixmap(QSize(iconSize,iconSize)), 0, KNotification::CloseOnTimeout, KComponentData("knetworkmanager", "knetworkmanager", KComponentData::SkipMainComponentRegistration));
@@ -601,7 +602,7 @@ void NotificationManager::notifyNewNetworks()
 void NotificationManager::notifyDisappearedNetworks()
 {
     Q_D(NotificationManager);
-    if (d->disappearedWirelessNetworks.count() == 0) {
+    if (d->disappearedWirelessNetworks.isEmpty()) {
         return;
     } else if (d->disappearedWirelessNetworks.count() == 1) {
         KNotification::event(Event::NetworkDisappeared, i18nc("@info:status Notification text when a single wireless network disappeared","Wireless network %1 disappeared", d->disappearedWirelessNetworks[0]), KIcon("network-wireless").pixmap(QSize(iconSize,iconSize)), 0, KNotification::CloseOnTimeout, KComponentData("knetworkmanager", "knetworkmanager", KComponentData::SkipMainComponentRegistration));

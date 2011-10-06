@@ -86,6 +86,7 @@ private Q_SLOTS:
     void checkShowMore(RemoteActivatable *);
     void uncheckShowMore(RemoteActivatable *);
     void refresh();
+    void showInterfaceDetails(const QString & uni);
 
 private:
     void addInterfaceInternal(Solid::Control::NetworkInterfaceNm09 *);

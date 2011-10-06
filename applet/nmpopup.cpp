@@ -180,8 +180,8 @@ void NMPopup::init()
 
     m_connectionList->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     m_connectionList->setPreferredHeight(240);
-
-    m_connectionList->setShowAllTypes(false, true);
+    m_connectionList->setShowAllTypes(true, true);
+    connect(m_connectionList, SIGNAL(showInterfaceDetails(QString)), SLOT(showInterfaceDetails(QString)));
 
     m_rightLayout->addItem(m_connectionList);
 
@@ -194,7 +194,7 @@ void NMPopup::init()
     connect(m_connectionsButton, SIGNAL(clicked()), this, SLOT(manageConnections()));
 
     m_showMoreButton = new Plasma::PushButton(m_rightWidget);
-    m_showMoreButton->setToolTip(i18nc("@info:tooltip tooltip for the 'Show More' button", "List all networks available"));
+    m_showMoreButton->setToolTip(i18nc("@info:tooltip tooltip for the 'Show More' button", "Show all available networks"));
     // Do not use this according to KDE HIG. Bug #272492
     //m_showMoreButton->setCheckable(true);
     m_showMoreButton->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
@@ -209,7 +209,7 @@ void NMPopup::init()
     m_showMoreButton->setMinimumSize(sMax);
     m_showMoreButton->setMaximumSize(sMax);
     connect(m_showMoreButton, SIGNAL(clicked()), this, SLOT(showMore()));
-    connect(m_activatables, SIGNAL(activatableAdded(RemoteActivatable *)), this, SLOT(uncheckShowMore(RemoteActivatable *)));
+    connect(m_activatables, SIGNAL(activatableAdded(RemoteActivatable *, int)), this, SLOT(uncheckShowMore(RemoteActivatable *)));
     connect(m_activatables, SIGNAL(activatableRemoved(RemoteActivatable *)), this, SLOT(checkShowMore(RemoteActivatable *)));
 
     QGraphicsLinearLayout* connectionLayout = new QGraphicsLinearLayout;
@@ -237,20 +237,12 @@ void NMPopup::init()
     m_showMoreChecked = false;
     m_oldShowMoreChecked = true;
     wicCount = 0; // number of wireless networks which user explicitly configured using the kcm module.
-    foreach (RemoteActivatable *ra, m_activatables->activatables()) {
-        RemoteWirelessInterfaceConnection * wic = qobject_cast<RemoteWirelessInterfaceConnection*>(ra);
-        if (wic) {
-            if (wic->operationMode() == Solid::Control::WirelessNetworkInterfaceNm09::Adhoc &&
-                wic->activationState() == Knm::InterfaceConnection::Unknown) {
-                continue;
-            }
-            uncheckShowMore(ra);
-        }
-    }
-    m_oldShowMoreChecked = false;
-    showMore(m_oldShowMoreChecked);
 
     KNetworkManagerServicePrefs::instance(Knm::NETWORKMANAGEMENT_RCFILE);
+    KConfigGroup config(KNetworkManagerServicePrefs::self()->config(), QLatin1String("General"));
+    m_oldShowMoreChecked = config.readEntry(QLatin1String("ShowAllConnections"), true);
+    showMore(m_oldShowMoreChecked);
+
     readConfig();
 
     QDBusConnection dbus = QDBusConnection::sessionBus();
@@ -371,7 +363,7 @@ Solid::Control::NetworkInterfaceNm09* NMPopup::defaultInterface()
     // In fact we're returning the first available interface,
     // and if there is none available just the first one we have
     // and if we don't have one, 0. Make sure you check though.
-    if (!Solid::Control::NetworkManagerNm09::networkInterfaces().count()) {
+    if (Solid::Control::NetworkManagerNm09::networkInterfaces().isEmpty()) {
         return 0;
     }
     Solid::Control::NetworkInterfaceNm09* iface = Solid::Control::NetworkManagerNm09::networkInterfaces().first();
@@ -436,12 +428,27 @@ void NMPopup::addInterfaceInternal(Solid::Control::NetworkInterfaceNm09* iface)
     updateHasWwan();
 }
 
+void NMPopup::showInterfaceDetails(const QString & uni)
+{
+    InterfaceItem * ifaceItem = m_interfaces.value(uni, 0);
+    if (!ifaceItem) {
+        if (m_vpnItem) {
+            ifaceItem = m_vpnItem;
+        } else {
+            return;
+        }
+    }
+    QMetaObject::invokeMethod(ifaceItem, "clicked", Qt::QueuedConnection);
+}
+
 void NMPopup::addVpnInterface()
 {
     m_vpnItem = new VpnInterfaceItem(0, m_activatables, InterfaceItem::InterfaceName, this);
     connect(m_vpnItem, SIGNAL(clicked()), this, SLOT(toggleInterfaceTab()));
     connect(m_vpnItem, SIGNAL(clicked(Solid::Control::NetworkInterfaceNm09*)),
             m_connectionList,  SLOT(addInterface(Solid::Control::NetworkInterfaceNm09*)));
+    connect(m_vpnItem, SIGNAL(hoverEnter()), m_connectionList, SLOT(vpnHoverEnter()));
+    connect(m_vpnItem, SIGNAL(hoverLeave()), m_connectionList, SLOT(vpnHoverLeave()));
 
     connect(m_vpnItem, SIGNAL(clicked()), m_connectionList, SLOT(toggleVpn()));
 
@@ -629,6 +636,10 @@ void NMPopup::showMore()
     m_showMoreChecked = !m_showMoreChecked;
     m_oldShowMoreChecked = m_showMoreChecked;
     showMore(m_oldShowMoreChecked);
+
+    KConfigGroup config(KNetworkManagerServicePrefs::self()->config(), QLatin1String("General"));
+    config.writeEntry(QLatin1String("ShowAllConnections"), m_oldShowMoreChecked);
+    config.sync();
 }
 
 void NMPopup::showMore(bool more)
@@ -663,8 +674,8 @@ void NMPopup::checkShowMore(RemoteActivatable * ra)
             wicCount--;
         }
         if (wicCount == 0 && !m_showMoreChecked) {
-            // There is no wireless network which the user had explicitly configured around,
-            // so temporaly show all the others wireless networks available.
+            // There is no wireless network around which the user has explicitly configured
+            // so temporaly show all wifi available networks.
             showMore(true);
         }
     }
@@ -706,13 +717,18 @@ void NMPopup::toggleInterfaceTab()
         // Enable / disable updating of the details widget
         m_interfaceDetailsWidget->setUpdateEnabled(true);
 
-        if (item && item->interface()) {
-            // Temporaly disables hightlight for all connections of this interface.
-            QMetaObject::invokeMethod(item, "hoverLeave", Qt::QueuedConnection,
-                                      Q_ARG(QString, item->interface()->uni()));
+        if (item) {
+            if (item->interface()) {
+                // Temporaly disables hightlight for all connections of this interface.
+                QMetaObject::invokeMethod(item, "hoverLeave", Qt::QueuedConnection,
+                                          Q_ARG(QString, item->interface()->uni()));
 
-            m_leftLabel->setText(QString("<h3>%1</h3>").arg(
-                                UiUtils::interfaceNameLabel(item->interface()->uni())));
+                m_leftLabel->setText(QString("<h3>%1</h3>").arg(
+                                    UiUtils::interfaceNameLabel(item->interface()->uni())));
+            } else {
+                // Temporaly disables hightlight for all VPN connections.
+                QMetaObject::invokeMethod(item, "hoverLeave", Qt::QueuedConnection);
+            }
         }
         showMore(true);
 

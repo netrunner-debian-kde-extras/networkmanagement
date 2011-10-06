@@ -41,7 +41,7 @@ class RemoteActivatableListPrivate
 public:
     NetworkManagementInterface * iface;
     QHash<QString, RemoteActivatable *> activatables;
-    QMap<QString, RemoteActivatable *> vpnActivatables;
+    QList<RemoteActivatable*> sortedActivatables;
 };
 
 
@@ -50,10 +50,6 @@ RemoteActivatableList::RemoteActivatableList(QObject * parent)
 {
     Q_D(RemoteActivatableList);
     d->iface = new NetworkManagementInterface("org.kde.networkmanagement", "/org/kde/networkmanagement", QDBusConnection::sessionBus(), this);
-    connect(d->iface, SIGNAL(ActivatableAdded(const QString&,uint)),
-            this, SLOT(handleActivatableAdded(const QString&,uint)));
-    connect(d->iface, SIGNAL(ActivatableRemoved(const QString&)),
-            this, SLOT(handleActivatableRemoved(const QString &)));
     // clean our connections out if the service goes away
     connect(QDBusConnection::sessionBus().interface(),
             SIGNAL(serviceOwnerChanged(const QString&,const QString&,const QString&)),
@@ -64,17 +60,23 @@ void RemoteActivatableList::init()
 {
     Q_D(RemoteActivatableList);
     if (d->iface->isValid()) {
+        connect(d->iface, SIGNAL(ActivatableAdded(const QString&,uint, int)),
+                this, SLOT(handleActivatableAdded(const QString&,uint, int)));
+        connect(d->iface, SIGNAL(ActivatableRemoved(const QString&)),
+                this, SLOT(handleActivatableRemoved(const QString &)));
+
         if (d->activatables.isEmpty()) {
-            d->vpnActivatables.clear();
             QDBusReply<QStringList> rv = d->iface->ListActivatables();
             if (rv.isValid()) {
+                int i = 0;
                 foreach (const QString &activatable, rv.value()) {
                     // messy, I know, but making ListActivatables return a(si) is boring
                     QDBusInterface iface(QLatin1String("org.kde.networkmanagement"),
                             activatable, "org.kde.networkmanagement.Activatable", QDBusConnection::sessionBus());
                     QDBusReply<uint> type = iface.call("activatableType");
                     if (type.isValid())
-                        handleActivatableAdded(activatable, type.value());
+                        handleActivatableAdded(activatable, type.value(), i);
+                    i++;
                 }
             }
             else
@@ -83,77 +85,46 @@ void RemoteActivatableList::init()
     }
 }
 
+bool RemoteActivatableList::isConnectionForInterface(RemoteActivatable * activatable, Solid::Control::NetworkInterfaceNm09 *interface)
+{
+    if (activatable->deviceUni() == interface->uni()) {
+        RemoteInterfaceConnection* remoteconnection = qobject_cast<RemoteInterfaceConnection*>(activatable);
+        if (remoteconnection) {
+            if (remoteconnection->activationState() == Knm::InterfaceConnection::Activated ||
+                remoteconnection->activationState() == Knm::InterfaceConnection::Activating) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+
 RemoteInterfaceConnection* RemoteActivatableList::connectionForInterface(Solid::Control::NetworkInterfaceNm09 *interface)
 {
     foreach (RemoteActivatable* activatable, activatables()) {
-        if (activatable->deviceUni() == interface->uni()) {
-            RemoteInterfaceConnection* remoteconnection = dynamic_cast<RemoteInterfaceConnection*>(activatable);
-            if (remoteconnection) {
-                if (remoteconnection->activationState() == Knm::InterfaceConnection::Activated
-                            || remoteconnection->activationState() == Knm::InterfaceConnection::Activating) {
-                    return remoteconnection;
-                }
-            }
+        if (isConnectionForInterface(activatable, interface)) {
+            return qobject_cast<RemoteInterfaceConnection*>(activatable);
         }
     }
-
-    // Try a little harder to find a remote interface connection.
-    // This is necessary for interfaces that change state faster than
-    // org.kde.networkmanagement can handle, such as ethernet interfaces.
-    Q_D(RemoteActivatableList);
-    QDBusReply<QStringList> rv = d->iface->ListActivatables();
-    if (!rv.isValid()) {
-        return 0;
-    }
-
-    foreach (const QString &path, rv.value()) {
-        if (!d->activatables.contains(path)) {
-            // messy, I know, but making ListActivatables return a(si) is boring
-            QDBusInterface iface(QLatin1String("org.kde.networkmanagement"),
-                    path, "org.kde.networkmanagement.Activatable", QDBusConnection::sessionBus());
-            QDBusReply<uint> type = iface.call("activatableType");
-   
-            if (type.isValid() && type.value() != Knm::Activatable::HiddenWirelessInterfaceConnection) {
-                handleActivatableAdded(path, type.value());
-                kDebug() << "Trying to add:" << path << type.value();
-                if (!d->activatables.contains(path)) {
-                    kDebug() << "Add failed:" << path << type.value();
-                }
-            }
-        }
-    }
-
-    foreach (RemoteActivatable* activatable, activatables()) {
-        if (activatable->deviceUni() == interface->uni()) {
-            RemoteInterfaceConnection* remoteconnection = dynamic_cast<RemoteInterfaceConnection*>(activatable);
-            if (remoteconnection) {
-                if (remoteconnection->activationState() == Knm::InterfaceConnection::Activated ||
-                    remoteconnection->activationState() == Knm::InterfaceConnection::Activating) {
-                    kDebug() << "Now I found it:" << remoteconnection->connectionName();
-                    return remoteconnection;
-                }
-            }
-        }
-    }
-    kDebug() << "Still not found:";
-
     return 0;
 }
 
 void RemoteActivatableList::clear()
 {
     Q_D(RemoteActivatableList);
-    foreach (RemoteActivatable * activatable, d->activatables) {
+    QHash<QString, RemoteActivatable*>::iterator i = d->activatables.begin();
+    while(i != d->activatables.end()) {
+        RemoteActivatable *activatable = i.value();
+        d->sortedActivatables.removeOne(activatable);
+        i = d->activatables.erase(i);
         emit activatableRemoved(activatable);
-
         // Hacky, I know, but even with deleteLater sometimes we get dangling pointers,
         // so give more time for the emit above be processed before we delete the object.
         // TODO: make sure all activatableRemoved signals were processed before deleting
         // the object.
         QTimer::singleShot(10000, activatable, SLOT(deleteLater()));
     }
-    d->activatables.clear();
-    d->vpnActivatables.clear();
 }
 
 RemoteActivatableList::~RemoteActivatableList()
@@ -161,62 +132,13 @@ RemoteActivatableList::~RemoteActivatableList()
     delete d_ptr;
 }
 
-/* Sort first by type and then by activation state. */
-static bool lessThan(RemoteActivatable * a, RemoteActivatable * b)
-{
-    if (a->activatableType() == b->activatableType()) {
-        RemoteInterfaceConnection * aic = qobject_cast<RemoteInterfaceConnection*>(a);
-        RemoteInterfaceConnection * bic = qobject_cast<RemoteInterfaceConnection*>(b);
-
-        if (aic && bic) {
-            if (aic->activationState() == bic->activationState()) {
-                return (QString::localeAwareCompare(aic->connectionName(), bic->connectionName()) < 0);
-            } else {
-                return (aic->activationState() > bic->activationState());
-            }
-        } else {
-            RemoteWirelessNetwork * arwn = qobject_cast<RemoteWirelessNetwork*>(a);
-            RemoteWirelessNetwork * brwn = qobject_cast<RemoteWirelessNetwork*>(b);
-
-            if (arwn && brwn) {
-                return (QString::localeAwareCompare(arwn->ssid(), brwn->ssid()) < 0);
-            }
-        }
-    } else {
-        return (a->activatableType() < b->activatableType());
-    }
-    return false;
-}
-
 QList<RemoteActivatable *> RemoteActivatableList::activatables() const
 {
     Q_D(const RemoteActivatableList);
-    return d->activatables.values();
+    return d->sortedActivatables;
 }
 
-QList<RemoteActivatable *> RemoteActivatableList::sortedActivatables() const
-{
-    Q_D(const RemoteActivatableList);
-    QList<RemoteActivatable *> list = d->activatables.values();
-    qSort(list.begin(), list.end(), lessThan);
-    return list;
-}
-
-QList<RemoteActivatable *> RemoteActivatableList::vpnActivatables() const
-{
-    Q_D(const RemoteActivatableList);
-    return d->vpnActivatables.values();
-}
-
-QList<RemoteActivatable *> RemoteActivatableList::sortedVpnActivatables() const
-{
-    Q_D(const RemoteActivatableList);
-    QList<RemoteActivatable *> list = d->vpnActivatables.values();
-    qSort(list.begin(), list.end(), lessThan);
-    return list;
-}
-
-void RemoteActivatableList::handleActivatableAdded(const QString &addedPath, uint type)
+void RemoteActivatableList::handleActivatableAdded(const QString &addedPath, uint type, int index)
 {
     if (!addedPath.startsWith('/')) {
         kDebug() << "Invalid path:" << addedPath << type;
@@ -244,7 +166,6 @@ void RemoteActivatableList::handleActivatableAdded(const QString &addedPath, uin
                 break;
             case Knm::Activatable::VpnInterfaceConnection:
                 newActivatable = new RemoteVpnInterfaceConnection(addedPath, this);
-                d->vpnActivatables.insert(addedPath, newActivatable);
                 //kDebug() << "vpnconnection at" << addedPath << "with type" << newActivatable->activatableType();
                 break;
             case Knm::Activatable::GsmInterfaceConnection:
@@ -255,7 +176,8 @@ void RemoteActivatableList::handleActivatableAdded(const QString &addedPath, uin
         if (newActivatable) {
             kDebug() << "RemoteActivatable Added " << addedPath;
             d->activatables.insert(addedPath, newActivatable);
-            emit activatableAdded(newActivatable);
+            d->sortedActivatables.insert(index, newActivatable);
+            emit activatableAdded(newActivatable, index);
         }
     }
 }
@@ -265,8 +187,8 @@ void RemoteActivatableList::handleActivatableRemoved(const QString &removed)
     Q_D(RemoteActivatableList);
     kDebug() << "removed" << removed;
     RemoteActivatable * removedActivatable = d->activatables.take(removed);
-    d->vpnActivatables.remove(removed);
     if (removedActivatable) {
+        d->sortedActivatables.removeOne(removedActivatable);
         emit activatableRemoved(removedActivatable);
 
         // Hacky, I know, but even with deleteLater sometimes we get dangling pointers,
