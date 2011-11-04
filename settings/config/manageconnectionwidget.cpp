@@ -339,8 +339,11 @@ void ManageConnectionWidget::updateTabStates()
                             break;
                         case Solid::Control::ModemNetworkInterfaceNm09::GsmUmts:
                         case Solid::Control::ModemNetworkInterfaceNm09::CdmaEvdo:
-                        /* TODO: case Solid::Control::ModemNetworkInterfaceNm09::Lte: */
+                        case Solid::Control::ModemNetworkInterfaceNm09::Lte:
                             hasCellular = true;
+                            break;
+                        case Solid::Control::ModemNetworkInterfaceNm09::None:
+                            kWarning() << "Unhandled modem sub type: Solid::Control::ModemNetworkInterfaceNm09::None";
                             break;
                     }
                 }
@@ -453,7 +456,6 @@ void ManageConnectionWidget::exportClicked()
     QTreeWidgetItem * item = selectedItem();
     Knm::Connection * con = 0;
     QString connectionId = item->data(0, ConnectionIdRole).toString();
-    Knm::Connection::Type type = (Knm::Connection::Type)item->data(0, ConnectionTypeRole).toUInt();
     if (connectionId.isEmpty()) {
         kDebug() << "selected item had no connectionId!";
         return;
@@ -754,14 +756,13 @@ void ManageConnectionWidget::updateLastUsed()
     updateLastUsed(mConnEditUi.listCellular);
     updateLastUsed(mConnEditUi.listVpn);
     updateLastUsed(mConnEditUi.listPppoe);
-
 }
 
 void ManageConnectionWidget::updateLastUsed(QTreeWidget * list)
 {
     QTreeWidgetItemIterator it(list);
     while (*it) {
-        QDateTime lastUsed = (*it)->data(ConnectionNameColumn, ConnectionLastUsedRole).toDateTime();
+        QDateTime lastUsed = (*it)->data(ConnectionLastUsedColumn, ConnectionLastUsedRole).toDateTime();
         (*it)->setText(ConnectionLastUsedColumn, formatDateRelative(lastUsed));
         ++it;
     }
