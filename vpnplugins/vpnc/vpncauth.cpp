@@ -39,6 +39,7 @@ VpncAuthWidget::VpncAuthWidget(Knm::Connection * connection, QWidget * parent)
     Q_D(VpncAuthWidget);
     d->ui.setupUi(this);
     d->setting = static_cast<Knm::VpnSetting *>(connection->setting(Knm::Setting::Vpn));
+    connect(d->ui.cbShowPasswords, SIGNAL(toggled(bool)), this, SLOT(showPasswordsChanged(bool)));
 }
 
 VpncAuthWidget::~VpncAuthWidget()
@@ -59,21 +60,36 @@ void VpncAuthWidget::readSecrets()
     QStringMap data = d->setting->data();
     QStringMap secrets = d->setting->vpnSecrets();
 
-    if (!((Knm::Setting::secretsTypes)data[NM_VPNC_KEY_XAUTH_PASSWORD"-flags"].toInt()).testFlag(Knm::Setting::NotRequired)) {
+    //   username
+    QString user = data.value(NM_VPNC_KEY_XAUTH_USER);
+    if (!user.isEmpty()) {
+        d->ui.leUserName->setText(user);
+    }
+    //   group name
+    QString group = data.value(NM_VPNC_KEY_ID);
+    if (!group.isEmpty()) {
+        d->ui.leGroupName->setText(group);
+    }
+
+    if (!((Knm::Setting::secretsTypes)data.value(NM_VPNC_KEY_XAUTH_PASSWORD"-flags").toInt()).testFlag(Knm::Setting::NotRequired)) {
         d->ui.leUserPassword->setText(secrets.value(QLatin1String(NM_VPNC_KEY_XAUTH_PASSWORD)));
     } else {
-        d->ui.userLabel->setVisible(false);
+        d->ui.userNameLabel->setVisible(false);
+        d->ui.leUserName->setVisible(false);
+        d->ui.userPasswordLabel->setVisible(false);
         d->ui.leUserPassword->setVisible(false);
     }
 
-    if (!((Knm::Setting::secretsTypes)d->setting->data().value(NM_VPNC_KEY_SECRET"-flags").toInt()).testFlag(Knm::Setting::NotRequired)) {
+    if (!((Knm::Setting::secretsTypes)data.value(NM_VPNC_KEY_SECRET"-flags").toInt()).testFlag(Knm::Setting::NotRequired)) {
         d->ui.leGroupPassword->setText(secrets.value(QLatin1String(NM_VPNC_KEY_SECRET)));
     } else {
-        d->ui.groupLabel->setVisible(false);
+        d->ui.groupNameLabel->setVisible(false);
+        d->ui.leGroupName->setVisible(false);
+        d->ui.groupPasswordLabel->setVisible(false);
         d->ui.leGroupPassword->setVisible(false);
     }
 
-    if (d->ui.leUserPassword->text().isEmpty())
+    if (d->ui.userPasswordLabel->isVisible() && d->ui.leUserPassword->text().isEmpty())
         d->ui.leUserPassword->setFocus(Qt::OtherFocusReason);
     else if (d->ui.leGroupPassword->text().isEmpty())
         d->ui.leGroupPassword->setFocus(Qt::OtherFocusReason);
@@ -95,6 +111,13 @@ void VpncAuthWidget::writeConfig()
     }
 
     d->setting->setVpnSecrets(secretData);
+}
+
+void VpncAuthWidget::showPasswordsChanged(bool show)
+{
+    Q_D(VpncAuthWidget);
+    d->ui.leUserPassword->setPasswordMode(!show);
+    d->ui.leGroupPassword->setPasswordMode(!show);
 }
 
 // vim: sw=4 sts=4 et tw=100

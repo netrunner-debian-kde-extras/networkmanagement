@@ -26,6 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QPainter>
 #include <QGraphicsSceneHoverEvent>
 #include <QSize>
+#include <QTimer>
 
 #include <KIcon>
 #include <KNotification>
@@ -59,6 +60,7 @@ ActivatableItem::ActivatableItem(RemoteActivatable *remote, QGraphicsItem * pare
                 SLOT(handleHasDefaultRouteChanged(bool)));
         connect(remoteconnection, SIGNAL(activationStateChanged(Knm::InterfaceConnection::ActivationState, Knm::InterfaceConnection::ActivationState)),
                 SLOT(activationStateChanged(Knm::InterfaceConnection::ActivationState, Knm::InterfaceConnection::ActivationState)));
+        connect(remoteconnection, SIGNAL(changed()), SLOT(connectionChanged()));
     }
 
     // Fade in when this widget appears
@@ -100,11 +102,16 @@ void ActivatableItem::emitClicked()
                        remote->activationState() == Knm::InterfaceConnection::Activated)) {
             emit showInterfaceDetails(remote->deviceUni());
         } else {
-            m_activatable->activate();
+            QTimer::singleShot(0, m_activatable, SLOT(activate()));
         }
         emit clicked(this);
     }
 
+    QTimer::singleShot(0, this, SLOT(notifyNetworkingState()));
+}
+
+void ActivatableItem::notifyNetworkingState()
+{
     if (!Solid::Control::NetworkManagerNm09::isNetworkingEnabled()) {
         KNotification::event(Event::NetworkingDisabled, i18nc("@info:status Notification when the networking subsystem (NetworkManager, etc) is disabled", "Networking system disabled"), QPixmap(), 0, KNotification::CloseOnTimeout, *s_networkManagementComponentData)->sendEvent();
     } else if (!Solid::Control::NetworkManagerNm09::isWirelessEnabled() &&
@@ -166,6 +173,15 @@ void ActivatableItem::activationStateChanged(Knm::InterfaceConnection::Activatio
             f.setItalic(true);
     }
     m_connectButton->setFont(f);
+}
+
+void ActivatableItem::connectionChanged()
+{
+    if (!m_connectButton || !interfaceConnection()) {
+        return;
+    }
+
+    m_connectButton->setText(interfaceConnection()->connectionName());
 }
 
 void ActivatableItem::hoverEnter()
