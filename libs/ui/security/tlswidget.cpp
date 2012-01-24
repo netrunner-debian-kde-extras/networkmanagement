@@ -286,7 +286,7 @@ void TlsWidget::showAltSubjectMatchesEditor()
     EditListDialog editor;
     editor.setItems(leAltSubjectMatches->text().remove(QLatin1Char(' ')).split(QLatin1Char(','), QString::SkipEmptyParts));
     editor.setCaption(i18n("Alternative Subject Matches"));
-    editor.setToolTip(i18n("<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. http://www.kde.org&gt;</li><ul></qt>"));
+    editor.setToolTip(i18n("<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. http://www.kde.org&gt;</li></ul></qt>"));
     editor.setValidator(d->altSubjectValidator);
     if (editor.exec() == QDialog::Accepted) {
         leAltSubjectMatches->setText(editor.items().join(QLatin1String(", ")));
@@ -303,6 +303,17 @@ void TlsWidget::showServersEditor()
     if (editor.exec() == QDialog::Accepted) {
         leConnectToTheseServers->setText(editor.items().join(QLatin1String(", ")));
     }
+}
+
+void TlsWidget::syncWidgetData(const QPair<QString, QString> &widgetData)
+{
+    kurPrivateKey->setUrl(widgetData.first);
+    lePrivateKeyPassword->setText(widgetData.second);
+}
+
+QPair<QString, QString> TlsWidget::widgetData()
+{
+    return QPair<QString, QString>(kurPrivateKey->text(), lePrivateKeyPassword->text());
 }
 
 // vim: sw=4 sts=4 et tw=100

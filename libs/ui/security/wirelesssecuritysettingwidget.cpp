@@ -143,11 +143,10 @@ void WirelessSecuritySettingWidget::setIfaceAndAccessPoint(Solid::Control::Wirel
 
     // cache ap and device capabilities here
     Solid::Control::WirelessNetworkInterfaceNm09::Capabilities ifaceCaps(0);
-    bool adhoc = false;
+    bool adhoc = d->settingWireless->mode() == Knm::WirelessSetting::EnumMode::adhoc;
     Solid::Control::AccessPointNm09::Capabilities apCaps(0);
     Solid::Control::AccessPointNm09::WpaFlags apWpa(0);
     Solid::Control::AccessPointNm09::WpaFlags apRsn(0);
-
 
     if (iface) {
         ifaceCaps = iface->wirelessCapabilities();
@@ -300,7 +299,9 @@ void WirelessSecuritySettingWidget::readSecrets()
 {
     Q_D(WirelessSecuritySettingWidget);
     SecurityWidget * sw = d->currentSecurityWidget();
-    sw->readSecrets();
+    if (sw) {
+        sw->readSecrets();
+    }
 }
 
 void WirelessSecuritySettingWidget::writeConfig()
@@ -329,7 +330,14 @@ void WirelessSecuritySettingWidget::writeConfig()
     else if (d->ui.cboType->currentIndex() == d->wpaPsk.first) {
         d->setting8021x->setEnabled(false);
         d->settingSecurity->setSecurityType(Knm::WirelessSecuritySetting::EnumSecurityType::WpaPsk); // FIXME
-        d->settingSecurity->setKeymgmt(Knm::WirelessSecuritySetting::EnumKeymgmt::WPAPSK);
+        if (d->settingWireless->mode() == Knm::WirelessSetting::EnumMode::adhoc) {
+            d->settingSecurity->setKeymgmt(Knm::WirelessSecuritySetting::EnumKeymgmt::WPANone);
+            d->settingSecurity->setProto(QStringList() << "wpa");
+            d->settingSecurity->setPairwise(QStringList() << "none");
+            d->settingSecurity->setGroup(QStringList() << "tkip");
+        } else {
+            d->settingSecurity->setKeymgmt(Knm::WirelessSecuritySetting::EnumKeymgmt::WPAPSK);
+        }
     }
     else if (d->ui.cboType->currentIndex() == d->wpaEap.first) {
         d->setting8021x->setEnabled(true);
@@ -348,7 +356,11 @@ void WirelessSecuritySettingWidget::writeConfig()
 void WirelessSecuritySettingWidget::validate()
 {
     Q_D(WirelessSecuritySettingWidget);
-    emit valid( d->currentSecurityWidget()->validate() );
+    SecurityWidget * sw = d->currentSecurityWidget();
+    if (!sw) {
+        return;
+    }
+    emit valid( sw->validate() );
 }
 
 // vim: sw=4 sts=4 et tw=100
