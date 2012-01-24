@@ -6,8 +6,7 @@ DEB_BINARY_VERSION := $(shell dpkg-parsechangelog | grep '^Version: ' | sed 's/^
 DEB_KNETWORKMANAGER_VERSION := $(shell echo '$(DEB_BINARY_VERSION)' | sed 's/^[[:digit:].]\+~/1:0.9+/')
 
 override_dh_auto_configure:
-	dh_auto_configure -Skde -- -DCMAKE_USE_RELATIVE_PATHS=ON \
-	                           -DDBUS_SYSTEM_POLICY_DIR=/etc/dbus-1/system.d
+	dh_auto_configure -Skde -- -DCMAKE_USE_RELATIVE_PATHS=ON
 
 override_dh_install:
 	dh_install -pplasma-widget-networkmanagement --autodest -- \
