@@ -65,6 +65,10 @@ WirelessSecurityAuthWidget::~WirelessSecurityAuthWidget()
 void WirelessSecurityAuthWidget::readConfig()
 {
     Q_D(WirelessSecurityAuthWidget);
+    if (!d->settingWireless) {
+        kWarning() << "Wireless setting is null. That should not happen.";
+        return;
+    }
     if (d->settingWireless->security().isEmpty()) {
         d->settingWidget = new NullSecurityWidget(d->connection, this);
     } else {
@@ -87,6 +91,7 @@ void WirelessSecurityAuthWidget::readConfig()
         }
         d->settingWidget->readConfig();
         d->layout->addWidget(d->settingWidget);
+        connect(d->settingWidget, SIGNAL(valid(bool)), SLOT(validate()));
     }
 
     QCheckBox *showPasswords = new QCheckBox(this);

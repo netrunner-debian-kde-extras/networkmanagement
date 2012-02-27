@@ -1,0 +1,5019 @@
+# Translation of libknetworkmanager to Croatian
+#
+# Zarko Pintar <zarko.pintar@gmail.com>, 2009.
+# DoDo <DoDoEntertainment@gmail.com>, 2009.
+# Marko Dimjasevic <marko@dimjasevic.net>, 2010.
+# Andrej Dundovic <andrej@dundovic.com.hr>, 2010.
+# Marko Dimjašević <marko@dimjasevic.net>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2011-08-24 02:18+0200\n"
+"PO-Revision-Date: 2011-06-27 14:57+0200\n"
+"Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
+"Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: hr\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: vpnplugins/novellvpn/novellvpnwidget.cpp:63
+msgctxt "@window:title NovellVPN advanced connection options"
+msgid "NovellVPN advanced options"
+msgstr ""
+
+#: vpnplugins/openvpn/openvpnwidget.cpp:95
+#: vpnplugins/openvpn/openvpnwidget.cpp:120
+#, fuzzy
+#| msgctxt "@item:inlist Item added when openvpn cipher lookup failed"
+#| msgid "Openvpn cipher lookup failed"
+msgctxt "@item:inlist Item added when OpenVPN cipher lookup failed"
+msgid "OpenVPN cipher lookup failed"
+msgstr "Traženje Openvpn šifratora neuspjelo"
+
+#: vpnplugins/openvpn/openvpnwidget.cpp:102
+msgctxt "@item::inlist Default openvpn cipher item"
+msgid "Default"
+msgstr "Uobičajeno"
+
+#: vpnplugins/openvpn/openvpnwidget.cpp:117
+#, fuzzy
+#| msgctxt "@item:inlist Item added when openvpn cipher lookup failed"
+#| msgid "No openvpn ciphers found"
+msgctxt "@item:inlist Item added when OpenVPN cipher lookup failed"
+msgid "No OpenVPN ciphers found"
+msgstr "Nema pronađenih openvpn šifratora"
+
+#: vpnplugins/vpnc/vpnc.cpp:71
+msgid "Error decrypting the obfuscated password"
+msgstr ""
+
+#: vpnplugins/vpnc/vpnc.cpp:71 settings/config/manageconnectionwidget.cpp:548
+#: settings/config/manageconnectionwidget.cpp:592
+#: settings/config/manageconnectionwidget.cpp:707
+msgid "Error"
+msgstr "Pogreška"
+
+#: vpnplugins/vpnc/vpnc.cpp:231
+#, kde-format
+msgid ""
+"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
+"through TCP which is currently not supported in the vpnc software.\n"
+"\n"
+"The connection can still be created, with TCP tunneling disabled, however it "
+"may not work as expected."
+msgstr ""
+
+#: vpnplugins/vpnc/vpnc.cpp:231
+#, fuzzy
+#| msgid "Not Required"
+msgid "Not supported"
+msgstr "Nije potrebna"
+
+#: libs/internals/connection.cpp:115
+msgid "User"
+msgstr "Korisnik"
+
+#: libs/internals/connection.cpp:118
+msgid "System"
+msgstr "Sustav"
+
+#: libs/internals/tooltips.cpp:43
+msgctxt "@info:tooltip"
+msgid "Interface type"
+msgstr "Tip Sučelja"
+
+#: libs/internals/tooltips.cpp:44
+msgctxt "@info:tooltip"
+msgid "System device name"
+msgstr "Ime sustavskog uređaja"
+
+#: libs/internals/tooltips.cpp:45
+msgctxt "@info:tooltip"
+msgid "System driver name"
+msgstr "Naziv sustavskog upravljačkog programa"
+
+#: libs/internals/tooltips.cpp:46
+msgctxt "@info:tooltip"
+msgid "Network interface status"
+msgstr "Stanje mrežnog sučelja"
+
+#: libs/internals/tooltips.cpp:47
+msgctxt "@info:tooltip"
+msgid "Hardware address of a network interface"
+msgstr "Hardverska adresa mrežnog sučelja"
+
+#: libs/internals/tooltips.cpp:48
+msgctxt "@info:tooltip"
+msgid "Network interface current bit rate"
+msgstr "Trenutna brzina mrežnog sučelja"
+
+#: libs/internals/tooltips.cpp:49
+msgctxt "@info:tooltip"
+msgid "Maximum speed of the network interface"
+msgstr "Najveća brzina mrežnog sučelja"
+
+#: libs/internals/tooltips.cpp:50
+msgctxt "@info:tooltip"
+msgid "IPv4 network address"
+msgstr "IPv4 mrežna adresa"
+
+#: libs/internals/tooltips.cpp:51
+msgctxt "@info:tooltip"
+msgid "Network name servers"
+msgstr "Poslužitelji mrežnih imena"
+
+#: libs/internals/tooltips.cpp:52
+msgctxt "@info:tooltip"
+msgid "Network domains"
+msgstr "Mrežne domene"
+
+#: libs/internals/tooltips.cpp:53
+msgctxt "@info:tooltip"
+msgid "Network routes"
+msgstr "Mrežni putevi"
+
+#: libs/internals/tooltips.cpp:55
+msgctxt "@info:tooltip"
+msgid "Signal strength of the wifi network"
+msgstr "Jačina signala bežićne mreže"
+
+#: libs/internals/tooltips.cpp:56
+msgctxt "@info:tooltip"
+msgid "Name of the wireless network in use"
+msgstr "Ime bežićne mreže za korištenje"
+
+#: libs/internals/tooltips.cpp:57
+msgctxt "@info:tooltip"
+msgid "Operation mode of wireless network"
+msgstr "Način rada bežićne mreže"
+
+#: libs/internals/tooltips.cpp:58
+msgctxt "@info:tooltip"
+msgid "Hardware address of the active access point"
+msgstr "Hardverska adresa aktivne pristupne točke"
+
+#: libs/internals/tooltips.cpp:59
+msgctxt "@info:tooltip"
+msgid "The radio channel frequency that the access point is operating on"
+msgstr "Frekvencija radio kanala na kojoj radi pristupna točka"
+
+#: libs/internals/tooltips.cpp:60
+msgctxt "@info:tooltip"
+msgid "Subjective network security level description"
+msgstr "Osobni opis razine mrežne sigurnosti"
+
+#: libs/internals/tooltips.cpp:61
+msgctxt "@info:tooltip"
+msgid ""
+"Flags describing the access point's capabilities according to WPA (Wifi "
+"Protected Access)"
+msgstr ""
+"Zastavice koje opisuju mogućnosti pristupne točke prema WPA-u (WiFi "
+"Zaštićeni Pristup)"
+
+#: libs/internals/tooltips.cpp:62
+msgctxt "@info:tooltip"
+msgid ""
+"Flags describing the access point's capabilities according to RSN (Robust "
+"Secure Network)"
+msgstr ""
+"Zastavice koje opisuju mogućnosti pristupne točke prema RSN (Robusno Sigurna "
+"Mreža)"
+
+#: libs/internals/tooltips.cpp:65
+msgctxt " interface type"
+msgid "Type"
+msgstr "Tip"
+
+#: libs/internals/tooltips.cpp:66
+msgctxt " network device name eg eth0"
+msgid "Interface"
+msgstr "Sučelje"
+
+#: libs/internals/tooltips.cpp:67
+msgctxt " system driver name"
+msgid "Driver"
+msgstr "Upravljački program"
+
+#: libs/internals/tooltips.cpp:68
+msgctxt " network interface status"
+msgid "Status"
+msgstr "Status"
+
+#: libs/internals/tooltips.cpp:70
+msgctxt " this is the hardware address of a network interface"
+msgid "Hardware address (Wired)"
+msgstr "Hardverska adresa (žićana)"
+
+#: libs/internals/tooltips.cpp:71
+msgctxt " network connection bit rate"
+msgid "Bit rate"
+msgstr "Brzina u bitovima"
+
+#: libs/internals/tooltips.cpp:73
+msgctxt " The network device's maximum speed"
+msgid "Max speed"
+msgstr "Najveća brzina"
+
+#: libs/internals/tooltips.cpp:74
+msgctxt " IPv4 address"
+msgid "IP address"
+msgstr "IP adresa"
+
+#: libs/internals/tooltips.cpp:75
+msgctxt " network name servers"
+msgid "Name servers"
+msgstr "Imenski poslužitelji"
+
+#: libs/internals/tooltips.cpp:76
+msgctxt " network domains"
+msgid "Domains"
+msgstr "Domene"
+
+#: libs/internals/tooltips.cpp:77
+msgctxt " network routes"
+msgid "Routes"
+msgstr "Putevi"
+
+#: libs/internals/tooltips.cpp:80
+msgctxt " The signal strength of the wifi network"
+msgid "Strength"
+msgstr "Jačina signala"
+
+#: libs/internals/tooltips.cpp:82
+msgctxt " SSID is a friendly name that identifies a 802.11 WLAN."
+msgid "SSID"
+msgstr "SSID"
+
+#: libs/internals/tooltips.cpp:83
+msgctxt " the operation mode of wi-fi network"
+msgid "Mode"
+msgstr "Način rada"
+
+#: libs/internals/tooltips.cpp:85
+msgctxt " Active access point MAC address"
+msgid "Access point"
+msgstr "Pristupna točka"
+
+#: libs/internals/tooltips.cpp:87
+msgctxt ""
+" the frequency of the radio channel that the access point is operating on"
+msgid "Frequency"
+msgstr "Frekvencija"
+
+#: libs/internals/tooltips.cpp:88
+msgctxt " network security level, e.g. high, low"
+msgid "Security"
+msgstr "Sigurnost"
+
+#: libs/internals/tooltips.cpp:90
+msgctxt ""
+" Flags describing the access point's capabilities according to WPA (Wifi "
+"Protected Access)"
+msgid "WPA flags"
+msgstr "WPA zastavice"
+
+#: libs/internals/tooltips.cpp:92
+msgctxt ""
+"Flags describing the access point's capabilities according to RSN (Robust "
+"Secure Network)"
+msgid "RSN(WPA2) flags"
+msgstr "RSN(WPA2) zastavice"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:223
+msgctxt "@label no security"
+msgid "Insecure"
+msgstr "Nesigurna"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:226
+msgctxt "@label WEP security"
+msgid "WEP"
+msgstr "WEP"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:229
+msgctxt "@label LEAP security"
+msgid "LEAP"
+msgstr "LEAP"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:232
+msgctxt "@label Dynamic WEP security"
+msgid "Dynamic WEP"
+msgstr "Dinamični WEP"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:235
+msgctxt "@label WPA-PSK security"
+msgid "WPA-PSK"
+msgstr "WPA-PSK"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:238
+msgctxt "@label WPA-EAP security"
+msgid "WPA-EAP"
+msgstr "WPA-EAP"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:241
+msgctxt "@label WPA2-PSK security"
+msgid "WPA2-PSK"
+msgstr "WPA2-PSK"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:244
+msgctxt "@label WPA2-EAP security"
+msgid "WPA2-EAP"
+msgstr "WPA2-EAP"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:248
+msgctxt "@label unknown security"
+msgid "Unknown security type"
+msgstr "Nepoznta vrsta sigurnosti"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:259
+msgctxt "@info:tooltip no security"
+msgid "Insecure"
+msgstr "Nesigurna"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:262
+msgctxt "@info:tooltip WEP security"
+msgid "WEP"
+msgstr "WEP"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:265
+msgctxt "@info:tooltip LEAP security"
+msgid "LEAP"
+msgstr "LEAP"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:268
+msgctxt "@info:tooltip Dynamic WEP security"
+msgid "Dynamic WEP"
+msgstr "Dinamični WEP"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:271
+msgctxt "@info:tooltip WPA-PSK security"
+msgid "WPA-PSK"
+msgstr "WPA-PSK"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:274
+msgctxt "@info:tooltip WPA-EAP security"
+msgid "WPA-EAP"
+msgstr "WPA-EAP"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:277
+msgctxt "@info:tooltip WPA2-PSK security"
+msgid "WPA2-PSK"
+msgstr "WPA2-PSK"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:280
+msgctxt "@info:tooltip WPA2-EAP security"
+msgid "WPA2-EAP"
+msgstr "WPA2-EAP"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:284
+msgctxt "@info:tooltip unknown security"
+msgid "Unknown security type"
+msgstr "Nepoznat tip sigurnosti"
+
+#: libs/internals/uiutils.cpp:43 libs/internals/uiutils.cpp:59
+msgctxt "title of the interface widget in nm's popup"
+msgid "Wired Ethernet"
+msgstr "Žičana mreža"
+
+#: libs/internals/uiutils.cpp:46
+msgctxt "title of the interface widget in nm's popup"
+msgid "Wireless 802.11"
+msgstr "Bežična mreža 802.11"
+
+#: libs/internals/uiutils.cpp:49
+msgctxt "title of the interface widget in nm's popup"
+msgid "Serial Modem"
+msgstr "Serijski modem"
+
+#: libs/internals/uiutils.cpp:56
+msgctxt "title of the interface widget in nm's popup"
+msgid "Mobile Broadband"
+msgstr "Mobilno širokopojasno"
+
+#: libs/internals/uiutils.cpp:150
+msgctxt "description of unknown network interface state"
+msgid "Unknown"
+msgstr "Nepoznato"
+
+#: libs/internals/uiutils.cpp:153
+msgctxt "description of unmanaged network interface state"
+msgid "Unmanaged"
+msgstr "Neupravljano"
+
+#: libs/internals/uiutils.cpp:156
+msgctxt "description of unavailable network interface state"
+msgid "Unavailable"
+msgstr "Nedostupno"
+
+#: libs/internals/uiutils.cpp:159
+msgctxt "description of unconnected network interface state"
+msgid "Not connected"
+msgstr "Nije spojeno"
+
+#: libs/internals/uiutils.cpp:162
+msgctxt "description of preparing to connect network interface state"
+msgid "Preparing to connect"
+msgstr "Pripremam se za spajanje"
+
+#: libs/internals/uiutils.cpp:165
+msgctxt "description of configuring hardware network interface state"
+msgid "Configuring interface"
+msgstr "Podešavam sučelje"
+
+#: libs/internals/uiutils.cpp:168
+msgctxt "description of waiting for authentication network interface state"
+msgid "Waiting for authorization"
+msgstr "Čekam na prijavu"
+
+#: libs/internals/uiutils.cpp:171
+msgctxt "network interface doing dhcp request in most cases"
+msgid "Setting network address"
+msgstr "Postavljam mrežnu adresu"
+
+#: libs/internals/uiutils.cpp:175
+msgctxt "network interface connected state label"
+msgid "Connected"
+msgstr "Spojen"
+
+#: libs/internals/uiutils.cpp:177
+#, kde-format
+msgctxt "network interface connected state label"
+msgid "Connected to %1"
+msgstr "Spojen na %1"
+
+#: libs/internals/uiutils.cpp:181
+msgctxt "network interface connection failed state label"
+msgid "Connection Failed"
+msgstr "Veza nije uspjela"
+
+#: libs/internals/uiutils.cpp:184
+msgctxt "interface state"
+msgid "Error: Invalid state"
+msgstr "Pogreška: neispravno stanje"
+
+#: libs/internals/uiutils.cpp:229
+#, kde-format
+msgctxt "Format for <Vendor> <Product>"
+msgid "%1 - %2"
+msgstr "%1 – %2"
+
+#: libs/internals/uiutils.cpp:290
+msgctxt "wireless network operation mode"
+msgid "Unassociated"
+msgstr "Nepridružen"
+
+#: libs/internals/uiutils.cpp:293
+#, fuzzy
+#| msgid "Ad-hoc"
+msgctxt "wireless network operation mode"
+msgid "Adhoc"
+msgstr "Ad-hoc"
+
+#: libs/internals/uiutils.cpp:296
+msgctxt "wireless network operation mode"
+msgid "Managed"
+msgstr "Upravljani"
+
+#: libs/internals/uiutils.cpp:299
+msgctxt "wireless network operation mode"
+msgid "Master"
+msgstr "Glavni"
+
+#: libs/internals/uiutils.cpp:302
+msgctxt "wireless network operation mode"
+msgid "Repeater"
+msgstr "Ponavljač"
+
+#: libs/internals/uiutils.cpp:305
+msgid "INCORRECT MODE FIX ME"
+msgstr "NEISPRAVAN NAČIN POPRAVI ME"
+
+#: libs/internals/uiutils.cpp:327
+msgctxt "wireless network cipher"
+msgid "Pairwise WEP40"
+msgstr "U paru WEP40"
+
+#: libs/internals/uiutils.cpp:329
+msgctxt "wireless network cipher"
+msgid "Pairwise WEP104"
+msgstr "U paru WEP104"
+
+#: libs/internals/uiutils.cpp:331
+msgctxt "wireless network cipher"
+msgid "Pairwise TKIP"
+msgstr "U paru TKIP"
+
+#: libs/internals/uiutils.cpp:333
+msgctxt "wireless network cipher"
+msgid "Pairwise CCMP"
+msgstr "U paru CCMP"
+
+#: libs/internals/uiutils.cpp:335
+msgctxt "wireless network cipher"
+msgid "Group WEP40"
+msgstr "Grupa WEP40"
+
+#: libs/internals/uiutils.cpp:337
+msgctxt "wireless network cipher"
+msgid "Group WEP104"
+msgstr "Grupa WEP104"
+
+#: libs/internals/uiutils.cpp:339
+msgctxt "wireless network cipher"
+msgid "Group TKIP"
+msgstr "Grupa TKIP"
+
+#: libs/internals/uiutils.cpp:341
+msgctxt "wireless network cipher"
+msgid "Group CCMP"
+msgstr "Grupa CCMP"
+
+#: libs/internals/uiutils.cpp:343
+msgctxt "wireless network cipher"
+msgid "PSK"
+msgstr "PSK"
+
+#: libs/internals/uiutils.cpp:345
+msgctxt "wireless network cipher"
+msgid "802.1x"
+msgstr "802.1x"
+
+#: libs/internals/uiutils.cpp:354
+#, kde-format
+msgctxt "connection speed"
+msgid "%1 Bit/s"
+msgstr "%1 Bit/s"
+
+#: libs/internals/uiutils.cpp:356
+#, kde-format
+msgctxt "connection speed"
+msgid "%1 MBit/s"
+msgstr "%1 MBit/s"
+
+#: libs/internals/uiutils.cpp:358
+#, kde-format
+msgctxt "connection speed"
+msgid "%1 GBit/s"
+msgstr "%1 GBit/s"
+
+#: libs/service/notificationmanager.cpp:115
+#: libs/service/notificationmanager.cpp:445
+#, kde-format
+msgctxt "@info:status Notification text when connecting"
+msgid "Activating %1"
+msgstr "Aktiviram %1"
+
+#: libs/service/notificationmanager.cpp:119
+#: libs/service/notificationmanager.cpp:449
+#, kde-format
+msgctxt "@info:status Notification text when a connection has been activated"
+msgid "%1 activated"
+msgstr "%1 aktivirana"
+
+#: libs/service/notificationmanager.cpp:125
+#: libs/service/notificationmanager.cpp:454
+#, kde-format
+msgctxt "@info:status Notification text when connection has failed"
+msgid "Connection %1 failed"
+msgstr "Neuspjela veza %1"
+
+#: libs/service/notificationmanager.cpp:127
+#: libs/service/notificationmanager.cpp:456
+#, kde-format
+msgctxt "@info:status Notification text when deactivating a connection"
+msgid "%1 deactivated"
+msgstr "%1 deaktivirana"
+
+#: libs/service/notificationmanager.cpp:144
+#, kde-format
+msgctxt "@info:status Notification text when wireless/gsm signal is low"
+msgid "Low signal on %1"
+msgstr "Slab signal za mrežu %1"
+
+#: libs/service/notificationmanager.cpp:201
+#, kde-format
+msgctxt ""
+"@info:status interface (%2) status notification title when a connection (%1) "
+"is activating"
+msgid "Activating %1 on %2"
+msgstr "Aktiviranje %1 na %2"
+
+#: libs/service/notificationmanager.cpp:211
+#, kde-format
+msgctxt ""
+"@info:status interface (%2) status notification title when a connection (%1) "
+"has successfully activated"
+msgid "%1 on %2"
+msgstr "%1 na %2"
+
+#: libs/service/notificationmanager.cpp:225
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"NowManagedReason"
+msgid "%1 because it is now being managed"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:228
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"NowUnmanagedReason"
+msgid "%1 because it is no longer being managed"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:231
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ConfigFailedReason"
+msgid "%1 because configuration failed"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:234
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ConfigUnavailableReason"
+msgid "%1 because the configuration is unavailable"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:237
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ConfigExpiredReason"
+msgid "%1 because the configuration has expired"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:240
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"NoSecretsReason"
+msgid "%1 because secrets were not provided"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:243
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"AuthSupplicantDisconnectReason"
+msgid "%1 because the authorization supplicant disconnected"
+msgstr "%1 jer je autorizacijski upitnik odspojen"
+
+#: libs/service/notificationmanager.cpp:246
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"AuthSupplicantConfigFailedReason"
+msgid "%1 because the authorization supplicant's configuration failed"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:249
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"AuthSupplicantFailedReason"
+msgid "%1 because the authorization supplicant failed"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:252
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"AuthSupplicantTimeoutReason"
+msgid "%1 because the authorization supplicant timed out"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:255
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"PppStartFailedReason"
+msgid "%1 because PPP failed to start"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:258
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"PppDisconnectReason"
+msgid "%1 because PPP disconnected"
+msgstr "%1 jer je PPP odspojen"
+
+#: libs/service/notificationmanager.cpp:261
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"PppFailedReason"
+msgid "%1 because PPP failed"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:264
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"DhcpStartFailedReason"
+msgid "%1 because DHCP failed to start"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:267
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"DhcpErrorReason"
+msgid "%1 because a DHCP error occurred"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:270
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"DhcpFailedReason"
+msgid "%1 because DHCP failed "
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:273
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"SharedStartFailedReason"
+msgid "%1 because the shared service failed to start"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:276
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"SharedFailedReason"
+msgid "%1 because the shared service failed"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:279
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"AutoIpStartFailedReason"
+msgid "%1 because the auto IP service failed to start"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:282
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"AutoIpErrorReason"
+msgid "%1 because the auto IP service reported an error"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:285
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"AutoIpFailedReason"
+msgid "%1 because the auto IP service failed"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:288
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ModemBusyReason"
+msgid "%1 because the modem is busy"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:291
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ModemNoDialToneReason"
+msgid "%1 because the modem has no dial tone"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:294
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ModemNoCarrierReason"
+msgid "%1 because the modem shows no carrier"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:297
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ModemDialTimeoutReason"
+msgid "%1 because the modem dial timed out"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:300
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ModemInitFailedReason"
+msgid "%1 because the modem could not be initialized"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:303
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"GsmApnSelectFailedReason"
+msgid "%1 because the GSM APN could not be selected"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:306
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"GsmNotSearchingReason"
+msgid "%1 because the GSM modem is not searching"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:309
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"GsmRegistrationDeniedReason"
+msgid "%1 because GSM network registration was denied"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:312
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"GsmRegistrationTimeoutReason"
+msgid "%1 because GSM network registration timed out"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:315
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"GsmRegistrationFailedReason"
+msgid "%1 because GSM registration failed"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:318
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"GsmPinCheckFailedReason"
+msgid "%1 because the GSM PIN check failed"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:321
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"FirmwareMissingReason"
+msgid "%1 because firmware is missing"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:324
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"DeviceRemovedReason"
+msgid "%1 because the device was removed"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:327
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"SleepingReason"
+msgid "%1 because the networking system is now sleeping"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:330
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ConnectionRemovedReason"
+msgid "%1 because the connection was removed"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:333
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"UserRequestedReason"
+msgid "%1 by request"
+msgstr ""
+
+#: libs/service/notificationmanager.cpp:336
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"CarrierReason"
+msgid "%1 because the cable was disconnected"
+msgstr "%1 jer je kabel ištekan"
+
+#: libs/service/notificationmanager.cpp:506
+#: libs/service/notificationmanager.cpp:518
+#, kde-format
+msgctxt "@info:status Notification for hardware added"
+msgid "%1 attached"
+msgstr "%1 priključen"
+
+#: libs/service/notificationmanager.cpp:507
+msgctxt "@action"
+msgid "Create Connection"
+msgstr "Stvori vezu"
+
+#: libs/service/notificationmanager.cpp:507
+msgctxt "@action"
+msgid "Ignore"
+msgstr "Zanemari"
+
+#: libs/service/notificationmanager.cpp:554
+#, kde-format
+msgctxt ""
+"@info:status Notification for hardware removed giving vendor supplied "
+"product name"
+msgid "%1 removed"
+msgstr "%1 uklonjen"
+
+#: libs/service/notificationmanager.cpp:558
+msgctxt ""
+"@info:status Notification for hardware removed used if we don't have its "
+"user-visible name"
+msgid "Network interface removed"
+msgstr "Uklonjeno mrežno sučelje"
+
+#: libs/service/notificationmanager.cpp:591
+#, kde-format
+msgctxt ""
+"@info:status Notification text when a single wireless network was found"
+msgid "Wireless network %1 found"
+msgstr "Pronađena bežična mreža %1"
+
+#: libs/service/notificationmanager.cpp:594
+#, kde-format
+msgctxt ""
+"@info:status Notification text when multiple wireless networks are found. %2 "
+"is a list of networks, and the %1 value (not printed) is just used to "
+"determine the plural form of network."
+msgid "<b>New wireless network:</b><br /> %2"
+msgid_plural "<b>New wireless networks:</b><br /> %2"
+msgstr[0] "<b>Nova bežična mreža:</b><br /> %2"
+msgstr[1] "<b>Nove bežične mreže:</b><br /> %2"
+msgstr[2] "<b>Nove bežične mreže:</b><br /> %2"
+
+#: libs/service/notificationmanager.cpp:609
+#, kde-format
+msgctxt ""
+"@info:status Notification text when a single wireless network disappeared"
+msgid "Wireless network %1 disappeared"
+msgstr "Bežična mreža %1 je nestala"
+
+#: libs/service/notificationmanager.cpp:613
+#, kde-format
+msgctxt ""
+"@info:status Notification text when multiple wireless networks have "
+"disappeared.  %2 is a list of networks, and the %1 value (not printed) is "
+"just used to determine the plural form of network."
+msgid "<b>Wireless network disappeared:</b><br /> %2"
+msgid_plural "<b>Wireless networks disappeared:</b><br /> %2"
+msgstr[0] "<b>Nestala bežična mreža:</b><br /> %2"
+msgstr[1] "<b>Nestale bežične mreže:</b><br /> %2"
+msgstr[2] "<b>Nestale bežične mreže:</b><br /> %2"
+
+#: libs/service/notificationmanager.cpp:625
+msgctxt "@info:status Notification for radio kill switch turned on"
+msgid "Wireless hardware enabled"
+msgstr "Hardver za bežičnu vezu omogućen"
+
+#: libs/service/notificationmanager.cpp:632
+msgctxt "@info:status Notification for radio kill switch turned off"
+msgid "Wireless hardware disabled"
+msgstr "Hardver za bežičnu vezu onemogućen"
+
+#: libs/service/notificationmanager.cpp:639
+msgctxt ""
+"@info:status Notification when the networking subsystem (NetworkManager, "
+"etc) is disabled"
+msgid "Networking system disabled"
+msgstr "Mrežni sustav je onemogućen"
+
+#: libs/service/notificationmanager.cpp:645
+msgctxt ""
+"@info:status Notification when the networking subsystem (NetworkManager, "
+"etc) is already running"
+msgid "Networking system already running"
+msgstr "Mreži sustav je već pokrenut"
+
+#: libs/service/pindialog.cpp:61
+msgctxt "As in 'Unlock cell phone with this pin code'"
+msgid "Unlock"
+msgstr "Otključaj"
+
+#: libs/service/pindialog.cpp:65
+msgid "SIM PUK unlock required"
+msgstr "Potrebno otključavanje SIM PUK"
+
+#: libs/service/pindialog.cpp:66
+msgid "SIM PUK Unlock Required"
+msgstr "Potrebno otključavanje SIM PUK"
+
+#: libs/service/pindialog.cpp:67
+#, kde-format
+msgid ""
+"The mobile broadband device '%1' requires a SIM PUK code before it can be "
+"used."
+msgstr "Mobilni širokopojasni uređaj '%1' za upotrebu zahtijeva SIM PUK kôd."
+
+#: libs/service/pindialog.cpp:68
+msgid "PUK code:"
+msgstr "PUK kôd:"
+
+#: libs/service/pindialog.cpp:69
+msgid "New PIN code:"
+msgstr "Novi PIN kôd:"
+
+#: libs/service/pindialog.cpp:70
+msgid "Re-enter new PIN code:"
+msgstr "Ponovno unesite novi PIN kôd:"
+
+#: libs/service/pindialog.cpp:71
+msgid "Show PIN/PUK code"
+msgstr "Prikaži PIN/PUK kôd"
+
+#: libs/service/pindialog.cpp:79
+msgid "SIM PIN unlock required"
+msgstr "Potrebno otključavanje SIM PIN"
+
+#: libs/service/pindialog.cpp:80
+msgid "SIM PIN Unlock Required"
+msgstr "Potrebno otključavanje SIM PIN"
+
+#: libs/service/pindialog.cpp:81
+#, kde-format
+msgid ""
+"The mobile broadband device '%1' requires a SIM PIN code before it can be "
+"used."
+msgstr "Mobilni širokopojasni uređaj '%1' za upotrebu zahtijeva SIM PIN kôd."
+
+#: libs/service/pindialog.cpp:82
+msgid "PIN code:"
+msgstr "Pin kôd:"
+
+#: libs/service/pindialog.cpp:83
+msgid "Show PIN code"
+msgstr "Prikaži PIN kôd"
+
+#: libs/service/pindialog.cpp:167
+msgid "PIN code too short. It should be at least 4 digits."
+msgstr "PIN kôd prekratak. Trebao bi imati barem 4 znamenke."
+
+#: libs/service/pindialog.cpp:171
+msgid "The two PIN codes do not match"
+msgstr "Dva PIN kôda se ne podudaraju"
+
+#: libs/service/pindialog.cpp:175
+msgid "PUK code too short. It should be 8 digits."
+msgstr "PUK kôd prekratak. Trebao bi imati 8 znamenki."
+
+#: libs/service/pindialog.cpp:179
+msgid "Unknown Error"
+msgstr "Nepoznata pogreška"
+
+#: libs/ui/vpnpreferences.cpp:51 libs/ui/vpnpreferences.cpp:104
+msgid "New VPN Connection"
+msgstr "Nova VPN veza"
+
+#: libs/ui/wiredpreferences.cpp:50
+#, fuzzy
+#| msgid "New Wired Connection"
+msgid "Shared Wired Connection"
+msgstr "Nova žičana veza"
+
+#: libs/ui/wiredpreferences.cpp:53
+msgid "New Wired Connection"
+msgstr "Nova žičana veza"
+
+#: libs/ui/connectioneditor.cpp:71 libs/ui/connectioneditor.cpp:97
+msgctxt "Edit connection dialog caption"
+msgid "Edit Network Connection"
+msgstr "Uredi mrežnu vezu"
+
+#: libs/ui/connectioneditor.cpp:129
+msgctxt "Add connection dialog caption"
+msgid "Add Network Connection"
+msgstr "Dodaj mrežnu vezu"
+
+#: libs/ui/wiredwidget.cpp:54 libs/ui/802_11_wirelesswidget.cpp:63
+msgid " byte"
+msgid_plural " bytes"
+msgstr[0] " bajt"
+msgstr[1] " bajta"
+msgstr[2] " bajtova"
+
+#: libs/ui/wiredwidget.cpp:74 libs/ui/802_11_wirelesswidget.cpp:130
+#, kde-format
+msgctxt ""
+"@item:inlist item for hardware that is currently not attached to the machine "
+"with MAC address"
+msgid "Disconnected interface (%1)"
+msgstr "Odspojeno sučelje (%1)"
+
+#: libs/ui/bluetoothconnectioneditor.cpp:59
+#, kde-format
+msgid "%1 Network"
+msgstr "Mreža %1"
+
+#: libs/ui/bluetoothconnectioneditor.cpp:61
+msgid "New Bluetooth Connection"
+msgstr "Nova veza za Bluetooth"
+
+#: libs/ui/ipv4advancedwidget.cpp:40 libs/ui/ipv4routeswidget.cpp:39
+msgctxt "Header text for IPv4 address"
+msgid "Address"
+msgstr "Adrese:"
+
+#: libs/ui/ipv4advancedwidget.cpp:42 libs/ui/ipv4routeswidget.cpp:41
+msgctxt "Header text for IPv4 netmask"
+msgid "Netmask"
+msgstr "Mrežna maska"
+
+#: libs/ui/ipv4advancedwidget.cpp:44 libs/ui/ipv4routeswidget.cpp:43
+#, fuzzy
+#| msgid "&Gateway:"
+msgctxt "Header text for IPv4 gateway"
+msgid "Gateway"
+msgstr "&Pristupna točka:"
+
+#: libs/ui/ipv4widget.cpp:69
+msgctxt "@item:inlistbox IPv4 settings configuration method"
+msgid "Automatic (VPN)"
+msgstr "Automatski (VPN)"
+
+#: libs/ui/ipv4widget.cpp:71
+msgctxt "@item:inlistbox IPv4 settings configuration method"
+msgid "Automatic (VPN) addresses only"
+msgstr "Samo automatske adrese (VPN)"
+
+#: libs/ui/ipv4widget.cpp:76
+msgctxt "@item:inlistbox IPv4 settings configuration method"
+msgid "Automatic (PPP)"
+msgstr "Automatski (PPP)"
+
+#: libs/ui/ipv4widget.cpp:78
+msgctxt "@item:inlistbox IPv4 settings configuration method"
+msgid "Automatic (PPP) addresses only"
+msgstr "Samo automatske adrese (PPP)"
+
+#: libs/ui/ipv4widget.cpp:82
+msgctxt "@item:inlistbox IPv4 settings configuration method"
+msgid "Automatic (PPPoE)"
+msgstr "Automatski (PPPoE)"
+
+#: libs/ui/ipv4widget.cpp:84
+msgctxt "@item:inlistbox IPv4 settings configuration method"
+msgid "Automatic (PPPoE) addresses only"
+msgstr "Samo automatske adrese (PPPoE)"
+
+#: libs/ui/ipv4widget.cpp:88
+msgctxt "@item:inlistbox IPv4 settings configuration method"
+msgid "Automatic (DHCP)"
+msgstr "Automatski (DHCP)"
+
+#: libs/ui/ipv4widget.cpp:90
+msgctxt "@item:inlistbox IPv4 settings configuration method"
+msgid "Automatic (DHCP) addresses only"
+msgstr "Samo automatske adrese (DHCP)"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:21
+#. i18n: ectx: label, entry (dns), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:21
+#. i18n: ectx: label, entry (dns), group (ipv4)
+#: libs/ui/ipv4widget.cpp:469 libs/ui/ipv6widget.cpp:433 rc.cpp:1667
+#: rc.cpp:1721
+msgid "DNS Servers"
+msgstr "DNS poslužitelji"
+
+#: libs/ui/ipv4widget.cpp:483 libs/ui/ipv6widget.cpp:447
+msgid "Search domains"
+msgstr "Traži domene"
+
+#: libs/ui/networkitemmodel.cpp:124
+#, kde-format
+msgctxt "@item:inlist signal strength percentage"
+msgid "%1%"
+msgstr "%1%"
+
+#: libs/ui/networkitemmodel.cpp:162
+msgctxt "@item:intable wireless network name"
+msgid "Name"
+msgstr "Ime"
+
+#: libs/ui/networkitemmodel.cpp:164
+msgctxt "@item:intable wireless signal strength"
+msgid "Signal Strength"
+msgstr "Jakost signala"
+
+#: libs/ui/networkitemmodel.cpp:166
+msgctxt "@item:intable wireless encryption type"
+msgid "Encryption"
+msgstr "Enkripcija"
+
+#: libs/ui/networkitemmodel.cpp:168
+msgctxt "@item:intable wireless access point hardware address"
+msgid "MAC Address"
+msgstr "MAC adresa"
+
+#: libs/ui/security/eapmethodinnerauth.cpp:34
+#, fuzzy
+#| msgid "&HMAC Authentication:"
+msgctxt "Label for inner auth combobox"
+msgid "&Inner Authentication:"
+msgstr "&HMAC Prijava:"
+
+#: libs/ui/security/securityeap.cpp:56
+msgctxt "show passwords button"
+msgid "&Show Passwords"
+msgstr "Pri&kaži zaporke"
+
+#: libs/ui/security/securityeap.cpp:62
+msgctxt "TLS auth type"
+msgid "TLS"
+msgstr "TLS"
+
+#: libs/ui/security/securityeap.cpp:66
+msgctxt "LEAP auth type"
+msgid "LEAP"
+msgstr "LEAP"
+
+#: libs/ui/security/securityeap.cpp:70
+msgctxt "Peap outer auth type"
+msgid "Protected EAP (PEAP)"
+msgstr "Zaštićeni EAP (PEAP)"
+
+#: libs/ui/security/securityeap.cpp:73
+msgctxt "TTLS outer auth type"
+msgid "Tunnelled TLS (TTLS)"
+msgstr "Tunelirani TLS (TTLS)"
+
+#: libs/ui/security/securitywired8021x.cpp:42
+msgctxt "@title:tab wired 802.1x security"
+msgid "802.1x Security"
+msgstr "802.1x sigurnost"
+
+#: libs/ui/security/securitywired8021x.cpp:45
+msgctxt "@option:check enables/disables 802.1x auth on wired ethernet"
+msgid "Use &802.1x authentication"
+msgstr "Koristi autentifikaciju &802.1x"
+
+#: libs/ui/security/peapwidget.cpp:41 libs/ui/security/ttlswidget.cpp:49
+msgctxt "MSCHAPv2 inner auth method"
+msgid "MSCHAPv2"
+msgstr "MSCHAPv2"
+
+#: libs/ui/security/peapwidget.cpp:43
+msgctxt "MD5 inner auth method"
+msgid "MD5"
+msgstr "MD5"
+
+#: libs/ui/security/peapwidget.cpp:45
+msgctxt "GTC inner auth method"
+msgid "GTC"
+msgstr "GTC"
+
+#: libs/ui/security/peapwidget.cpp:121 libs/ui/security/tlswidget.cpp:153
+#: libs/ui/security/tlswidget.cpp:159 libs/ui/security/tlswidget.cpp:165
+#: libs/ui/security/tlswidget.cpp:173 libs/ui/security/tlswidget.cpp:179
+#: libs/ui/security/tlswidget.cpp:185 libs/ui/security/ttlswidget.cpp:123
+msgctxt "File chooser dialog title for certificate loading"
+msgid "Load Certificate"
+msgstr "Učitajte certifikat"
+
+#: libs/ui/security/peapwidget.cpp:140 libs/ui/security/tlswidget.cpp:230
+#: libs/ui/security/ttlswidget.cpp:142
+msgctxt "Text to display on certificate button a certificate is already loaded"
+msgid "Load new"
+msgstr "Učitaj novi"
+
+#: libs/ui/security/peapwidget.cpp:141 libs/ui/security/tlswidget.cpp:231
+#: libs/ui/security/ttlswidget.cpp:143
+msgctxt ""
+"Text to display on CA certificate LED label when certificate is already "
+"loaded"
+msgid "Loaded"
+msgstr "Učitan"
+
+#: libs/ui/security/peapwidget.cpp:144 libs/ui/security/tlswidget.cpp:234
+#: libs/ui/security/ttlswidget.cpp:146
+msgctxt ""
+"Text to display on CA certificate button when no certificate is loaded yet"
+msgid "Load"
+msgstr "Učitaj"
+
+#: libs/ui/security/ttlswidget.cpp:43
+msgctxt "PAP inner auth method"
+msgid "PAP"
+msgstr "PAP"
+
+#: libs/ui/security/ttlswidget.cpp:46
+msgctxt "MSCHAP inner auth method"
+msgid "MSCHAP"
+msgstr "MSCHAP"
+
+#: libs/ui/security/ttlswidget.cpp:52
+msgctxt "CHAP inner auth method"
+msgid "CHAP"
+msgstr "CHAP"
+
+#: libs/ui/security/wirelesssecuritysettingwidget.cpp:184
+msgctxt "Label for no wireless security"
+msgid "None"
+msgstr "Nema"
+
+#: libs/ui/security/wirelesssecuritysettingwidget.cpp:193
+msgctxt "Label for LEAP wireless security"
+msgid "LEAP"
+msgstr "LEAP"
+
+#: libs/ui/security/wirelesssecuritysettingwidget.cpp:202
+msgctxt "Label for Dynamic WEP wireless security"
+msgid "Dynamic WEP (802.1x)"
+msgstr "Dinamični WEP (802.1x)"
+
+#: libs/ui/security/wirelesssecuritysettingwidget.cpp:211
+msgctxt "Label for WEP wireless security"
+msgid "WEP"
+msgstr "WEP"
+
+#: libs/ui/security/wirelesssecuritysettingwidget.cpp:222
+msgctxt "Label for WPA-PSK wireless security"
+msgid "WPA/WPA2 Personal"
+msgstr "Osobni WPA/WPA2"
+
+#: libs/ui/security/wirelesssecuritysettingwidget.cpp:232
+msgctxt "Label for WPA-EAP wireless security"
+msgid "WPA/WPA2 Enterprise"
+msgstr "Profesionalni WPA/WPA2"
+
+#: libs/ui/gsmconnectioneditor.cpp:73 libs/ui/cdmaconnectioneditor.cpp:52
+#, fuzzy
+#| msgid "Use TCP connection"
+msgid "New Cellular Connection"
+msgstr "Koristi TCP vezu"
+
+#: libs/ui/802_11_wirelesswidget.cpp:186
+msgctxt "@title:window wireless network scan dialog"
+msgid "Available Networks"
+msgstr "Dostupne mreže"
+
+#: libs/ui/connectionsecretsjob.cpp:168
+#, kde-format
+msgctxt "@title:window for network secrets request"
+msgid "Secrets for %1"
+msgstr "Tajne za %1"
+
+#: libs/ui/connectionwidget.cpp:48
+msgctxt "@info:tooltip user action"
+msgid "Choose a connection icon"
+msgstr "Izaberite mrežnu ikonu"
+
+#: libs/ui/connectionwidget.cpp:68 libs/ui/wirelesspreferences.cpp:97
+msgid "New Wireless Connection"
+msgstr "Nova bežićna veza"
+
+#: libs/ui/wirelesspreferences.cpp:72
+#, fuzzy
+#| msgid "New Wireless Connection"
+msgid "Shared_Wireless_Connection"
+msgstr "Nova bežićna veza"
+
+#: libs/ui/wirelesspreferences.cpp:95
+#, fuzzy
+#| msgid "New Wireless Connection"
+msgid "Shared Wireless Connection"
+msgstr "Nova bežićna veza"
+
+#: libs/ui/ipv6widget.cpp:68
+msgctxt "@item:inlistbox IPv6 settings configuration method"
+msgid "Automatic (VPN)"
+msgstr "Automatski (VPN)"
+
+#: libs/ui/ipv6widget.cpp:70
+msgctxt "@item:inlistbox IPv6 settings configuration method"
+msgid "Automatic (VPN) addresses only"
+msgstr "Samo automatske adrese (VPN)"
+
+#: libs/ui/ipv6widget.cpp:75
+msgctxt "@item:inlistbox IPv6 settings configuration method"
+msgid "Automatic (PPP)"
+msgstr "Automatski (PPP)"
+
+#: libs/ui/ipv6widget.cpp:77
+msgctxt "@item:inlistbox IPv6 settings configuration method"
+msgid "Automatic (PPP) addresses only"
+msgstr "Samo automatske adrese (PPP)"
+
+#: libs/ui/ipv6widget.cpp:81
+msgctxt "@item:inlistbox IPv6 settings configuration method"
+msgid "Automatic (PPPoE)"
+msgstr "Automatski (PPPoE)"
+
+#: libs/ui/ipv6widget.cpp:83
+msgctxt "@item:inlistbox IPv6 settings configuration method"
+msgid "Automatic (PPPoE) addresses only"
+msgstr "Samo automatske adrese (PPPoE)"
+
+#: libs/ui/ipv6widget.cpp:87
+msgctxt "@item:inlistbox IPv6 settings configuration method"
+msgid "Automatic (DHCP)"
+msgstr "Automatski (DHCP)"
+
+#: libs/ui/ipv6widget.cpp:89
+msgctxt "@item:inlistbox IPv6 settings configuration method"
+msgid "Automatic (DHCP) addresses only"
+msgstr "Samo automatske adrese (DHCP)"
+
+#: libs/ui/ipv4routeswidget.cpp:45
+#, fuzzy
+#| msgid "Service"
+msgctxt "Header text for IPv4 route metric"
+msgid "Metric"
+msgstr "Usluga"
+
+#: libs/ui/ipv6advancedwidget.cpp:39 libs/ui/ipv6routeswidget.cpp:39
+msgctxt "Header text for IPv6 address"
+msgid "Address"
+msgstr "Adresa"
+
+#: libs/ui/ipv6advancedwidget.cpp:41 libs/ui/ipv6routeswidget.cpp:41
+msgctxt "Header text for IPv6 netmask"
+msgid "Netmask"
+msgstr "Mrežna maska"
+
+#: libs/ui/ipv6advancedwidget.cpp:43 libs/ui/ipv6routeswidget.cpp:43
+#, fuzzy
+#| msgid "&Gateway:"
+msgctxt "Header text for IPv6 gateway"
+msgid "Gateway"
+msgstr "&Pristupna točka:"
+
+#: libs/ui/ipv6routeswidget.cpp:45
+#, fuzzy
+#| msgid "Service"
+msgctxt "Header text for IPv6 route metric"
+msgid "Metric"
+msgstr "Usluga"
+
+#: libs/ui/pppoepreferences.cpp:42 libs/ui/pppoepreferences.cpp:62
+msgid "New PPPoE Connection"
+msgstr "Nova PPPoE veza"
+
+#: settings/config/addeditdeletebuttonset.cpp:40
+msgid "Add..."
+msgstr "Dodaj…"
+
+#: settings/config/addeditdeletebuttonset.cpp:42
+msgid "Edit..."
+msgstr "Uredi…"
+
+#: settings/config/addeditdeletebuttonset.cpp:48
+msgid "Import"
+msgstr "Uvoz"
+
+#: settings/config/addeditdeletebuttonset.cpp:49
+msgid "Export"
+msgstr "Izvoz"
+
+#: settings/config/mobileconnectionwizard.cpp:51
+msgctxt "Mobile Connection Wizard"
+msgid "New Mobile Broadband Connection"
+msgstr "Nova mobilna širokopojasna veza"
+
+#: settings/config/mobileconnectionwizard.cpp:144
+#: settings/config/mobileconnectionwizard.cpp:160
+#: settings/config/mobileconnectionwizard.cpp:186
+#: settings/config/mobileconnectionwizard.cpp:516
+msgctxt "Mobile Connection Wizard"
+msgid "My plan is not listed..."
+msgstr ""
+
+#: settings/config/mobileconnectionwizard.cpp:149
+msgctxt "Mobile Connection Wizard"
+msgid "Unknown Provider"
+msgstr "Nepoznati pružatelj"
+
+#: settings/config/mobileconnectionwizard.cpp:156
+msgctxt "Mobile Connection Wizard"
+msgid "Default"
+msgstr "Uobičajeno"
+
+#: settings/config/mobileconnectionwizard.cpp:188
+#: settings/config/mobileconnectionwizard.cpp:196
+msgctxt "Mobile Connection Wizard"
+msgid "APN"
+msgstr "APN"
+
+#: settings/config/mobileconnectionwizard.cpp:241
+msgctxt "Mobile Connection Wizard"
+msgid "Set up a Mobile Broadband Connection"
+msgstr "Postavi mobilnu širokopojasnu vezu"
+
+#: settings/config/mobileconnectionwizard.cpp:244
+msgctxt "Mobile Connection Wizard"
+msgid ""
+"This assistant helps you easily set up a mobile broadband connection to a "
+"cellular (3G) network."
+msgstr ""
+
+#: settings/config/mobileconnectionwizard.cpp:248
+msgctxt "Mobile Connection Wizard"
+msgid "You will need the following information:"
+msgstr "Trebat će Vam sljedeće informacije:"
+
+#: settings/config/mobileconnectionwizard.cpp:252
+msgctxt "Mobile Connection Wizard"
+msgid "Your broadband provider's name"
+msgstr ""
+
+#: settings/config/mobileconnectionwizard.cpp:253
+msgctxt "Mobile Connection Wizard"
+msgid "Your broadband billing plan name"
+msgstr ""
+
+#: settings/config/mobileconnectionwizard.cpp:254
+msgctxt "Mobile Connection Wizard"
+msgid "(in some cases) Your broadband billing plan APN (Access Point Name)"
+msgstr ""
+
+#: settings/config/mobileconnectionwizard.cpp:258
+msgctxt "Mobile Connection Wizard"
+msgid "Create a connection for &this mobile broadband device:"
+msgstr ""
+
+#: settings/config/mobileconnectionwizard.cpp:262
+#: settings/config/mobileconnectionwizard.cpp:388
+msgctxt "Mobile Connection Wizard"
+msgid "Any device"
+msgstr "Bilo koji uređaj"
+
+#: settings/config/mobileconnectionwizard.cpp:311
+msgctxt "Mobile Connection Wizard"
+msgid "Installed GSM device"
+msgstr "Instalirani GSM uređaj"
+
+#: settings/config/mobileconnectionwizard.cpp:315
+msgctxt "Mobile Connection Wizard"
+msgid "Installed CDMA device"
+msgstr "Instalirani CDMA uređaj"
+
+#: settings/config/mobileconnectionwizard.cpp:401
+msgctxt "Mobile Connection Wizard"
+msgid "Choose your Provider's Country"
+msgstr "Izaberite državu svog pružatelja"
+
+#: settings/config/mobileconnectionwizard.cpp:404
+msgctxt "Mobile Connection Wizard"
+msgid "Country List:"
+msgstr "Lista država:"
+
+#: settings/config/mobileconnectionwizard.cpp:408
+msgctxt "Mobile Connection Wizard"
+msgid "My country is not listed"
+msgstr "Moja država nije navedena"
+
+#: settings/config/mobileconnectionwizard.cpp:424
+msgctxt "Mobile Connection Wizard"
+msgid "Choose your Provider"
+msgstr "Izaberite svog pružatelja"
+
+#: settings/config/mobileconnectionwizard.cpp:427
+msgctxt "Mobile Connection Wizard"
+msgid "Select your provider from a &list:"
+msgstr "Odaberite svog pružatelja iz &liste:"
+
+#: settings/config/mobileconnectionwizard.cpp:436
+msgctxt "Mobile Connection Wizard"
+msgid "I can't find my provider and I wish to enter it &manually:"
+msgstr ""
+
+#: settings/config/mobileconnectionwizard.cpp:478
+msgctxt "Mobile Connection Wizard"
+msgid "Choose your Billing Plan"
+msgstr "Odaberite plan naplate"
+
+#: settings/config/mobileconnectionwizard.cpp:481
+msgctxt "Mobile Connection Wizard"
+msgid "&Select your plan:"
+msgstr "Odaberite svoj plan:"
+
+#: settings/config/mobileconnectionwizard.cpp:488
+msgctxt "Mobile Connection Wizard"
+msgid "Selected plan &APN (Access Point Name):"
+msgstr ""
+
+#: settings/config/mobileconnectionwizard.cpp:500
+msgctxt "Mobile Connection Wizard"
+msgid ""
+"Warning: Selecting an incorrect plan may result in billing issues for your "
+"broadband account or may prevent connectivity.\n"
+"\n"
+"If you are unsure of your plan please ask your provider for your plan's APN."
+msgstr ""
+
+#: settings/config/mobileconnectionwizard.cpp:535
+msgctxt "Mobile Connection Wizard"
+msgid "Confirm Mobile Broadband Settings"
+msgstr "Potvrdite mobilne širokopojasne postavke"
+
+#: settings/config/mobileconnectionwizard.cpp:538
+msgctxt "Mobile Connection Wizard"
+msgid ""
+"Your mobile broadband connection is configured with the following settings:"
+msgstr ""
+
+#: settings/config/mobileconnectionwizard.cpp:542
+msgctxt "Mobile Connection Wizard"
+msgid "Your Provider:"
+msgstr "Vaš pružatelj:"
+
+#: settings/config/mobileconnectionwizard.cpp:547
+msgctxt "Mobile Connection Wizard"
+msgid "Your Plan:"
+msgstr "Vaš plan:"
+
+#: settings/config/manageconnectionwidget.cpp:101
+#, fuzzy
+#| msgid "Wired"
+msgctxt "Like in 'add wired connection'"
+msgid "Wired"
+msgstr "Žičana"
+
+#: settings/config/manageconnectionwidget.cpp:104
+#: settings/config/manageconnectionwidget.cpp:115
+#, fuzzy
+#| msgid "Shared"
+msgctxt "Like in 'add shared connection'"
+msgid "Shared"
+msgstr "Dijeljena"
+
+#: settings/config/manageconnectionwidget.cpp:112
+#, fuzzy
+#| msgid "Wireless"
+msgctxt "Like in 'add wireless connection'"
+msgid "Wireless"
+msgstr "Bežićna"
+
+#: settings/config/manageconnectionwidget.cpp:206
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last hour, as "
+"the number of minutes since usage"
+msgid "One minute ago"
+msgid_plural "%1 minutes ago"
+msgstr[0] "Prije %1 minute"
+msgstr[1] "Prije %1 minute"
+msgstr[2] "Prije %1 minuta"
+
+#: settings/config/manageconnectionwidget.cpp:213
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last day, as "
+"the number of hours since usage"
+msgid "One hour ago"
+msgid_plural "%1 hours ago"
+msgstr[0] "Prije %1 sata"
+msgstr[1] "Prije %1 sata"
+msgstr[2] "Prije %1 sati"
+
+#: settings/config/manageconnectionwidget.cpp:218
+msgctxt ""
+"Label for last used time for a network connection used the previous day"
+msgid "Yesterday"
+msgstr "Jučer"
+
+#: settings/config/manageconnectionwidget.cpp:224
+msgctxt ""
+"Label for last used time for a network connection that has never been used"
+msgid "Never"
+msgstr "Nikada"
+
+#: settings/config/manageconnectionwidget.cpp:461
+msgctxt "Tooltip for disabled tab when no VPN plugins are installed"
+msgid "No VPN plugins were found"
+msgstr "Nema pronađenih priključaka za VPN"
+
+#: settings/config/manageconnectionwidget.cpp:513
+msgctxt "File chooser dialog title for importing VPN"
+msgid "Import VPN connection settings"
+msgstr "Uvezi postavke VPN veze"
+
+#: settings/config/manageconnectionwidget.cpp:548
+msgid "Could not import VPN connection settings"
+msgstr "Ne mogu uvesti postavke VPN veze"
+
+#: settings/config/manageconnectionwidget.cpp:582
+msgctxt "File chooser dialog title for exporting VPN"
+msgid "Export VPN"
+msgstr "Izvezi VPN"
+
+#: settings/config/manageconnectionwidget.cpp:590
+msgid "VPN connection successfully exported"
+msgstr "VPN veza uspješno izvezena"
+
+#: settings/config/manageconnectionwidget.cpp:590
+msgid "Success"
+msgstr "Uspjeh"
+
+#: settings/config/manageconnectionwidget.cpp:590
+msgid "Do not show again"
+msgstr "Nemoj više prikazati"
+
+#: settings/config/manageconnectionwidget.cpp:592
+msgid "Could not export VPN connection settings"
+msgstr "Ne mogu izvesti postavke VPN veze"
+
+#: settings/config/manageconnectionwidget.cpp:683
+msgid ""
+"Connection edit option failed, make sure that NetworkManager is properly "
+"running."
+msgstr ""
+
+#: settings/config/manageconnectionwidget.cpp:760
+msgid "Connection create operation failed."
+msgstr "Neuspjeli pokušaj stvaranja veze."
+
+#: settings/config/manageconnectionwidget.cpp:830
+#, kde-format
+msgctxt "Warning message on attempting to delete a connection"
+msgid "Do you really want to delete the connection '%1'?"
+msgstr "Želite li zaista izbrisati vezu '%1'?"
+
+#: settings/config/manageconnectionwidget.cpp:831
+msgid "Confirm Delete"
+msgstr "Potvrda brisanja"
+
+#: settings/config/manageconnectionwidget.cpp:1005
+msgctxt "Text for connection list entry that is currently in used"
+msgid "Now"
+msgstr "Sada"
+
+#: settings/configshell/main.cpp:30
+msgid "Network Management"
+msgstr "Upravljanje mrežom"
+
+#: settings/configshell/main.cpp:32
+msgid "Create network connections standalone"
+msgstr "Neovisno stvori mrežne veze"
+
+#: settings/configshell/main.cpp:34
+msgid "(c) 2008 Will Stephenson"
+msgstr "© 2008 Will Stephenson"
+
+#: settings/configshell/main.cpp:36
+msgid "Will Stephenson"
+msgstr "Will Stephenson"
+
+#: settings/configshell/main.cpp:41
+#, fuzzy
+#| msgid "Connection &type:"
+msgid "Connection ID to edit"
+msgstr "&Tip veze:"
+
+#: settings/configshell/main.cpp:42
+#, fuzzy
+#| msgid "The name of the wireless network"
+msgid "Connect to a hidden wireless network"
+msgstr "Ime bežićne mreže"
+
+#: settings/configshell/main.cpp:43
+#, fuzzy
+#| msgid ""
+#| "Connection type to create, must be one of '802-3-ethernet', '802-11-"
+#| "wireless', 'pppoe', 'vpn', 'cellular'"
+msgid ""
+"Connection type to create, must be one of '802-3-ethernet', '802-11-"
+"wireless', 'pppoe', 'vpn', 'cellular', 'bluetooth'"
+msgstr ""
+"Tip veze za stvoriti, mora biti jedno od: '802-3-ethernet', '802-11-"
+"wireless', 'pppoe', 'vpn', 'cellular'"
+
+#: settings/configshell/main.cpp:44
+#, fuzzy
+#| msgid ""
+#| "Space-separated connection type-specific arguments, may be either 'gsm' "
+#| "or 'cdma' for cellular, or 'openvpn' or 'vpnc' for vpn connections, and "
+#| "interface and AP identifiers for wireless connections"
+msgid ""
+"Space-separated connection type-specific arguments, may be either 'gsm' or "
+"'cdma' for cellular connections,\n"
+"'openvpn' or 'vpnc' for vpn connections,\n"
+"interface and AP identifiers for wireless connections,\n"
+"bluetooth mac address and service ('dun' or 'nap') for bluetooth "
+"connections.\n"
+"\n"
+"You can also pass the serial device (i.e. 'rfcomm0') instead of service for "
+"dun bluetooth connections,\n"
+"in that case this program will block waiting for that device to be "
+"registered in ModemManager."
+msgstr ""
+"Argumenti specifični za vezu odvojeni razmacima. Mogu biti 'gsm' ili 'cdma' "
+"za mobilne veze, 'openvpn' ili 'vpnc' za VPN veze ili identifikatori sučelja "
+"i pristupne točke za bežićne mreže"
+
+#: settings/configshell/main.cpp:45
+msgid "Operation mode, may be either 'create' or 'edit'"
+msgstr "Način rada, može biti 'create' ili 'edit'"
+
+#: settings/configshell/main.cpp:99
+#, kde-format
+msgid "Expected two specific args, found %1: %2"
+msgstr ""
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Andrej Dundović, Marko Dimjašević"
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "andrej@dundovic.com.hr, marko@dimjasevic.net"
+
+#. i18n: file: settings/config/traysettings.ui:21
+#. i18n: ectx: property (text), widget (QLabel, interfaceNamingLabel)
+#. i18n: file: settings/config/othersettings.ui:66
+#. i18n: ectx: property (text), widget (QLabel, interfaceNamingLabel)
+#: rc.cpp:5 rc.cpp:119
+msgid "Show network interfaces using:"
+msgstr "Prikaži mrežna sučelja koja koriste:"
+
+#. i18n: file: settings/config/traysettings.ui:29
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
+#. i18n: file: settings/config/othersettings.ui:77
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
+#: rc.cpp:8 rc.cpp:122
+msgid "Descriptive Name"
+msgstr "Opisno ime"
+
+#. i18n: file: settings/config/traysettings.ui:34
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
+#. i18n: file: settings/config/othersettings.ui:82
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
+#: rc.cpp:11 rc.cpp:125
+msgid "System Name"
+msgstr "Ime u sustavu"
+
+#. i18n: file: settings/config/traysettings.ui:39
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
+#. i18n: file: settings/config/othersettings.ui:87
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
+#: rc.cpp:14 rc.cpp:128
+msgid "Vendor's Name"
+msgstr "Naziv isporučitelja"
+
+#. i18n: file: settings/config/traysettings.ui:44
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
+#. i18n: file: settings/config/othersettings.ui:92
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
+#: rc.cpp:17 rc.cpp:131
+msgid "Type Name"
+msgstr "Naziv vrste"
+
+#. i18n: file: settings/config/traysettings.ui:54
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Autostart)
+#: rc.cpp:20
+msgid "Show tray icon"
+msgstr "Prikaži ikonu u sustavskoj traci"
+
+#. i18n: file: settings/config/traysettings.ui:73
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:23
+msgid "Tray icons:"
+msgstr "Ikone sustavske trake:"
+
+#. i18n: file: settings/config/traysettings.ui:82
+#. i18n: ectx: property (toolTip), widget (QListWidget, iconInterfaceList)
+#: rc.cpp:26
+msgid "Arrange interface types between icons with drag and drop"
+msgstr "Poredaj tipove sučelja između ikona povlačenjem i ispuštanjem"
+
+#. i18n: file: settings/config/traysettings.ui:97
+#. i18n: ectx: property (toolTip), widget (QPushButton, pbAddIcon)
+#: rc.cpp:29
+msgid "Add another system tray icon"
+msgstr "Dodaj još jednu ikonu u sistemski blok"
+
+#. i18n: file: settings/config/traysettings.ui:100
+#. i18n: ectx: property (text), widget (QPushButton, pbAddIcon)
+#: rc.cpp:32
+msgid "&More Icons"
+msgstr "&Više ikona"
+
+#. i18n: file: settings/config/traysettings.ui:107
+#. i18n: ectx: property (toolTip), widget (QPushButton, pbRemoveIcon)
+#: rc.cpp:35
+msgid "Remove a system tray icon"
+msgstr "Ukloni ikonu iz sistemskog bloka"
+
+#. i18n: file: settings/config/traysettings.ui:110
+#. i18n: ectx: property (text), widget (QPushButton, pbRemoveIcon)
+#: rc.cpp:38
+msgid "&Fewer Icons"
+msgstr "&Manje ikona"
+
+#. i18n: file: settings/config/manageconnectionwidget.ui:21
+#. i18n: ectx: attribute (title), widget (QWidget, tabWired)
+#: rc.cpp:41
+msgid "Wired"
+msgstr "Žičana"
+
+#. i18n: file: settings/config/manageconnectionwidget.ui:43
+#. i18n: ectx: property (text), widget (QTreeWidget, listWired)
+#. i18n: file: settings/config/manageconnectionwidget.ui:84
+#. i18n: ectx: property (text), widget (QTreeWidget, listWireless)
+#. i18n: file: settings/config/manageconnectionwidget.ui:122
+#. i18n: ectx: property (text), widget (QTreeWidget, listCellular)
+#. i18n: file: settings/config/manageconnectionwidget.ui:160
+#. i18n: ectx: property (text), widget (QTreeWidget, listVpn)
+#. i18n: file: settings/config/manageconnectionwidget.ui:198
+#. i18n: ectx: property (text), widget (QTreeWidget, listPppoe)
+#: rc.cpp:44 rc.cpp:56 rc.cpp:68 rc.cpp:80 rc.cpp:92
+msgid "Connection"
+msgstr "Veza"
+
+#. i18n: file: settings/config/manageconnectionwidget.ui:48
+#. i18n: ectx: property (text), widget (QTreeWidget, listWired)
+#. i18n: file: settings/config/manageconnectionwidget.ui:89
+#. i18n: ectx: property (text), widget (QTreeWidget, listWireless)
+#. i18n: file: settings/config/manageconnectionwidget.ui:127
+#. i18n: ectx: property (text), widget (QTreeWidget, listCellular)
+#. i18n: file: settings/config/manageconnectionwidget.ui:165
+#. i18n: ectx: property (text), widget (QTreeWidget, listVpn)
+#. i18n: file: settings/config/manageconnectionwidget.ui:203
+#. i18n: ectx: property (text), widget (QTreeWidget, listPppoe)
+#: rc.cpp:47 rc.cpp:59 rc.cpp:71 rc.cpp:83 rc.cpp:95
+#, fuzzy
+#| msgid "Store"
+msgid "Scope"
+msgstr "Spremi"
+
+#. i18n: file: settings/config/manageconnectionwidget.ui:53
+#. i18n: ectx: property (text), widget (QTreeWidget, listWired)
+#. i18n: file: settings/config/manageconnectionwidget.ui:94
+#. i18n: ectx: property (text), widget (QTreeWidget, listWireless)
+#. i18n: file: settings/config/manageconnectionwidget.ui:132
+#. i18n: ectx: property (text), widget (QTreeWidget, listCellular)
+#. i18n: file: settings/config/manageconnectionwidget.ui:170
+#. i18n: ectx: property (text), widget (QTreeWidget, listVpn)
+#. i18n: file: settings/config/manageconnectionwidget.ui:208
+#. i18n: ectx: property (text), widget (QTreeWidget, listPppoe)
+#: rc.cpp:50 rc.cpp:62 rc.cpp:74 rc.cpp:86 rc.cpp:98
+msgid "Last Used"
+msgstr "Zadnji put korištena"
+
+#. i18n: file: settings/config/manageconnectionwidget.ui:65
+#. i18n: ectx: attribute (title), widget (QWidget, tabWireless)
+#. i18n: file: libs/ui/802-11-wireless.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, Wireless80211Config)
+#: rc.cpp:53 rc.cpp:973
+msgid "Wireless"
+msgstr "Bežićna"
+
+#. i18n: file: settings/config/manageconnectionwidget.ui:106
+#. i18n: ectx: attribute (title), widget (QWidget, tabCellular)
+#. i18n: file: libs/ui/cdma.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, Cdma)
+#. i18n: file: libs/ui/gsm.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, Gsm)
+#: rc.cpp:65 rc.cpp:622 rc.cpp:1168
+msgid "Mobile Broadband"
+msgstr "Mobilna širokopojasna"
+
+#. i18n: file: settings/config/manageconnectionwidget.ui:144
+#. i18n: ectx: attribute (title), widget (QWidget, tabVpn)
+#: rc.cpp:77
+msgid "VPN"
+msgstr "VPN"
+
+#. i18n: file: settings/config/manageconnectionwidget.ui:182
+#. i18n: ectx: attribute (title), widget (QWidget, tabPppoe)
+#. i18n: file: libs/ui/pppoe.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, Pppoe)
+#: rc.cpp:89 rc.cpp:715
+msgid "DSL"
+msgstr "DSL"
+
+#. i18n: file: settings/config/othersettings.ui:17
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:101
+msgid "<b>Connection Secrets</b>"
+msgstr "<b>Tajne u vezi</b>"
+
+#. i18n: file: settings/config/othersettings.ui:24
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:104
+msgid "&Store connection secrets: "
+msgstr "&Spremi tajne od veze: "
+
+#. i18n: file: settings/config/othersettings.ui:41
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SecretStorageMode)
+#: rc.cpp:107
+msgid "Do not store (always prompt)"
+msgstr "Nemoj spremiti (uvijek pitaj)"
+
+#. i18n: file: settings/config/othersettings.ui:46
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SecretStorageMode)
+#: rc.cpp:110
+msgid "In file (unencrypted)"
+msgstr "U datoteku (nekriptirano)"
+
+#. i18n: file: settings/config/othersettings.ui:51
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SecretStorageMode)
+#: rc.cpp:113
+msgid "In secure storage (encrypted)"
+msgstr "U sigurno spremište (kriptirano)"
+
+#. i18n: file: settings/config/othersettings.ui:59
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:116
+msgid "<b>Display</b>"
+msgstr "<b>Prikaz</b>"
+
+#. i18n: file: settings/config/othersettings.ui:100
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:134
+msgid "<b>Events</b>"
+msgstr "<b>Događaji</b>"
+
+#. i18n: file: settings/config/othersettings.ui:107
+#. i18n: ectx: property (text), widget (QPushButton, notificationsButton)
+#: rc.cpp:137
+#, fuzzy
+#| msgid "Configure notifications..."
+msgid "Configure Notifications..."
+msgstr "Konfiguriraj obavijesti…"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnadvancedprop.ui:17
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: rc.cpp:140
+#, fuzzy
+#| msgid "Group"
+msgid "&DH Group"
+msgstr "Grupni"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnadvancedprop.ui:23
+#. i18n: ectx: property (text), widget (QRadioButton, rbDh1)
+#: rc.cpp:143
+msgid "768 bits (DH&1)"
+msgstr "768 bitni (DH&1)"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnadvancedprop.ui:33
+#. i18n: ectx: property (text), widget (QRadioButton, rbDh2)
+#: rc.cpp:146
+msgid "1024 bits (DH&2)"
+msgstr ""
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnadvancedprop.ui:43
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: rc.cpp:149
+#, fuzzy
+#| msgid "Group"
+msgid "&PFS Group"
+msgstr "Grupni"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnadvancedprop.ui:49
+#. i18n: ectx: property (text), widget (QRadioButton, rbPfOff)
+#: rc.cpp:152
+msgid "&Off"
+msgstr ""
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnadvancedprop.ui:59
+#. i18n: ectx: property (text), widget (QRadioButton, rbPf1)
+#: rc.cpp:155
+msgid "&768 bits (PF1)"
+msgstr "&768 bitni (PF1)"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnadvancedprop.ui:66
+#. i18n: ectx: property (text), widget (QRadioButton, rbPf2)
+#: rc.cpp:158
+msgid "102&4 bits (PF2)"
+msgstr "102&4 bitni (PF2)"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnadvancedprop.ui:76
+#. i18n: ectx: property (text), widget (QCheckBox, cbDisableSplit)
+#: rc.cpp:161
+msgid "Disable &split tunnel"
+msgstr ""
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, NovellVpnWidget)
+#: rc.cpp:164
+msgid "Novell VPN"
+msgstr "Novellov VPN"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:20
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: file: vpnplugins/pptp/pptpprop.ui:26
+#. i18n: ectx: property (title), widget (QGroupBox, grp_general)
+#: rc.cpp:167 rc.cpp:422
+msgid "General"
+msgstr ""
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:26
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:32
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#. i18n: file: vpnplugins/pptp/pptpprop.ui:34
+#. i18n: ectx: property (text), widget (QLabel, lbl_gateway)
+#. i18n: file: libs/ui/ipv4.ui:197
+#. i18n: ectx: property (text), widget (QLabel, gatewayLabel)
+#. i18n: file: libs/ui/ipv6.ui:197
+#. i18n: ectx: property (text), widget (QLabel, gatewayLabel)
+#: rc.cpp:170 rc.cpp:230 rc.cpp:425 rc.cpp:1123 rc.cpp:1267
+msgid "&Gateway:"
+msgstr "&Pristupna točka:"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:39
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:173
+#, fuzzy
+#| msgid "&Gateway:"
+msgid "Gate&way Type:"
+msgstr "&Pristupna točka:"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:50
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbGwType)
+#: rc.cpp:176
+#, fuzzy
+#| msgid "None"
+msgid "Nortel"
+msgstr "Nema"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:55
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbGwType)
+#: rc.cpp:179
+#, fuzzy
+#| msgid "&Gateway:"
+msgid "Standard Gateway"
+msgstr "&Pristupna točka:"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:66
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:17
+#. i18n: ectx: property (title), widget (QGroupBox, grp_authenfication)
+#. i18n: file: libs/ui/ppp.ui:26
+#. i18n: ectx: property (text), widget (QCheckBox, auth)
+#: rc.cpp:182 rc.cpp:359 rc.cpp:670
+msgid "Authentication"
+msgstr "Autentifikacija"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:72
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: file: libs/ui/bluetooth.ui:43
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: file: libs/ui/gsm.ui:137
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:185 rc.cpp:1066 rc.cpp:1195
+msgid "&Type:"
+msgstr "&Tip:"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:83
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbAuthType)
+#: rc.cpp:188
+msgid "XAUTH"
+msgstr "XAUTH"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:88
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbAuthType)
+#: rc.cpp:191
+msgid "X.509"
+msgstr "X.509"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:103
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:73
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:175
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: file: libs/ui/cdma.ui:38
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: file: libs/ui/pppoe.ui:36
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: file: libs/ui/security/eapmethodsimplebase.ui:17
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: file: libs/ui/security/leap.ui:17
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: file: libs/ui/security/eapmethodleapbase.ui:22
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#. i18n: file: libs/ui/gsm.ui:50
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: rc.cpp:194 rc.cpp:478 rc.cpp:577 rc.cpp:628 rc.cpp:721 rc.cpp:751
+#: rc.cpp:760 rc.cpp:823 rc.cpp:1180
+msgid "&Username:"
+msgstr "&Korisničko ime:"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:116
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:197
+#, fuzzy
+#| msgid "Username:"
+msgid "&Group Name:"
+msgstr "Korisničko ime:"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:129
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: rc.cpp:200
+msgid "U&ser Password:"
+msgstr "Kori&snička zaporka:"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:146
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: rc.cpp:203
+msgid "G&roup Password:"
+msgstr "Zaporka g&rupe:"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:167
+#. i18n: ectx: property (text), widget (QLabel, label_13)
+#: rc.cpp:206
+#, fuzzy
+#| msgid "&Certificate:"
+msgid "Certificate &file:"
+msgstr "&Certifikat:"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:180
+#. i18n: ectx: property (text), widget (QLabel, label_14)
+#: rc.cpp:209
+#, fuzzy
+#| msgid "Password:"
+msgid "Certificate &password:"
+msgstr "Lozinka:"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:201
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPasswords)
+#: rc.cpp:212
+msgid "Show Passwords"
+msgstr "Prikaži zaporke"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:208
+#. i18n: ectx: property (text), widget (KPushButton, btnAdvanced)
+#: rc.cpp:215
+#, fuzzy
+#| msgid "Advanced"
+msgid "Ad&vanced..."
+msgstr "Napredno"
+
+#. i18n: file: vpnplugins/openvpn/openvpnauth.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenVPNAuthenticationWidget)
+#: rc.cpp:218
+msgid "OpenVPNAuthentication"
+msgstr "OpenVPNPrijava"
+
+#. i18n: file: vpnplugins/openvpn/openvpnauth.ui:23
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:299
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:221 rc.cpp:275
+msgid "Password:"
+msgstr "Zaporka:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenVPNProp)
+#: rc.cpp:224
+msgid "OpenVPN"
+msgstr "OpenVPN"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:24
+#. i18n: ectx: attribute (title), widget (QWidget, TabPage)
+#: rc.cpp:227
+msgid "Required Settings"
+msgstr "Potrebne postavke"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:51
+#. i18n: ectx: property (text), widget (QLabel, labelConnectionType)
+#: rc.cpp:233
+msgid "Connection &type:"
+msgstr "&Tip veze:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:68
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
+#: rc.cpp:236
+msgid "X.509 Certificates"
+msgstr "X.509 Certifikati"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:73
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
+#: rc.cpp:239
+msgid "Pre-shared Key"
+msgstr "Prvopodijeljeni ključ"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:78
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:356
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:102
+#. i18n: ectx: label, entry (password), group (802-1x)
+#. i18n: file: libs/internals/schemas/cdma.kcfg:17
+#. i18n: ectx: label, entry (password), group (cdma)
+#. i18n: file: libs/internals/schemas/gsm.kcfg:18
+#. i18n: ectx: label, entry (password), group (gsm)
+#. i18n: file: libs/internals/schemas/pppoe.kcfg:17
+#. i18n: ectx: label, entry (password), group (pppoe)
+#: rc.cpp:242 rc.cpp:281 rc.cpp:1433 rc.cpp:1496 rc.cpp:1535 rc.cpp:1616
+msgid "Password"
+msgstr "Zaporka"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:83
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
+#: rc.cpp:245
+msgid "X.509 With Password"
+msgstr "X.509 sa zaporkom"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:102
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: rc.cpp:248
+msgid "C&A file:"
+msgstr "C&A datoteka:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:118
+#. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
+#: rc.cpp:251
+msgid "&Certificate:"
+msgstr "&Certifikat:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:134
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:639
+#. i18n: ectx: property (text), widget (QLabel, textLabel4_3)
+#. i18n: file: libs/ui/security/wep.ui:118
+#. i18n: ectx: property (text), widget (QLabel, keyLabel)
+#: rc.cpp:254 rc.cpp:344 rc.cpp:802
+msgid "&Key:"
+msgstr "&Ključ:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:150
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: rc.cpp:257
+#, fuzzy
+#| msgid "Password:"
+msgid "Key password:"
+msgstr "Zaporka:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:188
+#. i18n: ectx: property (text), widget (QLabel, textLabel5)
+#. i18n: file: libs/ui/security/wep.ui:110
+#. i18n: ectx: property (text), item, widget (KComboBox, authalg)
+#: rc.cpp:260 rc.cpp:799
+msgid "Shared Key"
+msgstr "Dijeljeni ključ"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:204
+#. i18n: ectx: property (text), widget (QLabel, textLabel6)
+#: rc.cpp:263
+msgid "Local IP"
+msgstr "Lokalni IP"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:220
+#. i18n: ectx: property (text), widget (QLabel, textLabel7)
+#: rc.cpp:266
+msgid "Remote IP"
+msgstr "Udaljeni IP"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:261
+#. i18n: ectx: property (text), widget (QLabel, textLabel8)
+#: rc.cpp:269
+msgid "CA file:"
+msgstr "CA datoteka:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:280
+#. i18n: ectx: property (text), widget (QLabel, textLabel9)
+#: rc.cpp:272
+msgid "Username:"
+msgstr "Korisničko ime:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:340
+#. i18n: ectx: property (text), widget (QLabel, textLabel9_2)
+#. i18n: file: libs/internals/schemas/cdma.kcfg:13
+#. i18n: ectx: label, entry (username), group (cdma)
+#. i18n: file: libs/internals/schemas/gsm.kcfg:14
+#. i18n: ectx: label, entry (username), group (gsm)
+#. i18n: file: libs/internals/schemas/pppoe.kcfg:13
+#. i18n: ectx: label, entry (username), group (pppoe)
+#. i18n: file: libs/internals/schemas/vpn.kcfg:17
+#. i18n: ectx: label, entry (UserName), group (vpn)
+#: rc.cpp:278 rc.cpp:1493 rc.cpp:1532 rc.cpp:1613 rc.cpp:1640
+msgid "Username"
+msgstr "Korisničko ime"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:373
+#. i18n: ectx: property (text), widget (QLabel, textLabel3_2_2)
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:49
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:284 rc.cpp:468
+msgid "Certificate"
+msgstr "Certifikat"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:386
+#. i18n: ectx: property (text), widget (QLabel, textLabel2_2)
+#: rc.cpp:287
+msgid "CA file"
+msgstr "CA datoteka"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:405
+#. i18n: ectx: property (text), widget (QLabel, textLabel4_2)
+#: rc.cpp:290
+msgid "Key"
+msgstr "Ključ"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:421
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: rc.cpp:293
+#, fuzzy
+#| msgid "&Hide passwords"
+msgid "Key password"
+msgstr "Sakri&j zaporke"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:458
+#. i18n: ectx: attribute (title), widget (QWidget, TabPage2)
+#: rc.cpp:296
+msgid "Optional Settings"
+msgstr "Neobavezne postavke"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:466
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:299
+msgid "Gateway &Port:"
+msgstr "&Port pristupne točke:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:476
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, sbCustomPort)
+#. i18n: file: libs/ui/security/eapmethodpeapbase.ui:49
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPeapVersion)
+#. i18n: file: libs/ui/wired.ui:73
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, mtu)
+#. i18n: file: libs/ui/802-11-wireless.ui:233
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, mtu)
+#: rc.cpp:302 rc.cpp:841 rc.cpp:940 rc.cpp:1057
+msgid "Automatic"
+msgstr "Automatski"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:488
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseLZO)
+#: rc.cpp:305
+msgid "Use LZO compression"
+msgstr "Koristi LZO sabijanje"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:495
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseTCP)
+#: rc.cpp:308
+msgid "Use TCP connection"
+msgstr "Koristi TCP vezu"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:502
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseTAP)
+#: rc.cpp:311
+msgid "Use TAP device"
+msgstr "Koristi TAP uređaj"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:523
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: rc.cpp:314
+msgid "Optional &Security"
+msgstr "Neobavezna &Sigurnost"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:531
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:317
+msgid "&Cipher:"
+msgstr "Š&ifrator:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:551
+#. i18n: ectx: property (text), item, widget (KComboBox, cboCipher)
+#: rc.cpp:320
+msgid "Obtaining available ciphers..."
+msgstr "Dohvaćam dostupne šifratore …"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:563
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:323
+msgid "&HMAC Authentication:"
+msgstr "&HMAC Prijava:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:580
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: rc.cpp:326
+msgid "Default"
+msgstr "Uobičajeno"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:585
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:673
+#. i18n: ectx: property (text), item, widget (KComboBox, cboDirection)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:222
+#. i18n: ectx: property (text), item, widget (QComboBox, cboEncryptionMethod)
+#: rc.cpp:329 rc.cpp:350 rc.cpp:592
+msgid "None"
+msgstr "Nema"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:590
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: rc.cpp:332
+msgid "MD-5"
+msgstr "MD-5"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:595
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: rc.cpp:335
+msgid "SHA-1"
+msgstr "SHA-1"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:619
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: rc.cpp:338
+msgid "Optional TLS Settings"
+msgstr "Neobavezne TLS Postavke"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:625
+#. i18n: ectx: property (title), widget (QGroupBox, useExtraTlsAuth)
+#: rc.cpp:341
+msgid "Use additional TLS authentication"
+msgstr "Koristi dodatnu TLS prijavu"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:659
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: rc.cpp:347
+msgid "Key Direction:"
+msgstr "Smjer ključa:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:678
+#. i18n: ectx: property (text), item, widget (KComboBox, cboDirection)
+#: rc.cpp:353
+msgid "Server (0)"
+msgstr ""
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:683
+#. i18n: ectx: property (text), item, widget (KComboBox, cboDirection)
+#: rc.cpp:356
+#, fuzzy
+#| msgid "Client Cert"
+msgid "Client (1)"
+msgstr "Klijentski certifikat"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:25
+#. i18n: ectx: property (text), widget (QLabel, lbl_auth)
+#: rc.cpp:362
+msgid "Allow following &authentication methods:"
+msgstr ""
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:36
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#. i18n: file: libs/ui/ppp.ui:42
+#. i18n: ectx: property (text), widget (QCheckBox, pap)
+#: rc.cpp:365 rc.cpp:673
+msgid "PAP"
+msgstr "PAP"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:44
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#. i18n: file: libs/ui/ppp.ui:52
+#. i18n: ectx: property (text), widget (QCheckBox, chap)
+#: rc.cpp:368 rc.cpp:676
+msgid "CHAP"
+msgstr "CHAP"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:52
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#. i18n: file: libs/ui/ppp.ui:72
+#. i18n: ectx: property (text), widget (QCheckBox, mschap)
+#: rc.cpp:371 rc.cpp:682
+msgid "MSCHAP"
+msgstr "MSCHAP"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:60
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#. i18n: file: libs/ui/ppp.ui:62
+#. i18n: ectx: property (text), widget (QCheckBox, mschapv2)
+#: rc.cpp:374 rc.cpp:679
+msgid "MSCHAPv2"
+msgstr "MSCHAPv2"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:68
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:153
+#. i18n: ectx: property (text), item, widget (QComboBox, leMethod)
+#. i18n: file: libs/ui/ppp.ui:82
+#. i18n: ectx: property (text), widget (QCheckBox, eap)
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:9
+#. i18n: ectx: label, entry (eap), group (802-1x)
+#: rc.cpp:377 rc.cpp:499 rc.cpp:685 rc.cpp:1385
+msgid "EAP"
+msgstr "EAP"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:84
+#. i18n: ectx: property (toolTip), widget (QGroupBox, gb_MPPE)
+#: rc.cpp:380
+#, fuzzy
+#| msgid "Point-to-Point Encryption (MPPE)"
+msgid "Use Microsoft Point-to-Point Encryption"
+msgstr "Enkripcija iz točke u točku (MPPE) "
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:87
+#. i18n: ectx: property (title), widget (QGroupBox, gb_MPPE)
+#: rc.cpp:383
+#, fuzzy
+#| msgid "Use TCP connection"
+msgid "Use &MPPE Encryption"
+msgstr "Koristi TCP vezu"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:109
+#. i18n: ectx: property (text), widget (QLabel, lbl_MMPEcrypto)
+#: rc.cpp:386
+msgid "&Crypto:"
+msgstr "&Krpitiranje:"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:120
+#. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
+#. i18n: file: libs/ui/wired.ui:40
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMacAddress)
+#. i18n: file: libs/ui/802-11-wireless.ui:206
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMacAddress)
+#. i18n: file: libs/ui/gsm.ui:151
+#. i18n: ectx: property (text), item, widget (KComboBox, type)
+#: rc.cpp:389 rc.cpp:925 rc.cpp:1045 rc.cpp:1198
+msgid "Any"
+msgstr "Bilo koji"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:125
+#. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
+#: rc.cpp:392
+msgid "128 bit"
+msgstr "128 bitni"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:130
+#. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
+#: rc.cpp:395
+msgid "40 bit"
+msgstr "40 bitni"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:144
+#. i18n: ectx: property (text), widget (QCheckBox, cb_statefulEncryption)
+#: rc.cpp:398
+msgid "Use &stateful encryption"
+msgstr ""
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:156
+#. i18n: ectx: property (title), widget (QGroupBox, grp_cryptoAndCompression)
+#. i18n: file: libs/ui/ppp.ui:101
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:401 rc.cpp:688
+msgid "Compression"
+msgstr "Sabijanje"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:164
+#. i18n: ectx: property (text), widget (QCheckBox, cb_BSD)
+#: rc.cpp:404
+#, fuzzy
+#| msgid "Use LZO compression"
+msgid "Allow &BSD compression"
+msgstr "Koristi LZO sabijanje"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:174
+#. i18n: ectx: property (text), widget (QCheckBox, cb_deflate)
+#: rc.cpp:407
+#, fuzzy
+#| msgid "Allow Deflate compression"
+msgid "Allow &Deflate compression"
+msgstr "Dozvoli Deflate sabijanje"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:184
+#. i18n: ectx: property (text), widget (QCheckBox, cb_TCPheaders)
+#: rc.cpp:410
+#, fuzzy
+#| msgid "Use LZO compression"
+msgid "Allow &TCP header compression"
+msgstr "Koristi LZO sabijanje"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:199
+#. i18n: ectx: property (title), widget (QGroupBox, grp_echo)
+#. i18n: file: libs/ui/ppp.ui:187
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:413 rc.cpp:709
+msgid "Echo"
+msgstr "Echo"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:205
+#. i18n: ectx: property (text), widget (QCheckBox, cb_sendEcho)
+#: rc.cpp:416
+#, fuzzy
+#| msgid "Send PPP echo packets"
+msgid "Send PPP &echo packets "
+msgstr "Šalji PPP pakete odjeka"
+
+#. i18n: file: vpnplugins/pptp/pptpprop.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, PptpProp)
+#: rc.cpp:419
+msgid "PPTP Settings"
+msgstr "Postavke PPTP-a"
+
+#. i18n: file: vpnplugins/pptp/pptpprop.ui:52
+#. i18n: ectx: property (title), widget (QGroupBox, grp_additional)
+#: rc.cpp:428
+msgid "Additional"
+msgstr "Dodatni"
+
+#. i18n: file: vpnplugins/pptp/pptpprop.ui:74
+#. i18n: ectx: property (text), widget (QLabel, lbl_login)
+#: rc.cpp:431
+msgid "&Login:"
+msgstr "&Prijava:"
+
+#. i18n: file: vpnplugins/pptp/pptpprop.ui:103
+#. i18n: ectx: property (text), widget (QLabel, lbl_password)
+#. i18n: file: libs/ui/cdma.ui:54
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: file: libs/ui/pppoe.ui:56
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: file: libs/ui/security/eapmethodsimplebase.ui:33
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: file: libs/ui/security/leap.ui:33
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: file: libs/ui/security/wpapsk.ui:19
+#. i18n: ectx: property (text), widget (QLabel, label_14)
+#. i18n: file: libs/ui/security/eapmethodleapbase.ui:42
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#. i18n: file: libs/ui/gsm.ui:66
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: rc.cpp:434 rc.cpp:631 rc.cpp:724 rc.cpp:754 rc.cpp:763 rc.cpp:817
+#: rc.cpp:829 rc.cpp:1183
+msgid "&Password:"
+msgstr "Za&porka:"
+
+#. i18n: file: vpnplugins/pptp/pptpprop.ui:122
+#. i18n: ectx: property (text), widget (QCheckBox, cb_showPassword)
+#. i18n: file: libs/ui/cdma.ui:79
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#. i18n: file: libs/ui/pppoe.ui:72
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#. i18n: file: libs/ui/security/leap.ui:53
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#. i18n: file: libs/ui/security/wep.ui:160
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#. i18n: file: libs/ui/security/wpapsk.ui:39
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#: rc.cpp:437 rc.cpp:634 rc.cpp:727 rc.cpp:766 rc.cpp:808 rc.cpp:820
+msgid "&Show password"
+msgstr "Pri&kaži zaporku"
+
+#. i18n: file: vpnplugins/pptp/pptpprop.ui:143
+#. i18n: ectx: property (text), widget (QLabel, lbl_ntdomain)
+#: rc.cpp:440
+msgid "&NT Domain:"
+msgstr "&NT domena:"
+
+#. i18n: file: vpnplugins/pptp/pptpprop.ui:186
+#. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
+#: rc.cpp:443
+msgid "Advanced"
+msgstr "Napredno"
+
+#. i18n: file: vpnplugins/strongswan/strongswanauth.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanAuth)
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanProp)
+#: rc.cpp:446 rc.cpp:455
+msgid "Strong Swan VPN"
+msgstr "Strong Swan VPN"
+
+#. i18n: file: vpnplugins/strongswan/strongswanauth.ui:36
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:86
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:65
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:449 rc.cpp:481 rc.cpp:543
+msgid "User &Password"
+msgstr "Korisnička za&porka"
+
+#. i18n: file: vpnplugins/strongswan/strongswanauth.ui:46
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:129
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPasswords)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:151
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPasswords)
+#: rc.cpp:452 rc.cpp:493 rc.cpp:567
+msgid "&Hide passwords"
+msgstr "Sakri&j zaporke"
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:26
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:458
+#, fuzzy
+#| msgid ""
+#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#| "REC-html40/strict.dtd\">\n"
+#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#| "css\">\n"
+#| "p, li { white-space: pre-wrap; }\n"
+#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:10pt; "
+#| "font-weight:400; font-style:normal;\">\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#| "weight:600;\">General</span></p></body></html>"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:8pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:10pt; font-weight:600;\">Gateway</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:10pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Opće</span></p></body></html>"
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:33
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:33
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: rc.cpp:465 rc.cpp:537
+#, fuzzy
+#| msgid "&Gateway:"
+msgid "Gateway:"
+msgstr "&Pristupna točka:"
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:63
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:471
+#, fuzzy
+#| msgid ""
+#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#| "REC-html40/strict.dtd\">\n"
+#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#| "css\">\n"
+#| "p, li { white-space: pre-wrap; }\n"
+#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:10pt; "
+#| "font-weight:400; font-style:normal;\">\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#| "weight:600;\">Optional</span></p></body></html>"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:8pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:10pt; font-weight:600;\">Authentication</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:10pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Neobavezno</span></p></body></html>"
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:109
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:88
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:131
+#. i18n: ectx: property (text), item, widget (QComboBox, cboGroupPassOptions)
+#: rc.cpp:484 rc.cpp:546 rc.cpp:558
+msgid "Always Ask"
+msgstr "Uvijek pitaj"
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:114
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:93
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:136
+#. i18n: ectx: property (text), item, widget (QComboBox, cboGroupPassOptions)
+#: rc.cpp:487 rc.cpp:549 rc.cpp:561
+msgid "Store"
+msgstr "Spremi"
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:119
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:98
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:141
+#. i18n: ectx: property (text), item, widget (QComboBox, cboGroupPassOptions)
+#: rc.cpp:490 rc.cpp:552 rc.cpp:564
+msgid "Not Required"
+msgstr "Nije potrebna"
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:139
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: rc.cpp:496
+#, fuzzy
+#| msgid "Method"
+msgid "&Method:"
+msgstr "Način"
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:172
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: rc.cpp:502
+#, fuzzy
+#| msgid ""
+#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#| "REC-html40/strict.dtd\">\n"
+#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#| "css\">\n"
+#| "p, li { white-space: pre-wrap; }\n"
+#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:10pt; "
+#| "font-weight:400; font-style:normal;\">\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#| "weight:600;\">Optional</span></p></body></html>"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:8pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:10pt; font-weight:600;\">Options</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:10pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Neobavezno</span></p></body></html>"
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:182
+#. i18n: ectx: property (text), widget (QCheckBox, innerIP)
+#: rc.cpp:509
+#, fuzzy
+#| msgctxt "@info:tooltip"
+#| msgid "IPv4 network address"
+msgid "Request an inner IP address"
+msgstr "IPv4 mrežna adresa"
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:195
+#. i18n: ectx: property (text), widget (QCheckBox, udpEncap)
+#: rc.cpp:512
+msgid "Enforce UDP encapsulation"
+msgstr ""
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:202
+#. i18n: ectx: property (text), widget (QCheckBox, ipComp)
+#: rc.cpp:515
+#, fuzzy
+#| msgid "Use LZO compression"
+msgid "Use IP compression"
+msgstr "Koristi LZO sabijanje"
+
+#. i18n: file: vpnplugins/vpnc/vpncauth.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, VpncAuth)
+#: rc.cpp:518
+#, fuzzy
+#| msgid "OpenVPNAuthentication"
+msgid "VPNCAuthentication"
+msgstr "OpenVPNPrijava"
+
+#. i18n: file: vpnplugins/vpnc/vpncauth.ui:23
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: rc.cpp:521
+#, fuzzy
+#| msgid "User &Password"
+msgid "User Password"
+msgstr "Korisnička za&porka"
+
+#. i18n: file: vpnplugins/vpnc/vpncauth.ui:36
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: rc.cpp:524
+msgid "Group Password"
+msgstr "Zaporka grupe"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, VpncProp)
+#: rc.cpp:527
+msgid "Cisco VPN"
+msgstr "Cisco VPN"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:26
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:530
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:10pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">General</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:10pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Opće</span></p></body></html>"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:49
+#. i18n: ectx: property (text), widget (QLabel, labelGroup)
+#: rc.cpp:540
+#, fuzzy
+#| msgid "Username:"
+msgid "Group name:"
+msgstr "Korisničko ime:"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:108
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:555
+msgid "&Group Password:"
+msgstr "Zaporka &grupe:"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:165
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:570
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:10pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Optional</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:10pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Neobavezno</span></p></body></html>"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:188
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: rc.cpp:580
+msgid "&Domain:"
+msgstr "&Domena:"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:201
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: rc.cpp:583
+msgid "&Encryption Method:"
+msgstr "Metoda &enkripcije:"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:212
+#. i18n: ectx: property (text), item, widget (QComboBox, cboEncryptionMethod)
+#: rc.cpp:586
+msgid "Secure"
+msgstr "Sigurna"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:217
+#. i18n: ectx: property (text), item, widget (QComboBox, cboEncryptionMethod)
+#: rc.cpp:589
+msgid "Weak"
+msgstr "Slaba"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:230
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: rc.cpp:595
+msgid "&NAT Traversal:"
+msgstr "&NAT Unakrsno (Traversal):"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:241
+#. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
+#: rc.cpp:598
+msgid "Cisco UDP"
+msgstr "Cisco UDP"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:246
+#. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
+#: rc.cpp:601
+msgid "NAT-T"
+msgstr "NAT-T"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:251
+#. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
+#. i18n: file: libs/ui/ipv4.ui:137
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#. i18n: file: libs/ui/ipv6.ui:137
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: rc.cpp:604 rc.cpp:1108 rc.cpp:1252
+msgid "Disabled"
+msgstr "Onemogućeno"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:259
+#. i18n: ectx: property (text), widget (QCheckBox, chkDeadPeerDetection)
+#: rc.cpp:607
+msgid "Enable Dead &Peer Detection"
+msgstr "Omogući otkrivanje mrtvog sugovornika"
+
+#. i18n: file: libs/ui/ipv4advanced.ui:20
+#. i18n: ectx: property (windowTitle), widget (QWidget, AdvancedSettingsIp4Config)
+#. i18n: file: libs/ui/ipv4routes.ui:20
+#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp4Config)
+#. i18n: file: libs/ui/ipv6advanced.ui:20
+#. i18n: ectx: property (windowTitle), widget (QWidget, AdvancedSettingsIp6Config)
+#. i18n: file: libs/ui/ipv6routes.ui:20
+#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
+#: rc.cpp:610 rc.cpp:637 rc.cpp:655 rc.cpp:898
+msgid "Advanced IP Settings"
+msgstr "Napredne IP postavke"
+
+#. i18n: file: libs/ui/ipv4advanced.ui:32
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: file: libs/ui/ipv6advanced.ui:32
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:613 rc.cpp:658
+msgid "&Additional IP Addresses:"
+msgstr "Dodatne IP &adrese:"
+
+#. i18n: file: libs/ui/ipv4advanced.ui:107
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonAdd)
+#. i18n: file: libs/ui/ipv4routes.ui:107
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonAdd)
+#. i18n: file: libs/ui/ipv6advanced.ui:107
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonAdd)
+#. i18n: file: libs/ui/ipv6routes.ui:107
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonAdd)
+#: rc.cpp:616 rc.cpp:643 rc.cpp:661 rc.cpp:904
+msgctxt "Insert a row"
+msgid "Add"
+msgstr "Dodaj"
+
+#. i18n: file: libs/ui/ipv4advanced.ui:135
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
+#. i18n: file: libs/ui/ipv4routes.ui:135
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
+#. i18n: file: libs/ui/ipv6advanced.ui:135
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
+#. i18n: file: libs/ui/ipv6routes.ui:135
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
+#: rc.cpp:619 rc.cpp:646 rc.cpp:664 rc.cpp:907
+msgctxt "Remove a selected row"
+msgid "R&emove"
+msgstr "Ukloni"
+
+#. i18n: file: libs/ui/cdma.ui:22
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: file: libs/ui/gsm.ui:30
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: rc.cpp:625 rc.cpp:1174
+msgid "&Number:"
+msgstr "&Broj:"
+
+#. i18n: file: libs/ui/ipv4routes.ui:32
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: file: libs/ui/ipv6routes.ui:32
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:640 rc.cpp:901
+msgid "&Routes"
+msgstr "&Rute"
+
+#. i18n: file: libs/ui/ipv4routes.ui:142
+#. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
+#. i18n: file: libs/ui/ipv6routes.ui:142
+#. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
+#: rc.cpp:649 rc.cpp:910
+msgid "Ignore &automatically obtained routes"
+msgstr "Zanemari &automatski dobivene rute"
+
+#. i18n: file: libs/ui/ipv4routes.ui:165
+#. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
+#. i18n: file: libs/ui/ipv6routes.ui:165
+#. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
+#: rc.cpp:652 rc.cpp:913
+#, fuzzy
+#| msgid "List of IP addresses to configure on this connection"
+msgid "Use &only for resources on this connection"
+msgstr "Popis IP adresa za postaviti na ovu vezu"
+
+#. i18n: file: libs/ui/ppp.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, Ppp)
+#: rc.cpp:667
+msgid "PPP"
+msgstr "PPP"
+
+#. i18n: file: libs/ui/ppp.ui:113
+#. i18n: ectx: property (text), widget (QCheckBox, requiremppe)
+#: rc.cpp:691
+msgid "Point-to-Point Encryption (MPPE)"
+msgstr "Enkripcija iz točke u točku (MPPE) "
+
+#. i18n: file: libs/ui/ppp.ui:132
+#. i18n: ectx: property (text), widget (QCheckBox, requiremppe128)
+#: rc.cpp:694
+msgid "Require 128-bit encryption"
+msgstr "Zahtijevaj 128-bitnu enkripciju"
+
+#. i18n: file: libs/ui/ppp.ui:139
+#. i18n: ectx: property (text), widget (QCheckBox, mppestateful)
+#: rc.cpp:697
+msgid "Stateful MPPE"
+msgstr "Zadovoljen MPPE"
+
+#. i18n: file: libs/ui/ppp.ui:149
+#. i18n: ectx: property (text), widget (QCheckBox, bsdcomp)
+#: rc.cpp:700
+msgid "Allow BSD compression"
+msgstr "Omogući sabijanje BSD"
+
+#. i18n: file: libs/ui/ppp.ui:159
+#. i18n: ectx: property (text), widget (QCheckBox, deflate)
+#: rc.cpp:703
+msgid "Allow Deflate compression"
+msgstr "Dozvoli Deflate sabijanje"
+
+#. i18n: file: libs/ui/ppp.ui:169
+#. i18n: ectx: property (text), widget (QCheckBox, vjcomp)
+#: rc.cpp:706
+msgid "Use TCP header compression"
+msgstr "Koristi sabijanje TCP zaglavlja"
+
+#. i18n: file: libs/ui/ppp.ui:212
+#. i18n: ectx: property (text), widget (QCheckBox, pppecho)
+#: rc.cpp:712
+msgid "Send PPP echo packets"
+msgstr "Šalji PPP pakete odjeka"
+
+#. i18n: file: libs/ui/pppoe.ui:20
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:718
+msgid "&Service:"
+msgstr "&Usluga:"
+
+#. i18n: file: libs/ui/scanwidget.ui:38
+#. i18n: ectx: property (text), widget (QLabel, m_interfaceLabel)
+#: rc.cpp:730
+msgid "Interface:"
+msgstr "Sučelje:"
+
+#. i18n: file: libs/ui/scanwidget.ui:51
+#. i18n: ectx: property (text), widget (QLabel, m_viewLabel_2)
+#: rc.cpp:733
+msgid "View:"
+msgstr "Pogled:"
+
+#. i18n: file: libs/ui/scanwidget.ui:62
+#. i18n: ectx: property (text), item, widget (KComboBox, m_view)
+#: rc.cpp:736
+msgid "Map"
+msgstr "Mapiranje"
+
+#. i18n: file: libs/ui/scanwidget.ui:67
+#. i18n: ectx: property (text), item, widget (KComboBox, m_view)
+#: rc.cpp:739
+msgid "Details"
+msgstr "Detalji"
+
+#. i18n: file: libs/ui/scanwidget.ui:101
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_useBssid)
+#: rc.cpp:742
+msgid "Use the selected AP's BSSID in the connection settings"
+msgstr "Koristi odabrani AP-ov BSSID u postavkama veze"
+
+#. i18n: file: libs/ui/scanwidget.ui:104
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_useBssid)
+#: rc.cpp:745
+msgid ""
+"Automatically set the BSSID in the connection settings to the selected AP's "
+"BSSID. This is useful if multiple networks with the same SSID, but different "
+"BSSIDs exist."
+msgstr ""
+
+#. i18n: file: libs/ui/scanwidget.ui:107
+#. i18n: ectx: property (text), widget (QCheckBox, m_useBssid)
+#: rc.cpp:748
+msgid "Use the AP's BSSID"
+msgstr ""
+
+#. i18n: file: libs/ui/security/eapmethodstackbase.ui:32
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: file: libs/ui/security/wep.ui:91
+#. i18n: ectx: property (text), widget (QLabel, authalgLabel)
+#: rc.cpp:757 rc.cpp:793
+msgid "&Authentication:"
+msgstr "&Autentifikacija:"
+
+#. i18n: file: libs/ui/security/wep.ui:17
+#. i18n: ectx: property (text), widget (QLabel, keyTypeLabel)
+#: rc.cpp:769
+msgid "Key type:"
+msgstr "Tip ključa:"
+
+#. i18n: file: libs/ui/security/wep.ui:31
+#. i18n: ectx: property (text), item, widget (QComboBox, keyType)
+#: rc.cpp:772
+msgid "Passphrase (for 128 bit)"
+msgstr "Tajna riječ (za 128 bita)"
+
+#. i18n: file: libs/ui/security/wep.ui:36
+#. i18n: ectx: property (text), item, widget (QComboBox, keyType)
+#: rc.cpp:775
+msgid "Hex or Ascii Key (for 64 or 128 bit)"
+msgstr "Hex ili Ascii ključ (za 64 ili 128 bita)"
+
+#. i18n: file: libs/ui/security/wep.ui:54
+#. i18n: ectx: property (text), widget (QLabel, weptxkeyindexLabel)
+#: rc.cpp:778
+msgid "&WEP index:"
+msgstr "&WEP indeks:"
+
+#. i18n: file: libs/ui/security/wep.ui:68
+#. i18n: ectx: property (text), item, widget (KComboBox, weptxkeyindex)
+#: rc.cpp:781
+msgid "1 (Default)"
+msgstr "1 (Uobičajeno)"
+
+#. i18n: file: libs/ui/security/wep.ui:73
+#. i18n: ectx: property (text), item, widget (KComboBox, weptxkeyindex)
+#: rc.cpp:784
+msgid "2"
+msgstr "2"
+
+#. i18n: file: libs/ui/security/wep.ui:78
+#. i18n: ectx: property (text), item, widget (KComboBox, weptxkeyindex)
+#: rc.cpp:787
+msgid "3"
+msgstr "3"
+
+#. i18n: file: libs/ui/security/wep.ui:83
+#. i18n: ectx: property (text), item, widget (KComboBox, weptxkeyindex)
+#: rc.cpp:790
+msgid "4"
+msgstr "4"
+
+#. i18n: file: libs/ui/security/wep.ui:105
+#. i18n: ectx: property (text), item, widget (KComboBox, authalg)
+#: rc.cpp:796
+msgid "Open System"
+msgstr "Otvoreni sustav"
+
+#. i18n: file: libs/ui/security/wep.ui:144
+#. i18n: ectx: property (text), widget (QLabel, passphraseLabel)
+#: rc.cpp:805
+msgid "&Passphrase:"
+msgstr "&Tajna riječ:"
+
+#. i18n: file: libs/ui/security/wirelesssecurity.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, WirelessSecurity)
+#: rc.cpp:811
+msgid "Wireless Security"
+msgstr "Sigurnost bežične mreže"
+
+#. i18n: file: libs/ui/security/wirelesssecurity.ui:35
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:814
+msgid "&Security:"
+msgstr "&Sigurnost:"
+
+#. i18n: file: libs/ui/security/eapmethodleapbase.ui:35
+#. i18n: ectx: property (toolTip), widget (KLineEdit, leUsername)
+#: rc.cpp:826
+msgid "User name on this network"
+msgstr "Korisničko ime na ovoj mreži"
+
+#. i18n: file: libs/ui/security/eapmethodleapbase.ui:55
+#. i18n: ectx: property (toolTip), widget (KLineEdit, lePassword)
+#: rc.cpp:832
+msgid "Password on this network"
+msgstr "Zaporka na ovoj mreži"
+
+#. i18n: file: libs/ui/security/eapmethodpeapbase.ui:19
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: file: libs/ui/security/eapmethodttlsbase.ui:19
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:835 rc.cpp:886
+msgid "&Anonymous Identity:"
+msgstr "&Anonimni identitet:"
+
+#. i18n: file: libs/ui/security/eapmethodpeapbase.ui:35
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: rc.cpp:838
+msgid "PEAP &Version:"
+msgstr "PEAP &verzija:"
+
+#. i18n: file: libs/ui/security/eapmethodpeapbase.ui:54
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPeapVersion)
+#: rc.cpp:844
+msgid "Version 0"
+msgstr "Vezija 0"
+
+#. i18n: file: libs/ui/security/eapmethodpeapbase.ui:59
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPeapVersion)
+#: rc.cpp:847
+msgid "Version 1"
+msgstr "Verzija 1"
+
+#. i18n: file: libs/ui/security/eapmethodpeapbase.ui:67
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseSystemCaCerts)
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:94
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseSystemCaCerts)
+#. i18n: file: libs/ui/security/eapmethodttlsbase.ui:48
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseSystemCaCerts)
+#: rc.cpp:850 rc.cpp:874 rc.cpp:892
+msgid "Use Syste&m CA Certs"
+msgstr "Koristi sustavske CA certifikate"
+
+#. i18n: file: libs/ui/security/eapmethodpeapbase.ui:77
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:48
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: file: libs/ui/security/eapmethodttlsbase.ui:35
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:853 rc.cpp:865 rc.cpp:889
+msgid "CA Certi&ficate:"
+msgstr "CA Certi&fikat:"
+
+#. i18n: file: libs/ui/security/eapmethodpeapbase.ui:121
+#. i18n: ectx: property (text), widget (KPushButton, caCertLoad)
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:132
+#. i18n: ectx: property (text), widget (KPushButton, clientCertLoad)
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:172
+#. i18n: ectx: property (text), widget (KPushButton, caCertLoad)
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:212
+#. i18n: ectx: property (text), widget (KPushButton, privateKeyLoad)
+#. i18n: file: libs/ui/security/eapmethodttlsbase.ui:86
+#. i18n: ectx: property (text), widget (KPushButton, caCertLoad)
+#: rc.cpp:856 rc.cpp:877 rc.cpp:880 rc.cpp:883 rc.cpp:895
+msgid "Load"
+msgstr "Teret"
+
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:19
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:859
+msgid "&Identity:"
+msgstr "&Identitet:"
+
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:35
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:862
+msgid "&User Certificate:"
+msgstr "Korisnički &certifikat:"
+
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:61
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:868
+msgid "Private &Key:"
+msgstr "Privatni &ključ:"
+
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:74
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:871
+msgid "Private Key Pass&word:"
+msgstr "Zaporka priva&tnog ključa:"
+
+#. i18n: file: libs/ui/wired.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, Settings8023Ethernet)
+#: rc.cpp:916
+msgid "Ethernet"
+msgstr "Žičana mreža"
+
+#. i18n: file: libs/ui/wired.ui:23
+#. i18n: ectx: property (toolTip), widget (QLabel, label)
+#: rc.cpp:919
+msgid "Example: 11:22:33:44:55:66"
+msgstr "Primjer: 11:22:33:44:55:66"
+
+#. i18n: file: libs/ui/wired.ui:26
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: file: libs/ui/802-11-wireless.ui:192
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: rc.cpp:922 rc.cpp:1042
+msgid "&Restrict To Interface:"
+msgstr "Og&raniči na sučelje:"
+
+#. i18n: file: libs/ui/wired.ui:48
+#. i18n: ectx: property (toolTip), widget (QLabel, label_2)
+#: rc.cpp:928
+msgid "Maximum Transfer Unit (bytes)"
+msgstr "Najveća jedinica prijenosa (u bajtima)"
+
+#. i18n: file: libs/ui/wired.ui:51
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:931
+msgid "M&TU:"
+msgstr "M&TU:"
+
+#. i18n: file: libs/ui/wired.ui:64
+#. i18n: ectx: property (toolTip), widget (KIntSpinBox, mtu)
+#. i18n: file: libs/ui/802-11-wireless.ui:227
+#. i18n: ectx: property (toolTip), widget (KIntSpinBox, mtu)
+#: rc.cpp:934 rc.cpp:1051
+msgid "Maximum Transmission Unit"
+msgstr "Najveća jedinica slanja"
+
+#. i18n: file: libs/ui/wired.ui:67
+#. i18n: ectx: property (whatsThis), widget (KIntSpinBox, mtu)
+#. i18n: file: libs/ui/802-11-wireless.ui:230
+#. i18n: ectx: property (whatsThis), widget (KIntSpinBox, mtu)
+#: rc.cpp:937 rc.cpp:1054
+msgid ""
+"Sets the size of the largest packet that can be transmitted on this network. "
+"'0' sets the MTU automatically."
+msgstr ""
+"Postavlja veličinu najvećeg paketa koji može biti poslan na mrežu. '0' "
+"postavlja MTU automatski."
+
+#. i18n: file: libs/ui/wireless.ui:19
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:943
+msgid "&ESSID:"
+msgstr "&ESSID:"
+
+#. i18n: file: libs/ui/wireless.ui:35
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:946
+msgid "&Mode:"
+msgstr "&Način:"
+
+#. i18n: file: libs/ui/wireless.ui:49
+#. i18n: ectx: property (text), item, widget (KComboBox, mode)
+#. i18n: file: libs/ui/802-11-wireless.ui:77
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
+#: rc.cpp:949 rc.cpp:997
+msgid "Infrastructure"
+msgstr "Infrastruktura"
+
+#. i18n: file: libs/ui/wireless.ui:54
+#. i18n: ectx: property (text), item, widget (KComboBox, mode)
+#. i18n: file: libs/ui/802-11-wireless.ui:82
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
+#: rc.cpp:952 rc.cpp:1000
+msgid "Ad-hoc"
+msgstr "Ad-hoc"
+
+#. i18n: file: libs/ui/wireless.ui:62
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: file: libs/ui/802-11-wireless.ui:152
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:955 rc.cpp:1027
+msgid "&BSSID:"
+msgstr "&BSSID:"
+
+#. i18n: file: libs/ui/wireless.ui:75
+#. i18n: ectx: property (inputMask), widget (KLineEdit, bssid)
+#. i18n: file: libs/ui/wireless.ui:98
+#. i18n: ectx: property (inputMask), widget (KLineEdit, macaddress)
+#: rc.cpp:958 rc.cpp:967
+msgid "HH:HH:HH:HH:HH:HH; "
+msgstr "HH:HH:HH:HH:HH:HH; "
+
+#. i18n: file: libs/ui/wireless.ui:78
+#. i18n: ectx: property (text), widget (KLineEdit, bssid)
+#: rc.cpp:961
+msgid ":::::"
+msgstr ":::::"
+
+#. i18n: file: libs/ui/wireless.ui:85
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:964
+msgid "MAC &address:"
+msgstr "MAC &adresa:"
+
+#. i18n: file: libs/ui/wireless.ui:105
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:970
+msgid "&MTU:"
+msgstr "&MTU:"
+
+#. i18n: file: libs/ui/802-11-wireless.ui:23
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:976
+msgid "&SSID:"
+msgstr "&SSID:"
+
+#. i18n: file: libs/ui/802-11-wireless.ui:38
+#. i18n: ectx: property (toolTip), widget (KLineEdit, ssid)
+#: rc.cpp:979
+msgid "The name of the wireless network"
+msgstr "Ime bežićne mreže"
+
+#. i18n: file: libs/ui/802-11-wireless.ui:41
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, ssid)
+#: rc.cpp:982
+msgid "The Service Set IDentifier is the name of a wireless network."
+msgstr "Service Set IDentifier je ime bežićne mreže."
+
+#. i18n: file: libs/ui/802-11-wireless.ui:48
+#. i18n: ectx: property (text), widget (KPushButton, btnScan)
+#: rc.cpp:985
+msgid "S&can"
+msgstr "Pre&traži"
+
+#. i18n: file: libs/ui/802-11-wireless.ui:57
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:988
+msgid "M&ode:"
+msgstr "N&ačin:"
+
+#. i18n: file: libs/ui/802-11-wireless.ui:70
+#. i18n: ectx: property (toolTip), widget (KComboBox, cmbMode)
+#: rc.cpp:991
+msgid "Operating mode of the wireless network"
+msgstr "Način rada bežićne mreže"
+
+#. i18n: file: libs/ui/802-11-wireless.ui:73
+#. i18n: ectx: property (whatsThis), widget (KComboBox, cmbMode)
+#: rc.cpp:994
+msgid ""
+"Infrastructure mode is the most common setting.  To form a peer-to-peer "
+"wireless network with another computer when there is no infrastructure, "
+"choose Ad-hoc."
+msgstr ""
+"Infrastrukturni način je načešća postavka. Za stvaranje bežićne mreže "
+"ravnopravnih čvorova s drugim računalom kad nema infrastrukture, odaberite "
+"Ad-hoc."
+
+#. i18n: file: libs/ui/802-11-wireless.ui:90
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:1003
+msgid "B&and:"
+msgstr "Poj&as:"
+
+#. i18n: file: libs/ui/802-11-wireless.ui:103
+#. i18n: ectx: property (toolTip), widget (KComboBox, band)
+#: rc.cpp:1006
+msgid "Frequency band of the wireless network."
+msgstr "Frekvencijski pojas bežične mreže."
+
+#. i18n: file: libs/ui/802-11-wireless.ui:106
+#. i18n: ectx: property (whatsThis), widget (KComboBox, band)
+#: rc.cpp:1009
+msgid "b/g is the most common band around 2.4 GHz. Less common is a at 5 GHz."
+msgstr ""
+
+#. i18n: file: libs/ui/802-11-wireless.ui:110
+#. i18n: ectx: property (text), item, widget (KComboBox, band)
+#: rc.cpp:1012
+msgid "a"
+msgstr "a"
+
+#. i18n: file: libs/ui/802-11-wireless.ui:115
+#. i18n: ectx: property (text), item, widget (KComboBox, band)
+#: rc.cpp:1015
+msgid "b/g"
+msgstr "b/g"
+
+#. i18n: file: libs/ui/802-11-wireless.ui:123
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:1018
+msgid "&Channel:"
+msgstr "&Kanal:"
+
+#. i18n: file: libs/ui/802-11-wireless.ui:136
+#. i18n: ectx: property (toolTip), widget (Wireless80211WidgetBand, channel)
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:31
+#. i18n: ectx: label, entry (channel), group (802-11-wireless)
+#: rc.cpp:1021 rc.cpp:1355
+msgid "Channel"
+msgstr "Kanal"
+
+#. i18n: file: libs/ui/802-11-wireless.ui:139
+#. i18n: ectx: property (whatsThis), widget (Wireless80211WidgetBand, channel)
+#: rc.cpp:1024
+msgid "Sets the channel of the network."
+msgstr "Postavlja kanal mreže."
+
+#. i18n: file: libs/ui/802-11-wireless.ui:167
+#. i18n: ectx: property (toolTip), widget (KLineEdit, bssid)
+#: rc.cpp:1030
+#, fuzzy
+#| msgid "Only connect to the station with this hardware address"
+msgid "Only connect to the access point with this hardware address"
+msgstr "Spoji se samo na stanicu s tom hardverskom adresom"
+
+#. i18n: file: libs/ui/802-11-wireless.ui:170
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, bssid)
+#: rc.cpp:1033
+#, fuzzy
+#| msgid ""
+#| "Setting a BSSID (hardware address) forces this connection to only connect "
+#| "to the station with this address, even if other stations are part of the "
+#| "same network."
+msgid ""
+"Setting a BSSID (hardware address) forces this connection to only connect to "
+"the access point with this address, even if other access points are part of "
+"the same network."
+msgstr ""
+"Postavljanje BSSID-a (hardverske adrese) ograničuje vezu na spajanje samo na "
+"stanicu s tom adresom, čak i ako postoje druge stanice iz iste mreže."
+
+#. i18n: file: libs/ui/802-11-wireless.ui:173
+#. i18n: ectx: property (inputMask), widget (KLineEdit, bssid)
+#: rc.cpp:1036
+msgid "HH:HH:HH:HH:HH:HH;_"
+msgstr "HH:HH:HH:HH:HH:HH;_"
+
+#. i18n: file: libs/ui/802-11-wireless.ui:180
+#. i18n: ectx: property (text), widget (QPushButton, btnSelectBssid)
+#: rc.cpp:1039
+#, fuzzy
+#| msgid "&Delete"
+msgid "&Select"
+msgstr "&Izbriši"
+
+#. i18n: file: libs/ui/802-11-wireless.ui:214
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: rc.cpp:1048
+msgid "MT&U:"
+msgstr "MT&U:"
+
+#. i18n: file: libs/ui/bluetooth.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, Bluetooth)
+#: rc.cpp:1060
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#. i18n: file: libs/ui/bluetooth.ui:23
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: rc.cpp:1063
+msgid "Hardware Address"
+msgstr "Hardverska adresa"
+
+#. i18n: file: libs/ui/bluetooth.ui:57
+#. i18n: ectx: property (text), item, widget (KComboBox, networktype)
+#: rc.cpp:1069
+msgid "Dialup Network (DUN)"
+msgstr "Mreža s biranjem (DUN)"
+
+#. i18n: file: libs/ui/bluetooth.ui:62
+#. i18n: ectx: property (text), item, widget (KComboBox, networktype)
+#: rc.cpp:1072
+msgid "Personal Area Network (PANU)"
+msgstr ""
+
+#. i18n: file: libs/ui/bluetooth.ui:86
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1075
+msgid "Name"
+msgstr "Naziv"
+
+#. i18n: file: libs/ui/ipv4.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, SettingsIp4Config)
+#: rc.cpp:1078
+msgid "IPv4 Address"
+msgstr "IPv4 adresa"
+
+#. i18n: file: libs/ui/ipv4.ui:39
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#. i18n: file: libs/ui/ipv6.ui:39
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#: rc.cpp:1081 rc.cpp:1225
+msgid "Basic settings"
+msgstr "Osnovne postavke"
+
+#. i18n: file: libs/ui/ipv4.ui:44
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#. i18n: file: libs/ui/ipv6.ui:44
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#: rc.cpp:1084 rc.cpp:1228
+msgid "Additional addresses"
+msgstr "Dodatne adrese"
+
+#. i18n: file: libs/ui/ipv4.ui:49
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#. i18n: file: libs/ui/ipv6.ui:49
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#: rc.cpp:1087 rc.cpp:1231
+msgid "Routes"
+msgstr "Rute"
+
+#. i18n: file: libs/ui/ipv4.ui:98
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: file: libs/ui/ipv6.ui:98
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1090 rc.cpp:1234
+msgid "Method:"
+msgstr "Metoda:"
+
+#. i18n: file: libs/ui/ipv4.ui:112
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#. i18n: file: libs/ui/ipv6.ui:112
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: rc.cpp:1093 rc.cpp:1237
+msgid "DHCP"
+msgstr "DHCP"
+
+#. i18n: file: libs/ui/ipv4.ui:117
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#. i18n: file: libs/ui/ipv6.ui:117
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: rc.cpp:1096 rc.cpp:1240
+msgid "DHCP (only address)"
+msgstr "DHCP (samo adresa)"
+
+#. i18n: file: libs/ui/ipv4.ui:122
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#. i18n: file: libs/ui/ipv6.ui:122
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: rc.cpp:1099 rc.cpp:1243
+msgid "Manual"
+msgstr "Ručno"
+
+#. i18n: file: libs/ui/ipv4.ui:127
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#. i18n: file: libs/ui/ipv6.ui:127
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: rc.cpp:1102 rc.cpp:1246
+msgid "Link-Local"
+msgstr ""
+
+#. i18n: file: libs/ui/ipv4.ui:132
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#. i18n: file: libs/ui/ipv6.ui:132
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: rc.cpp:1105 rc.cpp:1249
+msgid "Shared"
+msgstr "Dijeljena"
+
+#. i18n: file: libs/ui/ipv4.ui:145
+#. i18n: ectx: property (text), widget (QLabel, addressLabel)
+#. i18n: file: libs/ui/ipv6.ui:145
+#. i18n: ectx: property (text), widget (QLabel, addressLabel)
+#: rc.cpp:1111 rc.cpp:1255
+msgid "&IP Address:"
+msgstr "&IP adresa:"
+
+#. i18n: file: libs/ui/ipv4.ui:164
+#. i18n: ectx: property (toolTip), widget (KLineEdit, address)
+#. i18n: file: libs/ui/ipv6.ui:164
+#. i18n: ectx: property (toolTip), widget (KLineEdit, address)
+#: rc.cpp:1114 rc.cpp:1258
+msgid ""
+"Use this field to specify the IP address that should be used by this "
+"computer."
+msgstr ""
+
+#. i18n: file: libs/ui/ipv4.ui:171
+#. i18n: ectx: property (text), widget (QLabel, netMaskLabel)
+#. i18n: file: libs/ui/ipv6.ui:171
+#. i18n: ectx: property (text), widget (QLabel, netMaskLabel)
+#: rc.cpp:1117 rc.cpp:1261
+msgid "Subnet &Mask:"
+msgstr "&Podmrežna maska:"
+
+#. i18n: file: libs/ui/ipv4.ui:190
+#. i18n: ectx: property (toolTip), widget (KLineEdit, netMask)
+#. i18n: file: libs/ui/ipv6.ui:190
+#. i18n: ectx: property (toolTip), widget (KLineEdit, netMask)
+#: rc.cpp:1120 rc.cpp:1264
+msgid ""
+"Use this field to specify the subnet that the above IP address belongs to."
+msgstr ""
+
+#. i18n: file: libs/ui/ipv4.ui:216
+#. i18n: ectx: property (toolTip), widget (KLineEdit, gateway)
+#. i18n: file: libs/ui/ipv6.ui:216
+#. i18n: ectx: property (toolTip), widget (KLineEdit, gateway)
+#: rc.cpp:1126 rc.cpp:1270
+msgid ""
+"Use this field to specify the IP address of the gateway for requests outside "
+"the local network."
+msgstr ""
+
+#. i18n: file: libs/ui/ipv4.ui:223
+#. i18n: ectx: property (text), widget (QLabel, dnsLabel)
+#. i18n: file: libs/ui/ipv6.ui:223
+#. i18n: ectx: property (text), widget (QLabel, dnsLabel)
+#: rc.cpp:1129 rc.cpp:1273
+msgid "&DNS Servers:"
+msgstr "&DNS poslužitelji:"
+
+#. i18n: file: libs/ui/ipv4.ui:253
+#. i18n: ectx: property (toolTip), widget (KLineEdit, dns)
+#. i18n: file: libs/ui/ipv6.ui:253
+#. i18n: ectx: property (toolTip), widget (KLineEdit, dns)
+#: rc.cpp:1132 rc.cpp:1276
+msgid ""
+"Use this field to specify the IP address(es) of one or more DNS servers. Use "
+"',' to separate entries."
+msgstr ""
+
+#. i18n: file: libs/ui/ipv4.ui:260
+#. i18n: ectx: property (text), widget (KPushButton, dnsMorePushButton)
+#. i18n: file: libs/ui/ipv4.ui:294
+#. i18n: ectx: property (text), widget (KPushButton, dnsSearchMorePushButton)
+#. i18n: file: libs/ui/ipv6.ui:260
+#. i18n: ectx: property (text), widget (KPushButton, dnsMorePushButton)
+#. i18n: file: libs/ui/ipv6.ui:294
+#. i18n: ectx: property (text), widget (KPushButton, dnsSearchMorePushButton)
+#: rc.cpp:1135 rc.cpp:1141 rc.cpp:1279 rc.cpp:1285
+msgid "..."
+msgstr "…"
+
+#. i18n: file: libs/ui/ipv4.ui:269
+#. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
+#. i18n: file: libs/ui/ipv6.ui:269
+#. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
+#: rc.cpp:1138 rc.cpp:1282
+msgid "&Search Domains:"
+msgstr "&Traži domene:"
+
+#. i18n: file: libs/ui/ipv4.ui:303
+#. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
+#: rc.cpp:1144
+msgid "DHCP &Client ID:"
+msgstr "DH&CP klijentski ID:"
+
+#. i18n: file: libs/ui/ipv4.ui:316
+#. i18n: ectx: property (toolTip), widget (KLineEdit, dhcpClientId)
+#: rc.cpp:1147
+msgid ""
+"Use this field to specify the DHCP client ID which is a string sent to the "
+"DHCP server to identify the local machine that the DHCP server may use to "
+"customize the DHCP lease and options."
+msgstr ""
+
+#. i18n: file: libs/ui/ipv4.ui:419
+#. i18n: ectx: property (text), widget (QCheckBox, cbMayFail)
+#: rc.cpp:1150
+msgid "IPv4 is required for this connection"
+msgstr "Potreban je IPv4 za ovu vezu"
+
+#. i18n: file: libs/ui/connection.ui:19
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1153
+msgid "&Connection name:"
+msgstr "Naziv &veze:"
+
+#. i18n: file: libs/ui/connection.ui:42
+#. i18n: ectx: property (text), widget (QCheckBox, autoconnect)
+#: rc.cpp:1156
+msgid "Connect &automatically"
+msgstr "Spoji se &automatski"
+
+#. i18n: file: libs/ui/connection.ui:55
+#. i18n: ectx: property (text), widget (QCheckBox, system)
+#: rc.cpp:1159
+msgid "&System connection"
+msgstr "&Sistemska veza"
+
+#. i18n: file: libs/ui/connection.ui:58
+#. i18n: ectx: property (toolTip), widget (QCheckBox, system)
+#: rc.cpp:1162
+msgid "Save the connection in system storage"
+msgstr ""
+
+#. i18n: file: libs/ui/connection.ui:61
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, system)
+#: rc.cpp:1165
+msgid ""
+"If checked, the connection settings and secrets will be saved in system "
+"storage, which allows the connection to work without a KDE session."
+msgstr ""
+
+#. i18n: file: libs/ui/gsm.ui:23
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:1171
+msgid "<b>Basic</b>"
+msgstr "<b>Osnovno</b>"
+
+#. i18n: file: libs/ui/gsm.ui:43
+#. i18n: ectx: property (text), widget (KLineEdit, number)
+#: rc.cpp:1177
+msgid "*99#"
+msgstr "*99#"
+
+#. i18n: file: libs/ui/gsm.ui:98
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:1186
+msgid "<b>Advanced</b>"
+msgstr "<b>Napredno</b>"
+
+#. i18n: file: libs/ui/gsm.ui:105
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1189
+msgid "&APN:"
+msgstr "&APN:"
+
+#. i18n: file: libs/ui/gsm.ui:121
+#. i18n: ectx: property (text), widget (QLabel, lblNetwork)
+#: rc.cpp:1192
+msgid "Net&work:"
+msgstr "Mr&eža:"
+
+#. i18n: file: libs/ui/gsm.ui:156
+#. i18n: ectx: property (text), item, widget (KComboBox, type)
+#: rc.cpp:1201
+msgid "3G (UMTS/HSPA)"
+msgstr "3G (UMTS/HSPA)"
+
+#. i18n: file: libs/ui/gsm.ui:161
+#. i18n: ectx: property (text), item, widget (KComboBox, type)
+#: rc.cpp:1204
+msgid "2G (GPRS/EDGE)"
+msgstr "2G (GPRS/EDGE)"
+
+#. i18n: file: libs/ui/gsm.ui:166
+#. i18n: ectx: property (text), item, widget (KComboBox, type)
+#: rc.cpp:1207
+msgid "Prefer 3G"
+msgstr "Preferiraj 3G"
+
+#. i18n: file: libs/ui/gsm.ui:171
+#. i18n: ectx: property (text), item, widget (KComboBox, type)
+#: rc.cpp:1210
+msgid "Prefer 2G"
+msgstr "Preferiraj 2G"
+
+#. i18n: file: libs/ui/gsm.ui:179
+#. i18n: ectx: property (text), widget (QLabel, lblBand)
+#: rc.cpp:1213
+msgid "&Band:"
+msgstr "&Pojas:"
+
+#. i18n: file: libs/ui/gsm.ui:202
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:1216
+msgid "&PIN:"
+msgstr "&PIN:"
+
+#. i18n: file: libs/ui/gsm.ui:234
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#: rc.cpp:1219
+msgid "&Show secrets"
+msgstr "&Prikaži tajne"
+
+#. i18n: file: libs/ui/ipv6.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, SettingsIp6Config)
+#: rc.cpp:1222
+msgid "IPv6 Address"
+msgstr "IPv6 adresa"
+
+#. i18n: file: libs/ui/ipv6.ui:399
+#. i18n: ectx: property (text), widget (QCheckBox, cbMayFail)
+#: rc.cpp:1288
+msgid "IPv6 is required for this connection"
+msgstr "Potreban je IPv6 za ovu vezu"
+
+#. i18n: file: libs/internals/knmserviceprefs.kcfg:11
+#. i18n: ectx: label, entry (Connections), group (General)
+#: rc.cpp:1291
+msgid "Connections"
+msgstr "Veze"
+
+#. i18n: file: libs/internals/knmserviceprefs.kcfg:15
+#. i18n: ectx: label, entry (SecretStorageMode), group (General)
+#: rc.cpp:1294
+msgid "Store secrets in wallet"
+msgstr "Spremi tajne ključeve u novčanik"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:19
+#. i18n: ectx: label, entry (securityType), group (802-11-wireless-security)
+#: rc.cpp:1298
+msgid "Security type"
+msgstr "Vrsta sigurnosti"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:23
+#. i18n: ectx: label, entry (keymgmt), group (802-11-wireless-security)
+#: rc.cpp:1301
+msgid "Key management"
+msgstr "Upravljanje ključevima"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:36
+#. i18n: ectx: label, entry (weptxkeyindex), group (802-11-wireless-security)
+#: rc.cpp:1304
+msgid "WEP TX key index"
+msgstr "WEP TX indeks po ključevima"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:40
+#. i18n: ectx: label, entry (authalg), group (802-11-wireless-security)
+#: rc.cpp:1307
+msgid "Authentication algorithm"
+msgstr "Algoritam za autentifikaciju"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:50
+#. i18n: ectx: label, entry (proto), group (802-11-wireless-security)
+#: rc.cpp:1310
+msgid "Protocols"
+msgstr "Protokoli"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:54
+#. i18n: ectx: label, entry (pairwise), group (802-11-wireless-security)
+#: rc.cpp:1313
+msgid "Pairwise"
+msgstr "U paru"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:58
+#. i18n: ectx: label, entry (group), group (802-11-wireless-security)
+#: rc.cpp:1316
+msgid "Group"
+msgstr "Grupni"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:62
+#. i18n: ectx: label, entry (leapusername), group (802-11-wireless-security)
+#: rc.cpp:1319
+msgid "LEAP Username"
+msgstr "LEAP korisničko ime"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:66
+#. i18n: ectx: label, entry (wepkey0), group (802-11-wireless-security)
+#: rc.cpp:1322
+msgid "WEP key 0"
+msgstr "WEP ključ 0"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:70
+#. i18n: ectx: label, entry (wepkey1), group (802-11-wireless-security)
+#: rc.cpp:1325
+msgid "WEP key 1"
+msgstr "WEP ključ 1"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:74
+#. i18n: ectx: label, entry (wepkey2), group (802-11-wireless-security)
+#: rc.cpp:1328
+msgid "WEP key 2"
+msgstr "WEP ključ 2"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:78
+#. i18n: ectx: label, entry (wepkey3), group (802-11-wireless-security)
+#: rc.cpp:1331
+msgid "WEP key 3"
+msgstr "WEP ključ 3"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:82
+#. i18n: ectx: label, entry (psk), group (802-11-wireless-security)
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:134
+#. i18n: ectx: label, entry (psk), group (802-1x)
+#: rc.cpp:1334 rc.cpp:1457
+msgid "PSK"
+msgstr "PSK"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:86
+#. i18n: ectx: label, entry (leappassword), group (802-11-wireless-security)
+#: rc.cpp:1337
+msgid "LEAP Password"
+msgstr "LEAP zaporka"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:90
+#. i18n: ectx: label, entry (weppassphrase), group (802-11-wireless-security)
+#: rc.cpp:1340
+msgid "WEP Passphrase"
+msgstr "WEP tajna riječ"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:9
+#. i18n: ectx: label, entry (ssid), group (802-11-wireless)
+#: rc.cpp:1343
+msgid "SSID"
+msgstr "SSID"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:10
+#. i18n: ectx: whatsthis, entry (ssid), group (802-11-wireless)
+#: rc.cpp:1346
+msgid "Service Set IDentifier (network name) "
+msgstr "Service Set IDentifier (ime mreže) "
+
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:18
+#. i18n: ectx: label, entry (mode), group (802-11-wireless)
+#: rc.cpp:1349
+msgid "Mode"
+msgstr "Način"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:27
+#. i18n: ectx: label, entry (band), group (802-11-wireless)
+#. i18n: file: libs/internals/schemas/gsm.kcfg:34
+#. i18n: ectx: label, entry (band), group (gsm)
+#: rc.cpp:1352 rc.cpp:1547
+msgid "Band"
+msgstr "Pojas"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:35
+#. i18n: ectx: label, entry (bssid), group (802-11-wireless)
+#: rc.cpp:1358
+msgid "BSSID"
+msgstr "BSSID"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:36
+#. i18n: ectx: whatsthis, entry (bssid), group (802-11-wireless)
+#: rc.cpp:1361
+msgid "Basic Service Set IDentifier of the access point to use"
+msgstr "Osnovni SSID pristupne točke"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:39
+#. i18n: ectx: label, entry (rate), group (802-11-wireless)
+#: rc.cpp:1364
+msgid "Data rate"
+msgstr "Protok podataka"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:43
+#. i18n: ectx: label, entry (txpower), group (802-11-wireless)
+#: rc.cpp:1367
+msgid "Transmit power"
+msgstr "Snaga emisije"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:47
+#. i18n: ectx: label, entry (macaddress), group (802-11-wireless)
+#. i18n: file: libs/internals/schemas/802-3-ethernet.kcfg:38
+#. i18n: ectx: label, entry (macaddress), group (802-3-ethernet)
+#: rc.cpp:1370 rc.cpp:1481
+msgid "MAC Address"
+msgstr "MAC adresa"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:48
+#. i18n: ectx: whatsthis, entry (macaddress), group (802-11-wireless)
+#: rc.cpp:1373
+msgid "Hardware address to set on the wireless network interface"
+msgstr "Hardverska adresa postavljena na sučelju bežićne mreže"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:51
+#. i18n: ectx: label, entry (mtu), group (802-11-wireless)
+#. i18n: file: libs/internals/schemas/802-3-ethernet.kcfg:42
+#. i18n: ectx: label, entry (mtu), group (802-3-ethernet)
+#. i18n: file: libs/internals/schemas/ppp.kcfg:69
+#. i18n: ectx: label, entry (mtu), group (ppp)
+#: rc.cpp:1376 rc.cpp:1484 rc.cpp:1601
+msgid "MTU"
+msgstr "MTU"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:53
+#. i18n: ectx: whatsthis, entry (mtu), group (802-11-wireless)
+#: rc.cpp:1379
+msgid "Maximum Transmit Unit"
+msgstr "Najveća jedinica slanja (MTU)"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:57
+#. i18n: ectx: label, entry (seenbssids), group (802-11-wireless)
+#: rc.cpp:1382
+msgid "Seen BSSIDs"
+msgstr "Viđeni BSSID-ovi"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:13
+#. i18n: ectx: label, entry (identity), group (802-1x)
+#: rc.cpp:1388
+msgid "Identity"
+msgstr "Identitet"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:17
+#. i18n: ectx: label, entry (anonymousidentity), group (802-1x)
+#: rc.cpp:1391
+msgid "Anonymous identity"
+msgstr "Anonimni identitet"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:21
+#. i18n: ectx: label, entry (cacert), group (802-1x)
+#: rc.cpp:1394
+msgid "CA Cert"
+msgstr "CA certifikat"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:25
+#. i18n: ectx: label, entry (capath), group (802-1x)
+#: rc.cpp:1397
+msgid "CA Path"
+msgstr "CA putanja"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:29
+#. i18n: ectx: label, entry (clientcert), group (802-1x)
+#: rc.cpp:1400
+msgid "Client Cert"
+msgstr "Klijentski certifikat"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:33
+#. i18n: ectx: label, entry (clientcertpath), group (802-1x)
+#: rc.cpp:1403
+msgid "Client Cert Path"
+msgstr "Putanja klijentskog certifikata"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:37
+#. i18n: ectx: label, entry (phase1peapver), group (802-1x)
+#: rc.cpp:1406
+msgid "Phase 1 PEAP version"
+msgstr "Faza 1 PEAP verzija"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:46
+#. i18n: ectx: label, entry (phase1peaplabel), group (802-1x)
+#: rc.cpp:1409
+msgid "Phase 1 PEAP label"
+msgstr "Faza 1 PEAP natpis"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:55
+#. i18n: ectx: label, entry (phase1fastprovisioning), group (802-1x)
+#: rc.cpp:1412
+msgid "Phase 1 fast provisioning"
+msgstr "Faza 1 brzo pribavljanje"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:59
+#. i18n: ectx: label, entry (phase2auth), group (802-1x)
+#: rc.cpp:1415
+msgid "Phase 2 auth"
+msgstr "Faza 2 prijava"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:73
+#. i18n: ectx: label, entry (phase2autheap), group (802-1x)
+#: rc.cpp:1418
+msgid "Phase 2 auth eap"
+msgstr "Faza 2 prijava eap"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:86
+#. i18n: ectx: label, entry (phase2cacert), group (802-1x)
+#: rc.cpp:1421
+msgid "Phase 2 CA Cert"
+msgstr "Faza 2 CA certifikat"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:90
+#. i18n: ectx: label, entry (phase2capath), group (802-1x)
+#: rc.cpp:1424
+msgid "Phase 2 CA Path"
+msgstr "Faza 2 CA Putanja"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:94
+#. i18n: ectx: label, entry (phase2clientcert), group (802-1x)
+#: rc.cpp:1427
+msgid "Phase 2 client cert"
+msgstr "Faza 2 klijentski certifikat"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:98
+#. i18n: ectx: label, entry (phase2clientcertpath), group (802-1x)
+#: rc.cpp:1430
+msgid "Phase 2 client cert path"
+msgstr "Faza 2 putanja klijentskog certifikata"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:106
+#. i18n: ectx: label, entry (privatekey), group (802-1x)
+#: rc.cpp:1436
+msgid "Private key"
+msgstr "Privatni ključ"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:110
+#. i18n: ectx: label, entry (privatekeypath), group (802-1x)
+#: rc.cpp:1439
+msgid "Private key Path"
+msgstr "Putanja privatnog ključa"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:114
+#. i18n: ectx: label, entry (privatekeypassword), group (802-1x)
+#: rc.cpp:1442
+msgid "Private key password"
+msgstr "Zaporka privatnog ključa"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:118
+#. i18n: ectx: label, entry (phase2privatekey), group (802-1x)
+#: rc.cpp:1445
+msgid "Phase 2 private key"
+msgstr "Faza 2 privatni ključ"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:122
+#. i18n: ectx: label, entry (phase2privatekeypath), group (802-1x)
+#: rc.cpp:1448
+msgid "Phase 2 Private key Path"
+msgstr "Faza 2 Putanja privatnog ključa"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:126
+#. i18n: ectx: label, entry (phase2privatekeypassword), group (802-1x)
+#: rc.cpp:1451
+msgid "Phase 2 private key password"
+msgstr "Zaporka privatnog ključa za Fazu 2"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:130
+#. i18n: ectx: label, entry (pin), group (802-1x)
+#. i18n: file: libs/internals/schemas/gsm.kcfg:38
+#. i18n: ectx: label, entry (pin), group (gsm)
+#: rc.cpp:1454 rc.cpp:1550
+msgid "PIN"
+msgstr "PIN"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:138
+#. i18n: ectx: label, entry (UseSystemCaCerts), group (802-1x)
+#: rc.cpp:1460
+msgid "Use System CA Certs"
+msgstr "Koristi Sustavske CA certifikate"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:142
+#. i18n: ectx: label, entry (enabled), group (802-1x)
+#: rc.cpp:1463
+msgid "Connection uses 802.1x"
+msgstr "Veza koristi 802.1x"
+
+#. i18n: file: libs/internals/schemas/802-3-ethernet.kcfg:9
+#. i18n: ectx: label, entry (port), group (802-3-ethernet)
+#: rc.cpp:1466
+msgid "Port"
+msgstr "Port"
+
+#. i18n: file: libs/internals/schemas/802-3-ethernet.kcfg:19
+#. i18n: ectx: label, entry (speed), group (802-3-ethernet)
+#: rc.cpp:1469
+msgid "Speed"
+msgstr "Brzina"
+
+#. i18n: file: libs/internals/schemas/802-3-ethernet.kcfg:23
+#. i18n: ectx: label, entry (duplex), group (802-3-ethernet)
+#: rc.cpp:1472
+msgid "Duplex"
+msgstr "Istodobne veze"
+
+#. i18n: file: libs/internals/schemas/802-3-ethernet.kcfg:24
+#. i18n: ectx: whatsthis, entry (duplex), group (802-3-ethernet)
+#: rc.cpp:1475
+msgid "Whether the Ethernet interface should use duplex communications"
+msgstr "Treba li mrežno sučelje koristiti istodobne veze"
+
+#. i18n: file: libs/internals/schemas/802-3-ethernet.kcfg:32
+#. i18n: ectx: label, entry (autonegotiate), group (802-3-ethernet)
+#: rc.cpp:1478
+msgid "Auto negotiate"
+msgstr "Automatsko pregovaranje"
+
+#. i18n: file: libs/internals/schemas/802-3-ethernet.kcfg:44
+#. i18n: ectx: whatsthis, entry (mtu), group (802-3-ethernet)
+#: rc.cpp:1487
+msgid "Maximum Transfer Unit to use"
+msgstr "Najveća jedinica prijenosa za korištenje"
+
+#. i18n: file: libs/internals/schemas/cdma.kcfg:9
+#. i18n: ectx: label, entry (number), group (cdma)
+#. i18n: file: libs/internals/schemas/gsm.kcfg:9
+#. i18n: ectx: label, entry (number), group (gsm)
+#: rc.cpp:1490 rc.cpp:1529
+msgid "Number"
+msgstr "Broj"
+
+#. i18n: file: libs/internals/schemas/connection.kcfg:9
+#. i18n: ectx: label, entry (id), group (connection)
+#: rc.cpp:1499
+msgid "Identifier"
+msgstr "Određivač"
+
+#. i18n: file: libs/internals/schemas/connection.kcfg:10
+#. i18n: ectx: whatsthis, entry (id), group (connection)
+#: rc.cpp:1502
+msgid "A name that uniquely identifies a connection"
+msgstr "Ime koje jedinstveno određuje vezu"
+
+#. i18n: file: libs/internals/schemas/connection.kcfg:13
+#. i18n: ectx: label, entry (type), group (connection)
+#: rc.cpp:1505
+msgid "Type"
+msgstr "Tip"
+
+#. i18n: file: libs/internals/schemas/connection.kcfg:14
+#. i18n: ectx: whatsthis, entry (type), group (connection)
+#: rc.cpp:1508
+msgid ""
+"Specifies the connection type, defines which devices it can activate and "
+"which other settings the connection should contain"
+msgstr ""
+"Određuje tip veze, koji je sve uređaji mogu aktivirati i koje ostale "
+"postavke veza treba sadržavati"
+
+#. i18n: file: libs/internals/schemas/connection.kcfg:17
+#. i18n: ectx: label, entry (autoconnect), group (connection)
+#: rc.cpp:1511
+msgid "Connect automatically"
+msgstr "Spoji se automatski"
+
+#. i18n: file: libs/internals/schemas/connection.kcfg:18
+#. i18n: ectx: whatsthis, entry (autoconnect), group (connection)
+#: rc.cpp:1514
+msgid "Should the networking system always try to activate this connection?"
+msgstr "Treba li sustav mreže uvijek pokušati aktivirati ovu vezu?"
+
+#. i18n: file: libs/internals/schemas/connection.kcfg:21
+#. i18n: ectx: label, entry (timestamp), group (connection)
+#: rc.cpp:1517
+msgid "Last used"
+msgstr "Zadnje korištena"
+
+#. i18n: file: libs/internals/schemas/connection.kcfg:22
+#. i18n: ectx: whatsthis, entry (timestamp), group (connection)
+#: rc.cpp:1520
+msgid "The date and time that the connection was last activated"
+msgstr "Vrijeme i datum kad je veza zadnji put aktivirana"
+
+#. i18n: file: libs/internals/schemas/connection.kcfg:25
+#. i18n: ectx: label, entry (uuid), group (connection)
+#: rc.cpp:1523
+msgid "UUID"
+msgstr "UUID"
+
+#. i18n: file: libs/internals/schemas/connection.kcfg:26
+#. i18n: ectx: whatsthis, entry (uuid), group (connection)
+#: rc.cpp:1526
+msgid "Unique connection identifier"
+msgstr "Jedinstveni identifikator veze"
+
+#. i18n: file: libs/internals/schemas/gsm.kcfg:22
+#. i18n: ectx: label, entry (apn), group (gsm)
+#: rc.cpp:1538
+msgid "APN"
+msgstr "APN"
+
+#. i18n: file: libs/internals/schemas/gsm.kcfg:26
+#. i18n: ectx: label, entry (networkid), group (gsm)
+#: rc.cpp:1541
+msgid "Network ID"
+msgstr "ID Mreže"
+
+#. i18n: file: libs/internals/schemas/gsm.kcfg:30
+#. i18n: ectx: label, entry (networktype), group (gsm)
+#. i18n: file: libs/internals/schemas/bluetooth.kcfg:19
+#. i18n: ectx: label, entry (networktype), group (bluetooth)
+#: rc.cpp:1544 rc.cpp:1658
+msgid "Network Type"
+msgstr "Tip Mreže"
+
+#. i18n: file: libs/internals/schemas/gsm.kcfg:42
+#. i18n: ectx: label, entry (puk), group (gsm)
+#: rc.cpp:1553
+msgid "PUK"
+msgstr "PUK"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:9
+#. i18n: ectx: label, entry (noauth), group (ppp)
+#: rc.cpp:1556
+msgid "No Auth"
+msgstr "Bez prijave"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:13
+#. i18n: ectx: label, entry (refuseeap), group (ppp)
+#: rc.cpp:1559
+msgid "Refuse EAP"
+msgstr "Odbij EAP"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:17
+#. i18n: ectx: label, entry (refusepap), group (ppp)
+#: rc.cpp:1562
+msgid "Refuse PAP"
+msgstr "Odbij PAP"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:21
+#. i18n: ectx: label, entry (refusechap), group (ppp)
+#: rc.cpp:1565
+msgid "Refuse CHAP"
+msgstr "Odbij CHAP"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:25
+#. i18n: ectx: label, entry (refusemschap), group (ppp)
+#: rc.cpp:1568
+msgid "Refuse MS CHAP"
+msgstr "Odbij MS CHAP"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:29
+#. i18n: ectx: label, entry (refusemschapv2), group (ppp)
+#: rc.cpp:1571
+msgid "Refuse MS CHAP V2"
+msgstr "Odbij MS CHAP V2"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:33
+#. i18n: ectx: label, entry (nobsdcomp), group (ppp)
+#: rc.cpp:1574
+msgid "No BSD comp."
+msgstr "Nije BSD kompatibilno."
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:37
+#. i18n: ectx: label, entry (nodeflate), group (ppp)
+#: rc.cpp:1577
+msgid "No deflate"
+msgstr "Bez umanjivanja (Deflate)"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:41
+#. i18n: ectx: label, entry (novjcomp), group (ppp)
+#: rc.cpp:1580
+msgid "No VJ comp."
+msgstr "Nije VJ kompatibilno."
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:45
+#. i18n: ectx: label, entry (requiremppe), group (ppp)
+#: rc.cpp:1583
+msgid "Require MPPE"
+msgstr "Zahtijevaj MPPE"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:49
+#. i18n: ectx: label, entry (requiremppe128), group (ppp)
+#: rc.cpp:1586
+msgid "Require MPPE 128"
+msgstr "Zahtijevaj MPPE 128"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:53
+#. i18n: ectx: label, entry (mppestateful), group (ppp)
+#: rc.cpp:1589
+msgid "MPPE Stateful"
+msgstr "MPPE zadovoljeno"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:57
+#. i18n: ectx: label, entry (crtscts), group (ppp)
+#: rc.cpp:1592
+msgid "CRTSCTS"
+msgstr "CRTSCTS"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:61
+#. i18n: ectx: label, entry (baud), group (ppp)
+#. i18n: file: libs/internals/schemas/serial.kcfg:9
+#. i18n: ectx: label, entry (baud), group (serial)
+#: rc.cpp:1595 rc.cpp:1619
+msgid "Baud"
+msgstr "Broj bita u sekundi"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:65
+#. i18n: ectx: label, entry (mru), group (ppp)
+#: rc.cpp:1598
+msgid "MRU"
+msgstr "MRU"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:73
+#. i18n: ectx: label, entry (lcpechofailure), group (ppp)
+#: rc.cpp:1604
+msgid "LCP echo Failure"
+msgstr "Neuspjeli LCP odjek"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:77
+#. i18n: ectx: label, entry (lcpechointerval), group (ppp)
+#: rc.cpp:1607
+msgid "LCP echo interval"
+msgstr "Interval LCP odjeka"
+
+#. i18n: file: libs/internals/schemas/pppoe.kcfg:9
+#. i18n: ectx: label, entry (service), group (pppoe)
+#: rc.cpp:1610
+msgid "Service"
+msgstr "Usluga"
+
+#. i18n: file: libs/internals/schemas/serial.kcfg:14
+#. i18n: ectx: label, entry (bits), group (serial)
+#. i18n: file: libs/internals/schemas/vpn.kcfg:13
+#. i18n: ectx: label, entry (Data), group (vpn)
+#: rc.cpp:1622 rc.cpp:1637
+msgid "Data bits"
+msgstr "Bitovi podataka"
+
+#. i18n: file: libs/internals/schemas/serial.kcfg:19
+#. i18n: ectx: label, entry (parity), group (serial)
+#: rc.cpp:1625
+msgid "Parity"
+msgstr "Paritet"
+
+#. i18n: file: libs/internals/schemas/serial.kcfg:29
+#. i18n: ectx: label, entry (stopbits), group (serial)
+#: rc.cpp:1628
+msgid "Stop bits"
+msgstr "Zaustavni bitovi"
+
+#. i18n: file: libs/internals/schemas/serial.kcfg:34
+#. i18n: ectx: label, entry (senddelay), group (serial)
+#: rc.cpp:1631
+msgid "Send delay"
+msgstr "Pošalji odgodu"
+
+#. i18n: file: libs/internals/schemas/vpn.kcfg:9
+#. i18n: ectx: label, entry (ServiceType), group (vpn)
+#: rc.cpp:1634
+msgid "Service Type"
+msgstr "Tip usluge"
+
+#. i18n: file: libs/internals/schemas/vpn.kcfg:18
+#. i18n: ectx: whatsthis, entry (UserName), group (vpn)
+#: rc.cpp:1643
+msgid "System username, not stored"
+msgstr "Sistemsko korisničko ime, nije pohranjeno"
+
+#. i18n: file: libs/internals/schemas/vpn.kcfg:21
+#. i18n: ectx: label, entry (VpnSecrets), group (vpn)
+#: rc.cpp:1646
+msgid "Vpnsecrets"
+msgstr "Vpntajne"
+
+#. i18n: file: libs/internals/schemas/vpn.kcfg:25
+#. i18n: ectx: label, entry (PluginName), group (vpn)
+#: rc.cpp:1649
+msgid "VPN Plugin Name"
+msgstr "Naziv priključka za VPN"
+
+#. i18n: file: libs/internals/schemas/bluetooth.kcfg:9
+#. i18n: ectx: label, entry (networkname), group (bluetooth)
+#: rc.cpp:1652
+msgid "Network Name"
+msgstr "Naziv mreže"
+
+#. i18n: file: libs/internals/schemas/bluetooth.kcfg:14
+#. i18n: ectx: label, entry (bdaddr), group (bluetooth)
+#: rc.cpp:1655
+msgid "Bdaddr"
+msgstr "Bdaddr"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:9
+#. i18n: ectx: label, entry (method), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:9
+#. i18n: ectx: label, entry (method), group (ipv4)
+#: rc.cpp:1661 rc.cpp:1715
+msgid "Method"
+msgstr "Način"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:10
+#. i18n: ectx: whatsthis, entry (method), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:10
+#. i18n: ectx: whatsthis, entry (method), group (ipv4)
+#: rc.cpp:1664 rc.cpp:1718
+msgid "Choose the way to set the IP address of this connection"
+msgstr "Odaberite način postavljanja IP adrese za ovu vezu"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:22
+#. i18n: ectx: whatsthis, entry (dns), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:22
+#. i18n: ectx: whatsthis, entry (dns), group (ipv4)
+#: rc.cpp:1670 rc.cpp:1724
+msgid "List of Domain Name System servers to use"
+msgstr "Popis DNS poslužitelja za korištenje"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:25
+#. i18n: ectx: label, entry (dnssearch), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:25
+#. i18n: ectx: label, entry (dnssearch), group (ipv4)
+#: rc.cpp:1673 rc.cpp:1727
+msgid "Search Domains"
+msgstr "Traži domene"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:26
+#. i18n: ectx: whatsthis, entry (dnssearch), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:26
+#. i18n: ectx: whatsthis, entry (dnssearch), group (ipv4)
+#: rc.cpp:1676 rc.cpp:1730
+msgid "List of domains to search for a hostname"
+msgstr "Popis domena za pretragu računala"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:30
+#. i18n: ectx: label, entry (addresses), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:30
+#. i18n: ectx: label, entry (addresses), group (ipv4)
+#: rc.cpp:1679 rc.cpp:1733
+msgid "IP Addresses"
+msgstr "IP adrese"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:31
+#. i18n: ectx: whatsthis, entry (addresses), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:31
+#. i18n: ectx: whatsthis, entry (addresses), group (ipv4)
+#: rc.cpp:1682 rc.cpp:1736
+msgid "List of IP addresses to configure on this connection"
+msgstr "Popis IP adresa za postaviti na ovu vezu"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:34
+#. i18n: ectx: label, entry (ignoredhcpdns), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:34
+#. i18n: ectx: label, entry (ignoredhcpdns), group (ipv4)
+#: rc.cpp:1685 rc.cpp:1739
+msgid "Ignore DHCP DNS"
+msgstr "Zanemari DHCP DNS"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:35
+#. i18n: ectx: whatsthis, entry (ignoredhcpdns), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:35
+#. i18n: ectx: whatsthis, entry (ignoredhcpdns), group (ipv4)
+#: rc.cpp:1688 rc.cpp:1742
+msgid ""
+"Ignore DNS servers returned by DHCP and use the configured servers instead"
+msgstr ""
+"Zanemari DNS poslužitelje vraćene od DHCP-a i koristi umjesto njih "
+"postavljene poslužitelje"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:38
+#. i18n: ectx: label, entry (ignoreautoroute), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:38
+#. i18n: ectx: label, entry (ignoreautoroute), group (ipv4)
+#: rc.cpp:1691 rc.cpp:1745
+msgid "Ignore Automatic Routes"
+msgstr "Zanemari automatske rute"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:39
+#. i18n: ectx: whatsthis, entry (ignoreautoroute), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:39
+#. i18n: ectx: whatsthis, entry (ignoreautoroute), group (ipv4)
+#: rc.cpp:1694 rc.cpp:1748
+#, fuzzy
+#| msgid ""
+#| "Ignore DNS servers returned by DHCP and use the configured servers instead"
+msgid ""
+"Ignore routes returned by automatic configuration mechanisms and use the "
+"manually configured routes instead"
+msgstr ""
+"Zanemari DNS poslužitelje vraćene od DHCP-a i koristi umjesto njih "
+"postavljene poslužitelje"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:42
+#. i18n: ectx: label, entry (neverdefault), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:42
+#. i18n: ectx: label, entry (neverdefault), group (ipv4)
+#: rc.cpp:1697 rc.cpp:1751
+msgid "Never Default Route"
+msgstr "Nikad zadana ruta"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:43
+#. i18n: ectx: whatsthis, entry (neverdefault), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:43
+#. i18n: ectx: whatsthis, entry (neverdefault), group (ipv4)
+#: rc.cpp:1700 rc.cpp:1754
+msgid "Never assign the default route to this connection"
+msgstr "Nikad ne pridruži zadanu rutu ovoj vezi"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:46
+#. i18n: ectx: label, entry (dhcpclientid), group (ipv4)
+#: rc.cpp:1703
+msgid "DHCP Client ID"
+msgstr "ID klijenta DHCP-a"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:50
+#. i18n: ectx: label, entry (dhcpsendhostname), group (ipv4)
+#: rc.cpp:1706
+msgid "Send hostname to DHCP server"
+msgstr "Pošalji ime računala poslužitelju DHCP-a"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:54
+#. i18n: ectx: label, entry (dhcphostname), group (ipv4)
+#: rc.cpp:1709
+msgid "DHCP hostname"
+msgstr "Ime računala DHCP-a"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:57
+#. i18n: ectx: label, entry (mayfail), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:46
+#. i18n: ectx: label, entry (mayfail), group (ipv4)
+#: rc.cpp:1712 rc.cpp:1757
+msgid "Required for this connection"
+msgstr "Potrebno za ovu vezu"
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy

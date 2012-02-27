@@ -1,0 +1,450 @@
+# translation of plasma_applet_networkmanagement.po to Slovak
+# Richard Fric <Richard.Fric@kdemail.net>, 2009.
+# Michal Sulek <misurel@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_applet_networkmanagement\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2012-02-25 02:57+0100\n"
+"PO-Revision-Date: 2012-02-05 22:31+0100\n"
+"Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: activatableitem.cpp:83 interfacedetailswidget.cpp:154
+#, fuzzy
+msgctxt "@info:tooltip"
+msgid "Click here to disconnect"
+msgstr "Kliknite sem pre detaily rozhrania"
+
+#: activatableitem.cpp:130
+msgctxt ""
+"@info:status Notification when the networking subsystem (NetworkManager, "
+"etc) is disabled"
+msgid "Networking system disabled"
+msgstr "Sieťový systém zakázaný"
+
+#: activatableitem.cpp:134
+msgctxt "@info:status Notification for radio kill switch turned off"
+msgid "Wireless hardware disabled"
+msgstr "Bezdrôtový hardvér zakázaný"
+
+#: gsminterfaceconnectionitem.cpp:143
+#, kde-format
+msgid "Signal quality: %1%"
+msgstr "Kvalita signálu: %1%"
+
+#: hiddenwirelessnetworkitem.cpp:77
+msgctxt "@action for creating a connection to a hidden wireless network"
+msgid "<placeholder>hidden network</placeholder>"
+msgstr ""
+
+#: hiddenwirelessnetworkitem.cpp:81
+#, fuzzy
+msgctxt "@label for hidden wireless network SSID entry"
+msgid "Enter network name and press <placeholder>enter</placeholder>"
+msgstr "Zadajte názov siete a stlačte Enter."
+
+#: hiddenwirelessnetworkitem.cpp:82
+#, fuzzy
+msgctxt "@info:tooltip for hidden wireless network SSID entry"
+msgid "Enter network name and press <placeholder>enter</placeholder>"
+msgstr "Zadajte názov siete a stlačte Enter."
+
+#: interfaceconnectionitem.cpp:71
+msgctxt "name of the connection not known"
+msgid "Unknown"
+msgstr "Neznáme"
+
+#: interfacedetailswidget.cpp:116
+msgctxt "interface details"
+msgid "<b>Traffic</b>"
+msgstr "<b>Prevádzka</b>"
+
+#: interfacedetailswidget.cpp:153
+#, fuzzy
+msgid "Disconnect"
+msgstr "Odpojiť"
+
+#: interfacedetailswidget.cpp:163
+#, fuzzy
+msgctxt "disconnect button in interface details window"
+msgid "Disconnect"
+msgstr "Odpojiť"
+
+#: interfacedetailswidget.cpp:177 typelistwidget.cpp:52
+msgid "Go Back"
+msgstr "Prejsť späť"
+
+#: interfacedetailswidget.cpp:210 interfacedetailswidget.cpp:332
+msgctxt "entry not available"
+msgid "not available"
+msgstr "nedostupné"
+
+#: interfacedetailswidget.cpp:215
+msgctxt "traffic received empty"
+msgid "Received"
+msgstr "Prijaté"
+
+#: interfacedetailswidget.cpp:217
+msgctxt "traffic transmitted empty"
+msgid "Transmitted"
+msgstr "Odoslané"
+
+#: interfacedetailswidget.cpp:323
+msgctxt "state of mobile broadband connection"
+msgid "not enabled"
+msgstr "nepovolené"
+
+#: interfacedetailswidget.cpp:340 interfacedetailswidget.cpp:387
+msgctxt "interface details"
+msgid "Type"
+msgstr "Typ"
+
+#: interfacedetailswidget.cpp:341 interfacedetailswidget.cpp:388
+msgctxt "interface details"
+msgid "Connection State"
+msgstr "Stav pripojenia"
+
+#: interfacedetailswidget.cpp:342
+msgctxt "interface details"
+msgid "IP Address"
+msgstr "IP adresa"
+
+#: interfacedetailswidget.cpp:343 interfacedetailswidget.cpp:390
+msgctxt "interface details"
+msgid "Connection Speed"
+msgstr "Rýchlosť pripojenia"
+
+#: interfacedetailswidget.cpp:343
+msgctxt "bitrate"
+msgid "Unknown"
+msgstr "Neznáme"
+
+#: interfacedetailswidget.cpp:344 interfacedetailswidget.cpp:391
+msgctxt "interface details"
+msgid "System Name"
+msgstr "Systémový názov"
+
+#: interfacedetailswidget.cpp:345
+msgctxt "interface details"
+msgid "MAC Address"
+msgstr "MAC adresa"
+
+#: interfacedetailswidget.cpp:346 interfacedetailswidget.cpp:393
+msgctxt "interface details"
+msgid "Driver"
+msgstr "Ovládač"
+
+#: interfacedetailswidget.cpp:352
+msgctxt "interface details"
+msgid "Access Point (SSID)"
+msgstr "Prístupový bod (SSID)"
+
+#: interfacedetailswidget.cpp:353
+msgctxt "interface details"
+msgid "Access Point (MAC)"
+msgstr "Prístupový bod (MAC)"
+
+#: interfacedetailswidget.cpp:361
+msgctxt "@item:intable wireless band"
+msgid "Band"
+msgstr "Pásmo"
+
+#: interfacedetailswidget.cpp:362
+msgctxt "@item:intable wireless channel"
+msgid "Channel"
+msgstr "Kanál"
+
+#: interfacedetailswidget.cpp:369
+msgctxt "interface details"
+msgid "Operator"
+msgstr "Operátor"
+
+#: interfacedetailswidget.cpp:370
+msgctxt "interface details"
+msgid "Signal Quality"
+msgstr "Kvalita signálu"
+
+#: interfacedetailswidget.cpp:371
+msgctxt "interface details"
+msgid "Access Technology"
+msgstr "Prístupová technológia"
+
+#: interfacedetailswidget.cpp:389
+msgctxt "interface details"
+msgid "Network Address (IP)"
+msgstr "Sieťová adresa (IP)"
+
+#: interfacedetailswidget.cpp:392
+msgctxt "interface details"
+msgid "Hardware Address (MAC)"
+msgstr "Hardvérová adresa (MAC)"
+
+#: interfacedetailswidget.cpp:411 interfaceitem.cpp:282
+msgctxt "label of the network interface"
+msgid "No IP address."
+msgstr "Žiadna IP adresa."
+
+#: interfacedetailswidget.cpp:418 interfaceitem.cpp:289
+msgctxt "label of the network interface"
+msgid "IP display error."
+msgstr "Chyba zobrazenia IP."
+
+#: interfacedetailswidget.cpp:497
+msgid "KBit/s"
+msgstr "KBit/s"
+
+#: interfacedetailswidget.cpp:499
+msgid "MBit/s"
+msgstr "MBit/s"
+
+#: interfacedetailswidget.cpp:503
+msgid "GBit/s"
+msgstr "GBit/s"
+
+#: interfacedetailswidget.cpp:527
+#, kde-format
+msgctxt ""
+"traffic, e.g. n KB/s\n"
+" m KB/s"
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: interfacedetailswidget.cpp:536
+msgid "Received"
+msgstr "Prijaté"
+
+#: interfacedetailswidget.cpp:539
+msgid "Transmitted"
+msgstr "Odoslané"
+
+#: interfaceitem.cpp:72
+msgctxt "tooltip on the LHS widgets"
+msgid "Click here for interface details"
+msgstr "Kliknite sem pre detaily rozhrania"
+
+#: interfaceitem.cpp:246
+msgctxt "generic label for an interface"
+msgid "<b>Network Interface</b>"
+msgstr "<b>Sieťové rozhranie</b>"
+
+#: interfaceitem.cpp:250
+msgctxt "network interface name unknown"
+msgid "<b>Unknown Network Interface</b>"
+msgstr "<b>Neznáme sieťové rozhranie</b>"
+
+#: interfaceitem.cpp:389
+msgctxt "wired interface network cable unplugged"
+msgid "Cable Unplugged"
+msgstr "Kábel odpojený"
+
+#: networkmanager.cpp:316
+msgctxt "CheckBox to enable or disable networking completely"
+msgid "Enable networking"
+msgstr "Povoliť sieť"
+
+#: networkmanager.cpp:317
+#, fuzzy
+msgctxt "@info:tooltip tooltip for the 'Enable networking' checkbox"
+msgid "Enable or disable the networking system"
+msgstr "Povoliť sieť"
+
+#: networkmanager.cpp:629
+msgctxt "Tooltip sub text"
+msgid "No network interfaces"
+msgstr "Žiadne sieťové rozhrania"
+
+#: networkmanager.cpp:680
+msgid "VPN Connections"
+msgstr "VPN pripojenia"
+
+#: networkmanager.cpp:694
+msgctxt "tooltip, all interfaces are down"
+msgid "Disconnected"
+msgstr "Odpojené"
+
+#: networkmanager.cpp:697
+msgctxt "tooltip, wireless is disabled in software"
+msgid "Wireless disabled in software"
+msgstr "Bezdrôtové spojenie zakázané softvérovo"
+
+#: networkmanager.cpp:700
+msgctxt "tooltip, all interfaces are down"
+msgid "Networking disabled"
+msgstr "Sieť deaktivovaná"
+
+#: networkmanager.cpp:703
+msgctxt "tooltip, wireless is disabled by hardware"
+msgid "Wireless disabled by hardware"
+msgstr "Bezdrôtové spojenie zakázané hardvérovo"
+
+#: nmpopup.cpp:106
+msgctxt "title on the LHS of the plasmoid"
+msgid "<h3>Interfaces</h3>"
+msgstr "<h3>Rozhrania</h3>"
+
+#: nmpopup.cpp:116
+msgctxt "tabbar on the left side"
+msgid "Interfaces"
+msgstr "Rozhrania"
+
+#: nmpopup.cpp:166
+msgctxt "button"
+msgid "Connect to Another Network..."
+msgstr ""
+
+#: nmpopup.cpp:175
+#, fuzzy
+msgctxt "connection list"
+msgid "Connections"
+msgstr "VPN pripojenia"
+
+#: nmpopup.cpp:176
+#, fuzzy
+msgctxt "@info:tooltip"
+msgid "Connections"
+msgstr "VPN pripojenia"
+
+#: nmpopup.cpp:177
+msgctxt "connection list"
+msgid "VPN"
+msgstr ""
+
+#: nmpopup.cpp:178
+#, fuzzy
+msgctxt "@info:tooltip"
+msgid "VPN Connections"
+msgstr "VPN pripojenia"
+
+#: nmpopup.cpp:179
+#, fuzzy
+msgctxt "connection list"
+msgid "Shared Connections"
+msgstr "Zobraziť &drôtové pripojenia"
+
+#: nmpopup.cpp:180
+#, fuzzy
+msgctxt "@info:tooltip"
+msgid "Shared Connections"
+msgstr "Zobraziť &drôtové pripojenia"
+
+#: nmpopup.cpp:208
+msgctxt "CheckBox to enable or disable wireless interface (rfkill)"
+msgid "Enable wireless"
+msgstr "Povoliť bezdrôtové pripojenie"
+
+#: nmpopup.cpp:224
+msgctxt "CheckBox to enable or disable wwan (mobile broadband) interface)"
+msgid "Enable mobile broadband"
+msgstr "Povoliť mobilný broadband"
+
+#: nmpopup.cpp:241
+#, fuzzy
+msgctxt "settings button in applet's popup window"
+msgid "Settings..."
+msgstr "Pripájanie..."
+
+#: nmpopup.cpp:254 nmpopup.cpp:382
+#, fuzzy
+msgctxt "show interface list in applet's popup window"
+msgid "Show Interfaces"
+msgstr "Rozhrania"
+
+#: nmpopup.cpp:271
+#, fuzzy
+msgctxt "main window"
+msgid "Manage your network connections"
+msgstr "Spravovať spojenia..."
+
+#: nmpopup.cpp:366
+msgctxt "Warning about wrong NetworkManager version"
+msgid "NetworkManager is not running. Please start it."
+msgstr "Správca siete nebeží. Prosím spustite ho."
+
+#: nmpopup.cpp:370
+#, kde-format
+msgctxt "Warning about wrong NetworkManager version"
+msgid ""
+"We need at least NetworkManager-%1 to work properly, found '%2'. Please "
+"upgrade to a newer version."
+msgstr ""
+"Potrebujeme minimálne NetworkManager-%1 na správnu prácu, nájdený '%2'. "
+"Prosím aktualizujte na novšiu verziu."
+
+#: nmpopup.cpp:388
+#, fuzzy
+msgctxt "hide interface list in applet's popup window"
+msgid "Hide Interfaces"
+msgstr "Rozhrania"
+
+#: nmpopup.cpp:783
+msgctxt "details for the interface"
+msgid "Details"
+msgstr "Detaily"
+
+#: showmoreitem.cpp:69
+#, fuzzy
+msgctxt "text when this item is toggled"
+msgid "Show less networks..."
+msgstr "Počet zo&brazených bezdrôtových sietí"
+
+#: showmoreitem.cpp:72
+#, fuzzy, kde-format
+msgctxt "text when this item not toggled"
+msgid "Show one more network"
+msgid_plural "Show %1 more networks..."
+msgstr[0] "Počet zo&brazených bezdrôtových sietí"
+msgstr[1] "Počet zo&brazených bezdrôtových sietí"
+msgstr[2] "Počet zo&brazených bezdrôtových sietí"
+
+#: typelistwidget.cpp:44
+msgctxt "title for connect to another network window"
+msgid "You want to connect to a network. We see the following options for you:"
+msgstr ""
+
+#: vpninterfaceitem.cpp:42
+msgctxt "initial label for VPN connection name"
+msgid "Not Available"
+msgstr "Nedostupné"
+
+#: vpninterfaceitem.cpp:92
+msgctxt "ip of vpn interface item"
+msgid "not available"
+msgstr "nedostupné"
+
+#: vpninterfaceitem.cpp:99
+#, kde-format
+msgctxt "VPN label in interfaces"
+msgid "<b>%1</b>"
+msgstr "<b>%1</b>"
+
+#: vpninterfaceitem.cpp:101
+msgctxt "VPN state label"
+msgid "Connected"
+msgstr "Pripojené"
+
+#: vpninterfaceitem.cpp:104
+msgctxt "VPN state label"
+msgid "Connecting..."
+msgstr "Pripájanie..."
+
+#: vpninterfaceitem.cpp:110
+msgctxt "VPN connections interface"
+msgid "<b>Virtual Private Network</b>"
+msgstr "<b>Virtuálna privátna sieť</b>"
+
+#: vpninterfaceitem.cpp:111
+msgctxt "VPN state label"
+msgid "Not Connected..."
+msgstr "Nepripojené..."
+
+#: wirelessnetworkitem.cpp:120 wirelessnetworkitem.cpp:166
+#, kde-format
+msgid "Strength: %1%"
+msgstr "Sila: %1%"
