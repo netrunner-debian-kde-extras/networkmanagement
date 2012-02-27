@@ -1,3 +1,9 @@
+networkmanagement (0.9.0-1) UNRELEASED; urgency=low
+
+  * New upstream release.
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 28 Feb 2012 00:48:22 +0100
+
 networkmanagement (0.9~git20120122.edc9568-1) unstable; urgency=low
 
   * New upstream Git snapshot edc9568628f799e7b1faa9d0ddfa10e3b43b4af9 from
