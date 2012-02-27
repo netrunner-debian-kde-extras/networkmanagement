@@ -71,3 +71,6 @@ endif(INSTALL_KNM_AUTOSTART)
 
 macro_display_feature_log()
 
+
+include(MacroOptionalAddSubdirectory)
+macro_optional_add_subdirectory( po )

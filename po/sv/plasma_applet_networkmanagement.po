@@ -1,0 +1,633 @@
+# translation of plasma_applet_networkmanagement.po to Swedish
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Stefan Asserhäll <stefan.asserhall@comhem.se>, 2008, 2009, 2010.
+# Stefan Asserhall <stefan.asserhall@comhem.se>, 2010, 2011, 2012.
+# Arve Eriksson <031299870@telia.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_applet_networkmanagement\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2012-02-25 02:57+0100\n"
+"PO-Revision-Date: 2012-01-07 19:32+0100\n"
+"Last-Translator: Stefan Asserhall <stefan.asserhall@comhem.se>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: activatableitem.cpp:83 interfacedetailswidget.cpp:154
+msgctxt "@info:tooltip"
+msgid "Click here to disconnect"
+msgstr "Klicka här för att koppla ner"
+
+#: activatableitem.cpp:130
+msgctxt ""
+"@info:status Notification when the networking subsystem (NetworkManager, "
+"etc) is disabled"
+msgid "Networking system disabled"
+msgstr "Nätverkssystem inaktiverat"
+
+#: activatableitem.cpp:134
+msgctxt "@info:status Notification for radio kill switch turned off"
+msgid "Wireless hardware disabled"
+msgstr "Trådlös hårdvara inaktiverad"
+
+#: gsminterfaceconnectionitem.cpp:143
+#, kde-format
+msgid "Signal quality: %1%"
+msgstr "Signalkvalitet: %1 %"
+
+#: hiddenwirelessnetworkitem.cpp:77
+msgctxt "@action for creating a connection to a hidden wireless network"
+msgid "<placeholder>hidden network</placeholder>"
+msgstr "<placeholder>dolt nätverk</placeholder>"
+
+#: hiddenwirelessnetworkitem.cpp:81
+msgctxt "@label for hidden wireless network SSID entry"
+msgid "Enter network name and press <placeholder>enter</placeholder>"
+msgstr "Ange nätverksnamn och tryck på returtangenten"
+
+#: hiddenwirelessnetworkitem.cpp:82
+msgctxt "@info:tooltip for hidden wireless network SSID entry"
+msgid "Enter network name and press <placeholder>enter</placeholder>"
+msgstr "Ange nätverksnamn och tryck på returtangenten"
+
+#: interfaceconnectionitem.cpp:71
+msgctxt "name of the connection not known"
+msgid "Unknown"
+msgstr "Okänd"
+
+#: interfacedetailswidget.cpp:116
+msgctxt "interface details"
+msgid "<b>Traffic</b>"
+msgstr "<b>Trafik</b>"
+
+#: interfacedetailswidget.cpp:153
+msgid "Disconnect"
+msgstr "Koppla ner"
+
+#: interfacedetailswidget.cpp:163
+msgctxt "disconnect button in interface details window"
+msgid "Disconnect"
+msgstr "Koppla ner"
+
+#: interfacedetailswidget.cpp:177 typelistwidget.cpp:52
+msgid "Go Back"
+msgstr "Gå tillbaka"
+
+#: interfacedetailswidget.cpp:210 interfacedetailswidget.cpp:332
+msgctxt "entry not available"
+msgid "not available"
+msgstr "ej tillgänglig"
+
+#: interfacedetailswidget.cpp:215
+msgctxt "traffic received empty"
+msgid "Received"
+msgstr "Mottaget"
+
+#: interfacedetailswidget.cpp:217
+msgctxt "traffic transmitted empty"
+msgid "Transmitted"
+msgstr "Skickat"
+
+#: interfacedetailswidget.cpp:323
+msgctxt "state of mobile broadband connection"
+msgid "not enabled"
+msgstr "inte aktiverad"
+
+#: interfacedetailswidget.cpp:340 interfacedetailswidget.cpp:387
+msgctxt "interface details"
+msgid "Type"
+msgstr "Typ"
+
+#: interfacedetailswidget.cpp:341 interfacedetailswidget.cpp:388
+msgctxt "interface details"
+msgid "Connection State"
+msgstr "Anslutningstillstånd"
+
+#: interfacedetailswidget.cpp:342
+msgctxt "interface details"
+msgid "IP Address"
+msgstr "IP-adress"
+
+#: interfacedetailswidget.cpp:343 interfacedetailswidget.cpp:390
+msgctxt "interface details"
+msgid "Connection Speed"
+msgstr "Anslutningshastighet"
+
+#: interfacedetailswidget.cpp:343
+msgctxt "bitrate"
+msgid "Unknown"
+msgstr "Okänd"
+
+#: interfacedetailswidget.cpp:344 interfacedetailswidget.cpp:391
+msgctxt "interface details"
+msgid "System Name"
+msgstr "Systemnamn"
+
+#: interfacedetailswidget.cpp:345
+msgctxt "interface details"
+msgid "MAC Address"
+msgstr "MAC-adress"
+
+#: interfacedetailswidget.cpp:346 interfacedetailswidget.cpp:393
+msgctxt "interface details"
+msgid "Driver"
+msgstr "Drivrutin"
+
+#: interfacedetailswidget.cpp:352
+msgctxt "interface details"
+msgid "Access Point (SSID)"
+msgstr "Åtkomstpunkt (SSID)"
+
+#: interfacedetailswidget.cpp:353
+msgctxt "interface details"
+msgid "Access Point (MAC)"
+msgstr "Åtkomstpunkt (MAC)"
+
+#: interfacedetailswidget.cpp:361
+msgctxt "@item:intable wireless band"
+msgid "Band"
+msgstr "Band"
+
+#: interfacedetailswidget.cpp:362
+msgctxt "@item:intable wireless channel"
+msgid "Channel"
+msgstr "Kanal"
+
+#: interfacedetailswidget.cpp:369
+msgctxt "interface details"
+msgid "Operator"
+msgstr "Operatör"
+
+#: interfacedetailswidget.cpp:370
+msgctxt "interface details"
+msgid "Signal Quality"
+msgstr "Signalkvalitet"
+
+#: interfacedetailswidget.cpp:371
+msgctxt "interface details"
+msgid "Access Technology"
+msgstr "Åtkomstteknologi"
+
+#: interfacedetailswidget.cpp:389
+msgctxt "interface details"
+msgid "Network Address (IP)"
+msgstr "Nätverksadress (IP)"
+
+#: interfacedetailswidget.cpp:392
+msgctxt "interface details"
+msgid "Hardware Address (MAC)"
+msgstr "Hårdvaruadress (MAC)"
+
+#: interfacedetailswidget.cpp:411 interfaceitem.cpp:282
+msgctxt "label of the network interface"
+msgid "No IP address."
+msgstr "Ingen IP-adress."
+
+#: interfacedetailswidget.cpp:418 interfaceitem.cpp:289
+msgctxt "label of the network interface"
+msgid "IP display error."
+msgstr "IP-visningsfel."
+
+#: interfacedetailswidget.cpp:497
+msgid "KBit/s"
+msgstr "kbit/s"
+
+#: interfacedetailswidget.cpp:499
+msgid "MBit/s"
+msgstr "Mbit/s"
+
+#: interfacedetailswidget.cpp:503
+msgid "GBit/s"
+msgstr "Gbit/s"
+
+#: interfacedetailswidget.cpp:527
+#, kde-format
+msgctxt ""
+"traffic, e.g. n KB/s\n"
+" m KB/s"
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: interfacedetailswidget.cpp:536
+msgid "Received"
+msgstr "Mottaget"
+
+#: interfacedetailswidget.cpp:539
+msgid "Transmitted"
+msgstr "Skickat"
+
+#: interfaceitem.cpp:72
+msgctxt "tooltip on the LHS widgets"
+msgid "Click here for interface details"
+msgstr "Klicka här för information om gränssnittet"
+
+#: interfaceitem.cpp:246
+msgctxt "generic label for an interface"
+msgid "<b>Network Interface</b>"
+msgstr "<b>Nätverksgränssnitt</b>"
+
+#: interfaceitem.cpp:250
+msgctxt "network interface name unknown"
+msgid "<b>Unknown Network Interface</b>"
+msgstr "<b>Okänt nätverksgränssnitt</b>"
+
+#: interfaceitem.cpp:389
+msgctxt "wired interface network cable unplugged"
+msgid "Cable Unplugged"
+msgstr "Kabel frånkopplad"
+
+#: networkmanager.cpp:316
+msgctxt "CheckBox to enable or disable networking completely"
+msgid "Enable networking"
+msgstr "Aktivera nätverk"
+
+#: networkmanager.cpp:317
+msgctxt "@info:tooltip tooltip for the 'Enable networking' checkbox"
+msgid "Enable or disable the networking system"
+msgstr "Aktivera eller inaktivera nätverkssystemet"
+
+#: networkmanager.cpp:629
+msgctxt "Tooltip sub text"
+msgid "No network interfaces"
+msgstr "Inga nätverksgränssnitt"
+
+#: networkmanager.cpp:680
+msgid "VPN Connections"
+msgstr "VPN-anslutningar"
+
+#: networkmanager.cpp:694
+msgctxt "tooltip, all interfaces are down"
+msgid "Disconnected"
+msgstr "Nerkopplad"
+
+#: networkmanager.cpp:697
+msgctxt "tooltip, wireless is disabled in software"
+msgid "Wireless disabled in software"
+msgstr "Trådlös anslutning inaktiverad i programvara"
+
+#: networkmanager.cpp:700
+msgctxt "tooltip, all interfaces are down"
+msgid "Networking disabled"
+msgstr "Nätverk inaktiverat"
+
+#: networkmanager.cpp:703
+msgctxt "tooltip, wireless is disabled by hardware"
+msgid "Wireless disabled by hardware"
+msgstr "Trådlös anslutning inaktiverad av hårdvara"
+
+#: nmpopup.cpp:106
+msgctxt "title on the LHS of the plasmoid"
+msgid "<h3>Interfaces</h3>"
+msgstr "<h3>Gränssnitt</h3>"
+
+#: nmpopup.cpp:116
+msgctxt "tabbar on the left side"
+msgid "Interfaces"
+msgstr "Gränssnitt"
+
+#: nmpopup.cpp:166
+msgctxt "button"
+msgid "Connect to Another Network..."
+msgstr "Anslut till ett annat nätverk..."
+
+#: nmpopup.cpp:175
+msgctxt "connection list"
+msgid "Connections"
+msgstr "Anslutningar"
+
+#: nmpopup.cpp:176
+msgctxt "@info:tooltip"
+msgid "Connections"
+msgstr "Anslutningar"
+
+#: nmpopup.cpp:177
+msgctxt "connection list"
+msgid "VPN"
+msgstr "VPN"
+
+#: nmpopup.cpp:178
+msgctxt "@info:tooltip"
+msgid "VPN Connections"
+msgstr "VPN-anslutningar"
+
+#: nmpopup.cpp:179
+msgctxt "connection list"
+msgid "Shared Connections"
+msgstr "Delade anslutningar"
+
+#: nmpopup.cpp:180
+msgctxt "@info:tooltip"
+msgid "Shared Connections"
+msgstr "Delade anslutningar"
+
+#: nmpopup.cpp:208
+msgctxt "CheckBox to enable or disable wireless interface (rfkill)"
+msgid "Enable wireless"
+msgstr "Aktivera trådlös"
+
+#: nmpopup.cpp:224
+msgctxt "CheckBox to enable or disable wwan (mobile broadband) interface)"
+msgid "Enable mobile broadband"
+msgstr "Aktivera mobilt bredband"
+
+#: nmpopup.cpp:241
+msgctxt "settings button in applet's popup window"
+msgid "Settings..."
+msgstr "Inställningar..."
+
+#: nmpopup.cpp:254 nmpopup.cpp:382
+msgctxt "show interface list in applet's popup window"
+msgid "Show Interfaces"
+msgstr "Visa gränssnitt"
+
+#: nmpopup.cpp:271
+msgctxt "main window"
+msgid "Manage your network connections"
+msgstr "Hantera nätverksanslutningar"
+
+#: nmpopup.cpp:366
+msgctxt "Warning about wrong NetworkManager version"
+msgid "NetworkManager is not running. Please start it."
+msgstr "Nätverkshanteraren kör inte. Starta den."
+
+#: nmpopup.cpp:370
+#, kde-format
+msgctxt "Warning about wrong NetworkManager version"
+msgid ""
+"We need at least NetworkManager-%1 to work properly, found '%2'. Please "
+"upgrade to a newer version."
+msgstr ""
+"Åtminstone version %1 av nätverkshanteraren krävs för riktig funktion, "
+"hittade '%2'. Uppgradera till en nyare version."
+
+#: nmpopup.cpp:388
+msgctxt "hide interface list in applet's popup window"
+msgid "Hide Interfaces"
+msgstr "Dölj gränssnitt"
+
+#: nmpopup.cpp:783
+msgctxt "details for the interface"
+msgid "Details"
+msgstr "Detaljinformation"
+
+#: showmoreitem.cpp:69
+msgctxt "text when this item is toggled"
+msgid "Show less networks..."
+msgstr "Visa färre nätverk..."
+
+#: showmoreitem.cpp:72
+#, kde-format
+msgctxt "text when this item not toggled"
+msgid "Show one more network"
+msgid_plural "Show %1 more networks..."
+msgstr[0] "Visa ett ytterligare nätverk"
+msgstr[1] "Visa %1 ytterligare nätverk..."
+
+#: typelistwidget.cpp:44
+msgctxt "title for connect to another network window"
+msgid "You want to connect to a network. We see the following options for you:"
+msgstr "Du vill ansluta till ett nätverk. Följande alternativ är tillgängliga:"
+
+#: vpninterfaceitem.cpp:42
+msgctxt "initial label for VPN connection name"
+msgid "Not Available"
+msgstr "Ej tillgänglig"
+
+#: vpninterfaceitem.cpp:92
+msgctxt "ip of vpn interface item"
+msgid "not available"
+msgstr "ej tillgänglig"
+
+#: vpninterfaceitem.cpp:99
+#, kde-format
+msgctxt "VPN label in interfaces"
+msgid "<b>%1</b>"
+msgstr "<b>%1</b>"
+
+#: vpninterfaceitem.cpp:101
+msgctxt "VPN state label"
+msgid "Connected"
+msgstr "Ansluten"
+
+#: vpninterfaceitem.cpp:104
+msgctxt "VPN state label"
+msgid "Connecting..."
+msgstr "Ansluter..."
+
+#: vpninterfaceitem.cpp:110
+msgctxt "VPN connections interface"
+msgid "<b>Virtual Private Network</b>"
+msgstr "<b>Virtuellt privat nätverk</b>"
+
+#: vpninterfaceitem.cpp:111
+msgctxt "VPN state label"
+msgid "Not Connected..."
+msgstr "Inte ansluten..."
+
+#: wirelessnetworkitem.cpp:120 wirelessnetworkitem.cpp:166
+#, kde-format
+msgid "Strength: %1%"
+msgstr "Styrka: %1 %"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+#, fuzzy

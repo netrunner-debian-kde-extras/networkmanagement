@@ -1,0 +1,489 @@
+# Albanian translation for plasma-widget-networkmanagement
+# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# This file is distributed under the same license as the plasma-widget-networkmanagement package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-widget-networkmanagement\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2012-02-25 02:57+0100\n"
+"PO-Revision-Date: 2010-02-20 05:29+0000\n"
+"Last-Translator: Vilson Gjeci <vilsongjeci@gmail.com>\n"
+"Language-Team: Albanian <sq@li.org>\n"
+"Language: sq\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2011-04-22 08:52+0000\n"
+"X-Generator: Launchpad (build 12883)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: activatableitem.cpp:83 interfacedetailswidget.cpp:154
+msgctxt "@info:tooltip"
+msgid "Click here to disconnect"
+msgstr ""
+
+#: activatableitem.cpp:130
+msgctxt ""
+"@info:status Notification when the networking subsystem (NetworkManager, "
+"etc) is disabled"
+msgid "Networking system disabled"
+msgstr ""
+
+#: activatableitem.cpp:134
+msgctxt "@info:status Notification for radio kill switch turned off"
+msgid "Wireless hardware disabled"
+msgstr ""
+
+#: gsminterfaceconnectionitem.cpp:143
+#, kde-format
+msgid "Signal quality: %1%"
+msgstr ""
+
+#: hiddenwirelessnetworkitem.cpp:77
+msgctxt "@action for creating a connection to a hidden wireless network"
+msgid "<placeholder>hidden network</placeholder>"
+msgstr ""
+
+#: hiddenwirelessnetworkitem.cpp:81
+msgctxt "@label for hidden wireless network SSID entry"
+msgid "Enter network name and press <placeholder>enter</placeholder>"
+msgstr ""
+
+#: hiddenwirelessnetworkitem.cpp:82
+msgctxt "@info:tooltip for hidden wireless network SSID entry"
+msgid "Enter network name and press <placeholder>enter</placeholder>"
+msgstr ""
+
+#: interfaceconnectionitem.cpp:71
+msgctxt "name of the connection not known"
+msgid "Unknown"
+msgstr "I Panjohur"
+
+#: interfacedetailswidget.cpp:116
+msgctxt "interface details"
+msgid "<b>Traffic</b>"
+msgstr ""
+
+#: interfacedetailswidget.cpp:153
+#, fuzzy
+#| msgctxt "tooltip on disconnect icon"
+#| msgid "Disconnect"
+msgid "Disconnect"
+msgstr "Shkëputu"
+
+#: interfacedetailswidget.cpp:163
+#, fuzzy
+#| msgctxt "tooltip on disconnect icon"
+#| msgid "Disconnect"
+msgctxt "disconnect button in interface details window"
+msgid "Disconnect"
+msgstr "Shkëputu"
+
+#: interfacedetailswidget.cpp:177 typelistwidget.cpp:52
+msgid "Go Back"
+msgstr ""
+
+#: interfacedetailswidget.cpp:210 interfacedetailswidget.cpp:332
+msgctxt "entry not available"
+msgid "not available"
+msgstr ""
+
+#: interfacedetailswidget.cpp:215
+msgctxt "traffic received empty"
+msgid "Received"
+msgstr ""
+
+#: interfacedetailswidget.cpp:217
+msgctxt "traffic transmitted empty"
+msgid "Transmitted"
+msgstr ""
+
+#: interfacedetailswidget.cpp:323
+msgctxt "state of mobile broadband connection"
+msgid "not enabled"
+msgstr ""
+
+#: interfacedetailswidget.cpp:340 interfacedetailswidget.cpp:387
+msgctxt "interface details"
+msgid "Type"
+msgstr ""
+
+#: interfacedetailswidget.cpp:341 interfacedetailswidget.cpp:388
+#, fuzzy
+#| msgid "Show &VPN connections"
+msgctxt "interface details"
+msgid "Connection State"
+msgstr "Shfaq lidhjet &VPN"
+
+#: interfacedetailswidget.cpp:342
+msgctxt "interface details"
+msgid "IP Address"
+msgstr ""
+
+#: interfacedetailswidget.cpp:343 interfacedetailswidget.cpp:390
+msgctxt "interface details"
+msgid "Connection Speed"
+msgstr ""
+
+#: interfacedetailswidget.cpp:343
+msgctxt "bitrate"
+msgid "Unknown"
+msgstr ""
+
+#: interfacedetailswidget.cpp:344 interfacedetailswidget.cpp:391
+msgctxt "interface details"
+msgid "System Name"
+msgstr ""
+
+#: interfacedetailswidget.cpp:345
+msgctxt "interface details"
+msgid "MAC Address"
+msgstr ""
+
+#: interfacedetailswidget.cpp:346 interfacedetailswidget.cpp:393
+msgctxt "interface details"
+msgid "Driver"
+msgstr ""
+
+#: interfacedetailswidget.cpp:352
+msgctxt "interface details"
+msgid "Access Point (SSID)"
+msgstr ""
+
+#: interfacedetailswidget.cpp:353
+msgctxt "interface details"
+msgid "Access Point (MAC)"
+msgstr ""
+
+#: interfacedetailswidget.cpp:361
+msgctxt "@item:intable wireless band"
+msgid "Band"
+msgstr ""
+
+#: interfacedetailswidget.cpp:362
+msgctxt "@item:intable wireless channel"
+msgid "Channel"
+msgstr ""
+
+#: interfacedetailswidget.cpp:369
+msgctxt "interface details"
+msgid "Operator"
+msgstr ""
+
+#: interfacedetailswidget.cpp:370
+msgctxt "interface details"
+msgid "Signal Quality"
+msgstr ""
+
+#: interfacedetailswidget.cpp:371
+msgctxt "interface details"
+msgid "Access Technology"
+msgstr ""
+
+#: interfacedetailswidget.cpp:389
+msgctxt "interface details"
+msgid "Network Address (IP)"
+msgstr ""
+
+#: interfacedetailswidget.cpp:392
+msgctxt "interface details"
+msgid "Hardware Address (MAC)"
+msgstr ""
+
+#: interfacedetailswidget.cpp:411 interfaceitem.cpp:282
+msgctxt "label of the network interface"
+msgid "No IP address."
+msgstr "Nuk ka adresë IP."
+
+#: interfacedetailswidget.cpp:418 interfaceitem.cpp:289
+msgctxt "label of the network interface"
+msgid "IP display error."
+msgstr "Gabim në shfaqjen e IP."
+
+#: interfacedetailswidget.cpp:497
+msgid "KBit/s"
+msgstr ""
+
+#: interfacedetailswidget.cpp:499
+msgid "MBit/s"
+msgstr ""
+
+#: interfacedetailswidget.cpp:503
+msgid "GBit/s"
+msgstr ""
+
+#: interfacedetailswidget.cpp:527
+#, kde-format
+msgctxt ""
+"traffic, e.g. n KB/s\n"
+" m KB/s"
+msgid "%1 %2"
+msgstr ""
+
+#: interfacedetailswidget.cpp:536
+msgid "Received"
+msgstr ""
+
+#: interfacedetailswidget.cpp:539
+msgid "Transmitted"
+msgstr ""
+
+#: interfaceitem.cpp:72
+msgctxt "tooltip on the LHS widgets"
+msgid "Click here for interface details"
+msgstr ""
+
+#: interfaceitem.cpp:246
+msgctxt "generic label for an interface"
+msgid "<b>Network Interface</b>"
+msgstr ""
+
+#: interfaceitem.cpp:250
+msgctxt "network interface name unknown"
+msgid "<b>Unknown Network Interface</b>"
+msgstr "<b>Ndërfaqe e Panjohur rrjeti</b>"
+
+#: interfaceitem.cpp:389
+msgctxt "wired interface network cable unplugged"
+msgid "Cable Unplugged"
+msgstr ""
+
+#: networkmanager.cpp:316
+msgctxt "CheckBox to enable or disable networking completely"
+msgid "Enable networking"
+msgstr "Aktivizo rrjetin"
+
+#: networkmanager.cpp:317
+#, fuzzy
+#| msgctxt "CheckBox to enable or disable networking completely"
+#| msgid "Enable networking"
+msgctxt "@info:tooltip tooltip for the 'Enable networking' checkbox"
+msgid "Enable or disable the networking system"
+msgstr "Aktivizo rrjetin"
+
+#: networkmanager.cpp:629
+msgctxt "Tooltip sub text"
+msgid "No network interfaces"
+msgstr "Nuk ka ndërfaqe rrjeti"
+
+#: networkmanager.cpp:680
+#, fuzzy
+#| msgid "Show &VPN connections"
+msgid "VPN Connections"
+msgstr "Shfaq lidhjet &VPN"
+
+#: networkmanager.cpp:694
+msgctxt "tooltip, all interfaces are down"
+msgid "Disconnected"
+msgstr "Shkëputur"
+
+#: networkmanager.cpp:697
+msgctxt "tooltip, wireless is disabled in software"
+msgid "Wireless disabled in software"
+msgstr ""
+
+#: networkmanager.cpp:700
+msgctxt "tooltip, all interfaces are down"
+msgid "Networking disabled"
+msgstr ""
+
+#: networkmanager.cpp:703
+msgctxt "tooltip, wireless is disabled by hardware"
+msgid "Wireless disabled by hardware"
+msgstr ""
+
+#: nmpopup.cpp:106
+msgctxt "title on the LHS of the plasmoid"
+msgid "<h3>Interfaces</h3>"
+msgstr ""
+
+#: nmpopup.cpp:116
+msgctxt "tabbar on the left side"
+msgid "Interfaces"
+msgstr ""
+
+#: nmpopup.cpp:166
+msgctxt "button"
+msgid "Connect to Another Network..."
+msgstr ""
+
+#: nmpopup.cpp:175
+#, fuzzy
+#| msgid "Show &VPN connections"
+msgctxt "connection list"
+msgid "Connections"
+msgstr "Shfaq lidhjet &VPN"
+
+#: nmpopup.cpp:176
+#, fuzzy
+#| msgid "Show &VPN connections"
+msgctxt "@info:tooltip"
+msgid "Connections"
+msgstr "Shfaq lidhjet &VPN"
+
+#: nmpopup.cpp:177
+msgctxt "connection list"
+msgid "VPN"
+msgstr ""
+
+#: nmpopup.cpp:178
+#, fuzzy
+#| msgid "Show &VPN connections"
+msgctxt "@info:tooltip"
+msgid "VPN Connections"
+msgstr "Shfaq lidhjet &VPN"
+
+#: nmpopup.cpp:179
+#, fuzzy
+#| msgid "Show &wired connections"
+msgctxt "connection list"
+msgid "Shared Connections"
+msgstr "Shfaq &lidhjet kabllore"
+
+#: nmpopup.cpp:180
+#, fuzzy
+#| msgid "Show &wired connections"
+msgctxt "@info:tooltip"
+msgid "Shared Connections"
+msgstr "Shfaq &lidhjet kabllore"
+
+#: nmpopup.cpp:208
+msgctxt "CheckBox to enable or disable wireless interface (rfkill)"
+msgid "Enable wireless"
+msgstr "Aktivizo wireless"
+
+#: nmpopup.cpp:224
+msgctxt "CheckBox to enable or disable wwan (mobile broadband) interface)"
+msgid "Enable mobile broadband"
+msgstr ""
+
+#: nmpopup.cpp:241
+msgctxt "settings button in applet's popup window"
+msgid "Settings..."
+msgstr ""
+
+#: nmpopup.cpp:254 nmpopup.cpp:382
+#, fuzzy
+#| msgctxt "Tooltip sub text"
+#| msgid "No network interfaces"
+msgctxt "show interface list in applet's popup window"
+msgid "Show Interfaces"
+msgstr "Nuk ka ndërfaqe rrjeti"
+
+#: nmpopup.cpp:271
+msgctxt "main window"
+msgid "Manage your network connections"
+msgstr ""
+
+#: nmpopup.cpp:366
+msgctxt "Warning about wrong NetworkManager version"
+msgid "NetworkManager is not running. Please start it."
+msgstr ""
+
+#: nmpopup.cpp:370
+#, kde-format
+msgctxt "Warning about wrong NetworkManager version"
+msgid ""
+"We need at least NetworkManager-%1 to work properly, found '%2'. Please "
+"upgrade to a newer version."
+msgstr ""
+
+#: nmpopup.cpp:388
+#, fuzzy
+#| msgctxt "Tooltip sub text"
+#| msgid "No network interfaces"
+msgctxt "hide interface list in applet's popup window"
+msgid "Hide Interfaces"
+msgstr "Nuk ka ndërfaqe rrjeti"
+
+#: nmpopup.cpp:783
+msgctxt "details for the interface"
+msgid "Details"
+msgstr ""
+
+#: showmoreitem.cpp:69
+#, fuzzy
+#| msgid "&Show this many wireless networks"
+msgctxt "text when this item is toggled"
+msgid "Show less networks..."
+msgstr "&Shfaq kaq rrjete wireless"
+
+#: showmoreitem.cpp:72
+#, fuzzy, kde-format
+#| msgid "&Show this many wireless networks"
+msgctxt "text when this item not toggled"
+msgid "Show one more network"
+msgid_plural "Show %1 more networks..."
+msgstr[0] "&Shfaq kaq rrjete wireless"
+msgstr[1] "&Shfaq kaq rrjete wireless"
+
+#: typelistwidget.cpp:44
+msgctxt "title for connect to another network window"
+msgid "You want to connect to a network. We see the following options for you:"
+msgstr ""
+
+#: vpninterfaceitem.cpp:42
+msgctxt "initial label for VPN connection name"
+msgid "Not Available"
+msgstr ""
+
+#: vpninterfaceitem.cpp:92
+msgctxt "ip of vpn interface item"
+msgid "not available"
+msgstr ""
+
+#: vpninterfaceitem.cpp:99
+#, kde-format
+msgctxt "VPN label in interfaces"
+msgid "<b>%1</b>"
+msgstr ""
+
+#: vpninterfaceitem.cpp:101
+msgctxt "VPN state label"
+msgid "Connected"
+msgstr ""
+
+#: vpninterfaceitem.cpp:104
+msgctxt "VPN state label"
+msgid "Connecting..."
+msgstr ""
+
+#: vpninterfaceitem.cpp:110
+msgctxt "VPN connections interface"
+msgid "<b>Virtual Private Network</b>"
+msgstr ""
+
+#: vpninterfaceitem.cpp:111
+msgctxt "VPN state label"
+msgid "Not Connected..."
+msgstr ""
+
+#: wirelessnetworkitem.cpp:120 wirelessnetworkitem.cpp:166
+#, kde-format
+msgid "Strength: %1%"
+msgstr ""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
