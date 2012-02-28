@@ -30,6 +30,8 @@ Description: Network Management widget for KDE Plasma workspaces
 
 Package: network-manager-kde
 Architecture: any
+Section: oldlibs
+Priority: extra
 Depends: ${misc:Depends}, plasma-widget-networkmanagement
 Description: transitional package for plasma-widget-networkmanagement
  This is a dummy transitional package for plasma-widget-networkmanagement. You

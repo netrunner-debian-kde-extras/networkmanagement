@@ -5,6 +5,8 @@ networkmanagement (0.9.0-1) UNRELEASED; urgency=low
   * Install gettext translations.
   * Simplify the way we compute the version number for the network-manager-kde
     dummy package (which needs an epoch).
+  * Move dummy transitional package for network-manager-kde into section
+    oldlibs with priority extra.
 
  -- Michael Biebl <biebl@debian.org>  Tue, 28 Feb 2012 02:20:05 +0100
 
