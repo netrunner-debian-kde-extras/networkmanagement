@@ -18,6 +18,7 @@ usr/lib/libknmui.so.*
 usr/lib/libsolidcontrolfuture.so
 usr/lib/libsolidcontrolnm09.so.*
 usr/lib/libsolidcontrolnm09ifaces.so.*
+usr/share/locale/
 usr/share/icons/oxygen/
 usr/share/kde4/apps/networkmanagement/networkmanagement.notifyrc
 usr/share/kde4/services/kcm_networkmanagement.desktop

@@ -2,8 +2,9 @@ networkmanagement (0.9.0-1) UNRELEASED; urgency=low
 
   * New upstream release.
   * Add watch file and track unstable releases for now.
+  * Install gettext translations.
 
- -- Michael Biebl <biebl@debian.org>  Tue, 28 Feb 2012 00:54:46 +0100
+ -- Michael Biebl <biebl@debian.org>  Tue, 28 Feb 2012 01:15:01 +0100
 
 networkmanagement (0.9~git20120122.edc9568-1) unstable; urgency=low
 
