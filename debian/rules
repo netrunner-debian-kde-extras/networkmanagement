@@ -8,11 +8,6 @@ DEB_KNETWORKMANAGER_VERSION := '1:$(DEB_BINARY_VERSION)'
 override_dh_auto_configure:
 	dh_auto_configure -Skde -- -DCMAKE_USE_RELATIVE_PATHS=ON
 
-override_dh_install:
-	dh_install -pplasma-widget-networkmanagement --autodest -- \
-	    $(wildcard debian/tmp/usr/share/kde4/apps/desktoptheme/default/icons/network.svgz)
-	dh_install --remaining-packages
-
 override_dh_gencontrol:
 	dh_gencontrol -pnetwork-manager-kde -- -v'$(DEB_KNETWORKMANAGER_VERSION)'
 	dh_gencontrol --remaining-packages

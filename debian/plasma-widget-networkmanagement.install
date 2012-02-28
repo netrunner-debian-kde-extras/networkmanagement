@@ -20,6 +20,7 @@ usr/lib/libsolidcontrolnm09.so.*
 usr/lib/libsolidcontrolnm09ifaces.so.*
 usr/share/locale/
 usr/share/icons/oxygen/
+usr/share/kde4/apps/desktoptheme/default/icons/network2.svgz
 usr/share/kde4/apps/networkmanagement/networkmanagement.notifyrc
 usr/share/kde4/services/kcm_networkmanagement.desktop
 usr/share/kde4/services/kcm_networkmanagement_tray.desktop
