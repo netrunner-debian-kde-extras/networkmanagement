@@ -6,7 +6,7 @@ Uploaders: Modestas Vainius <modax@debian.org>, Michael Biebl <biebl@debian.org>
 Build-Depends: debhelper (>= 8), cmake (>= 2.6.2), pkg-kde-tools (>= 0.5),
  libqt4-dev (>= 4:4.6.0), kdelibs5-dev (>= 4:4.6.0), kdebase-workspace-dev (>= 4:4.6.0),
  network-manager-dev (>= 0.9.0), libnm-util-dev (>= 0.9.0), mobile-broadband-provider-info
-Standards-Version: 3.9.2
+Standards-Version: 3.9.3
 Vcs-Git: git://git.debian.org/git/pkg-kde/kde-extras/networkmanagement.git
 Vcs-Browser: http://git.debian.org/?p=pkg-kde/kde-extras/networkmanagement.git
 
