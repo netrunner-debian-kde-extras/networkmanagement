@@ -1,3 +1,9 @@
+networkmanagement (0.9.0.1-1) UNRELEASED; urgency=low
+
+  * New upstream release.
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 09 Apr 2012 11:04:21 +0200
+
 networkmanagement (0.9.0-1) unstable; urgency=low
 
   * New upstream release.
