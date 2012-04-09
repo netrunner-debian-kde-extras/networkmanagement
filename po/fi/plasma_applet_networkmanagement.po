@@ -2,76 +2,57 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Tommi Nieminen <translator@legisign.org>, 2010.
-# Lasse Liehu <lliehu@kolumbus.fi>, 2011.
+# Lasse Liehu <lasse.liehu@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-25 02:57+0100\n"
-"PO-Revision-Date: 2011-01-10 10:42+0200\n"
-"Last-Translator: Lasse Liehu <lliehu@kolumbus.fi>\n"
+"POT-Creation-Date: 2012-03-20 18:01+0100\n"
+"PO-Revision-Date: 2011-10-13 20:26+0300\n"
+"Last-Translator: Lasse Liehu <lasse.liehu@gmail.com>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
-"Language: fi\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: activatableitem.cpp:83 interfacedetailswidget.cpp:154
-msgctxt "@info:tooltip"
-msgid "Click here to disconnect"
-msgstr ""
-
-#: activatableitem.cpp:130
+#: activatableitem.cpp:116
 #, fuzzy
-#| msgctxt "tooltip, all interfaces are down"
-#| msgid "Networking disabled"
 msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is disabled"
 msgid "Networking system disabled"
-msgstr "Verkko ei ole käytössä"
+msgstr "Verkkojärjestelmä ei käytössä"
 
-#: activatableitem.cpp:134
-#, fuzzy
-#| msgctxt "tooltip, wireless is disabled in software"
-#| msgid "Wireless disabled in software"
+#: activatableitem.cpp:120
 msgctxt "@info:status Notification for radio kill switch turned off"
 msgid "Wireless hardware disabled"
-msgstr "Langaton ei käytössä"
+msgstr ""
 
 #: gsminterfaceconnectionitem.cpp:143
 #, fuzzy, kde-format
-#| msgctxt "interface details"
-#| msgid "Signal Quality"
 msgid "Signal quality: %1%"
 msgstr "Signaalin vahvuus"
 
 #: hiddenwirelessnetworkitem.cpp:77
-msgctxt "@action for creating a connection to a hidden wireless network"
-msgid "<placeholder>hidden network</placeholder>"
+msgctxt "label for creating a connection to a hidden wireless network"
+msgid "<hidden network>"
 msgstr ""
 
 #: hiddenwirelessnetworkitem.cpp:81
-#, fuzzy
-#| msgctxt ""
-#| "default KLineEdit::clickMessage() for hidden wireless network SSID entry"
-#| msgid "Enter hidden SSID and press <enter>"
-msgctxt "@label for hidden wireless network SSID entry"
-msgid "Enter network name and press <placeholder>enter</placeholder>"
-msgstr "Anna piilo-SSID ja paina Enter"
+msgctxt ""
+"default KLineEdit::clickMessage() for hidden wireless network SSID entry"
+msgid "Enter network name and press <enter>"
+msgstr ""
 
 #: hiddenwirelessnetworkitem.cpp:82
-#, fuzzy
-#| msgctxt ""
-#| "default KLineEdit::clickMessage() for hidden wireless network SSID entry"
-#| msgid "Enter hidden SSID and press <enter>"
 msgctxt "@info:tooltip for hidden wireless network SSID entry"
-msgid "Enter network name and press <placeholder>enter</placeholder>"
-msgstr "Anna piilo-SSID ja paina Enter"
+msgid "Enter network name and press <enter>"
+msgstr ""
 
-#: interfaceconnectionitem.cpp:71
+#: interfaceconnectionitem.cpp:70
 msgctxt "name of the connection not known"
 msgid "Unknown"
 msgstr "Tuntematon"
@@ -81,328 +62,270 @@ msgctxt "interface details"
 msgid "<b>Traffic</b>"
 msgstr "<b>Liikenne</b>"
 
-#: interfacedetailswidget.cpp:153
-msgid "Disconnect"
-msgstr "Katkaise yhteys"
-
-#: interfacedetailswidget.cpp:163
-#, fuzzy
-#| msgid "Disconnect"
-msgctxt "disconnect button in interface details window"
-msgid "Disconnect"
-msgstr "Katkaise yhteys"
-
-#: interfacedetailswidget.cpp:177 typelistwidget.cpp:52
+#: interfacedetailswidget.cpp:152
 msgid "Go Back"
 msgstr "Mene takaisin"
 
-#: interfacedetailswidget.cpp:210 interfacedetailswidget.cpp:332
+#: interfacedetailswidget.cpp:177 interfacedetailswidget.cpp:299
 msgctxt "entry not available"
 msgid "not available"
 msgstr "ei saatavilla"
 
-#: interfacedetailswidget.cpp:215
+#: interfacedetailswidget.cpp:182
 msgctxt "traffic received empty"
 msgid "Received"
 msgstr "Vastaanotettu"
 
-#: interfacedetailswidget.cpp:217
+#: interfacedetailswidget.cpp:184
 msgctxt "traffic transmitted empty"
 msgid "Transmitted"
 msgstr "Lähetetty"
 
-#: interfacedetailswidget.cpp:323
-#, fuzzy
-#| msgctxt "entry not available"
-#| msgid "not available"
+#: interfacedetailswidget.cpp:290
 msgctxt "state of mobile broadband connection"
 msgid "not enabled"
-msgstr "ei saatavilla"
+msgstr ""
 
-#: interfacedetailswidget.cpp:340 interfacedetailswidget.cpp:387
+#: interfacedetailswidget.cpp:306 interfacedetailswidget.cpp:353
 msgctxt "interface details"
 msgid "Type"
 msgstr "Tyyppi"
 
-#: interfacedetailswidget.cpp:341 interfacedetailswidget.cpp:388
+#: interfacedetailswidget.cpp:307 interfacedetailswidget.cpp:354
 msgctxt "interface details"
 msgid "Connection State"
 msgstr "Yhteyden tila"
 
-#: interfacedetailswidget.cpp:342
+#: interfacedetailswidget.cpp:308
 msgctxt "interface details"
 msgid "IP Address"
 msgstr "IP-osoite"
 
-#: interfacedetailswidget.cpp:343 interfacedetailswidget.cpp:390
+#: interfacedetailswidget.cpp:309 interfacedetailswidget.cpp:356
 msgctxt "interface details"
 msgid "Connection Speed"
 msgstr "Yhteyden nopeus"
 
-#: interfacedetailswidget.cpp:343
+#: interfacedetailswidget.cpp:309
 msgctxt "bitrate"
 msgid "Unknown"
 msgstr "Tuntematon"
 
-#: interfacedetailswidget.cpp:344 interfacedetailswidget.cpp:391
+#: interfacedetailswidget.cpp:310 interfacedetailswidget.cpp:357
+#, fuzzy
 msgctxt "interface details"
 msgid "System Name"
-msgstr ""
+msgstr "Järjestelmän nimen mukaan"
 
-#: interfacedetailswidget.cpp:345
+#: interfacedetailswidget.cpp:311
 msgctxt "interface details"
 msgid "MAC Address"
 msgstr "MAC-osoite"
 
-#: interfacedetailswidget.cpp:346 interfacedetailswidget.cpp:393
+#: interfacedetailswidget.cpp:312 interfacedetailswidget.cpp:359
 msgctxt "interface details"
 msgid "Driver"
 msgstr "Ajuri"
 
-#: interfacedetailswidget.cpp:352
+#: interfacedetailswidget.cpp:318
 msgctxt "interface details"
 msgid "Access Point (SSID)"
 msgstr ""
 
-#: interfacedetailswidget.cpp:353
+#: interfacedetailswidget.cpp:319
 msgctxt "interface details"
 msgid "Access Point (MAC)"
 msgstr ""
 
-#: interfacedetailswidget.cpp:361
+#: interfacedetailswidget.cpp:327
 msgctxt "@item:intable wireless band"
 msgid "Band"
 msgstr ""
 
-#: interfacedetailswidget.cpp:362
+#: interfacedetailswidget.cpp:328
 msgctxt "@item:intable wireless channel"
 msgid "Channel"
-msgstr ""
+msgstr "Kanava"
 
-#: interfacedetailswidget.cpp:369
+#: interfacedetailswidget.cpp:335
 msgctxt "interface details"
 msgid "Operator"
 msgstr "Operaattori"
 
-#: interfacedetailswidget.cpp:370
+#: interfacedetailswidget.cpp:336
 msgctxt "interface details"
 msgid "Signal Quality"
 msgstr "Signaalin vahvuus"
 
-#: interfacedetailswidget.cpp:371
+#: interfacedetailswidget.cpp:337
 msgctxt "interface details"
 msgid "Access Technology"
 msgstr ""
 
-#: interfacedetailswidget.cpp:389
+#: interfacedetailswidget.cpp:355
 msgctxt "interface details"
 msgid "Network Address (IP)"
 msgstr "Verkko-osoite (IP)"
 
-#: interfacedetailswidget.cpp:392
+#: interfacedetailswidget.cpp:358
 msgctxt "interface details"
 msgid "Hardware Address (MAC)"
 msgstr "Laiteosoite (MAC)"
 
-#: interfacedetailswidget.cpp:411 interfaceitem.cpp:282
+#: interfacedetailswidget.cpp:377 interfaceitem.cpp:286
 msgctxt "label of the network interface"
 msgid "No IP address."
 msgstr "Ei IP-osoitetta."
 
-#: interfacedetailswidget.cpp:418 interfaceitem.cpp:289
+#: interfacedetailswidget.cpp:388 interfaceitem.cpp:297
 msgctxt "label of the network interface"
 msgid "IP display error."
 msgstr "Virhe näytettäessä IP:tä."
 
-#: interfacedetailswidget.cpp:497
+#: interfacedetailswidget.cpp:467
 msgid "KBit/s"
 msgstr ""
 
-#: interfacedetailswidget.cpp:499
+#: interfacedetailswidget.cpp:469
 msgid "MBit/s"
 msgstr ""
 
-#: interfacedetailswidget.cpp:503
+#: interfacedetailswidget.cpp:473
 msgid "GBit/s"
 msgstr ""
 
-#: interfacedetailswidget.cpp:527
+#: interfacedetailswidget.cpp:497
 #, kde-format
 msgctxt ""
 "traffic, e.g. n KB/s\n"
 " m KB/s"
 msgid "%1 %2"
-msgstr "%1 %2"
+msgstr ""
 
-#: interfacedetailswidget.cpp:536
+#: interfacedetailswidget.cpp:506
 msgid "Received"
 msgstr "Vastaanotettu"
 
-#: interfacedetailswidget.cpp:539
+#: interfacedetailswidget.cpp:509
 msgid "Transmitted"
 msgstr "Lähetetty"
 
-#: interfaceitem.cpp:72
+#: interfaceitem.cpp:75
 msgctxt "tooltip on the LHS widgets"
 msgid "Click here for interface details"
 msgstr ""
 
-#: interfaceitem.cpp:246
+#: interfaceitem.cpp:112
+msgctxt "tooltip on disconnect icon"
+msgid "Disconnect"
+msgstr "Katkaise yhteys"
+
+#: interfaceitem.cpp:250
 msgctxt "generic label for an interface"
 msgid "<b>Network Interface</b>"
 msgstr "<b>Verkkoliitäntä</b>"
 
-#: interfaceitem.cpp:250
+#: interfaceitem.cpp:254
 msgctxt "network interface name unknown"
 msgid "<b>Unknown Network Interface</b>"
 msgstr "<b>Tuntematon verkkoliitäntä</b>"
 
-#: interfaceitem.cpp:389
+#: interfaceitem.cpp:402
 msgctxt "wired interface network cable unplugged"
 msgid "Cable Unplugged"
 msgstr ""
 
-#: networkmanager.cpp:316
-msgctxt "CheckBox to enable or disable networking completely"
-msgid "Enable networking"
-msgstr "Ota verkko käyttöön"
-
-#: networkmanager.cpp:317
-#, fuzzy
-#| msgctxt "CheckBox to enable or disable networking completely"
-#| msgid "Enable networking"
-msgctxt "@info:tooltip tooltip for the 'Enable networking' checkbox"
-msgid "Enable or disable the networking system"
-msgstr "Ota verkko käyttöön"
-
-#: networkmanager.cpp:629
+#: networkmanager.cpp:618
 msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr "Ei verkkoliitäntöjä"
 
-#: networkmanager.cpp:680
-#, fuzzy
-#| msgid "Show &VPN connections"
+#: networkmanager.cpp:669
 msgid "VPN Connections"
-msgstr "Näytä &VPN-yhteydet"
+msgstr ""
 
-#: networkmanager.cpp:694
+#: networkmanager.cpp:683
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
 msgstr "Ei yhteyttä"
 
-#: networkmanager.cpp:697
+#: networkmanager.cpp:686
+#, fuzzy
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
 msgstr "Langaton ei käytössä"
 
-#: networkmanager.cpp:700
+#: networkmanager.cpp:689
 msgctxt "tooltip, all interfaces are down"
 msgid "Networking disabled"
 msgstr "Verkko ei ole käytössä"
 
-#: networkmanager.cpp:703
+#: networkmanager.cpp:692
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
 msgstr ""
 
-#: nmpopup.cpp:106
+#: nmpopup.cpp:89 nmpopup.cpp:747
 msgctxt "title on the LHS of the plasmoid"
 msgid "<h3>Interfaces</h3>"
 msgstr "<h3>Liitännät</h3>"
 
-#: nmpopup.cpp:116
-msgctxt "tabbar on the left side"
-msgid "Interfaces"
-msgstr "Liitännät"
+#: nmpopup.cpp:95
+msgctxt "title on the RHS of the plasmoid"
+msgid "<h3>Connections</h3>"
+msgstr "<h3>Yhteydet</h3>"
 
-#: nmpopup.cpp:166
-msgctxt "button"
-msgid "Connect to Another Network..."
+#: nmpopup.cpp:123
+msgctxt "CheckBox to enable or disable networking completely"
+msgid "Enable networking"
+msgstr "Ota verkko käyttöön"
+
+#: nmpopup.cpp:132
+msgctxt "CheckBox to enable or disable wwan (mobile broadband) interface)"
+msgid "Enable mobile broadband"
 msgstr ""
 
-#: nmpopup.cpp:175
-#, fuzzy
-#| msgid "Show &VPN connections"
-msgctxt "connection list"
-msgid "Connections"
-msgstr "Näytä &VPN-yhteydet"
-
-#: nmpopup.cpp:176
-#, fuzzy
-#| msgid "Show &VPN connections"
-msgctxt "@info:tooltip"
-msgid "Connections"
-msgstr "Näytä &VPN-yhteydet"
-
-#: nmpopup.cpp:177
-msgctxt "connection list"
-msgid "VPN"
-msgstr ""
-
-#: nmpopup.cpp:178
-#, fuzzy
-#| msgid "Show &VPN connections"
-msgctxt "@info:tooltip"
-msgid "VPN Connections"
-msgstr "Näytä &VPN-yhteydet"
-
-#: nmpopup.cpp:179
-#, fuzzy
-#| msgid "Show &wired connections"
-msgctxt "connection list"
-msgid "Shared Connections"
-msgstr "Näytä &langalliset yhteydet"
-
-#: nmpopup.cpp:180
-#, fuzzy
-#| msgid "Show &wired connections"
-msgctxt "@info:tooltip"
-msgid "Shared Connections"
-msgstr "Näytä &langalliset yhteydet"
-
-#: nmpopup.cpp:208
+#: nmpopup.cpp:145
 msgctxt "CheckBox to enable or disable wireless interface (rfkill)"
 msgid "Enable wireless"
 msgstr "Ota langaton käyttöön"
 
-#: nmpopup.cpp:224
-#, fuzzy
-#| msgid "Show &mobile broadband"
-msgctxt "CheckBox to enable or disable wwan (mobile broadband) interface)"
-msgid "Enable mobile broadband"
-msgstr "Näytä &mobiililaajakaistat"
-
-#: nmpopup.cpp:241
-#, fuzzy
-#| msgctxt "VPN state label"
-#| msgid "Connecting..."
-msgctxt "settings button in applet's popup window"
-msgid "Settings..."
-msgstr "Yhdistetään..."
-
-#: nmpopup.cpp:254 nmpopup.cpp:382
-#, fuzzy
-#| msgctxt "tabbar on the left side"
-#| msgid "Interfaces"
-msgctxt "show interface list in applet's popup window"
-msgid "Show Interfaces"
+#: nmpopup.cpp:157
+msgctxt "tabbar on the left side"
+msgid "Interfaces"
 msgstr "Liitännät"
 
-#: nmpopup.cpp:271
-#, fuzzy
-#| msgctxt "manage connections button in the applet's popup"
-#| msgid "Manage Connections..."
-msgctxt "main window"
-msgid "Manage your network connections"
+#: nmpopup.cpp:167
+msgctxt "details for the interface"
+msgid "Details"
+msgstr "Yksityiskohdat"
+
+#: nmpopup.cpp:196
+msgctxt "manage connections button in the applet's popup"
+msgid "Manage Connections..."
 msgstr "Yhteyksien hallinta..."
 
-#: nmpopup.cpp:366
+#: nmpopup.cpp:204
+msgctxt "@info:tooltip tooltip for the 'Show More' button"
+msgid "Show all available networks"
+msgstr ""
+
+#: nmpopup.cpp:209
+msgctxt "show more button in the applet's popup"
+msgid "Show More..."
+msgstr "Näytä enemmän..."
+
+#: nmpopup.cpp:213
+msgctxt "show more button in the applet's popup"
+msgid "Show Less..."
+msgstr "Näytä vähemmän..."
+
+#: nmpopup.cpp:319
 msgctxt "Warning about wrong NetworkManager version"
 msgid "NetworkManager is not running. Please start it."
 msgstr ""
 
-#: nmpopup.cpp:370
+#: nmpopup.cpp:323
 #, kde-format
 msgctxt "Warning about wrong NetworkManager version"
 msgid ""
@@ -410,39 +333,15 @@ msgid ""
 "upgrade to a newer version."
 msgstr ""
 
-#: nmpopup.cpp:388
-#, fuzzy
-#| msgctxt "tabbar on the left side"
-#| msgid "Interfaces"
-msgctxt "hide interface list in applet's popup window"
-msgid "Hide Interfaces"
-msgstr "Liitännät"
+#: nmpopup.cpp:659
+msgctxt "pressed show more button"
+msgid "Show Less..."
+msgstr "Näytä vähemmän..."
 
-#: nmpopup.cpp:783
-msgctxt "details for the interface"
-msgid "Details"
-msgstr "Yksityiskohdat"
-
-#: showmoreitem.cpp:69
-#, fuzzy
-#| msgid "&Show this many wireless networks"
-msgctxt "text when this item is toggled"
-msgid "Show less networks..."
-msgstr "&Näytä näin monta langatonta verkkoa"
-
-#: showmoreitem.cpp:72
-#, fuzzy, kde-format
-#| msgid "&Show this many wireless networks"
-msgctxt "text when this item not toggled"
-msgid "Show one more network"
-msgid_plural "Show %1 more networks..."
-msgstr[0] "&Näytä näin monta langatonta verkkoa"
-msgstr[1] "&Näytä näin monta langatonta verkkoa"
-
-#: typelistwidget.cpp:44
-msgctxt "title for connect to another network window"
-msgid "You want to connect to a network. We see the following options for you:"
-msgstr ""
+#: nmpopup.cpp:664
+msgctxt "unpressed show more button"
+msgid "Show More..."
+msgstr "Näytä enemmän..."
 
 #: vpninterfaceitem.cpp:42
 msgctxt "initial label for VPN connection name"
@@ -458,7 +357,7 @@ msgstr "ei saatavilla"
 #, kde-format
 msgctxt "VPN label in interfaces"
 msgid "<b>%1</b>"
-msgstr "<b>%1</b>"
+msgstr ""
 
 #: vpninterfaceitem.cpp:101
 msgctxt "VPN state label"
@@ -480,78 +379,7 @@ msgctxt "VPN state label"
 msgid "Not Connected..."
 msgstr "Ei yhdistetty..."
 
-#: wirelessnetworkitem.cpp:120 wirelessnetworkitem.cpp:166
-#, kde-format
+#: wirelessnetworkitem.cpp:120 wirelessnetworkitem.cpp:160
+#, fuzzy, kde-format
 msgid "Strength: %1%"
-msgstr ""
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
+msgstr "Voimakkuus"

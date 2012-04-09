@@ -1,0 +1,495 @@
+# Translation of knetworkmanager.po to Catalan
+# Copyright (C) 2009-2010 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2 or later.
+#
+# Manuel Tortosa <manutortosa@chakra-project.org>, 2009, 2010.
+# Josep Ma. Ferrer <txemaq@gmail.com>, 2010.
+# Joan Maspons <joanmaspons@gmail.com>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2011-10-07 11:06+0200\n"
+"PO-Revision-Date: 2011-04-16 23:58+0200\n"
+"Last-Translator: Joan Maspons <joanmaspons@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+
+#: connectioninfodialog.cpp:80
+msgctxt "@title:tab information about ip address, nameserveres, etc"
+msgid "IPv4"
+msgstr "IPv4"
+
+#: connectioninfoipv4tab.cpp:35
+msgctxt "@label:textbox ip addresses of network interface"
+msgid "IP Addresses:"
+msgstr "Adreces IP:"
+
+#: connectioninfoipv4tab.cpp:38
+msgctxt "@label:textbox netmasks of network interface"
+msgid "Netmasks:"
+msgstr "Màscares de xarxa:"
+
+#: connectioninfoipv4tab.cpp:41
+msgctxt "@label:textbox gateways used by network interface"
+msgid "Gateways:"
+msgstr "Passarel·les:"
+
+#: connectioninfoipv4tab.cpp:44
+msgctxt "@label:textbox nameservers used by network interface"
+msgid "Nameservers:"
+msgstr "Servidors de noms:"
+
+#: connectioninfoipv4tab.cpp:47
+msgctxt "@label:textbox domains used by network interface"
+msgid "Search domains:"
+msgstr "Dominis de cerca:"
+
+#: connectioninfowiredtab.cpp:31 connectioninfowirelesstab.cpp:42
+msgctxt "@label:textbox bit rate of network interface"
+msgid "Bit rate:"
+msgstr "Taxa de bits:"
+
+#: connectioninfowiredtab.cpp:34 connectioninfowirelesstab.cpp:57
+msgctxt "@label:textbox MAC address of network interface"
+msgid "Hardware address:"
+msgstr "Adreça del maquinari:"
+
+#: connectioninfowiredtab.cpp:45
+#, kde-format
+msgctxt "@item:intext bit rate value"
+msgid "%1 Mbit/s"
+msgstr "%1 Mbit/s"
+
+#: connectioninfowirelesstab.cpp:33
+msgctxt "@label:textbox access point SSID"
+msgid "SSID:"
+msgstr "SSID:"
+
+#: connectioninfowirelesstab.cpp:36
+msgctxt "@label:textbox signal strength of AP"
+msgid "Signal strength:"
+msgstr "Potència del senyal:"
+
+#: connectioninfowirelesstab.cpp:39
+msgctxt "@label:textbox Wi-Fi mode, e.g. Ad-Hoc or Managed"
+msgid "Operation mode:"
+msgstr "Mode d'operació:"
+
+#: connectioninfowirelesstab.cpp:45
+msgctxt "@label:textbox MAC address of access point"
+msgid "Access point:"
+msgstr "Punt d'accés:"
+
+#: connectioninfowirelesstab.cpp:48
+msgctxt "@label:textbox security flags of AP"
+msgid "Security (WPA):"
+msgstr "Seguretat (WPA):"
+
+#: connectioninfowirelesstab.cpp:51
+msgctxt "@label:textbox security flags of AP"
+msgid "Security (RSN/WPA2):"
+msgstr "Seguretat (RSN/WPA2):"
+
+#: connectioninfowirelesstab.cpp:54
+msgctxt "@label:textbox Wi-Fi frequency"
+msgid "Frequency:"
+msgstr "Freqüència:"
+
+#: connectioninfowirelesstab.cpp:114
+#, kde-format
+msgctxt "@item:intext bit rate value %1 of %2 maximum"
+msgid "%1 / %2 Mbit/s"
+msgstr "%1 / %2 Mbit/s"
+
+#: connectioninfowirelesstab.cpp:129
+#, kde-format
+msgctxt "@item:intext signal strength %1 in percent"
+msgid "%1%"
+msgstr "%1%"
+
+#: connectioninfowirelesstab.cpp:140
+#, kde-format
+msgctxt "@item:intext Wi-Fi frequency"
+msgid "%1 MHz"
+msgstr "%1 MHz"
+
+#: interfaceconnectionitem.cpp:55 interfaceconnectionitem.cpp:82
+msgctxt ""
+"@info:tooltip Tooltip for indicator that connection supplies the network "
+"default route"
+msgid "Default"
+msgstr "Per omissió"
+
+#: interfaceconnectionitem.cpp:143
+msgctxt "@info:tooltip network connection disconnect button tooltip"
+msgid "Disconnect"
+msgstr "Desconnecta"
+
+#: interfaceconnectionitem.cpp:177
+msgctxt "text for popup's unknown state"
+msgid "<font size=\"-1\">Unknown</font>"
+msgstr "<font size=\"-1\">Desconegut</font>"
+
+#: interfaceconnectionitem.cpp:180
+msgctxt "text for popup's activating state"
+msgid "<font size=\"-1\">Activating</font>"
+msgstr "<font size=\"-1\">S'està activant</font>"
+
+#: interfaceconnectionitem.cpp:183
+msgctxt "text for popup's activated state"
+msgid "<font size=\"-1\">Active</font>"
+msgstr "<font size=\"-1\">Activa</font>"
+
+#: knetworkmanagertrayicon.cpp:109
+msgctxt "@title:window KNotificationItem tray icon title"
+msgid "Network Management"
+msgstr "Gestió de xarxa"
+
+#: knetworkmanagertrayicon.cpp:115
+msgctxt "@action:inmenu turns off networking"
+msgid "Enable networking"
+msgstr "Habilita la connexió a la xarxa"
+
+#: knetworkmanagertrayicon.cpp:123
+msgctxt "@action:inmenu turns off wireless networking"
+msgid "Enable wireless"
+msgstr "Habilita la xarxa sense fils"
+
+#: knetworkmanagertrayicon.cpp:135
+msgctxt "@action:inmenu Preferences action title"
+msgid "Manage Connections..."
+msgstr "Gestió de les connexions..."
+
+#: knetworkmanagertrayicon.cpp:142
+msgctxt "@action:inmenu show dialog to connect to new or hidden network"
+msgid "Connect To &Other Network..."
+msgstr "Connecta a una &altra xarxa..."
+
+#: knetworkmanagertrayicon.cpp:214
+msgctxt ""
+"@action:inmenu Disable action text used when the NetworkManager daemon is "
+"not running"
+msgid "Network Management disabled"
+msgstr "S'ha deshabilitat la gestió de la xarxa"
+
+#: knetworkmanagertrayicon.cpp:215
+msgctxt ""
+"@info:tooltip NetworkManager is not running, this client cannot do anything"
+msgid "The system Network Management service is not running"
+msgstr "No s'està executant el servei de gestió de xarxa del sistema"
+
+#: knetworkmanagertrayicon.cpp:639
+msgctxt "@action:inmenu copy ip address to clipboard"
+msgid "Copy IP Address"
+msgstr "Copia l'adreça IP"
+
+#: knetworkmanagertrayicon.cpp:640
+msgctxt "@action:inmenu interface connection properties"
+msgid "Properties"
+msgstr "Propietats"
+
+#: main.cpp:27
+msgid "KNetworkManager, the KDE 4 NetworkManager client"
+msgstr "KNetworkManager, el client de NetworkManager del KDE 4"
+
+#: main.cpp:33
+msgid "KNetworkManager"
+msgstr "KNetworkManager"
+
+#: main.cpp:33
+msgid "(C) 2009 Will Stephenson"
+msgstr "(C) 2009 Will Stephenson"
+
+#: main.cpp:34
+msgid "Will Stephenson"
+msgstr "Will Stephenson"
+
+#: main.cpp:34
+msgid "Original Author, Maintainer"
+msgstr "Autor original i mantenidor"
+
+#: main.cpp:35
+msgid "Paul Marchouk"
+msgstr "Paul Marchouk"
+
+#: main.cpp:35
+msgid "User Interface Polish"
+msgstr "Refinament de la interfície d'usuari"
+
+#: main.cpp:36
+msgid "Christopher Blauvelt"
+msgstr "Christopher Blauvelt"
+
+#: main.cpp:36
+msgid "Original Author, Wireless Scan UI"
+msgstr "Autor original, IU de cerca de xarxes sense fils"
+
+#: monolithic.cpp:118
+msgctxt ""
+"@info:status detailed text when client cannot start because dbus security "
+"policy prevents it"
+msgid ""
+"KNetworkManager cannot start because the installation is misconfigured.\n"
+"System DBUS policy does not allow it to provide user settings;\n"
+"contact your system administrator or distribution.\n"
+"KNetworkManager will not start automatically in future."
+msgstr ""
+"El KNetworkManager no es pot iniciar perquè la instal·lació no està "
+"configurada.\n"
+"La política DBUS del sistema no permet proporcionar-li arranjament de "
+"l'usuari;\n"
+"contacteu amb el vostre administrador del sistema o distribució.\n"
+"El KNetworkManager no s'iniciarà automàticament d'ara en endavant."
+
+#: monolithic.cpp:120
+msgctxt ""
+"@title:window message when client cannot start because dbus security policy "
+"prevents it"
+msgid "Installation problem"
+msgstr "Problema d'instal·lació"
+
+#: monolithic.cpp:126
+msgctxt ""
+"@info:status detailed text when client cannot start because another client "
+"is already running"
+msgid ""
+"Another NetworkManager client is already running.  Use KNetworkManager in "
+"future? "
+msgstr ""
+"Ja s'està executant un altre client de NetworkManager. Voleu usar "
+"KNetworkManager d'ara en endavant? "
+
+#: monolithic.cpp:128
+msgctxt ""
+"@title:window message when client cannot start because another client is "
+"already running"
+msgid "Network Management already active"
+msgstr "La gestió de xarxa ja està activa"
+
+#: monolithic.cpp:131
+msgctxt "@action:button enable autostart"
+msgid "Start automatically"
+msgstr "Inicia automàticament"
+
+#: monolithic.cpp:131
+msgctxt "@action:button disable autostart"
+msgid "Do not start automatically"
+msgstr "No iniciïs automàticament"
+
+#: otherwirelessnetworkdialog.cpp:41
+msgctxt "@window:title connect to other wireless network"
+msgid "Select Wireless Network"
+msgstr "Seleccioneu la xarxa sense fils"
+
+#: otherwirelessnetworkdialog.cpp:46
+msgctxt "@action:button connect to wireless network"
+msgid "Connect"
+msgstr "Connecta"
+
+#: otherwirelessnetworkdialog.cpp:50
+msgctxt "@item:inlist Create new ad-hoc wireless connection"
+msgid "New Ad-Hoc Network..."
+msgstr "Nova xarxa Ad-Hoc..."
+
+#: otherwirelessnetworkdialog.cpp:86
+#, kde-format
+msgctxt ""
+"@item:inlist Create connection to other wireless network using named device"
+msgid "Connect To Other Network With %1..."
+msgstr "Connecta a una altra amb %1..."
+
+#: otherwirelessnetworkdialog.cpp:106 otherwirelessnetworkdialog.cpp:189
+msgctxt "@item:inlist Signal strength replaced by description on ad-hoc"
+msgid "create Ad-Hoc"
+msgstr "crea Ad-Hoc"
+
+#: otherwirelessnetworkdialog.cpp:197
+msgctxt ""
+"@item:inlist connection status added to signal strength if we are connected"
+msgid " (connected)"
+msgstr " (connectat)"
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Manuel Tortosa"
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "manutortosa@gmail.com"
+
+#. i18n: file: otherwirelessnetworkwidget.ui:19
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:5
+msgid "&Search:"
+msgstr "&Cerca:"
+
+#. i18n: file: otherwirelessnetworkwidget.ui:35
+#. i18n: ectx: property (text), widget (QTreeWidget, twNetworks)
+#: rc.cpp:8
+msgid "Network name"
+msgstr "Nom de la xarxa"
+
+#. i18n: file: otherwirelessnetworkwidget.ui:40
+#. i18n: ectx: property (text), widget (QTreeWidget, twNetworks)
+#: rc.cpp:11
+msgid "Signal"
+msgstr "Senyal"
+
+#. i18n: file: otherwirelessnetworkwidget.ui:45
+#. i18n: ectx: property (text), widget (QTreeWidget, twNetworks)
+#: rc.cpp:14
+msgid "Security"
+msgstr "Seguretat"
+
+#: tooltipbuilder.cpp:121
+msgctxt "@info:tooltip network device name eg eth0"
+msgid "Interface"
+msgstr "Interfície"
+
+#: tooltipbuilder.cpp:126
+msgctxt "@info:tooltip interface type"
+msgid "Type"
+msgstr "Tipus"
+
+#: tooltipbuilder.cpp:131
+msgctxt "@info:tooltip system driver name"
+msgid "Driver"
+msgstr "Controlador"
+
+#: tooltipbuilder.cpp:136
+msgctxt "@info:tooltip network interface status"
+msgid "Status"
+msgstr "Estat"
+
+#: tooltipbuilder.cpp:141
+msgctxt "@info:tooltip The network device's maximum speed"
+msgid "Max speed"
+msgstr "Velocitat màxima"
+
+#: tooltipbuilder.cpp:162
+msgctxt "@info:tooltip this is the hardware address of a network interface"
+msgid "Hardware address"
+msgstr "Adreça del maquinari"
+
+#: tooltipbuilder.cpp:182
+msgctxt "@info:tooltip network connection bit rate"
+msgid "Bit rate"
+msgstr "Taxa de bits"
+
+#: tooltipbuilder.cpp:184
+msgctxt "@info:tooltip network connection bit rate units"
+msgid "Mbit/s"
+msgstr "Mbit/s"
+
+#: tooltipbuilder.cpp:206
+msgctxt "@info:tooltip IPv4 address"
+msgid "IP address"
+msgstr "Adreça IP"
+
+#: tooltipbuilder.cpp:216
+msgctxt "@info:tooltip network name servers"
+msgid "Name servers"
+msgstr "Servidors de nom"
+
+#: tooltipbuilder.cpp:226
+msgctxt "@info:tooltip network domains"
+msgid "Domains"
+msgstr "Dominis"
+
+#: tooltipbuilder.cpp:236 tooltipbuilder.cpp:238
+msgctxt "@info:tooltip No network route data available"
+msgid "No route data available"
+msgstr "No hi ha dades de ruta disponibles"
+
+#: tooltipbuilder.cpp:242
+msgctxt "@info:tooltip network routes"
+msgid "Routes"
+msgstr "Rutes"
+
+#: tooltipbuilder.cpp:264
+msgctxt "@info:tooltip SSID is a friendly name that identifies a 802.11 WLAN."
+msgid "SSID"
+msgstr "SSID"
+
+#: tooltipbuilder.cpp:274
+msgctxt "@info:tooltip The signal strength of the wifi network"
+msgid "Strength"
+msgstr "Potència"
+
+#: tooltipbuilder.cpp:279
+msgctxt "@info:tooltip the operation mode of wi-fi network"
+msgid "Mode"
+msgstr "Mode"
+
+#: tooltipbuilder.cpp:285
+msgctxt "@info:tooltip Active access point MAC address"
+msgid "Access point"
+msgstr "Punt d'accés"
+
+#: tooltipbuilder.cpp:297
+msgctxt "@info:tooltip network security level, e.g. high, low"
+msgid "Security"
+msgstr "Seguretat"
+
+#: tooltipbuilder.cpp:308
+msgctxt ""
+"@info:tooltip Flags describing the access point's capabilities according to "
+"WPA (Wifi Protected Access)"
+msgid "WPA flags"
+msgstr "Indicadors WPA"
+
+#: tooltipbuilder.cpp:319
+msgctxt ""
+"@info:tooltip Flags describing the access point's capabilities according to "
+"RSN (Robust Secure Network)"
+msgid "RSN(WPA2) flags"
+msgstr "Indicadors RSN(WPA2)"
+
+#: tooltipbuilder.cpp:329
+msgctxt ""
+"@info:tooltip the frequency of the radio channel that the access point is "
+"operating on"
+msgid "Frequency"
+msgstr "Freqüència"
+
+#: tooltipbuilder.cpp:331
+msgctxt "@info:tooltip frequency unit"
+msgid "MHz"
+msgstr "MHz"
+
+#: tooltipbuilder.cpp:345
+msgctxt "@info:tooltip carrier"
+msgid "Carrier"
+msgstr "Portador"
+
+#: tooltipbuilder.cpp:346
+msgctxt "@info:tooltip network interface status - carrier found"
+msgid "Found"
+msgstr "S'ha trobat"
+
+#: tooltipbuilder.cpp:347
+msgctxt "@info:tooltip network interface status - carrier not found"
+msgid "Not Found"
+msgstr "No s'ha trobat"
+
+#: unconfiguredinterfaceitem.cpp:56
+msgctxt ""
+"Text for menu item for setting up devices which until now do not have any "
+"connections"
+msgid "Create network connection..."
+msgstr "Crea una connexió de xarxa..."
+
+#: wirelessstatus.cpp:85 wirelessstatus.cpp:146 wirelessstatus.cpp:151
+#, kde-format
+msgctxt "@info:tooltip signal strength"
+msgid "%1%"
+msgstr "%1%"

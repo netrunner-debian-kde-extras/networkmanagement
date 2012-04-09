@@ -3,14 +3,14 @@
 # This file is distributed under the license LGPL version 2 or later.
 #
 # Joan Maspons <joanmaspons@gmail.com>, 2009, 2010, 2011.
-# Josep Ma. Ferrer <txemaq@gmail.com>, 2010, 2011, 2012.
+# Josep Ma. Ferrer <txemaq@gmail.com>, 2010, 2011.
 # Manuel Tortosa <manutortosa@chakra-project.org>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanagement\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-25 02:57+0100\n"
-"PO-Revision-Date: 2012-01-21 20:47+0100\n"
+"POT-Creation-Date: 2012-03-20 18:01+0100\n"
+"PO-Revision-Date: 2011-10-30 18:25+0100\n"
 "Last-Translator: Josep Ma. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -21,19 +21,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
-#: activatableitem.cpp:83 interfacedetailswidget.cpp:154
-msgctxt "@info:tooltip"
-msgid "Click here to disconnect"
-msgstr "Cliqueu aquí per desconnectar"
-
-#: activatableitem.cpp:130
+#: activatableitem.cpp:116
 msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is disabled"
 msgid "Networking system disabled"
 msgstr "El sistema de xarxa està desactivat"
 
-#: activatableitem.cpp:134
+#: activatableitem.cpp:120
 msgctxt "@info:status Notification for radio kill switch turned off"
 msgid "Wireless hardware disabled"
 msgstr "El maquinari sense fils està desactivat"
@@ -44,23 +39,22 @@ msgid "Signal quality: %1%"
 msgstr "Qualitat del senyal: %1%"
 
 #: hiddenwirelessnetworkitem.cpp:77
-msgctxt "@action for creating a connection to a hidden wireless network"
-msgid "<placeholder>hidden network</placeholder>"
-msgstr "<placeholder>xarxa oculta</placeholder>"
+msgctxt "label for creating a connection to a hidden wireless network"
+msgid "<hidden network>"
+msgstr "<xarxa oculta>"
 
 #: hiddenwirelessnetworkitem.cpp:81
-msgctxt "@label for hidden wireless network SSID entry"
-msgid "Enter network name and press <placeholder>enter</placeholder>"
-msgstr ""
-"Introduïu el nom de la xarxa i premeu <placeholder>Retorn</placeholder>"
+msgctxt ""
+"default KLineEdit::clickMessage() for hidden wireless network SSID entry"
+msgid "Enter network name and press <enter>"
+msgstr "Introduïu el nom de la xarxa i premeu <retorn>"
 
 #: hiddenwirelessnetworkitem.cpp:82
 msgctxt "@info:tooltip for hidden wireless network SSID entry"
-msgid "Enter network name and press <placeholder>enter</placeholder>"
-msgstr ""
-"Introduïu el nom de la xarxa i premeu <placeholder>Retorn</placeholder>"
+msgid "Enter network name and press <enter>"
+msgstr "Introduïu el nom de la xarxa i premeu <retorn>"
 
-#: interfaceconnectionitem.cpp:71
+#: interfaceconnectionitem.cpp:70
 msgctxt "name of the connection not known"
 msgid "Unknown"
 msgstr "Desconegut"
@@ -70,147 +64,138 @@ msgctxt "interface details"
 msgid "<b>Traffic</b>"
 msgstr "<b>Tràfic</b>"
 
-#: interfacedetailswidget.cpp:153
-msgid "Disconnect"
-msgstr "Desconnecta"
-
-#: interfacedetailswidget.cpp:163
-msgctxt "disconnect button in interface details window"
-msgid "Disconnect"
-msgstr "Desconnecta"
-
-#: interfacedetailswidget.cpp:177 typelistwidget.cpp:52
+#: interfacedetailswidget.cpp:152
 msgid "Go Back"
 msgstr "Retrocedeix"
 
-#: interfacedetailswidget.cpp:210 interfacedetailswidget.cpp:332
+#: interfacedetailswidget.cpp:177 interfacedetailswidget.cpp:299
 msgctxt "entry not available"
 msgid "not available"
 msgstr "no disponible"
 
-#: interfacedetailswidget.cpp:215
+#: interfacedetailswidget.cpp:182
 msgctxt "traffic received empty"
 msgid "Received"
 msgstr "Rebut"
 
-#: interfacedetailswidget.cpp:217
+#: interfacedetailswidget.cpp:184
 msgctxt "traffic transmitted empty"
 msgid "Transmitted"
 msgstr "Transmès"
 
-#: interfacedetailswidget.cpp:323
+#: interfacedetailswidget.cpp:290
 msgctxt "state of mobile broadband connection"
 msgid "not enabled"
 msgstr "no actiu"
 
-#: interfacedetailswidget.cpp:340 interfacedetailswidget.cpp:387
+#: interfacedetailswidget.cpp:306 interfacedetailswidget.cpp:353
 msgctxt "interface details"
 msgid "Type"
 msgstr "Tipus"
 
-#: interfacedetailswidget.cpp:341 interfacedetailswidget.cpp:388
+#: interfacedetailswidget.cpp:307 interfacedetailswidget.cpp:354
 msgctxt "interface details"
 msgid "Connection State"
 msgstr "Estat de la connexió"
 
-#: interfacedetailswidget.cpp:342
+#: interfacedetailswidget.cpp:308
 msgctxt "interface details"
 msgid "IP Address"
 msgstr "Adreça IP"
 
-#: interfacedetailswidget.cpp:343 interfacedetailswidget.cpp:390
+#: interfacedetailswidget.cpp:309 interfacedetailswidget.cpp:356
 msgctxt "interface details"
 msgid "Connection Speed"
 msgstr "Velocitat de connexió"
 
-#: interfacedetailswidget.cpp:343
+#: interfacedetailswidget.cpp:309
 msgctxt "bitrate"
 msgid "Unknown"
 msgstr "Desconeguda"
 
-#: interfacedetailswidget.cpp:344 interfacedetailswidget.cpp:391
+#: interfacedetailswidget.cpp:310 interfacedetailswidget.cpp:357
 msgctxt "interface details"
 msgid "System Name"
 msgstr "Nom del sistema"
 
-#: interfacedetailswidget.cpp:345
+#: interfacedetailswidget.cpp:311
 msgctxt "interface details"
 msgid "MAC Address"
 msgstr "Adreça MAC"
 
-#: interfacedetailswidget.cpp:346 interfacedetailswidget.cpp:393
+#: interfacedetailswidget.cpp:312 interfacedetailswidget.cpp:359
 msgctxt "interface details"
 msgid "Driver"
 msgstr "Controlador"
 
-#: interfacedetailswidget.cpp:352
+#: interfacedetailswidget.cpp:318
 msgctxt "interface details"
 msgid "Access Point (SSID)"
 msgstr "Punt d'accés (SSID)"
 
-#: interfacedetailswidget.cpp:353
+#: interfacedetailswidget.cpp:319
 msgctxt "interface details"
 msgid "Access Point (MAC)"
 msgstr "Punt d'accés (MAC)"
 
-#: interfacedetailswidget.cpp:361
+#: interfacedetailswidget.cpp:327
 msgctxt "@item:intable wireless band"
 msgid "Band"
 msgstr "Banda"
 
-#: interfacedetailswidget.cpp:362
+#: interfacedetailswidget.cpp:328
 msgctxt "@item:intable wireless channel"
 msgid "Channel"
 msgstr "Canal"
 
-#: interfacedetailswidget.cpp:369
+#: interfacedetailswidget.cpp:335
 msgctxt "interface details"
 msgid "Operator"
 msgstr "Operador"
 
-#: interfacedetailswidget.cpp:370
+#: interfacedetailswidget.cpp:336
 msgctxt "interface details"
 msgid "Signal Quality"
 msgstr "Qualitat del senyal"
 
-#: interfacedetailswidget.cpp:371
+#: interfacedetailswidget.cpp:337
 msgctxt "interface details"
 msgid "Access Technology"
 msgstr "Tecnologia d'accés"
 
-#: interfacedetailswidget.cpp:389
+#: interfacedetailswidget.cpp:355
 msgctxt "interface details"
 msgid "Network Address (IP)"
 msgstr "Adreça de xarxa (IP)"
 
-#: interfacedetailswidget.cpp:392
+#: interfacedetailswidget.cpp:358
 msgctxt "interface details"
 msgid "Hardware Address (MAC)"
 msgstr "Adreça del maquinari (MAC)"
 
-#: interfacedetailswidget.cpp:411 interfaceitem.cpp:282
+#: interfacedetailswidget.cpp:377 interfaceitem.cpp:286
 msgctxt "label of the network interface"
 msgid "No IP address."
 msgstr "No hi ha adreça IP."
 
-#: interfacedetailswidget.cpp:418 interfaceitem.cpp:289
+#: interfacedetailswidget.cpp:388 interfaceitem.cpp:297
 msgctxt "label of the network interface"
 msgid "IP display error."
 msgstr "Error del visor de la IP."
 
-#: interfacedetailswidget.cpp:497
+#: interfacedetailswidget.cpp:467
 msgid "KBit/s"
 msgstr "KBit/s"
 
-#: interfacedetailswidget.cpp:499
+#: interfacedetailswidget.cpp:469
 msgid "MBit/s"
 msgstr "MBit/s"
 
-#: interfacedetailswidget.cpp:503
+#: interfacedetailswidget.cpp:473
 msgid "GBit/s"
 msgstr "GBit/s"
 
-#: interfacedetailswidget.cpp:527
+#: interfacedetailswidget.cpp:497
 #, kde-format
 msgctxt ""
 "traffic, e.g. n KB/s\n"
@@ -218,149 +203,129 @@ msgctxt ""
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: interfacedetailswidget.cpp:536
+#: interfacedetailswidget.cpp:506
 msgid "Received"
 msgstr "Rebut"
 
-#: interfacedetailswidget.cpp:539
+#: interfacedetailswidget.cpp:509
 msgid "Transmitted"
 msgstr "Transmès"
 
-#: interfaceitem.cpp:72
+#: interfaceitem.cpp:75
 msgctxt "tooltip on the LHS widgets"
 msgid "Click here for interface details"
 msgstr "Cliqueu aquí pels detalls de la interfície"
 
-#: interfaceitem.cpp:246
+#: interfaceitem.cpp:112
+msgctxt "tooltip on disconnect icon"
+msgid "Disconnect"
+msgstr "Desconnecta"
+
+#: interfaceitem.cpp:250
 msgctxt "generic label for an interface"
 msgid "<b>Network Interface</b>"
 msgstr "<b>Interfície de xarxa</b>"
 
-#: interfaceitem.cpp:250
+#: interfaceitem.cpp:254
 msgctxt "network interface name unknown"
 msgid "<b>Unknown Network Interface</b>"
 msgstr "<b>Interfície de xarxa desconeguda</b>"
 
-#: interfaceitem.cpp:389
+#: interfaceitem.cpp:402
 msgctxt "wired interface network cable unplugged"
 msgid "Cable Unplugged"
 msgstr "El cable està desendollat"
 
-#: networkmanager.cpp:316
-msgctxt "CheckBox to enable or disable networking completely"
-msgid "Enable networking"
-msgstr "Habilita la connexió a la xarxa"
-
-#: networkmanager.cpp:317
-msgctxt "@info:tooltip tooltip for the 'Enable networking' checkbox"
-msgid "Enable or disable the networking system"
-msgstr "Activa o desactiva el sistema de xarxa"
-
-#: networkmanager.cpp:629
+#: networkmanager.cpp:618
 msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr "No hi ha interfícies de xarxa"
 
-#: networkmanager.cpp:680
+#: networkmanager.cpp:669
 msgid "VPN Connections"
 msgstr "Connexions VPN"
 
-#: networkmanager.cpp:694
+#: networkmanager.cpp:683
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
 msgstr "Desconnectat"
 
-#: networkmanager.cpp:697
+#: networkmanager.cpp:686
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
 msgstr "Sense fils deshabilitada pel programari"
 
-#: networkmanager.cpp:700
+#: networkmanager.cpp:689
 msgctxt "tooltip, all interfaces are down"
 msgid "Networking disabled"
 msgstr "Connexió de xarxa deshabilitada"
 
-#: networkmanager.cpp:703
+#: networkmanager.cpp:692
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
 msgstr "Sense fils deshabilitada pel maquinari"
 
-#: nmpopup.cpp:106
+#: nmpopup.cpp:89 nmpopup.cpp:747
 msgctxt "title on the LHS of the plasmoid"
 msgid "<h3>Interfaces</h3>"
 msgstr "<h3>Interfícies</h3>"
 
-#: nmpopup.cpp:116
-msgctxt "tabbar on the left side"
-msgid "Interfaces"
-msgstr "Interfícies"
+#: nmpopup.cpp:95
+msgctxt "title on the RHS of the plasmoid"
+msgid "<h3>Connections</h3>"
+msgstr "<h3>Connexions</h3>"
 
-#: nmpopup.cpp:166
-msgctxt "button"
-msgid "Connect to Another Network..."
-msgstr "Connecta a una altra xarxa..."
+#: nmpopup.cpp:123
+msgctxt "CheckBox to enable or disable networking completely"
+msgid "Enable networking"
+msgstr "Habilita la connexió a la xarxa"
 
-#: nmpopup.cpp:175
-msgctxt "connection list"
-msgid "Connections"
-msgstr "Connexions"
-
-#: nmpopup.cpp:176
-msgctxt "@info:tooltip"
-msgid "Connections"
-msgstr "Connexions"
-
-#: nmpopup.cpp:177
-msgctxt "connection list"
-msgid "VPN"
-msgstr "VPN"
-
-#: nmpopup.cpp:178
-msgctxt "@info:tooltip"
-msgid "VPN Connections"
-msgstr "Connexions VPN"
-
-#: nmpopup.cpp:179
-msgctxt "connection list"
-msgid "Shared Connections"
-msgstr "Connexions compartides"
-
-#: nmpopup.cpp:180
-msgctxt "@info:tooltip"
-msgid "Shared Connections"
-msgstr "Connexions compartides"
-
-#: nmpopup.cpp:208
-msgctxt "CheckBox to enable or disable wireless interface (rfkill)"
-msgid "Enable wireless"
-msgstr "Activa la xarxa sense fils"
-
-#: nmpopup.cpp:224
+#: nmpopup.cpp:132
 msgctxt "CheckBox to enable or disable wwan (mobile broadband) interface)"
 msgid "Enable mobile broadband"
 msgstr "Habilita la banda ampla mòbil"
 
-#: nmpopup.cpp:241
-msgctxt "settings button in applet's popup window"
-msgid "Settings..."
-msgstr "Arranjament..."
+#: nmpopup.cpp:145
+msgctxt "CheckBox to enable or disable wireless interface (rfkill)"
+msgid "Enable wireless"
+msgstr "Activa la xarxa sense fils"
 
-#: nmpopup.cpp:254 nmpopup.cpp:382
-msgctxt "show interface list in applet's popup window"
-msgid "Show Interfaces"
-msgstr "Mostra les interfícies"
+#: nmpopup.cpp:157
+msgctxt "tabbar on the left side"
+msgid "Interfaces"
+msgstr "Interfícies"
 
-#: nmpopup.cpp:271
-msgctxt "main window"
-msgid "Manage your network connections"
-msgstr "Gestió de les connexions de xarxa"
+#: nmpopup.cpp:167
+msgctxt "details for the interface"
+msgid "Details"
+msgstr "Detalls"
 
-#: nmpopup.cpp:366
+#: nmpopup.cpp:196
+msgctxt "manage connections button in the applet's popup"
+msgid "Manage Connections..."
+msgstr "Gestiona les connexions..."
+
+#: nmpopup.cpp:204
+msgctxt "@info:tooltip tooltip for the 'Show More' button"
+msgid "Show all available networks"
+msgstr "Mostra totes les xarxes disponibles"
+
+#: nmpopup.cpp:209
+msgctxt "show more button in the applet's popup"
+msgid "Show More..."
+msgstr "Mostra'n més..."
+
+#: nmpopup.cpp:213
+msgctxt "show more button in the applet's popup"
+msgid "Show Less..."
+msgstr "Mostra'n menys..."
+
+#: nmpopup.cpp:319
 msgctxt "Warning about wrong NetworkManager version"
 msgid "NetworkManager is not running. Please start it."
 msgstr "El NetworkManager no s'està executant. Si us plau, engegueu-lo."
 
-#: nmpopup.cpp:370
+#: nmpopup.cpp:323
 #, kde-format
 msgctxt "Warning about wrong NetworkManager version"
 msgid ""
@@ -370,33 +335,15 @@ msgstr ""
 "Per a que funcioni, cal com a mínim la versió %1 del NetworkManager, i s'ha "
 "trobat la «%2». Actualitzeu-lo a una versió més nova."
 
-#: nmpopup.cpp:388
-msgctxt "hide interface list in applet's popup window"
-msgid "Hide Interfaces"
-msgstr "Oculta les interfícies"
+#: nmpopup.cpp:659
+msgctxt "pressed show more button"
+msgid "Show Less..."
+msgstr "Mostra'n menys..."
 
-#: nmpopup.cpp:783
-msgctxt "details for the interface"
-msgid "Details"
-msgstr "Detalls"
-
-#: showmoreitem.cpp:69
-msgctxt "text when this item is toggled"
-msgid "Show less networks..."
-msgstr "Mostra menys xarxes..."
-
-#: showmoreitem.cpp:72
-#, kde-format
-msgctxt "text when this item not toggled"
-msgid "Show one more network"
-msgid_plural "Show %1 more networks..."
-msgstr[0] "Mostra una xarxa més"
-msgstr[1] "Mostra %1 xarxes més..."
-
-#: typelistwidget.cpp:44
-msgctxt "title for connect to another network window"
-msgid "You want to connect to a network. We see the following options for you:"
-msgstr "Voleu connectar a una xarxa. Ara hi ha les següents opcions:"
+#: nmpopup.cpp:664
+msgctxt "unpressed show more button"
+msgid "Show More..."
+msgstr "Mostra'n més..."
 
 #: vpninterfaceitem.cpp:42
 msgctxt "initial label for VPN connection name"
@@ -434,30 +381,7 @@ msgctxt "VPN state label"
 msgid "Not Connected..."
 msgstr "No connectat..."
 
-#: wirelessnetworkitem.cpp:120 wirelessnetworkitem.cpp:166
+#: wirelessnetworkitem.cpp:120 wirelessnetworkitem.cpp:160
 #, kde-format
 msgid "Strength: %1%"
 msgstr "Potència: %1%"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy

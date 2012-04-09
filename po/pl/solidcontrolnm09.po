@@ -1,0 +1,34 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2011-10-09 10:32+0200\n"
+"PO-Revision-Date: 2011-11-13 10:54+0100\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
+"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#: managerbase.cpp:61
+#, kde-format
+msgid "Backend loaded but wrong type obtained, expected %1"
+msgstr "Wczytano silnik, ale pobrano zły typ, oczekiwano %1"
+
+#: managerbase.cpp:79
+#, kde-format
+msgid "No %1 Backend found"
+msgstr "Nie znaleziono silnika %1"
+
+#: managerbase.cpp:84
+#, kde-format
+msgid "Unable to use any of the %1 Backends"
+msgstr "Nie można użyć żadnego z silników %1"

@@ -1,0 +1,36 @@
+# Translation of solidcontrol to Norwegian Nynorsk
+#
+# Karl Ove Hufthammer <karl@huftis.org>, 2007, 2008.
+# Eirik U. Birkeland <eirbir@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: solidcontrol\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2011-10-09 10:32+0200\n"
+"PO-Revision-Date: 2010-08-15 23:58+0200\n"
+"Last-Translator: \n"
+"Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: managerbase.cpp:61
+#, kde-format
+msgid "Backend loaded but wrong type obtained, expected %1"
+msgstr "Lasta bakstykke, men fekk feil type. Venta %1."
+
+#: managerbase.cpp:79
+#, kde-format
+msgid "No %1 Backend found"
+msgstr "Fann inkje %1-bakstykke"
+
+#: managerbase.cpp:84
+#, kde-format
+msgid "Unable to use any of the %1 Backends"
+msgstr "Klarte ikkje bruka nokre av %1-bakstykka"

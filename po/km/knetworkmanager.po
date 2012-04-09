@@ -1,0 +1,492 @@
+# translation of knetworkmanager.po to Khmer
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2011.
+# Seng Sutha <sutha@khmeros.info>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: knetworkmanager\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2011-10-07 11:06+0200\n"
+"PO-Revision-Date: 2011-12-28 09:58+0700\n"
+"Last-Translator: Seng Sutha <sutha@khmeros.info>\n"
+"Language-Team: Khmer <supprot@khmeros.info>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: WordForge 0.8 RC1\n"
+"X-Language: km-KH\n"
+
+#: connectioninfodialog.cpp:80
+msgctxt "@title:tab information about ip address, nameserveres, etc"
+msgid "IPv4"
+msgstr "IPv4"
+
+#: connectioninfoipv4tab.cpp:35
+msgctxt "@label:textbox ip addresses of network interface"
+msgid "IP Addresses:"
+msgstr "អាសយដ្ឋាន IP ៖"
+
+#: connectioninfoipv4tab.cpp:38
+msgctxt "@label:textbox netmasks of network interface"
+msgid "Netmasks:"
+msgstr "Netmasks:"
+
+#: connectioninfoipv4tab.cpp:41
+msgctxt "@label:textbox gateways used by network interface"
+msgid "Gateways:"
+msgstr "ផ្លូវ​ចេញ​ចូល ៖"
+
+#: connectioninfoipv4tab.cpp:44
+msgctxt "@label:textbox nameservers used by network interface"
+msgid "Nameservers:"
+msgstr "ឈ្មោះ​ម៉ាស៊ីន​បម្រើ ៖"
+
+#: connectioninfoipv4tab.cpp:47
+msgctxt "@label:textbox domains used by network interface"
+msgid "Search domains:"
+msgstr "ដែន​ស្វែងរក ៖"
+
+#: connectioninfowiredtab.cpp:31 connectioninfowirelesstab.cpp:42
+msgctxt "@label:textbox bit rate of network interface"
+msgid "Bit rate:"
+msgstr "អត្រា​ប៊ីត ៖"
+
+#: connectioninfowiredtab.cpp:34 connectioninfowirelesstab.cpp:57
+msgctxt "@label:textbox MAC address of network interface"
+msgid "Hardware address:"
+msgstr "អាសយដ្ឋាន​ផ្នែករឹង ៖"
+
+#: connectioninfowiredtab.cpp:45
+#, kde-format
+msgctxt "@item:intext bit rate value"
+msgid "%1 Mbit/s"
+msgstr "%1 Mbit/s"
+
+#: connectioninfowirelesstab.cpp:33
+msgctxt "@label:textbox access point SSID"
+msgid "SSID:"
+msgstr "SSID:"
+
+#: connectioninfowirelesstab.cpp:36
+msgctxt "@label:textbox signal strength of AP"
+msgid "Signal strength:"
+msgstr "សញ្ញា​រឹង​មាំ ៖"
+
+#: connectioninfowirelesstab.cpp:39
+msgctxt "@label:textbox Wi-Fi mode, e.g. Ad-Hoc or Managed"
+msgid "Operation mode:"
+msgstr "របៀប​ប្រតិបត្តិការ ៖"
+
+#: connectioninfowirelesstab.cpp:45
+msgctxt "@label:textbox MAC address of access point"
+msgid "Access point:"
+msgstr "ចំណុច​ចូលដំណើរការ ៖"
+
+#: connectioninfowirelesstab.cpp:48
+msgctxt "@label:textbox security flags of AP"
+msgid "Security (WPA):"
+msgstr "សុវត្ថិភាព (WPA) ៖"
+
+#: connectioninfowirelesstab.cpp:51
+msgctxt "@label:textbox security flags of AP"
+msgid "Security (RSN/WPA2):"
+msgstr "សុវត្ថិភាព (RSN/WPA2) ៖"
+
+#: connectioninfowirelesstab.cpp:54
+msgctxt "@label:textbox Wi-Fi frequency"
+msgid "Frequency:"
+msgstr "ប្រេកង់ ៖"
+
+#: connectioninfowirelesstab.cpp:114
+#, kde-format
+msgctxt "@item:intext bit rate value %1 of %2 maximum"
+msgid "%1 / %2 Mbit/s"
+msgstr "%1 / %2 Mbit/s"
+
+#: connectioninfowirelesstab.cpp:129
+#, kde-format
+msgctxt "@item:intext signal strength %1 in percent"
+msgid "%1%"
+msgstr "%1%"
+
+#: connectioninfowirelesstab.cpp:140
+#, kde-format
+msgctxt "@item:intext Wi-Fi frequency"
+msgid "%1 MHz"
+msgstr "%1 MHz"
+
+#: interfaceconnectionitem.cpp:55 interfaceconnectionitem.cpp:82
+msgctxt ""
+"@info:tooltip Tooltip for indicator that connection supplies the network "
+"default route"
+msgid "Default"
+msgstr "លំនាំដើម"
+
+#: interfaceconnectionitem.cpp:143
+msgctxt "@info:tooltip network connection disconnect button tooltip"
+msgid "Disconnect"
+msgstr "ផ្តាច់"
+
+#: interfaceconnectionitem.cpp:177
+msgctxt "text for popup's unknown state"
+msgid "<font size=\"-1\">Unknown</font>"
+msgstr "<font size=\"-1\">មិនស្គាល់</font>"
+
+#: interfaceconnectionitem.cpp:180
+msgctxt "text for popup's activating state"
+msgid "<font size=\"-1\">Activating</font>"
+msgstr "<font size=\"-1\">ធ្វើ​ឲ្យ​សកម្ម</font>"
+
+#: interfaceconnectionitem.cpp:183
+msgctxt "text for popup's activated state"
+msgid "<font size=\"-1\">Active</font>"
+msgstr "<font size=\"-1\">សកម្ម</font>"
+
+#: knetworkmanagertrayicon.cpp:109
+msgctxt "@title:window KNotificationItem tray icon title"
+msgid "Network Management"
+msgstr "ការ​គ្រប់គ្រង​បណ្ដាញ"
+
+#: knetworkmanagertrayicon.cpp:115
+msgctxt "@action:inmenu turns off networking"
+msgid "Enable networking"
+msgstr "បើក​ការ​តភ្ជាប់​បណ្ដាញ"
+
+#: knetworkmanagertrayicon.cpp:123
+msgctxt "@action:inmenu turns off wireless networking"
+msgid "Enable wireless"
+msgstr "បើក​ឥត​ខ្សែ"
+
+#: knetworkmanagertrayicon.cpp:135
+msgctxt "@action:inmenu Preferences action title"
+msgid "Manage Connections..."
+msgstr "គ្រប់គ្រង​ការ​តភ្ជាប់..."
+
+#: knetworkmanagertrayicon.cpp:142
+msgctxt "@action:inmenu show dialog to connect to new or hidden network"
+msgid "Connect To &Other Network..."
+msgstr "តភ្ជាប់​ទៅកាន់​បណ្ដាញ​ផ្សេង​ទៀត..."
+
+#: knetworkmanagertrayicon.cpp:214
+msgctxt ""
+"@action:inmenu Disable action text used when the NetworkManager daemon is "
+"not running"
+msgid "Network Management disabled"
+msgstr "បាន​បិទ​ការ​គ្រប់គ្រង​បណ្ដាញ"
+
+#: knetworkmanagertrayicon.cpp:215
+msgctxt ""
+"@info:tooltip NetworkManager is not running, this client cannot do anything"
+msgid "The system Network Management service is not running"
+msgstr "សេវា​ការ​គ្រប់គ្រង​បណ្ដាញ​ប្រព័ន្ធ​មិន​កំពុង​ដំណើរការ​ឡើយ"
+
+#: knetworkmanagertrayicon.cpp:639
+msgctxt "@action:inmenu copy ip address to clipboard"
+msgid "Copy IP Address"
+msgstr "ចម្លង​អាសយដ្ឋាន IP"
+
+#: knetworkmanagertrayicon.cpp:640
+msgctxt "@action:inmenu interface connection properties"
+msgid "Properties"
+msgstr "លក្ខណ​សម្បត្តិ"
+
+#: main.cpp:27
+msgid "KNetworkManager, the KDE 4 NetworkManager client"
+msgstr "KNetworkManager ម៉ាស៊ីន​ភ្ញៀវ KDE 4 NetworkManager"
+
+#: main.cpp:33
+msgid "KNetworkManager"
+msgstr "KNetworkManager"
+
+#: main.cpp:33
+msgid "(C) 2009 Will Stephenson"
+msgstr "រក្សា​សិទ្ធិ​ឆ្នាំ ២០០៩ ដោយ Will Stephenson"
+
+#: main.cpp:34
+msgid "Will Stephenson"
+msgstr "Will Stephenson"
+
+#: main.cpp:34
+msgid "Original Author, Maintainer"
+msgstr "អ្នក​និពន្ធ​ដើម អ្នក​ថែទាំ"
+
+#: main.cpp:35
+msgid "Paul Marchouk"
+msgstr "Paul Marchouk"
+
+#: main.cpp:35
+msgid "User Interface Polish"
+msgstr "ប៉ូឡូញ​​នៃ​​ចំណុច​ប្រទាក់​អ្នក​ប្រើ"
+
+#: main.cpp:36
+msgid "Christopher Blauvelt"
+msgstr "Christopher Blauvelt"
+
+#: main.cpp:36
+msgid "Original Author, Wireless Scan UI"
+msgstr "អ្នក​និពន្ធ​ដើម Wireless Scan UI"
+
+#: monolithic.cpp:118
+msgctxt ""
+"@info:status detailed text when client cannot start because dbus security "
+"policy prevents it"
+msgid ""
+"KNetworkManager cannot start because the installation is misconfigured.\n"
+"System DBUS policy does not allow it to provide user settings;\n"
+"contact your system administrator or distribution.\n"
+"KNetworkManager will not start automatically in future."
+msgstr ""
+"KNetworkManager មិន​អាច​ចាប់ផ្ដើម​បាន​ទេ ពីព្រោះ​បាត់​ការ​កំណត់​រចនាសម្ព័ន្ធ​ក្នុង​ការ​ដំឡើង ។\n"
+"​គោលការណ៍ DBUS នៃ​ប្រព័ន្ធ​​មិន​អនុវត្ត​ឲ្យ​វា​ផ្ដល់​ការ​កំណត់​អ្នក​ប្រើ​ឡើយ ។\n"
+"ទាក់ទង​អ្នក​គ្រប់គ្រង​​ប្រព័ន្ធ​ ឬ​ការ​ចែកចាយ​​របស់​អ្នក ។\n"
+"KNetworkManager វា​នឹង​មិន​ចាប់ផ្ដើម​ដោយ​ស្វ័យ​ប្រវត្តិ​ទៀត​ឡើយ ។"
+
+#: monolithic.cpp:120
+msgctxt ""
+"@title:window message when client cannot start because dbus security policy "
+"prevents it"
+msgid "Installation problem"
+msgstr "បញ្ហា​ក្នុង​ការ​ដំឡើង"
+
+#: monolithic.cpp:126
+msgctxt ""
+"@info:status detailed text when client cannot start because another client "
+"is already running"
+msgid ""
+"Another NetworkManager client is already running.  Use KNetworkManager in "
+"future? "
+msgstr ""
+"ម៉ាស៊ីន​ភ្ញៀវ NetworkManager ផ្សេង​ទៀត​កំពុង​តែ​ដំណើរការ ។ ប្រើ KNetworkManager ទៀត​ដែរ​ឬ​ទេ ?"
+
+#: monolithic.cpp:128
+msgctxt ""
+"@title:window message when client cannot start because another client is "
+"already running"
+msgid "Network Management already active"
+msgstr "ការ​គ្រប់គ្រង​បណ្ដាញ​សកម្ម​រួច​ហើយ"
+
+#: monolithic.cpp:131
+msgctxt "@action:button enable autostart"
+msgid "Start automatically"
+msgstr "ចាប់ផ្ដើម​ដោយ​ស្វ័យ​ប្រវត្តិ"
+
+#: monolithic.cpp:131
+msgctxt "@action:button disable autostart"
+msgid "Do not start automatically"
+msgstr "កុំ​ចាប់ផ្ដើម​ដោយ​ស្វ័យ​ប្រវត្តិ"
+
+#: otherwirelessnetworkdialog.cpp:41
+msgctxt "@window:title connect to other wireless network"
+msgid "Select Wireless Network"
+msgstr "ជ្រើស​បណ្ដាញ​ឥត​ខ្សែ"
+
+#: otherwirelessnetworkdialog.cpp:46
+msgctxt "@action:button connect to wireless network"
+msgid "Connect"
+msgstr "តភ្ជាប់"
+
+#: otherwirelessnetworkdialog.cpp:50
+msgctxt "@item:inlist Create new ad-hoc wireless connection"
+msgid "New Ad-Hoc Network..."
+msgstr "បណ្ដាញ Ad-Hoc ថ្មី..."
+
+#: otherwirelessnetworkdialog.cpp:86
+#, kde-format
+msgctxt ""
+"@item:inlist Create connection to other wireless network using named device"
+msgid "Connect To Other Network With %1..."
+msgstr "តភ្ជាប់​ទៅកាន់​បណ្ដាញ​ផ្សេង​ទៀត​ជាមួយ %1..."
+
+#: otherwirelessnetworkdialog.cpp:106 otherwirelessnetworkdialog.cpp:189
+msgctxt "@item:inlist Signal strength replaced by description on ad-hoc"
+msgid "create Ad-Hoc"
+msgstr "បង្កើត Ad-Hoc"
+
+#: otherwirelessnetworkdialog.cpp:197
+msgctxt ""
+"@item:inlist connection status added to signal strength if we are connected"
+msgid " (connected)"
+msgstr " (បាន​តភ្ជាប់)"
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ខឹម សុខែម, ម៉ន ម៉េត, សេង សុត្ថា, ចាន់ សម្បត្តិរតនៈ, សុខ សុភា"
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"khoemsokhem@khmeros.info,​​mornmet@khmeros.info,sutha@khmeros.info,"
+"ratanak@khmeros.info,sophea@khmeros.info"
+
+#. i18n: file: otherwirelessnetworkwidget.ui:19
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:5
+msgid "&Search:"
+msgstr "ស្វែងរក ៖"
+
+#. i18n: file: otherwirelessnetworkwidget.ui:35
+#. i18n: ectx: property (text), widget (QTreeWidget, twNetworks)
+#: rc.cpp:8
+msgid "Network name"
+msgstr "ឈ្មោះ​បណ្ដាញ"
+
+#. i18n: file: otherwirelessnetworkwidget.ui:40
+#. i18n: ectx: property (text), widget (QTreeWidget, twNetworks)
+#: rc.cpp:11
+msgid "Signal"
+msgstr "សញ្ញា"
+
+#. i18n: file: otherwirelessnetworkwidget.ui:45
+#. i18n: ectx: property (text), widget (QTreeWidget, twNetworks)
+#: rc.cpp:14
+msgid "Security"
+msgstr "សុវត្ថិភាព"
+
+#: tooltipbuilder.cpp:121
+msgctxt "@info:tooltip network device name eg eth0"
+msgid "Interface"
+msgstr "ចំណុច​ប្រទាក់"
+
+#: tooltipbuilder.cpp:126
+msgctxt "@info:tooltip interface type"
+msgid "Type"
+msgstr "ប្រភេទ"
+
+#: tooltipbuilder.cpp:131
+msgctxt "@info:tooltip system driver name"
+msgid "Driver"
+msgstr "កម្មវិធី​បញ្ជា"
+
+#: tooltipbuilder.cpp:136
+msgctxt "@info:tooltip network interface status"
+msgid "Status"
+msgstr "ស្ថានភាព"
+
+#: tooltipbuilder.cpp:141
+msgctxt "@info:tooltip The network device's maximum speed"
+msgid "Max speed"
+msgstr "ល្បឿន​អតិបរមា"
+
+#: tooltipbuilder.cpp:162
+msgctxt "@info:tooltip this is the hardware address of a network interface"
+msgid "Hardware address"
+msgstr "អាសយដ្ឋាន​ផ្នែករឹង"
+
+#: tooltipbuilder.cpp:182
+msgctxt "@info:tooltip network connection bit rate"
+msgid "Bit rate"
+msgstr "អត្រា​ប៊ីត"
+
+#: tooltipbuilder.cpp:184
+msgctxt "@info:tooltip network connection bit rate units"
+msgid "Mbit/s"
+msgstr "Mbit/s"
+
+#: tooltipbuilder.cpp:206
+msgctxt "@info:tooltip IPv4 address"
+msgid "IP address"
+msgstr "អាសយដ្ឋាន IP"
+
+#: tooltipbuilder.cpp:216
+msgctxt "@info:tooltip network name servers"
+msgid "Name servers"
+msgstr "ឈ្មោះ​ម៉ាស៊ីន​បម្រើ"
+
+#: tooltipbuilder.cpp:226
+msgctxt "@info:tooltip network domains"
+msgid "Domains"
+msgstr "ដែន"
+
+#: tooltipbuilder.cpp:236 tooltipbuilder.cpp:238
+msgctxt "@info:tooltip No network route data available"
+msgid "No route data available"
+msgstr "គ្មាន​ទិន្នន័យ​អំពី​ផ្លូវ​ឡើយ"
+
+#: tooltipbuilder.cpp:242
+msgctxt "@info:tooltip network routes"
+msgid "Routes"
+msgstr "ផ្លូវ"
+
+#: tooltipbuilder.cpp:264
+msgctxt "@info:tooltip SSID is a friendly name that identifies a 802.11 WLAN."
+msgid "SSID"
+msgstr "SSID"
+
+#: tooltipbuilder.cpp:274
+msgctxt "@info:tooltip The signal strength of the wifi network"
+msgid "Strength"
+msgstr "រឹង​មាំ"
+
+#: tooltipbuilder.cpp:279
+msgctxt "@info:tooltip the operation mode of wi-fi network"
+msgid "Mode"
+msgstr "របៀប"
+
+#: tooltipbuilder.cpp:285
+msgctxt "@info:tooltip Active access point MAC address"
+msgid "Access point"
+msgstr "ចំណុច​ចូលដំណើរការ"
+
+#: tooltipbuilder.cpp:297
+msgctxt "@info:tooltip network security level, e.g. high, low"
+msgid "Security"
+msgstr "សុវត្ថិភាព"
+
+#: tooltipbuilder.cpp:308
+msgctxt ""
+"@info:tooltip Flags describing the access point's capabilities according to "
+"WPA (Wifi Protected Access)"
+msgid "WPA flags"
+msgstr "ទង់ WPA"
+
+#: tooltipbuilder.cpp:319
+msgctxt ""
+"@info:tooltip Flags describing the access point's capabilities according to "
+"RSN (Robust Secure Network)"
+msgid "RSN(WPA2) flags"
+msgstr "ទង់ RSN(WPA2)"
+
+#: tooltipbuilder.cpp:329
+msgctxt ""
+"@info:tooltip the frequency of the radio channel that the access point is "
+"operating on"
+msgid "Frequency"
+msgstr "ប្រេកង់"
+
+#: tooltipbuilder.cpp:331
+msgctxt "@info:tooltip frequency unit"
+msgid "MHz"
+msgstr "មេកា​ហឹត"
+
+#: tooltipbuilder.cpp:345
+msgctxt "@info:tooltip carrier"
+msgid "Carrier"
+msgstr "អ្នក​​ដឹក​ជញ្ជូន"
+
+#: tooltipbuilder.cpp:346
+msgctxt "@info:tooltip network interface status - carrier found"
+msgid "Found"
+msgstr "រក​ឃើញ"
+
+#: tooltipbuilder.cpp:347
+msgctxt "@info:tooltip network interface status - carrier not found"
+msgid "Not Found"
+msgstr "រក​មិន​ឃើញ"
+
+#: unconfiguredinterfaceitem.cpp:56
+msgctxt ""
+"Text for menu item for setting up devices which until now do not have any "
+"connections"
+msgid "Create network connection..."
+msgstr "បង្កើត​ការ​តភ្ជាប់​បណ្ដាញ..."
+
+#: wirelessstatus.cpp:85 wirelessstatus.cpp:146 wirelessstatus.cpp:151
+#, kde-format
+msgctxt "@info:tooltip signal strength"
+msgid "%1%"
+msgstr "%1%"

@@ -1,42 +1,30 @@
-# translation of plasma_applet_networkmanagement.po to Greek
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Spiros Georgaras <sngeorgaras@otenet.gr>, 2008.
-# Spiros Georgaras <sng@hellug.gr>, 2008.
-# Toussis Manolis <manolis@koppermind.homelinux.org>, 2008, 2009.
-# Petros <pvidalis@gmail.com>, 2010.
-# Nikos Pantazis <pantazisnikolaos@gmail.com>, 2011.
-# Stelios <sstavra@gmail.com>, 2011, 2012.
-# Dimitrios Glentadakis <dglent@gmail.com>, 2011, 2012.
+# Dimitrios Glentadakis <dglent@gmail.com>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: plasma_applet_networkmanagement\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-25 02:57+0100\n"
-"PO-Revision-Date: 2012-01-08 18:48+0100\n"
-"Last-Translator: Stelios <sstavra@gmail.com>\n"
+"POT-Creation-Date: 2012-03-20 18:01+0100\n"
+"PO-Revision-Date: 2012-01-05 18:48+0100\n"
+"Last-Translator: Dimitrios Glentadakis <dglent@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
-"Language: el\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: activatableitem.cpp:83 interfacedetailswidget.cpp:154
-msgctxt "@info:tooltip"
-msgid "Click here to disconnect"
-msgstr "Κάντε κλικ εδώ για αποσύνδεση"
-
-#: activatableitem.cpp:130
+#: activatableitem.cpp:116
 msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is disabled"
 msgid "Networking system disabled"
 msgstr "Το σύστημα δικτύωσης απενεργοποιήθηκε"
 
-#: activatableitem.cpp:134
+#: activatableitem.cpp:120
 msgctxt "@info:status Notification for radio kill switch turned off"
 msgid "Wireless hardware disabled"
 msgstr "Το υλικό ασυρμάτου απενεργοποιήθηκε"
@@ -47,23 +35,22 @@ msgid "Signal quality: %1%"
 msgstr "Ποιότητα σήματος: %1%"
 
 #: hiddenwirelessnetworkitem.cpp:77
-msgctxt "@action for creating a connection to a hidden wireless network"
-msgid "<placeholder>hidden network</placeholder>"
-msgstr "<placeholder>κρυμμένο δίκτυο</placeholder>"
+msgctxt "label for creating a connection to a hidden wireless network"
+msgid "<hidden network>"
+msgstr ""
 
 #: hiddenwirelessnetworkitem.cpp:81
-msgctxt "@label for hidden wireless network SSID entry"
-msgid "Enter network name and press <placeholder>enter</placeholder>"
+msgctxt ""
+"default KLineEdit::clickMessage() for hidden wireless network SSID entry"
+msgid "Enter network name and press <enter>"
 msgstr ""
-"Εισαγάγετε το όνομα του δικτύου και πιέστε <placeholder>enter</placeholder>"
 
 #: hiddenwirelessnetworkitem.cpp:82
 msgctxt "@info:tooltip for hidden wireless network SSID entry"
-msgid "Enter network name and press <placeholder>enter</placeholder>"
+msgid "Enter network name and press <enter>"
 msgstr ""
-"Εισαγάγετε το όνομα του δικτύου και πιέστε <placeholder>enter</placeholder>"
 
-#: interfaceconnectionitem.cpp:71
+#: interfaceconnectionitem.cpp:70
 msgctxt "name of the connection not known"
 msgid "Unknown"
 msgstr "Άγνωστο"
@@ -73,147 +60,138 @@ msgctxt "interface details"
 msgid "<b>Traffic</b>"
 msgstr "<b>Κίνηση</b>"
 
-#: interfacedetailswidget.cpp:153
-msgid "Disconnect"
-msgstr "Αποσύνδεση"
-
-#: interfacedetailswidget.cpp:163
-msgctxt "disconnect button in interface details window"
-msgid "Disconnect"
-msgstr "Αποσύνδεση"
-
-#: interfacedetailswidget.cpp:177 typelistwidget.cpp:52
+#: interfacedetailswidget.cpp:152
 msgid "Go Back"
 msgstr "Μετάβαση πίσω"
 
-#: interfacedetailswidget.cpp:210 interfacedetailswidget.cpp:332
+#: interfacedetailswidget.cpp:177 interfacedetailswidget.cpp:299
 msgctxt "entry not available"
 msgid "not available"
 msgstr "μη διαθέσιμο"
 
-#: interfacedetailswidget.cpp:215
+#: interfacedetailswidget.cpp:182
 msgctxt "traffic received empty"
 msgid "Received"
 msgstr "Ελήφθη"
 
-#: interfacedetailswidget.cpp:217
+#: interfacedetailswidget.cpp:184
 msgctxt "traffic transmitted empty"
 msgid "Transmitted"
 msgstr "Μεταδόθηκε"
 
-#: interfacedetailswidget.cpp:323
+#: interfacedetailswidget.cpp:290
 msgctxt "state of mobile broadband connection"
 msgid "not enabled"
 msgstr "ανενεργή"
 
-#: interfacedetailswidget.cpp:340 interfacedetailswidget.cpp:387
+#: interfacedetailswidget.cpp:306 interfacedetailswidget.cpp:353
 msgctxt "interface details"
 msgid "Type"
 msgstr "Τύπος"
 
-#: interfacedetailswidget.cpp:341 interfacedetailswidget.cpp:388
+#: interfacedetailswidget.cpp:307 interfacedetailswidget.cpp:354
 msgctxt "interface details"
 msgid "Connection State"
 msgstr "Κατάσταση σύνδεσης"
 
-#: interfacedetailswidget.cpp:342
+#: interfacedetailswidget.cpp:308
 msgctxt "interface details"
 msgid "IP Address"
 msgstr "Διεύθυνση IP"
 
-#: interfacedetailswidget.cpp:343 interfacedetailswidget.cpp:390
+#: interfacedetailswidget.cpp:309 interfacedetailswidget.cpp:356
 msgctxt "interface details"
 msgid "Connection Speed"
 msgstr "Ταχύτητα σύνδεσης"
 
-#: interfacedetailswidget.cpp:343
+#: interfacedetailswidget.cpp:309
 msgctxt "bitrate"
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: interfacedetailswidget.cpp:344 interfacedetailswidget.cpp:391
+#: interfacedetailswidget.cpp:310 interfacedetailswidget.cpp:357
 msgctxt "interface details"
 msgid "System Name"
 msgstr "Όνομα συστήματος"
 
-#: interfacedetailswidget.cpp:345
+#: interfacedetailswidget.cpp:311
 msgctxt "interface details"
 msgid "MAC Address"
 msgstr "Διεύθυνση MAC"
 
-#: interfacedetailswidget.cpp:346 interfacedetailswidget.cpp:393
+#: interfacedetailswidget.cpp:312 interfacedetailswidget.cpp:359
 msgctxt "interface details"
 msgid "Driver"
 msgstr "Οδηγός"
 
-#: interfacedetailswidget.cpp:352
+#: interfacedetailswidget.cpp:318
 msgctxt "interface details"
 msgid "Access Point (SSID)"
 msgstr "Σημείο πρόσβασης (SSID)"
 
-#: interfacedetailswidget.cpp:353
+#: interfacedetailswidget.cpp:319
 msgctxt "interface details"
 msgid "Access Point (MAC)"
 msgstr "Σημείο πρόσβασης (MAC)"
 
-#: interfacedetailswidget.cpp:361
+#: interfacedetailswidget.cpp:327
 msgctxt "@item:intable wireless band"
 msgid "Band"
 msgstr "Εύρος"
 
-#: interfacedetailswidget.cpp:362
+#: interfacedetailswidget.cpp:328
 msgctxt "@item:intable wireless channel"
 msgid "Channel"
 msgstr "Δίαυλος"
 
-#: interfacedetailswidget.cpp:369
+#: interfacedetailswidget.cpp:335
 msgctxt "interface details"
 msgid "Operator"
 msgstr "Χειριστής"
 
-#: interfacedetailswidget.cpp:370
+#: interfacedetailswidget.cpp:336
 msgctxt "interface details"
 msgid "Signal Quality"
 msgstr "Ποιότητα σήματος"
 
-#: interfacedetailswidget.cpp:371
+#: interfacedetailswidget.cpp:337
 msgctxt "interface details"
 msgid "Access Technology"
 msgstr "Τεχνολογία πρόσβασης"
 
-#: interfacedetailswidget.cpp:389
+#: interfacedetailswidget.cpp:355
 msgctxt "interface details"
 msgid "Network Address (IP)"
 msgstr "Διεύθυνση δικτύου (IP)"
 
-#: interfacedetailswidget.cpp:392
+#: interfacedetailswidget.cpp:358
 msgctxt "interface details"
 msgid "Hardware Address (MAC)"
 msgstr "Διεύθυνση υλικού (MAC)"
 
-#: interfacedetailswidget.cpp:411 interfaceitem.cpp:282
+#: interfacedetailswidget.cpp:377 interfaceitem.cpp:286
 msgctxt "label of the network interface"
 msgid "No IP address."
 msgstr "Καμία διεύθυνση ΙΡ."
 
-#: interfacedetailswidget.cpp:418 interfaceitem.cpp:289
+#: interfacedetailswidget.cpp:388 interfaceitem.cpp:297
 msgctxt "label of the network interface"
 msgid "IP display error."
 msgstr "Σφάλμα εμφάνισης IP."
 
-#: interfacedetailswidget.cpp:497
+#: interfacedetailswidget.cpp:467
 msgid "KBit/s"
 msgstr "KBit/s"
 
-#: interfacedetailswidget.cpp:499
+#: interfacedetailswidget.cpp:469
 msgid "MBit/s"
 msgstr "MBit/s"
 
-#: interfacedetailswidget.cpp:503
+#: interfacedetailswidget.cpp:473
 msgid "GBit/s"
 msgstr "GBit/s"
 
-#: interfacedetailswidget.cpp:527
+#: interfacedetailswidget.cpp:497
 #, kde-format
 msgctxt ""
 "traffic, e.g. n KB/s\n"
@@ -221,149 +199,129 @@ msgctxt ""
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: interfacedetailswidget.cpp:536
+#: interfacedetailswidget.cpp:506
 msgid "Received"
 msgstr "Ελήφθη"
 
-#: interfacedetailswidget.cpp:539
+#: interfacedetailswidget.cpp:509
 msgid "Transmitted"
 msgstr "Μεταδόθηκε"
 
-#: interfaceitem.cpp:72
+#: interfaceitem.cpp:75
 msgctxt "tooltip on the LHS widgets"
 msgid "Click here for interface details"
 msgstr "Κάντε κλικ εδώ για λεπτομέρειες διεπαφής"
 
-#: interfaceitem.cpp:246
+#: interfaceitem.cpp:112
+msgctxt "tooltip on disconnect icon"
+msgid "Disconnect"
+msgstr "Αποσύνδεση"
+
+#: interfaceitem.cpp:250
 msgctxt "generic label for an interface"
 msgid "<b>Network Interface</b>"
 msgstr "<b>Διεπαφή δικτύου</b>"
 
-#: interfaceitem.cpp:250
+#: interfaceitem.cpp:254
 msgctxt "network interface name unknown"
 msgid "<b>Unknown Network Interface</b>"
 msgstr "<b>Άγνωστη διεπαφή δικτύου</b>"
 
-#: interfaceitem.cpp:389
+#: interfaceitem.cpp:402
 msgctxt "wired interface network cable unplugged"
 msgid "Cable Unplugged"
 msgstr "Το καλώδιο αποσυνδέθηκε"
 
-#: networkmanager.cpp:316
-msgctxt "CheckBox to enable or disable networking completely"
-msgid "Enable networking"
-msgstr "Ενεργοποίηση δικτύωσης"
-
-#: networkmanager.cpp:317
-msgctxt "@info:tooltip tooltip for the 'Enable networking' checkbox"
-msgid "Enable or disable the networking system"
-msgstr "(Απ)ενεργοποιήστε το σύστημα δικτύωσης"
-
-#: networkmanager.cpp:629
+#: networkmanager.cpp:618
 msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr "Καμία διεπαφή δικτύου"
 
-#: networkmanager.cpp:680
+#: networkmanager.cpp:669
 msgid "VPN Connections"
 msgstr "Συνδέσεις VPN"
 
-#: networkmanager.cpp:694
+#: networkmanager.cpp:683
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
 msgstr "Αποσυνδέθηκε"
 
-#: networkmanager.cpp:697
+#: networkmanager.cpp:686
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
 msgstr "Το ασύρματο απενεργοποιήθηκε στο λογισμικό"
 
-#: networkmanager.cpp:700
+#: networkmanager.cpp:689
 msgctxt "tooltip, all interfaces are down"
 msgid "Networking disabled"
 msgstr "Δικτύωση ανενεργή"
 
-#: networkmanager.cpp:703
+#: networkmanager.cpp:692
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
 msgstr "Το ασύρματο απενεργοποιήθηκε από το υλικό"
 
-#: nmpopup.cpp:106
+#: nmpopup.cpp:89 nmpopup.cpp:747
 msgctxt "title on the LHS of the plasmoid"
 msgid "<h3>Interfaces</h3>"
 msgstr "<h3>Διεπαφές</h3>"
 
-#: nmpopup.cpp:116
-msgctxt "tabbar on the left side"
-msgid "Interfaces"
-msgstr "Διεπαφές"
+#: nmpopup.cpp:95
+msgctxt "title on the RHS of the plasmoid"
+msgid "<h3>Connections</h3>"
+msgstr ""
 
-#: nmpopup.cpp:166
-msgctxt "button"
-msgid "Connect to Another Network..."
-msgstr "Σύνδεση σε άλλο δίκτυο..."
+#: nmpopup.cpp:123
+msgctxt "CheckBox to enable or disable networking completely"
+msgid "Enable networking"
+msgstr "Ενεργοποίηση δικτύωσης"
 
-#: nmpopup.cpp:175
-msgctxt "connection list"
-msgid "Connections"
-msgstr "Συνδέσεις"
-
-#: nmpopup.cpp:176
-msgctxt "@info:tooltip"
-msgid "Connections"
-msgstr "Συνδέσεις"
-
-#: nmpopup.cpp:177
-msgctxt "connection list"
-msgid "VPN"
-msgstr "VPN"
-
-#: nmpopup.cpp:178
-msgctxt "@info:tooltip"
-msgid "VPN Connections"
-msgstr "Συνδέσεις VPN"
-
-#: nmpopup.cpp:179
-msgctxt "connection list"
-msgid "Shared Connections"
-msgstr "Κοινόχρηστες συνδέσεις"
-
-#: nmpopup.cpp:180
-msgctxt "@info:tooltip"
-msgid "Shared Connections"
-msgstr "Κοινόχρηστες συνδέσεις"
-
-#: nmpopup.cpp:208
-msgctxt "CheckBox to enable or disable wireless interface (rfkill)"
-msgid "Enable wireless"
-msgstr "Ενεργοποίηση ασύρματου"
-
-#: nmpopup.cpp:224
+#: nmpopup.cpp:132
 msgctxt "CheckBox to enable or disable wwan (mobile broadband) interface)"
 msgid "Enable mobile broadband"
 msgstr "Ενεργοποίηση ευρείας ζώνης για κινητά"
 
-#: nmpopup.cpp:241
-msgctxt "settings button in applet's popup window"
-msgid "Settings..."
-msgstr "Ρυθμίσεις..."
+#: nmpopup.cpp:145
+msgctxt "CheckBox to enable or disable wireless interface (rfkill)"
+msgid "Enable wireless"
+msgstr "Ενεργοποίηση ασύρματου"
 
-#: nmpopup.cpp:254 nmpopup.cpp:382
-msgctxt "show interface list in applet's popup window"
-msgid "Show Interfaces"
-msgstr "Εμφάνιση διεπαφών"
+#: nmpopup.cpp:157
+msgctxt "tabbar on the left side"
+msgid "Interfaces"
+msgstr "Διεπαφές"
 
-#: nmpopup.cpp:271
-msgctxt "main window"
-msgid "Manage your network connections"
-msgstr "Διαχειριστείτε τις συνδέσεις του δικτύου σας"
+#: nmpopup.cpp:167
+msgctxt "details for the interface"
+msgid "Details"
+msgstr "Λεπτομέρειες"
 
-#: nmpopup.cpp:366
+#: nmpopup.cpp:196
+msgctxt "manage connections button in the applet's popup"
+msgid "Manage Connections..."
+msgstr ""
+
+#: nmpopup.cpp:204
+msgctxt "@info:tooltip tooltip for the 'Show More' button"
+msgid "Show all available networks"
+msgstr ""
+
+#: nmpopup.cpp:209
+msgctxt "show more button in the applet's popup"
+msgid "Show More..."
+msgstr ""
+
+#: nmpopup.cpp:213
+msgctxt "show more button in the applet's popup"
+msgid "Show Less..."
+msgstr ""
+
+#: nmpopup.cpp:319
 msgctxt "Warning about wrong NetworkManager version"
 msgid "NetworkManager is not running. Please start it."
 msgstr "Το NetworkManager δεν εκτελείται. Εκκινήστε το."
 
-#: nmpopup.cpp:370
+#: nmpopup.cpp:323
 #, kde-format
 msgctxt "Warning about wrong NetworkManager version"
 msgid ""
@@ -373,34 +331,15 @@ msgstr ""
 "Χρειαζόμαστε τουλάχιστο το NetworkManager-%1 να λειτουργεί σωστά, βρέθηκε "
 "'%2'. Αναβαθμίστε σε νεότερη έκδοση."
 
-#: nmpopup.cpp:388
-msgctxt "hide interface list in applet's popup window"
-msgid "Hide Interfaces"
-msgstr "Απόκρυψη διεπαφών"
-
-#: nmpopup.cpp:783
-msgctxt "details for the interface"
-msgid "Details"
-msgstr "Λεπτομέρειες"
-
-#: showmoreitem.cpp:69
-msgctxt "text when this item is toggled"
-msgid "Show less networks..."
-msgstr "Εμφάνιση λιγότερων δικτύων..."
-
-#: showmoreitem.cpp:72
-#, kde-format
-msgctxt "text when this item not toggled"
-msgid "Show one more network"
-msgid_plural "Show %1 more networks..."
-msgstr[0] "Εμφάνιση ενός ακόμη δικτύου"
-msgstr[1] "Εμφάνιση %1 ακόμη δικτύων..."
-
-#: typelistwidget.cpp:44
-msgctxt "title for connect to another network window"
-msgid "You want to connect to a network. We see the following options for you:"
+#: nmpopup.cpp:659
+msgctxt "pressed show more button"
+msgid "Show Less..."
 msgstr ""
-"Θέλετε να συνδεθείτε με ένα δίκτυο. Βλέπουμε τις ακόλουθες επιλογές για εσάς:"
+
+#: nmpopup.cpp:664
+msgctxt "unpressed show more button"
+msgid "Show More..."
+msgstr ""
 
 #: vpninterfaceitem.cpp:42
 msgctxt "initial label for VPN connection name"
@@ -438,1382 +377,7 @@ msgctxt "VPN state label"
 msgid "Not Connected..."
 msgstr "Χωρίς σύνδεση..."
 
-#: wirelessnetworkitem.cpp:120 wirelessnetworkitem.cpp:166
+#: wirelessnetworkitem.cpp:120 wirelessnetworkitem.cpp:160
 #, kde-format
 msgid "Strength: %1%"
 msgstr "Ισχύς: %1%"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-#, fuzzy

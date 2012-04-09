@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanager\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-25 02:57+0100\n"
-"PO-Revision-Date: 2012-01-06 09:50+0100\n"
+"POT-Creation-Date: 2012-03-20 18:01+0100\n"
+"PO-Revision-Date: 2012-01-06 10:35+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -21,19 +21,14 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
-#: activatableitem.cpp:83 interfacedetailswidget.cpp:154
-msgctxt "@info:tooltip"
-msgid "Click here to disconnect"
-msgstr "Kliknij tutaj, aby rozłączyć"
-
-#: activatableitem.cpp:130
+#: activatableitem.cpp:116
 msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is disabled"
 msgid "Networking system disabled"
 msgstr "System sieciowy wyłączony"
 
-#: activatableitem.cpp:134
+#: activatableitem.cpp:120
 msgctxt "@info:status Notification for radio kill switch turned off"
 msgid "Wireless hardware disabled"
 msgstr "Urządzenie bezprzewodowe wyłączone"
@@ -44,21 +39,22 @@ msgid "Signal quality: %1%"
 msgstr "Jakość sygnału: %1%"
 
 #: hiddenwirelessnetworkitem.cpp:77
-msgctxt "@action for creating a connection to a hidden wireless network"
-msgid "<placeholder>hidden network</placeholder>"
-msgstr "<placeholder>ukryta sieć</placeholder>"
+msgctxt "label for creating a connection to a hidden wireless network"
+msgid "<hidden network>"
+msgstr "<ukryta sieć>"
 
 #: hiddenwirelessnetworkitem.cpp:81
-msgctxt "@label for hidden wireless network SSID entry"
-msgid "Enter network name and press <placeholder>enter</placeholder>"
-msgstr "Podaj nazwę sieci i naciśnij <placeholder>enter</placeholder>"
+msgctxt ""
+"default KLineEdit::clickMessage() for hidden wireless network SSID entry"
+msgid "Enter network name and press <enter>"
+msgstr "Podaj nazwę sieci i naciśnij <enter>"
 
 #: hiddenwirelessnetworkitem.cpp:82
 msgctxt "@info:tooltip for hidden wireless network SSID entry"
-msgid "Enter network name and press <placeholder>enter</placeholder>"
-msgstr "Podaj nazwę sieci i naciśnij <placeholder>enter</placeholder>"
+msgid "Enter network name and press <enter>"
+msgstr "Podaj nazwę sieci i naciśnij <enter>"
 
-#: interfaceconnectionitem.cpp:71
+#: interfaceconnectionitem.cpp:70
 msgctxt "name of the connection not known"
 msgid "Unknown"
 msgstr "Nieznana"
@@ -68,147 +64,138 @@ msgctxt "interface details"
 msgid "<b>Traffic</b>"
 msgstr "<b>Ruch sieciowy</b>"
 
-#: interfacedetailswidget.cpp:153
-msgid "Disconnect"
-msgstr "Rozłącz"
-
-#: interfacedetailswidget.cpp:163
-msgctxt "disconnect button in interface details window"
-msgid "Disconnect"
-msgstr "Rozłącz"
-
-#: interfacedetailswidget.cpp:177 typelistwidget.cpp:52
+#: interfacedetailswidget.cpp:152
 msgid "Go Back"
 msgstr "Idź wstecz"
 
-#: interfacedetailswidget.cpp:210 interfacedetailswidget.cpp:332
+#: interfacedetailswidget.cpp:177 interfacedetailswidget.cpp:299
 msgctxt "entry not available"
 msgid "not available"
 msgstr "niedostępne"
 
-#: interfacedetailswidget.cpp:215
+#: interfacedetailswidget.cpp:182
 msgctxt "traffic received empty"
 msgid "Received"
-msgstr "Odebrano"
+msgstr "Odebranych"
 
-#: interfacedetailswidget.cpp:217
+#: interfacedetailswidget.cpp:184
 msgctxt "traffic transmitted empty"
 msgid "Transmitted"
 msgstr "Przesłanych"
 
-#: interfacedetailswidget.cpp:323
+#: interfacedetailswidget.cpp:290
 msgctxt "state of mobile broadband connection"
 msgid "not enabled"
 msgstr "niewłączona"
 
-#: interfacedetailswidget.cpp:340 interfacedetailswidget.cpp:387
+#: interfacedetailswidget.cpp:306 interfacedetailswidget.cpp:353
 msgctxt "interface details"
 msgid "Type"
 msgstr "Typ"
 
-#: interfacedetailswidget.cpp:341 interfacedetailswidget.cpp:388
+#: interfacedetailswidget.cpp:307 interfacedetailswidget.cpp:354
 msgctxt "interface details"
 msgid "Connection State"
 msgstr "Stan połączenia"
 
-#: interfacedetailswidget.cpp:342
+#: interfacedetailswidget.cpp:308
 msgctxt "interface details"
 msgid "IP Address"
 msgstr "Adres IP"
 
-#: interfacedetailswidget.cpp:343 interfacedetailswidget.cpp:390
+#: interfacedetailswidget.cpp:309 interfacedetailswidget.cpp:356
 msgctxt "interface details"
 msgid "Connection Speed"
 msgstr "Szybkość połączenia"
 
-#: interfacedetailswidget.cpp:343
+#: interfacedetailswidget.cpp:309
 msgctxt "bitrate"
 msgid "Unknown"
 msgstr "Nieznana"
 
-#: interfacedetailswidget.cpp:344 interfacedetailswidget.cpp:391
+#: interfacedetailswidget.cpp:310 interfacedetailswidget.cpp:357
 msgctxt "interface details"
 msgid "System Name"
 msgstr "Nazwa systemowa"
 
-#: interfacedetailswidget.cpp:345
+#: interfacedetailswidget.cpp:311
 msgctxt "interface details"
 msgid "MAC Address"
 msgstr "Adres MAC"
 
-#: interfacedetailswidget.cpp:346 interfacedetailswidget.cpp:393
+#: interfacedetailswidget.cpp:312 interfacedetailswidget.cpp:359
 msgctxt "interface details"
 msgid "Driver"
 msgstr "Sterownik"
 
-#: interfacedetailswidget.cpp:352
+#: interfacedetailswidget.cpp:318
 msgctxt "interface details"
 msgid "Access Point (SSID)"
 msgstr "Punkt dostępowy (SSID)"
 
-#: interfacedetailswidget.cpp:353
+#: interfacedetailswidget.cpp:319
 msgctxt "interface details"
 msgid "Access Point (MAC)"
 msgstr "Punkt dostępowy (MAC)"
 
-#: interfacedetailswidget.cpp:361
+#: interfacedetailswidget.cpp:327
 msgctxt "@item:intable wireless band"
 msgid "Band"
 msgstr "Pasmo"
 
-#: interfacedetailswidget.cpp:362
+#: interfacedetailswidget.cpp:328
 msgctxt "@item:intable wireless channel"
 msgid "Channel"
 msgstr "Kanał"
 
-#: interfacedetailswidget.cpp:369
+#: interfacedetailswidget.cpp:335
 msgctxt "interface details"
 msgid "Operator"
 msgstr "Operator"
 
-#: interfacedetailswidget.cpp:370
+#: interfacedetailswidget.cpp:336
 msgctxt "interface details"
 msgid "Signal Quality"
 msgstr "Jakość sygnału"
 
-#: interfacedetailswidget.cpp:371
+#: interfacedetailswidget.cpp:337
 msgctxt "interface details"
 msgid "Access Technology"
 msgstr "Technologia dostępu"
 
-#: interfacedetailswidget.cpp:389
+#: interfacedetailswidget.cpp:355
 msgctxt "interface details"
 msgid "Network Address (IP)"
 msgstr "Adres sieciowy (IP)"
 
-#: interfacedetailswidget.cpp:392
+#: interfacedetailswidget.cpp:358
 msgctxt "interface details"
 msgid "Hardware Address (MAC)"
 msgstr "Adres urządzenia (MAC)"
 
-#: interfacedetailswidget.cpp:411 interfaceitem.cpp:282
+#: interfacedetailswidget.cpp:377 interfaceitem.cpp:286
 msgctxt "label of the network interface"
 msgid "No IP address."
 msgstr "Brak adresu IP."
 
-#: interfacedetailswidget.cpp:418 interfaceitem.cpp:289
+#: interfacedetailswidget.cpp:388 interfaceitem.cpp:297
 msgctxt "label of the network interface"
 msgid "IP display error."
 msgstr "Błąd wyświetlania adresu IP."
 
-#: interfacedetailswidget.cpp:497
+#: interfacedetailswidget.cpp:467
 msgid "KBit/s"
 msgstr "KBit/s"
 
-#: interfacedetailswidget.cpp:499
+#: interfacedetailswidget.cpp:469
 msgid "MBit/s"
 msgstr "MBit/s"
 
-#: interfacedetailswidget.cpp:503
+#: interfacedetailswidget.cpp:473
 msgid "GBit/s"
 msgstr "GBit/s"
 
-#: interfacedetailswidget.cpp:527
+#: interfacedetailswidget.cpp:497
 #, kde-format
 msgctxt ""
 "traffic, e.g. n KB/s\n"
@@ -216,149 +203,129 @@ msgctxt ""
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: interfacedetailswidget.cpp:536
+#: interfacedetailswidget.cpp:506
 msgid "Received"
 msgstr "Odebrano"
 
-#: interfacedetailswidget.cpp:539
+#: interfacedetailswidget.cpp:509
 msgid "Transmitted"
 msgstr "Przesłano"
 
-#: interfaceitem.cpp:72
+#: interfaceitem.cpp:75
 msgctxt "tooltip on the LHS widgets"
 msgid "Click here for interface details"
 msgstr "Kliknij tutaj po szczegóły interfejsu"
 
-#: interfaceitem.cpp:246
+#: interfaceitem.cpp:112
+msgctxt "tooltip on disconnect icon"
+msgid "Disconnect"
+msgstr "Rozłącz"
+
+#: interfaceitem.cpp:250
 msgctxt "generic label for an interface"
 msgid "<b>Network Interface</b>"
 msgstr "<b>Interfejs sieciowy</b>"
 
-#: interfaceitem.cpp:250
+#: interfaceitem.cpp:254
 msgctxt "network interface name unknown"
 msgid "<b>Unknown Network Interface</b>"
 msgstr "<b>Nieznany interfejs sieciowy</b>"
 
-#: interfaceitem.cpp:389
+#: interfaceitem.cpp:402
 msgctxt "wired interface network cable unplugged"
 msgid "Cable Unplugged"
 msgstr "Kabel odłączony"
 
-#: networkmanager.cpp:316
-msgctxt "CheckBox to enable or disable networking completely"
-msgid "Enable networking"
-msgstr "Włącz sieć"
-
-#: networkmanager.cpp:317
-msgctxt "@info:tooltip tooltip for the 'Enable networking' checkbox"
-msgid "Enable or disable the networking system"
-msgstr "Włącz lub wyłącz system sieci"
-
-#: networkmanager.cpp:629
+#: networkmanager.cpp:618
 msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr "Brak interfejsów sieciowych"
 
-#: networkmanager.cpp:680
+#: networkmanager.cpp:669
 msgid "VPN Connections"
 msgstr "Połączenia VPN"
 
-#: networkmanager.cpp:694
+#: networkmanager.cpp:683
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
 msgstr "Rozłączony"
 
-#: networkmanager.cpp:697
+#: networkmanager.cpp:686
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
 msgstr "Urządzenie bezprzewodowe wyłączone programowo"
 
-#: networkmanager.cpp:700
+#: networkmanager.cpp:689
 msgctxt "tooltip, all interfaces are down"
 msgid "Networking disabled"
 msgstr "Sieć wyłączona"
 
-#: networkmanager.cpp:703
+#: networkmanager.cpp:692
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
 msgstr "Urządzenie bezprzewodowe wyłączone sprzętowo"
 
-#: nmpopup.cpp:106
+#: nmpopup.cpp:89 nmpopup.cpp:747
 msgctxt "title on the LHS of the plasmoid"
 msgid "<h3>Interfaces</h3>"
 msgstr "<h3>Interfejsy</h3>"
 
-#: nmpopup.cpp:116
-msgctxt "tabbar on the left side"
-msgid "Interfaces"
-msgstr "Interfejsy"
+#: nmpopup.cpp:95
+msgctxt "title on the RHS of the plasmoid"
+msgid "<h3>Connections</h3>"
+msgstr "<h3>Połączenia</h3>"
 
-#: nmpopup.cpp:166
-msgctxt "button"
-msgid "Connect to Another Network..."
-msgstr "Połącz z inną siecią..."
+#: nmpopup.cpp:123
+msgctxt "CheckBox to enable or disable networking completely"
+msgid "Enable networking"
+msgstr "Włącz sieć"
 
-#: nmpopup.cpp:175
-msgctxt "connection list"
-msgid "Connections"
-msgstr "Połączenia"
-
-#: nmpopup.cpp:176
-msgctxt "@info:tooltip"
-msgid "Connections"
-msgstr "Połączenia"
-
-#: nmpopup.cpp:177
-msgctxt "connection list"
-msgid "VPN"
-msgstr "VPN"
-
-#: nmpopup.cpp:178
-msgctxt "@info:tooltip"
-msgid "VPN Connections"
-msgstr "Połączenia VPN"
-
-#: nmpopup.cpp:179
-msgctxt "connection list"
-msgid "Shared Connections"
-msgstr "Współdzielone połączenia"
-
-#: nmpopup.cpp:180
-msgctxt "@info:tooltip"
-msgid "Shared Connections"
-msgstr "Współdzielone połączenia"
-
-#: nmpopup.cpp:208
-msgctxt "CheckBox to enable or disable wireless interface (rfkill)"
-msgid "Enable wireless"
-msgstr "Włącz sieć bezprzewodową"
-
-#: nmpopup.cpp:224
+#: nmpopup.cpp:132
 msgctxt "CheckBox to enable or disable wwan (mobile broadband) interface)"
 msgid "Enable mobile broadband"
 msgstr "Włącz sieć komórkową szerokopasmową"
 
-#: nmpopup.cpp:241
-msgctxt "settings button in applet's popup window"
-msgid "Settings..."
-msgstr "Ustawienia..."
+#: nmpopup.cpp:145
+msgctxt "CheckBox to enable or disable wireless interface (rfkill)"
+msgid "Enable wireless"
+msgstr "Włącz sieć bezprzewodową"
 
-#: nmpopup.cpp:254 nmpopup.cpp:382
-msgctxt "show interface list in applet's popup window"
-msgid "Show Interfaces"
-msgstr "Pokaż interfejsy"
+#: nmpopup.cpp:157
+msgctxt "tabbar on the left side"
+msgid "Interfaces"
+msgstr "Interfejsy"
 
-#: nmpopup.cpp:271
-msgctxt "main window"
-msgid "Manage your network connections"
-msgstr "Zarządzaj swoimi połączeniami sieciowymi"
+#: nmpopup.cpp:167
+msgctxt "details for the interface"
+msgid "Details"
+msgstr "Szczegóły"
 
-#: nmpopup.cpp:366
+#: nmpopup.cpp:196
+msgctxt "manage connections button in the applet's popup"
+msgid "Manage Connections..."
+msgstr "Zarządzaj połączeniami..."
+
+#: nmpopup.cpp:204
+msgctxt "@info:tooltip tooltip for the 'Show More' button"
+msgid "Show all available networks"
+msgstr "Pokaż wszystkie dostępne sieci"
+
+#: nmpopup.cpp:209
+msgctxt "show more button in the applet's popup"
+msgid "Show More..."
+msgstr "Pokaż więcej..."
+
+#: nmpopup.cpp:213
+msgctxt "show more button in the applet's popup"
+msgid "Show Less..."
+msgstr "Pokaż mniej..."
+
+#: nmpopup.cpp:319
 msgctxt "Warning about wrong NetworkManager version"
 msgid "NetworkManager is not running. Please start it."
 msgstr "Menadżer Sieci jest nieuruchomiony. Proszę go uruchomić."
 
-#: nmpopup.cpp:370
+#: nmpopup.cpp:323
 #, kde-format
 msgctxt "Warning about wrong NetworkManager version"
 msgid ""
@@ -368,40 +335,15 @@ msgstr ""
 "Potrzebujemy co najmniej NetworkManager-%1 aby procować poprawnie, "
 "znaleziono '%2'. Proszę zaktualizować do nowszej wersji."
 
-#: nmpopup.cpp:388
-msgctxt "hide interface list in applet's popup window"
-msgid "Hide Interfaces"
-msgstr "Ukryj interfejsy"
+#: nmpopup.cpp:659
+msgctxt "pressed show more button"
+msgid "Show Less..."
+msgstr "Pokaż mniej..."
 
-#: nmpopup.cpp:783
-msgctxt "details for the interface"
-msgid "Details"
-msgstr "Szczegóły"
-
-#: showmoreitem.cpp:69
-#, fuzzy
-#| msgctxt "show more item in the applet's connection list"
-#| msgid "Show less networks..."
-msgctxt "text when this item is toggled"
-msgid "Show less networks..."
-msgstr "Pokaż mniej sieci..."
-
-#: showmoreitem.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "show more item in the applet's connection list"
-#| msgid "Show one more network"
-#| msgid_plural "Show %1 more networks..."
-msgctxt "text when this item not toggled"
-msgid "Show one more network"
-msgid_plural "Show %1 more networks..."
-msgstr[0] "Pokaż jedną sieć więcej"
-msgstr[1] "Pokaż %1 sieci więcej..."
-msgstr[2] "Pokaż %1 sieci więcej..."
-
-#: typelistwidget.cpp:44
-msgctxt "title for connect to another network window"
-msgid "You want to connect to a network. We see the following options for you:"
-msgstr "Chcesz połączyć się z siecią. Widzimy dla ciebie następujące opcje:"
+#: nmpopup.cpp:664
+msgctxt "unpressed show more button"
+msgid "Show More..."
+msgstr "Pokaż więcej..."
 
 #: vpninterfaceitem.cpp:42
 msgctxt "initial label for VPN connection name"
@@ -439,7 +381,7 @@ msgctxt "VPN state label"
 msgid "Not Connected..."
 msgstr "Nie połączono..."
 
-#: wirelessnetworkitem.cpp:120 wirelessnetworkitem.cpp:166
+#: wirelessnetworkitem.cpp:120 wirelessnetworkitem.cpp:160
 #, kde-format
 msgid "Strength: %1%"
 msgstr "Siła: %1%"
@@ -465,23 +407,13 @@ msgstr "Siła: %1%"
 
 
 
-#, fuzzy
-
-
-
-
-
-
-
-
-
 
 
 
 
 
 
-
+#, fuzzy
 
 
 
@@ -493,16 +425,19 @@ msgstr "Siła: %1%"
 
 
 
+#, fuzzy
 
 
 
 
 
+#, fuzzy
 
 
 
 
 
+#, fuzzy
 
 
 
@@ -518,57 +453,37 @@ msgstr "Siła: %1%"
 
 
 
-#, fuzzy
 
 
 
 
 
-#, fuzzy
 
 
 
 
 
 #, fuzzy
-
 
 
 
 
 
 #, fuzzy
-
-
-
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
 #, fuzzy
-
 
 
 
 
-#, fuzzy
-
 
 
 
 
-#, fuzzy
 
 
 
@@ -578,6 +493,7 @@ msgstr "Siła: %1%"
 
 
 
+#, fuzzy
 
 
 
@@ -586,7 +502,6 @@ msgstr "Siła: %1%"
 
 
 
-#, fuzzy
 
 
 
@@ -627,6 +542,7 @@ msgstr "Siła: %1%"
 
 
 
+#, fuzzy
 
 
 
@@ -635,8 +551,6 @@ msgstr "Siła: %1%"
 
 
 
-
-#, fuzzy
 
 
 
@@ -1164,6 +1078,9 @@ msgstr "Siła: %1%"
 
 
 #, fuzzy
+
+
+
 
 
 

@@ -1,216 +1,199 @@
 # translation of plasma_applet_networkmanagement.po to Khmer
-# Khoem Sokhem <khoemsokhem@khmeros.info>, 2008, 2009, 2010.
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2011.
+# Seng Sutha <sutha@khmeros.info>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanagement\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-25 02:57+0100\n"
-"PO-Revision-Date: 2010-12-31 14:07+0700\n"
-"Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
-"Language-Team: Khmer <support@khmeros.info>\n"
+"POT-Creation-Date: 2012-03-20 18:01+0100\n"
+"PO-Revision-Date: 2011-12-28 11:09+0700\n"
+"Last-Translator: Seng Sutha <sutha@khmeros.info>\n"
+"Language-Team: Khmer <supprot@khmeros.info>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: WordForge 0.8 RC1\n"
 "X-Language: km-KH\n"
 
-#: activatableitem.cpp:83 interfacedetailswidget.cpp:154
-#, fuzzy
-#| msgctxt "tooltip on the LHS widgets"
-#| msgid "Click here for interface details"
-msgctxt "@info:tooltip"
-msgid "Click here to disconnect"
-msgstr "ធីក​ទីនេះ​ សម្រាប់​សេចក្ដី​លម្អិត​​អំពី​ចំណុច​ប្រទាក់​"
-
-#: activatableitem.cpp:130
+#: activatableitem.cpp:116
 msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is disabled"
 msgid "Networking system disabled"
-msgstr "បាន​បិទ​ប្រព័ន្ធ​បណ្ដាញ​​"
+msgstr "បាន​បិទ​ប្រព័ន្ធ​ក្នុង​ការ​តភ្ជាប់​បណ្ដាញ"
 
-#: activatableitem.cpp:134
+#: activatableitem.cpp:120
 msgctxt "@info:status Notification for radio kill switch turned off"
 msgid "Wireless hardware disabled"
-msgstr "បាន​បិទ​ផ្នែក​រឹង​ឥត​ខ្សែ​​"
+msgstr "បាន​បិទ​ផ្នែក​រឹង​ឥត​ខ្សែ"
 
 #: gsminterfaceconnectionitem.cpp:143
 #, kde-format
 msgid "Signal quality: %1%"
-msgstr "គុណ​ភាព​សញ្ញា​ ៖ %1%"
+msgstr "គុណភាព​សញ្ញា ៖ %1%"
 
 #: hiddenwirelessnetworkitem.cpp:77
-msgctxt "@action for creating a connection to a hidden wireless network"
-msgid "<placeholder>hidden network</placeholder>"
-msgstr "<placeholder>បណ្ដាញ​លាក់</placeholder>"
+msgctxt "label for creating a connection to a hidden wireless network"
+msgid "<hidden network>"
+msgstr "<hidden network>"
 
 #: hiddenwirelessnetworkitem.cpp:81
-msgctxt "@label for hidden wireless network SSID entry"
-msgid "Enter network name and press <placeholder>enter</placeholder>"
-msgstr "បញ្ចូល​ឈ្មោះ​បណ្ដាញ​ រួច​ចុច <placeholder>បញ្ចូល (Enter)</placeholder>"
+msgctxt ""
+"default KLineEdit::clickMessage() for hidden wireless network SSID entry"
+msgid "Enter network name and press <enter>"
+msgstr "បញ្ចូល​ឈ្មោះ​បណ្ដាញ ហើយ​ចុច <enter>"
 
 #: hiddenwirelessnetworkitem.cpp:82
 msgctxt "@info:tooltip for hidden wireless network SSID entry"
-msgid "Enter network name and press <placeholder>enter</placeholder>"
-msgstr "បញ្ចូល​ឈ្មោះ​បណ្ដាញ​ រួច​ចុច <placeholder>បញ្ចូល (Enter)</placeholder>"
+msgid "Enter network name and press <enter>"
+msgstr "បញ្ចូល​ឈ្មោះ​បណ្ដាញ ហើយ​ចុច <enter>"
 
-#: interfaceconnectionitem.cpp:71
+#: interfaceconnectionitem.cpp:70
 msgctxt "name of the connection not known"
 msgid "Unknown"
-msgstr "មិនស្គាល់​"
+msgstr "មិន​ស្គាល់"
 
 #: interfacedetailswidget.cpp:116
 msgctxt "interface details"
 msgid "<b>Traffic</b>"
-msgstr "<b>ចរាចរ​</b>​"
+msgstr "<b>ចរាចរ</b>"
 
-#: interfacedetailswidget.cpp:153
-msgid "Disconnect"
-msgstr "ផ្ដាច់"
-
-#: interfacedetailswidget.cpp:163
-#, fuzzy
-#| msgid "Disconnect"
-msgctxt "disconnect button in interface details window"
-msgid "Disconnect"
-msgstr "ផ្ដាច់"
-
-#: interfacedetailswidget.cpp:177 typelistwidget.cpp:52
+#: interfacedetailswidget.cpp:152
 msgid "Go Back"
-msgstr "ត្រឡប់​ទៅ​ដើម​"
+msgstr "ត្រឡប់​ទៅ​ដើម"
 
-#: interfacedetailswidget.cpp:210 interfacedetailswidget.cpp:332
+#: interfacedetailswidget.cpp:177 interfacedetailswidget.cpp:299
 msgctxt "entry not available"
 msgid "not available"
-msgstr "មិន​អាច​រក​បាន​"
+msgstr "រក​មិន​ឃើញ"
 
-#: interfacedetailswidget.cpp:215
+#: interfacedetailswidget.cpp:182
 msgctxt "traffic received empty"
 msgid "Received"
-msgstr "បាន​ទទួល​​"
+msgstr "បាន​ទទួល"
 
-#: interfacedetailswidget.cpp:217
+#: interfacedetailswidget.cpp:184
 msgctxt "traffic transmitted empty"
 msgid "Transmitted"
-msgstr "បាន​បញ្ជូន​​"
+msgstr "បាន​បញ្ជូន"
 
-#: interfacedetailswidget.cpp:323
+#: interfacedetailswidget.cpp:290
 msgctxt "state of mobile broadband connection"
 msgid "not enabled"
-msgstr "មិន​​បាន​បើក​ឡើយ​"
+msgstr "មិន​បាន​បើក"
 
-#: interfacedetailswidget.cpp:340 interfacedetailswidget.cpp:387
+#: interfacedetailswidget.cpp:306 interfacedetailswidget.cpp:353
 msgctxt "interface details"
 msgid "Type"
-msgstr "ប្រភេទ​"
+msgstr "ប្រភេទ"
 
-#: interfacedetailswidget.cpp:341 interfacedetailswidget.cpp:388
+#: interfacedetailswidget.cpp:307 interfacedetailswidget.cpp:354
 msgctxt "interface details"
 msgid "Connection State"
-msgstr "ស្ថានភាព​តភ្ជាប់​"
+msgstr "សភាព​ក្នុង​ការ​តភ្ជាប់"
 
-#: interfacedetailswidget.cpp:342
+#: interfacedetailswidget.cpp:308
 msgctxt "interface details"
 msgid "IP Address"
-msgstr "អាសយដ្ឋាន IP "
+msgstr "អាសយដ្ឋាន IP"
 
-#: interfacedetailswidget.cpp:343 interfacedetailswidget.cpp:390
+#: interfacedetailswidget.cpp:309 interfacedetailswidget.cpp:356
 msgctxt "interface details"
 msgid "Connection Speed"
-msgstr "ល្បឿន​តភ្ជាប់​"
+msgstr "ល្បឿន​ក្នុង​ការ​តភ្ជាប់"
 
-#: interfacedetailswidget.cpp:343
+#: interfacedetailswidget.cpp:309
 msgctxt "bitrate"
 msgid "Unknown"
-msgstr "មិន​ស្គាល់​"
+msgstr "មិន​ស្គាល់"
 
-#: interfacedetailswidget.cpp:344 interfacedetailswidget.cpp:391
+#: interfacedetailswidget.cpp:310 interfacedetailswidget.cpp:357
 msgctxt "interface details"
 msgid "System Name"
-msgstr "ឈ្មោះ​ប្រព័ន្ធ​"
+msgstr "ឈ្មោះ​ប្រព័ន្ធ"
 
-#: interfacedetailswidget.cpp:345
+#: interfacedetailswidget.cpp:311
 msgctxt "interface details"
 msgid "MAC Address"
-msgstr "អាសយដ្ឋាន​ MAC "
+msgstr "អាសយដ្ឋាន MAC"
 
-#: interfacedetailswidget.cpp:346 interfacedetailswidget.cpp:393
+#: interfacedetailswidget.cpp:312 interfacedetailswidget.cpp:359
 msgctxt "interface details"
 msgid "Driver"
-msgstr "កម្ម​វិធី​បញ្ជា​"
+msgstr "កម្មវិធី​បញ្ជា"
 
-#: interfacedetailswidget.cpp:352
+#: interfacedetailswidget.cpp:318
 msgctxt "interface details"
 msgid "Access Point (SSID)"
-msgstr "ចំណុច​ចូល​ដំណើរការ​​ (SSID)"
+msgstr "ចំណុច​ចូល​ដំណើរការ (SSID)"
 
-#: interfacedetailswidget.cpp:353
+#: interfacedetailswidget.cpp:319
 msgctxt "interface details"
 msgid "Access Point (MAC)"
-msgstr "ចំណុច​ចូល​ដំណើរការ​​ (MAC)"
+msgstr "ចំណុច​ចូល​ដំណើរការ (MAC)"
 
-#: interfacedetailswidget.cpp:361
+#: interfacedetailswidget.cpp:327
 msgctxt "@item:intable wireless band"
 msgid "Band"
 msgstr "ក្រុម"
 
-#: interfacedetailswidget.cpp:362
+#: interfacedetailswidget.cpp:328
 msgctxt "@item:intable wireless channel"
 msgid "Channel"
 msgstr "ឆានែល"
 
-#: interfacedetailswidget.cpp:369
+#: interfacedetailswidget.cpp:335
 msgctxt "interface details"
 msgid "Operator"
-msgstr "ការី​"
+msgstr "សញ្ញា​ប្រមាណ​វិធី"
 
-#: interfacedetailswidget.cpp:370
+#: interfacedetailswidget.cpp:336
 msgctxt "interface details"
 msgid "Signal Quality"
-msgstr "គុណ​ភាព​សញ្ញា​"
+msgstr "គុណភាព​សញ្ញា"
 
-#: interfacedetailswidget.cpp:371
+#: interfacedetailswidget.cpp:337
 msgctxt "interface details"
 msgid "Access Technology"
-msgstr "បច្ចេក​​វិទ្យា​ចូល​ដំណើរការ"
+msgstr "ចូល​ដំណើរការ​បច្ចេកវិទ្យា"
 
-#: interfacedetailswidget.cpp:389
+#: interfacedetailswidget.cpp:355
 msgctxt "interface details"
 msgid "Network Address (IP)"
-msgstr "អាសយដ្ឋាន​បណ្ដាញ​ (IP)"
+msgstr "អាសយដ្ឋាន​បណ្ដាញ (IP)"
 
-#: interfacedetailswidget.cpp:392
+#: interfacedetailswidget.cpp:358
 msgctxt "interface details"
 msgid "Hardware Address (MAC)"
 msgstr "អាសយដ្ឋាន​ផ្នែក​រឹង (MAC)"
 
-#: interfacedetailswidget.cpp:411 interfaceitem.cpp:282
+#: interfacedetailswidget.cpp:377 interfaceitem.cpp:286
 msgctxt "label of the network interface"
 msgid "No IP address."
 msgstr "គ្មាន​អាសយដ្ឋាន IP ។"
 
-#: interfacedetailswidget.cpp:418 interfaceitem.cpp:289
+#: interfacedetailswidget.cpp:388 interfaceitem.cpp:297
 msgctxt "label of the network interface"
 msgid "IP display error."
-msgstr "កំហុស​ក្នុង​កា​រ​បង្ហាញ IP ។​"
+msgstr "កំហុស​ក្នុង​ការ​បង្ហាញ IP ។"
 
-#: interfacedetailswidget.cpp:497
+#: interfacedetailswidget.cpp:467
 msgid "KBit/s"
 msgstr "KBit/s"
 
-#: interfacedetailswidget.cpp:499
+#: interfacedetailswidget.cpp:469
 msgid "MBit/s"
 msgstr "MBit/s"
 
-#: interfacedetailswidget.cpp:503
+#: interfacedetailswidget.cpp:473
 msgid "GBit/s"
 msgstr "GBit/s"
 
-#: interfacedetailswidget.cpp:527
+#: interfacedetailswidget.cpp:497
 #, kde-format
 msgctxt ""
 "traffic, e.g. n KB/s\n"
@@ -218,224 +201,157 @@ msgctxt ""
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: interfacedetailswidget.cpp:536
+#: interfacedetailswidget.cpp:506
 msgid "Received"
-msgstr "បាន​ទទួល​​​"
+msgstr "បាន​ទទួល"
 
-#: interfacedetailswidget.cpp:539
+#: interfacedetailswidget.cpp:509
 msgid "Transmitted"
-msgstr "បាន​បញ្ជូន​​"
+msgstr "បាន​បញ្ជូន"
 
-#: interfaceitem.cpp:72
+#: interfaceitem.cpp:75
 msgctxt "tooltip on the LHS widgets"
 msgid "Click here for interface details"
-msgstr "ធីក​ទីនេះ​ សម្រាប់​សេចក្ដី​លម្អិត​​អំពី​ចំណុច​ប្រទាក់​"
+msgstr "ចុច​ទី​នេះ​សម្រាប់​សេចក្ដី​លម្អិត​អំពី​​ចំណុច​ប្រទាក់"
 
-#: interfaceitem.cpp:246
-msgctxt "generic label for an interface"
-msgid "<b>Network Interface</b>"
-msgstr "<b>ចំណុចប្រទាក់​បណ្ដាញ​​​</b>"
+#: interfaceitem.cpp:112
+msgctxt "tooltip on disconnect icon"
+msgid "Disconnect"
+msgstr "ផ្ដាច់"
 
 #: interfaceitem.cpp:250
+msgctxt "generic label for an interface"
+msgid "<b>Network Interface</b>"
+msgstr "<b>ចំណុច​ប្រទាក់​បណ្ដាញ</b>"
+
+#: interfaceitem.cpp:254
 msgctxt "network interface name unknown"
 msgid "<b>Unknown Network Interface</b>"
-msgstr "<b>មិន​ស្គាល់​ចំណុច​ប្រទាក់​បណ្ដាញ</b>​"
+msgstr "<b>មិន​ស្គាល់​ចំណុច​ប្រទាក់​បណ្ដាញ</b>"
 
-#: interfaceitem.cpp:389
+#: interfaceitem.cpp:402
 msgctxt "wired interface network cable unplugged"
 msgid "Cable Unplugged"
-msgstr "​បាន​ដក​ខ្សែ​​"
+msgstr "បាន​ដោះ​ខ្សែ"
 
-#: networkmanager.cpp:316
-msgctxt "CheckBox to enable or disable networking completely"
-msgid "Enable networking"
-msgstr "បើកការ​ត​​បណ្ដាញ​"
-
-#: networkmanager.cpp:317
-#, fuzzy
-#| msgctxt "CheckBox to enable or disable networking completely"
-#| msgid "Enable networking"
-msgctxt "@info:tooltip tooltip for the 'Enable networking' checkbox"
-msgid "Enable or disable the networking system"
-msgstr "បើកការ​ត​​បណ្ដាញ​"
-
-#: networkmanager.cpp:629
+#: networkmanager.cpp:618
 msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr "គ្មាន​ចំណុច​ប្រទាក់​បណ្ដាញ"
 
-#: networkmanager.cpp:680
+#: networkmanager.cpp:669
 msgid "VPN Connections"
 msgstr "ការ​តភ្ជាប់ VPN"
 
-#: networkmanager.cpp:694
+#: networkmanager.cpp:683
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
-msgstr "បាន​ផ្ដាច់​"
+msgstr "បាន​ផ្ដាច់"
 
-#: networkmanager.cpp:697
+#: networkmanager.cpp:686
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
-msgstr "ឥត​ខ្សែ​បាន​បិទ​នៅ​ក្នុង​ផ្នែក​ទន់​​"
+msgstr "បាន​បិទ​ឥត​ខ្សែ​នៅ​ក្នុង​ផ្នែក​ទន់"
 
-#: networkmanager.cpp:700
+#: networkmanager.cpp:689
 msgctxt "tooltip, all interfaces are down"
 msgid "Networking disabled"
-msgstr "បាន​បិទ​ការ​ធ្វើ​បណ្ដាញ​​"
+msgstr "បាន​បិទ​ក្នុង​ការ​តភ្ជាប់​បណ្ដាញ"
 
-#: networkmanager.cpp:703
+#: networkmanager.cpp:692
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
-msgstr "ឥត​ខ្សែ​​បាន​បិទ​ដោយ​ផ្នែក​រឹង​​"
+msgstr "បាន​បិទ​ឥត​ខ្សែ​ដោយ​ផ្នែក​រឹង"
 
-#: nmpopup.cpp:106
+#: nmpopup.cpp:89 nmpopup.cpp:747
 msgctxt "title on the LHS of the plasmoid"
 msgid "<h3>Interfaces</h3>"
-msgstr "<h3>ចំណុចប្រទាក់​​</h3>"
+msgstr "<h3>ចំណុច​ប្រទាក់</h3>"
 
-#: nmpopup.cpp:116
-msgctxt "tabbar on the left side"
-msgid "Interfaces"
-msgstr "ចំណុចប្រទាក់​​"
+#: nmpopup.cpp:95
+msgctxt "title on the RHS of the plasmoid"
+msgid "<h3>Connections</h3>"
+msgstr "<h3>ការ​តភ្ជាប់</h3>"
 
-#: nmpopup.cpp:166
-msgctxt "button"
-msgid "Connect to Another Network..."
-msgstr ""
+#: nmpopup.cpp:123
+msgctxt "CheckBox to enable or disable networking completely"
+msgid "Enable networking"
+msgstr "បើក​ការ​​តភ្ជាប់​បណ្ដាញ"
 
-#: nmpopup.cpp:175
-#, fuzzy
-#| msgid "VPN Connections"
-msgctxt "connection list"
-msgid "Connections"
-msgstr "ការ​តភ្ជាប់ VPN"
+#: nmpopup.cpp:132
+msgctxt "CheckBox to enable or disable wwan (mobile broadband) interface)"
+msgid "Enable mobile broadband"
+msgstr "បើក​រលក​អាកាស​ចល័ត"
 
-#: nmpopup.cpp:176
-#, fuzzy
-#| msgid "VPN Connections"
-msgctxt "@info:tooltip"
-msgid "Connections"
-msgstr "ការ​តភ្ជាប់ VPN"
-
-#: nmpopup.cpp:177
-msgctxt "connection list"
-msgid "VPN"
-msgstr ""
-
-#: nmpopup.cpp:178
-#, fuzzy
-#| msgid "VPN Connections"
-msgctxt "@info:tooltip"
-msgid "VPN Connections"
-msgstr "ការ​តភ្ជាប់ VPN"
-
-#: nmpopup.cpp:179
-#, fuzzy
-#| msgid "Show &wired connections"
-msgctxt "connection list"
-msgid "Shared Connections"
-msgstr "បង្ហាញ​ការ​តភ្ជាប់​ឥត​ខ្សែ"
-
-#: nmpopup.cpp:180
-#, fuzzy
-#| msgid "Show &wired connections"
-msgctxt "@info:tooltip"
-msgid "Shared Connections"
-msgstr "បង្ហាញ​ការ​តភ្ជាប់​ឥត​ខ្សែ"
-
-#: nmpopup.cpp:208
+#: nmpopup.cpp:145
 msgctxt "CheckBox to enable or disable wireless interface (rfkill)"
 msgid "Enable wireless"
 msgstr "បើក​ឥត​ខ្សែ"
 
-#: nmpopup.cpp:224
-msgctxt "CheckBox to enable or disable wwan (mobile broadband) interface)"
-msgid "Enable mobile broadband"
-msgstr "បើក​រលក​អាកាស​ចល័ត​​"
+#: nmpopup.cpp:157
+msgctxt "tabbar on the left side"
+msgid "Interfaces"
+msgstr "ចំណុច​ប្រទាក់"
 
-#: nmpopup.cpp:241
-#, fuzzy
-#| msgctxt "VPN state label"
-#| msgid "Connecting..."
-msgctxt "settings button in applet's popup window"
-msgid "Settings..."
-msgstr "កំពុង​តភ្ជាប់...​"
+#: nmpopup.cpp:167
+msgctxt "details for the interface"
+msgid "Details"
+msgstr "សេចក្ដី​លម្អិត"
 
-#: nmpopup.cpp:254 nmpopup.cpp:382
-#, fuzzy
-#| msgctxt "tabbar on the left side"
-#| msgid "Interfaces"
-msgctxt "show interface list in applet's popup window"
-msgid "Show Interfaces"
-msgstr "ចំណុចប្រទាក់​​"
+#: nmpopup.cpp:196
+msgctxt "manage connections button in the applet's popup"
+msgid "Manage Connections..."
+msgstr "គ្រប់គ្រង​ការ​តភ្ជាប់..."
 
-#: nmpopup.cpp:271
-#, fuzzy
-#| msgctxt "manage connections button in the applet's popup"
-#| msgid "Manage Connections..."
-msgctxt "main window"
-msgid "Manage your network connections"
-msgstr "គ្រប់គ្រង​ការ​តភ្ជាប់...​"
+#: nmpopup.cpp:204
+msgctxt "@info:tooltip tooltip for the 'Show More' button"
+msgid "Show all available networks"
+msgstr "បង្ហាញ​បណ្ដាញ​ដែល​មាន​ទាំងអស់"
 
-#: nmpopup.cpp:366
+#: nmpopup.cpp:209
+msgctxt "show more button in the applet's popup"
+msgid "Show More..."
+msgstr "បង្ហាញ​ច្រើន..."
+
+#: nmpopup.cpp:213
+msgctxt "show more button in the applet's popup"
+msgid "Show Less..."
+msgstr "បង្ហាញ​ច្រើន..."
+
+#: nmpopup.cpp:319
 msgctxt "Warning about wrong NetworkManager version"
 msgid "NetworkManager is not running. Please start it."
-msgstr "កម្មវិធី​គ្រប់គ្រង​បណ្ដាញ​មិន​ទាន់​ដំណើរការ​ទេ ។ សូម​ចាប់ផ្ដើម​វា ។"
+msgstr "NetworkManager កំពុង​ដំណើរការ​ ។ សូម​ចាប់ផ្ដើម​វា ។"
 
-#: nmpopup.cpp:370
+#: nmpopup.cpp:323
 #, kde-format
 msgctxt "Warning about wrong NetworkManager version"
 msgid ""
 "We need at least NetworkManager-%1 to work properly, found '%2'. Please "
 "upgrade to a newer version."
 msgstr ""
-"យើង​ត្រូវការ​យ៉ាង​ហោច​កម្មវិធី​គ្រប់គ្រង​បណ្ដាញ %1 ដើម្បី​ធ្វើការ​បាន​ត្រឹមត្រូវ​សម្រាប់​ការ​រក​ឃើញ '%2' ។ សូម​"
-"ធ្វើឲ្យ​ប្រសើរ​ទៅកាន់​កំណែ​ដែល​​ថ្មី​ជាង ។"
+"យើង​ត្រូវ​ការ​យ៉ាង​ហោច​ណាស់ NetworkManager-%1 ដើម្បី​ដំណើរការ​ដោយ​ត្រឹមត្រូវ រក​ឃើញ '%2' ។ សូម​ធ្វើ​"
+"ឲ្យ​កំណែ​ថ្មី​ជាង​ប្រើសើរ ។"
 
-#: nmpopup.cpp:388
-#, fuzzy
-#| msgctxt "tabbar on the left side"
-#| msgid "Interfaces"
-msgctxt "hide interface list in applet's popup window"
-msgid "Hide Interfaces"
-msgstr "ចំណុចប្រទាក់​​"
+#: nmpopup.cpp:659
+msgctxt "pressed show more button"
+msgid "Show Less..."
+msgstr "បង្ហាញ​តិច..."
 
-#: nmpopup.cpp:783
-msgctxt "details for the interface"
-msgid "Details"
-msgstr "សេចក្តី​​លម្អិត​"
-
-#: showmoreitem.cpp:69
-#, fuzzy
-#| msgctxt "@info:tooltip tooltip for the 'Show More' button"
-#| msgid "Show all available networks"
-msgctxt "text when this item is toggled"
-msgid "Show less networks..."
-msgstr "បង្ហាញ​បណ្ដាញ​ដែល​មាន​ទាំងអស់"
-
-#: showmoreitem.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip tooltip for the 'Show More' button"
-#| msgid "Show all available networks"
-msgctxt "text when this item not toggled"
-msgid "Show one more network"
-msgid_plural "Show %1 more networks..."
-msgstr[0] "បង្ហាញ​បណ្ដាញ​ដែល​មាន​ទាំងអស់"
-
-#: typelistwidget.cpp:44
-msgctxt "title for connect to another network window"
-msgid "You want to connect to a network. We see the following options for you:"
-msgstr ""
+#: nmpopup.cpp:664
+msgctxt "unpressed show more button"
+msgid "Show More..."
+msgstr "បង្ហាញ​ច្រើន​ជាង..."
 
 #: vpninterfaceitem.cpp:42
 msgctxt "initial label for VPN connection name"
 msgid "Not Available"
-msgstr "មិន​អាច​រក​បាន​​"
+msgstr "រក​មិន​ឃើញ"
 
 #: vpninterfaceitem.cpp:92
 msgctxt "ip of vpn interface item"
 msgid "not available"
-msgstr "មិន​អាច​រក​បាន​​"
+msgstr "រក​មិន​ឃើញ"
 
 #: vpninterfaceitem.cpp:99
 #, kde-format
@@ -446,47 +362,24 @@ msgstr "<b>%1</b>"
 #: vpninterfaceitem.cpp:101
 msgctxt "VPN state label"
 msgid "Connected"
-msgstr "បាន​តភ្ជាប់​"
+msgstr "បាន​តភ្ជាប់"
 
 #: vpninterfaceitem.cpp:104
 msgctxt "VPN state label"
 msgid "Connecting..."
-msgstr "កំពុង​តភ្ជាប់...​"
+msgstr "តភ្ជាប់..."
 
 #: vpninterfaceitem.cpp:110
 msgctxt "VPN connections interface"
 msgid "<b>Virtual Private Network</b>"
-msgstr "<b>បណ្ដាញ​ផ្ទាល់​ខ្លួន​ជាក់ស្តែង​​</b>"
+msgstr "<b>បណ្ដាញ​ឯកជន​និម្មិត</b>"
 
 #: vpninterfaceitem.cpp:111
 msgctxt "VPN state label"
 msgid "Not Connected..."
-msgstr "មិន​បាន​តភ្ជាប់​​..."
+msgstr "មិន​បាន​តភ្ជាប់..."
 
-#: wirelessnetworkitem.cpp:120 wirelessnetworkitem.cpp:166
+#: wirelessnetworkitem.cpp:120 wirelessnetworkitem.cpp:160
 #, kde-format
 msgid "Strength: %1%"
-msgstr "កម្លាំង ៖ %1%"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
+msgstr "ភាព​រឹង​មាំ ៖ %1%"
