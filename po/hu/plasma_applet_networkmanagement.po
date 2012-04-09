@@ -1,36 +1,30 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Kristóf Kiszel <ulysses@kubuntu.org>, 2010, 2011, 2012.
-# Tamas Krutki <negusnyul@gmail.com>, 2011.
+# Kristóf Kiszel <ulysses@kubuntu.org>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-02-25 02:57+0100\n"
-"PO-Revision-Date: 2012-01-13 22:45+0100\n"
+"POT-Creation-Date: 2012-03-20 18:01+0100\n"
+"PO-Revision-Date: 2011-10-16 16:46+0200\n"
 "Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
-"Language: hu\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: activatableitem.cpp:83 interfacedetailswidget.cpp:154
-msgctxt "@info:tooltip"
-msgid "Click here to disconnect"
-msgstr "Kattintson ide a kapcsolat bontásáért"
-
-#: activatableitem.cpp:130
+#: activatableitem.cpp:116
 msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is disabled"
 msgid "Networking system disabled"
 msgstr "A hálózatkezelő rendszer kikapcsolva"
 
-#: activatableitem.cpp:134
+#: activatableitem.cpp:120
 msgctxt "@info:status Notification for radio kill switch turned off"
 msgid "Wireless hardware disabled"
 msgstr "A vezeték nélküli hardver ki van kapcsolva"
@@ -41,23 +35,22 @@ msgid "Signal quality: %1%"
 msgstr "Jelminőség: %1%"
 
 #: hiddenwirelessnetworkitem.cpp:77
-msgctxt "@action for creating a connection to a hidden wireless network"
-msgid "<placeholder>hidden network</placeholder>"
-msgstr "<placeholder>rejtett hálózat</placeholder>"
+msgctxt "label for creating a connection to a hidden wireless network"
+msgid "<hidden network>"
+msgstr "<rejtett hálózat>"
 
 #: hiddenwirelessnetworkitem.cpp:81
-msgctxt "@label for hidden wireless network SSID entry"
-msgid "Enter network name and press <placeholder>enter</placeholder>"
-msgstr ""
-"Adja meg a hálózat nevét és nyomja meg az <placeholder>Entert</placeholder>"
+msgctxt ""
+"default KLineEdit::clickMessage() for hidden wireless network SSID entry"
+msgid "Enter network name and press <enter>"
+msgstr "Adja meg a hálózat nevét és nyomja meg az <enter>-t"
 
 #: hiddenwirelessnetworkitem.cpp:82
 msgctxt "@info:tooltip for hidden wireless network SSID entry"
-msgid "Enter network name and press <placeholder>enter</placeholder>"
-msgstr ""
-"Adja meg a hálózat nevét és nyomja meg az <placeholder>Entert</placeholder>"
+msgid "Enter network name and press <enter>"
+msgstr "Adja meg a hálózat nevét és nyomja meg az <Entert>"
 
-#: interfaceconnectionitem.cpp:71
+#: interfaceconnectionitem.cpp:70
 msgctxt "name of the connection not known"
 msgid "Unknown"
 msgstr "Ismeretlen"
@@ -67,147 +60,138 @@ msgctxt "interface details"
 msgid "<b>Traffic</b>"
 msgstr "<b>Forgalom</b>"
 
-#: interfacedetailswidget.cpp:153
-msgid "Disconnect"
-msgstr "Kapcsolat bontása"
-
-#: interfacedetailswidget.cpp:163
-msgctxt "disconnect button in interface details window"
-msgid "Disconnect"
-msgstr "Kapcsolat bontása"
-
-#: interfacedetailswidget.cpp:177 typelistwidget.cpp:52
+#: interfacedetailswidget.cpp:152
 msgid "Go Back"
 msgstr "Vissza"
 
-#: interfacedetailswidget.cpp:210 interfacedetailswidget.cpp:332
+#: interfacedetailswidget.cpp:177 interfacedetailswidget.cpp:299
 msgctxt "entry not available"
 msgid "not available"
 msgstr "nem érhető el"
 
-#: interfacedetailswidget.cpp:215
+#: interfacedetailswidget.cpp:182
 msgctxt "traffic received empty"
 msgid "Received"
 msgstr "Fogadott"
 
-#: interfacedetailswidget.cpp:217
+#: interfacedetailswidget.cpp:184
 msgctxt "traffic transmitted empty"
 msgid "Transmitted"
 msgstr "Küldött"
 
-#: interfacedetailswidget.cpp:323
+#: interfacedetailswidget.cpp:290
 msgctxt "state of mobile broadband connection"
 msgid "not enabled"
 msgstr "nincs bekapcsolva"
 
-#: interfacedetailswidget.cpp:340 interfacedetailswidget.cpp:387
+#: interfacedetailswidget.cpp:306 interfacedetailswidget.cpp:353
 msgctxt "interface details"
 msgid "Type"
 msgstr "Típus"
 
-#: interfacedetailswidget.cpp:341 interfacedetailswidget.cpp:388
+#: interfacedetailswidget.cpp:307 interfacedetailswidget.cpp:354
 msgctxt "interface details"
 msgid "Connection State"
 msgstr "Kapcsolat állapota"
 
-#: interfacedetailswidget.cpp:342
+#: interfacedetailswidget.cpp:308
 msgctxt "interface details"
 msgid "IP Address"
 msgstr "IP-cím"
 
-#: interfacedetailswidget.cpp:343 interfacedetailswidget.cpp:390
+#: interfacedetailswidget.cpp:309 interfacedetailswidget.cpp:356
 msgctxt "interface details"
 msgid "Connection Speed"
 msgstr "Kapcsolat sebessége"
 
-#: interfacedetailswidget.cpp:343
+#: interfacedetailswidget.cpp:309
 msgctxt "bitrate"
 msgid "Unknown"
 msgstr "Ismeretlen"
 
-#: interfacedetailswidget.cpp:344 interfacedetailswidget.cpp:391
+#: interfacedetailswidget.cpp:310 interfacedetailswidget.cpp:357
 msgctxt "interface details"
 msgid "System Name"
 msgstr "Csatoló"
 
-#: interfacedetailswidget.cpp:345
+#: interfacedetailswidget.cpp:311
 msgctxt "interface details"
 msgid "MAC Address"
 msgstr "MAC-cím"
 
-#: interfacedetailswidget.cpp:346 interfacedetailswidget.cpp:393
+#: interfacedetailswidget.cpp:312 interfacedetailswidget.cpp:359
 msgctxt "interface details"
 msgid "Driver"
 msgstr "Illesztőprogram"
 
-#: interfacedetailswidget.cpp:352
+#: interfacedetailswidget.cpp:318
 msgctxt "interface details"
 msgid "Access Point (SSID)"
 msgstr "Hozzáférési pont (SSID)"
 
-#: interfacedetailswidget.cpp:353
+#: interfacedetailswidget.cpp:319
 msgctxt "interface details"
 msgid "Access Point (MAC)"
 msgstr "Hozzáférési pont (MAC)"
 
-#: interfacedetailswidget.cpp:361
+#: interfacedetailswidget.cpp:327
 msgctxt "@item:intable wireless band"
 msgid "Band"
 msgstr "Sáv"
 
-#: interfacedetailswidget.cpp:362
+#: interfacedetailswidget.cpp:328
 msgctxt "@item:intable wireless channel"
 msgid "Channel"
 msgstr "Csatorna"
 
-#: interfacedetailswidget.cpp:369
+#: interfacedetailswidget.cpp:335
 msgctxt "interface details"
 msgid "Operator"
 msgstr "Operátor"
 
-#: interfacedetailswidget.cpp:370
+#: interfacedetailswidget.cpp:336
 msgctxt "interface details"
 msgid "Signal Quality"
 msgstr "Jelminőség"
 
-#: interfacedetailswidget.cpp:371
+#: interfacedetailswidget.cpp:337
 msgctxt "interface details"
 msgid "Access Technology"
 msgstr "Hozzáférési technológia"
 
-#: interfacedetailswidget.cpp:389
+#: interfacedetailswidget.cpp:355
 msgctxt "interface details"
 msgid "Network Address (IP)"
 msgstr "Hálózati cím (IP)"
 
-#: interfacedetailswidget.cpp:392
+#: interfacedetailswidget.cpp:358
 msgctxt "interface details"
 msgid "Hardware Address (MAC)"
 msgstr "Hardvercím (MAC)"
 
-#: interfacedetailswidget.cpp:411 interfaceitem.cpp:282
+#: interfacedetailswidget.cpp:377 interfaceitem.cpp:286
 msgctxt "label of the network interface"
 msgid "No IP address."
 msgstr "Nincs IP-cím."
 
-#: interfacedetailswidget.cpp:418 interfaceitem.cpp:289
+#: interfacedetailswidget.cpp:388 interfaceitem.cpp:297
 msgctxt "label of the network interface"
 msgid "IP display error."
 msgstr "IP-megjelenítési hiba."
 
-#: interfacedetailswidget.cpp:497
+#: interfacedetailswidget.cpp:467
 msgid "KBit/s"
 msgstr "KBit/s"
 
-#: interfacedetailswidget.cpp:499
+#: interfacedetailswidget.cpp:469
 msgid "MBit/s"
 msgstr "MBit/s"
 
-#: interfacedetailswidget.cpp:503
+#: interfacedetailswidget.cpp:473
 msgid "GBit/s"
 msgstr "GBit/s"
 
-#: interfacedetailswidget.cpp:527
+#: interfacedetailswidget.cpp:497
 #, kde-format
 msgctxt ""
 "traffic, e.g. n KB/s\n"
@@ -215,186 +199,147 @@ msgctxt ""
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: interfacedetailswidget.cpp:536
+#: interfacedetailswidget.cpp:506
 msgid "Received"
 msgstr "Fogadott"
 
-#: interfacedetailswidget.cpp:539
+#: interfacedetailswidget.cpp:509
 msgid "Transmitted"
 msgstr "Küldött"
 
-#: interfaceitem.cpp:72
+#: interfaceitem.cpp:75
 msgctxt "tooltip on the LHS widgets"
 msgid "Click here for interface details"
 msgstr "Kattintson ide a csatoló adataiért"
 
-#: interfaceitem.cpp:246
+#: interfaceitem.cpp:112
+msgctxt "tooltip on disconnect icon"
+msgid "Disconnect"
+msgstr "Kapcsolat bontása"
+
+#: interfaceitem.cpp:250
 msgctxt "generic label for an interface"
 msgid "<b>Network Interface</b>"
 msgstr "<b>Hálózati csatoló</b>"
 
-#: interfaceitem.cpp:250
+#: interfaceitem.cpp:254
 msgctxt "network interface name unknown"
 msgid "<b>Unknown Network Interface</b>"
 msgstr "<b>Ismeretlen hálózati csatoló</b>"
 
-#: interfaceitem.cpp:389
+#: interfaceitem.cpp:402
 msgctxt "wired interface network cable unplugged"
 msgid "Cable Unplugged"
 msgstr "A kábel nincs bedugva"
 
-#: networkmanager.cpp:316
-msgctxt "CheckBox to enable or disable networking completely"
-msgid "Enable networking"
-msgstr "Hálózatkezelés engedélyezése"
-
-#: networkmanager.cpp:317
-msgctxt "@info:tooltip tooltip for the 'Enable networking' checkbox"
-msgid "Enable or disable the networking system"
-msgstr "Hálózatkezelés bekapcsolása vagy kikapcsolása"
-
-#: networkmanager.cpp:629
+#: networkmanager.cpp:618
 msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr "Nincsenek hálózati csatolók"
 
-#: networkmanager.cpp:680
+#: networkmanager.cpp:669
 msgid "VPN Connections"
 msgstr "VPN kapcsolatok"
 
-#: networkmanager.cpp:694
+#: networkmanager.cpp:683
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
 msgstr "Szétkapcsolva"
 
-#: networkmanager.cpp:697
+#: networkmanager.cpp:686
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
 msgstr "Vezeték nélküli kapcsolat szoftveresen letiltva"
 
-#: networkmanager.cpp:700
+#: networkmanager.cpp:689
 msgctxt "tooltip, all interfaces are down"
 msgid "Networking disabled"
 msgstr "Hálózatkezelés letiltva"
 
-#: networkmanager.cpp:703
+#: networkmanager.cpp:692
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
 msgstr "Vezeték nélküli kapcsolat hardveresen letiltva"
 
-#: nmpopup.cpp:106
+#: nmpopup.cpp:89 nmpopup.cpp:747
 msgctxt "title on the LHS of the plasmoid"
 msgid "<h3>Interfaces</h3>"
 msgstr "<h3>Csatolók</h3>"
 
-#: nmpopup.cpp:116
-msgctxt "tabbar on the left side"
-msgid "Interfaces"
-msgstr "Csatolók"
+#: nmpopup.cpp:95
+msgctxt "title on the RHS of the plasmoid"
+msgid "<h3>Connections</h3>"
+msgstr "<h3>Kapcsolatok</h3>"
 
-#: nmpopup.cpp:166
-msgctxt "button"
-msgid "Connect to Another Network..."
-msgstr "Csatlakozás másik hálózathoz…"
+#: nmpopup.cpp:123
+msgctxt "CheckBox to enable or disable networking completely"
+msgid "Enable networking"
+msgstr "Hálózatkezelés engedélyezése"
 
-#: nmpopup.cpp:175
-msgctxt "connection list"
-msgid "Connections"
-msgstr "Kapcsolatok"
-
-#: nmpopup.cpp:176
-msgctxt "@info:tooltip"
-msgid "Connections"
-msgstr "Kapcsolatok"
-
-#: nmpopup.cpp:177
-msgctxt "connection list"
-msgid "VPN"
-msgstr "VPN"
-
-#: nmpopup.cpp:178
-msgctxt "@info:tooltip"
-msgid "VPN Connections"
-msgstr "VPN kapcsolatok"
-
-#: nmpopup.cpp:179
-msgctxt "connection list"
-msgid "Shared Connections"
-msgstr "Megosztott kapcsolatok"
-
-#: nmpopup.cpp:180
-msgctxt "@info:tooltip"
-msgid "Shared Connections"
-msgstr "Megosztott kapcsolatok"
-
-#: nmpopup.cpp:208
-msgctxt "CheckBox to enable or disable wireless interface (rfkill)"
-msgid "Enable wireless"
-msgstr "Vezeték nélküli hálózat engedélyezése"
-
-#: nmpopup.cpp:224
+#: nmpopup.cpp:132
 msgctxt "CheckBox to enable or disable wwan (mobile broadband) interface)"
 msgid "Enable mobile broadband"
 msgstr "Mobil szélessáv engedélyezése"
 
-#: nmpopup.cpp:241
-msgctxt "settings button in applet's popup window"
-msgid "Settings..."
-msgstr "Beállítások…"
+#: nmpopup.cpp:145
+msgctxt "CheckBox to enable or disable wireless interface (rfkill)"
+msgid "Enable wireless"
+msgstr "Vezeték nélküli hálózat engedélyezése"
 
-#: nmpopup.cpp:254 nmpopup.cpp:382
-msgctxt "show interface list in applet's popup window"
-msgid "Show Interfaces"
-msgstr "Interfészek megjelenítése"
+#: nmpopup.cpp:157
+msgctxt "tabbar on the left side"
+msgid "Interfaces"
+msgstr "Csatolók"
 
-#: nmpopup.cpp:271
-msgctxt "main window"
-msgid "Manage your network connections"
-msgstr "Hálózati kapcsolatok kezelése"
+#: nmpopup.cpp:167
+msgctxt "details for the interface"
+msgid "Details"
+msgstr "Részletek"
 
-#: nmpopup.cpp:366
+#: nmpopup.cpp:196
+msgctxt "manage connections button in the applet's popup"
+msgid "Manage Connections..."
+msgstr "Kapcsolatok kezelése…"
+
+#: nmpopup.cpp:204
+msgctxt "@info:tooltip tooltip for the 'Show More' button"
+msgid "Show all available networks"
+msgstr "Összes elérhető hálózat megjelenítése"
+
+#: nmpopup.cpp:209
+msgctxt "show more button in the applet's popup"
+msgid "Show More..."
+msgstr "Több megjelenítése…"
+
+#: nmpopup.cpp:213
+msgctxt "show more button in the applet's popup"
+msgid "Show Less..."
+msgstr "Kevesebb megjelenítése…"
+
+#: nmpopup.cpp:319
 msgctxt "Warning about wrong NetworkManager version"
 msgid "NetworkManager is not running. Please start it."
-msgstr "A NetworkManager nem fut, kérjük indítsa el."
+msgstr "A Hálózatkezelő nem fut, indítsa el."
 
-#: nmpopup.cpp:370
+#: nmpopup.cpp:323
 #, kde-format
 msgctxt "Warning about wrong NetworkManager version"
 msgid ""
 "We need at least NetworkManager-%1 to work properly, found '%2'. Please "
 "upgrade to a newer version."
 msgstr ""
-"A megfelelő működéshez legalább NetworkManager-%1 szükséges, de csak „%2” "
-"található, kérjök frissítsen egy újabb verzióra."
+"A megfelelő működéshez legalább NetworkManager-%1 kell, de „%2” található. "
+"Frissítsen egy újabb verzióra."
 
-#: nmpopup.cpp:388
-msgctxt "hide interface list in applet's popup window"
-msgid "Hide Interfaces"
-msgstr "Interfészek elrejtése"
+#: nmpopup.cpp:659
+msgctxt "pressed show more button"
+msgid "Show Less..."
+msgstr "Kevesebb megjelenítése…"
 
-#: nmpopup.cpp:783
-msgctxt "details for the interface"
-msgid "Details"
-msgstr "Részletek"
-
-#: showmoreitem.cpp:69
-msgctxt "text when this item is toggled"
-msgid "Show less networks..."
-msgstr "Kevesebb hálózat megjelenítése…"
-
-#: showmoreitem.cpp:72
-#, kde-format
-msgctxt "text when this item not toggled"
-msgid "Show one more network"
-msgid_plural "Show %1 more networks..."
-msgstr[0] "Még egy hálózat megjelenítése"
-msgstr[1] "Még %1 hálózat megjelenítése"
-
-#: typelistwidget.cpp:44
-msgctxt "title for connect to another network window"
-msgid "You want to connect to a network. We see the following options for you:"
-msgstr ""
-"Egy hálózathoz szeretne csatlakozni. A következő beállításokat látjuk Önnek:"
+#: nmpopup.cpp:664
+msgctxt "unpressed show more button"
+msgid "Show More..."
+msgstr "Több megjelenítése…"
 
 #: vpninterfaceitem.cpp:42
 msgctxt "initial label for VPN connection name"
@@ -432,30 +377,7 @@ msgctxt "VPN state label"
 msgid "Not Connected..."
 msgstr "Nincs kapcsolódva…"
 
-#: wirelessnetworkitem.cpp:120 wirelessnetworkitem.cpp:166
+#: wirelessnetworkitem.cpp:120 wirelessnetworkitem.cpp:160
 #, kde-format
 msgid "Strength: %1%"
 msgstr "Erősség: %1%"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
