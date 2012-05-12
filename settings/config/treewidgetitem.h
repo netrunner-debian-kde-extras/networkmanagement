@@ -1,5 +1,5 @@
 /*
-Copyright 2011 Ilia Kats <ilia-kats@gmx.net>
+Copyright 2012 Lamarque V. Souza <lamarque@kde.org>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -18,21 +18,19 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "intdelegate.h"
-#include "intvalidator.h"
+#ifndef TREEWIDGETITEM_H
+#define TREEWIDGETITEM_H
 
-IntDelegate::IntDelegate(QObject * parent) : Delegate(parent), m_boundary(false) {}
-IntDelegate::IntDelegate(int min, int max, QObject * parent) : Delegate(parent), m_min(min), m_max(max), m_boundary(true) {}
-IntDelegate::~IntDelegate() {}
+#include <QtGui/QTreeWidget>
 
-QWidget * IntDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &,
-        const QModelIndex &) const
+class TreeWidgetItem: public QTreeWidgetItem
 {
-    QLineEdit *editor = new QLineEdit(parent);
-    if (m_boundary)
-        editor->setValidator(new IntValidator(m_min, m_max, editor));
-    else
-        editor->setValidator(new IntValidator(editor));
+public:
+    enum {ConnectionIdRole = (Qt::UserRole + 1), ConnectionLastUsedRole, ConnectionStateRole};
 
-    return editor;
-}
+    TreeWidgetItem(QTreeWidget *view, const QStringList &strings, int type = Type);
+
+    virtual bool operator<(const QTreeWidgetItem &other) const;
+};
+
+#endif

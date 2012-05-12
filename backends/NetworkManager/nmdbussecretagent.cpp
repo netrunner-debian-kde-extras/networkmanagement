@@ -60,7 +60,7 @@ NMDBusSecretAgent::NMDBusSecretAgent(QObject * parent)
     d->agent = new SecretAgentAdaptor(this);
     d->agentManager = new OrgFreedesktopNetworkManagerAgentManagerInterface(NM_DBUS_SERVICE, NM_DBUS_PATH_AGENT_MANAGER, QDBusConnection::systemBus(),this);
     d->watcher = new QDBusServiceWatcher(NM_DBUS_SERVICE, QDBusConnection::systemBus(), QDBusServiceWatcher::WatchForRegistration, this);
-    connect(d->watcher, SIGNAL(serviceRegistered(const QString &)), SLOT(registerAgent()));
+    connect(d->watcher, SIGNAL(serviceRegistered(QString)), SLOT(registerAgent()));
     registerAgent();
 }
 
@@ -96,8 +96,17 @@ QVariantMapMap NMDBusSecretAgent::GetSecrets(const QVariantMapMap &connection, c
     QPair<QString,QDBusMessage> pair;
     pair.first = connection_path.path();
     pair.second = msg;
+
+    // remove stale request to prevent crashes.
+    // https://bugs.kde.org/show_bug.cgi?id=283105
+    if (d->connectionsToRead.contains(con->uuid() + setting_name)) {
+        d->connectionsToRead.remove(con->uuid() + setting_name);
+    }
     d->connectionsToRead.insert(con->uuid() + setting_name, pair);
-    d->objectPaths.append(connection_path.path() + setting_name);
+
+    if (!d->objectPaths.contains(connection_path.path() + setting_name)) {
+        d->objectPaths.append(connection_path.path() + setting_name);
+    }
 
     if (d->secretsProvider) {
         foreach (Knm::Setting * setting, con->settings()) {
@@ -184,6 +193,6 @@ void NMDBusSecretAgent::registerSecretsProvider(SecretsProvider * provider)
 {
     Q_D(NMDBusSecretAgent);
     d->secretsProvider = provider;
-    connect(d->secretsProvider,SIGNAL(connectionRead(Knm::Connection *, const QString&, bool, bool)),SLOT(secretsReady(Knm::Connection*, const QString&, bool, bool)));
-    connect(d->secretsProvider,SIGNAL(connectionSaved(Knm::Connection *)),SLOT(deleteSavedConnection(Knm::Connection *)));
+    connect(d->secretsProvider,SIGNAL(connectionRead(Knm::Connection*,QString,bool,bool)),SLOT(secretsReady(Knm::Connection*,QString,bool,bool)));
+    connect(d->secretsProvider,SIGNAL(connectionSaved(Knm::Connection*)),SLOT(deleteSavedConnection(Knm::Connection*)));
 }

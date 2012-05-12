@@ -1,56 +1,55 @@
-# Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright © 2010, 2011, 2012 This_file_is_part_of_KDE
+# This file is distributed under the same license as the networkmanagement package.
 #
-# Tommi Nieminen <translator@legisign.org>, 2010.
+# Tommi Nieminen <translator@legisign.org>, 2010, 2012.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2012-03-20 18:01+0100\n"
-"PO-Revision-Date: 2011-10-13 20:26+0300\n"
-"Last-Translator: Lasse Liehu <lasse.liehu@gmail.com>\n"
+"PO-Revision-Date: 2012-04-27 18:25+0300\n"
+"Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
-"Language: \n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: activatableitem.cpp:116
-#, fuzzy
 msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is disabled"
 msgid "Networking system disabled"
-msgstr "Verkkojärjestelmä ei käytössä"
+msgstr "Verkkojärjestelmä poistettu käytöstä"
 
 #: activatableitem.cpp:120
 msgctxt "@info:status Notification for radio kill switch turned off"
 msgid "Wireless hardware disabled"
-msgstr ""
+msgstr "Langaton verkkolaitteisto poistettu käytöstä"
 
 #: gsminterfaceconnectionitem.cpp:143
-#, fuzzy, kde-format
+#, kde-format
 msgid "Signal quality: %1%"
-msgstr "Signaalin vahvuus"
+msgstr "Signaalin laatu: %1 %"
 
 #: hiddenwirelessnetworkitem.cpp:77
 msgctxt "label for creating a connection to a hidden wireless network"
 msgid "<hidden network>"
-msgstr ""
+msgstr "<piiloverkko>"
 
 #: hiddenwirelessnetworkitem.cpp:81
 msgctxt ""
 "default KLineEdit::clickMessage() for hidden wireless network SSID entry"
 msgid "Enter network name and press <enter>"
-msgstr ""
+msgstr "Anna verkon nimi ja paina <Enter>"
 
 #: hiddenwirelessnetworkitem.cpp:82
 msgctxt "@info:tooltip for hidden wireless network SSID entry"
 msgid "Enter network name and press <enter>"
-msgstr ""
+msgstr "Anna verkon nimi ja paina <Enter>"
 
 #: interfaceconnectionitem.cpp:70
 msgctxt "name of the connection not known"
@@ -84,7 +83,7 @@ msgstr "Lähetetty"
 #: interfacedetailswidget.cpp:290
 msgctxt "state of mobile broadband connection"
 msgid "not enabled"
-msgstr ""
+msgstr "ei käytössä"
 
 #: interfacedetailswidget.cpp:306 interfacedetailswidget.cpp:353
 msgctxt "interface details"
@@ -112,10 +111,9 @@ msgid "Unknown"
 msgstr "Tuntematon"
 
 #: interfacedetailswidget.cpp:310 interfacedetailswidget.cpp:357
-#, fuzzy
 msgctxt "interface details"
 msgid "System Name"
-msgstr "Järjestelmän nimen mukaan"
+msgstr "Järjestelmän nimi"
 
 #: interfacedetailswidget.cpp:311
 msgctxt "interface details"
@@ -130,17 +128,17 @@ msgstr "Ajuri"
 #: interfacedetailswidget.cpp:318
 msgctxt "interface details"
 msgid "Access Point (SSID)"
-msgstr ""
+msgstr "Tukiasema (SSID)"
 
 #: interfacedetailswidget.cpp:319
 msgctxt "interface details"
 msgid "Access Point (MAC)"
-msgstr ""
+msgstr "Tukiasema (MAC)"
 
 #: interfacedetailswidget.cpp:327
 msgctxt "@item:intable wireless band"
 msgid "Band"
-msgstr ""
+msgstr "Kaista"
 
 #: interfacedetailswidget.cpp:328
 msgctxt "@item:intable wireless channel"
@@ -155,7 +153,7 @@ msgstr "Operaattori"
 #: interfacedetailswidget.cpp:336
 msgctxt "interface details"
 msgid "Signal Quality"
-msgstr "Signaalin vahvuus"
+msgstr "Signaalin voimakkuus"
 
 #: interfacedetailswidget.cpp:337
 msgctxt "interface details"
@@ -184,15 +182,15 @@ msgstr "Virhe näytettäessä IP:tä."
 
 #: interfacedetailswidget.cpp:467
 msgid "KBit/s"
-msgstr ""
+msgstr "kBit/s"
 
 #: interfacedetailswidget.cpp:469
 msgid "MBit/s"
-msgstr ""
+msgstr "MBit/s"
 
 #: interfacedetailswidget.cpp:473
 msgid "GBit/s"
-msgstr ""
+msgstr "GBit/s"
 
 #: interfacedetailswidget.cpp:497
 #, kde-format
@@ -200,7 +198,7 @@ msgctxt ""
 "traffic, e.g. n KB/s\n"
 " m KB/s"
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: interfacedetailswidget.cpp:506
 msgid "Received"
@@ -213,7 +211,7 @@ msgstr "Lähetetty"
 #: interfaceitem.cpp:75
 msgctxt "tooltip on the LHS widgets"
 msgid "Click here for interface details"
-msgstr ""
+msgstr "Napsauta nähdäksesi liitännän tiedot"
 
 #: interfaceitem.cpp:112
 msgctxt "tooltip on disconnect icon"
@@ -233,7 +231,7 @@ msgstr "<b>Tuntematon verkkoliitäntä</b>"
 #: interfaceitem.cpp:402
 msgctxt "wired interface network cable unplugged"
 msgid "Cable Unplugged"
-msgstr ""
+msgstr "Kaapelia ei kytketty"
 
 #: networkmanager.cpp:618
 msgctxt "Tooltip sub text"
@@ -242,7 +240,7 @@ msgstr "Ei verkkoliitäntöjä"
 
 #: networkmanager.cpp:669
 msgid "VPN Connections"
-msgstr ""
+msgstr "VPN-yhteydet"
 
 #: networkmanager.cpp:683
 msgctxt "tooltip, all interfaces are down"
@@ -250,10 +248,9 @@ msgid "Disconnected"
 msgstr "Ei yhteyttä"
 
 #: networkmanager.cpp:686
-#, fuzzy
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
-msgstr "Langaton ei käytössä"
+msgstr "Ohjelmisto on poistanut langattoman verkon käytöstä"
 
 #: networkmanager.cpp:689
 msgctxt "tooltip, all interfaces are down"
@@ -263,7 +260,7 @@ msgstr "Verkko ei ole käytössä"
 #: networkmanager.cpp:692
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
-msgstr ""
+msgstr "Laitteisto on poistanut langattoman verkon käytöstä"
 
 #: nmpopup.cpp:89 nmpopup.cpp:747
 msgctxt "title on the LHS of the plasmoid"
@@ -283,12 +280,12 @@ msgstr "Ota verkko käyttöön"
 #: nmpopup.cpp:132
 msgctxt "CheckBox to enable or disable wwan (mobile broadband) interface)"
 msgid "Enable mobile broadband"
-msgstr ""
+msgstr "Salli mobiililaajakaista"
 
 #: nmpopup.cpp:145
 msgctxt "CheckBox to enable or disable wireless interface (rfkill)"
 msgid "Enable wireless"
-msgstr "Ota langaton käyttöön"
+msgstr "Salli langaton verkko"
 
 #: nmpopup.cpp:157
 msgctxt "tabbar on the left side"
@@ -308,7 +305,7 @@ msgstr "Yhteyksien hallinta..."
 #: nmpopup.cpp:204
 msgctxt "@info:tooltip tooltip for the 'Show More' button"
 msgid "Show all available networks"
-msgstr ""
+msgstr "Näytä kaikki tarjolla olevat verkopt"
 
 #: nmpopup.cpp:209
 msgctxt "show more button in the applet's popup"
@@ -323,7 +320,7 @@ msgstr "Näytä vähemmän..."
 #: nmpopup.cpp:319
 msgctxt "Warning about wrong NetworkManager version"
 msgid "NetworkManager is not running. Please start it."
-msgstr ""
+msgstr "NetworkManager ei ole käynnissä. Käynnistä se."
 
 #: nmpopup.cpp:323
 #, kde-format
@@ -332,6 +329,8 @@ msgid ""
 "We need at least NetworkManager-%1 to work properly, found '%2'. Please "
 "upgrade to a newer version."
 msgstr ""
+"Vähintään NetworkManager-%1 vaaditaan, jotta ohjelma toimisi oikein, "
+"löydettiin ”%2”. Päivitä uudempaan versioon."
 
 #: nmpopup.cpp:659
 msgctxt "pressed show more button"
@@ -357,7 +356,7 @@ msgstr "ei saatavilla"
 #, kde-format
 msgctxt "VPN label in interfaces"
 msgid "<b>%1</b>"
-msgstr ""
+msgstr "<b>%1</b>"
 
 #: vpninterfaceitem.cpp:101
 msgctxt "VPN state label"
@@ -372,7 +371,7 @@ msgstr "Yhdistetään..."
 #: vpninterfaceitem.cpp:110
 msgctxt "VPN connections interface"
 msgid "<b>Virtual Private Network</b>"
-msgstr ""
+msgstr "<b>Virtuaalinen yksityisverkko (VPN)</b>"
 
 #: vpninterfaceitem.cpp:111
 msgctxt "VPN state label"
@@ -380,6 +379,6 @@ msgid "Not Connected..."
 msgstr "Ei yhdistetty..."
 
 #: wirelessnetworkitem.cpp:120 wirelessnetworkitem.cpp:160
-#, fuzzy, kde-format
+#, kde-format
 msgid "Strength: %1%"
-msgstr "Voimakkuus"
+msgstr "Voimakkuus: %1 %"

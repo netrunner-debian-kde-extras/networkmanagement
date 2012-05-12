@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-03-06 18:38+0100\n"
+"POT-Creation-Date: 2012-05-06 12:02+0200\n"
 "PO-Revision-Date: 2011-11-11 17:04+0200\n"
 "Last-Translator: Tomas Straupis <tomasstraupis@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-doc@kde.org>\n"
@@ -46,9 +46,9 @@ msgstr "Jungiamasi prie stoties, prašome palaukti..."
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
 #: vpnplugins/openconnect/openconnectauth.cpp:377
 #: vpnplugins/openvpn/openvpnauth.cpp:124
-#: libs/ui/security/security8021xauth.cpp:91
-#: libs/ui/security/wirelesssecurityauth.cpp:98 rc.cpp:650 rc.cpp:680
-#: rc.cpp:971 rc.cpp:1328 rc.cpp:1397 rc.cpp:1445 rc.cpp:1457
+#: libs/ui/security/wirelesssecurityauth.cpp:98
+#: libs/ui/security/security8021xauth.cpp:91 rc.cpp:650 rc.cpp:680 rc.cpp:971
+#: rc.cpp:1328 rc.cpp:1397 rc.cpp:1445 rc.cpp:1457
 msgid "&Show password"
 msgstr "&Rodyti slaptažodį"
 
@@ -81,8 +81,8 @@ msgstr "Rakto slaptažodis:"
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: vpnplugins/openvpn/openvpnauth.cpp:77 vpnplugins/openvpn/openvpnauth.cpp:86
 #: libs/ui/security/leapauthwidget.cpp:65
-#: libs/ui/security/security8021xauth.cpp:58
-#: libs/ui/security/wpaauthwidget.cpp:65 rc.cpp:311 rc.cpp:389
+#: libs/ui/security/wpaauthwidget.cpp:65
+#: libs/ui/security/security8021xauth.cpp:58 rc.cpp:311 rc.cpp:389
 msgid "Password:"
 msgstr "Slaptažodis:"
 
@@ -91,22 +91,6 @@ msgstr "Slaptažodis:"
 #: vpnplugins/openvpn/openvpnauth.cpp:106 rc.cpp:569
 msgid "Proxy Password:"
 msgstr "Įgaliotojo serverio slaptažodis:"
-
-#: vpnplugins/openvpn/openvpnwidget.cpp:127
-#: vpnplugins/openvpn/openvpnwidget.cpp:151
-msgctxt "@item:inlist Item added when OpenVPN cipher lookup failed"
-msgid "OpenVPN cipher lookup failed"
-msgstr "Nepavyko OpenVPN šifro paieška"
-
-#: vpnplugins/openvpn/openvpnwidget.cpp:134
-msgctxt "@item::inlist Default openvpn cipher item"
-msgid "Default"
-msgstr "Numatytasis"
-
-#: vpnplugins/openvpn/openvpnwidget.cpp:148
-msgctxt "@item:inlist Item added when OpenVPN cipher lookup failed"
-msgid "No OpenVPN ciphers found"
-msgstr "Nerasta OpenVPN šifrų"
 
 #: vpnplugins/openvpn/openvpn.cpp:165
 msgid "Could not open file"
@@ -165,6 +149,22 @@ msgstr "Failas %1 nėra teisinga OpenVPN kliento konfigūracija (be nuotolinio).
 msgid "Could not open file for writing"
 msgstr "Nepavyko atverti failo įrašymui"
 
+#: vpnplugins/openvpn/openvpnwidget.cpp:127
+#: vpnplugins/openvpn/openvpnwidget.cpp:151
+msgctxt "@item:inlist Item added when OpenVPN cipher lookup failed"
+msgid "OpenVPN cipher lookup failed"
+msgstr "Nepavyko OpenVPN šifro paieška"
+
+#: vpnplugins/openvpn/openvpnwidget.cpp:134
+msgctxt "@item::inlist Default openvpn cipher item"
+msgid "Default"
+msgstr "Numatytasis"
+
+#: vpnplugins/openvpn/openvpnwidget.cpp:148
+msgctxt "@item:inlist Item added when OpenVPN cipher lookup failed"
+msgid "No OpenVPN ciphers found"
+msgstr "Nerasta OpenVPN šifrų"
+
 #: vpnplugins/strongswan/strongswanauth.cpp:70
 msgctxt "@label:textbox password label for private key password"
 msgid "Private Key Password:"
@@ -192,8 +192,8 @@ msgstr "Klaida atkoduojant užslaptintą slaptažodį"
 
 #. i18n: file: vpnplugins/openconnect/openconnectauth.ui:133
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: vpnplugins/vpnc/vpnc.cpp:75 settings/config/manageconnectionwidget.cpp:500
-#: settings/config/manageconnectionwidget.cpp:554 rc.cpp:296
+#: vpnplugins/vpnc/vpnc.cpp:75 settings/config/manageconnectionwidget.cpp:495
+#: settings/config/manageconnectionwidget.cpp:548 rc.cpp:296
 msgid "Error"
 msgstr "Klaida"
 
@@ -728,84 +728,16 @@ msgctxt "@info:tooltip unknown security"
 msgid "Unknown security type"
 msgstr "Nežinomas saugumo tipas"
 
-#: libs/service/pindialog.cpp:72
-msgctxt "As in 'Unlock cell phone with this pin code'"
-msgid "Unlock"
-msgstr "Atrakinti"
-
-#: libs/service/pindialog.cpp:76
-msgid "SIM PUK unlock required"
-msgstr "Reikia SIM PUK atrakinimo"
-
-#: libs/service/pindialog.cpp:77
-msgid "SIM PUK Unlock Required"
-msgstr "Reikia SIM PUK atrakinimo"
-
-#: libs/service/pindialog.cpp:78
+#: libs/service/networkinterfacemonitor.cpp:214
 #, kde-format
-msgid ""
-"The mobile broadband device '%1' requires a SIM PUK code before it can be "
-"used."
-msgstr ""
-"Mobilaus plačiajuosčio tinklo įrenginiui „%1“ reikia SIM PUK kodo, kad būtų "
-"galima jį naudoti."
+msgctxt "Text in GSM PIN/PUK unlock error dialog"
+msgid "Error unlocking modem: %1"
+msgstr "Klaida atrakinant modemą: %1"
 
-#: libs/service/pindialog.cpp:79
-msgid "PUK code:"
-msgstr "PUK kodas:"
-
-#: libs/service/pindialog.cpp:80
-msgid "New PIN code:"
-msgstr "Naujas PIN kodas:"
-
-#: libs/service/pindialog.cpp:81
-msgid "Re-enter new PIN code:"
-msgstr "Iš naujo įveskite PIN kodą:"
-
-#: libs/service/pindialog.cpp:82
-msgid "Show PIN/PUK code"
-msgstr "Rodyti PIN/PUK kodą"
-
-#: libs/service/pindialog.cpp:90
-msgid "SIM PIN unlock required"
-msgstr "Reikia atrakinti SIM PIN"
-
-#: libs/service/pindialog.cpp:91
-msgid "SIM PIN Unlock Required"
-msgstr "Reikia atrakinti SIM PIN"
-
-#: libs/service/pindialog.cpp:92
-#, kde-format
-msgid ""
-"The mobile broadband device '%1' requires a SIM PIN code before it can be "
-"used."
-msgstr ""
-"Mobilaus plačiajuosčio tinklo įrenginiui „%1“ reikia SIM PIN kodo, kad būtų "
-"galima jį naudoti."
-
-#: libs/service/pindialog.cpp:93
-msgid "PIN code:"
-msgstr "PIN kodas:"
-
-#: libs/service/pindialog.cpp:94
-msgid "Show PIN code"
-msgstr "Rodyti PIN kodą"
-
-#: libs/service/pindialog.cpp:178
-msgid "PIN code too short. It should be at least 4 digits."
-msgstr "PIN kodas per trumpas. Jis turi būti bent 4 skaitmenų ilgio."
-
-#: libs/service/pindialog.cpp:182
-msgid "The two PIN codes do not match"
-msgstr "Du PIN kodai nesutampa"
-
-#: libs/service/pindialog.cpp:186
-msgid "PUK code too short. It should be 8 digits."
-msgstr "Per trumpas PUK kodas. Jis turi būti 8 skaitmenų ilgio."
-
-#: libs/service/pindialog.cpp:190
-msgid "Unknown Error"
-msgstr "Nežinoma klaida"
+#: libs/service/networkinterfacemonitor.cpp:214
+msgctxt "Title for GSM PIN/PUK unlock error dialog"
+msgid "PIN/PUK unlock error"
+msgstr "PIN/PUK atrakinimo klaida"
 
 #: libs/service/notificationmanager.cpp:114
 #: libs/service/notificationmanager.cpp:446
@@ -1257,37 +1189,104 @@ msgctxt ""
 msgid "Networking system already running"
 msgstr "Tinklo sistema jau paleista"
 
-#: libs/service/networkinterfacemonitor.cpp:209
+#: libs/service/pindialog.cpp:72
+msgctxt "As in 'Unlock cell phone with this pin code'"
+msgid "Unlock"
+msgstr "Atrakinti"
+
+#: libs/service/pindialog.cpp:76
+msgid "SIM PUK unlock required"
+msgstr "Reikia SIM PUK atrakinimo"
+
+#: libs/service/pindialog.cpp:77
+msgid "SIM PUK Unlock Required"
+msgstr "Reikia SIM PUK atrakinimo"
+
+#: libs/service/pindialog.cpp:78
 #, kde-format
-msgctxt "Text in GSM PIN/PUK unlock error dialog"
-msgid "Error unlocking modem: %1"
-msgstr "Klaida atrakinant modemą: %1"
+msgid ""
+"The mobile broadband device '%1' requires a SIM PUK code before it can be "
+"used."
+msgstr ""
+"Mobilaus plačiajuosčio tinklo įrenginiui „%1“ reikia SIM PUK kodo, kad būtų "
+"galima jį naudoti."
 
-#: libs/service/networkinterfacemonitor.cpp:209
-msgctxt "Title for GSM PIN/PUK unlock error dialog"
-msgid "PIN/PUK unlock error"
-msgstr "PIN/PUK atrakinimo klaida"
+#: libs/service/pindialog.cpp:79
+msgid "PUK code:"
+msgstr "PUK kodas:"
 
-#: libs/ui/802_11_wirelesswidget.cpp:63 libs/ui/wiredwidget.cpp:55
-msgid " byte"
-msgid_plural " bytes"
-msgstr[0] " baitas"
-msgstr[1] " baitai"
-msgstr[2] " baitų"
-msgstr[3] " baitas"
+#: libs/service/pindialog.cpp:80
+msgid "New PIN code:"
+msgstr "Naujas PIN kodas:"
 
-#: libs/ui/802_11_wirelesswidget.cpp:141 libs/ui/wiredwidget.cpp:76
+#: libs/service/pindialog.cpp:81
+msgid "Re-enter new PIN code:"
+msgstr "Iš naujo įveskite PIN kodą:"
+
+#: libs/service/pindialog.cpp:82
+msgid "Show PIN/PUK code"
+msgstr "Rodyti PIN/PUK kodą"
+
+#: libs/service/pindialog.cpp:90
+msgid "SIM PIN unlock required"
+msgstr "Reikia atrakinti SIM PIN"
+
+#: libs/service/pindialog.cpp:91
+msgid "SIM PIN Unlock Required"
+msgstr "Reikia atrakinti SIM PIN"
+
+#: libs/service/pindialog.cpp:92
 #, kde-format
-msgctxt ""
-"@item:inlist item for hardware that is currently not attached to the machine "
-"with MAC address"
-msgid "Disconnected interface (%1)"
-msgstr "Atjungta sąsaja (%1)"
+msgid ""
+"The mobile broadband device '%1' requires a SIM PIN code before it can be "
+"used."
+msgstr ""
+"Mobilaus plačiajuosčio tinklo įrenginiui „%1“ reikia SIM PIN kodo, kad būtų "
+"galima jį naudoti."
 
-#: libs/ui/802_11_wirelesswidget.cpp:203
-msgctxt "@title:window wireless network scan dialog"
-msgid "Available Networks"
-msgstr "Prieinami tinklai"
+#: libs/service/pindialog.cpp:93
+msgid "PIN code:"
+msgstr "PIN kodas:"
+
+#: libs/service/pindialog.cpp:94
+msgid "Show PIN code"
+msgstr "Rodyti PIN kodą"
+
+#: libs/service/pindialog.cpp:178
+msgid "PIN code too short. It should be at least 4 digits."
+msgstr "PIN kodas per trumpas. Jis turi būti bent 4 skaitmenų ilgio."
+
+#: libs/service/pindialog.cpp:182
+msgid "The two PIN codes do not match"
+msgstr "Du PIN kodai nesutampa"
+
+#: libs/service/pindialog.cpp:186
+msgid "PUK code too short. It should be 8 digits."
+msgstr "Per trumpas PUK kodas. Jis turi būti 8 skaitmenų ilgio."
+
+#: libs/service/pindialog.cpp:190
+msgid "Unknown Error"
+msgstr "Nežinoma klaida"
+
+#: libs/ui/ipv6routeswidget.cpp:39 libs/ui/ipv6advancedwidget.cpp:39
+msgctxt "Header text for IPv6 address"
+msgid "Address"
+msgstr "Adresas"
+
+#: libs/ui/ipv6routeswidget.cpp:41 libs/ui/ipv6advancedwidget.cpp:41
+msgctxt "Header text for IPv6 netmask"
+msgid "Netmask"
+msgstr "Tinklo kaukė"
+
+#: libs/ui/ipv6routeswidget.cpp:43 libs/ui/ipv6advancedwidget.cpp:43
+msgctxt "Header text for IPv6 gateway"
+msgid "Gateway"
+msgstr "Šliuzas"
+
+#: libs/ui/ipv6routeswidget.cpp:45
+msgctxt "Header text for IPv6 route metric"
+msgid "Metric"
+msgstr "Metrinė"
 
 #: libs/ui/advancedpermissionswidget.cpp:97
 msgctxt "@item:intable shortcut for Not Available"
@@ -1298,6 +1297,42 @@ msgstr "nėra"
 msgctxt "@info:tooltip real user name is not available"
 msgid "Not Available"
 msgstr "Nepasiekiamas"
+
+#: libs/ui/networkitemmodel.cpp:141
+#, kde-format
+msgctxt "@item:inlist signal strength percentage"
+msgid "%1%"
+msgstr "%1%"
+
+#: libs/ui/networkitemmodel.cpp:191
+msgctxt "@item:intable wireless network name"
+msgid "Name"
+msgstr "Pavadinimas"
+
+#: libs/ui/networkitemmodel.cpp:193
+msgctxt "@item:intable wireless signal strength"
+msgid "Signal Strength"
+msgstr "Signalo stiprumas"
+
+#: libs/ui/networkitemmodel.cpp:195
+msgctxt "@item:intable wireless encryption type"
+msgid "Encryption"
+msgstr "Šifravimas"
+
+#: libs/ui/networkitemmodel.cpp:197
+msgctxt "@item:intable wireless band"
+msgid "Band"
+msgstr "Juosta"
+
+#: libs/ui/networkitemmodel.cpp:199
+msgctxt "@item:intable wireless channel"
+msgid "Channel"
+msgstr "Kanalas"
+
+#: libs/ui/networkitemmodel.cpp:201
+msgctxt "@item:intable wireless access point hardware address"
+msgid "MAC Address"
+msgstr "MAC adresas"
 
 #: libs/ui/cdmaconnectioneditor.cpp:52 libs/ui/gsmconnectioneditor.cpp:73
 msgid "New Cellular Connection"
@@ -1313,14 +1348,17 @@ msgctxt "Add connection dialog caption"
 msgid "Add Network Connection"
 msgstr "Pridėti tinklo ryšį"
 
-#: libs/ui/connectionwidget.cpp:64 libs/ui/wirelesspreferences.cpp:121
+#: libs/ui/wirelesspreferences.cpp:71
+msgid "Shared_Wireless_Connection"
+msgstr "Bendrinamas_bevielis_ryšys"
+
+#: libs/ui/wirelesspreferences.cpp:119
+msgid "Shared Wireless Connection"
+msgstr "Bendrinamas bevielis ryšys"
+
+#: libs/ui/wirelesspreferences.cpp:121 libs/ui/connectionwidget.cpp:64
 msgid "New Wireless Connection"
 msgstr "Naujas bevielis ryšys"
-
-#: libs/ui/connectionwidget.cpp:120
-msgctxt "@title:window advanced permissions editor"
-msgid "Advanced Permissions Editor"
-msgstr "Sudėtingesnis leidimų redaktorius"
 
 #: libs/ui/ipv4advancedwidget.cpp:40 libs/ui/ipv4routeswidget.cpp:39
 msgctxt "Header text for IPv4 address"
@@ -1336,11 +1374,6 @@ msgstr "Tinklo kaukė"
 msgctxt "Header text for IPv4 gateway"
 msgid "Gateway"
 msgstr "Šliuzas"
-
-#: libs/ui/ipv4routeswidget.cpp:45
-msgctxt "Header text for IPv4 route metric"
-msgid "Metric"
-msgstr "Metrinė"
 
 #: libs/ui/ipv4widget.cpp:69
 msgctxt "@item:inlistbox IPv4 settings configuration method"
@@ -1395,62 +1428,6 @@ msgstr "DNS serveriai"
 msgid "Search domains"
 msgstr "Ieškoti domenų"
 
-#: libs/ui/ipv6advancedwidget.cpp:39 libs/ui/ipv6routeswidget.cpp:39
-msgctxt "Header text for IPv6 address"
-msgid "Address"
-msgstr "Adresas"
-
-#: libs/ui/ipv6advancedwidget.cpp:41 libs/ui/ipv6routeswidget.cpp:41
-msgctxt "Header text for IPv6 netmask"
-msgid "Netmask"
-msgstr "Tinklo kaukė"
-
-#: libs/ui/ipv6advancedwidget.cpp:43 libs/ui/ipv6routeswidget.cpp:43
-msgctxt "Header text for IPv6 gateway"
-msgid "Gateway"
-msgstr "Šliuzas"
-
-#: libs/ui/ipv6routeswidget.cpp:45
-msgctxt "Header text for IPv6 route metric"
-msgid "Metric"
-msgstr "Metrinė"
-
-#: libs/ui/networkitemmodel.cpp:141
-#, kde-format
-msgctxt "@item:inlist signal strength percentage"
-msgid "%1%"
-msgstr "%1%"
-
-#: libs/ui/networkitemmodel.cpp:191
-msgctxt "@item:intable wireless network name"
-msgid "Name"
-msgstr "Pavadinimas"
-
-#: libs/ui/networkitemmodel.cpp:193
-msgctxt "@item:intable wireless signal strength"
-msgid "Signal Strength"
-msgstr "Signalo stiprumas"
-
-#: libs/ui/networkitemmodel.cpp:195
-msgctxt "@item:intable wireless encryption type"
-msgid "Encryption"
-msgstr "Šifravimas"
-
-#: libs/ui/networkitemmodel.cpp:197
-msgctxt "@item:intable wireless band"
-msgid "Band"
-msgstr "Juosta"
-
-#: libs/ui/networkitemmodel.cpp:199
-msgctxt "@item:intable wireless channel"
-msgid "Channel"
-msgstr "Kanalas"
-
-#: libs/ui/networkitemmodel.cpp:201
-msgctxt "@item:intable wireless access point hardware address"
-msgid "MAC Address"
-msgstr "MAC adresas"
-
 #: libs/ui/pppoepreferences.cpp:42 libs/ui/pppoepreferences.cpp:60
 msgid "New DSL Connection"
 msgstr "Naujas DSL ryšys"
@@ -1460,16 +1437,6 @@ msgstr "Naujas DSL ryšys"
 msgctxt "Label for inner auth combobox"
 msgid "&Inner Authentication:"
 msgstr "Vidinis &tapatumo nustatymas:"
-
-#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:130
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: libs/ui/security/security8021xauth.cpp:66 rc.cpp:728
-msgid "Private Key Password:"
-msgstr "Privataus rakto slaptažodis:"
-
-#: libs/ui/security/security8021xauth.cpp:74
-msgid "Phase 2 Private Key Password:"
-msgstr "Fazė 2 privatus rakto slaptažodis:"
 
 #: libs/ui/security/securityeap.cpp:56
 msgctxt "show passwords button"
@@ -1610,6 +1577,16 @@ msgstr "Slaptafrazė:"
 msgid "Key:"
 msgstr "Raktas:"
 
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:130
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: libs/ui/security/security8021xauth.cpp:66 rc.cpp:728
+msgid "Private Key Password:"
+msgstr "Privataus rakto slaptažodis:"
+
+#: libs/ui/security/security8021xauth.cpp:74
+msgid "Phase 2 Private Key Password:"
+msgstr "Fazė 2 privatus rakto slaptažodis:"
+
 #: libs/ui/vpnuiplugin.cpp:36
 msgctxt "Error message in VPN import/export dialog"
 msgid "Operation not supported for this VPN type."
@@ -1623,13 +1600,21 @@ msgstr "Bendrinamas laidinis ryšys"
 msgid "New Wired Connection"
 msgstr "Naujas laidinis ryšys"
 
-#: libs/ui/wirelesspreferences.cpp:71
-msgid "Shared_Wireless_Connection"
-msgstr "Bendrinamas_bevielis_ryšys"
+#: libs/ui/wiredwidget.cpp:55 libs/ui/802_11_wirelesswidget.cpp:63
+msgid " byte"
+msgid_plural " bytes"
+msgstr[0] " baitas"
+msgstr[1] " baitai"
+msgstr[2] " baitų"
+msgstr[3] " baitas"
 
-#: libs/ui/wirelesspreferences.cpp:119
-msgid "Shared Wireless Connection"
-msgstr "Bendrinamas bevielis ryšys"
+#: libs/ui/wiredwidget.cpp:76 libs/ui/802_11_wirelesswidget.cpp:141
+#, kde-format
+msgctxt ""
+"@item:inlist item for hardware that is currently not attached to the machine "
+"with MAC address"
+msgid "Disconnected interface (%1)"
+msgstr "Atjungta sąsaja (%1)"
 
 #: libs/ui/ipv6widget.cpp:68
 msgctxt "@item:inlistbox IPv6 settings configuration method"
@@ -1671,6 +1656,11 @@ msgctxt "@item:inlistbox IPv6 settings configuration method"
 msgid "Automatic (DHCP) addresses only"
 msgstr "Automatinis (DHCP) tik adresai"
 
+#: libs/ui/ipv4routeswidget.cpp:45
+msgctxt "Header text for IPv4 route metric"
+msgid "Metric"
+msgstr "Metrinė"
+
 #: libs/ui/bluetoothconnectioneditor.cpp:68
 #, kde-format
 msgid "%1 Network"
@@ -1689,6 +1679,16 @@ msgstr "%1 slapukai"
 #: libs/ui/vpnpreferences.cpp:53 libs/ui/vpnpreferences.cpp:124
 msgid "New VPN Connection"
 msgstr "Naujas VPN ryšys"
+
+#: libs/ui/802_11_wirelesswidget.cpp:203
+msgctxt "@title:window wireless network scan dialog"
+msgid "Available Networks"
+msgstr "Prieinami tinklai"
+
+#: libs/ui/connectionwidget.cpp:120
+msgctxt "@title:window advanced permissions editor"
+msgid "Advanced Permissions Editor"
+msgstr "Sudėtingesnis leidimų redaktorius"
 
 #: settings/config/addeditdeletebuttonset.cpp:40
 msgid "Add..."
@@ -1711,6 +1711,194 @@ msgstr "Eksportuoti"
 msgctxt "Version text"
 msgid "<b>Version %1</b>"
 msgstr "<b>%1 versija</b>"
+
+#: settings/config/managetraywidget.cpp:45
+#: settings/config/manageconnectionwidget.cpp:80
+#, fuzzy
+msgid "Manage Connections"
+msgstr "Ryšiai"
+
+#: settings/config/managetraywidget.cpp:46
+#: settings/config/manageconnectionwidget.cpp:81
+msgid "Manage Connections Control Panel Module"
+msgstr ""
+
+#: settings/config/managetraywidget.cpp:47
+msgid ""
+"(c) 2008-2009 Will Stephenson<p>(c) 2010 Sebastian Kügler</p><p>(c) "
+"2011-2012 Lamarque V. Souza</p>"
+msgstr ""
+
+#: settings/config/managetraywidget.cpp:49
+#: settings/config/manageconnectionwidget.cpp:84
+msgid "Lamarque V. Souza"
+msgstr ""
+
+#: settings/config/managetraywidget.cpp:49
+#: settings/config/manageconnectionwidget.cpp:84
+msgid "Developer and Maintainer"
+msgstr ""
+
+#: settings/config/managetraywidget.cpp:50
+#: settings/config/manageconnectionwidget.cpp:85
+msgid "Ilia Kats"
+msgstr ""
+
+#: settings/config/managetraywidget.cpp:50
+#: settings/config/managetraywidget.cpp:51
+#: settings/config/managetraywidget.cpp:52
+#: settings/config/managetraywidget.cpp:53
+#: settings/config/manageconnectionwidget.cpp:85
+#: settings/config/manageconnectionwidget.cpp:86
+#: settings/config/manageconnectionwidget.cpp:87
+#: settings/config/manageconnectionwidget.cpp:88
+msgid "Developer"
+msgstr ""
+
+#: settings/config/managetraywidget.cpp:51
+#: settings/config/manageconnectionwidget.cpp:86
+msgid "Rajeesh K Nambiar"
+msgstr ""
+
+#: settings/config/managetraywidget.cpp:52
+#: settings/config/manageconnectionwidget.cpp:87
+#: settings/configshell/main.cpp:37
+msgid "Will Stephenson"
+msgstr "Will Stephenson"
+
+#: settings/config/managetraywidget.cpp:53
+#: settings/config/manageconnectionwidget.cpp:88
+msgid "Sebastian Kügler"
+msgstr ""
+
+#: settings/config/manageconnectionwidget.cpp:82
+msgid "(c) 2008-2009 Will Stephenson<p>(c) 2011-2012 Lamarque V. Souza</p>"
+msgstr ""
+
+#: settings/config/manageconnectionwidget.cpp:113
+msgctxt "Like in 'add wired connection'"
+msgid "Wired"
+msgstr "Laidinis"
+
+#: settings/config/manageconnectionwidget.cpp:116
+#: settings/config/manageconnectionwidget.cpp:127
+msgctxt "Like in 'add shared connection'"
+msgid "Shared"
+msgstr "Bendrinamas"
+
+#: settings/config/manageconnectionwidget.cpp:124
+msgctxt "Like in 'add wireless connection'"
+msgid "Wireless"
+msgstr "Bevielis"
+
+#: settings/config/manageconnectionwidget.cpp:207
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last hour, as "
+"the number of minutes since usage"
+msgid "One minute ago"
+msgid_plural "%1 minutes ago"
+msgstr[0] "Prieš vieną minutę"
+msgstr[1] "Prieš %1 minutes"
+msgstr[2] "Prieš %1 minučių"
+msgstr[3] "Prieš %1 minutę"
+
+#: settings/config/manageconnectionwidget.cpp:214
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last day, as "
+"the number of hours since usage"
+msgid "One hour ago"
+msgid_plural "%1 hours ago"
+msgstr[0] "Prieš vieną valandą"
+msgstr[1] "Prieš %1 valandas"
+msgstr[2] "Prieš %1 valandų"
+msgstr[3] "Prieš %1 valandą"
+
+#: settings/config/manageconnectionwidget.cpp:219
+msgctxt ""
+"Label for last used time for a network connection used the previous day"
+msgid "Yesterday"
+msgstr "Vakar"
+
+#: settings/config/manageconnectionwidget.cpp:225
+msgctxt ""
+"Label for last used time for a network connection that has never been used"
+msgid "Never"
+msgstr "Niekada"
+
+#: settings/config/manageconnectionwidget.cpp:372
+msgctxt "Tooltip for disabled tab when no VPN plugins are installed"
+msgid "No VPN plugins were found"
+msgstr "Nerasta VPN priedų"
+
+#: settings/config/manageconnectionwidget.cpp:416
+msgctxt "File chooser dialog title for importing VPN"
+msgid "Import VPN connection settings"
+msgstr "Importuoti VPN ryšio nustatymus"
+
+#: settings/config/manageconnectionwidget.cpp:454
+#, kde-format
+msgid ""
+"None of the supported plugins implement importing operation for file %1."
+msgstr "Nei vienas iš palaikomų priedų nepalaiko failo %1 importavimo."
+
+#: settings/config/manageconnectionwidget.cpp:454
+#: settings/config/manageconnectionwidget.cpp:456
+msgid "Error importing VPN connection settings"
+msgstr "Klaida importuojant VPN jungties nustatymus"
+
+#: settings/config/manageconnectionwidget.cpp:483
+msgctxt "File chooser dialog title for exporting VPN"
+msgid "Export VPN"
+msgstr "Eksportuoti VPN"
+
+#: settings/config/manageconnectionwidget.cpp:490
+msgid "VPN connection successfully exported"
+msgstr "VPN jungtis sėkmingai eksportuota"
+
+#: settings/config/manageconnectionwidget.cpp:490
+msgid "Success"
+msgstr "Sėkmė"
+
+#: settings/config/manageconnectionwidget.cpp:490
+msgid "Do not show again"
+msgstr "Daugiau neberodyti"
+
+#: settings/config/manageconnectionwidget.cpp:492
+#, fuzzy
+msgid "Error exporting VPN connection settings"
+msgstr "Klaida importuojant VPN jungties nustatymus"
+
+#: settings/config/manageconnectionwidget.cpp:495
+msgid "Could not export VPN connection settings"
+msgstr "Nepavyko eksportuoti VPN ryšio nustatymų"
+
+#: settings/config/manageconnectionwidget.cpp:531
+msgid ""
+"Connection edit option failed, make sure that NetworkManager is properly "
+"running."
+msgstr ""
+"Ryšio taisymas nepavyko, įsitikinkite, kad NetworkManager tinkamai veikia."
+
+#: settings/config/manageconnectionwidget.cpp:571
+msgid "Connection create operation failed."
+msgstr "Nepavyko ryšio sukūrimo veiksmas."
+
+#: settings/config/manageconnectionwidget.cpp:595
+#, kde-format
+msgctxt "Warning message on attempting to delete a connection"
+msgid "Do you really want to delete the connection '%1'?"
+msgstr "Ar tikrai norite ištrinti ryšį „%1“?"
+
+#: settings/config/manageconnectionwidget.cpp:596
+msgid "Confirm Delete"
+msgstr "Patvirtinti trynimą"
+
+#: settings/config/manageconnectionwidget.cpp:756
+#, fuzzy
+msgid "Connected"
+msgstr "Prisijungta"
 
 #: settings/config/mobileconnectionwizard.cpp:52
 msgctxt "Mobile Connection Wizard"
@@ -1885,194 +2073,6 @@ msgstr "Jūsų tiekėjas:"
 msgctxt "Mobile Connection Wizard"
 msgid "Your Plan:"
 msgstr "Jūsų planas:"
-
-#: settings/config/managetraywidget.cpp:45
-#: settings/config/manageconnectionwidget.cpp:84
-#, fuzzy
-msgid "Manage Connections"
-msgstr "Ryšiai"
-
-#: settings/config/managetraywidget.cpp:46
-#: settings/config/manageconnectionwidget.cpp:85
-msgid "Manage Connections Control Panel Module"
-msgstr ""
-
-#: settings/config/managetraywidget.cpp:47
-msgid ""
-"(c) 2008-2009 Will Stephenson<p>(c) 2010 Sebastian Kügler</p><p>(c) "
-"2011-2012 Lamarque V. Souza</p>"
-msgstr ""
-
-#: settings/config/managetraywidget.cpp:49
-#: settings/config/manageconnectionwidget.cpp:88
-msgid "Lamarque V. Souza"
-msgstr ""
-
-#: settings/config/managetraywidget.cpp:49
-#: settings/config/manageconnectionwidget.cpp:88
-msgid "Developer and Maintainer"
-msgstr ""
-
-#: settings/config/managetraywidget.cpp:50
-#: settings/config/manageconnectionwidget.cpp:89
-msgid "Ilia Kats"
-msgstr ""
-
-#: settings/config/managetraywidget.cpp:50
-#: settings/config/managetraywidget.cpp:51
-#: settings/config/managetraywidget.cpp:52
-#: settings/config/managetraywidget.cpp:53
-#: settings/config/manageconnectionwidget.cpp:89
-#: settings/config/manageconnectionwidget.cpp:90
-#: settings/config/manageconnectionwidget.cpp:91
-#: settings/config/manageconnectionwidget.cpp:92
-msgid "Developer"
-msgstr ""
-
-#: settings/config/managetraywidget.cpp:51
-#: settings/config/manageconnectionwidget.cpp:90
-msgid "Rajeesh K Nambiar"
-msgstr ""
-
-#: settings/config/managetraywidget.cpp:52
-#: settings/config/manageconnectionwidget.cpp:91
-#: settings/configshell/main.cpp:37
-msgid "Will Stephenson"
-msgstr "Will Stephenson"
-
-#: settings/config/managetraywidget.cpp:53
-#: settings/config/manageconnectionwidget.cpp:92
-msgid "Sebastian Kügler"
-msgstr ""
-
-#: settings/config/manageconnectionwidget.cpp:86
-msgid "(c) 2008-2009 Will Stephenson<p>(c) 2011-2012 Lamarque V. Souza</p>"
-msgstr ""
-
-#: settings/config/manageconnectionwidget.cpp:117
-msgctxt "Like in 'add wired connection'"
-msgid "Wired"
-msgstr "Laidinis"
-
-#: settings/config/manageconnectionwidget.cpp:120
-#: settings/config/manageconnectionwidget.cpp:131
-msgctxt "Like in 'add shared connection'"
-msgid "Shared"
-msgstr "Bendrinamas"
-
-#: settings/config/manageconnectionwidget.cpp:128
-msgctxt "Like in 'add wireless connection'"
-msgid "Wireless"
-msgstr "Bevielis"
-
-#: settings/config/manageconnectionwidget.cpp:211
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used in the last hour, as "
-"the number of minutes since usage"
-msgid "One minute ago"
-msgid_plural "%1 minutes ago"
-msgstr[0] "Prieš vieną minutę"
-msgstr[1] "Prieš %1 minutes"
-msgstr[2] "Prieš %1 minučių"
-msgstr[3] "Prieš %1 minutę"
-
-#: settings/config/manageconnectionwidget.cpp:218
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used in the last day, as "
-"the number of hours since usage"
-msgid "One hour ago"
-msgid_plural "%1 hours ago"
-msgstr[0] "Prieš vieną valandą"
-msgstr[1] "Prieš %1 valandas"
-msgstr[2] "Prieš %1 valandų"
-msgstr[3] "Prieš %1 valandą"
-
-#: settings/config/manageconnectionwidget.cpp:223
-msgctxt ""
-"Label for last used time for a network connection used the previous day"
-msgid "Yesterday"
-msgstr "Vakar"
-
-#: settings/config/manageconnectionwidget.cpp:229
-msgctxt ""
-"Label for last used time for a network connection that has never been used"
-msgid "Never"
-msgstr "Niekada"
-
-#: settings/config/manageconnectionwidget.cpp:377
-msgctxt "Tooltip for disabled tab when no VPN plugins are installed"
-msgid "No VPN plugins were found"
-msgstr "Nerasta VPN priedų"
-
-#: settings/config/manageconnectionwidget.cpp:421
-msgctxt "File chooser dialog title for importing VPN"
-msgid "Import VPN connection settings"
-msgstr "Importuoti VPN ryšio nustatymus"
-
-#: settings/config/manageconnectionwidget.cpp:459
-#, kde-format
-msgid ""
-"None of the supported plugins implement importing operation for file %1."
-msgstr "Nei vienas iš palaikomų priedų nepalaiko failo %1 importavimo."
-
-#: settings/config/manageconnectionwidget.cpp:459
-#: settings/config/manageconnectionwidget.cpp:461
-msgid "Error importing VPN connection settings"
-msgstr "Klaida importuojant VPN jungties nustatymus"
-
-#: settings/config/manageconnectionwidget.cpp:488
-msgctxt "File chooser dialog title for exporting VPN"
-msgid "Export VPN"
-msgstr "Eksportuoti VPN"
-
-#: settings/config/manageconnectionwidget.cpp:495
-msgid "VPN connection successfully exported"
-msgstr "VPN jungtis sėkmingai eksportuota"
-
-#: settings/config/manageconnectionwidget.cpp:495
-msgid "Success"
-msgstr "Sėkmė"
-
-#: settings/config/manageconnectionwidget.cpp:495
-msgid "Do not show again"
-msgstr "Daugiau neberodyti"
-
-#: settings/config/manageconnectionwidget.cpp:497
-#, fuzzy
-msgid "Error exporting VPN connection settings"
-msgstr "Klaida importuojant VPN jungties nustatymus"
-
-#: settings/config/manageconnectionwidget.cpp:500
-msgid "Could not export VPN connection settings"
-msgstr "Nepavyko eksportuoti VPN ryšio nustatymų"
-
-#: settings/config/manageconnectionwidget.cpp:537
-msgid ""
-"Connection edit option failed, make sure that NetworkManager is properly "
-"running."
-msgstr ""
-"Ryšio taisymas nepavyko, įsitikinkite, kad NetworkManager tinkamai veikia."
-
-#: settings/config/manageconnectionwidget.cpp:577
-msgid "Connection create operation failed."
-msgstr "Nepavyko ryšio sukūrimo veiksmas."
-
-#: settings/config/manageconnectionwidget.cpp:601
-#, kde-format
-msgctxt "Warning message on attempting to delete a connection"
-msgid "Do you really want to delete the connection '%1'?"
-msgstr "Ar tikrai norite ištrinti ryšį „%1“?"
-
-#: settings/config/manageconnectionwidget.cpp:602
-msgid "Confirm Delete"
-msgstr "Patvirtinti trynimą"
-
-#: settings/config/manageconnectionwidget.cpp:762
-#, fuzzy
-msgid "Connected"
-msgstr "Prisijungta"
 
 #: settings/configshell/main.cpp:31
 msgid "Network Management"

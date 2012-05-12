@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_pptpui\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-03-06 18:38+0100\n"
+"POT-Creation-Date: 2012-05-06 12:02+0200\n"
 "PO-Revision-Date: 2012-02-08 22:32+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -43,9 +43,9 @@ msgstr "Reekner warrt ansnackt, bitte töven..."
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
 #: vpnplugins/openconnect/openconnectauth.cpp:377
 #: vpnplugins/openvpn/openvpnauth.cpp:124
-#: libs/ui/security/security8021xauth.cpp:91
-#: libs/ui/security/wirelesssecurityauth.cpp:98 rc.cpp:650 rc.cpp:680
-#: rc.cpp:971 rc.cpp:1328 rc.cpp:1397 rc.cpp:1445 rc.cpp:1457
+#: libs/ui/security/wirelesssecurityauth.cpp:98
+#: libs/ui/security/security8021xauth.cpp:91 rc.cpp:650 rc.cpp:680 rc.cpp:971
+#: rc.cpp:1328 rc.cpp:1397 rc.cpp:1445 rc.cpp:1457
 msgid "&Show password"
 msgstr "Passwoort &wiesen"
 
@@ -78,8 +78,8 @@ msgstr "Slötelpasswoort:"
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: vpnplugins/openvpn/openvpnauth.cpp:77 vpnplugins/openvpn/openvpnauth.cpp:86
 #: libs/ui/security/leapauthwidget.cpp:65
-#: libs/ui/security/security8021xauth.cpp:58
-#: libs/ui/security/wpaauthwidget.cpp:65 rc.cpp:311 rc.cpp:389
+#: libs/ui/security/wpaauthwidget.cpp:65
+#: libs/ui/security/security8021xauth.cpp:58 rc.cpp:311 rc.cpp:389
 msgid "Password:"
 msgstr "Passwoort:"
 
@@ -88,22 +88,6 @@ msgstr "Passwoort:"
 #: vpnplugins/openvpn/openvpnauth.cpp:106 rc.cpp:569
 msgid "Proxy Password:"
 msgstr "Proxypasswoort:"
-
-#: vpnplugins/openvpn/openvpnwidget.cpp:127
-#: vpnplugins/openvpn/openvpnwidget.cpp:151
-msgctxt "@item:inlist Item added when OpenVPN cipher lookup failed"
-msgid "OpenVPN cipher lookup failed"
-msgstr "Naslaan vun OpenVPN-Verslöteln fehlslaan."
-
-#: vpnplugins/openvpn/openvpnwidget.cpp:134
-msgctxt "@item::inlist Default openvpn cipher item"
-msgid "Default"
-msgstr "Standard"
-
-#: vpnplugins/openvpn/openvpnwidget.cpp:148
-msgctxt "@item:inlist Item added when OpenVPN cipher lookup failed"
-msgid "No OpenVPN ciphers found"
-msgstr "Keen OpenVPN-Verslöteln funnen."
 
 #: vpnplugins/openvpn/openvpn.cpp:165
 msgid "Could not open file"
@@ -162,6 +146,22 @@ msgstr "Datei \"%1\" is keen gellen Instellen (keen Feerntogriep)"
 msgid "Could not open file for writing"
 msgstr "Datei lett sik nich schrieven"
 
+#: vpnplugins/openvpn/openvpnwidget.cpp:127
+#: vpnplugins/openvpn/openvpnwidget.cpp:151
+msgctxt "@item:inlist Item added when OpenVPN cipher lookup failed"
+msgid "OpenVPN cipher lookup failed"
+msgstr "Naslaan vun OpenVPN-Verslöteln fehlslaan."
+
+#: vpnplugins/openvpn/openvpnwidget.cpp:134
+msgctxt "@item::inlist Default openvpn cipher item"
+msgid "Default"
+msgstr "Standard"
+
+#: vpnplugins/openvpn/openvpnwidget.cpp:148
+msgctxt "@item:inlist Item added when OpenVPN cipher lookup failed"
+msgid "No OpenVPN ciphers found"
+msgstr "Keen OpenVPN-Verslöteln funnen."
+
 #: vpnplugins/strongswan/strongswanauth.cpp:70
 msgctxt "@label:textbox password label for private key password"
 msgid "Private Key Password:"
@@ -191,8 +191,8 @@ msgstr "Fehler bi't Opslöteln vun't in nich leesbor Form vörhannen Passwoort"
 
 #. i18n: file: vpnplugins/openconnect/openconnectauth.ui:133
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: vpnplugins/vpnc/vpnc.cpp:75 settings/config/manageconnectionwidget.cpp:500
-#: settings/config/manageconnectionwidget.cpp:554 rc.cpp:296
+#: vpnplugins/vpnc/vpnc.cpp:75 settings/config/manageconnectionwidget.cpp:495
+#: settings/config/manageconnectionwidget.cpp:548 rc.cpp:296
 msgid "Error"
 msgstr "Fehler"
 
@@ -729,84 +729,16 @@ msgctxt "@info:tooltip unknown security"
 msgid "Unknown security type"
 msgstr "Sekerheit-Typ nich begäng"
 
-#: libs/service/pindialog.cpp:72
-msgctxt "As in 'Unlock cell phone with this pin code'"
-msgid "Unlock"
-msgstr "Opsluten"
-
-#: libs/service/pindialog.cpp:76
-msgid "SIM PUK unlock required"
-msgstr "Opsluten mit SIM-PUK deit noot"
-
-#: libs/service/pindialog.cpp:77
-msgid "SIM PUK Unlock Required"
-msgstr "Opsluten mit SIM-PUK deit noot"
-
-#: libs/service/pindialog.cpp:78
+#: libs/service/networkinterfacemonitor.cpp:214
 #, kde-format
-msgid ""
-"The mobile broadband device '%1' requires a SIM PUK code before it can be "
-"used."
-msgstr ""
-"Ehr sik de mobile Breedbanddeenst \"%1\" brukenlett, deit en SIM-PUK-Kode "
-"noot."
+msgctxt "Text in GSM PIN/PUK unlock error dialog"
+msgid "Error unlocking modem: %1"
+msgstr "Fehler bi't Opsluten vun't Modem: %1"
 
-#: libs/service/pindialog.cpp:79
-msgid "PUK code:"
-msgstr "PUK-Kode"
-
-#: libs/service/pindialog.cpp:80
-msgid "New PIN code:"
-msgstr "Nieg PIN-Kode:"
-
-#: libs/service/pindialog.cpp:81
-msgid "Re-enter new PIN code:"
-msgstr "PIN-Kode nochmaal ingeven:"
-
-#: libs/service/pindialog.cpp:82
-msgid "Show PIN/PUK code"
-msgstr "PIN-/PUK-Kode wiesen"
-
-#: libs/service/pindialog.cpp:90
-msgid "SIM PIN unlock required"
-msgstr "Opsluten mit SIM-PIN deit noot"
-
-#: libs/service/pindialog.cpp:91
-msgid "SIM PIN Unlock Required"
-msgstr "Opsluten mit SIM-PIN deit noot"
-
-#: libs/service/pindialog.cpp:92
-#, kde-format
-msgid ""
-"The mobile broadband device '%1' requires a SIM PIN code before it can be "
-"used."
-msgstr ""
-"Ehr sik de mobile Breedbanddeenst \"%1\" brukenlett, deit en SIM-PIN-Kode "
-"noot."
-
-#: libs/service/pindialog.cpp:93
-msgid "PIN code:"
-msgstr "PIN-Kode:"
-
-#: libs/service/pindialog.cpp:94
-msgid "Show PIN code"
-msgstr "PIN-Kode wiesen"
-
-#: libs/service/pindialog.cpp:178
-msgid "PIN code too short. It should be at least 4 digits."
-msgstr "PIN-Kode to kort. Dat mööt tominnst veer Steden wesen."
-
-#: libs/service/pindialog.cpp:182
-msgid "The two PIN codes do not match"
-msgstr "De PIN-Koden sünd nich liek"
-
-#: libs/service/pindialog.cpp:186
-msgid "PUK code too short. It should be 8 digits."
-msgstr "PUK-Kode to kort. Dat mööt tominnst acht Steden wesen."
-
-#: libs/service/pindialog.cpp:190
-msgid "Unknown Error"
-msgstr "Nich begäng Fehler"
+#: libs/service/networkinterfacemonitor.cpp:214
+msgctxt "Title for GSM PIN/PUK unlock error dialog"
+msgid "PIN/PUK unlock error"
+msgstr "Fehler bi't Opsluten vun PIN oder PUK"
 
 #: libs/service/notificationmanager.cpp:114
 #: libs/service/notificationmanager.cpp:446
@@ -1254,35 +1186,104 @@ msgctxt ""
 msgid "Networking system already running"
 msgstr "Nettwarksysteem löppt al"
 
-#: libs/service/networkinterfacemonitor.cpp:209
+#: libs/service/pindialog.cpp:72
+msgctxt "As in 'Unlock cell phone with this pin code'"
+msgid "Unlock"
+msgstr "Opsluten"
+
+#: libs/service/pindialog.cpp:76
+msgid "SIM PUK unlock required"
+msgstr "Opsluten mit SIM-PUK deit noot"
+
+#: libs/service/pindialog.cpp:77
+msgid "SIM PUK Unlock Required"
+msgstr "Opsluten mit SIM-PUK deit noot"
+
+#: libs/service/pindialog.cpp:78
 #, kde-format
-msgctxt "Text in GSM PIN/PUK unlock error dialog"
-msgid "Error unlocking modem: %1"
-msgstr "Fehler bi't Opsluten vun't Modem: %1"
+msgid ""
+"The mobile broadband device '%1' requires a SIM PUK code before it can be "
+"used."
+msgstr ""
+"Ehr sik de mobile Breedbanddeenst \"%1\" brukenlett, deit en SIM-PUK-Kode "
+"noot."
 
-#: libs/service/networkinterfacemonitor.cpp:209
-msgctxt "Title for GSM PIN/PUK unlock error dialog"
-msgid "PIN/PUK unlock error"
-msgstr "Fehler bi't Opsluten vun PIN oder PUK"
+#: libs/service/pindialog.cpp:79
+msgid "PUK code:"
+msgstr "PUK-Kode"
 
-#: libs/ui/802_11_wirelesswidget.cpp:63 libs/ui/wiredwidget.cpp:55
-msgid " byte"
-msgid_plural " bytes"
-msgstr[0] " Byte"
-msgstr[1] " Bytes"
+#: libs/service/pindialog.cpp:80
+msgid "New PIN code:"
+msgstr "Nieg PIN-Kode:"
 
-#: libs/ui/802_11_wirelesswidget.cpp:141 libs/ui/wiredwidget.cpp:76
+#: libs/service/pindialog.cpp:81
+msgid "Re-enter new PIN code:"
+msgstr "PIN-Kode nochmaal ingeven:"
+
+#: libs/service/pindialog.cpp:82
+msgid "Show PIN/PUK code"
+msgstr "PIN-/PUK-Kode wiesen"
+
+#: libs/service/pindialog.cpp:90
+msgid "SIM PIN unlock required"
+msgstr "Opsluten mit SIM-PIN deit noot"
+
+#: libs/service/pindialog.cpp:91
+msgid "SIM PIN Unlock Required"
+msgstr "Opsluten mit SIM-PIN deit noot"
+
+#: libs/service/pindialog.cpp:92
 #, kde-format
-msgctxt ""
-"@item:inlist item for hardware that is currently not attached to the machine "
-"with MAC address"
-msgid "Disconnected interface (%1)"
-msgstr "Afkoppelt Koppelsteed (%1)"
+msgid ""
+"The mobile broadband device '%1' requires a SIM PIN code before it can be "
+"used."
+msgstr ""
+"Ehr sik de mobile Breedbanddeenst \"%1\" brukenlett, deit en SIM-PIN-Kode "
+"noot."
 
-#: libs/ui/802_11_wirelesswidget.cpp:203
-msgctxt "@title:window wireless network scan dialog"
-msgid "Available Networks"
-msgstr "Verföögbor Nettwarken"
+#: libs/service/pindialog.cpp:93
+msgid "PIN code:"
+msgstr "PIN-Kode:"
+
+#: libs/service/pindialog.cpp:94
+msgid "Show PIN code"
+msgstr "PIN-Kode wiesen"
+
+#: libs/service/pindialog.cpp:178
+msgid "PIN code too short. It should be at least 4 digits."
+msgstr "PIN-Kode to kort. Dat mööt tominnst veer Steden wesen."
+
+#: libs/service/pindialog.cpp:182
+msgid "The two PIN codes do not match"
+msgstr "De PIN-Koden sünd nich liek"
+
+#: libs/service/pindialog.cpp:186
+msgid "PUK code too short. It should be 8 digits."
+msgstr "PUK-Kode to kort. Dat mööt tominnst acht Steden wesen."
+
+#: libs/service/pindialog.cpp:190
+msgid "Unknown Error"
+msgstr "Nich begäng Fehler"
+
+#: libs/ui/ipv6routeswidget.cpp:39 libs/ui/ipv6advancedwidget.cpp:39
+msgctxt "Header text for IPv6 address"
+msgid "Address"
+msgstr "Adress"
+
+#: libs/ui/ipv6routeswidget.cpp:41 libs/ui/ipv6advancedwidget.cpp:41
+msgctxt "Header text for IPv6 netmask"
+msgid "Netmask"
+msgstr "Nettmask"
+
+#: libs/ui/ipv6routeswidget.cpp:43 libs/ui/ipv6advancedwidget.cpp:43
+msgctxt "Header text for IPv6 gateway"
+msgid "Gateway"
+msgstr "Döörreekner"
+
+#: libs/ui/ipv6routeswidget.cpp:45
+msgctxt "Header text for IPv6 route metric"
+msgid "Metric"
+msgstr "Metrik"
 
 #: libs/ui/advancedpermissionswidget.cpp:97
 msgctxt "@item:intable shortcut for Not Available"
@@ -1293,6 +1294,42 @@ msgstr "k.A."
 msgctxt "@info:tooltip real user name is not available"
 msgid "Not Available"
 msgstr "Nich verföögbor"
+
+#: libs/ui/networkitemmodel.cpp:141
+#, kde-format
+msgctxt "@item:inlist signal strength percentage"
+msgid "%1%"
+msgstr "%1%"
+
+#: libs/ui/networkitemmodel.cpp:191
+msgctxt "@item:intable wireless network name"
+msgid "Name"
+msgstr "Naam"
+
+#: libs/ui/networkitemmodel.cpp:193
+msgctxt "@item:intable wireless signal strength"
+msgid "Signal Strength"
+msgstr "Signaalknööv"
+
+#: libs/ui/networkitemmodel.cpp:195
+msgctxt "@item:intable wireless encryption type"
+msgid "Encryption"
+msgstr "Verslöteln"
+
+#: libs/ui/networkitemmodel.cpp:197
+msgctxt "@item:intable wireless band"
+msgid "Band"
+msgstr "Band"
+
+#: libs/ui/networkitemmodel.cpp:199
+msgctxt "@item:intable wireless channel"
+msgid "Channel"
+msgstr "Kanaal"
+
+#: libs/ui/networkitemmodel.cpp:201
+msgctxt "@item:intable wireless access point hardware address"
+msgid "MAC Address"
+msgstr "MAC-Adress"
 
 #: libs/ui/cdmaconnectioneditor.cpp:52 libs/ui/gsmconnectioneditor.cpp:73
 msgid "New Cellular Connection"
@@ -1308,14 +1345,17 @@ msgctxt "Add connection dialog caption"
 msgid "Add Network Connection"
 msgstr "Nettwarkverbinnen tofögen"
 
-#: libs/ui/connectionwidget.cpp:64 libs/ui/wirelesspreferences.cpp:121
+#: libs/ui/wirelesspreferences.cpp:71
+msgid "Shared_Wireless_Connection"
+msgstr "Deelt Funkverbinnen"
+
+#: libs/ui/wirelesspreferences.cpp:119
+msgid "Shared Wireless Connection"
+msgstr "Deelt Funkverbinnen"
+
+#: libs/ui/wirelesspreferences.cpp:121 libs/ui/connectionwidget.cpp:64
 msgid "New Wireless Connection"
 msgstr "Nieg Funk-Verbinnen"
-
-#: libs/ui/connectionwidget.cpp:120
-msgctxt "@title:window advanced permissions editor"
-msgid "Advanced Permissions Editor"
-msgstr "Verwiedert Verlöven-Editor"
 
 #: libs/ui/ipv4advancedwidget.cpp:40 libs/ui/ipv4routeswidget.cpp:39
 msgctxt "Header text for IPv4 address"
@@ -1331,11 +1371,6 @@ msgstr "Nettmask"
 msgctxt "Header text for IPv4 gateway"
 msgid "Gateway"
 msgstr "Döörreekner"
-
-#: libs/ui/ipv4routeswidget.cpp:45
-msgctxt "Header text for IPv4 route metric"
-msgid "Metric"
-msgstr "Metrik"
 
 #: libs/ui/ipv4widget.cpp:69
 msgctxt "@item:inlistbox IPv4 settings configuration method"
@@ -1390,62 +1425,6 @@ msgstr "DNS-Servers"
 msgid "Search domains"
 msgstr "Söökdomänen"
 
-#: libs/ui/ipv6advancedwidget.cpp:39 libs/ui/ipv6routeswidget.cpp:39
-msgctxt "Header text for IPv6 address"
-msgid "Address"
-msgstr "Adress"
-
-#: libs/ui/ipv6advancedwidget.cpp:41 libs/ui/ipv6routeswidget.cpp:41
-msgctxt "Header text for IPv6 netmask"
-msgid "Netmask"
-msgstr "Nettmask"
-
-#: libs/ui/ipv6advancedwidget.cpp:43 libs/ui/ipv6routeswidget.cpp:43
-msgctxt "Header text for IPv6 gateway"
-msgid "Gateway"
-msgstr "Döörreekner"
-
-#: libs/ui/ipv6routeswidget.cpp:45
-msgctxt "Header text for IPv6 route metric"
-msgid "Metric"
-msgstr "Metrik"
-
-#: libs/ui/networkitemmodel.cpp:141
-#, kde-format
-msgctxt "@item:inlist signal strength percentage"
-msgid "%1%"
-msgstr "%1%"
-
-#: libs/ui/networkitemmodel.cpp:191
-msgctxt "@item:intable wireless network name"
-msgid "Name"
-msgstr "Naam"
-
-#: libs/ui/networkitemmodel.cpp:193
-msgctxt "@item:intable wireless signal strength"
-msgid "Signal Strength"
-msgstr "Signaalknööv"
-
-#: libs/ui/networkitemmodel.cpp:195
-msgctxt "@item:intable wireless encryption type"
-msgid "Encryption"
-msgstr "Verslöteln"
-
-#: libs/ui/networkitemmodel.cpp:197
-msgctxt "@item:intable wireless band"
-msgid "Band"
-msgstr "Band"
-
-#: libs/ui/networkitemmodel.cpp:199
-msgctxt "@item:intable wireless channel"
-msgid "Channel"
-msgstr "Kanaal"
-
-#: libs/ui/networkitemmodel.cpp:201
-msgctxt "@item:intable wireless access point hardware address"
-msgid "MAC Address"
-msgstr "MAC-Adress"
-
 #: libs/ui/pppoepreferences.cpp:42 libs/ui/pppoepreferences.cpp:60
 msgid "New DSL Connection"
 msgstr "Nieg DSL-Verbinnen"
@@ -1455,16 +1434,6 @@ msgstr "Nieg DSL-Verbinnen"
 msgctxt "Label for inner auth combobox"
 msgid "&Inner Authentication:"
 msgstr "&Binnen-Identiteetprööv:"
-
-#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:130
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: libs/ui/security/security8021xauth.cpp:66 rc.cpp:728
-msgid "Private Key Password:"
-msgstr "Privaatslötel-Passwoort:"
-
-#: libs/ui/security/security8021xauth.cpp:74
-msgid "Phase 2 Private Key Password:"
-msgstr "Privaatslötel-Passwoort Stoop 2:"
 
 #: libs/ui/security/securityeap.cpp:56
 msgctxt "show passwords button"
@@ -1604,6 +1573,16 @@ msgstr "Slötelsatz:"
 msgid "Key:"
 msgstr "Slötel:"
 
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:130
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: libs/ui/security/security8021xauth.cpp:66 rc.cpp:728
+msgid "Private Key Password:"
+msgstr "Privaatslötel-Passwoort:"
+
+#: libs/ui/security/security8021xauth.cpp:74
+msgid "Phase 2 Private Key Password:"
+msgstr "Privaatslötel-Passwoort Stoop 2:"
+
 #: libs/ui/vpnuiplugin.cpp:36
 msgctxt "Error message in VPN import/export dialog"
 msgid "Operation not supported for this VPN type."
@@ -1617,13 +1596,19 @@ msgstr "Deelt Kavelverbinnen"
 msgid "New Wired Connection"
 msgstr "Nieg Kavel-Verbinnen"
 
-#: libs/ui/wirelesspreferences.cpp:71
-msgid "Shared_Wireless_Connection"
-msgstr "Deelt Funkverbinnen"
+#: libs/ui/wiredwidget.cpp:55 libs/ui/802_11_wirelesswidget.cpp:63
+msgid " byte"
+msgid_plural " bytes"
+msgstr[0] " Byte"
+msgstr[1] " Bytes"
 
-#: libs/ui/wirelesspreferences.cpp:119
-msgid "Shared Wireless Connection"
-msgstr "Deelt Funkverbinnen"
+#: libs/ui/wiredwidget.cpp:76 libs/ui/802_11_wirelesswidget.cpp:141
+#, kde-format
+msgctxt ""
+"@item:inlist item for hardware that is currently not attached to the machine "
+"with MAC address"
+msgid "Disconnected interface (%1)"
+msgstr "Afkoppelt Koppelsteed (%1)"
 
 #: libs/ui/ipv6widget.cpp:68
 msgctxt "@item:inlistbox IPv6 settings configuration method"
@@ -1665,6 +1650,11 @@ msgctxt "@item:inlistbox IPv6 settings configuration method"
 msgid "Automatic (DHCP) addresses only"
 msgstr "Bloots automaatsche Adressen (DHCP)"
 
+#: libs/ui/ipv4routeswidget.cpp:45
+msgctxt "Header text for IPv4 route metric"
+msgid "Metric"
+msgstr "Metrik"
+
 #: libs/ui/bluetoothconnectioneditor.cpp:68
 #, kde-format
 msgid "%1 Network"
@@ -1683,6 +1673,16 @@ msgstr "Slötelpasswöör för %1"
 #: libs/ui/vpnpreferences.cpp:53 libs/ui/vpnpreferences.cpp:124
 msgid "New VPN Connection"
 msgstr "Nieg VPN-Verbinnen"
+
+#: libs/ui/802_11_wirelesswidget.cpp:203
+msgctxt "@title:window wireless network scan dialog"
+msgid "Available Networks"
+msgstr "Verföögbor Nettwarken"
+
+#: libs/ui/connectionwidget.cpp:120
+msgctxt "@title:window advanced permissions editor"
+msgid "Advanced Permissions Editor"
+msgstr "Verwiedert Verlöven-Editor"
 
 #: settings/config/addeditdeletebuttonset.cpp:40
 msgid "Add..."
@@ -1705,6 +1705,194 @@ msgstr "Exporteren"
 msgctxt "Version text"
 msgid "<b>Version %1</b>"
 msgstr "<b>Verschoon %1</b>"
+
+#: settings/config/managetraywidget.cpp:45
+#: settings/config/manageconnectionwidget.cpp:80
+#, fuzzy
+#| msgid "Connections"
+msgid "Manage Connections"
+msgstr "Verbinnen"
+
+#: settings/config/managetraywidget.cpp:46
+#: settings/config/manageconnectionwidget.cpp:81
+msgid "Manage Connections Control Panel Module"
+msgstr ""
+
+#: settings/config/managetraywidget.cpp:47
+msgid ""
+"(c) 2008-2009 Will Stephenson<p>(c) 2010 Sebastian Kügler</p><p>(c) "
+"2011-2012 Lamarque V. Souza</p>"
+msgstr ""
+
+#: settings/config/managetraywidget.cpp:49
+#: settings/config/manageconnectionwidget.cpp:84
+msgid "Lamarque V. Souza"
+msgstr ""
+
+#: settings/config/managetraywidget.cpp:49
+#: settings/config/manageconnectionwidget.cpp:84
+msgid "Developer and Maintainer"
+msgstr ""
+
+#: settings/config/managetraywidget.cpp:50
+#: settings/config/manageconnectionwidget.cpp:85
+msgid "Ilia Kats"
+msgstr ""
+
+#: settings/config/managetraywidget.cpp:50
+#: settings/config/managetraywidget.cpp:51
+#: settings/config/managetraywidget.cpp:52
+#: settings/config/managetraywidget.cpp:53
+#: settings/config/manageconnectionwidget.cpp:85
+#: settings/config/manageconnectionwidget.cpp:86
+#: settings/config/manageconnectionwidget.cpp:87
+#: settings/config/manageconnectionwidget.cpp:88
+msgid "Developer"
+msgstr ""
+
+#: settings/config/managetraywidget.cpp:51
+#: settings/config/manageconnectionwidget.cpp:86
+msgid "Rajeesh K Nambiar"
+msgstr ""
+
+#: settings/config/managetraywidget.cpp:52
+#: settings/config/manageconnectionwidget.cpp:87
+#: settings/configshell/main.cpp:37
+msgid "Will Stephenson"
+msgstr "Will Stephenson"
+
+#: settings/config/managetraywidget.cpp:53
+#: settings/config/manageconnectionwidget.cpp:88
+msgid "Sebastian Kügler"
+msgstr ""
+
+#: settings/config/manageconnectionwidget.cpp:82
+msgid "(c) 2008-2009 Will Stephenson<p>(c) 2011-2012 Lamarque V. Souza</p>"
+msgstr ""
+
+#: settings/config/manageconnectionwidget.cpp:113
+msgctxt "Like in 'add wired connection'"
+msgid "Wired"
+msgstr "Kavel"
+
+#: settings/config/manageconnectionwidget.cpp:116
+#: settings/config/manageconnectionwidget.cpp:127
+msgctxt "Like in 'add shared connection'"
+msgid "Shared"
+msgstr "Deelt"
+
+#: settings/config/manageconnectionwidget.cpp:124
+msgctxt "Like in 'add wireless connection'"
+msgid "Wireless"
+msgstr "Funknettwark"
+
+#: settings/config/manageconnectionwidget.cpp:207
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last hour, as "
+"the number of minutes since usage"
+msgid "One minute ago"
+msgid_plural "%1 minutes ago"
+msgstr[0] "Vör een Minuut"
+msgstr[1] "Vör %1 Minuten"
+
+#: settings/config/manageconnectionwidget.cpp:214
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last day, as "
+"the number of hours since usage"
+msgid "One hour ago"
+msgid_plural "%1 hours ago"
+msgstr[0] "Vör een Stunn"
+msgstr[1] "Vör %1 Stünnen"
+
+#: settings/config/manageconnectionwidget.cpp:219
+msgctxt ""
+"Label for last used time for a network connection used the previous day"
+msgid "Yesterday"
+msgstr "Güstern"
+
+#: settings/config/manageconnectionwidget.cpp:225
+msgctxt ""
+"Label for last used time for a network connection that has never been used"
+msgid "Never"
+msgstr "Nienich"
+
+#: settings/config/manageconnectionwidget.cpp:372
+msgctxt "Tooltip for disabled tab when no VPN plugins are installed"
+msgid "No VPN plugins were found"
+msgstr "Keen VPN-Modulen funnen"
+
+#: settings/config/manageconnectionwidget.cpp:416
+msgctxt "File chooser dialog title for importing VPN"
+msgid "Import VPN connection settings"
+msgstr "VPN-Verbinneninstellen importeren"
+
+#: settings/config/manageconnectionwidget.cpp:454
+#, kde-format
+msgid ""
+"None of the supported plugins implement importing operation for file %1."
+msgstr ""
+"Keen vun de ünnerstütt Modulen hett en Importakschoon för Datei \"%1\" "
+"inbuut."
+
+#: settings/config/manageconnectionwidget.cpp:454
+#: settings/config/manageconnectionwidget.cpp:456
+msgid "Error importing VPN connection settings"
+msgstr "Fehler bi't Importeren vun de VPN-Verbinneninstellen"
+
+#: settings/config/manageconnectionwidget.cpp:483
+msgctxt "File chooser dialog title for exporting VPN"
+msgid "Export VPN"
+msgstr "VPN exporteren"
+
+#: settings/config/manageconnectionwidget.cpp:490
+msgid "VPN connection successfully exported"
+msgstr "VPN-Verbinnen mit Spood exporteert"
+
+#: settings/config/manageconnectionwidget.cpp:490
+msgid "Success"
+msgstr "Hett funkscheneert"
+
+#: settings/config/manageconnectionwidget.cpp:490
+msgid "Do not show again"
+msgstr "Nienich wedder wiesen"
+
+#: settings/config/manageconnectionwidget.cpp:492
+#, fuzzy
+#| msgid "Error importing VPN connection settings"
+msgid "Error exporting VPN connection settings"
+msgstr "Fehler bi't Importeren vun de VPN-Verbinneninstellen"
+
+#: settings/config/manageconnectionwidget.cpp:495
+msgid "Could not export VPN connection settings"
+msgstr "VPN-Verbinneninstellen laat sik nich exporteren"
+
+#: settings/config/manageconnectionwidget.cpp:531
+msgid ""
+"Connection edit option failed, make sure that NetworkManager is properly "
+"running."
+msgstr ""
+"Akschoon \"Verbinnen bewerken\" fehlslaan. Bitte kiek na, wat "
+"\"NetworkManager\" propper löppt."
+
+#: settings/config/manageconnectionwidget.cpp:571
+msgid "Connection create operation failed."
+msgstr "Akschoon \"Verbinnen opstellen\" fehlslaan"
+
+#: settings/config/manageconnectionwidget.cpp:595
+#, kde-format
+msgctxt "Warning message on attempting to delete a connection"
+msgid "Do you really want to delete the connection '%1'?"
+msgstr "Wullt Du de Verbinnen \"%1\" redig wegdoon?"
+
+#: settings/config/manageconnectionwidget.cpp:596
+msgid "Confirm Delete"
+msgstr "Wegdoon beglöven"
+
+#: settings/config/manageconnectionwidget.cpp:756
+msgid "Connected"
+msgstr "Tokoppelt"
 
 #: settings/config/mobileconnectionwizard.cpp:52
 msgctxt "Mobile Connection Wizard"
@@ -1874,194 +2062,6 @@ msgstr "Dien Anbeder:"
 msgctxt "Mobile Connection Wizard"
 msgid "Your Plan:"
 msgstr "Dien Tarif:"
-
-#: settings/config/managetraywidget.cpp:45
-#: settings/config/manageconnectionwidget.cpp:84
-#, fuzzy
-#| msgid "Connections"
-msgid "Manage Connections"
-msgstr "Verbinnen"
-
-#: settings/config/managetraywidget.cpp:46
-#: settings/config/manageconnectionwidget.cpp:85
-msgid "Manage Connections Control Panel Module"
-msgstr ""
-
-#: settings/config/managetraywidget.cpp:47
-msgid ""
-"(c) 2008-2009 Will Stephenson<p>(c) 2010 Sebastian Kügler</p><p>(c) "
-"2011-2012 Lamarque V. Souza</p>"
-msgstr ""
-
-#: settings/config/managetraywidget.cpp:49
-#: settings/config/manageconnectionwidget.cpp:88
-msgid "Lamarque V. Souza"
-msgstr ""
-
-#: settings/config/managetraywidget.cpp:49
-#: settings/config/manageconnectionwidget.cpp:88
-msgid "Developer and Maintainer"
-msgstr ""
-
-#: settings/config/managetraywidget.cpp:50
-#: settings/config/manageconnectionwidget.cpp:89
-msgid "Ilia Kats"
-msgstr ""
-
-#: settings/config/managetraywidget.cpp:50
-#: settings/config/managetraywidget.cpp:51
-#: settings/config/managetraywidget.cpp:52
-#: settings/config/managetraywidget.cpp:53
-#: settings/config/manageconnectionwidget.cpp:89
-#: settings/config/manageconnectionwidget.cpp:90
-#: settings/config/manageconnectionwidget.cpp:91
-#: settings/config/manageconnectionwidget.cpp:92
-msgid "Developer"
-msgstr ""
-
-#: settings/config/managetraywidget.cpp:51
-#: settings/config/manageconnectionwidget.cpp:90
-msgid "Rajeesh K Nambiar"
-msgstr ""
-
-#: settings/config/managetraywidget.cpp:52
-#: settings/config/manageconnectionwidget.cpp:91
-#: settings/configshell/main.cpp:37
-msgid "Will Stephenson"
-msgstr "Will Stephenson"
-
-#: settings/config/managetraywidget.cpp:53
-#: settings/config/manageconnectionwidget.cpp:92
-msgid "Sebastian Kügler"
-msgstr ""
-
-#: settings/config/manageconnectionwidget.cpp:86
-msgid "(c) 2008-2009 Will Stephenson<p>(c) 2011-2012 Lamarque V. Souza</p>"
-msgstr ""
-
-#: settings/config/manageconnectionwidget.cpp:117
-msgctxt "Like in 'add wired connection'"
-msgid "Wired"
-msgstr "Kavel"
-
-#: settings/config/manageconnectionwidget.cpp:120
-#: settings/config/manageconnectionwidget.cpp:131
-msgctxt "Like in 'add shared connection'"
-msgid "Shared"
-msgstr "Deelt"
-
-#: settings/config/manageconnectionwidget.cpp:128
-msgctxt "Like in 'add wireless connection'"
-msgid "Wireless"
-msgstr "Funknettwark"
-
-#: settings/config/manageconnectionwidget.cpp:211
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used in the last hour, as "
-"the number of minutes since usage"
-msgid "One minute ago"
-msgid_plural "%1 minutes ago"
-msgstr[0] "Vör een Minuut"
-msgstr[1] "Vör %1 Minuten"
-
-#: settings/config/manageconnectionwidget.cpp:218
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used in the last day, as "
-"the number of hours since usage"
-msgid "One hour ago"
-msgid_plural "%1 hours ago"
-msgstr[0] "Vör een Stunn"
-msgstr[1] "Vör %1 Stünnen"
-
-#: settings/config/manageconnectionwidget.cpp:223
-msgctxt ""
-"Label for last used time for a network connection used the previous day"
-msgid "Yesterday"
-msgstr "Güstern"
-
-#: settings/config/manageconnectionwidget.cpp:229
-msgctxt ""
-"Label for last used time for a network connection that has never been used"
-msgid "Never"
-msgstr "Nienich"
-
-#: settings/config/manageconnectionwidget.cpp:377
-msgctxt "Tooltip for disabled tab when no VPN plugins are installed"
-msgid "No VPN plugins were found"
-msgstr "Keen VPN-Modulen funnen"
-
-#: settings/config/manageconnectionwidget.cpp:421
-msgctxt "File chooser dialog title for importing VPN"
-msgid "Import VPN connection settings"
-msgstr "VPN-Verbinneninstellen importeren"
-
-#: settings/config/manageconnectionwidget.cpp:459
-#, kde-format
-msgid ""
-"None of the supported plugins implement importing operation for file %1."
-msgstr ""
-"Keen vun de ünnerstütt Modulen hett en Importakschoon för Datei \"%1\" "
-"inbuut."
-
-#: settings/config/manageconnectionwidget.cpp:459
-#: settings/config/manageconnectionwidget.cpp:461
-msgid "Error importing VPN connection settings"
-msgstr "Fehler bi't Importeren vun de VPN-Verbinneninstellen"
-
-#: settings/config/manageconnectionwidget.cpp:488
-msgctxt "File chooser dialog title for exporting VPN"
-msgid "Export VPN"
-msgstr "VPN exporteren"
-
-#: settings/config/manageconnectionwidget.cpp:495
-msgid "VPN connection successfully exported"
-msgstr "VPN-Verbinnen mit Spood exporteert"
-
-#: settings/config/manageconnectionwidget.cpp:495
-msgid "Success"
-msgstr "Hett funkscheneert"
-
-#: settings/config/manageconnectionwidget.cpp:495
-msgid "Do not show again"
-msgstr "Nienich wedder wiesen"
-
-#: settings/config/manageconnectionwidget.cpp:497
-#, fuzzy
-#| msgid "Error importing VPN connection settings"
-msgid "Error exporting VPN connection settings"
-msgstr "Fehler bi't Importeren vun de VPN-Verbinneninstellen"
-
-#: settings/config/manageconnectionwidget.cpp:500
-msgid "Could not export VPN connection settings"
-msgstr "VPN-Verbinneninstellen laat sik nich exporteren"
-
-#: settings/config/manageconnectionwidget.cpp:537
-msgid ""
-"Connection edit option failed, make sure that NetworkManager is properly "
-"running."
-msgstr ""
-"Akschoon \"Verbinnen bewerken\" fehlslaan. Bitte kiek na, wat "
-"\"NetworkManager\" propper löppt."
-
-#: settings/config/manageconnectionwidget.cpp:577
-msgid "Connection create operation failed."
-msgstr "Akschoon \"Verbinnen opstellen\" fehlslaan"
-
-#: settings/config/manageconnectionwidget.cpp:601
-#, kde-format
-msgctxt "Warning message on attempting to delete a connection"
-msgid "Do you really want to delete the connection '%1'?"
-msgstr "Wullt Du de Verbinnen \"%1\" redig wegdoon?"
-
-#: settings/config/manageconnectionwidget.cpp:602
-msgid "Confirm Delete"
-msgstr "Wegdoon beglöven"
-
-#: settings/config/manageconnectionwidget.cpp:762
-msgid "Connected"
-msgstr "Tokoppelt"
 
 #: settings/configshell/main.cpp:31
 msgid "Network Management"

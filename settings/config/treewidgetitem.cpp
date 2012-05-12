@@ -1,5 +1,5 @@
 /*
-Copyright 2011 Ilia Kats <ilia-kats@gmx.net>
+Copyright 2012 Lamarque V. Souza <lamarque@kde.org>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -18,21 +18,26 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "intdelegate.h"
-#include "intvalidator.h"
+#include "treewidgetitem.h"
 
-IntDelegate::IntDelegate(QObject * parent) : Delegate(parent), m_boundary(false) {}
-IntDelegate::IntDelegate(int min, int max, QObject * parent) : Delegate(parent), m_min(min), m_max(max), m_boundary(true) {}
-IntDelegate::~IntDelegate() {}
+#include <QtCore/QDateTime>
 
-QWidget * IntDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &,
-        const QModelIndex &) const
+TreeWidgetItem::TreeWidgetItem(QTreeWidget *view, const QStringList &strings, int type): QTreeWidgetItem(view, strings, type)
 {
-    QLineEdit *editor = new QLineEdit(parent);
-    if (m_boundary)
-        editor->setValidator(new IntValidator(m_min, m_max, editor));
-    else
-        editor->setValidator(new IntValidator(editor));
+}
 
-    return editor;
+bool TreeWidgetItem::operator<(const QTreeWidgetItem &other) const
+{
+    QTreeWidget * view = treeWidget();
+    int column = view ? view->sortColumn() : 0;
+
+    if ((column + Qt::UserRole + 1) != ConnectionLastUsedRole) {
+	QString a = data(column, Qt::DisplayRole).toString();
+	QString b = other.data(column, Qt::DisplayRole).toString();
+	return (QString::localeAwareCompare(a, b) < 0);
+    }
+
+    QDateTime a = data(0, ConnectionLastUsedRole).toDateTime();
+    QDateTime b = other.data(0, ConnectionLastUsedRole).toDateTime();
+    return (a < b);
 }

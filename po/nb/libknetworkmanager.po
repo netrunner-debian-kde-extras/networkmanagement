@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-03-06 18:38+0100\n"
+"POT-Creation-Date: 2012-04-15 10:51+0200\n"
 "PO-Revision-Date: 2012-03-31 15:37+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
@@ -192,8 +192,8 @@ msgstr "Feil ved dekryptering av tåkelagt passord"
 
 #. i18n: file: vpnplugins/openconnect/openconnectauth.ui:133
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: vpnplugins/vpnc/vpnc.cpp:75 settings/config/manageconnectionwidget.cpp:500
-#: settings/config/manageconnectionwidget.cpp:554 rc.cpp:296
+#: vpnplugins/vpnc/vpnc.cpp:75 settings/config/manageconnectionwidget.cpp:495
+#: settings/config/manageconnectionwidget.cpp:548 rc.cpp:296
 msgid "Error"
 msgstr "Feil"
 
@@ -1251,13 +1251,13 @@ msgctxt ""
 msgid "Networking system already running"
 msgstr "Nettverkssystemet kjører allerede"
 
-#: libs/service/networkinterfacemonitor.cpp:209
+#: libs/service/networkinterfacemonitor.cpp:214
 #, kde-format
 msgctxt "Text in GSM PIN/PUK unlock error dialog"
 msgid "Error unlocking modem: %1"
 msgstr "Feil ved opplåsing av modem: %1"
 
-#: libs/service/networkinterfacemonitor.cpp:209
+#: libs/service/networkinterfacemonitor.cpp:214
 msgctxt "Title for GSM PIN/PUK unlock error dialog"
 msgid "PIN/PUK unlock error"
 msgstr "Feil ved PIN/PUK-opplåsing"
@@ -1875,12 +1875,12 @@ msgid "Your Plan:"
 msgstr "Din plan:"
 
 #: settings/config/managetraywidget.cpp:45
-#: settings/config/manageconnectionwidget.cpp:84
+#: settings/config/manageconnectionwidget.cpp:80
 msgid "Manage Connections"
 msgstr "Håndter tilkoblinger"
 
 #: settings/config/managetraywidget.cpp:46
-#: settings/config/manageconnectionwidget.cpp:85
+#: settings/config/manageconnectionwidget.cpp:81
 msgid "Manage Connections Control Panel Module"
 msgstr "Kontrollpultmodul som håndterer tilkoblinger"
 
@@ -1893,17 +1893,17 @@ msgstr ""
 "Lamarque V. Souza</p>"
 
 #: settings/config/managetraywidget.cpp:49
-#: settings/config/manageconnectionwidget.cpp:88
+#: settings/config/manageconnectionwidget.cpp:84
 msgid "Lamarque V. Souza"
 msgstr "Lamarque V. Souza"
 
 #: settings/config/managetraywidget.cpp:49
-#: settings/config/manageconnectionwidget.cpp:88
+#: settings/config/manageconnectionwidget.cpp:84
 msgid "Developer and Maintainer"
 msgstr "Utvikler og vedlikeholder"
 
 #: settings/config/managetraywidget.cpp:50
-#: settings/config/manageconnectionwidget.cpp:89
+#: settings/config/manageconnectionwidget.cpp:85
 msgid "Ilia Kats"
 msgstr "Ilia Kats"
 
@@ -1911,50 +1911,50 @@ msgstr "Ilia Kats"
 #: settings/config/managetraywidget.cpp:51
 #: settings/config/managetraywidget.cpp:52
 #: settings/config/managetraywidget.cpp:53
-#: settings/config/manageconnectionwidget.cpp:89
-#: settings/config/manageconnectionwidget.cpp:90
-#: settings/config/manageconnectionwidget.cpp:91
-#: settings/config/manageconnectionwidget.cpp:92
+#: settings/config/manageconnectionwidget.cpp:85
+#: settings/config/manageconnectionwidget.cpp:86
+#: settings/config/manageconnectionwidget.cpp:87
+#: settings/config/manageconnectionwidget.cpp:88
 msgid "Developer"
 msgstr "Utvikler"
 
 #: settings/config/managetraywidget.cpp:51
-#: settings/config/manageconnectionwidget.cpp:90
+#: settings/config/manageconnectionwidget.cpp:86
 msgid "Rajeesh K Nambiar"
 msgstr "Rajeesh K Nambiar"
 
 #: settings/config/managetraywidget.cpp:52
-#: settings/config/manageconnectionwidget.cpp:91
+#: settings/config/manageconnectionwidget.cpp:87
 #: settings/configshell/main.cpp:37
 msgid "Will Stephenson"
 msgstr "Will Stephenson"
 
 #: settings/config/managetraywidget.cpp:53
-#: settings/config/manageconnectionwidget.cpp:92
+#: settings/config/manageconnectionwidget.cpp:88
 msgid "Sebastian Kügler"
 msgstr "Sebastian Kügler"
 
-#: settings/config/manageconnectionwidget.cpp:86
+#: settings/config/manageconnectionwidget.cpp:82
 msgid "(c) 2008-2009 Will Stephenson<p>(c) 2011-2012 Lamarque V. Souza</p>"
 msgstr "© 2008-2009 Will Stephenson<p>© 2011-2012 Lamarque V. Souza</p>"
 
-#: settings/config/manageconnectionwidget.cpp:117
+#: settings/config/manageconnectionwidget.cpp:113
 msgctxt "Like in 'add wired connection'"
 msgid "Wired"
 msgstr "Kablet"
 
-#: settings/config/manageconnectionwidget.cpp:120
-#: settings/config/manageconnectionwidget.cpp:131
+#: settings/config/manageconnectionwidget.cpp:116
+#: settings/config/manageconnectionwidget.cpp:127
 msgctxt "Like in 'add shared connection'"
 msgid "Shared"
 msgstr "Delt"
 
-#: settings/config/manageconnectionwidget.cpp:128
+#: settings/config/manageconnectionwidget.cpp:124
 msgctxt "Like in 'add wireless connection'"
 msgid "Wireless"
 msgstr "Trådløs"
 
-#: settings/config/manageconnectionwidget.cpp:211
+#: settings/config/manageconnectionwidget.cpp:207
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last hour, as "
@@ -1964,7 +1964,7 @@ msgid_plural "%1 minutes ago"
 msgstr[0] "Ett minutt siden"
 msgstr[1] "%1  minutter siden"
 
-#: settings/config/manageconnectionwidget.cpp:218
+#: settings/config/manageconnectionwidget.cpp:214
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last day, as "
@@ -1974,29 +1974,29 @@ msgid_plural "%1 hours ago"
 msgstr[0] "En time siden"
 msgstr[1] "%1 timer siden"
 
-#: settings/config/manageconnectionwidget.cpp:223
+#: settings/config/manageconnectionwidget.cpp:219
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Yesterday"
 msgstr "I går"
 
-#: settings/config/manageconnectionwidget.cpp:229
+#: settings/config/manageconnectionwidget.cpp:225
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
 msgid "Never"
 msgstr "Aldri"
 
-#: settings/config/manageconnectionwidget.cpp:377
+#: settings/config/manageconnectionwidget.cpp:372
 msgctxt "Tooltip for disabled tab when no VPN plugins are installed"
 msgid "No VPN plugins were found"
 msgstr "Fant ingen VPN-programtillegg"
 
-#: settings/config/manageconnectionwidget.cpp:421
+#: settings/config/manageconnectionwidget.cpp:416
 msgctxt "File chooser dialog title for importing VPN"
 msgid "Import VPN connection settings"
 msgstr "Importer innstillinger for VPN-tilkopling"
 
-#: settings/config/manageconnectionwidget.cpp:459
+#: settings/config/manageconnectionwidget.cpp:454
 #, kde-format
 msgid ""
 "None of the supported plugins implement importing operation for file %1."
@@ -2004,37 +2004,37 @@ msgstr ""
 "Ingen av de programtilleggene som er støttet kan utføre importhandling for "
 "fila %1."
 
-#: settings/config/manageconnectionwidget.cpp:459
-#: settings/config/manageconnectionwidget.cpp:461
+#: settings/config/manageconnectionwidget.cpp:454
+#: settings/config/manageconnectionwidget.cpp:456
 msgid "Error importing VPN connection settings"
 msgstr "Feil ved import av innstillinger for VPN-tilkopling"
 
-#: settings/config/manageconnectionwidget.cpp:488
+#: settings/config/manageconnectionwidget.cpp:483
 msgctxt "File chooser dialog title for exporting VPN"
 msgid "Export VPN"
 msgstr "Eksporter VPN"
 
-#: settings/config/manageconnectionwidget.cpp:495
+#: settings/config/manageconnectionwidget.cpp:490
 msgid "VPN connection successfully exported"
 msgstr "VPN-tilkopling  vellykket eksportert"
 
-#: settings/config/manageconnectionwidget.cpp:495
+#: settings/config/manageconnectionwidget.cpp:490
 msgid "Success"
 msgstr "Vellykket"
 
-#: settings/config/manageconnectionwidget.cpp:495
+#: settings/config/manageconnectionwidget.cpp:490
 msgid "Do not show again"
 msgstr "Ikke vis igjen"
 
-#: settings/config/manageconnectionwidget.cpp:497
+#: settings/config/manageconnectionwidget.cpp:492
 msgid "Error exporting VPN connection settings"
 msgstr "Feil ved eksport av innstillinger for VPN-tilkopling"
 
-#: settings/config/manageconnectionwidget.cpp:500
+#: settings/config/manageconnectionwidget.cpp:495
 msgid "Could not export VPN connection settings"
 msgstr "Klarte ikke eksportere innstillinger for VPN-tilkopling"
 
-#: settings/config/manageconnectionwidget.cpp:537
+#: settings/config/manageconnectionwidget.cpp:531
 msgid ""
 "Connection edit option failed, make sure that NetworkManager is properly "
 "running."
@@ -2042,21 +2042,21 @@ msgstr ""
 "Klarte ikke å redigere forbindelser, kontroller at NetworkManager kjører "
 "ordentlig."
 
-#: settings/config/manageconnectionwidget.cpp:577
+#: settings/config/manageconnectionwidget.cpp:571
 msgid "Connection create operation failed."
 msgstr "Klarte ikke å opprette tilkobling."
 
-#: settings/config/manageconnectionwidget.cpp:601
+#: settings/config/manageconnectionwidget.cpp:595
 #, kde-format
 msgctxt "Warning message on attempting to delete a connection"
 msgid "Do you really want to delete the connection '%1'?"
 msgstr "Er du sikker på at du vil slette tilkoblingen «%1»?"
 
-#: settings/config/manageconnectionwidget.cpp:602
+#: settings/config/manageconnectionwidget.cpp:596
 msgid "Confirm Delete"
 msgstr "Bekreft sletting"
 
-#: settings/config/manageconnectionwidget.cpp:762
+#: settings/config/manageconnectionwidget.cpp:756
 msgid "Connected"
 msgstr "Tilkoblet"
 
