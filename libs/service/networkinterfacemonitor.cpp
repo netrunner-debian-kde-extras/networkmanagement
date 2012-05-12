@@ -43,6 +43,7 @@ public:
     QHash<QString, NetworkInterfaceActivatableProvider *> providers;
     ConnectionList * connectionList;
     ActivatableList * activatableList;
+    QWeakPointer<PinDialog> dialog;
 };
 
 NetworkInterfaceMonitor::NetworkInterfaceMonitor(ConnectionList * connectionList, ActivatableList * activatableList, QObject * parent)
@@ -51,22 +52,22 @@ NetworkInterfaceMonitor::NetworkInterfaceMonitor(ConnectionList * connectionList
     Q_D(NetworkInterfaceMonitor);
     d->connectionList = connectionList;
     d->activatableList = activatableList;
+    d->dialog.clear();
 
     QObject::connect(Solid::Control::NetworkManagerNm09::notifier(),
-            SIGNAL(networkInterfaceAdded(const QString&)),
-            this, SLOT(networkInterfaceAdded(const QString&)));
+            SIGNAL(networkInterfaceAdded(QString)),
+            this, SLOT(networkInterfaceAdded(QString)));
     QObject::connect(Solid::Control::NetworkManagerNm09::notifier(),
-            SIGNAL(networkInterfaceRemoved(const QString&)),
-            this, SLOT(networkInterfaceRemoved(const QString&)));
+            SIGNAL(networkInterfaceRemoved(QString)),
+            this, SLOT(networkInterfaceRemoved(QString)));
 
     foreach (Solid::Control::NetworkInterfaceNm09 * iface, Solid::Control::NetworkManagerNm09::networkInterfaces()) {
         networkInterfaceAdded(iface->uni());
     }
 
-    dialog = 0;
     QObject::connect(Solid::Control::ModemManager::notifier(),
-            SIGNAL(modemInterfaceAdded(const QString&)),
-            this, SLOT(modemInterfaceAdded(const QString&)));
+            SIGNAL(modemInterfaceAdded(QString)),
+            this, SLOT(modemInterfaceAdded(QString)));
 
     foreach (Solid::Control::ModemInterface * iface, Solid::Control::ModemManager::modemInterfaces()) {
         modemInterfaceAdded(iface->udi());
@@ -112,20 +113,21 @@ void NetworkInterfaceMonitor::networkInterfaceRemoved(const QString & uni)
     Q_D(NetworkInterfaceMonitor);
     NetworkInterfaceActivatableProvider * provider = d->providers.take(uni);
     d->connectionList->unregisterConnectionHandler(provider);
-    delete provider;
+    provider->deleteLater();
 }
 
 void NetworkInterfaceMonitor::modemInterfaceAdded(const QString & udi)
 {
+    Q_D(NetworkInterfaceMonitor);
     Solid::Control::ModemGsmCardInterface * modem = qobject_cast<Solid::Control::ModemGsmCardInterface *>(Solid::Control::ModemManager::findModemInterface(udi, Solid::Control::ModemInterface::GsmCard));
 
     if (!modem) {
         return;
     }
 
-    connect(modem, SIGNAL(unlockRequiredChanged(const QString &)), SLOT(requestPin(const QString &)));
+    connect(modem, SIGNAL(unlockRequiredChanged(QString)), SLOT(requestPin(QString)));
 
-    if (dialog || modem->unlockRequired().isEmpty()) {
+    if (d->dialog || modem->unlockRequired().isEmpty()) {
         return;
     }
 
@@ -141,6 +143,7 @@ void NetworkInterfaceMonitor::modemInterfaceAdded(const QString & udi)
 
 void NetworkInterfaceMonitor::requestPin(const QString & unlockRequired)
 {
+    Q_D(NetworkInterfaceMonitor);
     kDebug() << "unlockRequired == " << unlockRequired;
     if (unlockRequired.isEmpty()) {
         return;
@@ -151,21 +154,21 @@ void NetworkInterfaceMonitor::requestPin(const QString & unlockRequired)
         return;
     }
 
-    if (dialog) {
+    if (d->dialog) {
         kDebug() << "PinDialog already running";
         return;
     }
 
     if (unlockRequired == QLatin1String("sim-pin")) {
-        dialog = new PinDialog(modem, PinDialog::Pin);
+        d->dialog = new PinDialog(modem, PinDialog::Pin);
     } else if (unlockRequired == QLatin1String("sim-puk")) {
-        dialog = new PinDialog(modem, PinDialog::PinPuk);
+        d->dialog = new PinDialog(modem, PinDialog::PinPuk);
     } else {
         kWarning() << "Unhandled unlock request for '" << unlockRequired << "'";
         return;
     }
 
-    if (dialog->exec() != QDialog::Accepted) {
+    if (d->dialog.data()->exec() != QDialog::Accepted) {
         goto OUT;
     }
 
@@ -175,27 +178,29 @@ void NetworkInterfaceMonitor::requestPin(const QString & unlockRequired)
     {
         QDBusPendingCallWatcher *watcher = 0;
     
-        if (dialog->type() == PinDialog::Pin) {
-            QDBusPendingCall reply = modem->sendPin(dialog->pin());
+        if (d->dialog.data()->type() == PinDialog::Pin) {
+            QDBusPendingCall reply = modem->sendPin(d->dialog.data()->pin());
             watcher = new QDBusPendingCallWatcher(reply, modem);
-        } else if (dialog->type() == PinDialog::PinPuk) {
-            QDBusPendingCall reply = modem->sendPuk(dialog->puk(), dialog->pin());
+        } else if (d->dialog.data()->type() == PinDialog::PinPuk) {
+            QDBusPendingCall reply = modem->sendPuk(d->dialog.data()->puk(), d->dialog.data()->pin());
             watcher = new QDBusPendingCallWatcher(reply, modem);
         }
     
-        connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher *)), SLOT(onSendPinArrived(QDBusPendingCallWatcher *)));
+        connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)), SLOT(onSendPinArrived(QDBusPendingCallWatcher*)));
     }
 #else
-    if (dialog->type() == PinDialog::Pin) {
-        modem->sendPin(dialog->pin());
-    } else if (dialog->type() == PinDialog::PinPuk) {
-        modem->sendPuk(dialog->puk(), dialog->pin());
+    if (d->dialog.data()->type() == PinDialog::Pin) {
+        modem->sendPin(d->dialog.data()->pin());
+    } else if (d->dialog.data()->type() == PinDialog::PinPuk) {
+        modem->sendPuk(d->dialog.data()->puk(), d->dialog.data()->pin());
     }
 #endif
 
 OUT:
-    delete dialog;
-    dialog = 0;
+    if(d->dialog) {
+        d->dialog.data()->deleteLater();
+    }
+    d->dialog.clear();
 }
 
 void NetworkInterfaceMonitor::onSendPinArrived(QDBusPendingCallWatcher * watcher)

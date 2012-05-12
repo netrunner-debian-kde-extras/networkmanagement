@@ -2,19 +2,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2011.
+# Serdar Soytetir <tulliana@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2012-03-20 18:01+0100\n"
-"PO-Revision-Date: 2011-11-10 20:22+0200\n"
-"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"PO-Revision-Date: 2012-04-17 21:56+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
-"Language: \n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: activatableitem.cpp:116
@@ -328,6 +329,8 @@ msgid ""
 "We need at least NetworkManager-%1 to work properly, found '%2'. Please "
 "upgrade to a newer version."
 msgstr ""
+"Bu uygulamanın düzgün çalışabilmesi için en azından NetworkManager-"
+"%1gerekiyor, sistemdeki '%2'. Lütfen daha yeni bir sürüme yükseltin."
 
 #: nmpopup.cpp:659
 msgctxt "pressed show more button"
