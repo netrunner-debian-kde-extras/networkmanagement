@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-03-20 18:01+0100\n"
+"POT-Creation-Date: 2012-06-15 13:51+0200\n"
 "PO-Revision-Date: 2011-10-12 11:12+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -232,31 +232,31 @@ msgctxt "wired interface network cable unplugged"
 msgid "Cable Unplugged"
 msgstr "Kabel niet ingeplugd"
 
-#: networkmanager.cpp:618
+#: networkmanager.cpp:675
 msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr "Geen netwerkinterfaces"
 
-#: networkmanager.cpp:669
+#: networkmanager.cpp:726
 msgid "VPN Connections"
 msgstr "VPN-verbindingen"
 
-#: networkmanager.cpp:683
+#: networkmanager.cpp:740
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
 msgstr "Verbinding verbroken"
 
-#: networkmanager.cpp:686
+#: networkmanager.cpp:743
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
 msgstr "Draadloos in software uitgeschakeld"
 
-#: networkmanager.cpp:689
+#: networkmanager.cpp:746
 msgctxt "tooltip, all interfaces are down"
 msgid "Networking disabled"
 msgstr "Netwerksysteem uitgeschakeld"
 
-#: networkmanager.cpp:692
+#: networkmanager.cpp:749
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
 msgstr "Draadloos in hardware uitgeschakeld"

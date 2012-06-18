@@ -57,6 +57,15 @@ class NetworkManagerApplet : public Plasma::PopupApplet
 {
 Q_OBJECT
 public:
+    enum SystrayOverlayOption {
+        NoOverlay       = 0x00,
+        Locked          = 0x01,
+        PreviousOverlay = 0x02,
+        StatusOverlay   = 0x04,
+        NeedAuth        = 0x08,
+    };
+    Q_DECLARE_FLAGS(SystrayOverlayOptions, SystrayOverlayOption);
+
     NetworkManagerApplet(QObject * parent, const QVariantList & args);
     ~NetworkManagerApplet();
     /* reimp Plasma::Applet */
@@ -125,9 +134,14 @@ private Q_SLOTS:
     void setupAccessPointSignals(const QString &);
 
 private:
+    SystrayOverlayOptions m_systrayOverlayOption;
+
+    bool needToUpdateOverlay();
     bool hasInterfaceOfType(Solid::Control::NetworkInterfaceNm09::Type type);
     void setupInterfaceSignals();
     QString svgElement(Solid::Control::NetworkInterfaceNm09 *iface);
+    QString m_currentSvgElement;
+    QString m_currentPixmapIconName;
 
     void paintStatusOverlay(QPainter* p, QRect & rect);
     void paintNeedAuthOverlay(QPainter* p, QRect & rect);
@@ -180,5 +194,6 @@ private:
     Plasma::FrameSvg* m_meterBgSvg;
     Plasma::FrameSvg* m_meterFgSvg;
 };
+Q_DECLARE_OPERATORS_FOR_FLAGS(NetworkManagerApplet::SystrayOverlayOptions)
 
 #endif

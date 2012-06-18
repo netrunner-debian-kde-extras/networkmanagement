@@ -1,0 +1,5754 @@
+# Translation of libknetworkmanager.po into Serbian.
+# Chusslove Illich <caslav.ilic@gmx.net>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: libknetworkmanager\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2012-05-24 13:59+0200\n"
+"PO-Revision-Date: 2012-06-02 15:25+0200\n"
+"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr@ijekavian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+
+#: vpnplugins/novellvpn/novellvpnwidget.cpp:63
+msgctxt "@window:title NovellVPN advanced connection options"
+msgid "NovellVPN advanced options"
+msgstr "Напредне опције Новеловог ВПН‑а"
+
+#: vpnplugins/openconnect/openconnectauth.cpp:278
+msgid "Contacting host, please wait..."
+msgstr "Обраћам се домаћину, сачекајте..."
+
+#. i18n: file: vpnplugins/pptp/pptpauth.ui:39
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPassword)
+#. i18n: file: vpnplugins/pptp/pptpprop.ui:144
+#. i18n: ectx: property (text), widget (QCheckBox, cb_showPassword)
+#. i18n: file: libs/ui/cdma.ui:79
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#. i18n: file: libs/ui/pppoe.ui:72
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#. i18n: file: libs/ui/security/leap.ui:46
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#. i18n: file: libs/ui/security/wep.ui:144
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#. i18n: file: libs/ui/security/wpapsk.ui:45
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#: vpnplugins/openconnect/openconnectauth.cpp:408
+#: vpnplugins/openvpn/openvpnauth.cpp:124
+#: libs/ui/security/wirelesssecurityauth.cpp:98
+#: libs/ui/security/security8021xauth.cpp:91 rc.cpp:650 rc.cpp:680 rc.cpp:971
+#: rc.cpp:1331 rc.cpp:1400 rc.cpp:1448 rc.cpp:1460
+msgid "&Show password"
+msgstr "&Прикажи лозинку"
+
+# >> @action:button
+#: vpnplugins/openconnect/openconnectauth.cpp:458
+msgid "Login"
+msgstr "Пријави се"
+
+#: vpnplugins/openconnect/openconnectauth.cpp:506
+#, kde-format
+msgid ""
+"Check failed for certificate from VPN server \"%1\".\n"
+"Reason: %2\n"
+"Accept it anyway?"
+msgstr ""
+"Провера сертификата са ВПН сервера „%1“ није прошла.\n"
+"Разлог: %2\n"
+"Свеједно га прихватити?"
+
+#: vpnplugins/openconnect/openconnectauth.cpp:577
+msgid "Connection attempt was unsuccessful."
+msgstr "Покушај повезивања није успео."
+
+#: vpnplugins/openvpn/openvpnauth.cpp:69 vpnplugins/openvpn/openvpnauth.cpp:95
+msgid "Key Password:"
+msgstr "Лозинка кључа:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnauth.ui:23
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:363
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: vpnplugins/openvpn/openvpnauth.cpp:77 vpnplugins/openvpn/openvpnauth.cpp:86
+#: libs/ui/security/leapauthwidget.cpp:65
+#: libs/ui/security/wpaauthwidget.cpp:65
+#: libs/ui/security/security8021xauth.cpp:58 rc.cpp:311 rc.cpp:389
+msgid "Password:"
+msgstr "Лозинка:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:1085
+#. i18n: ectx: property (text), widget (QLabel, label_15)
+#: vpnplugins/openvpn/openvpnauth.cpp:106 rc.cpp:569
+msgid "Proxy Password:"
+msgstr "Лозинка проксија:"
+
+#: vpnplugins/openvpn/openvpn.cpp:165
+msgid "Could not open file"
+msgstr "Не могу да отворим фајл"
+
+#: vpnplugins/openvpn/openvpn.cpp:210 vpnplugins/openvpn/openvpn.cpp:231
+#: vpnplugins/openvpn/openvpn.cpp:417
+#, kde-format
+msgid "Unknown option: %1"
+msgstr "Непозната опција: %1"
+
+#: vpnplugins/openvpn/openvpn.cpp:214 vpnplugins/openvpn/openvpn.cpp:235
+#: vpnplugins/openvpn/openvpn.cpp:253 vpnplugins/openvpn/openvpn.cpp:267
+#: vpnplugins/openvpn/openvpn.cpp:285 vpnplugins/openvpn/openvpn.cpp:359
+#: vpnplugins/openvpn/openvpn.cpp:408 vpnplugins/openvpn/openvpn.cpp:439
+#, kde-format
+msgid "Invalid number of arguments (expected 1) in option: %1"
+msgstr "Лош број аргумената (очекиван један) у опцији: %1"
+
+#: vpnplugins/openvpn/openvpn.cpp:249 vpnplugins/openvpn/openvpn.cpp:263
+#, kde-format
+msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
+msgstr "Лоша величина (треба да је између 0 и 0xFFFF) у опцији: %1"
+
+#: vpnplugins/openvpn/openvpn.cpp:281
+#, kde-format
+msgid "Invalid size (should be between 0 and 604800) in option: %1"
+msgstr "Лоша величина (треба да је између 0 и 604800) у опцији: %1"
+
+#: vpnplugins/openvpn/openvpn.cpp:333
+#, kde-format
+msgid "Invalid proxy option: %1"
+msgstr "Лоша опција проксија: %1"
+
+#: vpnplugins/openvpn/openvpn.cpp:356
+#, kde-format
+msgid "Invalid port (should be between 1 and 65535) in option: %1"
+msgstr "Лош порт (треба да је између 1 и 65535) у опцији: %1"
+
+#: vpnplugins/openvpn/openvpn.cpp:427
+#, kde-format
+msgid "Invalid number of arguments (expected 2) in option: %1"
+msgstr "Лош број аргумента (очекивана два) у опцији: %1"
+
+#: vpnplugins/openvpn/openvpn.cpp:451
+#, kde-format
+msgid "File %1 is not a valid OpenVPN's client configuration file"
+msgstr "Фајл %1 није правилан ОпенВПН‑ов поставни фајл клијента."
+
+#: vpnplugins/openvpn/openvpn.cpp:456
+#, kde-format
+msgid "File %1 is not a valid OpenVPN configuration (no remote)."
+msgstr "Фајл %1 није правилна ОпенВПН‑ова постава (нема удаљеног)."
+
+#: vpnplugins/openvpn/openvpn.cpp:507
+msgid "Could not open file for writing"
+msgstr "Не могу да отворим фајл за писање."
+
+#: vpnplugins/openvpn/openvpnwidget.cpp:127
+#: vpnplugins/openvpn/openvpnwidget.cpp:151
+msgctxt "@item:inlist Item added when OpenVPN cipher lookup failed"
+msgid "OpenVPN cipher lookup failed"
+msgstr "неуспело тражење ОпенВПН‑овог шифрара"
+
+#: vpnplugins/openvpn/openvpnwidget.cpp:134
+msgctxt "@item::inlist Default openvpn cipher item"
+msgid "Default"
+msgstr "подразумеван"
+
+#: vpnplugins/openvpn/openvpnwidget.cpp:148
+msgctxt "@item:inlist Item added when OpenVPN cipher lookup failed"
+msgid "No OpenVPN ciphers found"
+msgstr "није нађен ниједан ОпенВПН‑ов шифрар"
+
+#: vpnplugins/strongswan/strongswanauth.cpp:70
+msgctxt "@label:textbox password label for private key password"
+msgid "Private Key Password:"
+msgstr "Лозинка приватног кључа:"
+
+#: vpnplugins/strongswan/strongswanauth.cpp:72
+msgctxt "@label:textbox password label for smartcard pin"
+msgid "PIN:"
+msgstr "ПИН:"
+
+#: vpnplugins/strongswan/strongswanauth.cpp:74
+msgctxt "@label:textbox password label for EAP password"
+msgid "Password:"
+msgstr "Лозинка:"
+
+#: vpnplugins/strongswan/strongswanauth.cpp:111
+msgid ""
+"Configuration uses ssh-agent for authentication, but no ssh-agent found "
+"running."
+msgstr ""
+"Постава задаје ssh-agent за аутентификацију, али нема ниједног у погону."
+
+#: vpnplugins/vpnc/vpnc.cpp:75
+msgid "Error decrypting the obfuscated password"
+msgstr "Грешка при дешифровању замагљене лозинке"
+
+#. i18n: file: vpnplugins/openconnect/openconnectauth.ui:133
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
+#: vpnplugins/vpnc/vpnc.cpp:75 settings/config/manageconnectionwidget.cpp:495
+#: settings/config/manageconnectionwidget.cpp:548 rc.cpp:296
+msgid "Error"
+msgstr "Грешка"
+
+#: vpnplugins/vpnc/vpnc.cpp:130
+#, kde-format
+msgid "File %1 could not be opened."
+msgstr "Фајл %1 не може да се отвори."
+
+#: vpnplugins/vpnc/vpnc.cpp:140
+msgid "Needed executable cisco-decrypt could not be found."
+msgstr "Неопходна наредба cisco-decrypt не може да се нађе."
+
+# rewrite-msgid: /vpnc software/VPNC/
+#: vpnplugins/vpnc/vpnc.cpp:257
+#, kde-format
+msgid ""
+"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
+"through TCP which is currently not supported in the vpnc software.\n"
+"\n"
+"The connection can still be created, with TCP tunneling disabled, however it "
+"may not work as expected."
+msgstr ""
+"Фајл ВПН поставки „%1“ задаје тунеловање ВПН саобраћаја кроз ТЦП, што ВПНЦ "
+"тренутно не подржава.\n"
+"\n"
+"Веза ће свеједно бити успостављена, без ТЦП тунеловања, али можда неће "
+"радити према очекивању."
+
+#: vpnplugins/vpnc/vpnc.cpp:257
+msgid "Not supported"
+msgstr "Неподржано"
+
+#: vpnplugins/vpnc/vpnc.cpp:282
+#, kde-format
+msgid "%1: file format error."
+msgstr "%1: грешка фајл формата."
+
+#: vpnplugins/vpnc/vpnc.cpp:302
+#, kde-format
+msgid "%1: file could not be created"
+msgstr "%1: фајл не може да се направи."
+
+#: libs/internals/tooltips.cpp:43
+msgctxt "@info:tooltip"
+msgid "Interface type"
+msgstr "Тип сучеља"
+
+#: libs/internals/tooltips.cpp:44
+msgctxt "@info:tooltip"
+msgid "System device name"
+msgstr "Системско име уређаја"
+
+#: libs/internals/tooltips.cpp:45
+msgctxt "@info:tooltip"
+msgid "System driver name"
+msgstr "Системско име драјвера"
+
+#: libs/internals/tooltips.cpp:46
+msgctxt "@info:tooltip"
+msgid "Network interface status"
+msgstr "Стање мрежног сучеља"
+
+#: libs/internals/tooltips.cpp:47
+msgctxt "@info:tooltip"
+msgid "Hardware address of a network interface"
+msgstr "Хардверска адреса мрежног сучеља"
+
+#: libs/internals/tooltips.cpp:48
+msgctxt "@info:tooltip"
+msgid "Network interface current bit rate"
+msgstr "Тренутни битски проток мрежног сучеља"
+
+#: libs/internals/tooltips.cpp:49
+msgctxt "@info:tooltip"
+msgid "Maximum speed of the network interface"
+msgstr "Највећа брзина мрежног сучеља"
+
+#: libs/internals/tooltips.cpp:50
+msgctxt "@info:tooltip"
+msgid "IPv4 network address"
+msgstr "ИПв4 адреса мреже"
+
+#: libs/internals/tooltips.cpp:51
+msgctxt "@info:tooltip"
+msgid "Network name servers"
+msgstr "Именски сервери мреже"
+
+#: libs/internals/tooltips.cpp:52
+msgctxt "@info:tooltip"
+msgid "Network domains"
+msgstr "Мрежни домени"
+
+#: libs/internals/tooltips.cpp:53
+msgctxt "@info:tooltip"
+msgid "Network routes"
+msgstr "Мрежне руте"
+
+# rewrite-msgid: /wifi/wireless/
+#: libs/internals/tooltips.cpp:55
+msgctxt "@info:tooltip"
+msgid "Signal strength of the wifi network"
+msgstr "Јачина сигнала бежичне мреже"
+
+#: libs/internals/tooltips.cpp:56
+msgctxt "@info:tooltip"
+msgid "Name of the wireless network in use"
+msgstr "Име бежичне мреже у употреби"
+
+#: libs/internals/tooltips.cpp:57
+msgctxt "@info:tooltip"
+msgid "Operation mode of wireless network"
+msgstr "Режим рада бежичне мреже"
+
+#: libs/internals/tooltips.cpp:58
+msgctxt "@info:tooltip"
+msgid "Hardware address of the active access point"
+msgstr "Хардверска адреса активне приступне тачке"
+
+#: libs/internals/tooltips.cpp:59
+msgctxt "@info:tooltip"
+msgid "The radio channel frequency that the access point is operating on"
+msgstr "Фреквенција радио канала на којем ради приступна тачка"
+
+#: libs/internals/tooltips.cpp:60
+msgctxt "@info:tooltip"
+msgid "Subjective network security level description"
+msgstr "Субјективни опис степена безбедности мреже"
+
+# rewrite-msgid: /Wifi Protected Access//
+#: libs/internals/tooltips.cpp:61
+msgctxt "@info:tooltip"
+msgid ""
+"Flags describing the access point's capabilities according to WPA (Wifi "
+"Protected Access)"
+msgstr "Заставице које описују способности приступне тачке према ВПА‑у"
+
+# rewrite-msgid: /Robust Secure Network//
+#: libs/internals/tooltips.cpp:62
+msgctxt "@info:tooltip"
+msgid ""
+"Flags describing the access point's capabilities according to RSN (Robust "
+"Secure Network)"
+msgstr "Заставице које описују способности приступне тачке према РСН‑у"
+
+#: libs/internals/tooltips.cpp:65
+msgctxt " interface type"
+msgid "Type"
+msgstr "Тип"
+
+#: libs/internals/tooltips.cpp:66
+msgctxt " network device name eg eth0"
+msgid "Interface"
+msgstr "Сучеље"
+
+#: libs/internals/tooltips.cpp:67
+msgctxt " system driver name"
+msgid "Driver"
+msgstr "Драјвер"
+
+#: libs/internals/tooltips.cpp:68
+msgctxt " network interface status"
+msgid "Status"
+msgstr "Стање"
+
+#: libs/internals/tooltips.cpp:70
+msgctxt " this is the hardware address of a network interface"
+msgid "Hardware address (Wired)"
+msgstr "Хардверска адреса (жичана)"
+
+#: libs/internals/tooltips.cpp:71
+msgctxt " network connection bit rate"
+msgid "Bit rate"
+msgstr "Битски проток"
+
+#: libs/internals/tooltips.cpp:73
+msgctxt " The network device's maximum speed"
+msgid "Max speed"
+msgstr "Највећа брзина"
+
+#: libs/internals/tooltips.cpp:74
+msgctxt " IPv4 address"
+msgid "IP address"
+msgstr "ИП адреса"
+
+#: libs/internals/tooltips.cpp:75
+msgctxt " network name servers"
+msgid "Name servers"
+msgstr "Именски сервери"
+
+#: libs/internals/tooltips.cpp:76
+msgctxt " network domains"
+msgid "Domains"
+msgstr "Домени"
+
+#: libs/internals/tooltips.cpp:77
+msgctxt " network routes"
+msgid "Routes"
+msgstr "Руте"
+
+#: libs/internals/tooltips.cpp:80
+msgctxt " The signal strength of the wifi network"
+msgid "Strength"
+msgstr "Јачина"
+
+#: libs/internals/tooltips.cpp:82
+msgctxt " SSID is a friendly name that identifies a 802.11 WLAN."
+msgid "SSID"
+msgstr "ССИД"
+
+#: libs/internals/tooltips.cpp:83
+msgctxt " the operation mode of wi-fi network"
+msgid "Mode"
+msgstr "Режим"
+
+#: libs/internals/tooltips.cpp:85
+msgctxt " Active access point MAC address"
+msgid "Access point"
+msgstr "Приступна тачка"
+
+#: libs/internals/tooltips.cpp:87
+msgctxt ""
+" the frequency of the radio channel that the access point is operating on"
+msgid "Frequency"
+msgstr "Фреквенција"
+
+#: libs/internals/tooltips.cpp:88
+msgctxt " network security level, e.g. high, low"
+msgid "Security"
+msgstr "Безбедност"
+
+#: libs/internals/tooltips.cpp:90
+msgctxt ""
+" Flags describing the access point's capabilities according to WPA (Wifi "
+"Protected Access)"
+msgid "WPA flags"
+msgstr "ВПА заставице"
+
+#: libs/internals/tooltips.cpp:92
+msgctxt ""
+"Flags describing the access point's capabilities according to RSN (Robust "
+"Secure Network)"
+msgid "RSN(WPA2) flags"
+msgstr "РСН (ВПА2) заставице"
+
+#: libs/internals/uiutils.cpp:50 libs/internals/uiutils.cpp:79
+msgctxt "title of the interface widget in nm's popup"
+msgid "Wired Ethernet"
+msgstr "Жичано етернетско"
+
+#: libs/internals/uiutils.cpp:53
+msgctxt "title of the interface widget in nm's popup"
+msgid "Wireless 802.11"
+msgstr "Бежично 802.11"
+
+#: libs/internals/uiutils.cpp:56 libs/internals/uiutils.cpp:69
+msgctxt "title of the interface widget in nm's popup"
+msgid "Mobile Broadband"
+msgstr "Мобилно широкопојасно"
+
+#: libs/internals/uiutils.cpp:64
+msgctxt "title of the interface widget in nm's popup"
+msgid "Serial Modem"
+msgstr "Серијско модемско"
+
+#: libs/internals/uiutils.cpp:163
+msgctxt "description of unknown network interface state"
+msgid "Unknown"
+msgstr "Непознато"
+
+#: libs/internals/uiutils.cpp:166
+msgctxt "description of unmanaged network interface state"
+msgid "Unmanaged"
+msgstr "Неуправљано"
+
+#: libs/internals/uiutils.cpp:169
+msgctxt "description of unavailable network interface state"
+msgid "Unavailable"
+msgstr "Недоступно"
+
+#: libs/internals/uiutils.cpp:172
+msgctxt "description of unconnected network interface state"
+msgid "Not connected"
+msgstr "Није повезано"
+
+#: libs/internals/uiutils.cpp:175
+msgctxt "description of preparing to connect network interface state"
+msgid "Preparing to connect"
+msgstr "Припремам повезивање"
+
+#: libs/internals/uiutils.cpp:178
+msgctxt "description of configuring hardware network interface state"
+msgid "Configuring interface"
+msgstr "Подешавам сучеље"
+
+#: libs/internals/uiutils.cpp:181
+msgctxt "description of waiting for authentication network interface state"
+msgid "Waiting for authorization"
+msgstr "Чекам овлашћење"
+
+#: libs/internals/uiutils.cpp:184
+msgctxt "network interface doing dhcp request in most cases"
+msgid "Setting network address"
+msgstr "Постављам мрежну адресу"
+
+#: libs/internals/uiutils.cpp:187
+msgctxt "is other action required to fully connect? captive portals, etc."
+msgid "Checking further connectivity"
+msgstr "Проверавам даљу повезивост"
+
+#: libs/internals/uiutils.cpp:190
+msgctxt ""
+"a secondary connection (e.g. VPN) has to be activated first to continue"
+msgid "Waiting for a secondary connection"
+msgstr "Чекам секундарну везу"
+
+#: libs/internals/uiutils.cpp:194
+msgctxt "network interface connected state label"
+msgid "Connected"
+msgstr "Повезано"
+
+#: libs/internals/uiutils.cpp:196
+#, kde-format
+msgctxt "network interface connected state label"
+msgid "Connected to %1"
+msgstr "Повезано на %1"
+
+#: libs/internals/uiutils.cpp:200
+msgctxt "network interface disconnecting state label"
+msgid "Deactivating connection"
+msgstr "Обустављам везу"
+
+#: libs/internals/uiutils.cpp:203
+msgctxt "network interface connection failed state label"
+msgid "Connection Failed"
+msgstr "Повезивање пропало"
+
+#: libs/internals/uiutils.cpp:206
+msgctxt "interface state"
+msgid "Error: Invalid state"
+msgstr "Грешка: лоше стање"
+
+#: libs/internals/uiutils.cpp:270
+#, kde-format
+msgctxt "Format for <Vendor> <Product>"
+msgid "%1 - %2"
+msgstr "%1 — %2"
+
+#: libs/internals/uiutils.cpp:339
+msgctxt "wireless network operation mode"
+msgid "Unassociated"
+msgstr "Непридружено"
+
+#: libs/internals/uiutils.cpp:342
+msgctxt "wireless network operation mode"
+msgid "Adhoc"
+msgstr "Импровизовано"
+
+#: libs/internals/uiutils.cpp:345
+msgctxt "wireless network operation mode"
+msgid "Managed"
+msgstr "Управљано"
+
+#: libs/internals/uiutils.cpp:348
+msgctxt "wireless network operation mode"
+msgid "Master"
+msgstr "Главно"
+
+#: libs/internals/uiutils.cpp:351
+msgctxt "wireless network operation mode"
+msgid "Repeater"
+msgstr "Понављач"
+
+#: libs/internals/uiutils.cpp:354
+msgid "INCORRECT MODE FIX ME"
+msgstr "ЛОШ РЕЖИМ ПОПРАВИ МЕ"
+
+#: libs/internals/uiutils.cpp:376
+msgctxt "wireless network cipher"
+msgid "Pairwise WEP40"
+msgstr "ВЕП40 по паровима"
+
+#: libs/internals/uiutils.cpp:378
+msgctxt "wireless network cipher"
+msgid "Pairwise WEP104"
+msgstr "ВЕП104 по паровима"
+
+#: libs/internals/uiutils.cpp:380
+msgctxt "wireless network cipher"
+msgid "Pairwise TKIP"
+msgstr "ТКИП по паровима"
+
+#: libs/internals/uiutils.cpp:382
+msgctxt "wireless network cipher"
+msgid "Pairwise CCMP"
+msgstr "ЦЦМП по паровима"
+
+#: libs/internals/uiutils.cpp:384
+msgctxt "wireless network cipher"
+msgid "Group WEP40"
+msgstr "ВЕП40 групно"
+
+#: libs/internals/uiutils.cpp:386
+msgctxt "wireless network cipher"
+msgid "Group WEP104"
+msgstr "ВЕП104 групно"
+
+#: libs/internals/uiutils.cpp:388
+msgctxt "wireless network cipher"
+msgid "Group TKIP"
+msgstr "ТКИП групно"
+
+#: libs/internals/uiutils.cpp:390
+msgctxt "wireless network cipher"
+msgid "Group CCMP"
+msgstr "ЦЦМП групно"
+
+#: libs/internals/uiutils.cpp:392
+msgctxt "wireless network cipher"
+msgid "PSK"
+msgstr "ПСК"
+
+#: libs/internals/uiutils.cpp:394
+msgctxt "wireless network cipher"
+msgid "802.1x"
+msgstr "802.1x"
+
+#: libs/internals/uiutils.cpp:403
+#, kde-format
+msgctxt "connection speed"
+msgid "%1 Bit/s"
+msgstr "%1 b/s"
+
+#: libs/internals/uiutils.cpp:405
+#, kde-format
+msgctxt "connection speed"
+msgid "%1 MBit/s"
+msgstr "%1 Mb/s"
+
+#: libs/internals/uiutils.cpp:407
+#, kde-format
+msgctxt "connection speed"
+msgid "%1 GBit/s"
+msgstr "%1 Gb/s"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:248
+msgctxt "@label no security"
+msgid "Insecure"
+msgstr "небезбедно"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:251
+msgctxt "@label WEP security"
+msgid "WEP"
+msgstr "ВЕП"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:254
+msgctxt "@label LEAP security"
+msgid "LEAP"
+msgstr "ЛЕАП"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:257
+msgctxt "@label Dynamic WEP security"
+msgid "Dynamic WEP"
+msgstr "динамички ВЕП"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:260
+msgctxt "@label WPA-PSK security"
+msgid "WPA-PSK"
+msgstr "ВПА‑ПСК"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:263
+msgctxt "@label WPA-EAP security"
+msgid "WPA-EAP"
+msgstr "ВПА‑ЕАП"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:266
+msgctxt "@label WPA2-PSK security"
+msgid "WPA2-PSK"
+msgstr "ВПА2‑ПСК"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:269
+msgctxt "@label WPA2-EAP security"
+msgid "WPA2-EAP"
+msgstr "ВПА‑ЕАП"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:273
+msgctxt "@label unknown security"
+msgid "Unknown security type"
+msgstr "непознат тип безбедности"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:284
+msgctxt "@info:tooltip no security"
+msgid "Insecure"
+msgstr "небезбедно"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:287
+msgctxt "@info:tooltip WEP security"
+msgid "WEP"
+msgstr "ВЕП"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:290
+msgctxt "@info:tooltip LEAP security"
+msgid "LEAP"
+msgstr "ЛЕАП"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:293
+msgctxt "@info:tooltip Dynamic WEP security"
+msgid "Dynamic WEP"
+msgstr "динамички ВЕП"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:296
+msgctxt "@info:tooltip WPA-PSK security"
+msgid "WPA-PSK"
+msgstr "ВПА‑ПСК"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:299
+msgctxt "@info:tooltip WPA-EAP security"
+msgid "WPA-EAP"
+msgstr "ВПА‑ЕАП"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:302
+msgctxt "@info:tooltip WPA2-PSK security"
+msgid "WPA2-PSK"
+msgstr "ВПА2‑ПСК"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:305
+msgctxt "@info:tooltip WPA2-EAP security"
+msgid "WPA2-EAP"
+msgstr "ВПА2‑ЕАП"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:309
+msgctxt "@info:tooltip unknown security"
+msgid "Unknown security type"
+msgstr "непознат тип безбедности"
+
+#: libs/service/networkinterfacemonitor.cpp:214
+#, kde-format
+msgctxt "Text in GSM PIN/PUK unlock error dialog"
+msgid "Error unlocking modem: %1"
+msgstr "Грешка при откључавању модема: %1"
+
+#: libs/service/networkinterfacemonitor.cpp:214
+msgctxt "Title for GSM PIN/PUK unlock error dialog"
+msgid "PIN/PUK unlock error"
+msgstr "Грешка при откључавању ПИН‑ом/ПУК‑ом"
+
+#: libs/service/notificationmanager.cpp:114
+#: libs/service/notificationmanager.cpp:446
+#, kde-format
+msgctxt "@info:status Notification text when connecting"
+msgid "Activating %1"
+msgstr "Активирам %1"
+
+#: libs/service/notificationmanager.cpp:118
+#: libs/service/notificationmanager.cpp:450
+#, kde-format
+msgctxt "@info:status Notification text when a connection has been activated"
+msgid "%1 activated"
+msgstr "%1 активирана"
+
+#: libs/service/notificationmanager.cpp:124
+#: libs/service/notificationmanager.cpp:455
+#, kde-format
+msgctxt "@info:status Notification text when connection has failed"
+msgid "Connection %1 failed"
+msgstr "Веза %1 прекинута"
+
+#: libs/service/notificationmanager.cpp:126
+#: libs/service/notificationmanager.cpp:457
+#, kde-format
+msgctxt "@info:status Notification text when deactivating a connection"
+msgid "%1 deactivated"
+msgstr "%1 деактивирана"
+
+#: libs/service/notificationmanager.cpp:143
+#, kde-format
+msgctxt "@info:status Notification text when wireless/gsm signal is low"
+msgid "Low signal on %1"
+msgstr "Слаб сигнал на %1"
+
+#: libs/service/notificationmanager.cpp:202
+#, kde-format
+msgctxt ""
+"@info:status interface (%2) status notification title when a connection (%1) "
+"is activating"
+msgid "Activating %1 on %2"
+msgstr "Активирам %1 на %2"
+
+#: libs/service/notificationmanager.cpp:212
+#, kde-format
+msgctxt ""
+"@info:status interface (%2) status notification title when a connection (%1) "
+"has successfully activated"
+msgid "%1 on %2"
+msgstr "%1 на %2"
+
+#: libs/service/notificationmanager.cpp:226
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"NowManagedReason"
+msgid "%1 because it is now being managed"
+msgstr "%1 зато што је сада под управљањем"
+
+#: libs/service/notificationmanager.cpp:229
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"NowUnmanagedReason"
+msgid "%1 because it is no longer being managed"
+msgstr "%1 зато што више није под управљањем"
+
+#: libs/service/notificationmanager.cpp:232
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ConfigFailedReason"
+msgid "%1 because configuration failed"
+msgstr "%1 због неуспеха поставе"
+
+#: libs/service/notificationmanager.cpp:235
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ConfigUnavailableReason"
+msgid "%1 because the configuration is unavailable"
+msgstr "%1 због недоступности поставе"
+
+#: libs/service/notificationmanager.cpp:238
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ConfigExpiredReason"
+msgid "%1 because the configuration has expired"
+msgstr "%1 због истицања поставе"
+
+#: libs/service/notificationmanager.cpp:241
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"NoSecretsReason"
+msgid "%1 because secrets were not provided"
+msgstr "%1 зато што нису биле задате тајне"
+
+#: libs/service/notificationmanager.cpp:244
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"AuthSupplicantDisconnectReason"
+msgid "%1 because the authorization supplicant disconnected"
+msgstr "%1 због прекида везе код пружаоца овлашћивања"
+
+#: libs/service/notificationmanager.cpp:247
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"AuthSupplicantConfigFailedReason"
+msgid "%1 because the authorization supplicant's configuration failed"
+msgstr "%1 због неуспелог подешавања пружаоца овлашћивања"
+
+#: libs/service/notificationmanager.cpp:250
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"AuthSupplicantFailedReason"
+msgid "%1 because the authorization supplicant failed"
+msgstr "%1 због неуспеха пружаоца овлашћивања"
+
+# rewrite-msgid: /timed out/timeout/
+#: libs/service/notificationmanager.cpp:253
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"AuthSupplicantTimeoutReason"
+msgid "%1 because the authorization supplicant timed out"
+msgstr "%1 због прековремена код пружаоца овлашћивања"
+
+#: libs/service/notificationmanager.cpp:256
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"PppStartFailedReason"
+msgid "%1 because PPP failed to start"
+msgstr "%1 због неуспелог покретања ППП‑а"
+
+#: libs/service/notificationmanager.cpp:259
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"PppDisconnectReason"
+msgid "%1 because PPP disconnected"
+msgstr "%1 због прекида везе код ППП‑у"
+
+#: libs/service/notificationmanager.cpp:262
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"PppFailedReason"
+msgid "%1 because PPP failed"
+msgstr "%1 због неуспеха ППП‑а"
+
+#: libs/service/notificationmanager.cpp:265
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"DhcpStartFailedReason"
+msgid "%1 because DHCP failed to start"
+msgstr "%1 због неуспелог покретања ДХЦП‑а"
+
+#: libs/service/notificationmanager.cpp:268
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"DhcpErrorReason"
+msgid "%1 because a DHCP error occurred"
+msgstr "%1 због грешке у ДХЦП‑у"
+
+#: libs/service/notificationmanager.cpp:271
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"DhcpFailedReason"
+msgid "%1 because DHCP failed "
+msgstr "%1 због неуспеха ДХЦП‑а"
+
+#: libs/service/notificationmanager.cpp:274
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"SharedStartFailedReason"
+msgid "%1 because the shared service failed to start"
+msgstr "%1 због неуспелог покретања дељеног сервиса"
+
+#: libs/service/notificationmanager.cpp:277
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"SharedFailedReason"
+msgid "%1 because the shared service failed"
+msgstr "%1 због неуспеха дељеног сервиса"
+
+#: libs/service/notificationmanager.cpp:280
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"AutoIpStartFailedReason"
+msgid "%1 because the auto IP service failed to start"
+msgstr "%1 због неуспелог покретања аутоматског ИП сервиса"
+
+#: libs/service/notificationmanager.cpp:283
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"AutoIpErrorReason"
+msgid "%1 because the auto IP service reported an error"
+msgstr "%1 зато што је аутоматски ИП сервис пријавио грешку"
+
+#: libs/service/notificationmanager.cpp:286
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"AutoIpFailedReason"
+msgid "%1 because the auto IP service failed"
+msgstr "%1 због неуспеха аутоматског ИП сервиса"
+
+#: libs/service/notificationmanager.cpp:289
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ModemBusyReason"
+msgid "%1 because the modem is busy"
+msgstr "%1 зато што је модем заузет"
+
+#: libs/service/notificationmanager.cpp:292
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ModemNoDialToneReason"
+msgid "%1 because the modem has no dial tone"
+msgstr "%1 зато што модем не даје тон бирања"
+
+#: libs/service/notificationmanager.cpp:295
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ModemNoCarrierReason"
+msgid "%1 because the modem shows no carrier"
+msgstr "%1 зато што модем не даје носач"
+
+# rewrite-msgid: /timed out/timeout/
+#: libs/service/notificationmanager.cpp:298
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ModemDialTimeoutReason"
+msgid "%1 because the modem dial timed out"
+msgstr "%1 због прековремена у модемском бирању"
+
+#: libs/service/notificationmanager.cpp:301
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ModemInitFailedReason"
+msgid "%1 because the modem could not be initialized"
+msgstr "%1 због неуспелог припремања модема"
+
+#: libs/service/notificationmanager.cpp:304
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"GsmApnSelectFailedReason"
+msgid "%1 because the GSM APN could not be selected"
+msgstr "%1 због неуспелог бирања ГСМ АПН‑а"
+
+#: libs/service/notificationmanager.cpp:307
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"GsmNotSearchingReason"
+msgid "%1 because the GSM modem is not searching"
+msgstr "%1 зато што ГСМ модем не тражи"
+
+#: libs/service/notificationmanager.cpp:310
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"GsmRegistrationDeniedReason"
+msgid "%1 because GSM network registration was denied"
+msgstr "%1 зато што је одбијена регистрација на ГСМ мрежу"
+
+# rewrite-msgid: /timed out/timeout/
+#: libs/service/notificationmanager.cpp:313
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"GsmRegistrationTimeoutReason"
+msgid "%1 because GSM network registration timed out"
+msgstr "%1 због прековремена у регистрацији на ГСМ мрежу"
+
+#: libs/service/notificationmanager.cpp:316
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"GsmRegistrationFailedReason"
+msgid "%1 because GSM registration failed"
+msgstr "%1 због неуспеле ГСМ регистрације"
+
+#: libs/service/notificationmanager.cpp:319
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"GsmPinCheckFailedReason"
+msgid "%1 because the GSM PIN check failed"
+msgstr "%1 због неуспеле провере ГСМ ПИН‑а"
+
+#: libs/service/notificationmanager.cpp:322
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"FirmwareMissingReason"
+msgid "%1 because firmware is missing"
+msgstr "%1 због недостатка фирмвера"
+
+#: libs/service/notificationmanager.cpp:325
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"DeviceRemovedReason"
+msgid "%1 because the device was removed"
+msgstr "%1 због уклањања уређаја"
+
+#: libs/service/notificationmanager.cpp:328
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"SleepingReason"
+msgid "%1 because the networking system is now sleeping"
+msgstr "%1 зато што мрежни систем сада спава"
+
+#: libs/service/notificationmanager.cpp:331
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ConnectionRemovedReason"
+msgid "%1 because the connection was removed"
+msgstr "%1 због уклањања везе"
+
+#: libs/service/notificationmanager.cpp:334
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"UserRequestedReason"
+msgid "%1 by request"
+msgstr "%1 на захтев"
+
+#: libs/service/notificationmanager.cpp:337
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"CarrierReason"
+msgid "%1 because the cable was disconnected"
+msgstr "%1 због извлачења кабла"
+
+#: libs/service/notificationmanager.cpp:505
+#: libs/service/notificationmanager.cpp:517
+#, kde-format
+msgctxt "@info:status Notification for hardware added"
+msgid "%1 attached"
+msgstr "%1 прикачен"
+
+#: libs/service/notificationmanager.cpp:506
+msgctxt "@action"
+msgid "Create Connection"
+msgstr "Направи везу"
+
+#: libs/service/notificationmanager.cpp:506
+msgctxt "@action"
+msgid "Close"
+msgstr "Затвори"
+
+#: libs/service/notificationmanager.cpp:553
+#, kde-format
+msgctxt ""
+"@info:status Notification for hardware removed giving vendor supplied "
+"product name"
+msgid "%1 removed"
+msgstr "%1 уклоњен"
+
+#: libs/service/notificationmanager.cpp:557
+msgctxt ""
+"@info:status Notification for hardware removed used if we don't have its "
+"user-visible name"
+msgid "Network interface removed"
+msgstr "Мрежно сучеље уклоњено"
+
+#: libs/service/notificationmanager.cpp:590
+#, kde-format
+msgctxt ""
+"@info:status Notification text when a single wireless network was found"
+msgid "Wireless network %1 found"
+msgstr "Пронађена бежична мрежа %1"
+
+#: libs/service/notificationmanager.cpp:593
+#, kde-format
+msgctxt ""
+"@info:status Notification text when multiple wireless networks are found. %2 "
+"is a list of networks, and the %1 value (not printed) is just used to "
+"determine the plural form of network."
+msgid "<b>New wireless network:</b><br /> %2"
+msgid_plural "<b>New wireless networks:</b><br /> %2"
+msgstr[0] "<b>Нове бежичне мреже:</b><br /> %2"
+msgstr[1] "<b>Нове бежичне мреже:</b><br /> %2"
+msgstr[2] "<b>Нове бежичне мреже:</b><br /> %2"
+msgstr[3] "<b>Нова бежична мрежа:</b><br /> %2"
+
+#: libs/service/notificationmanager.cpp:608
+#, kde-format
+msgctxt ""
+"@info:status Notification text when a single wireless network disappeared"
+msgid "Wireless network %1 disappeared"
+msgstr "Нестала бежична мрежа %1"
+
+#: libs/service/notificationmanager.cpp:612
+#, kde-format
+msgctxt ""
+"@info:status Notification text when multiple wireless networks have "
+"disappeared.  %2 is a list of networks, and the %1 value (not printed) is "
+"just used to determine the plural form of network."
+msgid "<b>Wireless network disappeared:</b><br /> %2"
+msgid_plural "<b>Wireless networks disappeared:</b><br /> %2"
+msgstr[0] "<b>Нестале бежичне мреже:</b><br /> %2"
+msgstr[1] "<b>Нестале бежичне мреже:</b><br /> %2"
+msgstr[2] "<b>Нестале бежичне мреже:</b><br /> %2"
+msgstr[3] "<b>Нестала бежична мрежа:</b><br /> %2"
+
+#: libs/service/notificationmanager.cpp:624
+msgctxt "@info:status Notification for radio kill switch turned on"
+msgid "Wireless hardware enabled"
+msgstr "Активиран бежични хардвер"
+
+#: libs/service/notificationmanager.cpp:631
+msgctxt "@info:status Notification for radio kill switch turned off"
+msgid "Wireless hardware disabled"
+msgstr "Деактивиран бежични хардвер"
+
+#: libs/service/notificationmanager.cpp:638
+msgctxt ""
+"@info:status Notification when the networking subsystem (NetworkManager, "
+"etc) is disabled"
+msgid "Networking system disabled"
+msgstr "Деактивиран систем умрежавања"
+
+#: libs/service/notificationmanager.cpp:644
+msgctxt ""
+"@info:status Notification when the networking subsystem (NetworkManager, "
+"etc) is already running"
+msgid "Networking system already running"
+msgstr "Систем умрежавања већ у погону"
+
+#: libs/service/pindialog.cpp:72
+msgctxt "As in 'Unlock cell phone with this pin code'"
+msgid "Unlock"
+msgstr "Откључај"
+
+#: libs/service/pindialog.cpp:76
+msgid "SIM PUK unlock required"
+msgstr "Неопходно откључавање СИМ‑а ПУК‑ом"
+
+#: libs/service/pindialog.cpp:77
+msgid "SIM PUK Unlock Required"
+msgstr "Неопходно откључавање СИМ‑а ПУК‑ом"
+
+#: libs/service/pindialog.cpp:78
+#, kde-format
+msgid ""
+"The mobile broadband device '%1' requires a SIM PUK code before it can be "
+"used."
+msgstr ""
+"Мобилни широкопојасни уређај „%1“ тражи ПУК кôд СИМ‑а да би се могао "
+"користити."
+
+#: libs/service/pindialog.cpp:79
+msgid "PUK code:"
+msgstr "ПУК код:"
+
+#: libs/service/pindialog.cpp:80
+msgid "New PIN code:"
+msgstr "Нови ПИН код:"
+
+#: libs/service/pindialog.cpp:81
+msgid "Re-enter new PIN code:"
+msgstr "Поновите нови ПИН код:"
+
+#: libs/service/pindialog.cpp:82
+msgid "Show PIN/PUK code"
+msgstr "Прикажи ПИН/ПУК код"
+
+#: libs/service/pindialog.cpp:90
+msgid "SIM PIN unlock required"
+msgstr "Неопходно откључавање СИМ‑а ПИН‑ом"
+
+#: libs/service/pindialog.cpp:91
+msgid "SIM PIN Unlock Required"
+msgstr "Неопходно откључавање СИМ‑а ПИН‑ом"
+
+#: libs/service/pindialog.cpp:92
+#, kde-format
+msgid ""
+"The mobile broadband device '%1' requires a SIM PIN code before it can be "
+"used."
+msgstr ""
+"Мобилни широкопојасни уређај „%1“ тражи ПИН кôд СИМ‑а да би се могао "
+"користити."
+
+#: libs/service/pindialog.cpp:93
+msgid "PIN code:"
+msgstr "ПИН код:"
+
+#: libs/service/pindialog.cpp:94
+msgid "Show PIN code"
+msgstr "Прикажи ПИН код"
+
+#: libs/service/pindialog.cpp:178
+msgid "PIN code too short. It should be at least 4 digits."
+msgstr "ПИН код је прекратак, мора имати бар 4 цифре."
+
+#: libs/service/pindialog.cpp:182
+msgid "The two PIN codes do not match"
+msgstr "Два ПИН кода се не слажу"
+
+#: libs/service/pindialog.cpp:186
+msgid "PUK code too short. It should be 8 digits."
+msgstr "ПУК код је прекратак. Мора имати 8 цифара."
+
+#: libs/service/pindialog.cpp:190
+msgid "Unknown Error"
+msgstr "Непозната грешка"
+
+#: libs/ui/ipv6routeswidget.cpp:39 libs/ui/ipv6advancedwidget.cpp:39
+msgctxt "Header text for IPv6 address"
+msgid "Address"
+msgstr "адреса"
+
+#: libs/ui/ipv6routeswidget.cpp:41 libs/ui/ipv6advancedwidget.cpp:41
+msgctxt "Header text for IPv6 netmask"
+msgid "Netmask"
+msgstr "мрежна маска"
+
+#: libs/ui/ipv6routeswidget.cpp:43 libs/ui/ipv6advancedwidget.cpp:43
+msgctxt "Header text for IPv6 gateway"
+msgid "Gateway"
+msgstr "мрежни излаз"
+
+#: libs/ui/ipv6routeswidget.cpp:45
+msgctxt "Header text for IPv6 route metric"
+msgid "Metric"
+msgstr "метрика"
+
+#: libs/ui/advancedpermissionswidget.cpp:97
+msgctxt "@item:intable shortcut for Not Available"
+msgid "N/A"
+msgstr "нд."
+
+#: libs/ui/advancedpermissionswidget.cpp:98
+msgctxt "@info:tooltip real user name is not available"
+msgid "Not Available"
+msgstr "Није доступна"
+
+#: libs/ui/networkitemmodel.cpp:141
+#, kde-format
+msgctxt "@item:inlist signal strength percentage"
+msgid "%1%"
+msgstr "%1%"
+
+#: libs/ui/networkitemmodel.cpp:191
+msgctxt "@item:intable wireless network name"
+msgid "Name"
+msgstr "име"
+
+#: libs/ui/networkitemmodel.cpp:193
+msgctxt "@item:intable wireless signal strength"
+msgid "Signal Strength"
+msgstr "јачина сигнала"
+
+#: libs/ui/networkitemmodel.cpp:195
+msgctxt "@item:intable wireless encryption type"
+msgid "Encryption"
+msgstr "шифровање"
+
+#: libs/ui/networkitemmodel.cpp:197
+msgctxt "@item:intable wireless band"
+msgid "Band"
+msgstr "појас"
+
+#: libs/ui/networkitemmodel.cpp:199
+msgctxt "@item:intable wireless channel"
+msgid "Channel"
+msgstr "канал"
+
+#: libs/ui/networkitemmodel.cpp:201
+msgctxt "@item:intable wireless access point hardware address"
+msgid "MAC Address"
+msgstr "МАЦ адреса"
+
+#: libs/ui/cdmaconnectioneditor.cpp:52 libs/ui/gsmconnectioneditor.cpp:73
+msgid "New Cellular Connection"
+msgstr "Нова веза преко мобилног"
+
+#: libs/ui/connectioneditor.cpp:70 libs/ui/connectioneditor.cpp:93
+msgctxt "Edit connection dialog caption"
+msgid "Edit Network Connection"
+msgstr "Уређивање мрежне везе"
+
+#: libs/ui/connectioneditor.cpp:125
+msgctxt "Add connection dialog caption"
+msgid "Add Network Connection"
+msgstr "Додавање мрежне везе"
+
+# |, no-check-spell
+#: libs/ui/wirelesspreferences.cpp:71
+msgid "Shared_Wireless_Connection"
+msgstr "Дељена_бежична_веза"
+
+#: libs/ui/wirelesspreferences.cpp:119
+msgid "Shared Wireless Connection"
+msgstr "Дељена бежична веза"
+
+#: libs/ui/wirelesspreferences.cpp:121 libs/ui/connectionwidget.cpp:64
+msgid "New Wireless Connection"
+msgstr "Нова бежична веза"
+
+#: libs/ui/ipv4advancedwidget.cpp:40 libs/ui/ipv4routeswidget.cpp:39
+msgctxt "Header text for IPv4 address"
+msgid "Address"
+msgstr "адреса"
+
+#: libs/ui/ipv4advancedwidget.cpp:42 libs/ui/ipv4routeswidget.cpp:41
+msgctxt "Header text for IPv4 netmask"
+msgid "Netmask"
+msgstr "мрежна маска"
+
+#: libs/ui/ipv4advancedwidget.cpp:44 libs/ui/ipv4routeswidget.cpp:43
+msgctxt "Header text for IPv4 gateway"
+msgid "Gateway"
+msgstr "мрежни излаз"
+
+#: libs/ui/ipv4widget.cpp:69
+msgctxt "@item:inlistbox IPv4 settings configuration method"
+msgid "Automatic (VPN)"
+msgstr "аутоматски (ВПН)"
+
+#: libs/ui/ipv4widget.cpp:71
+msgctxt "@item:inlistbox IPv4 settings configuration method"
+msgid "Automatic (VPN) addresses only"
+msgstr "аутоматски (ВПН) само адресе"
+
+#: libs/ui/ipv4widget.cpp:76
+msgctxt "@item:inlistbox IPv4 settings configuration method"
+msgid "Automatic (PPP)"
+msgstr "аутоматски (ППП)"
+
+#: libs/ui/ipv4widget.cpp:78
+msgctxt "@item:inlistbox IPv4 settings configuration method"
+msgid "Automatic (PPP) addresses only"
+msgstr "аутоматски (ППП) само адресе"
+
+#: libs/ui/ipv4widget.cpp:82
+msgctxt "@item:inlistbox IPv4 settings configuration method"
+msgid "Automatic (DSL)"
+msgstr "аутоматски (ДСЛ)"
+
+#: libs/ui/ipv4widget.cpp:84
+msgctxt "@item:inlistbox IPv4 settings configuration method"
+msgid "Automatic (DSL) addresses only"
+msgstr "аутоматски (ДСЛ) само адресе"
+
+#: libs/ui/ipv4widget.cpp:88
+msgctxt "@item:inlistbox IPv4 settings configuration method"
+msgid "Automatic (DHCP)"
+msgstr "аутоматски (ДХЦП)"
+
+#: libs/ui/ipv4widget.cpp:90
+msgctxt "@item:inlistbox IPv4 settings configuration method"
+msgid "Automatic (DHCP) addresses only"
+msgstr "аутоматски (ДХЦП) само адресе"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:21
+#. i18n: ectx: label, entry (dns), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:22
+#. i18n: ectx: label, entry (dns), group (ipv4)
+#: libs/ui/ipv4widget.cpp:469 libs/ui/ipv6widget.cpp:408 rc.cpp:2108
+#: rc.cpp:2258
+msgid "DNS Servers"
+msgstr "ДНС сервери"
+
+#: libs/ui/ipv4widget.cpp:483 libs/ui/ipv6widget.cpp:422
+msgid "Search domains"
+msgstr "Домени за претрагу"
+
+#: libs/ui/pppoepreferences.cpp:42 libs/ui/pppoepreferences.cpp:60
+msgid "New DSL Connection"
+msgstr "Нова ДСЛ веза"
+
+#: libs/ui/security/eapmethodinnerauth.cpp:34
+#: libs/ui/security/eapmethodinnerauth.cpp:42
+msgctxt "Label for inner auth combobox"
+msgid "&Inner Authentication:"
+msgstr "&Унутрашња аутентификација:"
+
+#: libs/ui/security/securityeap.cpp:56
+msgctxt "show passwords button"
+msgid "&Show Passwords"
+msgstr "&Прикажи лозинке"
+
+#: libs/ui/security/securityeap.cpp:62
+msgctxt "TLS auth type"
+msgid "TLS"
+msgstr "ТЛС"
+
+#: libs/ui/security/securityeap.cpp:66
+msgctxt "LEAP auth type"
+msgid "LEAP"
+msgstr "ЛЕАП"
+
+#: libs/ui/security/securityeap.cpp:70
+msgctxt "Peap outer auth type"
+msgid "Protected EAP (PEAP)"
+msgstr "ПЕАП (заштићени ЕАП)"
+
+#: libs/ui/security/securityeap.cpp:73
+msgctxt "TTLS outer auth type"
+msgid "Tunnelled TLS (TTLS)"
+msgstr "ТТЛС (тунелски ТЛС)"
+
+#: libs/ui/security/securitywired8021x.cpp:42
+msgctxt "@title:tab wired 802.1x security"
+msgid "802.1x Security"
+msgstr "802.1x безбедност"
+
+#: libs/ui/security/securitywired8021x.cpp:45
+msgctxt "@option:check enables/disables 802.1x auth on wired ethernet"
+msgid "Use &802.1x authentication"
+msgstr "Користи 802.1x аутентификацију"
+
+#: libs/ui/security/wepwidget.cpp:102
+msgid "&Passphrase:"
+msgstr "&Лозинка:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:140
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:914
+#. i18n: ectx: property (text), widget (QLabel, textLabel4_3)
+#. i18n: file: libs/ui/security/wep.ui:118
+#. i18n: ectx: property (text), widget (QLabel, keyLabel)
+#: libs/ui/security/wepwidget.cpp:107 rc.cpp:344 rc.cpp:527 rc.cpp:1445
+msgid "&Key:"
+msgstr "&Кључ:"
+
+#: libs/ui/security/peapwidget.cpp:77 libs/ui/security/ttlswidget.cpp:84
+msgctxt "MSCHAPv2 inner auth method"
+msgid "MSCHAPv2"
+msgstr "МС‑ЦХАП в2"
+
+#: libs/ui/security/peapwidget.cpp:79
+msgctxt "MD5 inner auth method"
+msgid "MD5"
+msgstr "МД5"
+
+#: libs/ui/security/peapwidget.cpp:81
+msgctxt "GTC inner auth method"
+msgid "GTC"
+msgstr "ГТЦ"
+
+#: libs/ui/security/peapwidget.cpp:186 libs/ui/security/tlswidget.cpp:288
+#: libs/ui/security/ttlswidget.cpp:182
+msgid "Alternative Subject Matches"
+msgstr "Поклапања алтернативног наслова"
+
+#: libs/ui/security/peapwidget.cpp:187 libs/ui/security/tlswidget.cpp:289
+#: libs/ui/security/ttlswidget.cpp:183
+msgid ""
+"<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
+"li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. http://www.kde.org&gt;"
+"</li></ul></qt>"
+msgstr ""
+"<qt>Овај унос мора бити једно од:<ul><li>DNS: &lt;име или ИП адреса&gt;</"
+"li><li>EMAIL: &lt;адреса е‑поште&gt;</li><li>URI: &lt;УРИ, нпр. http://www."
+"kde.org&gt;</li></ul></qt>"
+
+#: libs/ui/security/peapwidget.cpp:199 libs/ui/security/tlswidget.cpp:301
+#: libs/ui/security/ttlswidget.cpp:195
+msgid "Connect to these Servers"
+msgstr "Повезуј се на ове сервере"
+
+#: libs/ui/security/ttlswidget.cpp:78
+msgctxt "PAP inner auth method"
+msgid "PAP"
+msgstr "ПАП"
+
+#: libs/ui/security/ttlswidget.cpp:81
+msgctxt "MSCHAP inner auth method"
+msgid "MSCHAP"
+msgstr "МС‑ЦХАП"
+
+#: libs/ui/security/ttlswidget.cpp:87
+msgctxt "CHAP inner auth method"
+msgid "CHAP"
+msgstr "ЦХАП"
+
+#: libs/ui/security/wirelesssecuritysettingwidget.cpp:178
+msgctxt "Label for no wireless security"
+msgid "None"
+msgstr "никаква"
+
+#: libs/ui/security/wirelesssecuritysettingwidget.cpp:186
+msgctxt "Label for LEAP wireless security"
+msgid "LEAP"
+msgstr "ЛЕАП"
+
+#: libs/ui/security/wirelesssecuritysettingwidget.cpp:196
+msgctxt "Label for Dynamic WEP wireless security"
+msgid "Dynamic WEP (802.1x)"
+msgstr "динамички ВЕП (802.1x)"
+
+#: libs/ui/security/wirelesssecuritysettingwidget.cpp:206
+msgctxt "Label for WEP wireless security"
+msgid "WEP"
+msgstr "ВЕП"
+
+#: libs/ui/security/wirelesssecuritysettingwidget.cpp:218
+msgctxt "Label for WPA-PSK wireless security"
+msgid "WPA/WPA2 Personal"
+msgstr "ВПА/ВПА2 лични"
+
+#: libs/ui/security/wirelesssecuritysettingwidget.cpp:229
+msgctxt "Label for WPA-EAP wireless security"
+msgid "WPA/WPA2 Enterprise"
+msgstr "ВПА/ВПА2 предузетнички"
+
+#: libs/ui/security/wepauthwidget.cpp:81
+msgid "Passphrase:"
+msgstr "Лозинка:"
+
+#: libs/ui/security/wepauthwidget.cpp:97
+msgid "Key:"
+msgstr "Кључ:"
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:130
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: libs/ui/security/security8021xauth.cpp:66 rc.cpp:728
+msgid "Private Key Password:"
+msgstr "Лозинка приватног кључа:"
+
+#: libs/ui/security/security8021xauth.cpp:74
+msgid "Phase 2 Private Key Password:"
+msgstr "Лозинка приватног кључа, фаза 2:"
+
+#: libs/ui/vpnuiplugin.cpp:36
+msgctxt "Error message in VPN import/export dialog"
+msgid "Operation not supported for this VPN type."
+msgstr "Поступак није подржан за овај тип ВПН‑а."
+
+#: libs/ui/wiredpreferences.cpp:50
+msgid "Shared Wired Connection"
+msgstr "Дељена жичана веза"
+
+#: libs/ui/wiredpreferences.cpp:53
+msgid "New Wired Connection"
+msgstr "Нова жичана веза"
+
+#: libs/ui/wiredwidget.cpp:55 libs/ui/802_11_wirelesswidget.cpp:63
+msgid " byte"
+msgid_plural " bytes"
+msgstr[0] " бајт"
+msgstr[1] " бајта"
+msgstr[2] " бајтова"
+msgstr[3] " бајт"
+
+#: libs/ui/wiredwidget.cpp:76 libs/ui/802_11_wirelesswidget.cpp:141
+#, kde-format
+msgctxt ""
+"@item:inlist item for hardware that is currently not attached to the machine "
+"with MAC address"
+msgid "Disconnected interface (%1)"
+msgstr "Неповезано сучеље (%1)"
+
+#: libs/ui/ipv4routeswidget.cpp:45
+msgctxt "Header text for IPv4 route metric"
+msgid "Metric"
+msgstr "метрика"
+
+#: libs/ui/bluetoothconnectioneditor.cpp:68
+#, kde-format
+msgid "%1 Network"
+msgstr "Мрежа %1"
+
+#: libs/ui/bluetoothconnectioneditor.cpp:70
+msgid "New Bluetooth Connection"
+msgstr "Нова блутут веза"
+
+#: libs/ui/connectionsecretsjob.cpp:124
+#, kde-format
+msgctxt "@title:window for network secrets request"
+msgid "Secrets for %1"
+msgstr "Тајне за %1"
+
+#: libs/ui/vpnpreferences.cpp:53 libs/ui/vpnpreferences.cpp:124
+msgid "New VPN Connection"
+msgstr "Нова ВПН веза"
+
+#: libs/ui/802_11_wirelesswidget.cpp:203
+msgctxt "@title:window wireless network scan dialog"
+msgid "Available Networks"
+msgstr "Доступне мреже"
+
+#: libs/ui/connectionwidget.cpp:120
+msgctxt "@title:window advanced permissions editor"
+msgid "Advanced Permissions Editor"
+msgstr "Уређивач напредних дозвола"
+
+#: settings/config/addeditdeletebuttonset.cpp:40
+msgid "Add..."
+msgstr "Додај..."
+
+#: settings/config/addeditdeletebuttonset.cpp:42
+msgid "Edit..."
+msgstr "Уреди..."
+
+#: settings/config/addeditdeletebuttonset.cpp:48
+msgid "Import"
+msgstr "Увези"
+
+#: settings/config/addeditdeletebuttonset.cpp:49
+msgid "Export"
+msgstr "Извези"
+
+#: settings/config/othersettingswidget.cpp:41
+#, kde-format
+msgctxt "Version text"
+msgid "<b>Version %1</b>"
+msgstr "<b>Издање %1</b>"
+
+#: settings/config/managetraywidget.cpp:45
+#: settings/config/manageconnectionwidget.cpp:80
+msgid "Manage Connections"
+msgstr "Управљање везама"
+
+#: settings/config/managetraywidget.cpp:46
+#: settings/config/manageconnectionwidget.cpp:81
+msgid "Manage Connections Control Panel Module"
+msgstr "Контролни модул за управљање везама"
+
+#: settings/config/managetraywidget.cpp:47
+msgid ""
+"(c) 2008-2009 Will Stephenson<p>(c) 2010 Sebastian Kügler</p><p>(c) 2011-"
+"2012 Lamarque V. Souza</p>"
+msgstr ""
+"<p>© 2008–2009, Вил Стивенсон</p><p>© 2010, Себастијан Киглер</p><p>© "
+"2011–2012, Ламарк Соза</p>"
+
+#: settings/config/managetraywidget.cpp:49
+#: settings/config/manageconnectionwidget.cpp:84
+msgid "Lamarque V. Souza"
+msgstr "Ламарк Соза"
+
+#: settings/config/managetraywidget.cpp:49
+#: settings/config/manageconnectionwidget.cpp:84
+msgid "Developer and Maintainer"
+msgstr "програмер и одржавалац"
+
+#: settings/config/managetraywidget.cpp:50
+#: settings/config/manageconnectionwidget.cpp:85
+msgid "Ilia Kats"
+msgstr "Иља Кац"
+
+#: settings/config/managetraywidget.cpp:50
+#: settings/config/managetraywidget.cpp:51
+#: settings/config/managetraywidget.cpp:52
+#: settings/config/managetraywidget.cpp:53
+#: settings/config/manageconnectionwidget.cpp:85
+#: settings/config/manageconnectionwidget.cpp:86
+#: settings/config/manageconnectionwidget.cpp:87
+#: settings/config/manageconnectionwidget.cpp:88
+msgid "Developer"
+msgstr "програмер"
+
+#: settings/config/managetraywidget.cpp:51
+#: settings/config/manageconnectionwidget.cpp:86
+msgid "Rajeesh K Nambiar"
+msgstr "Раџиш Намбијар"
+
+#: settings/config/managetraywidget.cpp:52
+#: settings/config/manageconnectionwidget.cpp:87
+#: settings/configshell/main.cpp:37
+msgid "Will Stephenson"
+msgstr "Вил Стивенсон"
+
+#: settings/config/managetraywidget.cpp:53
+#: settings/config/manageconnectionwidget.cpp:88
+msgid "Sebastian Kügler"
+msgstr "Себастијан Киглер"
+
+#: settings/config/manageconnectionwidget.cpp:82
+msgid "(c) 2008-2009 Will Stephenson<p>(c) 2011-2012 Lamarque V. Souza</p>"
+msgstr "<p>© 2008–2009, Вил Стивенсон</p><p>© 2011–2012, Ламарк Соза</p>"
+
+#: settings/config/manageconnectionwidget.cpp:113
+msgctxt "Like in 'add wired connection'"
+msgid "Wired"
+msgstr "Жичано"
+
+#: settings/config/manageconnectionwidget.cpp:116
+#: settings/config/manageconnectionwidget.cpp:127
+msgctxt "Like in 'add shared connection'"
+msgid "Shared"
+msgstr "Дељено"
+
+#: settings/config/manageconnectionwidget.cpp:124
+msgctxt "Like in 'add wireless connection'"
+msgid "Wireless"
+msgstr "Бежично"
+
+#: settings/config/manageconnectionwidget.cpp:207
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last hour, as "
+"the number of minutes since usage"
+msgid "One minute ago"
+msgid_plural "%1 minutes ago"
+msgstr[0] "пре %1 минута"
+msgstr[1] "пре %1 минута"
+msgstr[2] "пре %1 минута"
+msgstr[3] "пре минут"
+
+#: settings/config/manageconnectionwidget.cpp:214
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last day, as "
+"the number of hours since usage"
+msgid "One hour ago"
+msgid_plural "%1 hours ago"
+msgstr[0] "пре %1 сат"
+msgstr[1] "пре %1 сата"
+msgstr[2] "пре %1 сати"
+msgstr[3] "пре сат"
+
+#: settings/config/manageconnectionwidget.cpp:219
+msgctxt ""
+"Label for last used time for a network connection used the previous day"
+msgid "Yesterday"
+msgstr "јуче"
+
+#: settings/config/manageconnectionwidget.cpp:225
+msgctxt ""
+"Label for last used time for a network connection that has never been used"
+msgid "Never"
+msgstr "никад"
+
+#: settings/config/manageconnectionwidget.cpp:372
+msgctxt "Tooltip for disabled tab when no VPN plugins are installed"
+msgid "No VPN plugins were found"
+msgstr "Није нађен ниједан ВПН прикључак."
+
+#: settings/config/manageconnectionwidget.cpp:416
+msgctxt "File chooser dialog title for importing VPN"
+msgid "Import VPN connection settings"
+msgstr "Увоз поставки ВПН везе"
+
+#: settings/config/manageconnectionwidget.cpp:454
+#, kde-format
+msgid ""
+"None of the supported plugins implement importing operation for file %1."
+msgstr "Ниједан од подржаних прикључака не изводи поступак увоза за фајл %1."
+
+#: settings/config/manageconnectionwidget.cpp:454
+#: settings/config/manageconnectionwidget.cpp:456
+msgid "Error importing VPN connection settings"
+msgstr "Грешка при увозу поставки ВПН везе"
+
+#: settings/config/manageconnectionwidget.cpp:483
+msgctxt "File chooser dialog title for exporting VPN"
+msgid "Export VPN"
+msgstr "Извоз ВПН‑а"
+
+#: settings/config/manageconnectionwidget.cpp:490
+msgid "VPN connection successfully exported"
+msgstr "ВПН веза је успешно извезена."
+
+#: settings/config/manageconnectionwidget.cpp:490
+msgid "Success"
+msgstr "Успех"
+
+#: settings/config/manageconnectionwidget.cpp:490
+msgid "Do not show again"
+msgstr "Не приказуј више"
+
+#: settings/config/manageconnectionwidget.cpp:492
+msgid "Error exporting VPN connection settings"
+msgstr "Грешка при извозу поставки ВПН везе."
+
+#: settings/config/manageconnectionwidget.cpp:495
+msgid "Could not export VPN connection settings"
+msgstr "Не могу да извезем поставке ВПН везе"
+
+#: settings/config/manageconnectionwidget.cpp:531
+msgid ""
+"Connection edit option failed, make sure that NetworkManager is properly "
+"running."
+msgstr ""
+"Опција уређивања везе није прошла, проверите да ли је Менаџер мреже уредно у "
+"погону."
+
+#: settings/config/manageconnectionwidget.cpp:571
+msgid "Connection create operation failed."
+msgstr "Поступак стварања везе није прошао."
+
+#: settings/config/manageconnectionwidget.cpp:595
+#, kde-format
+msgctxt "Warning message on attempting to delete a connection"
+msgid "Do you really want to delete the connection '%1'?"
+msgstr "Желите ли заиста да обришете везу „%1“?"
+
+#: settings/config/manageconnectionwidget.cpp:596
+msgid "Confirm Delete"
+msgstr "Потврда брисања"
+
+#: settings/config/manageconnectionwidget.cpp:756
+msgid "Connected"
+msgstr "успостављена"
+
+#: settings/config/mobileconnectionwizard.cpp:52
+msgctxt "Mobile Connection Wizard"
+msgid "New Mobile Broadband Connection"
+msgstr "Нова мобилна широкопојасна веза"
+
+#: settings/config/mobileconnectionwizard.cpp:151
+#: settings/config/mobileconnectionwizard.cpp:167
+#: settings/config/mobileconnectionwizard.cpp:193
+#: settings/config/mobileconnectionwizard.cpp:525
+msgctxt "Mobile Connection Wizard"
+msgid "My plan is not listed..."
+msgstr "Мој пакет није наведен..."
+
+#: settings/config/mobileconnectionwizard.cpp:156
+msgctxt "Mobile Connection Wizard"
+msgid "Unknown Provider"
+msgstr "Непознат провајдер"
+
+#: settings/config/mobileconnectionwizard.cpp:163
+msgctxt "Mobile Connection Wizard"
+msgid "Default"
+msgstr "Подразумевано"
+
+#: settings/config/mobileconnectionwizard.cpp:195
+#: settings/config/mobileconnectionwizard.cpp:203
+msgctxt "Mobile Connection Wizard"
+msgid "APN"
+msgstr "АПН"
+
+#: settings/config/mobileconnectionwizard.cpp:248
+msgctxt "Mobile Connection Wizard"
+msgid "Set up a Mobile Broadband Connection"
+msgstr "Постављање мобилне широкопојасне везе"
+
+#: settings/config/mobileconnectionwizard.cpp:251
+msgctxt "Mobile Connection Wizard"
+msgid ""
+"This assistant helps you easily set up a mobile broadband connection to a "
+"cellular (3G) network."
+msgstr ""
+"Ова помоћник вам олакшава постављање мобилне широкопојасне везе ка мобилној "
+"(3Г) мрежи."
+
+#: settings/config/mobileconnectionwizard.cpp:255
+msgctxt "Mobile Connection Wizard"
+msgid "You will need the following information:"
+msgstr "Требаће вам следећи подаци:"
+
+#: settings/config/mobileconnectionwizard.cpp:259
+msgctxt "Mobile Connection Wizard"
+msgid "Your broadband provider's name"
+msgstr "име вашег широкопојасног провајдера"
+
+#: settings/config/mobileconnectionwizard.cpp:260
+msgctxt "Mobile Connection Wizard"
+msgid "Your broadband billing plan name"
+msgstr "назив вашег широкопојасног пакета"
+
+#: settings/config/mobileconnectionwizard.cpp:261
+msgctxt "Mobile Connection Wizard"
+msgid "(in some cases) Your broadband billing plan APN (Access Point Name)"
+msgstr "(у неким случајевима) АПН широкопојасног пакета (име приступне тачке)"
+
+#: settings/config/mobileconnectionwizard.cpp:265
+msgctxt "Mobile Connection Wizard"
+msgid "Create a connection for &this mobile broadband device:"
+msgstr "Направи везу за &овај мобилни широкопојасни уређај:"
+
+#: settings/config/mobileconnectionwizard.cpp:269
+#: settings/config/mobileconnectionwizard.cpp:395
+msgctxt "Mobile Connection Wizard"
+msgid "Any GSM device"
+msgstr "било који ГСМ уређај"
+
+#: settings/config/mobileconnectionwizard.cpp:271
+#: settings/config/mobileconnectionwizard.cpp:397
+msgctxt "Mobile Connection Wizard"
+msgid "Any CDMA device"
+msgstr "било који ЦДМА уређај"
+
+#: settings/config/mobileconnectionwizard.cpp:324
+msgctxt "Mobile Connection Wizard"
+msgid "Installed GSM device"
+msgstr "инсталирани ГСМ уређај"
+
+#: settings/config/mobileconnectionwizard.cpp:328
+msgctxt "Mobile Connection Wizard"
+msgid "Installed CDMA device"
+msgstr "инсталирани ЦДМА уређај"
+
+#: settings/config/mobileconnectionwizard.cpp:410
+msgctxt "Mobile Connection Wizard"
+msgid "Choose your Provider's Country"
+msgstr "Избор државе провајдера"
+
+#: settings/config/mobileconnectionwizard.cpp:413
+msgctxt "Mobile Connection Wizard"
+msgid "Country List:"
+msgstr "Списак држава:"
+
+#: settings/config/mobileconnectionwizard.cpp:417
+msgctxt "Mobile Connection Wizard"
+msgid "My country is not listed"
+msgstr "Моја држава није наведена"
+
+#: settings/config/mobileconnectionwizard.cpp:433
+msgctxt "Mobile Connection Wizard"
+msgid "Choose your Provider"
+msgstr "Избор провајдера"
+
+#: settings/config/mobileconnectionwizard.cpp:436
+msgctxt "Mobile Connection Wizard"
+msgid "Select your provider from a &list:"
+msgstr "Изаберите свог провајдера са &списка:"
+
+#: settings/config/mobileconnectionwizard.cpp:445
+msgctxt "Mobile Connection Wizard"
+msgid "I can't find my provider and I wish to enter it &manually:"
+msgstr "Не могу да нађем провајдера &па хоћу ручно да га унесем:"
+
+#: settings/config/mobileconnectionwizard.cpp:487
+msgctxt "Mobile Connection Wizard"
+msgid "Choose your Billing Plan"
+msgstr "Избор пакета"
+
+#: settings/config/mobileconnectionwizard.cpp:490
+msgctxt "Mobile Connection Wizard"
+msgid "&Select your plan:"
+msgstr "&Изаберите свој пакет:"
+
+#: settings/config/mobileconnectionwizard.cpp:497
+msgctxt "Mobile Connection Wizard"
+msgid "Selected plan &APN (Access Point Name):"
+msgstr "&АПН (име приступне тачке) изабраног пакета:"
+
+#: settings/config/mobileconnectionwizard.cpp:509
+msgctxt "Mobile Connection Wizard"
+msgid ""
+"Warning: Selecting an incorrect plan may result in billing issues for your "
+"broadband account or may prevent connectivity.\n"
+"\n"
+"If you are unsure of your plan please ask your provider for your plan's APN."
+msgstr ""
+"УПОЗОРЕЊЕ: Избор погрешног пакета може довести до проблема са наплатом на "
+"широкопојасном налогу, као и онемогућити повезивање.\n"
+"\n"
+"Ако нисте сигурни за пакет, тражите провајдеру да вам да АПН пакета."
+
+#: settings/config/mobileconnectionwizard.cpp:546
+msgctxt "Mobile Connection Wizard"
+msgid "Confirm Mobile Broadband Settings"
+msgstr "Потврда мобилних широкопојасних поставки"
+
+#: settings/config/mobileconnectionwizard.cpp:549
+msgctxt "Mobile Connection Wizard"
+msgid ""
+"Your mobile broadband connection is configured with the following settings:"
+msgstr "Мобилна широкопојасна веза подешена је са следећим поставкама:"
+
+#: settings/config/mobileconnectionwizard.cpp:553
+msgctxt "Mobile Connection Wizard"
+msgid "Your Provider:"
+msgstr "Провајдер:"
+
+#: settings/config/mobileconnectionwizard.cpp:558
+msgctxt "Mobile Connection Wizard"
+msgid "Your Plan:"
+msgstr "Пакет:"
+
+#: settings/configshell/main.cpp:31
+msgid "Network Management"
+msgstr "управљање мрежом"
+
+#: settings/configshell/main.cpp:33
+msgid "Create network connections standalone"
+msgstr "Направите самосталне мрежне везе"
+
+#: settings/configshell/main.cpp:35
+msgid "(c) 2008 Will Stephenson"
+msgstr "© 2008, Вил Стивенсон"
+
+#: settings/configshell/main.cpp:42
+msgid "Connection ID to edit"
+msgstr "ИД везе за уређивање."
+
+#: settings/configshell/main.cpp:43
+msgid "Connect to a hidden wireless network"
+msgstr "Повежи се на скривену бежичну мрежу."
+
+#: settings/configshell/main.cpp:44
+msgid ""
+"Connection type to create, must be one of '802-3-ethernet', '802-11-"
+"wireless', 'pppoe', 'vpn', 'cellular', 'bluetooth'"
+msgstr ""
+"Жељени тип везе, мора бити једно од: 802-3-ethernet, 802-11-wireless, pppoe, "
+"vpn, cellular, bluetooth."
+
+#: settings/configshell/main.cpp:45
+msgid ""
+"Space-separated connection type-specific arguments, may be either 'gsm' or "
+"'cdma' for cellular connections,\n"
+"'openvpn' or 'vpnc' for vpn connections,\n"
+"interface and AP identifiers for wireless connections,\n"
+"bluetooth mac address and service ('dun' or 'nap') for bluetooth connections."
+"\n"
+"\n"
+"You can also pass the serial device (i.e. 'rfcomm0') instead of service for "
+"dun bluetooth connections,\n"
+"in that case this program will block waiting for that device to be "
+"registered in ModemManager."
+msgstr ""
+"Размацима раздвојени аргументи посебни за тип везе, могу бити gsm или cdma "
+"за везе преко мобилног, openvpn или vpnc за ВПН везе, идентификатори сучеља "
+"и АП‑а за бежичне везе, блутут МАЦ адреса и сервис (dun или nap) за блутут "
+"везе.\n"
+"\n"
+"Такође можете проследити серијски уређај (нпр. rfcomm0) уместо сервиса за "
+"блутут ДУН везе, у ком случају ће програм блокирати чекајући да се задати "
+"уређај региструје у Менаџеру модема."
+
+#: settings/configshell/main.cpp:46
+msgid "Operation mode, may be either 'create' or 'edit'"
+msgstr "Режим рада, може бити create или edit."
+
+#: settings/configshell/main.cpp:97
+#, kde-format
+msgid "Expected two specific args, found %1: %2"
+msgstr "Очекивана два одређена аргумента, нађено %1: %2"
+
+#: settings/configshell/bluetooth.cpp:55
+msgid "We support 'dun' and 'nap' services only."
+msgstr "Подржани су само и ДУН и НАП сервиси."
+
+#: settings/configshell/bluetooth.cpp:69
+msgid "Could not contact bluetooth manager (BlueZ)."
+msgstr "Не могу да дозовем блутут менаџер (БлуЗ)."
+
+#: settings/configshell/bluetooth.cpp:78
+#, kde-format
+msgid "Default bluetooth adapter not found: %1"
+msgstr "Подразумевани блутут адаптер није нађен: %1"
+
+#: settings/configshell/bluetooth.cpp:142
+#, kde-format
+msgid "%1 (%2) does not support Dialup Networking (DUN)."
+msgstr "%1 (%2) не подржава модемско умрежавање (ДУН)."
+
+#: settings/configshell/bluetooth.cpp:148
+#, kde-format
+msgid "%1 (%2) does not support Network Access Point (NAP)."
+msgstr "%1 (%2) не подржава мрежну приступну тачку (НАП)."
+
+#: settings/configshell/bluetooth.cpp:175
+#, kde-format
+msgid "Error activating devices's serial port: %1"
+msgstr "Грешка при активирању серијског порта уређаја: %1"
+
+#: settings/configshell/bluetooth.cpp:200
+#, kde-format
+msgid "Device %1 is not the one we want (%2)"
+msgstr "Уређај %1 није онај који је потребан (%2)."
+
+#: settings/configshell/bluetooth.cpp:202
+#, kde-format
+msgid "Device for serial port %1 (%2) not found."
+msgstr "Уређај за серијски порт %1 (%2) није нађен."
+
+#: settings/configshell/manageconnection.cpp:83
+msgid "unknown error"
+msgstr "непозната грешка"
+
+#: settings/configshell/manageconnection.cpp:87
+#, kde-format
+msgid "Error adding connection: %1"
+msgstr "Грешка при додавању везе: %1"
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Часлав Илић"
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "caslav.ilic@gmx.net"
+
+#. i18n: file: settings/config/manageconnectionwidget.ui:21
+#. i18n: ectx: attribute (title), widget (QWidget, tabWired)
+#: rc.cpp:5
+msgid "Wired"
+msgstr "Жичана"
+
+#. i18n: file: settings/config/manageconnectionwidget.ui:43
+#. i18n: ectx: property (text), widget (QTreeWidget, listWired)
+#. i18n: file: settings/config/manageconnectionwidget.ui:84
+#. i18n: ectx: property (text), widget (QTreeWidget, listWireless)
+#. i18n: file: settings/config/manageconnectionwidget.ui:122
+#. i18n: ectx: property (text), widget (QTreeWidget, listCellular)
+#. i18n: file: settings/config/manageconnectionwidget.ui:160
+#. i18n: ectx: property (text), widget (QTreeWidget, listVpn)
+#. i18n: file: settings/config/manageconnectionwidget.ui:198
+#. i18n: ectx: property (text), widget (QTreeWidget, listPppoe)
+#: rc.cpp:8 rc.cpp:20 rc.cpp:32 rc.cpp:44 rc.cpp:56
+msgid "Connection"
+msgstr "веза"
+
+#. i18n: file: settings/config/manageconnectionwidget.ui:48
+#. i18n: ectx: property (text), widget (QTreeWidget, listWired)
+#. i18n: file: settings/config/manageconnectionwidget.ui:89
+#. i18n: ectx: property (text), widget (QTreeWidget, listWireless)
+#. i18n: file: settings/config/manageconnectionwidget.ui:127
+#. i18n: ectx: property (text), widget (QTreeWidget, listCellular)
+#. i18n: file: settings/config/manageconnectionwidget.ui:165
+#. i18n: ectx: property (text), widget (QTreeWidget, listVpn)
+#. i18n: file: settings/config/manageconnectionwidget.ui:203
+#. i18n: ectx: property (text), widget (QTreeWidget, listPppoe)
+#: rc.cpp:11 rc.cpp:23 rc.cpp:35 rc.cpp:47 rc.cpp:59
+msgid "Last Used"
+msgstr "последње коришћена"
+
+#. i18n: file: settings/config/manageconnectionwidget.ui:53
+#. i18n: ectx: property (text), widget (QTreeWidget, listWired)
+#. i18n: file: settings/config/manageconnectionwidget.ui:94
+#. i18n: ectx: property (text), widget (QTreeWidget, listWireless)
+#. i18n: file: settings/config/manageconnectionwidget.ui:132
+#. i18n: ectx: property (text), widget (QTreeWidget, listCellular)
+#. i18n: file: settings/config/manageconnectionwidget.ui:170
+#. i18n: ectx: property (text), widget (QTreeWidget, listVpn)
+#. i18n: file: settings/config/manageconnectionwidget.ui:208
+#. i18n: ectx: property (text), widget (QTreeWidget, listPppoe)
+#: rc.cpp:14 rc.cpp:26 rc.cpp:38 rc.cpp:50 rc.cpp:62
+msgid "State"
+msgstr "стање"
+
+#. i18n: file: settings/config/manageconnectionwidget.ui:65
+#. i18n: ectx: attribute (title), widget (QWidget, tabWireless)
+#. i18n: file: libs/ui/802-11-wireless.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, Wireless80211Config)
+#: rc.cpp:17 rc.cpp:1703
+msgid "Wireless"
+msgstr "Бежична"
+
+#. i18n: file: settings/config/manageconnectionwidget.ui:106
+#. i18n: ectx: attribute (title), widget (QWidget, tabCellular)
+#. i18n: file: libs/ui/cdma.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, Cdma)
+#. i18n: file: libs/ui/gsm.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, Gsm)
+#: rc.cpp:29 rc.cpp:959 rc.cpp:998
+msgid "Mobile Broadband"
+msgstr "Мобилна широкопојасна"
+
+#. i18n: file: settings/config/manageconnectionwidget.ui:144
+#. i18n: ectx: attribute (title), widget (QWidget, tabVpn)
+#: rc.cpp:41
+msgid "VPN"
+msgstr "ВПН"
+
+#. i18n: file: settings/config/manageconnectionwidget.ui:182
+#. i18n: ectx: attribute (title), widget (QWidget, tabPppoe)
+#. i18n: file: libs/ui/pppoe.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, Pppoe)
+#: rc.cpp:53 rc.cpp:1319
+msgid "DSL"
+msgstr "ДСЛ"
+
+#. i18n: file: settings/config/traysettings.ui:21
+#. i18n: ectx: property (text), widget (QLabel, interfaceNamingLabel)
+#. i18n: file: settings/config/othersettings.ui:66
+#. i18n: ectx: property (text), widget (QLabel, interfaceNamingLabel)
+#: rc.cpp:65 rc.cpp:119
+msgid "Show network interfaces using:"
+msgstr "Приказуј мрежна сучеља по:"
+
+#. i18n: file: settings/config/traysettings.ui:29
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
+#. i18n: file: settings/config/othersettings.ui:77
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
+#: rc.cpp:68 rc.cpp:122
+msgid "Descriptive Name"
+msgstr "описном имену"
+
+#. i18n: file: settings/config/traysettings.ui:34
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
+#. i18n: file: settings/config/othersettings.ui:82
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
+#: rc.cpp:71 rc.cpp:125
+msgid "System Name"
+msgstr "системском имену"
+
+#. i18n: file: settings/config/traysettings.ui:39
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
+#. i18n: file: settings/config/othersettings.ui:87
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
+#: rc.cpp:74 rc.cpp:128
+msgid "Vendor's Name"
+msgstr "имену произвођача"
+
+#. i18n: file: settings/config/traysettings.ui:44
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
+#. i18n: file: settings/config/othersettings.ui:92
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
+#: rc.cpp:77 rc.cpp:131
+msgid "Type Name"
+msgstr "имену типа"
+
+#. i18n: file: settings/config/traysettings.ui:54
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Autostart)
+#: rc.cpp:80
+msgid "Show tray icon"
+msgstr "Са касетном иконом"
+
+#. i18n: file: settings/config/traysettings.ui:73
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:83
+msgid "Tray icons:"
+msgstr "Касетне иконе:"
+
+#. i18n: file: settings/config/traysettings.ui:82
+#. i18n: ectx: property (toolTip), widget (QListWidget, iconInterfaceList)
+#: rc.cpp:86
+msgid "Arrange interface types between icons with drag and drop"
+msgstr "Распоредите превлачењем типове сучеља по иконама."
+
+#. i18n: file: settings/config/traysettings.ui:97
+#. i18n: ectx: property (toolTip), widget (QPushButton, pbAddIcon)
+#: rc.cpp:89
+msgid "Add another system tray icon"
+msgstr "Додајте још једну икону системске касете."
+
+#. i18n: file: settings/config/traysettings.ui:100
+#. i18n: ectx: property (text), widget (QPushButton, pbAddIcon)
+#: rc.cpp:92
+msgid "&More Icons"
+msgstr "&Још икона"
+
+#. i18n: file: settings/config/traysettings.ui:107
+#. i18n: ectx: property (toolTip), widget (QPushButton, pbRemoveIcon)
+#: rc.cpp:95
+msgid "Remove a system tray icon"
+msgstr "Уклоните икону системске касете."
+
+#. i18n: file: settings/config/traysettings.ui:110
+#. i18n: ectx: property (text), widget (QPushButton, pbRemoveIcon)
+#: rc.cpp:98
+msgid "&Fewer Icons"
+msgstr "&Мање икона"
+
+#. i18n: file: settings/config/othersettings.ui:17
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:101
+msgid "<b>Connection Secrets</b>"
+msgstr "<b>Тајне повезивања</b>"
+
+#. i18n: file: settings/config/othersettings.ui:24
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:104
+msgid "&Store connection secrets: "
+msgstr "&Складишти тајне повезивања:"
+
+# rewrite-msgid: /Do not store/Never/
+#. i18n: file: settings/config/othersettings.ui:41
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SecretStorageMode)
+#: rc.cpp:107
+msgid "Do not store (always prompt)"
+msgstr "никад (увек питај)"
+
+#. i18n: file: settings/config/othersettings.ui:46
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SecretStorageMode)
+#: rc.cpp:110
+msgid "In file (unencrypted)"
+msgstr "у фајл (нешифровано)"
+
+#. i18n: file: settings/config/othersettings.ui:51
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SecretStorageMode)
+#: rc.cpp:113
+msgid "In secure storage (encrypted)"
+msgstr "у безбедно складиште (шифровано)"
+
+#. i18n: file: settings/config/othersettings.ui:59
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:116
+msgid "<b>Display</b>"
+msgstr "<b>Приказ</b>"
+
+#. i18n: file: settings/config/othersettings.ui:100
+#. i18n: ectx: property (text), widget (QLabel, networkSpeedLabel)
+#: rc.cpp:134
+msgid "Show network speed in:"
+msgstr "Приказуј брзину мреже у:"
+
+#. i18n: file: settings/config/othersettings.ui:111
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_NetworkSpeedUnit)
+#: rc.cpp:137
+msgid "KBytes/s"
+msgstr "KB/s"
+
+#. i18n: file: settings/config/othersettings.ui:116
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_NetworkSpeedUnit)
+#: rc.cpp:140
+msgid "KBits/s"
+msgstr "Kb/s"
+
+#. i18n: file: settings/config/othersettings.ui:124
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:143
+msgid "Display settings as:"
+msgstr "Приказуј поставке као:"
+
+#. i18n: file: settings/config/othersettings.ui:135
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_ShowAdvancedSettings)
+#. i18n: file: libs/ui/gsm.ui:26
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: rc.cpp:146 rc.cpp:1001
+msgid "Basic"
+msgstr "Основно"
+
+#. i18n: file: settings/config/othersettings.ui:140
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_ShowAdvancedSettings)
+#. i18n: file: vpnplugins/pptp/pptpprop.ui:208
+#. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:193
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#. i18n: file: libs/ui/gsm.ui:99
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: rc.cpp:149 rc.cpp:686 rc.cpp:833 rc.cpp:1016
+msgid "Advanced"
+msgstr "Напредно"
+
+#. i18n: file: settings/config/othersettings.ui:148
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:152
+msgid "<b>Events</b>"
+msgstr "<b>Догађаји</b>"
+
+#. i18n: file: settings/config/othersettings.ui:155
+#. i18n: ectx: property (text), widget (QLabel, askPinLabel)
+#: rc.cpp:155
+msgid "Ask for GSM Pin:"
+msgstr "Тражи ГСМ ПИН:"
+
+#. i18n: file: settings/config/othersettings.ui:166
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AskForGsmPin)
+#: rc.cpp:158
+msgid "On Modem Detection"
+msgstr "при откривању модема"
+
+#. i18n: file: settings/config/othersettings.ui:171
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AskForGsmPin)
+#: rc.cpp:161
+msgid "When Activating Connection"
+msgstr "при активирању везе"
+
+#. i18n: file: settings/config/othersettings.ui:179
+#. i18n: ectx: property (text), widget (QPushButton, notificationsButton)
+#: rc.cpp:164
+msgid "Configure Notifications..."
+msgstr "Подеси обавештења..."
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnadvancedprop.ui:17
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: rc.cpp:167
+msgid "&DH Group"
+msgstr "&ДХ група"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnadvancedprop.ui:23
+#. i18n: ectx: property (text), widget (QRadioButton, rbDh1)
+#: rc.cpp:170
+msgid "768 bits (DH&1)"
+msgstr "&768 битова (ДХ 1)"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnadvancedprop.ui:33
+#. i18n: ectx: property (text), widget (QRadioButton, rbDh2)
+#: rc.cpp:173
+msgid "1024 bits (DH&2)"
+msgstr "&1024 бита (ДХ 2)"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnadvancedprop.ui:43
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: rc.cpp:176
+msgid "&PFS Group"
+msgstr "&ПФС група"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnadvancedprop.ui:49
+#. i18n: ectx: property (text), widget (QRadioButton, rbPfOff)
+#: rc.cpp:179
+msgid "&Off"
+msgstr "&Искључена"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnadvancedprop.ui:59
+#. i18n: ectx: property (text), widget (QRadioButton, rbPf1)
+#: rc.cpp:182
+msgid "&768 bits (PF1)"
+msgstr "7&68 битова (ПФ 1)"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnadvancedprop.ui:66
+#. i18n: ectx: property (text), widget (QRadioButton, rbPf2)
+#: rc.cpp:185
+msgid "102&4 bits (PF2)"
+msgstr "1&024 бита (ПФ 2)"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnadvancedprop.ui:76
+#. i18n: ectx: property (text), widget (QCheckBox, cbDisableSplit)
+#: rc.cpp:188
+msgid "Disable &split tunnel"
+msgstr "Искључи &подељени тунел"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, NovellVpnWidget)
+#: rc.cpp:191
+msgid "Novell VPN"
+msgstr "Новелов ВПН"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:20
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: file: vpnplugins/openconnect/openconnectprop.ui:20
+#. i18n: ectx: property (title), widget (QGroupBox, grp_general)
+#. i18n: file: vpnplugins/pptp/pptpprop.ui:26
+#. i18n: ectx: property (title), widget (QGroupBox, grp_general)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:24
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: rc.cpp:194 rc.cpp:248 rc.cpp:656 rc.cpp:788
+msgid "General"
+msgstr "Опште"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:26
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: file: vpnplugins/openconnect/openconnectprop.ui:29
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:32
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#. i18n: file: vpnplugins/pptp/pptpprop.ui:34
+#. i18n: ectx: property (text), widget (QLabel, lbl_gateway)
+#. i18n: file: libs/ui/ipv4.ui:197
+#. i18n: ectx: property (text), widget (QLabel, gatewayLabel)
+#. i18n: file: libs/ui/ipv6.ui:202
+#. i18n: ectx: property (text), widget (QLabel, gatewayLabel)
+#: rc.cpp:197 rc.cpp:251 rc.cpp:320 rc.cpp:659 rc.cpp:1109 rc.cpp:1199
+msgid "&Gateway:"
+msgstr "Мрежни &излаз:"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:39
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:200
+msgid "Gate&way Type:"
+msgstr "Тип &мрежног излаза:"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:50
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbGwType)
+#: rc.cpp:203
+msgid "Nortel"
+msgstr "Нортелов"
+
+# rewrite-msgid: /Gateway//
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:55
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbGwType)
+#: rc.cpp:206
+msgid "Standard Gateway"
+msgstr "стандардни"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:66
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:17
+#. i18n: ectx: property (title), widget (QGroupBox, grp_authenfication)
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:55
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#. i18n: file: libs/ui/ppp.ui:20
+#. i18n: ectx: property (title), widget (QGroupBox, auth)
+#: rc.cpp:209 rc.cpp:584 rc.cpp:707 rc.cpp:1274
+msgid "Authentication"
+msgstr "Аутентификација"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:72
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: file: libs/ui/bluetooth.ui:43
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: file: libs/ui/gsm.ui:140
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:212 rc.cpp:947 rc.cpp:1025
+msgid "&Type:"
+msgstr "&Тип:"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:83
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbAuthType)
+#: rc.cpp:215
+msgid "XAUTH"
+msgstr "Икс‑аут"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:88
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbAuthType)
+#: rc.cpp:218
+msgid "X.509"
+msgstr "Икс.509"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:103
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:244
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:46
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: file: vpnplugins/vpnc/vpncauth.ui:89
+#. i18n: ectx: property (text), widget (QLabel, userNameLabel)
+#. i18n: file: libs/ui/cdma.ui:38
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: file: libs/ui/gsm.ui:58
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: file: libs/ui/pppoe.ui:36
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: file: libs/ui/security/eapmethodleapbase.ui:22
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#. i18n: file: libs/ui/security/eapmethodsimplebase.ui:17
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: file: libs/ui/security/leap.ui:17
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:221 rc.cpp:755 rc.cpp:794 rc.cpp:935 rc.cpp:965 rc.cpp:1010
+#: rc.cpp:1325 rc.cpp:1355 rc.cpp:1376 rc.cpp:1394
+msgid "&Username:"
+msgstr "&Корисничко име:"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:116
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:224
+msgid "&Group Name:"
+msgstr "&Име групе:"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:129
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: rc.cpp:227
+msgid "U&ser Password:"
+msgstr "&Корисничка лозинка:"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:146
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: rc.cpp:230
+msgid "G&roup Password:"
+msgstr "&Групна лозинка:"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:167
+#. i18n: ectx: property (text), widget (QLabel, label_13)
+#: rc.cpp:233
+msgid "Certificate &file:"
+msgstr "&Фајл сертификата:"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:180
+#. i18n: ectx: property (text), widget (QLabel, label_14)
+#: rc.cpp:236
+msgid "Certificate &password:"
+msgstr "&Лозинка сертификата:"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:201
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPasswords)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:590
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPasswords)
+#: rc.cpp:239 rc.cpp:437
+msgid "&Show Passwords"
+msgstr "&Прикажи лозинке"
+
+#. i18n: file: vpnplugins/novellvpn/novellvpnprop.ui:208
+#. i18n: ectx: property (text), widget (KPushButton, btnAdvanced)
+#: rc.cpp:242
+msgid "Ad&vanced..."
+msgstr "&Напредно..."
+
+#. i18n: file: vpnplugins/openconnect/openconnectprop.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenconnectProp)
+#: rc.cpp:245
+msgid "OpenConnect Settings"
+msgstr "Поставке Опенконекта"
+
+#. i18n: file: vpnplugins/openconnect/openconnectprop.ui:42
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:254
+msgid "&CA Certificate:"
+msgstr "&ЦА сертификат:"
+
+#. i18n: file: vpnplugins/openconnect/openconnectprop.ui:55
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:257
+msgid "&Proxy:"
+msgstr "&Прокси:"
+
+#. i18n: file: vpnplugins/openconnect/openconnectprop.ui:68
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:260
+msgid "CSD &Wrapper Script:"
+msgstr "&Омотачка скрипта за ЦСД:"
+
+# rewrite-msgid: /Cisco Secure Desktop/CSD/
+#. i18n: file: vpnplugins/openconnect/openconnectprop.ui:78
+#. i18n: ectx: property (text), widget (QCheckBox, chkAllowTrojan)
+#: rc.cpp:263
+msgid "Allow Cisco Secure Desktop &trojan"
+msgstr "Дозволи ЦСД‑ов тројанац"
+
+#. i18n: file: vpnplugins/openconnect/openconnectprop.ui:91
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: rc.cpp:266
+msgid "Certificate Authentication"
+msgstr "Аутентификација сертификатом"
+
+#. i18n: file: vpnplugins/openconnect/openconnectprop.ui:97
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:35
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:269 rc.cpp:1511
+msgid "&User Certificate:"
+msgstr "&Кориснички сертификат:"
+
+#. i18n: file: vpnplugins/openconnect/openconnectprop.ui:107
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:74
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:272 rc.cpp:1520
+msgid "Private &Key:"
+msgstr "&Приватни кључ:"
+
+#. i18n: file: vpnplugins/openconnect/openconnectprop.ui:123
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
+#: rc.cpp:275
+msgid "Use &FSID for key passphrase"
+msgstr "&ФСИД као лозинка кључа"
+
+#. i18n: file: vpnplugins/openconnect/openconnectauth.ui:20
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenconnectAuth)
+#: rc.cpp:278
+msgid "OpenConnect VPN Authentication"
+msgstr "Аутентификација за Опенконектов ВПН"
+
+#. i18n: file: vpnplugins/openconnect/openconnectauth.ui:40
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:281
+msgid "VPN Host"
+msgstr "ВПН домаћин"
+
+#. i18n: file: vpnplugins/openconnect/openconnectauth.ui:56
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnConnect)
+#: rc.cpp:284
+msgid "Connect"
+msgstr "Повежи се"
+
+#. i18n: file: vpnplugins/openconnect/openconnectauth.ui:77
+#. i18n: ectx: property (text), widget (QCheckBox, chkAutoconnect)
+#: rc.cpp:287
+msgid "Automatically start connecting next time"
+msgstr "Аутоматски почни повезивање идући пут"
+
+#. i18n: file: vpnplugins/openconnect/openconnectauth.ui:112
+#. i18n: ectx: property (text), widget (QCheckBox, viewServerLog)
+#: rc.cpp:290
+msgid "View Log"
+msgstr "Прикажи дневник"
+
+#. i18n: file: vpnplugins/openconnect/openconnectauth.ui:122
+#. i18n: ectx: property (text), widget (QLabel, lblLogLevel)
+#: rc.cpp:293
+msgid "Log Level:"
+msgstr "Ниво бележења:"
+
+#. i18n: file: vpnplugins/openconnect/openconnectauth.ui:138
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
+#: rc.cpp:299
+msgid "Info"
+msgstr "информације"
+
+#. i18n: file: vpnplugins/openconnect/openconnectauth.ui:143
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
+#: rc.cpp:302
+msgid "Debug"
+msgstr "исправљање"
+
+#. i18n: file: vpnplugins/openconnect/openconnectauth.ui:148
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
+#: rc.cpp:305
+msgid "Trace"
+msgstr "траг"
+
+#. i18n: file: vpnplugins/openvpn/openvpnauth.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenVPNAuthenticationWidget)
+#: rc.cpp:308
+msgid "OpenVPNAuthentication"
+msgstr "ОпенВПН‑ова аутентификација"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenVPNProp)
+#: rc.cpp:314
+msgid "OpenVPN"
+msgstr "ОпенВПН"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:24
+#. i18n: ectx: attribute (title), widget (QWidget, TabPage)
+#: rc.cpp:317
+msgid "Required Settings"
+msgstr "Неопходне поставке"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:51
+#. i18n: ectx: property (text), widget (QLabel, labelConnectionType)
+#: rc.cpp:323
+msgid "Connection &type:"
+msgstr "&Тип везе:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:74
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
+#: rc.cpp:326
+msgid "X.509 Certificates"
+msgstr "Икс.509 сертификати"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:79
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
+#: rc.cpp:329
+msgid "Pre-shared Key"
+msgstr "претподељени кључ"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:84
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:498
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:102
+#. i18n: ectx: label, entry (password), group (802-1x)
+#. i18n: file: libs/internals/schemas/cdma.kcfg:17
+#. i18n: ectx: label, entry (password), group (cdma)
+#. i18n: file: libs/internals/schemas/gsm.kcfg:18
+#. i18n: ectx: label, entry (password), group (gsm)
+#. i18n: file: libs/internals/schemas/pppoe.kcfg:17
+#. i18n: ectx: label, entry (password), group (pppoe)
+#: rc.cpp:332 rc.cpp:416 rc.cpp:1970 rc.cpp:2042 rc.cpp:2081 rc.cpp:2216
+msgid "Password"
+msgstr "Лозинка"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:89
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
+#: rc.cpp:335
+msgid "X.509 With Password"
+msgstr "Икс.509 са лозинком"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:108
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: rc.cpp:338
+msgid "C&A file:"
+msgstr "&ЦА фајл:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:124
+#. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
+#: rc.cpp:341
+msgid "&Certificate:"
+msgstr "&Сертификат:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:156
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: rc.cpp:347
+msgid "Key password:"
+msgstr "Лозинка кључа:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:176
+#. i18n: ectx: property (text), item, widget (KComboBox, x509KeyPasswordStorage)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:386
+#. i18n: ectx: property (text), item, widget (KComboBox, passPasswordStorage)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:518
+#. i18n: ectx: property (text), item, widget (KComboBox, x509PassKeyPasswordStorage)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:551
+#. i18n: ectx: property (text), item, widget (KComboBox, x509PassPasswordStorage)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:1115
+#. i18n: ectx: property (text), item, widget (KComboBox, proxyPasswordStorage)
+#. i18n: file: vpnplugins/pptp/pptpprop.ui:124
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:159
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:217
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:270
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:82
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:141
+#. i18n: ectx: property (text), item, widget (QComboBox, cboGroupPassOptions)
+#. i18n: file: libs/ui/gsm.ui:235
+#. i18n: ectx: property (text), item, widget (KComboBox, pinStorage)
+#. i18n: file: libs/ui/security/eapmethodleapbase.ui:73
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
+#. i18n: file: libs/ui/security/eapmethodsimplebase.ui:61
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
+#. i18n: file: libs/ui/security/leap.ui:81
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:118
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
+#: rc.cpp:350 rc.cpp:392 rc.cpp:419 rc.cpp:428 rc.cpp:575 rc.cpp:671
+#: rc.cpp:731 rc.cpp:746 rc.cpp:758 rc.cpp:800 rc.cpp:815 rc.cpp:1052
+#: rc.cpp:1370 rc.cpp:1385 rc.cpp:1406 rc.cpp:1529
+msgid "Always Ask"
+msgstr "увек питај"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:181
+#. i18n: ectx: property (text), item, widget (KComboBox, x509KeyPasswordStorage)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:391
+#. i18n: ectx: property (text), item, widget (KComboBox, passPasswordStorage)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:523
+#. i18n: ectx: property (text), item, widget (KComboBox, x509PassKeyPasswordStorage)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:556
+#. i18n: ectx: property (text), item, widget (KComboBox, x509PassPasswordStorage)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:1120
+#. i18n: ectx: property (text), item, widget (KComboBox, proxyPasswordStorage)
+#. i18n: file: vpnplugins/pptp/pptpprop.ui:129
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:164
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:222
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:275
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:87
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:146
+#. i18n: ectx: property (text), item, widget (QComboBox, cboGroupPassOptions)
+#. i18n: file: libs/ui/gsm.ui:230
+#. i18n: ectx: property (text), item, widget (KComboBox, pinStorage)
+#. i18n: file: libs/ui/security/eapmethodleapbase.ui:68
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
+#. i18n: file: libs/ui/security/eapmethodsimplebase.ui:56
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
+#. i18n: file: libs/ui/security/leap.ui:76
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:113
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
+#: rc.cpp:353 rc.cpp:395 rc.cpp:422 rc.cpp:431 rc.cpp:578 rc.cpp:674
+#: rc.cpp:734 rc.cpp:749 rc.cpp:761 rc.cpp:803 rc.cpp:818 rc.cpp:1049
+#: rc.cpp:1367 rc.cpp:1382 rc.cpp:1403 rc.cpp:1526
+msgid "Store"
+msgstr "ускладишти"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:186
+#. i18n: ectx: property (text), item, widget (KComboBox, x509KeyPasswordStorage)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:396
+#. i18n: ectx: property (text), item, widget (KComboBox, passPasswordStorage)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:528
+#. i18n: ectx: property (text), item, widget (KComboBox, x509PassKeyPasswordStorage)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:561
+#. i18n: ectx: property (text), item, widget (KComboBox, x509PassPasswordStorage)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:1014
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbProxyType)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:1125
+#. i18n: ectx: property (text), item, widget (KComboBox, proxyPasswordStorage)
+#. i18n: file: vpnplugins/pptp/pptpprop.ui:134
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:169
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:227
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:280
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:92
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:151
+#. i18n: ectx: property (text), item, widget (QComboBox, cboGroupPassOptions)
+#. i18n: file: libs/ui/gsm.ui:240
+#. i18n: ectx: property (text), item, widget (KComboBox, pinStorage)
+#. i18n: file: libs/ui/security/eapmethodleapbase.ui:78
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
+#. i18n: file: libs/ui/security/eapmethodsimplebase.ui:66
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
+#. i18n: file: libs/ui/security/leap.ui:86
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:123
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
+#: rc.cpp:356 rc.cpp:398 rc.cpp:425 rc.cpp:434 rc.cpp:548 rc.cpp:581
+#: rc.cpp:677 rc.cpp:737 rc.cpp:752 rc.cpp:764 rc.cpp:806 rc.cpp:821
+#: rc.cpp:1055 rc.cpp:1373 rc.cpp:1388 rc.cpp:1409 rc.cpp:1532
+msgid "Not Required"
+msgstr "није неопходно"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:217
+#. i18n: ectx: property (text), widget (QLabel, textLabel5)
+#. i18n: file: libs/ui/security/wep.ui:110
+#. i18n: ectx: property (text), item, widget (KComboBox, authalg)
+#: rc.cpp:359 rc.cpp:1442
+msgid "Shared Key"
+msgstr "дељени кључ"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:233
+#. i18n: ectx: property (text), widget (QLabel, textLabel6)
+#: rc.cpp:362
+msgid "Local IP"
+msgstr "Локална ИП адреса"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:249
+#. i18n: ectx: property (text), widget (QLabel, textLabel7)
+#: rc.cpp:365
+msgid "Remote IP"
+msgstr "Удаљена ИП адреса"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:269
+#. i18n: ectx: property (text), widget (QLabel, label_16)
+#: rc.cpp:368
+msgid "Key Direction"
+msgstr "Смер кључа"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:282
+#. i18n: ectx: property (whatsThis), widget (KComboBox, cmbKeyDirection)
+#: rc.cpp:371
+msgid ""
+"If key direction is used, it must be the opposite of that used on the VPN "
+"peer."
+msgstr "Ако се смер кључа користи, мора бити супротан ономе код ВПН парњака."
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:286
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbKeyDirection)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:814
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:948
+#. i18n: ectx: property (text), item, widget (KComboBox, cboDirection)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:242
+#. i18n: ectx: property (text), item, widget (QComboBox, cboEncryptionMethod)
+#: rc.cpp:374 rc.cpp:491 rc.cpp:533 rc.cpp:848
+msgid "None"
+msgstr "никакав"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:291
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbKeyDirection)
+#: rc.cpp:377
+msgid "0"
+msgstr "0"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:296
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbKeyDirection)
+#: rc.cpp:380
+msgid "1"
+msgstr "1"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:325
+#. i18n: ectx: property (text), widget (QLabel, textLabel8)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:178
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:383 rc.cpp:830
+msgid "CA File:"
+msgstr "ЦА фајл:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:344
+#. i18n: ectx: property (text), widget (QLabel, textLabel9)
+#: rc.cpp:386
+msgid "Username:"
+msgstr "Корисничко име:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:427
+#. i18n: ectx: property (text), widget (QLabel, textLabel2_2)
+#: rc.cpp:401
+msgid "CA file"
+msgstr "ЦА фајл"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:443
+#. i18n: ectx: property (text), widget (QLabel, textLabel3_2_2)
+#: rc.cpp:404
+msgid "Certificate"
+msgstr "Сертификат"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:459
+#. i18n: ectx: property (text), widget (QLabel, textLabel4_2)
+#: rc.cpp:407
+msgid "Key"
+msgstr "Кључ"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:475
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: rc.cpp:410
+msgid "Key password"
+msgstr "Лозинка кључа"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:482
+#. i18n: ectx: property (text), widget (QLabel, textLabel9_2)
+#. i18n: file: libs/internals/schemas/cdma.kcfg:13
+#. i18n: ectx: label, entry (username), group (cdma)
+#. i18n: file: libs/internals/schemas/gsm.kcfg:14
+#. i18n: ectx: label, entry (username), group (gsm)
+#. i18n: file: libs/internals/schemas/pppoe.kcfg:13
+#. i18n: ectx: label, entry (username), group (pppoe)
+#. i18n: file: libs/internals/schemas/vpn.kcfg:17
+#. i18n: ectx: label, entry (UserName), group (vpn)
+#: rc.cpp:413 rc.cpp:2039 rc.cpp:2078 rc.cpp:2213 rc.cpp:2240
+msgid "Username"
+msgstr "Корисничко име"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:611
+#. i18n: ectx: attribute (title), widget (QWidget, TabPage2)
+#: rc.cpp:440
+msgid "Optional Settings"
+msgstr "Опционе поставке"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:619
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:443
+msgid "Gateway &Port:"
+msgstr "&Порт мрежног излаза:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:629
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, sbCustomPort)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:653
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, sbMtu)
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:677
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, sbUdpFragmentSize)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:445
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spbLocalPort)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:467
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spbCiscoUdpEncPort)
+#. i18n: file: libs/ui/ipv6.ui:112
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#. i18n: file: libs/ui/security/eapmethodpeapbase.ui:72
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPeapVersion)
+#. i18n: file: libs/ui/wired.ui:88
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, mtu)
+#. i18n: file: libs/ui/wired.ui:120
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, speed)
+#. i18n: file: libs/ui/802-11-wireless.ui:110
+#. i18n: ectx: property (text), item, widget (KComboBox, band)
+#. i18n: file: libs/ui/802-11-wireless.ui:147
+#. i18n: ectx: property (specialValueText), widget (Wireless80211WidgetBand, channel)
+#. i18n: file: libs/ui/802-11-wireless.ui:247
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, mtu)
+#: rc.cpp:446 rc.cpp:452 rc.cpp:458 rc.cpp:914 rc.cpp:917 rc.cpp:1166
+#: rc.cpp:1475 rc.cpp:1619 rc.cpp:1631 rc.cpp:1742 rc.cpp:1760 rc.cpp:1799
+msgid "Automatic"
+msgstr "аутоматски"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:643
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: rc.cpp:449
+msgid "Tunnel MTU"
+msgstr "МТУ тунела"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:667
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: rc.cpp:455
+msgid "UDP fragment size"
+msgstr "Величина УДП фрагмената"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:691
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseCustomReneg)
+#: rc.cpp:461
+msgid "Use custom renegotiation interval"
+msgstr "Посебан период поновног преговарања"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:710
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseLZO)
+#: rc.cpp:464
+msgid "Use LZO compression"
+msgstr "Користи ЛЗО компресију"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:717
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseTCP)
+#: rc.cpp:467
+msgid "Use TCP connection"
+msgstr "Користи ТЦП везу"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:724
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseTAP)
+#: rc.cpp:470
+msgid "Use TAP device"
+msgstr "Користи ТАП уређај"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:731
+#. i18n: ectx: property (text), widget (QCheckBox, chkMssRestrict)
+#: rc.cpp:473
+msgid "Restrict TCP maximum segment size (MSS)"
+msgstr "Ограничи највећу величину ТЦП сегмента (МСС)"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:752
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: rc.cpp:476
+msgid "Optional &Security"
+msgstr "Опциона &безбедност"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:760
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:479
+msgid "&Cipher:"
+msgstr "&Шифрар:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:780
+#. i18n: ectx: property (text), item, widget (KComboBox, cboCipher)
+#: rc.cpp:482
+msgid "Obtaining available ciphers..."
+msgstr "Добављам расположиве шифраре..."
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:792
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:485
+msgid "&HMAC Authentication:"
+msgstr "ХМАЦ аутентификација:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:809
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: rc.cpp:488
+msgid "Default"
+msgstr "подразумевана"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:819
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: rc.cpp:494
+msgid "MD-5"
+msgstr "МД5"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:824
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: rc.cpp:497
+msgid "SHA-1"
+msgstr "СХА‑1"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:829
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: rc.cpp:500
+msgid "SHA-224"
+msgstr "СХА‑224"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:834
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: rc.cpp:503
+msgid "SHA-256"
+msgstr "СХА‑256"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:839
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: rc.cpp:506
+msgid "SHA-384"
+msgstr "СХА‑384"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:844
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: rc.cpp:509
+msgid "SHA-512"
+msgstr "СХА‑512"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:849
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: rc.cpp:512
+msgid "RIPEMD-160"
+msgstr "РИПЕМД‑160"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:873
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: rc.cpp:515
+msgid "Optional TLS Settings"
+msgstr "Опционе ТЛС поставке"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:881
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#. i18n: file: libs/ui/security/eapmethodpeapbase.ui:90
+#. i18n: ectx: property (text), widget (QLabel, lblSubjectMatch)
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:133
+#. i18n: ectx: property (text), widget (QLabel, lblSubjectMatch)
+#. i18n: file: libs/ui/security/eapmethodttlsbase.ui:58
+#. i18n: ectx: property (text), widget (QLabel, lblSubjectMatch)
+#: rc.cpp:518 rc.cpp:1484 rc.cpp:1535 rc.cpp:1568
+msgid "Subject Match:"
+msgstr "Поклапање наслова:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:891
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, subjectMatch)
+#: rc.cpp:521
+msgid ""
+"Connect only to servers whose certificate matches the given subject. "
+"Example: /CN=myvpn.company.com"
+msgstr ""
+"Повезује се само на сервере чији сертификат поклапа дату тему. Пример: /"
+"CN=mojvpn.kompanija.com"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:900
+#. i18n: ectx: property (title), widget (QGroupBox, useExtraTlsAuth)
+#: rc.cpp:524
+msgid "Use additional TLS authentication"
+msgstr "Допунска ТЛС аутентификација"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:934
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: rc.cpp:530
+msgid "Key Direction:"
+msgstr "Смер кључа:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:953
+#. i18n: ectx: property (text), item, widget (KComboBox, cboDirection)
+#: rc.cpp:536
+msgid "Server (0)"
+msgstr "сервер (0)"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:958
+#. i18n: ectx: property (text), item, widget (KComboBox, cboDirection)
+#: rc.cpp:539
+msgid "Client (1)"
+msgstr "клијент (1)"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:985
+#. i18n: ectx: attribute (title), widget (QWidget, tab_3)
+#: rc.cpp:542
+msgid "Proxies"
+msgstr "Проксији"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:994
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: rc.cpp:545
+msgid "Proxy Type:"
+msgstr "Тип проксија:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:1019
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbProxyType)
+#: rc.cpp:551
+msgid "HTTP"
+msgstr "ХТТП"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:1024
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbProxyType)
+#: rc.cpp:554
+msgid "SOCKS"
+msgstr "СОКС"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:1032
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: rc.cpp:557
+msgid "Server Address:"
+msgstr "Адреса сервера:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:1045
+#. i18n: ectx: property (text), widget (QLabel, label_13)
+#: rc.cpp:560
+msgid "Port:"
+msgstr "Порт:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:1068
+#. i18n: ectx: property (text), widget (QCheckBox, chkProxyRetry)
+#: rc.cpp:563
+msgid "Retry indefinitely when errors occur"
+msgstr "Непрекидно покушавај кад дође до грешака"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:1075
+#. i18n: ectx: property (text), widget (QLabel, label_14)
+#: rc.cpp:566
+msgid "Proxy Username:"
+msgstr "Корисничко име за прокси:"
+
+#. i18n: file: vpnplugins/openvpn/openvpnprop.ui:1095
+#. i18n: ectx: property (text), widget (QCheckBox, chkProxyShowPassword)
+#: rc.cpp:572
+msgid "Show Password"
+msgstr "Прикажи лозинку"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:25
+#. i18n: ectx: property (text), widget (QLabel, lbl_auth)
+#: rc.cpp:587
+msgid "Allow following &authentication methods:"
+msgstr "Дозволи следеће методе &аутентификације:"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:36
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#. i18n: file: libs/ui/ppp.ui:29
+#. i18n: ectx: property (text), widget (QCheckBox, pap)
+#: rc.cpp:590 rc.cpp:1277
+msgid "PAP"
+msgstr "ПАП"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:44
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#. i18n: file: libs/ui/ppp.ui:39
+#. i18n: ectx: property (text), widget (QCheckBox, chap)
+#: rc.cpp:593 rc.cpp:1280
+msgid "CHAP"
+msgstr "ЦХАП"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:52
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#. i18n: file: libs/ui/ppp.ui:59
+#. i18n: ectx: property (text), widget (QCheckBox, mschap)
+#: rc.cpp:596 rc.cpp:1286
+msgid "MSCHAP"
+msgstr "МС‑ЦХАП"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:60
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#. i18n: file: libs/ui/ppp.ui:49
+#. i18n: ectx: property (text), widget (QCheckBox, mschapv2)
+#: rc.cpp:599 rc.cpp:1283
+msgid "MSCHAPv2"
+msgstr "МС‑ЦХАП в2"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:68
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:86
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#. i18n: file: libs/ui/ppp.ui:69
+#. i18n: ectx: property (text), widget (QCheckBox, eap)
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:9
+#. i18n: ectx: label, entry (eap), group (802-1x)
+#: rc.cpp:602 rc.cpp:719 rc.cpp:1289 rc.cpp:1922
+msgid "EAP"
+msgstr "ЕАП"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:84
+#. i18n: ectx: property (toolTip), widget (QGroupBox, gb_MPPE)
+#: rc.cpp:605
+msgid "Use Microsoft Point-to-Point Encryption"
+msgstr "Користи Мајкрософтово шифровање тачка—тачка"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:87
+#. i18n: ectx: property (title), widget (QGroupBox, gb_MPPE)
+#: rc.cpp:608
+msgid "Use &MPPE Encryption"
+msgstr "&МППЕ шифровање"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:109
+#. i18n: ectx: property (text), widget (QLabel, lbl_MMPEcrypto)
+#: rc.cpp:611
+msgid "&Crypto:"
+msgstr "&Шифровање:"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:120
+#. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
+#. i18n: file: libs/ui/gsm.ui:160
+#. i18n: ectx: property (text), item, widget (KComboBox, type)
+#. i18n: file: libs/ui/wired.ui:48
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMacAddress)
+#. i18n: file: libs/ui/802-11-wireless.ui:220
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMacAddress)
+#: rc.cpp:614 rc.cpp:1028 rc.cpp:1601 rc.cpp:1787
+msgid "Any"
+msgstr "било које"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:125
+#. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
+#: rc.cpp:617
+msgid "128 bit"
+msgstr "128‑битно"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:130
+#. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
+#: rc.cpp:620
+msgid "40 bit"
+msgstr "40‑битно"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:144
+#. i18n: ectx: property (text), widget (QCheckBox, cb_statefulEncryption)
+#: rc.cpp:623
+msgid "Use &stateful encryption"
+msgstr "&Шифровање са стањем"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:156
+#. i18n: ectx: property (title), widget (QGroupBox, grp_cryptoAndCompression)
+#. i18n: file: libs/ui/ppp.ui:82
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: rc.cpp:626 rc.cpp:1292
+msgid "Compression"
+msgstr "Компресија"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:164
+#. i18n: ectx: property (text), widget (QCheckBox, cb_BSD)
+#: rc.cpp:629
+msgid "Allow &BSD compression"
+msgstr "Дозволи &БСД компресију"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:174
+#. i18n: ectx: property (text), widget (QCheckBox, cb_deflate)
+#: rc.cpp:632
+msgid "Allow &Deflate compression"
+msgstr "Дозволи &дифлејт компресију"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:184
+#. i18n: ectx: property (text), widget (QCheckBox, cb_TCPheaders)
+#: rc.cpp:635
+msgid "Allow &TCP header compression"
+msgstr "Дозволи компресију &ТЦП заглавља"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:199
+#. i18n: ectx: property (title), widget (QGroupBox, grp_echo)
+#. i18n: file: libs/ui/ppp.ui:156
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: rc.cpp:638 rc.cpp:1313
+msgid "Echo"
+msgstr "Ехо"
+
+#. i18n: file: vpnplugins/pptp/pptpadvanced.ui:205
+#. i18n: ectx: property (text), widget (QCheckBox, cb_sendEcho)
+#: rc.cpp:641
+msgid "Send PPP &echo packets "
+msgstr "Шаљи ППП &ехо пакете"
+
+#. i18n: file: vpnplugins/pptp/pptpauth.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, PptpAuthenticationWidget)
+#: rc.cpp:644
+msgid "PPTPAuthentication"
+msgstr "ППТП аутентификација"
+
+#. i18n: file: vpnplugins/pptp/pptpauth.ui:26
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: file: vpnplugins/pptp/pptpprop.ui:103
+#. i18n: ectx: property (text), widget (QLabel, lbl_password)
+#. i18n: file: libs/ui/cdma.ui:54
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: file: libs/ui/gsm.ui:74
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: file: libs/ui/pppoe.ui:56
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: file: libs/ui/security/eapmethodleapbase.ui:42
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#. i18n: file: libs/ui/security/eapmethodsimplebase.ui:33
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: file: libs/ui/security/leap.ui:33
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: file: libs/ui/security/wpapsk.ui:25
+#. i18n: ectx: property (text), widget (QLabel, label_14)
+#: rc.cpp:647 rc.cpp:668 rc.cpp:968 rc.cpp:1013 rc.cpp:1328 rc.cpp:1361
+#: rc.cpp:1379 rc.cpp:1397 rc.cpp:1457
+msgid "&Password:"
+msgstr "&Лозинка:"
+
+#. i18n: file: vpnplugins/pptp/pptpprop.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, PptpProp)
+#: rc.cpp:653
+msgid "PPTP Settings"
+msgstr "ППТП поставке"
+
+#. i18n: file: vpnplugins/pptp/pptpprop.ui:52
+#. i18n: ectx: property (title), widget (QGroupBox, grp_additional)
+#: rc.cpp:662
+msgid "Additional"
+msgstr "Допунско"
+
+#. i18n: file: vpnplugins/pptp/pptpprop.ui:74
+#. i18n: ectx: property (text), widget (QLabel, lbl_login)
+#: rc.cpp:665
+msgid "&Login:"
+msgstr "&Пријава:"
+
+#. i18n: file: vpnplugins/pptp/pptpprop.ui:165
+#. i18n: ectx: property (text), widget (QLabel, lbl_ntdomain)
+#: rc.cpp:683
+msgid "&NT Domain:"
+msgstr "&НТ домен:"
+
+#. i18n: file: vpnplugins/strongswan/strongswanauth.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanAuth)
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanProp)
+#: rc.cpp:689 rc.cpp:695
+msgid "Strong Swan VPN"
+msgstr "Јаки СВАН ВПН"
+
+#. i18n: file: vpnplugins/strongswan/strongswanauth.ui:37
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:304
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPasswords)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:161
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPasswords)
+#. i18n: file: vpnplugins/vpnc/vpncauth.ui:79
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPasswords)
+#: rc.cpp:692 rc.cpp:770 rc.cpp:824 rc.cpp:932
+msgid "&Show passwords"
+msgstr "&Прикажи лозинке"
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:20
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: rc.cpp:698
+msgid "Gateway"
+msgstr "Мрежни излаз"
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:26
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:30
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: rc.cpp:701 rc.cpp:791
+msgid "Gateway:"
+msgstr "Мрежни излаз:"
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:42
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:110
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:183
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:704 rc.cpp:722 rc.cpp:740
+msgid "Certificate:"
+msgstr "Сертификат:"
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:71
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#: rc.cpp:710
+msgid "Certificate/private key"
+msgstr "сертификат/приватни кључ"
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:76
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#: rc.cpp:713
+msgid "Certificate/ssh-agent"
+msgstr "сертификат/ssh-agent"
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:81
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#: rc.cpp:716
+msgid "Smartcard"
+msgstr "смарткард"
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:120
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: rc.cpp:725
+msgid "Private key:"
+msgstr "Приватни кључ:"
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:197
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: rc.cpp:743
+msgid "PIN:"
+msgstr "ПИН:"
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:290
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:767
+msgid "User &Password"
+msgstr "Корисничка &лозинка"
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:317
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: rc.cpp:773
+msgid "Options"
+msgstr "Опције"
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:326
+#. i18n: ectx: property (text), widget (QCheckBox, innerIP)
+#: rc.cpp:776
+msgid "Request an inner IP address"
+msgstr "Захтевај унутрашњу ИП адресу"
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:339
+#. i18n: ectx: property (text), widget (QCheckBox, udpEncap)
+#: rc.cpp:779
+msgid "Enforce UDP encapsulation"
+msgstr "Наметни УДП енкапсулацију"
+
+#. i18n: file: vpnplugins/strongswan/strongswanprop.ui:346
+#. i18n: ectx: property (text), widget (QCheckBox, ipComp)
+#: rc.cpp:782
+msgid "Use IP compression"
+msgstr "Користи ИП компресију"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, VpncProp)
+#: rc.cpp:785
+msgid "Cisco VPN"
+msgstr "Сисков ВПН"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:59
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: file: vpnplugins/vpnc/vpncauth.ui:23
+#. i18n: ectx: property (text), widget (QLabel, userPasswordLabel)
+#: rc.cpp:797 rc.cpp:926
+msgid "User &Password:"
+msgstr "&Корисничка лозинка:"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:102
+#. i18n: ectx: property (text), widget (QLabel, labelGroup)
+#. i18n: file: vpnplugins/vpnc/vpncauth.ui:106
+#. i18n: ectx: property (text), widget (QLabel, groupNameLabel)
+#: rc.cpp:809 rc.cpp:938
+msgid "Group name:"
+msgstr "Име групе:"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:118
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: file: vpnplugins/vpnc/vpncauth.ui:36
+#. i18n: ectx: property (text), widget (QLabel, groupPasswordLabel)
+#: rc.cpp:812 rc.cpp:929
+msgid "&Group Password:"
+msgstr "&Групна лозинка:"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:171
+#. i18n: ectx: property (text), widget (QCheckBox, cbUseHybridAuth)
+#: rc.cpp:827
+msgid "Use hybrid authentication"
+msgstr "Хибридна аутентификација"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:202
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: rc.cpp:836
+msgid "&Domain:"
+msgstr "&Домен:"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:215
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: rc.cpp:839
+msgid "&Encryption Method:"
+msgstr "Метод &шифровања:"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:232
+#. i18n: ectx: property (text), item, widget (QComboBox, cboEncryptionMethod)
+#: rc.cpp:842
+msgid "Secure"
+msgstr "безбедно"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:237
+#. i18n: ectx: property (text), item, widget (QComboBox, cboEncryptionMethod)
+#: rc.cpp:845
+msgid "Weak"
+msgstr "слабо"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:250
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: rc.cpp:851
+msgid "&NAT Traversal:"
+msgstr "Пролазак кроз НАТ:"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:267
+#. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
+#: rc.cpp:854
+msgid "NAT-T (if available)"
+msgstr "НАТ‑Т (ако има)"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:272
+#. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
+#: rc.cpp:857
+msgid "Force NAT-T"
+msgstr "наметнут НАТ‑Т"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:277
+#. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
+#: rc.cpp:860
+msgid "Cisco UDP"
+msgstr "Сисков УДП"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:282
+#. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
+#. i18n: file: libs/ui/ipv4.ui:137
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#. i18n: file: libs/ui/ipv6.ui:142
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: rc.cpp:863 rc.cpp:1094 rc.cpp:1184
+msgid "Disabled"
+msgstr "искључено"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:290
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: rc.cpp:866
+msgid "&IKE DH Group"
+msgstr "&ИКЕ ДХ група"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:310
+#. i18n: ectx: property (text), item, widget (QComboBox, cboDHGroup)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:358
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPerfectForwardSecrecy)
+#: rc.cpp:869 rc.cpp:887
+msgid "DH Group 1"
+msgstr "ДХ група 1"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:315
+#. i18n: ectx: property (text), item, widget (QComboBox, cboDHGroup)
+#: rc.cpp:872
+msgid "DH Group 2 (default)"
+msgstr "ДХ група 2 (подразумевано)"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:320
+#. i18n: ectx: property (text), item, widget (QComboBox, cboDHGroup)
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:368
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPerfectForwardSecrecy)
+#: rc.cpp:875 rc.cpp:893
+msgid "DH Group 5"
+msgstr "ДХ група 5"
+
+# rewrite-msgi: /Perfect Forward Secrecy/PFS/
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:328
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: rc.cpp:878
+msgid "&Perfect Forward Secrecy:"
+msgstr "&ПФС:"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:348
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPerfectForwardSecrecy)
+#: rc.cpp:881
+msgid "No PFS"
+msgstr "без ПФС‑а"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:353
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPerfectForwardSecrecy)
+#: rc.cpp:884
+msgid "Server (default)"
+msgstr "сервер (подразумевано)"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:363
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPerfectForwardSecrecy)
+#: rc.cpp:890
+msgid "DH Group 2"
+msgstr "ДХ група 2"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:376
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:896
+msgid "&Vendor:"
+msgstr "&Произвођач:"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:393
+#. i18n: ectx: property (text), item, widget (KComboBox, cboVendor)
+#: rc.cpp:899
+msgid "Cisco (default)"
+msgstr "Сиско (подразумевано)"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:398
+#. i18n: ectx: property (text), item, widget (KComboBox, cboVendor)
+#: rc.cpp:902
+msgid "Netscreen"
+msgstr "Нетскрин"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:406
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: rc.cpp:905
+msgid "&Application Version:"
+msgstr "&Издање програма:"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:419
+#. i18n: ectx: property (text), widget (QCheckBox, chkDeadPeerDetection)
+#: rc.cpp:908
+msgid "Enable Dead &Peer Detection"
+msgstr "Откривање &мртвих парњака"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:429
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: rc.cpp:911
+msgid "&Local Port:"
+msgstr "&Локални порт:"
+
+#. i18n: file: vpnplugins/vpnc/vpncprop.ui:480
+#. i18n: ectx: property (text), widget (QLabel, label_13)
+#: rc.cpp:920
+msgid "&Cisco UDP Encapsulation Port:"
+msgstr "&Порт Сискове УДП енкапсулације:"
+
+#. i18n: file: vpnplugins/vpnc/vpncauth.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, VpncAuth)
+#: rc.cpp:923
+msgid "VPNCAuthentication"
+msgstr "ВПНЦ‑ова аутентификација"
+
+#. i18n: file: libs/ui/bluetooth.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, Bluetooth)
+#: rc.cpp:941
+msgid "Bluetooth"
+msgstr "Блутут"
+
+#. i18n: file: libs/ui/bluetooth.ui:23
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: rc.cpp:944
+msgid "Hardware Address"
+msgstr "Хардверска адреса"
+
+#. i18n: file: libs/ui/bluetooth.ui:57
+#. i18n: ectx: property (text), item, widget (KComboBox, networktype)
+#: rc.cpp:950
+msgid "Dialup Network (DUN)"
+msgstr "модемска мрежа (ДУН)"
+
+#. i18n: file: libs/ui/bluetooth.ui:62
+#. i18n: ectx: property (text), item, widget (KComboBox, networktype)
+#: rc.cpp:953
+msgid "Personal Area Network (PANU)"
+msgstr "лична обласна мрежа (ПАНУ)"
+
+#. i18n: file: libs/ui/bluetooth.ui:86
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:956
+msgid "Name"
+msgstr "Име"
+
+#. i18n: file: libs/ui/cdma.ui:22
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: file: libs/ui/gsm.ui:38
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: rc.cpp:962 rc.cpp:1004
+msgid "&Number:"
+msgstr "&Број:"
+
+#. i18n: file: libs/ui/connection.ui:19
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:974
+msgid "&Connection name:"
+msgstr "&Име везе:"
+
+#. i18n: file: libs/ui/connection.ui:42
+#. i18n: ectx: property (text), widget (QCheckBox, autoconnect)
+#: rc.cpp:977
+msgid "Connect &automatically"
+msgstr "Повежи се &аутоматски"
+
+#. i18n: file: libs/ui/connection.ui:54
+#. i18n: ectx: property (text), widget (QCheckBox, system)
+#: rc.cpp:980
+msgid "&System connection"
+msgstr "&Системска веза"
+
+#. i18n: file: libs/ui/connection.ui:57
+#. i18n: ectx: property (toolTip), widget (QCheckBox, system)
+#: rc.cpp:983
+msgid "Save secrets in system storage"
+msgstr "Уписуј тајне у системско складиште"
+
+#. i18n: file: libs/ui/connection.ui:60
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, system)
+#: rc.cpp:986
+msgid ""
+"If checked, secrets (passwords and encryption keys) will be saved in system "
+"storage, which allows the connection to work without a KDE session."
+msgstr ""
+"Ако је попуњено, тајне (лозинке и шифрарски кључеви) биће уписивани у "
+"системско складиште, што омогућава да веза ради изван КДЕ сесије."
+
+#. i18n: file: libs/ui/connection.ui:73
+#. i18n: ectx: property (toolTip), widget (KPushButton, pushButtonPermissions)
+#: rc.cpp:989
+msgid "Edit advanced permissions for this connection"
+msgstr "Уредите напредне дозволе за ову везу."
+
+#. i18n: file: libs/ui/connection.ui:76
+#. i18n: ectx: property (whatsThis), widget (KPushButton, pushButtonPermissions)
+#: rc.cpp:992
+msgid ""
+"Fine-grained permissions editor for this connection. It lets you choose "
+"which users can activate/modify/delete this connection."
+msgstr ""
+"Уређивач фино раздељених дозвола за ову везу. Омогућава вам да задате који "
+"корисници могу да је активирају, измене или обришу."
+
+#. i18n: file: libs/ui/connection.ui:79
+#. i18n: ectx: property (text), widget (KPushButton, pushButtonPermissions)
+#: rc.cpp:995
+msgid "Advanced Permissions"
+msgstr "Напредне дозволе"
+
+#. i18n: file: libs/ui/gsm.ui:51
+#. i18n: ectx: property (text), widget (KLineEdit, number)
+#: rc.cpp:1007
+msgid "*99#"
+msgstr "*99#"
+
+#. i18n: file: libs/ui/gsm.ui:108
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1019
+msgid "&APN:"
+msgstr "&АПН:"
+
+#. i18n: file: libs/ui/gsm.ui:124
+#. i18n: ectx: property (text), widget (QLabel, lblNetwork)
+#: rc.cpp:1022
+msgid "Net&work:"
+msgstr "&Мрежа:"
+
+#. i18n: file: libs/ui/gsm.ui:165
+#. i18n: ectx: property (text), item, widget (KComboBox, type)
+#: rc.cpp:1031
+msgid "3G (UMTS/HSPA)"
+msgstr "3Г (УМТС/ХСПА)"
+
+#. i18n: file: libs/ui/gsm.ui:170
+#. i18n: ectx: property (text), item, widget (KComboBox, type)
+#: rc.cpp:1034
+msgid "2G (GPRS/EDGE)"
+msgstr "2Г (ГПРС/ЕДГЕ)"
+
+#. i18n: file: libs/ui/gsm.ui:175
+#. i18n: ectx: property (text), item, widget (KComboBox, type)
+#: rc.cpp:1037
+msgid "Prefer 3G"
+msgstr "најпре 3Г"
+
+#. i18n: file: libs/ui/gsm.ui:180
+#. i18n: ectx: property (text), item, widget (KComboBox, type)
+#: rc.cpp:1040
+msgid "Prefer 2G"
+msgstr "најпре 2Г"
+
+#. i18n: file: libs/ui/gsm.ui:188
+#. i18n: ectx: property (text), widget (QLabel, lblBand)
+#: rc.cpp:1043
+msgid "&Band:"
+msgstr "&Појас:"
+
+#. i18n: file: libs/ui/gsm.ui:211
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:1046
+msgid "&PIN:"
+msgstr "&ПИН:"
+
+#. i18n: file: libs/ui/gsm.ui:250
+#. i18n: ectx: property (text), widget (QCheckBox, chkAllowRoaming)
+#: rc.cpp:1058
+msgid "Allow Roaming"
+msgstr "Увек у ромингу"
+
+#. i18n: file: libs/ui/gsm.ui:276
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#: rc.cpp:1061
+msgid "&Show secrets"
+msgstr "&Прикажи тајне"
+
+#. i18n: file: libs/ui/ipv4.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, SettingsIp4Config)
+#: rc.cpp:1064
+msgid "IPv4 Address"
+msgstr "ИПв4 адресе"
+
+#. i18n: file: libs/ui/ipv4.ui:39
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#. i18n: file: libs/ui/ipv6.ui:39
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#: rc.cpp:1067 rc.cpp:1154
+msgid "Basic settings"
+msgstr "основне поставке"
+
+#. i18n: file: libs/ui/ipv4.ui:44
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#. i18n: file: libs/ui/ipv6.ui:44
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#: rc.cpp:1070 rc.cpp:1157
+msgid "Additional addresses"
+msgstr "додатне адресе"
+
+#. i18n: file: libs/ui/ipv4.ui:49
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#. i18n: file: libs/ui/ipv6.ui:49
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#: rc.cpp:1073 rc.cpp:1160
+msgid "Routes"
+msgstr "руте"
+
+#. i18n: file: libs/ui/ipv4.ui:98
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: file: libs/ui/ipv6.ui:98
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1076 rc.cpp:1163
+msgid "Method:"
+msgstr "Метод:"
+
+#. i18n: file: libs/ui/ipv4.ui:112
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: rc.cpp:1079
+msgid "DHCP"
+msgstr "ДХЦП"
+
+#. i18n: file: libs/ui/ipv4.ui:117
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: rc.cpp:1082
+msgid "DHCP (only address)"
+msgstr "ДХЦП (само адреса)"
+
+#. i18n: file: libs/ui/ipv4.ui:122
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#. i18n: file: libs/ui/ipv6.ui:127
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: rc.cpp:1085 rc.cpp:1175
+msgid "Manual"
+msgstr "ручно"
+
+#. i18n: file: libs/ui/ipv4.ui:127
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#. i18n: file: libs/ui/ipv6.ui:132
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: rc.cpp:1088 rc.cpp:1178
+msgid "Link-Local"
+msgstr "локалновезно"
+
+#. i18n: file: libs/ui/ipv4.ui:132
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#. i18n: file: libs/ui/ipv6.ui:137
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: rc.cpp:1091 rc.cpp:1181
+msgid "Shared"
+msgstr "дељено"
+
+#. i18n: file: libs/ui/ipv4.ui:145
+#. i18n: ectx: property (text), widget (QLabel, addressLabel)
+#. i18n: file: libs/ui/ipv6.ui:150
+#. i18n: ectx: property (text), widget (QLabel, addressLabel)
+#: rc.cpp:1097 rc.cpp:1187
+msgid "&IP Address:"
+msgstr "&ИП адреса:"
+
+#. i18n: file: libs/ui/ipv4.ui:164
+#. i18n: ectx: property (toolTip), widget (KLineEdit, address)
+#. i18n: file: libs/ui/ipv6.ui:169
+#. i18n: ectx: property (toolTip), widget (KLineEdit, address)
+#: rc.cpp:1100 rc.cpp:1190
+msgid ""
+"Use this field to specify the IP address that should be used by this "
+"computer."
+msgstr ""
+"Употребите ово поље да задате ИП адресу коју ће користити овај рачунар."
+
+#. i18n: file: libs/ui/ipv4.ui:171
+#. i18n: ectx: property (text), widget (QLabel, netMaskLabel)
+#. i18n: file: libs/ui/ipv6.ui:176
+#. i18n: ectx: property (text), widget (QLabel, netMaskLabel)
+#: rc.cpp:1103 rc.cpp:1193
+msgid "Subnet &Mask:"
+msgstr "&Маска подмреже:"
+
+#. i18n: file: libs/ui/ipv4.ui:190
+#. i18n: ectx: property (toolTip), widget (KLineEdit, netMask)
+#. i18n: file: libs/ui/ipv6.ui:195
+#. i18n: ectx: property (toolTip), widget (KLineEdit, netMask)
+#: rc.cpp:1106 rc.cpp:1196
+msgid ""
+"Use this field to specify the subnet that the above IP address belongs to."
+msgstr "Употребите ово поље да задате подмрежу којој горња ИП адреса припада."
+
+#. i18n: file: libs/ui/ipv4.ui:216
+#. i18n: ectx: property (toolTip), widget (KLineEdit, gateway)
+#. i18n: file: libs/ui/ipv6.ui:221
+#. i18n: ectx: property (toolTip), widget (KLineEdit, gateway)
+#: rc.cpp:1112 rc.cpp:1202
+msgid ""
+"Use this field to specify the IP address of the gateway for requests outside "
+"the local network."
+msgstr ""
+"Употребите ово поље да задате ИП адресу мрежног излаза за захтеве изван "
+"локалне мреже."
+
+#. i18n: file: libs/ui/ipv4.ui:223
+#. i18n: ectx: property (text), widget (QLabel, dnsLabel)
+#. i18n: file: libs/ui/ipv6.ui:228
+#. i18n: ectx: property (text), widget (QLabel, dnsLabel)
+#: rc.cpp:1115 rc.cpp:1205
+msgid "&DNS Servers:"
+msgstr "&ДНС сервери:"
+
+#. i18n: file: libs/ui/ipv4.ui:253
+#. i18n: ectx: property (toolTip), widget (KLineEdit, dns)
+#. i18n: file: libs/ui/ipv6.ui:258
+#. i18n: ectx: property (toolTip), widget (KLineEdit, dns)
+#: rc.cpp:1118 rc.cpp:1208
+msgid ""
+"Use this field to specify the IP address(es) of one or more DNS servers. Use "
+"',' to separate entries."
+msgstr ""
+"Употребите ово поље да задате ИП адресе једног или више ДНС сервера. Ставке "
+"раздвајате запетом."
+
+#. i18n: file: libs/ui/ipv4.ui:260
+#. i18n: ectx: property (text), widget (KPushButton, dnsMorePushButton)
+#. i18n: file: libs/ui/ipv4.ui:294
+#. i18n: ectx: property (text), widget (KPushButton, dnsSearchMorePushButton)
+#. i18n: file: libs/ui/ipv6.ui:265
+#. i18n: ectx: property (text), widget (KPushButton, dnsMorePushButton)
+#. i18n: file: libs/ui/ipv6.ui:299
+#. i18n: ectx: property (text), widget (KPushButton, dnsSearchMorePushButton)
+#. i18n: file: libs/ui/security/eapmethodpeapbase.ui:120
+#. i18n: ectx: property (text), widget (KPushButton, altSubjectMatchesMoreBtn)
+#. i18n: file: libs/ui/security/eapmethodpeapbase.ui:145
+#. i18n: ectx: property (text), widget (KPushButton, connectToTheseServersMoreBtn)
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:163
+#. i18n: ectx: property (text), widget (KPushButton, altSubjectMatchesMoreBtn)
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:188
+#. i18n: ectx: property (text), widget (KPushButton, connectToTheseServersMoreBtn)
+#. i18n: file: libs/ui/security/eapmethodttlsbase.ui:88
+#. i18n: ectx: property (text), widget (KPushButton, altSubjectMatchesMoreBtn)
+#. i18n: file: libs/ui/security/eapmethodttlsbase.ui:113
+#. i18n: ectx: property (text), widget (KPushButton, connectToTheseServersMoreBtn)
+#: rc.cpp:1121 rc.cpp:1127 rc.cpp:1211 rc.cpp:1217 rc.cpp:1496 rc.cpp:1505
+#: rc.cpp:1547 rc.cpp:1556 rc.cpp:1580 rc.cpp:1589
+msgid "..."
+msgstr "..."
+
+#. i18n: file: libs/ui/ipv4.ui:269
+#. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
+#. i18n: file: libs/ui/ipv6.ui:274
+#. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
+#: rc.cpp:1124 rc.cpp:1214
+msgid "&Search Domains:"
+msgstr "&Домени за претрагу:"
+
+#. i18n: file: libs/ui/ipv4.ui:303
+#. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
+#: rc.cpp:1130
+msgid "DHCP &Client ID:"
+msgstr "ДХЦП ИД &клијента:"
+
+#. i18n: file: libs/ui/ipv4.ui:316
+#. i18n: ectx: property (toolTip), widget (KLineEdit, dhcpClientId)
+#: rc.cpp:1133
+msgid ""
+"Use this field to specify the DHCP client ID which is a string sent to the "
+"DHCP server to identify the local machine that the DHCP server may use to "
+"customize the DHCP lease and options."
+msgstr ""
+"Употребите ово поље да задате ДХЦП ИД &клијента, што је ниска која се шаље "
+"ДХЦП серверу ради идентификације локалног рачунара. На основу ње, ДХЦП "
+"сервер може прилагодити ДХЦП најам и опције."
+
+#. i18n: file: libs/ui/ipv4.ui:419
+#. i18n: ectx: property (text), widget (QCheckBox, cbMayFail)
+#: rc.cpp:1136
+msgid "IPv4 is required for this connection"
+msgstr "Ова веза захтева ИПв4"
+
+#. i18n: file: libs/ui/ipv4advanced.ui:20
+#. i18n: ectx: property (windowTitle), widget (QWidget, AdvancedSettingsIp4Config)
+#. i18n: file: libs/ui/ipv4routes.ui:20
+#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp4Config)
+#. i18n: file: libs/ui/ipv6advanced.ui:20
+#. i18n: ectx: property (windowTitle), widget (QWidget, AdvancedSettingsIp6Config)
+#. i18n: file: libs/ui/ipv6routes.ui:20
+#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
+#: rc.cpp:1139 rc.cpp:1223 rc.cpp:1241 rc.cpp:1253
+msgid "Advanced IP Settings"
+msgstr "Напредне ИП поставке"
+
+#. i18n: file: libs/ui/ipv4advanced.ui:32
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: file: libs/ui/ipv6advanced.ui:32
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1142 rc.cpp:1244
+msgid "&Additional IP Addresses:"
+msgstr "&Додатне ИП адресе:"
+
+#. i18n: file: libs/ui/ipv4advanced.ui:107
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonAdd)
+#. i18n: file: libs/ui/ipv4routes.ui:107
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonAdd)
+#. i18n: file: libs/ui/ipv6advanced.ui:107
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonAdd)
+#. i18n: file: libs/ui/ipv6routes.ui:107
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonAdd)
+#: rc.cpp:1145 rc.cpp:1229 rc.cpp:1247 rc.cpp:1259
+msgctxt "Insert a row"
+msgid "Add"
+msgstr "Додај"
+
+#. i18n: file: libs/ui/ipv4advanced.ui:135
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
+#. i18n: file: libs/ui/ipv4routes.ui:135
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
+#. i18n: file: libs/ui/ipv6advanced.ui:135
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
+#. i18n: file: libs/ui/ipv6routes.ui:135
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
+#: rc.cpp:1148 rc.cpp:1232 rc.cpp:1250 rc.cpp:1262
+msgctxt "Remove a selected row"
+msgid "R&emove"
+msgstr "&Уклони"
+
+#. i18n: file: libs/ui/ipv6.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, SettingsIp6Config)
+#: rc.cpp:1151
+msgid "IPv6 Address"
+msgstr "ИПв6 адресе"
+
+#. i18n: file: libs/ui/ipv6.ui:117
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: rc.cpp:1169
+msgid "Automatic (addresses only)"
+msgstr "аутоматски (само адресе)"
+
+#. i18n: file: libs/ui/ipv6.ui:122
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: rc.cpp:1172
+msgid "Automatic (DHCP only)"
+msgstr "аутоматски (само ДХЦП)"
+
+#. i18n: file: libs/ui/ipv6.ui:404
+#. i18n: ectx: property (text), widget (QCheckBox, cbMayFail)
+#: rc.cpp:1220
+msgid "IPv6 is required for this connection"
+msgstr "Ова веза захтева ИПв6"
+
+#. i18n: file: libs/ui/ipv4routes.ui:32
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: file: libs/ui/ipv6routes.ui:32
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1226 rc.cpp:1256
+msgid "&Routes"
+msgstr "&Руте"
+
+#. i18n: file: libs/ui/ipv4routes.ui:142
+#. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
+#. i18n: file: libs/ui/ipv6routes.ui:142
+#. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
+#: rc.cpp:1235 rc.cpp:1265
+msgid "Ignore &automatically obtained routes"
+msgstr "Игнориши &аутоматски добављене руте"
+
+#. i18n: file: libs/ui/ipv4routes.ui:165
+#. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
+#. i18n: file: libs/ui/ipv6routes.ui:165
+#. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
+#: rc.cpp:1238 rc.cpp:1268
+msgid "Use &only for resources on this connection"
+msgstr "Користи &само за ресурсе на овој вези"
+
+#. i18n: file: libs/ui/ppp.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, Ppp)
+#: rc.cpp:1271
+msgid "PPP"
+msgstr "ППП"
+
+#. i18n: file: libs/ui/ppp.ui:91
+#. i18n: ectx: property (title), widget (QGroupBox, requiremppe)
+#: rc.cpp:1295
+msgid "Point-to-Point-Encryption (MPPE)"
+msgstr "Шифровање тачка—тачка (МППЕ)"
+
+#. i18n: file: libs/ui/ppp.ui:106
+#. i18n: ectx: property (text), widget (QCheckBox, requiremppe128)
+#: rc.cpp:1298
+msgid "Require 128-bit encryption"
+msgstr "Захтевај 128‑битно шифровање"
+
+#. i18n: file: libs/ui/ppp.ui:113
+#. i18n: ectx: property (text), widget (QCheckBox, mppestateful)
+#: rc.cpp:1301
+msgid "Stateful MPPE"
+msgstr "МППЕ са стањем"
+
+#. i18n: file: libs/ui/ppp.ui:123
+#. i18n: ectx: property (text), widget (QCheckBox, bsdcomp)
+#: rc.cpp:1304
+msgid "Allow BSD compression"
+msgstr "Дозволи БСД компресију"
+
+#. i18n: file: libs/ui/ppp.ui:133
+#. i18n: ectx: property (text), widget (QCheckBox, deflate)
+#: rc.cpp:1307
+msgid "Allow Deflate compression"
+msgstr "Дозволи дифлејт компресију"
+
+#. i18n: file: libs/ui/ppp.ui:143
+#. i18n: ectx: property (text), widget (QCheckBox, vjcomp)
+#: rc.cpp:1310
+msgid "Use TCP header compression"
+msgstr "Користи компресију ТЦП заглавља"
+
+#. i18n: file: libs/ui/ppp.ui:162
+#. i18n: ectx: property (text), widget (QCheckBox, pppecho)
+#: rc.cpp:1316
+msgid "Send PPP echo packets"
+msgstr "Шаљи ППП ехо пакете"
+
+#. i18n: file: libs/ui/pppoe.ui:20
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1322
+msgid "&Service:"
+msgstr "&Сервис:"
+
+#. i18n: file: libs/ui/scanwidget.ui:38
+#. i18n: ectx: property (text), widget (QLabel, m_interfaceLabel)
+#: rc.cpp:1334
+msgid "Interface:"
+msgstr "Сучеље"
+
+#. i18n: file: libs/ui/scanwidget.ui:51
+#. i18n: ectx: property (text), widget (QLabel, m_viewLabel_2)
+#: rc.cpp:1337
+msgid "View:"
+msgstr "Приказ:"
+
+#. i18n: file: libs/ui/scanwidget.ui:62
+#. i18n: ectx: property (text), item, widget (KComboBox, m_view)
+#: rc.cpp:1340
+msgid "Map"
+msgstr "мапа"
+
+#. i18n: file: libs/ui/scanwidget.ui:67
+#. i18n: ectx: property (text), item, widget (KComboBox, m_view)
+#: rc.cpp:1343
+msgid "Details"
+msgstr "детаљи"
+
+#. i18n: file: libs/ui/scanwidget.ui:101
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_useBssid)
+#: rc.cpp:1346
+msgid "Use the selected AP's BSSID in the connection settings"
+msgstr "Користи задати БССИД АП‑а у поставкама везе"
+
+#. i18n: file: libs/ui/scanwidget.ui:104
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_useBssid)
+#: rc.cpp:1349
+msgid ""
+"Automatically set the BSSID in the connection settings to the selected AP's "
+"BSSID. This is useful if multiple networks with the same SSID, but different "
+"BSSIDs exist."
+msgstr ""
+"Аутоматски поставља БССИД у поставкама везе на БССИД изабраног АП‑а. Ово је "
+"корисно у случају више мрежа са истим ССИД‑ом али различитим БССИД-овима."
+
+#. i18n: file: libs/ui/scanwidget.ui:107
+#. i18n: ectx: property (text), widget (QCheckBox, m_useBssid)
+#: rc.cpp:1352
+msgid "Use the AP's BSSID"
+msgstr "Користи БССИД АП‑а"
+
+#. i18n: file: libs/ui/security/eapmethodleapbase.ui:35
+#. i18n: ectx: property (toolTip), widget (KLineEdit, leUsername)
+#: rc.cpp:1358
+msgid "User name on this network"
+msgstr "Корисничко име на овој мрежи"
+
+#. i18n: file: libs/ui/security/eapmethodleapbase.ui:57
+#. i18n: ectx: property (toolTip), widget (KLineEdit, lePassword)
+#: rc.cpp:1364
+msgid "Password on this network"
+msgstr "Лозинка на овој мрежи"
+
+#. i18n: file: libs/ui/security/eapmethodstackbase.ui:32
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: file: libs/ui/security/wep.ui:91
+#. i18n: ectx: property (text), widget (QLabel, authalgLabel)
+#: rc.cpp:1391 rc.cpp:1436
+msgid "&Authentication:"
+msgstr "&Аутентификација:"
+
+#. i18n: file: libs/ui/security/wep.ui:17
+#. i18n: ectx: property (text), widget (QLabel, keyTypeLabel)
+#: rc.cpp:1412
+msgid "Key type:"
+msgstr "Тип кључа:"
+
+#. i18n: file: libs/ui/security/wep.ui:31
+#. i18n: ectx: property (text), item, widget (QComboBox, keyType)
+#: rc.cpp:1415
+msgid "Passphrase (for 128 bit)"
+msgstr "Лозинка (за 128‑битно)"
+
+#. i18n: file: libs/ui/security/wep.ui:36
+#. i18n: ectx: property (text), item, widget (QComboBox, keyType)
+#: rc.cpp:1418
+msgid "Hex or Ascii Key (for 64 or 128 bit)"
+msgstr "Хекса или аски кључ (за 64- или 128‑битно)"
+
+#. i18n: file: libs/ui/security/wep.ui:54
+#. i18n: ectx: property (text), widget (QLabel, weptxkeyindexLabel)
+#: rc.cpp:1421
+msgid "&WEP index:"
+msgstr "&ВЕП индекс:"
+
+#. i18n: file: libs/ui/security/wep.ui:68
+#. i18n: ectx: property (text), item, widget (KComboBox, weptxkeyindex)
+#: rc.cpp:1424
+msgid "1 (Default)"
+msgstr "1 (подразумевани)"
+
+#. i18n: file: libs/ui/security/wep.ui:73
+#. i18n: ectx: property (text), item, widget (KComboBox, weptxkeyindex)
+#: rc.cpp:1427
+msgid "2"
+msgstr "2"
+
+#. i18n: file: libs/ui/security/wep.ui:78
+#. i18n: ectx: property (text), item, widget (KComboBox, weptxkeyindex)
+#: rc.cpp:1430
+msgid "3"
+msgstr "3"
+
+#. i18n: file: libs/ui/security/wep.ui:83
+#. i18n: ectx: property (text), item, widget (KComboBox, weptxkeyindex)
+#: rc.cpp:1433
+msgid "4"
+msgstr "4"
+
+#. i18n: file: libs/ui/security/wep.ui:105
+#. i18n: ectx: property (text), item, widget (KComboBox, authalg)
+#: rc.cpp:1439
+msgid "Open System"
+msgstr "отворени систем"
+
+#. i18n: file: libs/ui/security/wirelesssecurity.ui:20
+#. i18n: ectx: property (windowTitle), widget (QWidget, WirelessSecurity)
+#: rc.cpp:1451
+msgid "Wireless Security"
+msgstr "Бежична безбедност"
+
+#. i18n: file: libs/ui/security/wirelesssecurity.ui:41
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1454
+msgid "&Security:"
+msgstr "&Безбедност:"
+
+#. i18n: file: libs/ui/security/eapmethodpeapbase.ui:19
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: file: libs/ui/security/eapmethodttlsbase.ui:19
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1463 rc.cpp:1559
+msgid "&Anonymous Identity:"
+msgstr "&Анонимни идентитет:"
+
+#. i18n: file: libs/ui/security/eapmethodpeapbase.ui:35
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:51
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: file: libs/ui/security/eapmethodttlsbase.ui:35
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:1466 rc.cpp:1514 rc.cpp:1562
+msgid "CA Certi&ficate:"
+msgstr "ЦА &сертификат:"
+
+#. i18n: file: libs/ui/security/eapmethodpeapbase.ui:51
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseSystemCaCerts)
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:67
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseSystemCaCerts)
+#. i18n: file: libs/ui/security/eapmethodttlsbase.ui:51
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseSystemCaCerts)
+#: rc.cpp:1469 rc.cpp:1517 rc.cpp:1565
+msgid "Use Syste&m CA Certs"
+msgstr "Користи систе&мске ЦА сертификате"
+
+#. i18n: file: libs/ui/security/eapmethodpeapbase.ui:58
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: rc.cpp:1472
+msgid "PEAP &Version:"
+msgstr "&Верзија ПЕАП‑а:"
+
+#. i18n: file: libs/ui/security/eapmethodpeapbase.ui:77
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPeapVersion)
+#: rc.cpp:1478
+msgid "Version 0"
+msgstr "верзија 0"
+
+#. i18n: file: libs/ui/security/eapmethodpeapbase.ui:82
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPeapVersion)
+#: rc.cpp:1481
+msgid "Version 1"
+msgstr "верзија 1"
+
+#. i18n: file: libs/ui/security/eapmethodpeapbase.ui:97
+#. i18n: ectx: property (toolTip), widget (KLineEdit, leSubjectMatch)
+#: rc.cpp:1487
+msgid ""
+"Only connect to servers whose certificate subject matches this. For the "
+"syntax see the wpa_supplicant documentation."
+msgstr ""
+"Повезује се само на сервере чији наслов сертификата одговара овоме. Синтаксу "
+"потражите у документацији за wpa_supplicant."
+
+#. i18n: file: libs/ui/security/eapmethodpeapbase.ui:104
+#. i18n: ectx: property (text), widget (QLabel, lblAltSubjectMatches)
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:147
+#. i18n: ectx: property (text), widget (QLabel, lblAltSubjectMatches)
+#. i18n: file: libs/ui/security/eapmethodttlsbase.ui:72
+#. i18n: ectx: property (text), widget (QLabel, lblAltSubjectMatches)
+#: rc.cpp:1490 rc.cpp:1541 rc.cpp:1574
+msgid "Alternative Subject Matches:"
+msgstr "Алтернативна поклапања наслова:"
+
+#. i18n: file: libs/ui/security/eapmethodpeapbase.ui:113
+#. i18n: ectx: property (toolTip), widget (QLineEdit, leAltSubjectMatches)
+#: rc.cpp:1493
+msgid ""
+"Only connect to servers whose certificate contains at least one of the "
+"entries. For the syntax see the wpa_supplicant documentation. Use ',' to "
+"separate entries."
+msgstr ""
+"Повезује се само на сервере чији сертификат садржи бар један од уноса. "
+"Синтаксу потражите у документацији за wpa_supplicant. Уносе раздвајате "
+"запетом."
+
+#. i18n: file: libs/ui/security/eapmethodpeapbase.ui:129
+#. i18n: ectx: property (text), widget (QLabel, lblConnectToTheseServers)
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:172
+#. i18n: ectx: property (text), widget (QLabel, lblConnectToTheseServers)
+#. i18n: file: libs/ui/security/eapmethodttlsbase.ui:97
+#. i18n: ectx: property (text), widget (QLabel, lblConnectToTheseServers)
+#: rc.cpp:1499 rc.cpp:1550 rc.cpp:1583
+msgid "Connect to these Servers:"
+msgstr "Повезуј се на ове сервере:"
+
+#. i18n: file: libs/ui/security/eapmethodpeapbase.ui:138
+#. i18n: ectx: property (toolTip), widget (KLineEdit, leConnectToTheseServers)
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:181
+#. i18n: ectx: property (toolTip), widget (KLineEdit, leConnectToTheseServers)
+#. i18n: file: libs/ui/security/eapmethodttlsbase.ui:106
+#. i18n: ectx: property (toolTip), widget (KLineEdit, leConnectToTheseServers)
+#: rc.cpp:1502 rc.cpp:1553 rc.cpp:1586
+msgid "Only connect to these servers. Use ',' to separate entries."
+msgstr "Повезује се само на задате сервер. Уносе раздвајате запетом."
+
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:19
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1508
+msgid "&Identity:"
+msgstr "&Идентитет:"
+
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:90
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:1523
+msgid "Private Key Pass&word:"
+msgstr "&Лозинка приватног кључа:"
+
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:140
+#. i18n: ectx: property (toolTip), widget (KLineEdit, leSubjectMatch)
+#. i18n: file: libs/ui/security/eapmethodttlsbase.ui:65
+#. i18n: ectx: property (toolTip), widget (KLineEdit, leSubjectMatch)
+#: rc.cpp:1538 rc.cpp:1571
+msgid ""
+"Only connect to servers whose certificate's subject matches this. For the "
+"syntax see the wpa_supplicant documentation."
+msgstr ""
+"Повезује се само на сервере чији наслов сертификата поклапа ово. Синтаксу "
+"потражите у документацији за wpa_supplicant."
+
+#. i18n: file: libs/ui/security/eapmethodtlsbase.ui:156
+#. i18n: ectx: property (toolTip), widget (QLineEdit, leAltSubjectMatches)
+#. i18n: file: libs/ui/security/eapmethodttlsbase.ui:81
+#. i18n: ectx: property (toolTip), widget (QLineEdit, leAltSubjectMatches)
+#: rc.cpp:1544 rc.cpp:1577
+msgid ""
+"Only connect to servers whose certificate's alternative subject contains at "
+"least one of the entries. For the syntax see the wpa_supplicant "
+"documentation. Use ',' to separate entries."
+msgstr ""
+"Повезује се само на сервере чији алтернативни наслов сертификата садржи бар "
+"један од уноса. Синтаксу потражите у документацији за wpa_supplicant. Уносе "
+"раздвајате запетом."
+
+#. i18n: file: libs/ui/wired.ui:20
+#. i18n: ectx: property (windowTitle), widget (QWidget, Settings8023Ethernet)
+#: rc.cpp:1592
+msgid "Ethernet"
+msgstr "Етернет"
+
+#. i18n: file: libs/ui/wired.ui:31
+#. i18n: ectx: property (toolTip), widget (QLabel, label)
+#: rc.cpp:1595
+msgid "Example: 11:22:33:44:55:66"
+msgstr "Пример: 11:22:33:44:55:66"
+
+#. i18n: file: libs/ui/wired.ui:34
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: file: libs/ui/802-11-wireless.ui:206
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: rc.cpp:1598 rc.cpp:1784
+msgid "&Restrict To Interface:"
+msgstr "&Ограничи на сучеље:"
+
+#. i18n: file: libs/ui/wired.ui:56
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: file: libs/ui/802-11-wireless.ui:260
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: rc.cpp:1604 rc.cpp:1802
+msgid "Cloned MAC address"
+msgstr "Клонирана МАЦ адреса"
+
+#. i18n: file: libs/ui/wired.ui:63
+#. i18n: ectx: property (toolTip), widget (QLabel, label_2)
+#: rc.cpp:1607
+msgid "Maximum Transfer Unit (bytes)"
+msgstr "Највећа јединица преноса (бајтова)."
+
+#. i18n: file: libs/ui/wired.ui:66
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:1610
+msgid "M&TU:"
+msgstr "&МТУ:"
+
+#. i18n: file: libs/ui/wired.ui:79
+#. i18n: ectx: property (toolTip), widget (KIntSpinBox, mtu)
+#. i18n: file: libs/ui/802-11-wireless.ui:241
+#. i18n: ectx: property (toolTip), widget (KIntSpinBox, mtu)
+#: rc.cpp:1613 rc.cpp:1793
+msgid "Maximum Transmission Unit"
+msgstr "Највећа јединица преноса."
+
+#. i18n: file: libs/ui/wired.ui:82
+#. i18n: ectx: property (whatsThis), widget (KIntSpinBox, mtu)
+#. i18n: file: libs/ui/802-11-wireless.ui:244
+#. i18n: ectx: property (whatsThis), widget (KIntSpinBox, mtu)
+#: rc.cpp:1616 rc.cpp:1796
+msgid ""
+"Sets the size of the largest packet that can be transmitted on this network. "
+"'0' sets the MTU automatically."
+msgstr ""
+"Поставља величину највећег пакета који се може пренети овом мрежом. 0 за "
+"аутоматско постављање МТУ‑а."
+
+#. i18n: file: libs/ui/wired.ui:104
+#. i18n: ectx: property (text), widget (QLabel, labelSpeed)
+#. i18n: file: libs/internals/schemas/802-3-ethernet.kcfg:19
+#. i18n: ectx: label, entry (speed), group (802-3-ethernet)
+#: rc.cpp:1622 rc.cpp:2006
+msgid "Speed"
+msgstr "Брзина"
+
+#. i18n: file: libs/ui/wired.ui:111
+#. i18n: ectx: property (toolTip), widget (KIntSpinBox, speed)
+#: rc.cpp:1625
+msgid "Use the specified speed"
+msgstr "Користи задату брзину"
+
+#. i18n: file: libs/ui/wired.ui:114
+#. i18n: ectx: property (whatsThis), widget (KIntSpinBox, speed)
+#: rc.cpp:1628
+msgid "Request that the device use only the specified speed."
+msgstr "Захтева да уређај користи само задату брзину."
+
+#. i18n: file: libs/ui/wired.ui:123
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, speed)
+#: rc.cpp:1634
+msgid " MBit/s"
+msgstr " Mb/s"
+
+#. i18n: file: libs/ui/wired.ui:133
+#. i18n: ectx: property (text), widget (QLabel, labelDuplex)
+#. i18n: file: libs/internals/schemas/802-3-ethernet.kcfg:23
+#. i18n: ectx: label, entry (duplex), group (802-3-ethernet)
+#: rc.cpp:1637 rc.cpp:2009
+msgid "Duplex"
+msgstr "Дуплекс"
+
+#. i18n: file: libs/ui/wired.ui:146
+#. i18n: ectx: property (toolTip), widget (KComboBox, cmbDuplex)
+#: rc.cpp:1640
+msgid "Use the specified duplex mode"
+msgstr "Користи задати дуплекс режим."
+
+#. i18n: file: libs/ui/wired.ui:149
+#. i18n: ectx: property (whatsThis), widget (KComboBox, cmbDuplex)
+#: rc.cpp:1643
+msgid ""
+"Request that the device use only the specified duplex mode. A device in full "
+"duplex mode can send and receive data at the same time, while a device in "
+"half duplex mode can either send or receive data, but not both at the same "
+"time."
+msgstr ""
+"Захтева да уређај користи само задати дуплекс режим. Уређај у пуном дуплекс "
+"режиму може истовремено да шаље и прима податке, док уређај у половичном "
+"дуплекс режиму може само да шаље или да прима податке у датом тренутку."
+
+#. i18n: file: libs/ui/wired.ui:156
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbDuplex)
+#: rc.cpp:1646
+msgid "Half"
+msgstr "половични"
+
+#. i18n: file: libs/ui/wired.ui:161
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbDuplex)
+#: rc.cpp:1649
+msgid "Full"
+msgstr "пуни"
+
+#. i18n: file: libs/ui/wired.ui:171
+#. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
+#. i18n: file: libs/ui/802-11-wireless.ui:269
+#. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
+#: rc.cpp:1652 rc.cpp:1805
+msgid "Custom MAC address for the hardware to use"
+msgstr "Посебна МАЦ адреса коју ће хардвер користити."
+
+#. i18n: file: libs/ui/wired.ui:174
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, clonedMacAddress)
+#. i18n: file: libs/ui/802-11-wireless.ui:272
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, clonedMacAddress)
+#: rc.cpp:1655 rc.cpp:1808
+msgid ""
+"The MAC address entered here will be used as hardware address for the "
+"network device this connection is activated on. This feature is known as MAC "
+"cloning or spoofing."
+msgstr ""
+"Унета МАЦ адреса биће коришћена као хардверска адреса мрежног уређаја на "
+"коме је активирана ова веза. Ова могућност назива се клонирањем или "
+"подражавањем Дот‑мека."
+
+#. i18n: file: libs/ui/wired.ui:177
+#. i18n: ectx: property (inputMask), widget (KLineEdit, clonedMacAddress)
+#. i18n: file: libs/ui/802-11-wireless.ui:181
+#. i18n: ectx: property (inputMask), widget (KLineEdit, bssid)
+#. i18n: file: libs/ui/802-11-wireless.ui:275
+#. i18n: ectx: property (inputMask), widget (KLineEdit, clonedMacAddress)
+#: rc.cpp:1658 rc.cpp:1772 rc.cpp:1811
+msgid "HH:HH:HH:HH:HH:HH;_"
+msgstr "HH:HH:HH:HH:HH:HH;_"
+
+#. i18n: file: libs/ui/wired.ui:190
+#. i18n: ectx: property (text), widget (KPushButton, clonedMacAddressRandom)
+#. i18n: file: libs/ui/802-11-wireless.ui:288
+#. i18n: ectx: property (text), widget (KPushButton, clonedMacAddressRandom)
+#: rc.cpp:1661 rc.cpp:1814
+msgid "Random"
+msgstr "Насумично"
+
+#. i18n: file: libs/ui/wired.ui:217
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkAutoNegotiate)
+#. i18n: file: libs/ui/wired.ui:220
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, chkAutoNegotiate)
+#: rc.cpp:1664 rc.cpp:1667
+msgid "Allow auto-negotiation of port speed and duplex mode"
+msgstr "Дозволи аутоматско преговарање за брзину порта и дуплекс режим."
+
+#. i18n: file: libs/ui/wired.ui:226
+#. i18n: ectx: property (text), widget (QCheckBox, chkAutoNegotiate)
+#: rc.cpp:1670
+msgid "Autonegotiate"
+msgstr "Аутоматско преговарање"
+
+#. i18n: file: libs/ui/wireless.ui:19
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1673
+msgid "&ESSID:"
+msgstr "&ЕССИД:"
+
+#. i18n: file: libs/ui/wireless.ui:35
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:1676
+msgid "&Mode:"
+msgstr "&Режим:"
+
+#. i18n: file: libs/ui/wireless.ui:49
+#. i18n: ectx: property (text), item, widget (KComboBox, mode)
+#. i18n: file: libs/ui/802-11-wireless.ui:77
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
+#: rc.cpp:1679 rc.cpp:1727
+msgid "Infrastructure"
+msgstr "инфраструктурна"
+
+#. i18n: file: libs/ui/wireless.ui:54
+#. i18n: ectx: property (text), item, widget (KComboBox, mode)
+#. i18n: file: libs/ui/802-11-wireless.ui:82
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
+#: rc.cpp:1682 rc.cpp:1730
+msgid "Ad-hoc"
+msgstr "импровизована"
+
+#. i18n: file: libs/ui/wireless.ui:62
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: file: libs/ui/802-11-wireless.ui:160
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:1685 rc.cpp:1763
+msgid "&BSSID:"
+msgstr "&БССИД:"
+
+#. i18n: file: libs/ui/wireless.ui:75
+#. i18n: ectx: property (inputMask), widget (KLineEdit, bssid)
+#. i18n: file: libs/ui/wireless.ui:98
+#. i18n: ectx: property (inputMask), widget (KLineEdit, macaddress)
+#: rc.cpp:1688 rc.cpp:1697
+msgid "HH:HH:HH:HH:HH:HH; "
+msgstr "HH:HH:HH:HH:HH:HH; "
+
+#. i18n: file: libs/ui/wireless.ui:78
+#. i18n: ectx: property (text), widget (KLineEdit, bssid)
+#: rc.cpp:1691
+msgid ":::::"
+msgstr ":::::"
+
+#. i18n: file: libs/ui/wireless.ui:85
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:1694
+msgid "MAC &address:"
+msgstr "МАЦ &адреса:"
+
+#. i18n: file: libs/ui/wireless.ui:105
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:1700
+msgid "&MTU:"
+msgstr "&МТУ:"
+
+#. i18n: file: libs/ui/802-11-wireless.ui:23
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1706
+msgid "&SSID:"
+msgstr "&ССИД:"
+
+#. i18n: file: libs/ui/802-11-wireless.ui:38
+#. i18n: ectx: property (toolTip), widget (KLineEdit, ssid)
+#: rc.cpp:1709
+msgid "The name of the wireless network"
+msgstr "Име бежичне мреже."
+
+# rewrite-msgid: /Service Set IDentifier/SSID/
+#. i18n: file: libs/ui/802-11-wireless.ui:41
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, ssid)
+#: rc.cpp:1712
+msgid "The Service Set IDentifier is the name of a wireless network."
+msgstr "ССИД је име бежичне мреже."
+
+#. i18n: file: libs/ui/802-11-wireless.ui:48
+#. i18n: ectx: property (text), widget (KPushButton, btnScan)
+#: rc.cpp:1715
+msgid "S&can"
+msgstr "&Скенирај"
+
+#. i18n: file: libs/ui/802-11-wireless.ui:57
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:1718
+msgid "M&ode:"
+msgstr "&Режим:"
+
+#. i18n: file: libs/ui/802-11-wireless.ui:70
+#. i18n: ectx: property (toolTip), widget (KComboBox, cmbMode)
+#: rc.cpp:1721
+msgid "Operating mode of the wireless network"
+msgstr "Режим рада бежичне мреже."
+
+# skip-rule: t-form
+#. i18n: file: libs/ui/802-11-wireless.ui:73
+#. i18n: ectx: property (whatsThis), widget (KComboBox, cmbMode)
+#: rc.cpp:1724
+msgid ""
+"Infrastructure mode is the most common setting.  To form a peer-to-peer "
+"wireless network with another computer when there is no infrastructure, "
+"choose Ad-hoc."
+msgstr ""
+"Инфраструктурни режим је најчешћа поставка. За успостављање парњачке бежичне "
+"мреже са другим рачунаром када нема инфраструктуре, изаберите "
+"„импровизована“."
+
+#. i18n: file: libs/ui/802-11-wireless.ui:90
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:1733
+msgid "B&and:"
+msgstr "&Појас:"
+
+#. i18n: file: libs/ui/802-11-wireless.ui:103
+#. i18n: ectx: property (toolTip), widget (KComboBox, band)
+#: rc.cpp:1736
+msgid "Frequency band of the wireless network."
+msgstr "Фреквенцијски појас бежичне мреже."
+
+#. i18n: file: libs/ui/802-11-wireless.ui:106
+#. i18n: ectx: property (whatsThis), widget (KComboBox, band)
+#: rc.cpp:1739
+msgid "b/g is the most common band around 2.4 GHz. Less common is a at 5 GHz."
+msgstr "b/g је најчешћи појас око 2.4 GHz. Мање уобичајен је a на 5 GHz."
+
+#. i18n: file: libs/ui/802-11-wireless.ui:115
+#. i18n: ectx: property (text), item, widget (KComboBox, band)
+#: rc.cpp:1745
+msgid "a"
+msgstr "a"
+
+#. i18n: file: libs/ui/802-11-wireless.ui:120
+#. i18n: ectx: property (text), item, widget (KComboBox, band)
+#: rc.cpp:1748
+msgid "b/g"
+msgstr "b/g"
+
+#. i18n: file: libs/ui/802-11-wireless.ui:128
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:1751
+msgid "&Channel:"
+msgstr "&Канал:"
+
+#. i18n: file: libs/ui/802-11-wireless.ui:141
+#. i18n: ectx: property (toolTip), widget (Wireless80211WidgetBand, channel)
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:31
+#. i18n: ectx: label, entry (channel), group (802-11-wireless)
+#: rc.cpp:1754 rc.cpp:1892
+msgid "Channel"
+msgstr "Канал"
+
+#. i18n: file: libs/ui/802-11-wireless.ui:144
+#. i18n: ectx: property (whatsThis), widget (Wireless80211WidgetBand, channel)
+#: rc.cpp:1757
+msgid "Sets the channel of the network."
+msgstr "Задаје канал мреже."
+
+#. i18n: file: libs/ui/802-11-wireless.ui:175
+#. i18n: ectx: property (toolTip), widget (KLineEdit, bssid)
+#: rc.cpp:1766
+msgid "Only connect to the access point with this hardware address"
+msgstr "Повезује се само на приступну тачку ове хардверске адресе."
+
+# skip-rule: t-setting
+# rewrite-msgid: /Basic Service Set Identification/BSSID/
+#. i18n: file: libs/ui/802-11-wireless.ui:178
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, bssid)
+#: rc.cpp:1769
+msgid ""
+"Setting a BSSID (Basic Service Set Identification) forces this connection to "
+"connect only to the access point with the specified hardware address, even "
+"if other access points are part of the same network."
+msgstr ""
+"Задавањем БССИД‑а приморава се повезивање само на приступну тачку са задатом "
+"хардверском адресом, чак и ако су друге приступне тачке део исте мреже."
+
+#. i18n: file: libs/ui/802-11-wireless.ui:188
+#. i18n: ectx: property (text), widget (QPushButton, btnSelectBssid)
+#: rc.cpp:1775
+msgid "&Select"
+msgstr "&Изабери"
+
+#. i18n: file: libs/ui/802-11-wireless.ui:194
+#. i18n: ectx: property (toolTip), widget (QPushButton, btnSelectBssid)
+#: rc.cpp:1778
+msgid "Select the BSSID (access point) with the strongest signal."
+msgstr "Бира БССИД (приступну тачку) са најјачим сигналом."
+
+#. i18n: file: libs/ui/802-11-wireless.ui:197
+#. i18n: ectx: property (whatsThis), widget (QPushButton, btnSelectBssid)
+#: rc.cpp:1781
+msgid ""
+"This button will select the access point with the ssid specified in the "
+"field above and with the strongest signal."
+msgstr ""
+"Ово дугме ће изабрати приступну тачку са ССИД‑ом задатим у пољу изнад и "
+"најјачим сигналом."
+
+#. i18n: file: libs/ui/802-11-wireless.ui:228
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: rc.cpp:1790
+msgid "MT&U:"
+msgstr "&МТУ:"
+
+#. i18n: file: libs/ui/advancedpermissionswidget.ui:34
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1817
+msgid "Available Users"
+msgstr "Доступни корисници"
+
+#. i18n: file: libs/ui/advancedpermissionswidget.ui:78
+#. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
+#. i18n: file: libs/ui/advancedpermissionswidget.ui:192
+#. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
+#: rc.cpp:1820 rc.cpp:1829
+msgid "Real Name"
+msgstr "право име"
+
+#. i18n: file: libs/ui/advancedpermissionswidget.ui:83
+#. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
+#. i18n: file: libs/ui/advancedpermissionswidget.ui:197
+#. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
+#: rc.cpp:1823 rc.cpp:1832
+msgid "User Name"
+msgstr "корисничко име"
+
+#. i18n: file: libs/ui/advancedpermissionswidget.ui:145
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:1826
+msgid "Users allowed to activate the connection"
+msgstr "Корисници који смеју да активирају везу"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:19
+#. i18n: ectx: label, entry (securityType), group (802-11-wireless-security)
+#: rc.cpp:1835
+msgid "Security type"
+msgstr "Тип безбедности"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:23
+#. i18n: ectx: label, entry (keymgmt), group (802-11-wireless-security)
+#: rc.cpp:1838
+msgid "Key management"
+msgstr "Управљање кључевима"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:36
+#. i18n: ectx: label, entry (weptxkeyindex), group (802-11-wireless-security)
+#: rc.cpp:1841
+msgid "WEP TX key index"
+msgstr "Индекс ВЕП т‑икс кључева"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:40
+#. i18n: ectx: label, entry (authalg), group (802-11-wireless-security)
+#: rc.cpp:1844
+msgid "Authentication algorithm"
+msgstr "Алгоритам аутентификације"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:50
+#. i18n: ectx: label, entry (proto), group (802-11-wireless-security)
+#: rc.cpp:1847
+msgid "Protocols"
+msgstr "Протоколи"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:54
+#. i18n: ectx: label, entry (pairwise), group (802-11-wireless-security)
+#: rc.cpp:1850
+msgid "Pairwise"
+msgstr "Упарено"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:58
+#. i18n: ectx: label, entry (group), group (802-11-wireless-security)
+#: rc.cpp:1853
+msgid "Group"
+msgstr "Група"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:62
+#. i18n: ectx: label, entry (leapusername), group (802-11-wireless-security)
+#: rc.cpp:1856
+msgid "LEAP Username"
+msgstr "ЛЕАП корисничко име"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:66
+#. i18n: ectx: label, entry (wepkey0), group (802-11-wireless-security)
+#: rc.cpp:1859
+msgid "WEP key 0"
+msgstr "ВЕП кључ 0"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:70
+#. i18n: ectx: label, entry (wepkey1), group (802-11-wireless-security)
+#: rc.cpp:1862
+msgid "WEP key 1"
+msgstr "ВЕП кључ 1"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:74
+#. i18n: ectx: label, entry (wepkey2), group (802-11-wireless-security)
+#: rc.cpp:1865
+msgid "WEP key 2"
+msgstr "ВЕП кључ 2"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:78
+#. i18n: ectx: label, entry (wepkey3), group (802-11-wireless-security)
+#: rc.cpp:1868
+msgid "WEP key 3"
+msgstr "ВЕП кључ 3"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:82
+#. i18n: ectx: label, entry (psk), group (802-11-wireless-security)
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:134
+#. i18n: ectx: label, entry (psk), group (802-1x)
+#: rc.cpp:1871 rc.cpp:1994
+msgid "PSK"
+msgstr "ПСК"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:86
+#. i18n: ectx: label, entry (leappassword), group (802-11-wireless-security)
+#: rc.cpp:1874
+msgid "LEAP Password"
+msgstr "ЛЕАП лозинка"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:90
+#. i18n: ectx: label, entry (weppassphrase), group (802-11-wireless-security)
+#: rc.cpp:1877
+msgid "WEP Passphrase"
+msgstr "ВЕП лозинка"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:9
+#. i18n: ectx: label, entry (ssid), group (802-11-wireless)
+#: rc.cpp:1880
+msgid "SSID"
+msgstr "ССИД"
+
+# rewrite-msgid: /Service Set IDentifier/SSID/
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:10
+#. i18n: ectx: whatsthis, entry (ssid), group (802-11-wireless)
+#: rc.cpp:1883
+msgid "Service Set IDentifier (network name) "
+msgstr "ССИД (мрежно име)."
+
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:18
+#. i18n: ectx: label, entry (mode), group (802-11-wireless)
+#: rc.cpp:1886
+msgid "Mode"
+msgstr "Режим"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:27
+#. i18n: ectx: label, entry (band), group (802-11-wireless)
+#. i18n: file: libs/internals/schemas/gsm.kcfg:34
+#. i18n: ectx: label, entry (band), group (gsm)
+#: rc.cpp:1889 rc.cpp:2093
+msgid "Band"
+msgstr "Појас"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:35
+#. i18n: ectx: label, entry (bssid), group (802-11-wireless)
+#: rc.cpp:1895
+msgid "BSSID"
+msgstr "БССИД"
+
+# rewrite-msgid: /Basic Service Set IDentifier/BSSID/
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:36
+#. i18n: ectx: whatsthis, entry (bssid), group (802-11-wireless)
+#: rc.cpp:1898
+msgid "Basic Service Set IDentifier of the access point to use"
+msgstr "БССИД приступне тачке која се користи."
+
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:39
+#. i18n: ectx: label, entry (rate), group (802-11-wireless)
+#: rc.cpp:1901
+msgid "Data rate"
+msgstr "Проток података"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:43
+#. i18n: ectx: label, entry (txpower), group (802-11-wireless)
+#: rc.cpp:1904
+msgid "Transmit power"
+msgstr "Снага емитовања"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:47
+#. i18n: ectx: label, entry (macaddress), group (802-11-wireless)
+#. i18n: file: libs/internals/schemas/802-3-ethernet.kcfg:38
+#. i18n: ectx: label, entry (macaddress), group (802-3-ethernet)
+#: rc.cpp:1907 rc.cpp:2018
+msgid "MAC Address"
+msgstr "МАЦ адреса"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:48
+#. i18n: ectx: whatsthis, entry (macaddress), group (802-11-wireless)
+#: rc.cpp:1910
+msgid "Hardware address to set on the wireless network interface"
+msgstr "Хардверска адреса за постављање на сучеље бежичне мреже."
+
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:51
+#. i18n: ectx: label, entry (mtu), group (802-11-wireless)
+#. i18n: file: libs/internals/schemas/802-3-ethernet.kcfg:42
+#. i18n: ectx: label, entry (mtu), group (802-3-ethernet)
+#. i18n: file: libs/internals/schemas/ppp.kcfg:69
+#. i18n: ectx: label, entry (mtu), group (ppp)
+#: rc.cpp:1913 rc.cpp:2021 rc.cpp:2201
+msgid "MTU"
+msgstr "МТУ"
+
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:53
+#. i18n: ectx: whatsthis, entry (mtu), group (802-11-wireless)
+#: rc.cpp:1916
+msgid "Maximum Transmit Unit"
+msgstr "Највећа јединица преноса."
+
+#. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:57
+#. i18n: ectx: label, entry (seenbssids), group (802-11-wireless)
+#: rc.cpp:1919
+msgid "Seen BSSIDs"
+msgstr "Виђени БССИД‑ови"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:13
+#. i18n: ectx: label, entry (identity), group (802-1x)
+#: rc.cpp:1925
+msgid "Identity"
+msgstr "Идентитет"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:17
+#. i18n: ectx: label, entry (anonymousidentity), group (802-1x)
+#: rc.cpp:1928
+msgid "Anonymous identity"
+msgstr "Анонимни идентитет"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:21
+#. i18n: ectx: label, entry (cacert), group (802-1x)
+#: rc.cpp:1931
+msgid "CA Cert"
+msgstr "ЦА сертификат"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:25
+#. i18n: ectx: label, entry (capath), group (802-1x)
+#: rc.cpp:1934
+msgid "CA Path"
+msgstr "ЦА путања"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:29
+#. i18n: ectx: label, entry (clientcert), group (802-1x)
+#: rc.cpp:1937
+msgid "Client Cert"
+msgstr "Клијентски сертификат"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:33
+#. i18n: ectx: label, entry (clientcertpath), group (802-1x)
+#: rc.cpp:1940
+msgid "Client Cert Path"
+msgstr "Клијентска путања сертификата"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:37
+#. i18n: ectx: label, entry (phase1peapver), group (802-1x)
+#: rc.cpp:1943
+msgid "Phase 1 PEAP version"
+msgstr "Верзија ПЕАП‑а, фаза 1"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:46
+#. i18n: ectx: label, entry (phase1peaplabel), group (802-1x)
+#: rc.cpp:1946
+msgid "Phase 1 PEAP label"
+msgstr "Етикета ПЕАП‑а, фаза 1"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:55
+#. i18n: ectx: label, entry (phase1fastprovisioning), group (802-1x)
+#: rc.cpp:1949
+msgid "Phase 1 fast provisioning"
+msgstr "Брзо снабдевање, фаза 1"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:59
+#. i18n: ectx: label, entry (phase2auth), group (802-1x)
+#: rc.cpp:1952
+msgid "Phase 2 auth"
+msgstr "Аутентификација, фаза 2"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:73
+#. i18n: ectx: label, entry (phase2autheap), group (802-1x)
+#: rc.cpp:1955
+msgid "Phase 2 auth eap"
+msgstr "Аутентификациони ЕАП, фаза 2"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:86
+#. i18n: ectx: label, entry (phase2cacert), group (802-1x)
+#: rc.cpp:1958
+msgid "Phase 2 CA Cert"
+msgstr "ЦА сертификат, фаза 2"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:90
+#. i18n: ectx: label, entry (phase2capath), group (802-1x)
+#: rc.cpp:1961
+msgid "Phase 2 CA Path"
+msgstr "ЦА путања, фаза 2"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:94
+#. i18n: ectx: label, entry (phase2clientcert), group (802-1x)
+#: rc.cpp:1964
+msgid "Phase 2 client cert"
+msgstr "Клијентски сертификат, фаза 2"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:98
+#. i18n: ectx: label, entry (phase2clientcertpath), group (802-1x)
+#: rc.cpp:1967
+msgid "Phase 2 client cert path"
+msgstr "Клијентска путања сертификата, фаза 2"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:106
+#. i18n: ectx: label, entry (privatekey), group (802-1x)
+#: rc.cpp:1973
+msgid "Private key"
+msgstr "Приватни кључ"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:110
+#. i18n: ectx: label, entry (privatekeypath), group (802-1x)
+#: rc.cpp:1976
+msgid "Private key Path"
+msgstr "Путања приватног кључа"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:114
+#. i18n: ectx: label, entry (privatekeypassword), group (802-1x)
+#: rc.cpp:1979
+msgid "Private key password"
+msgstr "Лозинка приватног кључа"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:118
+#. i18n: ectx: label, entry (phase2privatekey), group (802-1x)
+#: rc.cpp:1982
+msgid "Phase 2 private key"
+msgstr "Приватни кључ, фаза 2"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:122
+#. i18n: ectx: label, entry (phase2privatekeypath), group (802-1x)
+#: rc.cpp:1985
+msgid "Phase 2 Private key Path"
+msgstr "Путања приватног кључа, фаза 2"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:126
+#. i18n: ectx: label, entry (phase2privatekeypassword), group (802-1x)
+#: rc.cpp:1988
+msgid "Phase 2 private key password"
+msgstr "Лозинка приватног кључа, фаза 2"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:130
+#. i18n: ectx: label, entry (pin), group (802-1x)
+#. i18n: file: libs/internals/schemas/gsm.kcfg:38
+#. i18n: ectx: label, entry (pin), group (gsm)
+#: rc.cpp:1991 rc.cpp:2096
+msgid "PIN"
+msgstr "ПИН"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:138
+#. i18n: ectx: label, entry (UseSystemCaCerts), group (802-1x)
+#: rc.cpp:1997
+msgid "Use System CA Certs"
+msgstr "Користи системске ЦА сертификате"
+
+#. i18n: file: libs/internals/schemas/802-1x.kcfg:142
+#. i18n: ectx: label, entry (enabled), group (802-1x)
+#: rc.cpp:2000
+msgid "Connection uses 802.1x"
+msgstr "Веза користи 802.1x"
+
+#. i18n: file: libs/internals/schemas/802-3-ethernet.kcfg:9
+#. i18n: ectx: label, entry (port), group (802-3-ethernet)
+#: rc.cpp:2003
+msgid "Port"
+msgstr "Порт"
+
+#. i18n: file: libs/internals/schemas/802-3-ethernet.kcfg:24
+#. i18n: ectx: whatsthis, entry (duplex), group (802-3-ethernet)
+#: rc.cpp:2012
+msgid "Whether the Ethernet interface should use duplex communications"
+msgstr "Треба ли етернетско сучеље да користи дуплекс комуникацију."
+
+#. i18n: file: libs/internals/schemas/802-3-ethernet.kcfg:32
+#. i18n: ectx: label, entry (autonegotiate), group (802-3-ethernet)
+#: rc.cpp:2015
+msgid "Auto negotiate"
+msgstr "Аутоматско преговарање"
+
+#. i18n: file: libs/internals/schemas/802-3-ethernet.kcfg:44
+#. i18n: ectx: whatsthis, entry (mtu), group (802-3-ethernet)
+#: rc.cpp:2024
+msgid "Maximum Transfer Unit to use"
+msgstr "Жељена највећа јединица преноса."
+
+#. i18n: file: libs/internals/schemas/bluetooth.kcfg:9
+#. i18n: ectx: label, entry (networkname), group (bluetooth)
+#: rc.cpp:2027
+msgid "Network Name"
+msgstr "Име мреже"
+
+# >> command name
+#. i18n: file: libs/internals/schemas/bluetooth.kcfg:14
+#. i18n: ectx: label, entry (bdaddr), group (bluetooth)
+#: rc.cpp:2030
+msgid "Bdaddr"
+msgstr "bdaddr"
+
+#. i18n: file: libs/internals/schemas/bluetooth.kcfg:19
+#. i18n: ectx: label, entry (networktype), group (bluetooth)
+#. i18n: file: libs/internals/schemas/gsm.kcfg:30
+#. i18n: ectx: label, entry (networktype), group (gsm)
+#: rc.cpp:2033 rc.cpp:2090
+msgid "Network Type"
+msgstr "Тип мреже"
+
+#. i18n: file: libs/internals/schemas/cdma.kcfg:9
+#. i18n: ectx: label, entry (number), group (cdma)
+#. i18n: file: libs/internals/schemas/gsm.kcfg:9
+#. i18n: ectx: label, entry (number), group (gsm)
+#: rc.cpp:2036 rc.cpp:2075
+msgid "Number"
+msgstr "Број"
+
+#. i18n: file: libs/internals/schemas/connection.kcfg:9
+#. i18n: ectx: label, entry (id), group (connection)
+#: rc.cpp:2045
+msgid "Identifier"
+msgstr "Идентификатор"
+
+#. i18n: file: libs/internals/schemas/connection.kcfg:10
+#. i18n: ectx: whatsthis, entry (id), group (connection)
+#: rc.cpp:2048
+msgid "A name that uniquely identifies a connection"
+msgstr "Име које једнозначно идентификује везу."
+
+#. i18n: file: libs/internals/schemas/connection.kcfg:13
+#. i18n: ectx: label, entry (type), group (connection)
+#: rc.cpp:2051
+msgid "Type"
+msgstr "Тип"
+
+#. i18n: file: libs/internals/schemas/connection.kcfg:14
+#. i18n: ectx: whatsthis, entry (type), group (connection)
+#: rc.cpp:2054
+msgid ""
+"Specifies the connection type, defines which devices it can activate and "
+"which other settings the connection should contain"
+msgstr ""
+"Наводи тип везе, одређује које уређаје може да активира и које друге "
+"поставке веза треба да садржи."
+
+#. i18n: file: libs/internals/schemas/connection.kcfg:17
+#. i18n: ectx: label, entry (autoconnect), group (connection)
+#: rc.cpp:2057
+msgid "Connect automatically"
+msgstr "Повежи се аутоматски"
+
+#. i18n: file: libs/internals/schemas/connection.kcfg:18
+#. i18n: ectx: whatsthis, entry (autoconnect), group (connection)
+#: rc.cpp:2060
+msgid "Should the networking system always try to activate this connection?"
+msgstr "Треба ли систем умрежавања увек да покуша да активира ову везу?"
+
+#. i18n: file: libs/internals/schemas/connection.kcfg:21
+#. i18n: ectx: label, entry (timestamp), group (connection)
+#: rc.cpp:2063
+msgid "Last used"
+msgstr "Последњи пут коришћена"
+
+#. i18n: file: libs/internals/schemas/connection.kcfg:22
+#. i18n: ectx: whatsthis, entry (timestamp), group (connection)
+#: rc.cpp:2066
+msgid "The date and time that the connection was last activated"
+msgstr "Датум и време када је ова веза последњи пут била активирана."
+
+#. i18n: file: libs/internals/schemas/connection.kcfg:25
+#. i18n: ectx: label, entry (uuid), group (connection)
+#: rc.cpp:2069
+msgid "UUID"
+msgstr "УУИД"
+
+#. i18n: file: libs/internals/schemas/connection.kcfg:26
+#. i18n: ectx: whatsthis, entry (uuid), group (connection)
+#: rc.cpp:2072
+msgid "Unique connection identifier"
+msgstr "Јединствени идентификатор везе."
+
+#. i18n: file: libs/internals/schemas/gsm.kcfg:22
+#. i18n: ectx: label, entry (apn), group (gsm)
+#: rc.cpp:2084
+msgid "APN"
+msgstr "АПН"
+
+#. i18n: file: libs/internals/schemas/gsm.kcfg:26
+#. i18n: ectx: label, entry (networkid), group (gsm)
+#: rc.cpp:2087
+msgid "Network ID"
+msgstr "ИД мреже"
+
+#. i18n: file: libs/internals/schemas/gsm.kcfg:42
+#. i18n: ectx: label, entry (puk), group (gsm)
+#: rc.cpp:2099
+msgid "PUK"
+msgstr "ПУК"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:9
+#. i18n: ectx: label, entry (method), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:9
+#. i18n: ectx: label, entry (method), group (ipv4)
+#: rc.cpp:2102 rc.cpp:2252
+msgid "Method"
+msgstr "Метод"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:10
+#. i18n: ectx: whatsthis, entry (method), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:10
+#. i18n: ectx: whatsthis, entry (method), group (ipv4)
+#: rc.cpp:2105 rc.cpp:2255
+msgid "Choose the way to set the IP address of this connection"
+msgstr "Изаберите начин постављања ИП адресе за ову везу."
+
+# rewrite-msgid: /Domain Name System/DNS/
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:22
+#. i18n: ectx: whatsthis, entry (dns), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:23
+#. i18n: ectx: whatsthis, entry (dns), group (ipv4)
+#: rc.cpp:2111 rc.cpp:2261
+msgid "List of Domain Name System servers to use"
+msgstr "Списак ДНС сервера за употребу."
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:25
+#. i18n: ectx: label, entry (dnssearch), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:26
+#. i18n: ectx: label, entry (dnssearch), group (ipv4)
+#: rc.cpp:2114 rc.cpp:2264
+msgid "Search Domains"
+msgstr "Домени за претрагу"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:26
+#. i18n: ectx: whatsthis, entry (dnssearch), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:27
+#. i18n: ectx: whatsthis, entry (dnssearch), group (ipv4)
+#: rc.cpp:2117 rc.cpp:2267
+msgid "List of domains to search for a hostname"
+msgstr "Списак домена на којима се траже имена домаћина."
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:30
+#. i18n: ectx: label, entry (addresses), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:31
+#. i18n: ectx: label, entry (addresses), group (ipv4)
+#: rc.cpp:2120 rc.cpp:2270
+msgid "IP Addresses"
+msgstr "ИП адресе"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:31
+#. i18n: ectx: whatsthis, entry (addresses), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:32
+#. i18n: ectx: whatsthis, entry (addresses), group (ipv4)
+#: rc.cpp:2123 rc.cpp:2273
+msgid "List of IP addresses to configure on this connection"
+msgstr "Списак ИП адреса за подешавање ове везе."
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:34
+#. i18n: ectx: label, entry (ignoredhcpdns), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:35
+#. i18n: ectx: label, entry (ignoredhcpdns), group (ipv4)
+#: rc.cpp:2126 rc.cpp:2276
+msgid "Ignore DHCP DNS"
+msgstr "Игнориши ДХЦП ДНС"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:35
+#. i18n: ectx: whatsthis, entry (ignoredhcpdns), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:36
+#. i18n: ectx: whatsthis, entry (ignoredhcpdns), group (ipv4)
+#: rc.cpp:2129 rc.cpp:2279
+msgid ""
+"Ignore DNS servers returned by DHCP and use the configured servers instead"
+msgstr ""
+"Игнорише ДНС сервере које враћа ДХЦП, уместо њих користи подешене сервере."
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:38
+#. i18n: ectx: label, entry (ignoreautoroute), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:39
+#. i18n: ectx: label, entry (ignoreautoroute), group (ipv4)
+#: rc.cpp:2132 rc.cpp:2282
+msgid "Ignore Automatic Routes"
+msgstr "Игнориши аутоматске руте"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:39
+#. i18n: ectx: whatsthis, entry (ignoreautoroute), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:40
+#. i18n: ectx: whatsthis, entry (ignoreautoroute), group (ipv4)
+#: rc.cpp:2135 rc.cpp:2285
+msgid ""
+"Ignore routes returned by automatic configuration mechanisms and use the "
+"manually configured routes instead"
+msgstr ""
+"Игнорише руте које враћају механизми аутоматског подешавања, уместо њих "
+"користи ручно подешене руте."
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:42
+#. i18n: ectx: label, entry (neverdefault), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:43
+#. i18n: ectx: label, entry (neverdefault), group (ipv4)
+#: rc.cpp:2138 rc.cpp:2288
+msgid "Never Default Route"
+msgstr "Никада подразумевана рута"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:43
+#. i18n: ectx: whatsthis, entry (neverdefault), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:44
+#. i18n: ectx: whatsthis, entry (neverdefault), group (ipv4)
+#: rc.cpp:2141 rc.cpp:2291
+msgid "Never assign the default route to this connection"
+msgstr "Никада не додељује подразумевану руту овој вези."
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:46
+#. i18n: ectx: label, entry (dhcpclientid), group (ipv4)
+#: rc.cpp:2144
+msgid "DHCP Client ID"
+msgstr "ДХЦП ИД клијента"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:50
+#. i18n: ectx: label, entry (dhcpsendhostname), group (ipv4)
+#: rc.cpp:2147
+msgid "Send hostname to DHCP server"
+msgstr "Пошаљи име домаћина ДХЦП серверу"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:54
+#. i18n: ectx: label, entry (dhcphostname), group (ipv4)
+#: rc.cpp:2150
+msgid "DHCP hostname"
+msgstr "ДХЦП име домаћина"
+
+#. i18n: file: libs/internals/schemas/ipv4.kcfg:57
+#. i18n: ectx: label, entry (mayfail), group (ipv4)
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:47
+#. i18n: ectx: label, entry (mayfail), group (ipv4)
+#: rc.cpp:2153 rc.cpp:2294
+msgid "Required for this connection"
+msgstr "Неопходно за ову везу"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:9
+#. i18n: ectx: label, entry (noauth), group (ppp)
+#: rc.cpp:2156
+msgid "No Auth"
+msgstr "Без аутентификације"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:13
+#. i18n: ectx: label, entry (refuseeap), group (ppp)
+#: rc.cpp:2159
+msgid "Refuse EAP"
+msgstr "Одбијај ЕАП"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:17
+#. i18n: ectx: label, entry (refusepap), group (ppp)
+#: rc.cpp:2162
+msgid "Refuse PAP"
+msgstr "Одбијај ПАП"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:21
+#. i18n: ectx: label, entry (refusechap), group (ppp)
+#: rc.cpp:2165
+msgid "Refuse CHAP"
+msgstr "Одбијај ЦХАП"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:25
+#. i18n: ectx: label, entry (refusemschap), group (ppp)
+#: rc.cpp:2168
+msgid "Refuse MS CHAP"
+msgstr "Одбијај МС‑ов ЦХАП"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:29
+#. i18n: ectx: label, entry (refusemschapv2), group (ppp)
+#: rc.cpp:2171
+msgid "Refuse MS CHAP V2"
+msgstr "Одбијај МС‑ов ЦХАП в2."
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:33
+#. i18n: ectx: label, entry (nobsdcomp), group (ppp)
+#: rc.cpp:2174
+msgid "No BSD comp."
+msgstr "Без БСД компресије"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:37
+#. i18n: ectx: label, entry (nodeflate), group (ppp)
+#: rc.cpp:2177
+msgid "No deflate"
+msgstr "Без дифлејта"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:41
+#. i18n: ectx: label, entry (novjcomp), group (ppp)
+#: rc.cpp:2180
+msgid "No VJ comp."
+msgstr "Без ВЈ компресије"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:45
+#. i18n: ectx: label, entry (requiremppe), group (ppp)
+#: rc.cpp:2183
+msgid "Require MPPE"
+msgstr "Захтевај МППЕ"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:49
+#. i18n: ectx: label, entry (requiremppe128), group (ppp)
+#: rc.cpp:2186
+msgid "Require MPPE 128"
+msgstr "Захтевај МППЕ 128"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:53
+#. i18n: ectx: label, entry (mppestateful), group (ppp)
+#: rc.cpp:2189
+msgid "MPPE Stateful"
+msgstr "МППЕ са стањем"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:57
+#. i18n: ectx: label, entry (crtscts), group (ppp)
+#: rc.cpp:2192
+msgid "CRTSCTS"
+msgstr "CRTSCTS"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:61
+#. i18n: ectx: label, entry (baud), group (ppp)
+#. i18n: file: libs/internals/schemas/serial.kcfg:9
+#. i18n: ectx: label, entry (baud), group (serial)
+#: rc.cpp:2195 rc.cpp:2219
+msgid "Baud"
+msgstr "Бауда"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:65
+#. i18n: ectx: label, entry (mru), group (ppp)
+#: rc.cpp:2198
+msgid "MRU"
+msgstr "МРУ"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:73
+#. i18n: ectx: label, entry (lcpechofailure), group (ppp)
+#: rc.cpp:2204
+msgid "LCP echo Failure"
+msgstr "Неуспех ЛЦП еха"
+
+#. i18n: file: libs/internals/schemas/ppp.kcfg:77
+#. i18n: ectx: label, entry (lcpechointerval), group (ppp)
+#: rc.cpp:2207
+msgid "LCP echo interval"
+msgstr "Период ЛЦП еха"
+
+#. i18n: file: libs/internals/schemas/pppoe.kcfg:9
+#. i18n: ectx: label, entry (service), group (pppoe)
+#: rc.cpp:2210
+msgid "Service"
+msgstr "Сервис"
+
+#. i18n: file: libs/internals/schemas/serial.kcfg:14
+#. i18n: ectx: label, entry (bits), group (serial)
+#. i18n: file: libs/internals/schemas/vpn.kcfg:13
+#. i18n: ectx: label, entry (Data), group (vpn)
+#: rc.cpp:2222 rc.cpp:2237
+msgid "Data bits"
+msgstr "Битова података"
+
+#. i18n: file: libs/internals/schemas/serial.kcfg:19
+#. i18n: ectx: label, entry (parity), group (serial)
+#: rc.cpp:2225
+msgid "Parity"
+msgstr "Паритет"
+
+#. i18n: file: libs/internals/schemas/serial.kcfg:29
+#. i18n: ectx: label, entry (stopbits), group (serial)
+#: rc.cpp:2228
+msgid "Stop bits"
+msgstr "Битова заустављања"
+
+#. i18n: file: libs/internals/schemas/serial.kcfg:34
+#. i18n: ectx: label, entry (senddelay), group (serial)
+#: rc.cpp:2231
+msgid "Send delay"
+msgstr "Застој слања"
+
+#. i18n: file: libs/internals/schemas/vpn.kcfg:9
+#. i18n: ectx: label, entry (ServiceType), group (vpn)
+#: rc.cpp:2234
+msgid "Service Type"
+msgstr "Тип сервиса"
+
+#. i18n: file: libs/internals/schemas/vpn.kcfg:18
+#. i18n: ectx: whatsthis, entry (UserName), group (vpn)
+#: rc.cpp:2243
+msgid "System username, not stored"
+msgstr "Системско корисничко име, не складишти се."
+
+#. i18n: file: libs/internals/schemas/vpn.kcfg:21
+#. i18n: ectx: label, entry (VpnSecrets), group (vpn)
+#: rc.cpp:2246
+msgid "Vpnsecrets"
+msgstr "ВПН тајне"
+
+#. i18n: file: libs/internals/schemas/vpn.kcfg:25
+#. i18n: ectx: label, entry (PluginName), group (vpn)
+#: rc.cpp:2249
+msgid "VPN Plugin Name"
+msgstr "Име ВПН прикључка"
+
+#. i18n: file: libs/internals/knmserviceprefs.kcfg:11
+#. i18n: ectx: label, entry (Connections), group (General)
+#: rc.cpp:2297
+msgid "Connections"
+msgstr "Везе"
+
+#. i18n: file: libs/internals/knmserviceprefs.kcfg:15
+#. i18n: ectx: label, entry (SecretStorageMode), group (General)
+#: rc.cpp:2300
+msgid "Store secrets in wallet"
+msgstr "Складишти тајне у новчаник"

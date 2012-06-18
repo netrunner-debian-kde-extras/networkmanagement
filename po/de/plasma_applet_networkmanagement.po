@@ -1,13 +1,14 @@
 # Burkhard Lück <lueck@hube-lueck.de>, 2011.
+# Frederik Schwarzer <schwarzer@kde.org>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: plasma_applet_networkmanagement\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-03-20 18:01+0100\n"
-"PO-Revision-Date: 2011-11-18 23:13+0100\n"
-"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"POT-Creation-Date: 2012-06-15 13:51+0200\n"
+"PO-Revision-Date: 2012-06-10 00:17+0200\n"
+"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
-"Language: \n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -229,31 +230,31 @@ msgctxt "wired interface network cable unplugged"
 msgid "Cable Unplugged"
 msgstr "Kabel entfernt"
 
-#: networkmanager.cpp:618
+#: networkmanager.cpp:675
 msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr "Keine Netzwerkschnittstellen"
 
-#: networkmanager.cpp:669
+#: networkmanager.cpp:726
 msgid "VPN Connections"
 msgstr "VPN-Verbindungen"
 
-#: networkmanager.cpp:683
+#: networkmanager.cpp:740
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
 msgstr "Getrennt"
 
-#: networkmanager.cpp:686
+#: networkmanager.cpp:743
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
 msgstr "Drahtlose Geräte über Software deaktiviert"
 
-#: networkmanager.cpp:689
+#: networkmanager.cpp:746
 msgctxt "tooltip, all interfaces are down"
 msgid "Networking disabled"
 msgstr "Netzwerk deaktiviert"
 
-#: networkmanager.cpp:692
+#: networkmanager.cpp:749
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
 msgstr "Drahtlose Geräte über Hardware deaktiviert"
@@ -362,7 +363,7 @@ msgstr "Verbunden"
 #: vpninterfaceitem.cpp:104
 msgctxt "VPN state label"
 msgid "Connecting..."
-msgstr "Verbindungsaufbau ..."
+msgstr "Verbindung wird aufgebaut ..."
 
 #: vpninterfaceitem.cpp:110
 msgctxt "VPN connections interface"

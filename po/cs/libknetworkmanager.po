@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-05-06 12:02+0200\n"
-"PO-Revision-Date: 2012-04-07 15:34+0200\n"
-"Last-Translator: Lukáš Tinkl <lukas@kde.org>\n"
+"POT-Creation-Date: 2012-06-17 13:20+0200\n"
+"PO-Revision-Date: 2012-05-25 10:46+0200\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgctxt "@window:title NovellVPN advanced connection options"
 msgid "NovellVPN advanced options"
 msgstr "Pokročilé možnosti NovellVPN"
 
-#: vpnplugins/openconnect/openconnectauth.cpp:247
+#: vpnplugins/openconnect/openconnectauth.cpp:269
 msgid "Contacting host, please wait..."
 msgstr "Kontaktuji hostitele, čekejte prosím..."
 
@@ -41,19 +41,19 @@ msgstr "Kontaktuji hostitele, čekejte prosím..."
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
 #. i18n: file: libs/ui/security/wpapsk.ui:45
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
-#: vpnplugins/openconnect/openconnectauth.cpp:377
+#: vpnplugins/openconnect/openconnectauth.cpp:399
 #: vpnplugins/openvpn/openvpnauth.cpp:124
 #: libs/ui/security/wirelesssecurityauth.cpp:98
 #: libs/ui/security/security8021xauth.cpp:91 rc.cpp:650 rc.cpp:680 rc.cpp:971
-#: rc.cpp:1328 rc.cpp:1397 rc.cpp:1445 rc.cpp:1457
+#: rc.cpp:1331 rc.cpp:1400 rc.cpp:1448 rc.cpp:1460
 msgid "&Show password"
 msgstr "Zobrazit he&slo"
 
-#: vpnplugins/openconnect/openconnectauth.cpp:427
+#: vpnplugins/openconnect/openconnectauth.cpp:449
 msgid "Login"
 msgstr "Přihlášení"
 
-#: vpnplugins/openconnect/openconnectauth.cpp:475
+#: vpnplugins/openconnect/openconnectauth.cpp:497
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -61,7 +61,7 @@ msgid ""
 "Accept it anyway?"
 msgstr ""
 
-#: vpnplugins/openconnect/openconnectauth.cpp:546
+#: vpnplugins/openconnect/openconnectauth.cpp:568
 msgid "Connection attempt was unsuccessful."
 msgstr "Pokus o spojení nebyl úspěšný."
 
@@ -200,7 +200,7 @@ msgstr "Soubor %1 nelze otevřít."
 msgid "Needed executable cisco-decrypt could not be found."
 msgstr ""
 
-#: vpnplugins/vpnc/vpnc.cpp:257
+#: vpnplugins/vpnc/vpnc.cpp:259
 #, kde-format
 msgid ""
 "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
@@ -210,16 +210,16 @@ msgid ""
 "may not work as expected."
 msgstr ""
 
-#: vpnplugins/vpnc/vpnc.cpp:257
+#: vpnplugins/vpnc/vpnc.cpp:259
 msgid "Not supported"
 msgstr "Nepodporováno"
 
-#: vpnplugins/vpnc/vpnc.cpp:282
+#: vpnplugins/vpnc/vpnc.cpp:284
 #, kde-format
 msgid "%1: file format error."
 msgstr "%1: Chyba ve formátu souboru."
 
-#: vpnplugins/vpnc/vpnc.cpp:302
+#: vpnplugins/vpnc/vpnc.cpp:304
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: soubor nelze vytvořit"
@@ -1404,14 +1404,14 @@ msgstr "Automaticky (DHCP) pouze adresy"
 
 #. i18n: file: libs/internals/schemas/ipv4.kcfg:21
 #. i18n: ectx: label, entry (dns), group (ipv4)
-#. i18n: file: libs/internals/schemas/ipv6.kcfg:21
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:22
 #. i18n: ectx: label, entry (dns), group (ipv4)
-#: libs/ui/ipv4widget.cpp:469 libs/ui/ipv6widget.cpp:435 rc.cpp:2105
-#: rc.cpp:2159
+#: libs/ui/ipv4widget.cpp:469 libs/ui/ipv6widget.cpp:408 rc.cpp:2108
+#: rc.cpp:2258
 msgid "DNS Servers"
 msgstr "DNS servery"
 
-#: libs/ui/ipv4widget.cpp:483 libs/ui/ipv6widget.cpp:449
+#: libs/ui/ipv4widget.cpp:483 libs/ui/ipv6widget.cpp:422
 msgid "Search domains"
 msgstr "Hledat domény"
 
@@ -1470,7 +1470,7 @@ msgstr "&Heslo:"
 #. i18n: ectx: property (text), widget (QLabel, textLabel4_3)
 #. i18n: file: libs/ui/security/wep.ui:118
 #. i18n: ectx: property (text), widget (QLabel, keyLabel)
-#: libs/ui/security/wepwidget.cpp:107 rc.cpp:344 rc.cpp:527 rc.cpp:1442
+#: libs/ui/security/wepwidget.cpp:107 rc.cpp:344 rc.cpp:527 rc.cpp:1445
 msgid "&Key:"
 msgstr "&Klíč:"
 
@@ -1597,46 +1597,6 @@ msgctxt ""
 "with MAC address"
 msgid "Disconnected interface (%1)"
 msgstr "Odpojené rozhraní (%1)"
-
-#: libs/ui/ipv6widget.cpp:68
-msgctxt "@item:inlistbox IPv6 settings configuration method"
-msgid "Automatic (VPN)"
-msgstr "Automaticky (VPN)"
-
-#: libs/ui/ipv6widget.cpp:70
-msgctxt "@item:inlistbox IPv6 settings configuration method"
-msgid "Automatic (VPN) addresses only"
-msgstr "Automaticky (VPN) pouze adresy"
-
-#: libs/ui/ipv6widget.cpp:75
-msgctxt "@item:inlistbox IPv6 settings configuration method"
-msgid "Automatic (PPP)"
-msgstr "Automaticky (PPP)"
-
-#: libs/ui/ipv6widget.cpp:77
-msgctxt "@item:inlistbox IPv6 settings configuration method"
-msgid "Automatic (PPP) addresses only"
-msgstr "Automaticky (PPP) pouze adresy"
-
-#: libs/ui/ipv6widget.cpp:81
-msgctxt "@item:inlistbox IPv6 settings configuration method"
-msgid "Automatic (DSL)"
-msgstr "Automaticky (DSL)"
-
-#: libs/ui/ipv6widget.cpp:83
-msgctxt "@item:inlistbox IPv6 settings configuration method"
-msgid "Automatic (DSL) addresses only"
-msgstr "Automaticky (DSL) pouze adresy"
-
-#: libs/ui/ipv6widget.cpp:87
-msgctxt "@item:inlistbox IPv6 settings configuration method"
-msgid "Automatic (DHCP)"
-msgstr "Automaticky (DHCP)"
-
-#: libs/ui/ipv6widget.cpp:89
-msgctxt "@item:inlistbox IPv6 settings configuration method"
-msgid "Automatic (DHCP) addresses only"
-msgstr "Automaticky (DHCP) pouze adresy"
 
 #: libs/ui/ipv4routeswidget.cpp:45
 msgctxt "Header text for IPv4 route metric"
@@ -2201,7 +2161,7 @@ msgstr "Stav"
 #. i18n: ectx: attribute (title), widget (QWidget, tabWireless)
 #. i18n: file: libs/ui/802-11-wireless.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, Wireless80211Config)
-#: rc.cpp:17 rc.cpp:1700
+#: rc.cpp:17 rc.cpp:1703
 msgid "Wireless"
 msgstr "Bezdrátové"
 
@@ -2225,7 +2185,7 @@ msgstr "VPN"
 #. i18n: ectx: attribute (title), widget (QWidget, tabPppoe)
 #. i18n: file: libs/ui/pppoe.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, Pppoe)
-#: rc.cpp:53 rc.cpp:1316
+#: rc.cpp:53 rc.cpp:1319
 msgid "DSL"
 msgstr "DSL"
 
@@ -2497,9 +2457,9 @@ msgstr "Obecné"
 #. i18n: ectx: property (text), widget (QLabel, lbl_gateway)
 #. i18n: file: libs/ui/ipv4.ui:197
 #. i18n: ectx: property (text), widget (QLabel, gatewayLabel)
-#. i18n: file: libs/ui/ipv6.ui:197
+#. i18n: file: libs/ui/ipv6.ui:202
 #. i18n: ectx: property (text), widget (QLabel, gatewayLabel)
-#: rc.cpp:197 rc.cpp:251 rc.cpp:320 rc.cpp:659 rc.cpp:1109 rc.cpp:1214
+#: rc.cpp:197 rc.cpp:251 rc.cpp:320 rc.cpp:659 rc.cpp:1109 rc.cpp:1199
 msgid "&Gateway:"
 msgstr "&Brána:"
 
@@ -2529,7 +2489,7 @@ msgstr "Standardní brána"
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #. i18n: file: libs/ui/ppp.ui:20
 #. i18n: ectx: property (title), widget (QGroupBox, auth)
-#: rc.cpp:209 rc.cpp:584 rc.cpp:707 rc.cpp:1271
+#: rc.cpp:209 rc.cpp:584 rc.cpp:707 rc.cpp:1274
 msgid "Authentication"
 msgstr "Ověření"
 
@@ -2576,7 +2536,7 @@ msgstr "X.509"
 #. i18n: file: libs/ui/security/leap.ui:17
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:221 rc.cpp:755 rc.cpp:794 rc.cpp:935 rc.cpp:965 rc.cpp:1010
-#: rc.cpp:1322 rc.cpp:1352 rc.cpp:1373 rc.cpp:1391
+#: rc.cpp:1325 rc.cpp:1355 rc.cpp:1376 rc.cpp:1394
 msgid "&Username:"
 msgstr "Uživatelské jméno"
 
@@ -2664,7 +2624,7 @@ msgstr "Ověření platnosti certifikátu"
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: file: libs/ui/security/eapmethodtlsbase.ui:35
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:269 rc.cpp:1508
+#: rc.cpp:269 rc.cpp:1511
 msgid "&User Certificate:"
 msgstr "Certifikát &uživatele:"
 
@@ -2672,7 +2632,7 @@ msgstr "Certifikát &uživatele:"
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: file: libs/ui/security/eapmethodtlsbase.ui:74
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: rc.cpp:272 rc.cpp:1517
+#: rc.cpp:272 rc.cpp:1520
 msgid "Private &Key:"
 msgstr "Soukromý &klíč:"
 
@@ -2784,7 +2744,7 @@ msgstr "Presdílený klíč"
 #. i18n: ectx: label, entry (password), group (gsm)
 #. i18n: file: libs/internals/schemas/pppoe.kcfg:17
 #. i18n: ectx: label, entry (password), group (pppoe)
-#: rc.cpp:332 rc.cpp:416 rc.cpp:1967 rc.cpp:2039 rc.cpp:2078 rc.cpp:2258
+#: rc.cpp:332 rc.cpp:416 rc.cpp:1970 rc.cpp:2042 rc.cpp:2081 rc.cpp:2216
 msgid "Password"
 msgstr "Heslo"
 
@@ -2846,7 +2806,7 @@ msgstr "Heslo klíče:"
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #: rc.cpp:350 rc.cpp:392 rc.cpp:419 rc.cpp:428 rc.cpp:575 rc.cpp:671
 #: rc.cpp:731 rc.cpp:746 rc.cpp:758 rc.cpp:800 rc.cpp:815 rc.cpp:1052
-#: rc.cpp:1367 rc.cpp:1382 rc.cpp:1403 rc.cpp:1526
+#: rc.cpp:1370 rc.cpp:1385 rc.cpp:1406 rc.cpp:1529
 msgid "Always Ask"
 msgstr "Vždy se dotázat"
 
@@ -2884,7 +2844,7 @@ msgstr "Vždy se dotázat"
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #: rc.cpp:353 rc.cpp:395 rc.cpp:422 rc.cpp:431 rc.cpp:578 rc.cpp:674
 #: rc.cpp:734 rc.cpp:749 rc.cpp:761 rc.cpp:803 rc.cpp:818 rc.cpp:1049
-#: rc.cpp:1364 rc.cpp:1379 rc.cpp:1400 rc.cpp:1523
+#: rc.cpp:1367 rc.cpp:1382 rc.cpp:1403 rc.cpp:1526
 msgid "Store"
 msgstr "Uložit"
 
@@ -2924,7 +2884,7 @@ msgstr "Uložit"
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #: rc.cpp:356 rc.cpp:398 rc.cpp:425 rc.cpp:434 rc.cpp:548 rc.cpp:581
 #: rc.cpp:677 rc.cpp:737 rc.cpp:752 rc.cpp:764 rc.cpp:806 rc.cpp:821
-#: rc.cpp:1055 rc.cpp:1370 rc.cpp:1385 rc.cpp:1406 rc.cpp:1529
+#: rc.cpp:1055 rc.cpp:1373 rc.cpp:1388 rc.cpp:1409 rc.cpp:1532
 msgid "Not Required"
 msgstr "Nevyžadováno"
 
@@ -2932,7 +2892,7 @@ msgstr "Nevyžadováno"
 #. i18n: ectx: property (text), widget (QLabel, textLabel5)
 #. i18n: file: libs/ui/security/wep.ui:110
 #. i18n: ectx: property (text), item, widget (KComboBox, authalg)
-#: rc.cpp:359 rc.cpp:1439
+#: rc.cpp:359 rc.cpp:1442
 msgid "Shared Key"
 msgstr "Sdílený klíč"
 
@@ -3034,7 +2994,7 @@ msgstr "Heslo klíče"
 #. i18n: ectx: label, entry (username), group (pppoe)
 #. i18n: file: libs/internals/schemas/vpn.kcfg:17
 #. i18n: ectx: label, entry (UserName), group (vpn)
-#: rc.cpp:413 rc.cpp:2036 rc.cpp:2075 rc.cpp:2255 rc.cpp:2282
+#: rc.cpp:413 rc.cpp:2039 rc.cpp:2078 rc.cpp:2213 rc.cpp:2240
 msgid "Username"
 msgstr "Uživatelské jméno"
 
@@ -3060,6 +3020,8 @@ msgstr "&Port brány:"
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spbLocalPort)
 #. i18n: file: vpnplugins/vpnc/vpncprop.ui:467
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spbCiscoUdpEncPort)
+#. i18n: file: libs/ui/ipv6.ui:112
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
 #. i18n: file: libs/ui/security/eapmethodpeapbase.ui:72
 #. i18n: ectx: property (text), item, widget (KComboBox, cboPeapVersion)
 #. i18n: file: libs/ui/wired.ui:88
@@ -3072,8 +3034,8 @@ msgstr "&Port brány:"
 #. i18n: ectx: property (specialValueText), widget (Wireless80211WidgetBand, channel)
 #. i18n: file: libs/ui/802-11-wireless.ui:247
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, mtu)
-#: rc.cpp:446 rc.cpp:452 rc.cpp:458 rc.cpp:914 rc.cpp:917 rc.cpp:1472
-#: rc.cpp:1616 rc.cpp:1628 rc.cpp:1739 rc.cpp:1757 rc.cpp:1796
+#: rc.cpp:446 rc.cpp:452 rc.cpp:458 rc.cpp:914 rc.cpp:917 rc.cpp:1166
+#: rc.cpp:1475 rc.cpp:1619 rc.cpp:1631 rc.cpp:1742 rc.cpp:1760 rc.cpp:1799
 msgid "Automatic"
 msgstr "Automaticky"
 
@@ -3205,7 +3167,7 @@ msgstr "Volitelné nastavení TLS"
 #. i18n: ectx: property (text), widget (QLabel, lblSubjectMatch)
 #. i18n: file: libs/ui/security/eapmethodttlsbase.ui:58
 #. i18n: ectx: property (text), widget (QLabel, lblSubjectMatch)
-#: rc.cpp:518 rc.cpp:1481 rc.cpp:1532 rc.cpp:1565
+#: rc.cpp:518 rc.cpp:1484 rc.cpp:1535 rc.cpp:1568
 msgid "Subject Match:"
 msgstr "Shoda předmětu:"
 
@@ -3305,7 +3267,7 @@ msgstr "Povolit následující metody &autentizace:"
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #. i18n: file: libs/ui/ppp.ui:29
 #. i18n: ectx: property (text), widget (QCheckBox, pap)
-#: rc.cpp:590 rc.cpp:1274
+#: rc.cpp:590 rc.cpp:1277
 msgid "PAP"
 msgstr "PAP"
 
@@ -3313,7 +3275,7 @@ msgstr "PAP"
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #. i18n: file: libs/ui/ppp.ui:39
 #. i18n: ectx: property (text), widget (QCheckBox, chap)
-#: rc.cpp:593 rc.cpp:1277
+#: rc.cpp:593 rc.cpp:1280
 msgid "CHAP"
 msgstr "CHAP"
 
@@ -3321,7 +3283,7 @@ msgstr "CHAP"
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #. i18n: file: libs/ui/ppp.ui:59
 #. i18n: ectx: property (text), widget (QCheckBox, mschap)
-#: rc.cpp:596 rc.cpp:1283
+#: rc.cpp:596 rc.cpp:1286
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
@@ -3329,7 +3291,7 @@ msgstr "MSCHAP"
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #. i18n: file: libs/ui/ppp.ui:49
 #. i18n: ectx: property (text), widget (QCheckBox, mschapv2)
-#: rc.cpp:599 rc.cpp:1280
+#: rc.cpp:599 rc.cpp:1283
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
 
@@ -3341,7 +3303,7 @@ msgstr "MSCHAPv2"
 #. i18n: ectx: property (text), widget (QCheckBox, eap)
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:9
 #. i18n: ectx: label, entry (eap), group (802-1x)
-#: rc.cpp:602 rc.cpp:719 rc.cpp:1286 rc.cpp:1919
+#: rc.cpp:602 rc.cpp:719 rc.cpp:1289 rc.cpp:1922
 msgid "EAP"
 msgstr "EAP"
 
@@ -3371,7 +3333,7 @@ msgstr "Ši&frování:"
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbMacAddress)
 #. i18n: file: libs/ui/802-11-wireless.ui:220
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbMacAddress)
-#: rc.cpp:614 rc.cpp:1028 rc.cpp:1598 rc.cpp:1784
+#: rc.cpp:614 rc.cpp:1028 rc.cpp:1601 rc.cpp:1787
 msgid "Any"
 msgstr "Cokoliv"
 
@@ -3397,7 +3359,7 @@ msgstr "Použít &stavové šifrování"
 #. i18n: ectx: property (title), widget (QGroupBox, grp_cryptoAndCompression)
 #. i18n: file: libs/ui/ppp.ui:82
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: rc.cpp:626 rc.cpp:1289
+#: rc.cpp:626 rc.cpp:1292
 msgid "Compression"
 msgstr "Komprese"
 
@@ -3423,7 +3385,7 @@ msgstr "Povolit kompresi &TCP hlaviček"
 #. i18n: ectx: property (title), widget (QGroupBox, grp_echo)
 #. i18n: file: libs/ui/ppp.ui:156
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: rc.cpp:638 rc.cpp:1310
+#: rc.cpp:638 rc.cpp:1313
 msgid "Echo"
 msgstr "Echo"
 
@@ -3457,8 +3419,8 @@ msgstr "PPTPAuthentication"
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: file: libs/ui/security/wpapsk.ui:25
 #. i18n: ectx: property (text), widget (QLabel, label_14)
-#: rc.cpp:647 rc.cpp:668 rc.cpp:968 rc.cpp:1013 rc.cpp:1325 rc.cpp:1358
-#: rc.cpp:1376 rc.cpp:1394 rc.cpp:1454
+#: rc.cpp:647 rc.cpp:668 rc.cpp:968 rc.cpp:1013 rc.cpp:1328 rc.cpp:1361
+#: rc.cpp:1379 rc.cpp:1397 rc.cpp:1457
 msgid "&Password:"
 msgstr "&Heslo:"
 
@@ -3678,9 +3640,9 @@ msgstr "Cisco UDP"
 #. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
 #. i18n: file: libs/ui/ipv4.ui:137
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#. i18n: file: libs/ui/ipv6.ui:137
+#. i18n: file: libs/ui/ipv6.ui:142
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: rc.cpp:863 rc.cpp:1094 rc.cpp:1199
+#: rc.cpp:863 rc.cpp:1094 rc.cpp:1184
 msgid "Disabled"
 msgstr "Vypnuto"
 
@@ -3950,7 +3912,7 @@ msgstr "Adresa IPv4"
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
 #. i18n: file: libs/ui/ipv6.ui:39
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
-#: rc.cpp:1067 rc.cpp:1172
+#: rc.cpp:1067 rc.cpp:1154
 msgid "Basic settings"
 msgstr "Základní nastavení"
 
@@ -3958,7 +3920,7 @@ msgstr "Základní nastavení"
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
 #. i18n: file: libs/ui/ipv6.ui:44
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
-#: rc.cpp:1070 rc.cpp:1175
+#: rc.cpp:1070 rc.cpp:1157
 msgid "Additional addresses"
 msgstr "Dodatečné adresy"
 
@@ -3966,7 +3928,7 @@ msgstr "Dodatečné adresy"
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
 #. i18n: file: libs/ui/ipv6.ui:49
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
-#: rc.cpp:1073 rc.cpp:1178
+#: rc.cpp:1073 rc.cpp:1160
 msgid "Routes"
 msgstr "Směrování"
 
@@ -3974,63 +3936,59 @@ msgstr "Směrování"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: file: libs/ui/ipv6.ui:98
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:1076 rc.cpp:1181
+#: rc.cpp:1076 rc.cpp:1163
 msgid "Method:"
 msgstr "Metoda:"
 
 #. i18n: file: libs/ui/ipv4.ui:112
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#. i18n: file: libs/ui/ipv6.ui:112
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: rc.cpp:1079 rc.cpp:1184
+#: rc.cpp:1079
 msgid "DHCP"
 msgstr "DHCP"
 
 #. i18n: file: libs/ui/ipv4.ui:117
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#. i18n: file: libs/ui/ipv6.ui:117
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: rc.cpp:1082 rc.cpp:1187
+#: rc.cpp:1082
 msgid "DHCP (only address)"
 msgstr "DHCP (pouze adresa)"
 
 #. i18n: file: libs/ui/ipv4.ui:122
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#. i18n: file: libs/ui/ipv6.ui:122
+#. i18n: file: libs/ui/ipv6.ui:127
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: rc.cpp:1085 rc.cpp:1190
+#: rc.cpp:1085 rc.cpp:1175
 msgid "Manual"
 msgstr "Ručně"
 
 #. i18n: file: libs/ui/ipv4.ui:127
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#. i18n: file: libs/ui/ipv6.ui:127
+#. i18n: file: libs/ui/ipv6.ui:132
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: rc.cpp:1088 rc.cpp:1193
+#: rc.cpp:1088 rc.cpp:1178
 msgid "Link-Local"
 msgstr "Link-Local"
 
 #. i18n: file: libs/ui/ipv4.ui:132
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#. i18n: file: libs/ui/ipv6.ui:132
+#. i18n: file: libs/ui/ipv6.ui:137
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: rc.cpp:1091 rc.cpp:1196
+#: rc.cpp:1091 rc.cpp:1181
 msgid "Shared"
 msgstr "Sdílené"
 
 #. i18n: file: libs/ui/ipv4.ui:145
 #. i18n: ectx: property (text), widget (QLabel, addressLabel)
-#. i18n: file: libs/ui/ipv6.ui:145
+#. i18n: file: libs/ui/ipv6.ui:150
 #. i18n: ectx: property (text), widget (QLabel, addressLabel)
-#: rc.cpp:1097 rc.cpp:1202
+#: rc.cpp:1097 rc.cpp:1187
 msgid "&IP Address:"
 msgstr "&IP adresa:"
 
 #. i18n: file: libs/ui/ipv4.ui:164
 #. i18n: ectx: property (toolTip), widget (KLineEdit, address)
-#. i18n: file: libs/ui/ipv6.ui:164
+#. i18n: file: libs/ui/ipv6.ui:169
 #. i18n: ectx: property (toolTip), widget (KLineEdit, address)
-#: rc.cpp:1100 rc.cpp:1205
+#: rc.cpp:1100 rc.cpp:1190
 msgid ""
 "Use this field to specify the IP address that should be used by this "
 "computer."
@@ -4040,17 +3998,17 @@ msgstr ""
 
 #. i18n: file: libs/ui/ipv4.ui:171
 #. i18n: ectx: property (text), widget (QLabel, netMaskLabel)
-#. i18n: file: libs/ui/ipv6.ui:171
+#. i18n: file: libs/ui/ipv6.ui:176
 #. i18n: ectx: property (text), widget (QLabel, netMaskLabel)
-#: rc.cpp:1103 rc.cpp:1208
+#: rc.cpp:1103 rc.cpp:1193
 msgid "Subnet &Mask:"
 msgstr "&Maska podsítě:"
 
 #. i18n: file: libs/ui/ipv4.ui:190
 #. i18n: ectx: property (toolTip), widget (KLineEdit, netMask)
-#. i18n: file: libs/ui/ipv6.ui:190
+#. i18n: file: libs/ui/ipv6.ui:195
 #. i18n: ectx: property (toolTip), widget (KLineEdit, netMask)
-#: rc.cpp:1106 rc.cpp:1211
+#: rc.cpp:1106 rc.cpp:1196
 msgid ""
 "Use this field to specify the subnet that the above IP address belongs to."
 msgstr ""
@@ -4059,9 +4017,9 @@ msgstr ""
 
 #. i18n: file: libs/ui/ipv4.ui:216
 #. i18n: ectx: property (toolTip), widget (KLineEdit, gateway)
-#. i18n: file: libs/ui/ipv6.ui:216
+#. i18n: file: libs/ui/ipv6.ui:221
 #. i18n: ectx: property (toolTip), widget (KLineEdit, gateway)
-#: rc.cpp:1112 rc.cpp:1217
+#: rc.cpp:1112 rc.cpp:1202
 msgid ""
 "Use this field to specify the IP address of the gateway for requests outside "
 "the local network."
@@ -4071,17 +4029,17 @@ msgstr ""
 
 #. i18n: file: libs/ui/ipv4.ui:223
 #. i18n: ectx: property (text), widget (QLabel, dnsLabel)
-#. i18n: file: libs/ui/ipv6.ui:223
+#. i18n: file: libs/ui/ipv6.ui:228
 #. i18n: ectx: property (text), widget (QLabel, dnsLabel)
-#: rc.cpp:1115 rc.cpp:1220
+#: rc.cpp:1115 rc.cpp:1205
 msgid "&DNS Servers:"
 msgstr "&DNS servery:"
 
 #. i18n: file: libs/ui/ipv4.ui:253
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dns)
-#. i18n: file: libs/ui/ipv6.ui:253
+#. i18n: file: libs/ui/ipv6.ui:258
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dns)
-#: rc.cpp:1118 rc.cpp:1223
+#: rc.cpp:1118 rc.cpp:1208
 msgid ""
 "Use this field to specify the IP address(es) of one or more DNS servers. Use "
 "',' to separate entries."
@@ -4093,9 +4051,9 @@ msgstr ""
 #. i18n: ectx: property (text), widget (KPushButton, dnsMorePushButton)
 #. i18n: file: libs/ui/ipv4.ui:294
 #. i18n: ectx: property (text), widget (KPushButton, dnsSearchMorePushButton)
-#. i18n: file: libs/ui/ipv6.ui:260
+#. i18n: file: libs/ui/ipv6.ui:265
 #. i18n: ectx: property (text), widget (KPushButton, dnsMorePushButton)
-#. i18n: file: libs/ui/ipv6.ui:294
+#. i18n: file: libs/ui/ipv6.ui:299
 #. i18n: ectx: property (text), widget (KPushButton, dnsSearchMorePushButton)
 #. i18n: file: libs/ui/security/eapmethodpeapbase.ui:120
 #. i18n: ectx: property (text), widget (KPushButton, altSubjectMatchesMoreBtn)
@@ -4109,16 +4067,16 @@ msgstr ""
 #. i18n: ectx: property (text), widget (KPushButton, altSubjectMatchesMoreBtn)
 #. i18n: file: libs/ui/security/eapmethodttlsbase.ui:113
 #. i18n: ectx: property (text), widget (KPushButton, connectToTheseServersMoreBtn)
-#: rc.cpp:1121 rc.cpp:1127 rc.cpp:1226 rc.cpp:1232 rc.cpp:1493 rc.cpp:1502
-#: rc.cpp:1544 rc.cpp:1553 rc.cpp:1577 rc.cpp:1586
+#: rc.cpp:1121 rc.cpp:1127 rc.cpp:1211 rc.cpp:1217 rc.cpp:1496 rc.cpp:1505
+#: rc.cpp:1547 rc.cpp:1556 rc.cpp:1580 rc.cpp:1589
 msgid "..."
 msgstr "..."
 
 #. i18n: file: libs/ui/ipv4.ui:269
 #. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
-#. i18n: file: libs/ui/ipv6.ui:269
+#. i18n: file: libs/ui/ipv6.ui:274
 #. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
-#: rc.cpp:1124 rc.cpp:1229
+#: rc.cpp:1124 rc.cpp:1214
 msgid "&Search Domains:"
 msgstr "&Hledat domény:"
 
@@ -4151,7 +4109,7 @@ msgstr "Pro spojení je potřeba IPv4"
 #. i18n: ectx: property (windowTitle), widget (QWidget, AdvancedSettingsIp6Config)
 #. i18n: file: libs/ui/ipv6routes.ui:20
 #. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
-#: rc.cpp:1139 rc.cpp:1151 rc.cpp:1238 rc.cpp:1250
+#: rc.cpp:1139 rc.cpp:1223 rc.cpp:1241 rc.cpp:1253
 msgid "Advanced IP Settings"
 msgstr "Pokročilá nastavení IP"
 
@@ -4159,7 +4117,7 @@ msgstr "Pokročilá nastavení IP"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: file: libs/ui/ipv6advanced.ui:32
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:1142 rc.cpp:1241
+#: rc.cpp:1142 rc.cpp:1244
 msgid "&Additional IP Addresses:"
 msgstr "Dodat&ečné IP adresy:"
 
@@ -4171,7 +4129,7 @@ msgstr "Dodat&ečné IP adresy:"
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonAdd)
 #. i18n: file: libs/ui/ipv6routes.ui:107
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonAdd)
-#: rc.cpp:1145 rc.cpp:1157 rc.cpp:1244 rc.cpp:1256
+#: rc.cpp:1145 rc.cpp:1229 rc.cpp:1247 rc.cpp:1259
 msgctxt "Insert a row"
 msgid "Add"
 msgstr "Přidat"
@@ -4184,16 +4142,40 @@ msgstr "Přidat"
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
 #. i18n: file: libs/ui/ipv6routes.ui:135
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
-#: rc.cpp:1148 rc.cpp:1160 rc.cpp:1247 rc.cpp:1259
+#: rc.cpp:1148 rc.cpp:1232 rc.cpp:1250 rc.cpp:1262
 msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "Odstr&anit"
+
+#. i18n: file: libs/ui/ipv6.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, SettingsIp6Config)
+#: rc.cpp:1151
+msgid "IPv6 Address"
+msgstr "Adresa IPv6"
+
+#. i18n: file: libs/ui/ipv6.ui:117
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: rc.cpp:1169
+msgid "Automatic (addresses only)"
+msgstr "Automaticky (pouze adresy)"
+
+#. i18n: file: libs/ui/ipv6.ui:122
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: rc.cpp:1172
+msgid "Automatic (DHCP only)"
+msgstr "Automaticky (pouze DHCP)"
+
+#. i18n: file: libs/ui/ipv6.ui:404
+#. i18n: ectx: property (text), widget (QCheckBox, cbMayFail)
+#: rc.cpp:1220
+msgid "IPv6 is required for this connection"
+msgstr "Pro spojení je potřeba IPv6"
 
 #. i18n: file: libs/ui/ipv4routes.ui:32
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: file: libs/ui/ipv6routes.ui:32
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:1154 rc.cpp:1253
+#: rc.cpp:1226 rc.cpp:1256
 msgid "&Routes"
 msgstr "Smě&rování"
 
@@ -4201,7 +4183,7 @@ msgstr "Smě&rování"
 #. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
 #. i18n: file: libs/ui/ipv6routes.ui:142
 #. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
-#: rc.cpp:1163 rc.cpp:1262
+#: rc.cpp:1235 rc.cpp:1265
 msgid "Ignore &automatically obtained routes"
 msgstr "Ignorovat &automaticky obdržená směrování"
 
@@ -4209,109 +4191,97 @@ msgstr "Ignorovat &automaticky obdržená směrování"
 #. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
 #. i18n: file: libs/ui/ipv6routes.ui:165
 #. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
-#: rc.cpp:1166 rc.cpp:1265
+#: rc.cpp:1238 rc.cpp:1268
 msgid "Use &only for resources on this connection"
 msgstr "P&oužít pouze pro zdroje tohoto připojení"
 
-#. i18n: file: libs/ui/ipv6.ui:14
-#. i18n: ectx: property (windowTitle), widget (QWidget, SettingsIp6Config)
-#: rc.cpp:1169
-msgid "IPv6 Address"
-msgstr "Adresa IPv6"
-
-#. i18n: file: libs/ui/ipv6.ui:399
-#. i18n: ectx: property (text), widget (QCheckBox, cbMayFail)
-#: rc.cpp:1235
-msgid "IPv6 is required for this connection"
-msgstr "Pro spojení je potřeba IPv6"
-
 #. i18n: file: libs/ui/ppp.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, Ppp)
-#: rc.cpp:1268
+#: rc.cpp:1271
 msgid "PPP"
 msgstr "PPP"
 
 #. i18n: file: libs/ui/ppp.ui:91
 #. i18n: ectx: property (title), widget (QGroupBox, requiremppe)
-#: rc.cpp:1292
+#: rc.cpp:1295
 msgid "Point-to-Point-Encryption (MPPE)"
 msgstr "Point-to-Point Encryption (MPPE)"
 
 #. i18n: file: libs/ui/ppp.ui:106
 #. i18n: ectx: property (text), widget (QCheckBox, requiremppe128)
-#: rc.cpp:1295
+#: rc.cpp:1298
 msgid "Require 128-bit encryption"
 msgstr "Vyžadovat 128-bit šifrování"
 
 #. i18n: file: libs/ui/ppp.ui:113
 #. i18n: ectx: property (text), widget (QCheckBox, mppestateful)
-#: rc.cpp:1298
+#: rc.cpp:1301
 msgid "Stateful MPPE"
 msgstr "Stavové MPPE"
 
 #. i18n: file: libs/ui/ppp.ui:123
 #. i18n: ectx: property (text), widget (QCheckBox, bsdcomp)
-#: rc.cpp:1301
+#: rc.cpp:1304
 msgid "Allow BSD compression"
 msgstr "Povolit BSD kompresi"
 
 #. i18n: file: libs/ui/ppp.ui:133
 #. i18n: ectx: property (text), widget (QCheckBox, deflate)
-#: rc.cpp:1304
+#: rc.cpp:1307
 msgid "Allow Deflate compression"
 msgstr "Povolit Deflate kompresi"
 
 #. i18n: file: libs/ui/ppp.ui:143
 #. i18n: ectx: property (text), widget (QCheckBox, vjcomp)
-#: rc.cpp:1307
+#: rc.cpp:1310
 msgid "Use TCP header compression"
 msgstr "Použít kompresi TCP hlaviček"
 
 #. i18n: file: libs/ui/ppp.ui:162
 #. i18n: ectx: property (text), widget (QCheckBox, pppecho)
-#: rc.cpp:1313
+#: rc.cpp:1316
 msgid "Send PPP echo packets"
 msgstr "Posílat PPP echo packety"
 
 #. i18n: file: libs/ui/pppoe.ui:20
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:1319
+#: rc.cpp:1322
 msgid "&Service:"
 msgstr "&Služba:"
 
 #. i18n: file: libs/ui/scanwidget.ui:38
 #. i18n: ectx: property (text), widget (QLabel, m_interfaceLabel)
-#: rc.cpp:1331
+#: rc.cpp:1334
 msgid "Interface:"
 msgstr "Rozhraní:"
 
 #. i18n: file: libs/ui/scanwidget.ui:51
 #. i18n: ectx: property (text), widget (QLabel, m_viewLabel_2)
-#: rc.cpp:1334
+#: rc.cpp:1337
 msgid "View:"
 msgstr "Pohled:"
 
 #. i18n: file: libs/ui/scanwidget.ui:62
 #. i18n: ectx: property (text), item, widget (KComboBox, m_view)
-#: rc.cpp:1337
+#: rc.cpp:1340
 msgid "Map"
 msgstr "Mapa"
 
 #. i18n: file: libs/ui/scanwidget.ui:67
 #. i18n: ectx: property (text), item, widget (KComboBox, m_view)
-#: rc.cpp:1340
+#: rc.cpp:1343
 msgid "Details"
 msgstr "Podrobnosti"
 
 #. i18n: file: libs/ui/scanwidget.ui:101
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_useBssid)
-#: rc.cpp:1343
+#: rc.cpp:1346
 msgid "Use the selected AP's BSSID in the connection settings"
 msgstr ""
 
 #. i18n: file: libs/ui/scanwidget.ui:104
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_useBssid)
-#: rc.cpp:1346
+#: rc.cpp:1349
 msgid ""
 "Automatically set the BSSID in the connection settings to the selected AP's "
 "BSSID. This is useful if multiple networks with the same SSID, but different "
@@ -4320,19 +4290,19 @@ msgstr ""
 
 #. i18n: file: libs/ui/scanwidget.ui:107
 #. i18n: ectx: property (text), widget (QCheckBox, m_useBssid)
-#: rc.cpp:1349
+#: rc.cpp:1352
 msgid "Use the AP's BSSID"
 msgstr "Použít BSSID AP"
 
 #. i18n: file: libs/ui/security/eapmethodleapbase.ui:35
 #. i18n: ectx: property (toolTip), widget (KLineEdit, leUsername)
-#: rc.cpp:1355
+#: rc.cpp:1358
 msgid "User name on this network"
 msgstr "Uživatelské jméno v této síti"
 
 #. i18n: file: libs/ui/security/eapmethodleapbase.ui:57
 #. i18n: ectx: property (toolTip), widget (KLineEdit, lePassword)
-#: rc.cpp:1361
+#: rc.cpp:1364
 msgid "Password on this network"
 msgstr "Heslo v této síti"
 
@@ -4340,73 +4310,73 @@ msgstr "Heslo v této síti"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: file: libs/ui/security/wep.ui:91
 #. i18n: ectx: property (text), widget (QLabel, authalgLabel)
-#: rc.cpp:1388 rc.cpp:1433
+#: rc.cpp:1391 rc.cpp:1436
 msgid "&Authentication:"
 msgstr "&Autentizace:"
 
 #. i18n: file: libs/ui/security/wep.ui:17
 #. i18n: ectx: property (text), widget (QLabel, keyTypeLabel)
-#: rc.cpp:1409
+#: rc.cpp:1412
 msgid "Key type:"
 msgstr "Typ klíče:"
 
 #. i18n: file: libs/ui/security/wep.ui:31
 #. i18n: ectx: property (text), item, widget (QComboBox, keyType)
-#: rc.cpp:1412
+#: rc.cpp:1415
 msgid "Passphrase (for 128 bit)"
 msgstr "Heslo (pro 128 bitů)"
 
 #. i18n: file: libs/ui/security/wep.ui:36
 #. i18n: ectx: property (text), item, widget (QComboBox, keyType)
-#: rc.cpp:1415
+#: rc.cpp:1418
 msgid "Hex or Ascii Key (for 64 or 128 bit)"
 msgstr "Hexa nebo ASCII klíč (pro 64 nebo 128 bitů)"
 
 #. i18n: file: libs/ui/security/wep.ui:54
 #. i18n: ectx: property (text), widget (QLabel, weptxkeyindexLabel)
-#: rc.cpp:1418
+#: rc.cpp:1421
 msgid "&WEP index:"
 msgstr "&WEP Index:"
 
 #. i18n: file: libs/ui/security/wep.ui:68
 #. i18n: ectx: property (text), item, widget (KComboBox, weptxkeyindex)
-#: rc.cpp:1421
+#: rc.cpp:1424
 msgid "1 (Default)"
 msgstr "1 (Výchozí)"
 
 #. i18n: file: libs/ui/security/wep.ui:73
 #. i18n: ectx: property (text), item, widget (KComboBox, weptxkeyindex)
-#: rc.cpp:1424
+#: rc.cpp:1427
 msgid "2"
 msgstr "2"
 
 #. i18n: file: libs/ui/security/wep.ui:78
 #. i18n: ectx: property (text), item, widget (KComboBox, weptxkeyindex)
-#: rc.cpp:1427
+#: rc.cpp:1430
 msgid "3"
 msgstr "3"
 
 #. i18n: file: libs/ui/security/wep.ui:83
 #. i18n: ectx: property (text), item, widget (KComboBox, weptxkeyindex)
-#: rc.cpp:1430
+#: rc.cpp:1433
 msgid "4"
 msgstr "4"
 
 #. i18n: file: libs/ui/security/wep.ui:105
 #. i18n: ectx: property (text), item, widget (KComboBox, authalg)
-#: rc.cpp:1436
+#: rc.cpp:1439
 msgid "Open System"
 msgstr "Otevřený systém"
 
 #. i18n: file: libs/ui/security/wirelesssecurity.ui:20
 #. i18n: ectx: property (windowTitle), widget (QWidget, WirelessSecurity)
-#: rc.cpp:1448
+#: rc.cpp:1451
 msgid "Wireless Security"
 msgstr "Bezdrátové zabezpečení"
 
 #. i18n: file: libs/ui/security/wirelesssecurity.ui:41
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:1451
+#: rc.cpp:1454
 msgid "&Security:"
 msgstr "Bezpečno&st:"
 
@@ -4414,7 +4384,7 @@ msgstr "Bezpečno&st:"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: file: libs/ui/security/eapmethodttlsbase.ui:19
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:1460 rc.cpp:1556
+#: rc.cpp:1463 rc.cpp:1559
 msgid "&Anonymous Identity:"
 msgstr "&Anonymní identita:"
 
@@ -4424,7 +4394,7 @@ msgstr "&Anonymní identita:"
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: file: libs/ui/security/eapmethodttlsbase.ui:35
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:1463 rc.cpp:1511 rc.cpp:1559
+#: rc.cpp:1466 rc.cpp:1514 rc.cpp:1562
 msgid "CA Certi&ficate:"
 msgstr "CA Certi&fikát:"
 
@@ -4434,31 +4404,31 @@ msgstr "CA Certi&fikát:"
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseSystemCaCerts)
 #. i18n: file: libs/ui/security/eapmethodttlsbase.ui:51
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseSystemCaCerts)
-#: rc.cpp:1466 rc.cpp:1514 rc.cpp:1562
+#: rc.cpp:1469 rc.cpp:1517 rc.cpp:1565
 msgid "Use Syste&m CA Certs"
 msgstr "Použít systé&mové CA certifikáty"
 
 #. i18n: file: libs/ui/security/eapmethodpeapbase.ui:58
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: rc.cpp:1469
+#: rc.cpp:1472
 msgid "PEAP &Version:"
 msgstr "PEAP &verze:"
 
 #. i18n: file: libs/ui/security/eapmethodpeapbase.ui:77
 #. i18n: ectx: property (text), item, widget (KComboBox, cboPeapVersion)
-#: rc.cpp:1475
+#: rc.cpp:1478
 msgid "Version 0"
 msgstr "Verze 0"
 
 #. i18n: file: libs/ui/security/eapmethodpeapbase.ui:82
 #. i18n: ectx: property (text), item, widget (KComboBox, cboPeapVersion)
-#: rc.cpp:1478
+#: rc.cpp:1481
 msgid "Version 1"
 msgstr "Verze 1"
 
 #. i18n: file: libs/ui/security/eapmethodpeapbase.ui:97
 #. i18n: ectx: property (toolTip), widget (KLineEdit, leSubjectMatch)
-#: rc.cpp:1484
+#: rc.cpp:1487
 msgid ""
 "Only connect to servers whose certificate subject matches this. For the "
 "syntax see the wpa_supplicant documentation."
@@ -4470,13 +4440,13 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, lblAltSubjectMatches)
 #. i18n: file: libs/ui/security/eapmethodttlsbase.ui:72
 #. i18n: ectx: property (text), widget (QLabel, lblAltSubjectMatches)
-#: rc.cpp:1487 rc.cpp:1538 rc.cpp:1571
+#: rc.cpp:1490 rc.cpp:1541 rc.cpp:1574
 msgid "Alternative Subject Matches:"
 msgstr "Alternativní shody předmětu:"
 
 #. i18n: file: libs/ui/security/eapmethodpeapbase.ui:113
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leAltSubjectMatches)
-#: rc.cpp:1490
+#: rc.cpp:1493
 msgid ""
 "Only connect to servers whose certificate contains at least one of the "
 "entries. For the syntax see the wpa_supplicant documentation. Use ',' to "
@@ -4489,7 +4459,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, lblConnectToTheseServers)
 #. i18n: file: libs/ui/security/eapmethodttlsbase.ui:97
 #. i18n: ectx: property (text), widget (QLabel, lblConnectToTheseServers)
-#: rc.cpp:1496 rc.cpp:1547 rc.cpp:1580
+#: rc.cpp:1499 rc.cpp:1550 rc.cpp:1583
 msgid "Connect to these Servers:"
 msgstr "Připojit k těmto serverům:"
 
@@ -4499,19 +4469,19 @@ msgstr "Připojit k těmto serverům:"
 #. i18n: ectx: property (toolTip), widget (KLineEdit, leConnectToTheseServers)
 #. i18n: file: libs/ui/security/eapmethodttlsbase.ui:106
 #. i18n: ectx: property (toolTip), widget (KLineEdit, leConnectToTheseServers)
-#: rc.cpp:1499 rc.cpp:1550 rc.cpp:1583
+#: rc.cpp:1502 rc.cpp:1553 rc.cpp:1586
 msgid "Only connect to these servers. Use ',' to separate entries."
 msgstr ""
 
 #. i18n: file: libs/ui/security/eapmethodtlsbase.ui:19
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:1505
+#: rc.cpp:1508
 msgid "&Identity:"
 msgstr "&Identita:"
 
 #. i18n: file: libs/ui/security/eapmethodtlsbase.ui:90
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: rc.cpp:1520
+#: rc.cpp:1523
 msgid "Private Key Pass&word:"
 msgstr "&Heslo soukromého klíče:"
 
@@ -4519,7 +4489,7 @@ msgstr "&Heslo soukromého klíče:"
 #. i18n: ectx: property (toolTip), widget (KLineEdit, leSubjectMatch)
 #. i18n: file: libs/ui/security/eapmethodttlsbase.ui:65
 #. i18n: ectx: property (toolTip), widget (KLineEdit, leSubjectMatch)
-#: rc.cpp:1535 rc.cpp:1568
+#: rc.cpp:1538 rc.cpp:1571
 msgid ""
 "Only connect to servers whose certificate's subject matches this. For the "
 "syntax see the wpa_supplicant documentation."
@@ -4529,7 +4499,7 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leAltSubjectMatches)
 #. i18n: file: libs/ui/security/eapmethodttlsbase.ui:81
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leAltSubjectMatches)
-#: rc.cpp:1541 rc.cpp:1574
+#: rc.cpp:1544 rc.cpp:1577
 msgid ""
 "Only connect to servers whose certificate's alternative subject contains at "
 "least one of the entries. For the syntax see the wpa_supplicant "
@@ -4538,13 +4508,13 @@ msgstr ""
 
 #. i18n: file: libs/ui/wired.ui:20
 #. i18n: ectx: property (windowTitle), widget (QWidget, Settings8023Ethernet)
-#: rc.cpp:1589
+#: rc.cpp:1592
 msgid "Ethernet"
 msgstr "Ethernet"
 
 #. i18n: file: libs/ui/wired.ui:31
 #. i18n: ectx: property (toolTip), widget (QLabel, label)
-#: rc.cpp:1592
+#: rc.cpp:1595
 msgid "Example: 11:22:33:44:55:66"
 msgstr "Příklad: 11:22:33:44:55:66"
 
@@ -4552,7 +4522,7 @@ msgstr "Příklad: 11:22:33:44:55:66"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: file: libs/ui/802-11-wireless.ui:206
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: rc.cpp:1595 rc.cpp:1781
+#: rc.cpp:1598 rc.cpp:1784
 msgid "&Restrict To Interface:"
 msgstr "Omezit na &rozhraní:"
 
@@ -4560,19 +4530,19 @@ msgstr "Omezit na &rozhraní:"
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: file: libs/ui/802-11-wireless.ui:260
 #. i18n: ectx: property (text), widget (QLabel, label_8)
-#: rc.cpp:1601 rc.cpp:1799
+#: rc.cpp:1604 rc.cpp:1802
 msgid "Cloned MAC address"
 msgstr "Klonovaná MAC adresa"
 
 #. i18n: file: libs/ui/wired.ui:63
 #. i18n: ectx: property (toolTip), widget (QLabel, label_2)
-#: rc.cpp:1604
+#: rc.cpp:1607
 msgid "Maximum Transfer Unit (bytes)"
 msgstr "Maximální přenosová jednotka (MTU, bajty)"
 
 #. i18n: file: libs/ui/wired.ui:66
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:1607
+#: rc.cpp:1610
 msgid "M&TU:"
 msgstr "M&TU:"
 
@@ -4580,7 +4550,7 @@ msgstr "M&TU:"
 #. i18n: ectx: property (toolTip), widget (KIntSpinBox, mtu)
 #. i18n: file: libs/ui/802-11-wireless.ui:241
 #. i18n: ectx: property (toolTip), widget (KIntSpinBox, mtu)
-#: rc.cpp:1610 rc.cpp:1790
+#: rc.cpp:1613 rc.cpp:1793
 msgid "Maximum Transmission Unit"
 msgstr "Maximum Transmission Unit"
 
@@ -4588,7 +4558,7 @@ msgstr "Maximum Transmission Unit"
 #. i18n: ectx: property (whatsThis), widget (KIntSpinBox, mtu)
 #. i18n: file: libs/ui/802-11-wireless.ui:244
 #. i18n: ectx: property (whatsThis), widget (KIntSpinBox, mtu)
-#: rc.cpp:1613 rc.cpp:1793
+#: rc.cpp:1616 rc.cpp:1796
 msgid ""
 "Sets the size of the largest packet that can be transmitted on this network. "
 "'0' sets the MTU automatically."
@@ -4600,25 +4570,25 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, labelSpeed)
 #. i18n: file: libs/internals/schemas/802-3-ethernet.kcfg:19
 #. i18n: ectx: label, entry (speed), group (802-3-ethernet)
-#: rc.cpp:1619 rc.cpp:2003
+#: rc.cpp:1622 rc.cpp:2006
 msgid "Speed"
 msgstr "Rychlost"
 
 #. i18n: file: libs/ui/wired.ui:111
 #. i18n: ectx: property (toolTip), widget (KIntSpinBox, speed)
-#: rc.cpp:1622
+#: rc.cpp:1625
 msgid "Use the specified speed"
 msgstr "Použít zadanou rychlost"
 
 #. i18n: file: libs/ui/wired.ui:114
 #. i18n: ectx: property (whatsThis), widget (KIntSpinBox, speed)
-#: rc.cpp:1625
+#: rc.cpp:1628
 msgid "Request that the device use only the specified speed."
 msgstr ""
 
 #. i18n: file: libs/ui/wired.ui:123
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, speed)
-#: rc.cpp:1631
+#: rc.cpp:1634
 msgid " MBit/s"
 msgstr " MBit/s"
 
@@ -4626,19 +4596,19 @@ msgstr " MBit/s"
 #. i18n: ectx: property (text), widget (QLabel, labelDuplex)
 #. i18n: file: libs/internals/schemas/802-3-ethernet.kcfg:23
 #. i18n: ectx: label, entry (duplex), group (802-3-ethernet)
-#: rc.cpp:1634 rc.cpp:2006
+#: rc.cpp:1637 rc.cpp:2009
 msgid "Duplex"
 msgstr "Duplex"
 
 #. i18n: file: libs/ui/wired.ui:146
 #. i18n: ectx: property (toolTip), widget (KComboBox, cmbDuplex)
-#: rc.cpp:1637
+#: rc.cpp:1640
 msgid "Use the specified duplex mode"
 msgstr "Použít zadaný duplex mód"
 
 #. i18n: file: libs/ui/wired.ui:149
 #. i18n: ectx: property (whatsThis), widget (KComboBox, cmbDuplex)
-#: rc.cpp:1640
+#: rc.cpp:1643
 msgid ""
 "Request that the device use only the specified duplex mode. A device in full "
 "duplex mode can send and receive data at the same time, while a device in "
@@ -4648,13 +4618,13 @@ msgstr ""
 
 #. i18n: file: libs/ui/wired.ui:156
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbDuplex)
-#: rc.cpp:1643
+#: rc.cpp:1646
 msgid "Half"
 msgstr "Poloviční"
 
 #. i18n: file: libs/ui/wired.ui:161
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbDuplex)
-#: rc.cpp:1646
+#: rc.cpp:1649
 msgid "Full"
 msgstr "Plný"
 
@@ -4662,7 +4632,7 @@ msgstr "Plný"
 #. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
 #. i18n: file: libs/ui/802-11-wireless.ui:269
 #. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
-#: rc.cpp:1649 rc.cpp:1802
+#: rc.cpp:1652 rc.cpp:1805
 msgid "Custom MAC address for the hardware to use"
 msgstr "Vlastní MAC adresa, která bude použita pro daný hardware"
 
@@ -4670,7 +4640,7 @@ msgstr "Vlastní MAC adresa, která bude použita pro daný hardware"
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, clonedMacAddress)
 #. i18n: file: libs/ui/802-11-wireless.ui:272
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, clonedMacAddress)
-#: rc.cpp:1652 rc.cpp:1805
+#: rc.cpp:1655 rc.cpp:1808
 msgid ""
 "The MAC address entered here will be used as hardware address for the "
 "network device this connection is activated on. This feature is known as MAC "
@@ -4683,7 +4653,7 @@ msgstr ""
 #. i18n: ectx: property (inputMask), widget (KLineEdit, bssid)
 #. i18n: file: libs/ui/802-11-wireless.ui:275
 #. i18n: ectx: property (inputMask), widget (KLineEdit, clonedMacAddress)
-#: rc.cpp:1655 rc.cpp:1769 rc.cpp:1808
+#: rc.cpp:1658 rc.cpp:1772 rc.cpp:1811
 msgid "HH:HH:HH:HH:HH:HH;_"
 msgstr "HH:HH:HH:HH:HH:HH;_"
 
@@ -4691,7 +4661,7 @@ msgstr "HH:HH:HH:HH:HH:HH;_"
 #. i18n: ectx: property (text), widget (KPushButton, clonedMacAddressRandom)
 #. i18n: file: libs/ui/802-11-wireless.ui:288
 #. i18n: ectx: property (text), widget (KPushButton, clonedMacAddressRandom)
-#: rc.cpp:1658 rc.cpp:1811
+#: rc.cpp:1661 rc.cpp:1814
 msgid "Random"
 msgstr "Náhodné"
 
@@ -4699,25 +4669,25 @@ msgstr "Náhodné"
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkAutoNegotiate)
 #. i18n: file: libs/ui/wired.ui:220
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, chkAutoNegotiate)
-#: rc.cpp:1661 rc.cpp:1664
+#: rc.cpp:1664 rc.cpp:1667
 msgid "Allow auto-negotiation of port speed and duplex mode"
 msgstr ""
 
 #. i18n: file: libs/ui/wired.ui:226
 #. i18n: ectx: property (text), widget (QCheckBox, chkAutoNegotiate)
-#: rc.cpp:1667
+#: rc.cpp:1670
 msgid "Autonegotiate"
 msgstr "Automaticky vyjednat"
 
 #. i18n: file: libs/ui/wireless.ui:19
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:1670
+#: rc.cpp:1673
 msgid "&ESSID:"
 msgstr "&ESSID:"
 
 #. i18n: file: libs/ui/wireless.ui:35
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:1673
+#: rc.cpp:1676
 msgid "&Mode:"
 msgstr "Reži&m:"
 
@@ -4725,7 +4695,7 @@ msgstr "Reži&m:"
 #. i18n: ectx: property (text), item, widget (KComboBox, mode)
 #. i18n: file: libs/ui/802-11-wireless.ui:77
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
-#: rc.cpp:1676 rc.cpp:1724
+#: rc.cpp:1679 rc.cpp:1727
 msgid "Infrastructure"
 msgstr "Infrastruktura"
 
@@ -4733,7 +4703,7 @@ msgstr "Infrastruktura"
 #. i18n: ectx: property (text), item, widget (KComboBox, mode)
 #. i18n: file: libs/ui/802-11-wireless.ui:82
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
-#: rc.cpp:1679 rc.cpp:1727
+#: rc.cpp:1682 rc.cpp:1730
 msgid "Ad-hoc"
 msgstr "Ad-hoc"
 
@@ -4741,7 +4711,7 @@ msgstr "Ad-hoc"
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: file: libs/ui/802-11-wireless.ui:160
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: rc.cpp:1682 rc.cpp:1760
+#: rc.cpp:1685 rc.cpp:1763
 msgid "&BSSID:"
 msgstr "&BSSID:"
 
@@ -4749,67 +4719,67 @@ msgstr "&BSSID:"
 #. i18n: ectx: property (inputMask), widget (KLineEdit, bssid)
 #. i18n: file: libs/ui/wireless.ui:98
 #. i18n: ectx: property (inputMask), widget (KLineEdit, macaddress)
-#: rc.cpp:1685 rc.cpp:1694
+#: rc.cpp:1688 rc.cpp:1697
 msgid "HH:HH:HH:HH:HH:HH; "
 msgstr "HH:HH:HH:HH:HH:HH; "
 
 #. i18n: file: libs/ui/wireless.ui:78
 #. i18n: ectx: property (text), widget (KLineEdit, bssid)
-#: rc.cpp:1688
+#: rc.cpp:1691
 msgid ":::::"
 msgstr ":::::"
 
 #. i18n: file: libs/ui/wireless.ui:85
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: rc.cpp:1691
+#: rc.cpp:1694
 msgid "MAC &address:"
 msgstr "&MAC adresa:"
 
 #. i18n: file: libs/ui/wireless.ui:105
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: rc.cpp:1697
+#: rc.cpp:1700
 msgid "&MTU:"
 msgstr "&MTU:"
 
 #. i18n: file: libs/ui/802-11-wireless.ui:23
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:1703
+#: rc.cpp:1706
 msgid "&SSID:"
 msgstr "&SSID:"
 
 #. i18n: file: libs/ui/802-11-wireless.ui:38
 #. i18n: ectx: property (toolTip), widget (KLineEdit, ssid)
-#: rc.cpp:1706
+#: rc.cpp:1709
 msgid "The name of the wireless network"
 msgstr "Název bezdrátové sítě"
 
 #. i18n: file: libs/ui/802-11-wireless.ui:41
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, ssid)
-#: rc.cpp:1709
+#: rc.cpp:1712
 msgid "The Service Set IDentifier is the name of a wireless network."
 msgstr "SSID je název bezdrátové sítě."
 
 #. i18n: file: libs/ui/802-11-wireless.ui:48
 #. i18n: ectx: property (text), widget (KPushButton, btnScan)
-#: rc.cpp:1712
+#: rc.cpp:1715
 msgid "S&can"
 msgstr "Vy&hledávat"
 
 #. i18n: file: libs/ui/802-11-wireless.ui:57
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:1715
+#: rc.cpp:1718
 msgid "M&ode:"
 msgstr "Reži&m:"
 
 #. i18n: file: libs/ui/802-11-wireless.ui:70
 #. i18n: ectx: property (toolTip), widget (KComboBox, cmbMode)
-#: rc.cpp:1718
+#: rc.cpp:1721
 msgid "Operating mode of the wireless network"
 msgstr "Operační režim bezdrátové sítě"
 
 #. i18n: file: libs/ui/802-11-wireless.ui:73
 #. i18n: ectx: property (whatsThis), widget (KComboBox, cmbMode)
-#: rc.cpp:1721
+#: rc.cpp:1724
 msgid ""
 "Infrastructure mode is the most common setting.  To form a peer-to-peer "
 "wireless network with another computer when there is no infrastructure, "
@@ -4820,37 +4790,37 @@ msgstr ""
 
 #. i18n: file: libs/ui/802-11-wireless.ui:90
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:1730
+#: rc.cpp:1733
 msgid "B&and:"
 msgstr "Pás&mo:"
 
 #. i18n: file: libs/ui/802-11-wireless.ui:103
 #. i18n: ectx: property (toolTip), widget (KComboBox, band)
-#: rc.cpp:1733
+#: rc.cpp:1736
 msgid "Frequency band of the wireless network."
 msgstr "Frekvenční pásmo bezdrátové sítě"
 
 #. i18n: file: libs/ui/802-11-wireless.ui:106
 #. i18n: ectx: property (whatsThis), widget (KComboBox, band)
-#: rc.cpp:1736
+#: rc.cpp:1739
 msgid "b/g is the most common band around 2.4 GHz. Less common is a at 5 GHz."
 msgstr "B/g je nejobvyklejší režim při 2,4 GHz, méně obvyklý při 5 GHz."
 
 #. i18n: file: libs/ui/802-11-wireless.ui:115
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: rc.cpp:1742
+#: rc.cpp:1745
 msgid "a"
 msgstr "a"
 
 #. i18n: file: libs/ui/802-11-wireless.ui:120
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: rc.cpp:1745
+#: rc.cpp:1748
 msgid "b/g"
 msgstr "b/g"
 
 #. i18n: file: libs/ui/802-11-wireless.ui:128
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: rc.cpp:1748
+#: rc.cpp:1751
 msgid "&Channel:"
 msgstr "&Kanál:"
 
@@ -4858,25 +4828,25 @@ msgstr "&Kanál:"
 #. i18n: ectx: property (toolTip), widget (Wireless80211WidgetBand, channel)
 #. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:31
 #. i18n: ectx: label, entry (channel), group (802-11-wireless)
-#: rc.cpp:1751 rc.cpp:1889
+#: rc.cpp:1754 rc.cpp:1892
 msgid "Channel"
 msgstr "Kanál"
 
 #. i18n: file: libs/ui/802-11-wireless.ui:144
 #. i18n: ectx: property (whatsThis), widget (Wireless80211WidgetBand, channel)
-#: rc.cpp:1754
+#: rc.cpp:1757
 msgid "Sets the channel of the network."
 msgstr "Nastavuje kanál sítě."
 
 #. i18n: file: libs/ui/802-11-wireless.ui:175
 #. i18n: ectx: property (toolTip), widget (KLineEdit, bssid)
-#: rc.cpp:1763
+#: rc.cpp:1766
 msgid "Only connect to the access point with this hardware address"
 msgstr "Připojit se pouze ke stanici s touto HW adresou"
 
 #. i18n: file: libs/ui/802-11-wireless.ui:178
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, bssid)
-#: rc.cpp:1766
+#: rc.cpp:1769
 msgid ""
 "Setting a BSSID (Basic Service Set Identification) forces this connection to "
 "connect only to the access point with the specified hardware address, even "
@@ -4885,19 +4855,19 @@ msgstr ""
 
 #. i18n: file: libs/ui/802-11-wireless.ui:188
 #. i18n: ectx: property (text), widget (QPushButton, btnSelectBssid)
-#: rc.cpp:1772
+#: rc.cpp:1775
 msgid "&Select"
 msgstr "Vy&brat"
 
 #. i18n: file: libs/ui/802-11-wireless.ui:194
 #. i18n: ectx: property (toolTip), widget (QPushButton, btnSelectBssid)
-#: rc.cpp:1775
+#: rc.cpp:1778
 msgid "Select the BSSID (access point) with the strongest signal."
 msgstr "Vybere BSSID (přístupový bod) s nejsilnějším signálem."
 
 #. i18n: file: libs/ui/802-11-wireless.ui:197
 #. i18n: ectx: property (whatsThis), widget (QPushButton, btnSelectBssid)
-#: rc.cpp:1778
+#: rc.cpp:1781
 msgid ""
 "This button will select the access point with the ssid specified in the "
 "field above and with the strongest signal."
@@ -4907,13 +4877,13 @@ msgstr ""
 
 #. i18n: file: libs/ui/802-11-wireless.ui:228
 #. i18n: ectx: property (text), widget (QLabel, label_7)
-#: rc.cpp:1787
+#: rc.cpp:1790
 msgid "MT&U:"
 msgstr "MT&U:"
 
 #. i18n: file: libs/ui/advancedpermissionswidget.ui:34
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:1814
+#: rc.cpp:1817
 msgid "Available Users"
 msgstr "Dostupní uživatelé"
 
@@ -4921,7 +4891,7 @@ msgstr "Dostupní uživatelé"
 #. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
 #. i18n: file: libs/ui/advancedpermissionswidget.ui:192
 #. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
-#: rc.cpp:1817 rc.cpp:1826
+#: rc.cpp:1820 rc.cpp:1829
 msgid "Real Name"
 msgstr "Skutečné jméno"
 
@@ -4929,85 +4899,85 @@ msgstr "Skutečné jméno"
 #. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
 #. i18n: file: libs/ui/advancedpermissionswidget.ui:197
 #. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
-#: rc.cpp:1820 rc.cpp:1829
+#: rc.cpp:1823 rc.cpp:1832
 msgid "User Name"
 msgstr "Uživatelské jméno"
 
 #. i18n: file: libs/ui/advancedpermissionswidget.ui:145
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:1823
+#: rc.cpp:1826
 msgid "Users allowed to activate the connection"
 msgstr "Uživatelé oprávnění aktivovat spojení"
 
 #. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:19
 #. i18n: ectx: label, entry (securityType), group (802-11-wireless-security)
-#: rc.cpp:1832
+#: rc.cpp:1835
 msgid "Security type"
 msgstr "Typ zabezpečení"
 
 #. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:23
 #. i18n: ectx: label, entry (keymgmt), group (802-11-wireless-security)
-#: rc.cpp:1835
+#: rc.cpp:1838
 msgid "Key management"
 msgstr "Správa klíčů"
 
 #. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:36
 #. i18n: ectx: label, entry (weptxkeyindex), group (802-11-wireless-security)
-#: rc.cpp:1838
+#: rc.cpp:1841
 msgid "WEP TX key index"
 msgstr "Index klíče WEP TX"
 
 #. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:40
 #. i18n: ectx: label, entry (authalg), group (802-11-wireless-security)
-#: rc.cpp:1841
+#: rc.cpp:1844
 msgid "Authentication algorithm"
 msgstr "Algoritmus ověření"
 
 #. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:50
 #. i18n: ectx: label, entry (proto), group (802-11-wireless-security)
-#: rc.cpp:1844
+#: rc.cpp:1847
 msgid "Protocols"
 msgstr "Protokoly"
 
 #. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:54
 #. i18n: ectx: label, entry (pairwise), group (802-11-wireless-security)
-#: rc.cpp:1847
+#: rc.cpp:1850
 msgid "Pairwise"
 msgstr "Párovaný"
 
 #. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:58
 #. i18n: ectx: label, entry (group), group (802-11-wireless-security)
-#: rc.cpp:1850
+#: rc.cpp:1853
 msgid "Group"
 msgstr "Skupina"
 
 #. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:62
 #. i18n: ectx: label, entry (leapusername), group (802-11-wireless-security)
-#: rc.cpp:1853
+#: rc.cpp:1856
 msgid "LEAP Username"
 msgstr "Uživatelské jméno LEAP"
 
 #. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:66
 #. i18n: ectx: label, entry (wepkey0), group (802-11-wireless-security)
-#: rc.cpp:1856
+#: rc.cpp:1859
 msgid "WEP key 0"
 msgstr "WEP klíč 0"
 
 #. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:70
 #. i18n: ectx: label, entry (wepkey1), group (802-11-wireless-security)
-#: rc.cpp:1859
+#: rc.cpp:1862
 msgid "WEP key 1"
 msgstr "WEP klíč 1"
 
 #. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:74
 #. i18n: ectx: label, entry (wepkey2), group (802-11-wireless-security)
-#: rc.cpp:1862
+#: rc.cpp:1865
 msgid "WEP key 2"
 msgstr "WEP klíč 2"
 
 #. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:78
 #. i18n: ectx: label, entry (wepkey3), group (802-11-wireless-security)
-#: rc.cpp:1865
+#: rc.cpp:1868
 msgid "WEP key 3"
 msgstr "WEP klíč 3"
 
@@ -5015,37 +4985,37 @@ msgstr "WEP klíč 3"
 #. i18n: ectx: label, entry (psk), group (802-11-wireless-security)
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:134
 #. i18n: ectx: label, entry (psk), group (802-1x)
-#: rc.cpp:1868 rc.cpp:1991
+#: rc.cpp:1871 rc.cpp:1994
 msgid "PSK"
 msgstr "PSK"
 
 #. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:86
 #. i18n: ectx: label, entry (leappassword), group (802-11-wireless-security)
-#: rc.cpp:1871
+#: rc.cpp:1874
 msgid "LEAP Password"
 msgstr "Heslo LEAP"
 
 #. i18n: file: libs/internals/schemas/802-11-wireless-security.kcfg:90
 #. i18n: ectx: label, entry (weppassphrase), group (802-11-wireless-security)
-#: rc.cpp:1874
+#: rc.cpp:1877
 msgid "WEP Passphrase"
 msgstr "Heslo WEP"
 
 #. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:9
 #. i18n: ectx: label, entry (ssid), group (802-11-wireless)
-#: rc.cpp:1877
+#: rc.cpp:1880
 msgid "SSID"
 msgstr "SSID"
 
 #. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:10
 #. i18n: ectx: whatsthis, entry (ssid), group (802-11-wireless)
-#: rc.cpp:1880
+#: rc.cpp:1883
 msgid "Service Set IDentifier (network name) "
 msgstr "SSID (název sítě)"
 
 #. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:18
 #. i18n: ectx: label, entry (mode), group (802-11-wireless)
-#: rc.cpp:1883
+#: rc.cpp:1886
 msgid "Mode"
 msgstr "Režim"
 
@@ -5053,31 +5023,31 @@ msgstr "Režim"
 #. i18n: ectx: label, entry (band), group (802-11-wireless)
 #. i18n: file: libs/internals/schemas/gsm.kcfg:34
 #. i18n: ectx: label, entry (band), group (gsm)
-#: rc.cpp:1886 rc.cpp:2090
+#: rc.cpp:1889 rc.cpp:2093
 msgid "Band"
 msgstr "Pásmo"
 
 #. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:35
 #. i18n: ectx: label, entry (bssid), group (802-11-wireless)
-#: rc.cpp:1892
+#: rc.cpp:1895
 msgid "BSSID"
 msgstr "BSSID"
 
 #. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:36
 #. i18n: ectx: whatsthis, entry (bssid), group (802-11-wireless)
-#: rc.cpp:1895
+#: rc.cpp:1898
 msgid "Basic Service Set IDentifier of the access point to use"
 msgstr "Základní identifikátor (BSSID) použitého přístupového bodu"
 
 #. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:39
 #. i18n: ectx: label, entry (rate), group (802-11-wireless)
-#: rc.cpp:1898
+#: rc.cpp:1901
 msgid "Data rate"
 msgstr "Datový tok"
 
 #. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:43
 #. i18n: ectx: label, entry (txpower), group (802-11-wireless)
-#: rc.cpp:1901
+#: rc.cpp:1904
 msgid "Transmit power"
 msgstr "Přenosový výkon"
 
@@ -5085,13 +5055,13 @@ msgstr "Přenosový výkon"
 #. i18n: ectx: label, entry (macaddress), group (802-11-wireless)
 #. i18n: file: libs/internals/schemas/802-3-ethernet.kcfg:38
 #. i18n: ectx: label, entry (macaddress), group (802-3-ethernet)
-#: rc.cpp:1904 rc.cpp:2015
+#: rc.cpp:1907 rc.cpp:2018
 msgid "MAC Address"
 msgstr "Mac adresa"
 
 #. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:48
 #. i18n: ectx: whatsthis, entry (macaddress), group (802-11-wireless)
-#: rc.cpp:1907
+#: rc.cpp:1910
 msgid "Hardware address to set on the wireless network interface"
 msgstr "Hardwarová adresa pro nastavení na bezdrátovém síťovém rozhraní"
 
@@ -5101,145 +5071,145 @@ msgstr "Hardwarová adresa pro nastavení na bezdrátovém síťovém rozhraní"
 #. i18n: ectx: label, entry (mtu), group (802-3-ethernet)
 #. i18n: file: libs/internals/schemas/ppp.kcfg:69
 #. i18n: ectx: label, entry (mtu), group (ppp)
-#: rc.cpp:1910 rc.cpp:2018 rc.cpp:2243
+#: rc.cpp:1913 rc.cpp:2021 rc.cpp:2201
 msgid "MTU"
 msgstr "MTU"
 
 #. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:53
 #. i18n: ectx: whatsthis, entry (mtu), group (802-11-wireless)
-#: rc.cpp:1913
+#: rc.cpp:1916
 msgid "Maximum Transmit Unit"
 msgstr "Maximální přenosová jednotka (MTU)"
 
 #. i18n: file: libs/internals/schemas/802-11-wireless.kcfg:57
 #. i18n: ectx: label, entry (seenbssids), group (802-11-wireless)
-#: rc.cpp:1916
+#: rc.cpp:1919
 msgid "Seen BSSIDs"
 msgstr ""
 
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:13
 #. i18n: ectx: label, entry (identity), group (802-1x)
-#: rc.cpp:1922
+#: rc.cpp:1925
 msgid "Identity"
 msgstr "Identita"
 
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:17
 #. i18n: ectx: label, entry (anonymousidentity), group (802-1x)
-#: rc.cpp:1925
+#: rc.cpp:1928
 msgid "Anonymous identity"
 msgstr "Anonymní identita"
 
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:21
 #. i18n: ectx: label, entry (cacert), group (802-1x)
-#: rc.cpp:1928
+#: rc.cpp:1931
 msgid "CA Cert"
 msgstr "CA Certifikát"
 
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:25
 #. i18n: ectx: label, entry (capath), group (802-1x)
-#: rc.cpp:1931
+#: rc.cpp:1934
 msgid "CA Path"
 msgstr "Cesta CA"
 
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:29
 #. i18n: ectx: label, entry (clientcert), group (802-1x)
-#: rc.cpp:1934
+#: rc.cpp:1937
 msgid "Client Cert"
 msgstr "Klientský certifikát"
 
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:33
 #. i18n: ectx: label, entry (clientcertpath), group (802-1x)
-#: rc.cpp:1937
+#: rc.cpp:1940
 msgid "Client Cert Path"
 msgstr "Cesta klientského certifikátu"
 
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:37
 #. i18n: ectx: label, entry (phase1peapver), group (802-1x)
-#: rc.cpp:1940
+#: rc.cpp:1943
 msgid "Phase 1 PEAP version"
 msgstr "Verze PEAP fáze 1"
 
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:46
 #. i18n: ectx: label, entry (phase1peaplabel), group (802-1x)
-#: rc.cpp:1943
+#: rc.cpp:1946
 msgid "Phase 1 PEAP label"
 msgstr "Popisek PEAP fáze 1"
 
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:55
 #. i18n: ectx: label, entry (phase1fastprovisioning), group (802-1x)
-#: rc.cpp:1946
+#: rc.cpp:1949
 msgid "Phase 1 fast provisioning"
 msgstr "Fáze 1 rychlé poskytování"
 
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:59
 #. i18n: ectx: label, entry (phase2auth), group (802-1x)
-#: rc.cpp:1949
+#: rc.cpp:1952
 msgid "Phase 2 auth"
 msgstr "Autentizace fáze 2"
 
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:73
 #. i18n: ectx: label, entry (phase2autheap), group (802-1x)
-#: rc.cpp:1952
+#: rc.cpp:1955
 msgid "Phase 2 auth eap"
 msgstr "EAP autentizace fáze 2"
 
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:86
 #. i18n: ectx: label, entry (phase2cacert), group (802-1x)
-#: rc.cpp:1955
+#: rc.cpp:1958
 msgid "Phase 2 CA Cert"
 msgstr "CA certifikát fáze 2"
 
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:90
 #. i18n: ectx: label, entry (phase2capath), group (802-1x)
-#: rc.cpp:1958
+#: rc.cpp:1961
 msgid "Phase 2 CA Path"
 msgstr "Cesta CA fáze 2"
 
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:94
 #. i18n: ectx: label, entry (phase2clientcert), group (802-1x)
-#: rc.cpp:1961
+#: rc.cpp:1964
 msgid "Phase 2 client cert"
 msgstr "Klientský certifikát fáze 2"
 
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:98
 #. i18n: ectx: label, entry (phase2clientcertpath), group (802-1x)
-#: rc.cpp:1964
+#: rc.cpp:1967
 msgid "Phase 2 client cert path"
 msgstr "Cesta klientského certifikátu fáze 2"
 
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:106
 #. i18n: ectx: label, entry (privatekey), group (802-1x)
-#: rc.cpp:1970
+#: rc.cpp:1973
 msgid "Private key"
 msgstr "Soukromý klíč"
 
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:110
 #. i18n: ectx: label, entry (privatekeypath), group (802-1x)
-#: rc.cpp:1973
+#: rc.cpp:1976
 msgid "Private key Path"
 msgstr "Cesta k soukromému klíči"
 
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:114
 #. i18n: ectx: label, entry (privatekeypassword), group (802-1x)
-#: rc.cpp:1976
+#: rc.cpp:1979
 msgid "Private key password"
 msgstr "Heslo soukromého klíče"
 
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:118
 #. i18n: ectx: label, entry (phase2privatekey), group (802-1x)
-#: rc.cpp:1979
+#: rc.cpp:1982
 msgid "Phase 2 private key"
 msgstr "Soukromý klíč fáze 2"
 
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:122
 #. i18n: ectx: label, entry (phase2privatekeypath), group (802-1x)
-#: rc.cpp:1982
+#: rc.cpp:1985
 msgid "Phase 2 Private key Path"
 msgstr "Cesta k soukromému klíči fáze 2"
 
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:126
 #. i18n: ectx: label, entry (phase2privatekeypassword), group (802-1x)
-#: rc.cpp:1985
+#: rc.cpp:1988
 msgid "Phase 2 private key password"
 msgstr "Heslo soukromého klíče fáze 2"
 
@@ -5247,55 +5217,55 @@ msgstr "Heslo soukromého klíče fáze 2"
 #. i18n: ectx: label, entry (pin), group (802-1x)
 #. i18n: file: libs/internals/schemas/gsm.kcfg:38
 #. i18n: ectx: label, entry (pin), group (gsm)
-#: rc.cpp:1988 rc.cpp:2093
+#: rc.cpp:1991 rc.cpp:2096
 msgid "PIN"
 msgstr "PIN"
 
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:138
 #. i18n: ectx: label, entry (UseSystemCaCerts), group (802-1x)
-#: rc.cpp:1994
+#: rc.cpp:1997
 msgid "Use System CA Certs"
 msgstr "Použít systémové CA certifikáty"
 
 #. i18n: file: libs/internals/schemas/802-1x.kcfg:142
 #. i18n: ectx: label, entry (enabled), group (802-1x)
-#: rc.cpp:1997
+#: rc.cpp:2000
 msgid "Connection uses 802.1x"
 msgstr "Spojení používá 802.1x"
 
 #. i18n: file: libs/internals/schemas/802-3-ethernet.kcfg:9
 #. i18n: ectx: label, entry (port), group (802-3-ethernet)
-#: rc.cpp:2000
+#: rc.cpp:2003
 msgid "Port"
 msgstr "Port"
 
 #. i18n: file: libs/internals/schemas/802-3-ethernet.kcfg:24
 #. i18n: ectx: whatsthis, entry (duplex), group (802-3-ethernet)
-#: rc.cpp:2009
+#: rc.cpp:2012
 msgid "Whether the Ethernet interface should use duplex communications"
 msgstr "Zda má rozhraní Ethernet používat duplexní komunikaci"
 
 #. i18n: file: libs/internals/schemas/802-3-ethernet.kcfg:32
 #. i18n: ectx: label, entry (autonegotiate), group (802-3-ethernet)
-#: rc.cpp:2012
+#: rc.cpp:2015
 msgid "Auto negotiate"
 msgstr "Automaticky vyjednat"
 
 #. i18n: file: libs/internals/schemas/802-3-ethernet.kcfg:44
 #. i18n: ectx: whatsthis, entry (mtu), group (802-3-ethernet)
-#: rc.cpp:2021
+#: rc.cpp:2024
 msgid "Maximum Transfer Unit to use"
 msgstr "Používaná maximální přenosová jednotka"
 
 #. i18n: file: libs/internals/schemas/bluetooth.kcfg:9
 #. i18n: ectx: label, entry (networkname), group (bluetooth)
-#: rc.cpp:2024
+#: rc.cpp:2027
 msgid "Network Name"
 msgstr "Název sítě"
 
 #. i18n: file: libs/internals/schemas/bluetooth.kcfg:14
 #. i18n: ectx: label, entry (bdaddr), group (bluetooth)
-#: rc.cpp:2027
+#: rc.cpp:2030
 msgid "Bdaddr"
 msgstr ""
 
@@ -5303,7 +5273,7 @@ msgstr ""
 #. i18n: ectx: label, entry (networktype), group (bluetooth)
 #. i18n: file: libs/internals/schemas/gsm.kcfg:30
 #. i18n: ectx: label, entry (networktype), group (gsm)
-#: rc.cpp:2030 rc.cpp:2087
+#: rc.cpp:2033 rc.cpp:2090
 msgid "Network Type"
 msgstr "Typ sítě"
 
@@ -5311,31 +5281,31 @@ msgstr "Typ sítě"
 #. i18n: ectx: label, entry (number), group (cdma)
 #. i18n: file: libs/internals/schemas/gsm.kcfg:9
 #. i18n: ectx: label, entry (number), group (gsm)
-#: rc.cpp:2033 rc.cpp:2072
+#: rc.cpp:2036 rc.cpp:2075
 msgid "Number"
 msgstr "Číslo"
 
 #. i18n: file: libs/internals/schemas/connection.kcfg:9
 #. i18n: ectx: label, entry (id), group (connection)
-#: rc.cpp:2042
+#: rc.cpp:2045
 msgid "Identifier"
 msgstr "Identifikátor"
 
 #. i18n: file: libs/internals/schemas/connection.kcfg:10
 #. i18n: ectx: whatsthis, entry (id), group (connection)
-#: rc.cpp:2045
+#: rc.cpp:2048
 msgid "A name that uniquely identifies a connection"
 msgstr "Název, který unikátně identifikuje spojení"
 
 #. i18n: file: libs/internals/schemas/connection.kcfg:13
 #. i18n: ectx: label, entry (type), group (connection)
-#: rc.cpp:2048
+#: rc.cpp:2051
 msgid "Type"
 msgstr "Typ"
 
 #. i18n: file: libs/internals/schemas/connection.kcfg:14
 #. i18n: ectx: whatsthis, entry (type), group (connection)
-#: rc.cpp:2051
+#: rc.cpp:2054
 msgid ""
 "Specifies the connection type, defines which devices it can activate and "
 "which other settings the connection should contain"
@@ -5345,55 +5315,55 @@ msgstr ""
 
 #. i18n: file: libs/internals/schemas/connection.kcfg:17
 #. i18n: ectx: label, entry (autoconnect), group (connection)
-#: rc.cpp:2054
+#: rc.cpp:2057
 msgid "Connect automatically"
 msgstr "Automaticky připojit"
 
 #. i18n: file: libs/internals/schemas/connection.kcfg:18
 #. i18n: ectx: whatsthis, entry (autoconnect), group (connection)
-#: rc.cpp:2057
+#: rc.cpp:2060
 msgid "Should the networking system always try to activate this connection?"
 msgstr "Má se síťový systém vždy pokoušet aktivovat toto spojení?"
 
 #. i18n: file: libs/internals/schemas/connection.kcfg:21
 #. i18n: ectx: label, entry (timestamp), group (connection)
-#: rc.cpp:2060
+#: rc.cpp:2063
 msgid "Last used"
 msgstr "Naposledy použité"
 
 #. i18n: file: libs/internals/schemas/connection.kcfg:22
 #. i18n: ectx: whatsthis, entry (timestamp), group (connection)
-#: rc.cpp:2063
+#: rc.cpp:2066
 msgid "The date and time that the connection was last activated"
 msgstr "Datum a čas, kdy bylo spojení naposledy aktivní"
 
 #. i18n: file: libs/internals/schemas/connection.kcfg:25
 #. i18n: ectx: label, entry (uuid), group (connection)
-#: rc.cpp:2066
+#: rc.cpp:2069
 msgid "UUID"
 msgstr "UUID"
 
 #. i18n: file: libs/internals/schemas/connection.kcfg:26
 #. i18n: ectx: whatsthis, entry (uuid), group (connection)
-#: rc.cpp:2069
+#: rc.cpp:2072
 msgid "Unique connection identifier"
 msgstr "Unikátní identifikátor spojení"
 
 #. i18n: file: libs/internals/schemas/gsm.kcfg:22
 #. i18n: ectx: label, entry (apn), group (gsm)
-#: rc.cpp:2081
+#: rc.cpp:2084
 msgid "APN"
 msgstr "APN"
 
 #. i18n: file: libs/internals/schemas/gsm.kcfg:26
 #. i18n: ectx: label, entry (networkid), group (gsm)
-#: rc.cpp:2084
+#: rc.cpp:2087
 msgid "Network ID"
 msgstr "ID sítě"
 
 #. i18n: file: libs/internals/schemas/gsm.kcfg:42
 #. i18n: ectx: label, entry (puk), group (gsm)
-#: rc.cpp:2096
+#: rc.cpp:2099
 msgid "PUK"
 msgstr "PUK"
 
@@ -5401,7 +5371,7 @@ msgstr "PUK"
 #. i18n: ectx: label, entry (method), group (ipv4)
 #. i18n: file: libs/internals/schemas/ipv6.kcfg:9
 #. i18n: ectx: label, entry (method), group (ipv4)
-#: rc.cpp:2099 rc.cpp:2153
+#: rc.cpp:2102 rc.cpp:2252
 msgid "Method"
 msgstr "Metoda"
 
@@ -5409,63 +5379,63 @@ msgstr "Metoda"
 #. i18n: ectx: whatsthis, entry (method), group (ipv4)
 #. i18n: file: libs/internals/schemas/ipv6.kcfg:10
 #. i18n: ectx: whatsthis, entry (method), group (ipv4)
-#: rc.cpp:2102 rc.cpp:2156
+#: rc.cpp:2105 rc.cpp:2255
 msgid "Choose the way to set the IP address of this connection"
 msgstr "Vyberte způsob nastavení IP adresy tohoto spojení"
 
 #. i18n: file: libs/internals/schemas/ipv4.kcfg:22
 #. i18n: ectx: whatsthis, entry (dns), group (ipv4)
-#. i18n: file: libs/internals/schemas/ipv6.kcfg:22
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:23
 #. i18n: ectx: whatsthis, entry (dns), group (ipv4)
-#: rc.cpp:2108 rc.cpp:2162
+#: rc.cpp:2111 rc.cpp:2261
 msgid "List of Domain Name System servers to use"
 msgstr "Seznam používaných DNS serverů"
 
 #. i18n: file: libs/internals/schemas/ipv4.kcfg:25
 #. i18n: ectx: label, entry (dnssearch), group (ipv4)
-#. i18n: file: libs/internals/schemas/ipv6.kcfg:25
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:26
 #. i18n: ectx: label, entry (dnssearch), group (ipv4)
-#: rc.cpp:2111 rc.cpp:2165
+#: rc.cpp:2114 rc.cpp:2264
 msgid "Search Domains"
 msgstr "Hledat domény"
 
 #. i18n: file: libs/internals/schemas/ipv4.kcfg:26
 #. i18n: ectx: whatsthis, entry (dnssearch), group (ipv4)
-#. i18n: file: libs/internals/schemas/ipv6.kcfg:26
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:27
 #. i18n: ectx: whatsthis, entry (dnssearch), group (ipv4)
-#: rc.cpp:2114 rc.cpp:2168
+#: rc.cpp:2117 rc.cpp:2267
 msgid "List of domains to search for a hostname"
 msgstr "Seznam domén ve kterých hledat název počítače"
 
 #. i18n: file: libs/internals/schemas/ipv4.kcfg:30
 #. i18n: ectx: label, entry (addresses), group (ipv4)
-#. i18n: file: libs/internals/schemas/ipv6.kcfg:30
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:31
 #. i18n: ectx: label, entry (addresses), group (ipv4)
-#: rc.cpp:2117 rc.cpp:2171
+#: rc.cpp:2120 rc.cpp:2270
 msgid "IP Addresses"
 msgstr "IP adresy"
 
 #. i18n: file: libs/internals/schemas/ipv4.kcfg:31
 #. i18n: ectx: whatsthis, entry (addresses), group (ipv4)
-#. i18n: file: libs/internals/schemas/ipv6.kcfg:31
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:32
 #. i18n: ectx: whatsthis, entry (addresses), group (ipv4)
-#: rc.cpp:2120 rc.cpp:2174
+#: rc.cpp:2123 rc.cpp:2273
 msgid "List of IP addresses to configure on this connection"
 msgstr "Seznam IP adres nastavených na tomto spojení"
 
 #. i18n: file: libs/internals/schemas/ipv4.kcfg:34
 #. i18n: ectx: label, entry (ignoredhcpdns), group (ipv4)
-#. i18n: file: libs/internals/schemas/ipv6.kcfg:34
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:35
 #. i18n: ectx: label, entry (ignoredhcpdns), group (ipv4)
-#: rc.cpp:2123 rc.cpp:2177
+#: rc.cpp:2126 rc.cpp:2276
 msgid "Ignore DHCP DNS"
 msgstr "Ignorovat DHCP DNS"
 
 #. i18n: file: libs/internals/schemas/ipv4.kcfg:35
 #. i18n: ectx: whatsthis, entry (ignoredhcpdns), group (ipv4)
-#. i18n: file: libs/internals/schemas/ipv6.kcfg:35
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:36
 #. i18n: ectx: whatsthis, entry (ignoredhcpdns), group (ipv4)
-#: rc.cpp:2126 rc.cpp:2180
+#: rc.cpp:2129 rc.cpp:2279
 msgid ""
 "Ignore DNS servers returned by DHCP and use the configured servers instead"
 msgstr ""
@@ -5473,17 +5443,17 @@ msgstr ""
 
 #. i18n: file: libs/internals/schemas/ipv4.kcfg:38
 #. i18n: ectx: label, entry (ignoreautoroute), group (ipv4)
-#. i18n: file: libs/internals/schemas/ipv6.kcfg:38
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:39
 #. i18n: ectx: label, entry (ignoreautoroute), group (ipv4)
-#: rc.cpp:2129 rc.cpp:2183
+#: rc.cpp:2132 rc.cpp:2282
 msgid "Ignore Automatic Routes"
 msgstr "Ignorovat automatické cesty"
 
 #. i18n: file: libs/internals/schemas/ipv4.kcfg:39
 #. i18n: ectx: whatsthis, entry (ignoreautoroute), group (ipv4)
-#. i18n: file: libs/internals/schemas/ipv6.kcfg:39
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:40
 #. i18n: ectx: whatsthis, entry (ignoreautoroute), group (ipv4)
-#: rc.cpp:2132 rc.cpp:2186
+#: rc.cpp:2135 rc.cpp:2285
 msgid ""
 "Ignore routes returned by automatic configuration mechanisms and use the "
 "manually configured routes instead"
@@ -5493,121 +5463,121 @@ msgstr ""
 
 #. i18n: file: libs/internals/schemas/ipv4.kcfg:42
 #. i18n: ectx: label, entry (neverdefault), group (ipv4)
-#. i18n: file: libs/internals/schemas/ipv6.kcfg:42
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:43
 #. i18n: ectx: label, entry (neverdefault), group (ipv4)
-#: rc.cpp:2135 rc.cpp:2189
+#: rc.cpp:2138 rc.cpp:2288
 msgid "Never Default Route"
 msgstr "Bez výchozí cesty"
 
 #. i18n: file: libs/internals/schemas/ipv4.kcfg:43
 #. i18n: ectx: whatsthis, entry (neverdefault), group (ipv4)
-#. i18n: file: libs/internals/schemas/ipv6.kcfg:43
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:44
 #. i18n: ectx: whatsthis, entry (neverdefault), group (ipv4)
-#: rc.cpp:2138 rc.cpp:2192
+#: rc.cpp:2141 rc.cpp:2291
 msgid "Never assign the default route to this connection"
 msgstr "Nikdy nepřiřazovat výchozí cestu k tomuto spojení"
 
 #. i18n: file: libs/internals/schemas/ipv4.kcfg:46
 #. i18n: ectx: label, entry (dhcpclientid), group (ipv4)
-#: rc.cpp:2141
+#: rc.cpp:2144
 msgid "DHCP Client ID"
 msgstr "ID klienta DHCP"
 
 #. i18n: file: libs/internals/schemas/ipv4.kcfg:50
 #. i18n: ectx: label, entry (dhcpsendhostname), group (ipv4)
-#: rc.cpp:2144
+#: rc.cpp:2147
 msgid "Send hostname to DHCP server"
 msgstr "Odeslat jméno hostitele DHCP serveru"
 
 #. i18n: file: libs/internals/schemas/ipv4.kcfg:54
 #. i18n: ectx: label, entry (dhcphostname), group (ipv4)
-#: rc.cpp:2147
+#: rc.cpp:2150
 msgid "DHCP hostname"
 msgstr "Název hostitele DHCP"
 
 #. i18n: file: libs/internals/schemas/ipv4.kcfg:57
 #. i18n: ectx: label, entry (mayfail), group (ipv4)
-#. i18n: file: libs/internals/schemas/ipv6.kcfg:46
+#. i18n: file: libs/internals/schemas/ipv6.kcfg:47
 #. i18n: ectx: label, entry (mayfail), group (ipv4)
-#: rc.cpp:2150 rc.cpp:2195
+#: rc.cpp:2153 rc.cpp:2294
 msgid "Required for this connection"
 msgstr "Potřebné pro spojení"
 
 #. i18n: file: libs/internals/schemas/ppp.kcfg:9
 #. i18n: ectx: label, entry (noauth), group (ppp)
-#: rc.cpp:2198
+#: rc.cpp:2156
 msgid "No Auth"
 msgstr "Žádná autorizace"
 
 #. i18n: file: libs/internals/schemas/ppp.kcfg:13
 #. i18n: ectx: label, entry (refuseeap), group (ppp)
-#: rc.cpp:2201
+#: rc.cpp:2159
 msgid "Refuse EAP"
 msgstr "Odmítnut EAP"
 
 #. i18n: file: libs/internals/schemas/ppp.kcfg:17
 #. i18n: ectx: label, entry (refusepap), group (ppp)
-#: rc.cpp:2204
+#: rc.cpp:2162
 msgid "Refuse PAP"
 msgstr "Odmítnut PAP"
 
 #. i18n: file: libs/internals/schemas/ppp.kcfg:21
 #. i18n: ectx: label, entry (refusechap), group (ppp)
-#: rc.cpp:2207
+#: rc.cpp:2165
 msgid "Refuse CHAP"
 msgstr "Odmítnut CHAP"
 
 #. i18n: file: libs/internals/schemas/ppp.kcfg:25
 #. i18n: ectx: label, entry (refusemschap), group (ppp)
-#: rc.cpp:2210
+#: rc.cpp:2168
 msgid "Refuse MS CHAP"
 msgstr "Odmítnut MS CHAP"
 
 #. i18n: file: libs/internals/schemas/ppp.kcfg:29
 #. i18n: ectx: label, entry (refusemschapv2), group (ppp)
-#: rc.cpp:2213
+#: rc.cpp:2171
 msgid "Refuse MS CHAP V2"
 msgstr "Odmítnut MS CHAP V2"
 
 #. i18n: file: libs/internals/schemas/ppp.kcfg:33
 #. i18n: ectx: label, entry (nobsdcomp), group (ppp)
-#: rc.cpp:2216
+#: rc.cpp:2174
 msgid "No BSD comp."
 msgstr "Bez BSD komprese"
 
 #. i18n: file: libs/internals/schemas/ppp.kcfg:37
 #. i18n: ectx: label, entry (nodeflate), group (ppp)
-#: rc.cpp:2219
+#: rc.cpp:2177
 msgid "No deflate"
 msgstr "Bez deflate"
 
 #. i18n: file: libs/internals/schemas/ppp.kcfg:41
 #. i18n: ectx: label, entry (novjcomp), group (ppp)
-#: rc.cpp:2222
+#: rc.cpp:2180
 msgid "No VJ comp."
 msgstr "Bez VJ komprese"
 
 #. i18n: file: libs/internals/schemas/ppp.kcfg:45
 #. i18n: ectx: label, entry (requiremppe), group (ppp)
-#: rc.cpp:2225
+#: rc.cpp:2183
 msgid "Require MPPE"
 msgstr "Vyžadovat MPPE"
 
 #. i18n: file: libs/internals/schemas/ppp.kcfg:49
 #. i18n: ectx: label, entry (requiremppe128), group (ppp)
-#: rc.cpp:2228
+#: rc.cpp:2186
 msgid "Require MPPE 128"
 msgstr "Vyžadovat MPPE 128"
 
 #. i18n: file: libs/internals/schemas/ppp.kcfg:53
 #. i18n: ectx: label, entry (mppestateful), group (ppp)
-#: rc.cpp:2231
+#: rc.cpp:2189
 msgid "MPPE Stateful"
 msgstr ""
 
 #. i18n: file: libs/internals/schemas/ppp.kcfg:57
 #. i18n: ectx: label, entry (crtscts), group (ppp)
-#: rc.cpp:2234
+#: rc.cpp:2192
 msgid "CRTSCTS"
 msgstr "CRTSCTS"
 
@@ -5615,31 +5585,31 @@ msgstr "CRTSCTS"
 #. i18n: ectx: label, entry (baud), group (ppp)
 #. i18n: file: libs/internals/schemas/serial.kcfg:9
 #. i18n: ectx: label, entry (baud), group (serial)
-#: rc.cpp:2237 rc.cpp:2261
+#: rc.cpp:2195 rc.cpp:2219
 msgid "Baud"
 msgstr "Baud"
 
 #. i18n: file: libs/internals/schemas/ppp.kcfg:65
 #. i18n: ectx: label, entry (mru), group (ppp)
-#: rc.cpp:2240
+#: rc.cpp:2198
 msgid "MRU"
 msgstr "MRU"
 
 #. i18n: file: libs/internals/schemas/ppp.kcfg:73
 #. i18n: ectx: label, entry (lcpechofailure), group (ppp)
-#: rc.cpp:2246
+#: rc.cpp:2204
 msgid "LCP echo Failure"
 msgstr "Selhání LCP echo"
 
 #. i18n: file: libs/internals/schemas/ppp.kcfg:77
 #. i18n: ectx: label, entry (lcpechointerval), group (ppp)
-#: rc.cpp:2249
+#: rc.cpp:2207
 msgid "LCP echo interval"
 msgstr "Interval LCP echo"
 
 #. i18n: file: libs/internals/schemas/pppoe.kcfg:9
 #. i18n: ectx: label, entry (service), group (pppoe)
-#: rc.cpp:2252
+#: rc.cpp:2210
 msgid "Service"
 msgstr "Služba"
 
@@ -5647,60 +5617,60 @@ msgstr "Služba"
 #. i18n: ectx: label, entry (bits), group (serial)
 #. i18n: file: libs/internals/schemas/vpn.kcfg:13
 #. i18n: ectx: label, entry (Data), group (vpn)
-#: rc.cpp:2264 rc.cpp:2279
+#: rc.cpp:2222 rc.cpp:2237
 msgid "Data bits"
 msgstr "Data bity"
 
 #. i18n: file: libs/internals/schemas/serial.kcfg:19
 #. i18n: ectx: label, entry (parity), group (serial)
-#: rc.cpp:2267
+#: rc.cpp:2225
 msgid "Parity"
 msgstr "Parita"
 
 #. i18n: file: libs/internals/schemas/serial.kcfg:29
 #. i18n: ectx: label, entry (stopbits), group (serial)
-#: rc.cpp:2270
+#: rc.cpp:2228
 msgid "Stop bits"
 msgstr "Stop bity"
 
 #. i18n: file: libs/internals/schemas/serial.kcfg:34
 #. i18n: ectx: label, entry (senddelay), group (serial)
-#: rc.cpp:2273
+#: rc.cpp:2231
 msgid "Send delay"
 msgstr "Prodleva odeslání"
 
 #. i18n: file: libs/internals/schemas/vpn.kcfg:9
 #. i18n: ectx: label, entry (ServiceType), group (vpn)
-#: rc.cpp:2276
+#: rc.cpp:2234
 msgid "Service Type"
 msgstr "Typ služby"
 
 #. i18n: file: libs/internals/schemas/vpn.kcfg:18
 #. i18n: ectx: whatsthis, entry (UserName), group (vpn)
-#: rc.cpp:2285
+#: rc.cpp:2243
 msgid "System username, not stored"
 msgstr "Systémové uživatelské jméno, neuloženo"
 
 #. i18n: file: libs/internals/schemas/vpn.kcfg:21
 #. i18n: ectx: label, entry (VpnSecrets), group (vpn)
-#: rc.cpp:2288
+#: rc.cpp:2246
 msgid "Vpnsecrets"
 msgstr ""
 
 #. i18n: file: libs/internals/schemas/vpn.kcfg:25
 #. i18n: ectx: label, entry (PluginName), group (vpn)
-#: rc.cpp:2291
+#: rc.cpp:2249
 msgid "VPN Plugin Name"
 msgstr "Název VPN modulu"
 
 #. i18n: file: libs/internals/knmserviceprefs.kcfg:11
 #. i18n: ectx: label, entry (Connections), group (General)
-#: rc.cpp:2294
+#: rc.cpp:2297
 msgid "Connections"
 msgstr "Spojení"
 
 #. i18n: file: libs/internals/knmserviceprefs.kcfg:15
 #. i18n: ectx: label, entry (SecretStorageMode), group (General)
-#: rc.cpp:2297
+#: rc.cpp:2300
 msgid "Store secrets in wallet"
 msgstr "Uložit hesla do úschovny"
