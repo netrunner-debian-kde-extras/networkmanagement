@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanager\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-03-20 18:01+0100\n"
+"POT-Creation-Date: 2012-06-15 13:51+0200\n"
 "PO-Revision-Date: 2011-10-17 09:14+0200\n"
 "Last-Translator: Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -233,31 +233,31 @@ msgctxt "wired interface network cable unplugged"
 msgid "Cable Unplugged"
 msgstr "Kabel odpojen"
 
-#: networkmanager.cpp:618
+#: networkmanager.cpp:675
 msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr "Žádná síťová rozhraní"
 
-#: networkmanager.cpp:669
+#: networkmanager.cpp:726
 msgid "VPN Connections"
 msgstr "Spojení VPN"
 
-#: networkmanager.cpp:683
+#: networkmanager.cpp:740
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
 msgstr "Odpojen"
 
-#: networkmanager.cpp:686
+#: networkmanager.cpp:743
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
 msgstr "Bezdrátové spojení zakázáno softwarem"
 
-#: networkmanager.cpp:689
+#: networkmanager.cpp:746
 msgctxt "tooltip, all interfaces are down"
 msgid "Networking disabled"
 msgstr "Síťové spojení zakázáno"
 
-#: networkmanager.cpp:692
+#: networkmanager.cpp:749
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
 msgstr "Bezdrátové spojení zakázáno hardwarem"

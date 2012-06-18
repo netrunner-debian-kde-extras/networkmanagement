@@ -1,0 +1,389 @@
+# Translation of plasma_applet_networkmanagement.po into Serbian.
+# Slobodan Simic <slsimic@gmail.com>, 2009.
+# Slobodan Terzić <githzerai06@gmail.com>, 2011.
+# Chusslove Illich <caslav.ilic@gmx.net>, 2011, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_applet_networkmanagement\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2012-03-20 18:01+0100\n"
+"PO-Revision-Date: 2012-05-26 17:00+0200\n"
+"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr@ijekavian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Generator: Lokalize 1.2\n"
+"X-Environment: kde\n"
+
+#: activatableitem.cpp:116
+msgctxt ""
+"@info:status Notification when the networking subsystem (NetworkManager, "
+"etc) is disabled"
+msgid "Networking system disabled"
+msgstr "Мрежни систем је деактивиран"
+
+#: activatableitem.cpp:120
+msgctxt "@info:status Notification for radio kill switch turned off"
+msgid "Wireless hardware disabled"
+msgstr "Бежични хардвер је деактивиран"
+
+#: gsminterfaceconnectionitem.cpp:143
+#, kde-format
+msgid "Signal quality: %1%"
+msgstr "Квалитет сигнала: %1%"
+
+#: hiddenwirelessnetworkitem.cpp:77
+msgctxt "label for creating a connection to a hidden wireless network"
+msgid "<hidden network>"
+msgstr "&lt;скривена мрежа&gt;"
+
+#: hiddenwirelessnetworkitem.cpp:81
+msgctxt ""
+"default KLineEdit::clickMessage() for hidden wireless network SSID entry"
+msgid "Enter network name and press <enter>"
+msgstr "Унесите име мреже и притисните Enter"
+
+#: hiddenwirelessnetworkitem.cpp:82
+msgctxt "@info:tooltip for hidden wireless network SSID entry"
+msgid "Enter network name and press <enter>"
+msgstr "Унесите име мреже и притисните Enter"
+
+#: interfaceconnectionitem.cpp:70
+msgctxt "name of the connection not known"
+msgid "Unknown"
+msgstr "непозната"
+
+#: interfacedetailswidget.cpp:116
+msgctxt "interface details"
+msgid "<b>Traffic</b>"
+msgstr "<b>Саобраћај</b>"
+
+#: interfacedetailswidget.cpp:152
+msgid "Go Back"
+msgstr "Иди назад"
+
+#: interfacedetailswidget.cpp:177 interfacedetailswidget.cpp:299
+msgctxt "entry not available"
+msgid "not available"
+msgstr "није доступно"
+
+#: interfacedetailswidget.cpp:182
+msgctxt "traffic received empty"
+msgid "Received"
+msgstr "Примљено"
+
+#: interfacedetailswidget.cpp:184
+msgctxt "traffic transmitted empty"
+msgid "Transmitted"
+msgstr "Послато"
+
+#: interfacedetailswidget.cpp:290
+msgctxt "state of mobile broadband connection"
+msgid "not enabled"
+msgstr "није активирана"
+
+#: interfacedetailswidget.cpp:306 interfacedetailswidget.cpp:353
+msgctxt "interface details"
+msgid "Type"
+msgstr "Врста"
+
+#: interfacedetailswidget.cpp:307 interfacedetailswidget.cpp:354
+msgctxt "interface details"
+msgid "Connection State"
+msgstr "Стање везе"
+
+#: interfacedetailswidget.cpp:308
+msgctxt "interface details"
+msgid "IP Address"
+msgstr "ИП адреса"
+
+#: interfacedetailswidget.cpp:309 interfacedetailswidget.cpp:356
+msgctxt "interface details"
+msgid "Connection Speed"
+msgstr "Брзина везе"
+
+#: interfacedetailswidget.cpp:309
+msgctxt "bitrate"
+msgid "Unknown"
+msgstr "непознат"
+
+#: interfacedetailswidget.cpp:310 interfacedetailswidget.cpp:357
+msgctxt "interface details"
+msgid "System Name"
+msgstr "Системско име"
+
+#: interfacedetailswidget.cpp:311
+msgctxt "interface details"
+msgid "MAC Address"
+msgstr "МАЦ адреса"
+
+#: interfacedetailswidget.cpp:312 interfacedetailswidget.cpp:359
+msgctxt "interface details"
+msgid "Driver"
+msgstr "Драјвер"
+
+#: interfacedetailswidget.cpp:318
+msgctxt "interface details"
+msgid "Access Point (SSID)"
+msgstr "Приступна тачка (ССИД)"
+
+#: interfacedetailswidget.cpp:319
+msgctxt "interface details"
+msgid "Access Point (MAC)"
+msgstr "Приступна тачка (МАЦ)"
+
+# >> @label
+#: interfacedetailswidget.cpp:327
+msgctxt "@item:intable wireless band"
+msgid "Band"
+msgstr "Појас"
+
+# >> @label
+#: interfacedetailswidget.cpp:328
+msgctxt "@item:intable wireless channel"
+msgid "Channel"
+msgstr "Канал"
+
+#: interfacedetailswidget.cpp:335
+msgctxt "interface details"
+msgid "Operator"
+msgstr "Оператер"
+
+#: interfacedetailswidget.cpp:336
+msgctxt "interface details"
+msgid "Signal Quality"
+msgstr "Квалитет сигнала"
+
+#: interfacedetailswidget.cpp:337
+msgctxt "interface details"
+msgid "Access Technology"
+msgstr "Технологија приступа"
+
+#: interfacedetailswidget.cpp:355
+msgctxt "interface details"
+msgid "Network Address (IP)"
+msgstr "Мрежна адреса (ИП)"
+
+#: interfacedetailswidget.cpp:358
+msgctxt "interface details"
+msgid "Hardware Address (MAC)"
+msgstr "Хардверска адреса (МАЦ)"
+
+#: interfacedetailswidget.cpp:377 interfaceitem.cpp:286
+msgctxt "label of the network interface"
+msgid "No IP address."
+msgstr "Без ИП адресе."
+
+#: interfacedetailswidget.cpp:388 interfaceitem.cpp:297
+msgctxt "label of the network interface"
+msgid "IP display error."
+msgstr "Грешка у приказу ИП‑а."
+
+#: interfacedetailswidget.cpp:467
+msgid "KBit/s"
+msgstr "KBit/s"
+
+#: interfacedetailswidget.cpp:469
+msgid "MBit/s"
+msgstr "MBit/s"
+
+#: interfacedetailswidget.cpp:473
+msgid "GBit/s"
+msgstr "GBit/s"
+
+#: interfacedetailswidget.cpp:497
+#, kde-format
+msgctxt ""
+"traffic, e.g. n KB/s\n"
+" m KB/s"
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: interfacedetailswidget.cpp:506
+msgid "Received"
+msgstr "Примљено"
+
+#: interfacedetailswidget.cpp:509
+msgid "Transmitted"
+msgstr "Послато"
+
+#: interfaceitem.cpp:75
+msgctxt "tooltip on the LHS widgets"
+msgid "Click here for interface details"
+msgstr "Кликните овде за детаље сучеља"
+
+#: interfaceitem.cpp:112
+msgctxt "tooltip on disconnect icon"
+msgid "Disconnect"
+msgstr "Прекини везу"
+
+#: interfaceitem.cpp:250
+msgctxt "generic label for an interface"
+msgid "<b>Network Interface</b>"
+msgstr "<b>Мрежно сучеље</b>"
+
+#: interfaceitem.cpp:254
+msgctxt "network interface name unknown"
+msgid "<b>Unknown Network Interface</b>"
+msgstr "<b>Непознато мрежно сучеље</b>"
+
+#: interfaceitem.cpp:402
+msgctxt "wired interface network cable unplugged"
+msgid "Cable Unplugged"
+msgstr "Кабл је извучен"
+
+#: networkmanager.cpp:618
+msgctxt "Tooltip sub text"
+msgid "No network interfaces"
+msgstr "Нема мрежних сучеља"
+
+#: networkmanager.cpp:669
+msgid "VPN Connections"
+msgstr "ВПН везе"
+
+#: networkmanager.cpp:683
+msgctxt "tooltip, all interfaces are down"
+msgid "Disconnected"
+msgstr "Неповезан"
+
+#: networkmanager.cpp:686
+msgctxt "tooltip, wireless is disabled in software"
+msgid "Wireless disabled in software"
+msgstr "Бежична је софтверски деактивирана"
+
+#: networkmanager.cpp:689
+msgctxt "tooltip, all interfaces are down"
+msgid "Networking disabled"
+msgstr "Умрежавање је деактивирано"
+
+#: networkmanager.cpp:692
+msgctxt "tooltip, wireless is disabled by hardware"
+msgid "Wireless disabled by hardware"
+msgstr "Бежична је хардверски деактивирана"
+
+#: nmpopup.cpp:89 nmpopup.cpp:747
+msgctxt "title on the LHS of the plasmoid"
+msgid "<h3>Interfaces</h3>"
+msgstr "<h3>Сучеља</h3>"
+
+#: nmpopup.cpp:95
+msgctxt "title on the RHS of the plasmoid"
+msgid "<h3>Connections</h3>"
+msgstr "<h3>Везе</h3>"
+
+#: nmpopup.cpp:123
+msgctxt "CheckBox to enable or disable networking completely"
+msgid "Enable networking"
+msgstr "Активирај умрежавање"
+
+#: nmpopup.cpp:132
+msgctxt "CheckBox to enable or disable wwan (mobile broadband) interface)"
+msgid "Enable mobile broadband"
+msgstr "Активирај мобилне широкопојасне"
+
+#: nmpopup.cpp:145
+msgctxt "CheckBox to enable or disable wireless interface (rfkill)"
+msgid "Enable wireless"
+msgstr "Активирај бежичне"
+
+#: nmpopup.cpp:157
+msgctxt "tabbar on the left side"
+msgid "Interfaces"
+msgstr "Сучеља"
+
+#: nmpopup.cpp:167
+msgctxt "details for the interface"
+msgid "Details"
+msgstr "Детаљи"
+
+#: nmpopup.cpp:196
+msgctxt "manage connections button in the applet's popup"
+msgid "Manage Connections..."
+msgstr "Управљај везама..."
+
+#: nmpopup.cpp:204
+msgctxt "@info:tooltip tooltip for the 'Show More' button"
+msgid "Show all available networks"
+msgstr "Прикажи све расположиве мреже"
+
+#: nmpopup.cpp:209
+msgctxt "show more button in the applet's popup"
+msgid "Show More..."
+msgstr "Прикажи више..."
+
+#: nmpopup.cpp:213
+msgctxt "show more button in the applet's popup"
+msgid "Show Less..."
+msgstr "Прикажи мање..."
+
+#: nmpopup.cpp:319
+msgctxt "Warning about wrong NetworkManager version"
+msgid "NetworkManager is not running. Please start it."
+msgstr "Менаџер мреже није у погону, покрените га."
+
+#: nmpopup.cpp:323
+#, kde-format
+msgctxt "Warning about wrong NetworkManager version"
+msgid ""
+"We need at least NetworkManager-%1 to work properly, found '%2'. Please "
+"upgrade to a newer version."
+msgstr ""
+"За исправан рад потребна је бар издање %1 Менаџера мреже, а нађено је %2. "
+"Ажурирајте на новије издање."
+
+#: nmpopup.cpp:659
+msgctxt "pressed show more button"
+msgid "Show Less..."
+msgstr "Прикажи мање..."
+
+#: nmpopup.cpp:664
+msgctxt "unpressed show more button"
+msgid "Show More..."
+msgstr "Прикажи више..."
+
+#: vpninterfaceitem.cpp:42
+msgctxt "initial label for VPN connection name"
+msgid "Not Available"
+msgstr "није доступно"
+
+#: vpninterfaceitem.cpp:92
+msgctxt "ip of vpn interface item"
+msgid "not available"
+msgstr "није доступно"
+
+#: vpninterfaceitem.cpp:99
+#, kde-format
+msgctxt "VPN label in interfaces"
+msgid "<b>%1</b>"
+msgstr "<b>%1</b>"
+
+#: vpninterfaceitem.cpp:101
+msgctxt "VPN state label"
+msgid "Connected"
+msgstr "Повезана"
+
+#: vpninterfaceitem.cpp:104
+msgctxt "VPN state label"
+msgid "Connecting..."
+msgstr "Повезујем..."
+
+#: vpninterfaceitem.cpp:110
+msgctxt "VPN connections interface"
+msgid "<b>Virtual Private Network</b>"
+msgstr "<b>Виртуелна приватна мрежа</b>"
+
+#: vpninterfaceitem.cpp:111
+msgctxt "VPN state label"
+msgid "Not Connected..."
+msgstr "Неповезана..."
+
+#: wirelessnetworkitem.cpp:120 wirelessnetworkitem.cpp:160
+#, kde-format
+msgid "Strength: %1%"
+msgstr "Јачина: %1%"

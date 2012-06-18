@@ -1,13 +1,13 @@
 # Copyright © 2010, 2011, 2012 This_file_is_part_of_KDE
 # This file is distributed under the same license as the networkmanagement package.
-#
 # Tommi Nieminen <translator@legisign.org>, 2010, 2012.
-# Lasse Liehu <lasse.liehu@gmail.com>, 2011.
+# Lasse Liehu <lliehu@kolumbus.fi>, 2011.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-03-20 18:01+0100\n"
+"POT-Creation-Date: 2012-06-15 13:51+0200\n"
 "PO-Revision-Date: 2012-04-27 18:25+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -15,7 +15,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: activatableitem.cpp:116
@@ -233,31 +232,31 @@ msgctxt "wired interface network cable unplugged"
 msgid "Cable Unplugged"
 msgstr "Kaapelia ei kytketty"
 
-#: networkmanager.cpp:618
+#: networkmanager.cpp:675
 msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr "Ei verkkoliitäntöjä"
 
-#: networkmanager.cpp:669
+#: networkmanager.cpp:726
 msgid "VPN Connections"
 msgstr "VPN-yhteydet"
 
-#: networkmanager.cpp:683
+#: networkmanager.cpp:740
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
 msgstr "Ei yhteyttä"
 
-#: networkmanager.cpp:686
+#: networkmanager.cpp:743
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
 msgstr "Ohjelmisto on poistanut langattoman verkon käytöstä"
 
-#: networkmanager.cpp:689
+#: networkmanager.cpp:746
 msgctxt "tooltip, all interfaces are down"
 msgid "Networking disabled"
 msgstr "Verkko ei ole käytössä"
 
-#: networkmanager.cpp:692
+#: networkmanager.cpp:749
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
 msgstr "Laitteisto on poistanut langattoman verkon käytöstä"

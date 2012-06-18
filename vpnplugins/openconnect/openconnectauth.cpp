@@ -35,6 +35,7 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 #include <KPushButton>
 #include <KComboBox>
 #include <QDomDocument>
+#include <QCryptographicHash>
 
 #include "nm-openconnect-service.h"
 
@@ -45,8 +46,8 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 extern "C"
 {
 #include <string.h>
-#include <openssl/ssl.h>
-#include <openconnect.h>
+#include <unistd.h>
+#include <fcntl.h>
 }
 
 // name/address: IP/domain name of the host (OpenConnect accepts both, so no difference here)
@@ -70,6 +71,7 @@ public:
     OpenconnectAuthWorkerThread *worker;
     QList<VPNHost> hosts;
     bool userQuit;
+    int cancelPipes[2];
     QList<QPair<QString, int> > serverLog;
 
     enum LogLevels {Error = 0, Info, Debug, Trace};
@@ -83,16 +85,22 @@ OpenconnectAuthWidget::OpenconnectAuthWidget(Knm::Connection * connection, QWidg
     d->setting = static_cast<Knm::VpnSetting *>(connection->setting(Knm::Setting::Vpn));
     d->ui.setupUi(this);
     d->userQuit = false;
+    if (pipe2(d->cancelPipes, O_NONBLOCK|O_CLOEXEC)) {
+            // Should never happen. Just don't do real cancellation if it does
+            d->cancelPipes[0] = -1;
+            d->cancelPipes[1] = -1;
+    }
 
     connect(d->ui.cmbLogLevel, SIGNAL(currentIndexChanged(int)), this, SLOT(logLevelChanged(int)));
     connect(d->ui.viewServerLog, SIGNAL(toggled(bool)), this, SLOT(viewServerLogToggled(bool)));
     connect(d->ui.btnConnect, SIGNAL(clicked()), this, SLOT(connectHost()));
+    connect(d->ui.cmbHosts, SIGNAL(currentIndexChanged(int)), this, SLOT(connectHost()));
 
     d->ui.cmbLogLevel->setCurrentIndex(OpenconnectAuthWidgetPrivate::Debug);
     d->ui.btnConnect->setIcon(KIcon("network-connect"));
     d->ui.viewServerLog->setChecked(false);
 
-    d->worker = new OpenconnectAuthWorkerThread(&d->mutex, &d->workerWaiting, &d->userQuit);
+    d->worker = new OpenconnectAuthWorkerThread(&d->mutex, &d->workerWaiting, &d->userQuit, d->cancelPipes[0]);
 
     // gets the pointer to struct openconnect_info (defined in openconnect.h), which contains data that OpenConnect needs,
     // and which needs to be populated with settings we get from NM, like host, certificate or private key
@@ -109,8 +117,13 @@ OpenconnectAuthWidget::~OpenconnectAuthWidget()
 {
     Q_D(OpenconnectAuthWidget);
     d->userQuit = true;
+    if (write(d->cancelPipes[1], "x", 1)) {
+        // not a lot we can do
+    }
     d->workerWaiting.wakeAll();
     d->worker->wait();
+    ::close(d->cancelPipes[0]);
+    ::close(d->cancelPipes[1]);
     deleteAllFromLayout(d->ui.loginBoxLayout);
     delete d->worker;
     delete d;
@@ -170,37 +183,38 @@ void OpenconnectAuthWidget::readSecrets()
         d->certificateFingerprints.append(d->secrets[NM_OPENCONNECT_KEY_GWCERT]);
     }
     if (!d->secrets["xmlconfig"].isEmpty()) {
-        unsigned char sha1[SHA_DIGEST_LENGTH];
-        char sha1_text[SHA_DIGEST_LENGTH * 2];
-        EVP_MD_CTX c;
-        int i;
 
         QByteArray config = QByteArray::fromBase64(d->secrets["xmlconfig"].toAscii());
 
-        EVP_MD_CTX_init (&c);
-        EVP_Digest (config.data(), config.size(), sha1, NULL, EVP_sha1(), NULL);
-        EVP_MD_CTX_cleanup (&c);
-
-        for (i = 0; i < SHA_DIGEST_LENGTH; i++)
-            sprintf (&sha1_text[i*2], "%02x", sha1[i]);
-
-        openconnect_set_xmlsha1 (d->vpninfo, sha1_text, sizeof(sha1_text));
+        QCryptographicHash hash(QCryptographicHash::Sha1);
+        hash.addData(config.data(), config.size());
+        const char *sha1_text = hash.result().toHex();
+        openconnect_set_xmlsha1 (d->vpninfo, (char *)sha1_text, strlen(sha1_text)+1);
 
         QDomDocument xmlconfig;
         xmlconfig.setContent(config);
-        QDomNode serverList = xmlconfig.elementsByTagName(QLatin1String("ServerList")).at(0);
+        QDomNode anyConnectProfile = xmlconfig.elementsByTagName(QLatin1String("AnyConnectProfile")).at(0);
+        bool matchedGw = false;
+        QDomNode serverList = anyConnectProfile.firstChildElement(QLatin1String("ServerList"));
         for (QDomElement entry = serverList.firstChildElement(QLatin1String("HostEntry")); !entry.isNull(); entry = entry.nextSiblingElement(QLatin1String("HostEntry"))) {
             VPNHost host;
-            host.name = entry.namedItem(QLatin1String("HostName")).toText().data();
-            host.group = entry.namedItem(QLatin1String("UserGroup")).toText().data();
-            host.address = entry.namedItem(QLatin1String("HostAddress")).toText().data();
+            host.name = entry.firstChildElement(QLatin1String("HostName")).text();
+            host.group = entry.firstChildElement(QLatin1String("UserGroup")).text();
+            host.address = entry.firstChildElement(QLatin1String("HostAddress")).text();
+            // We added the originally configured host in readConfig(). But if
+            // it matches one of the ones in the XML config (as presumably it
+            // should), remove the original and use the one with the pretty name.
+            if (!matchedGw && host.address == d->hosts.at(0).address) {
+                d->hosts.removeFirst();
+                matchedGw = true;
+            }
             d->hosts.append(host);
         }
     }
 
     for (int i = 0; i < d->hosts.size(); i++) {
         d->ui.cmbHosts->addItem(d->hosts.at(i).name, i);
-        if (d->secrets["lasthost"] == d->hosts.at(i).name)
+        if (d->secrets["lasthost"] == d->hosts.at(i).name || d->secrets["lasthost"] == d->hosts.at(i).address)
             d->ui.cmbHosts->setCurrentIndex(i);
     }
 
@@ -228,9 +242,17 @@ void OpenconnectAuthWidget::connectHost()
 {
     Q_D(OpenconnectAuthWidget);
     d->userQuit = true;
+    if (write(d->cancelPipes[1], "x", 1)) {
+        // not a lot we can do
+    }
     d->workerWaiting.wakeAll();
     d->worker->wait();
     d->userQuit = false;
+
+    /* Suck out the cancel byte(s) */
+    char buf;
+    while (read(d->cancelPipes[0], &buf, 1) == 1)
+        ;
     deleteAllFromLayout(d->ui.loginBoxLayout);
     int i = d->ui.cmbHosts->currentIndex();
     if (i == -1)
@@ -262,8 +284,8 @@ void OpenconnectAuthWidget::writeConfig()
     secretData.insert(QLatin1String(NM_OPENCONNECT_KEY_COOKIE), QLatin1String(openconnect_get_cookie(d->vpninfo)));
     openconnect_clear_cookie(d->vpninfo);
 
-    struct x509_st *cert = openconnect_get_peer_cert(d->vpninfo);
-    char fingerprint[EVP_MAX_MD_SIZE * 2 + 1];
+    OPENCONNECT_X509 *cert = openconnect_get_peer_cert(d->vpninfo);
+    char fingerprint[41];
     openconnect_get_cert_sha1(d->vpninfo, cert, fingerprint);
     secretData.insert(QLatin1String(NM_OPENCONNECT_KEY_GWCERT), QLatin1String(fingerprint));
     secretData.insert(QLatin1String("certsigs"), d->certificateFingerprints.join("\t"));
