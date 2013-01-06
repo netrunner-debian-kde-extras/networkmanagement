@@ -1,30 +1,36 @@
 # Copyright © 2010, 2011, 2012 This_file_is_part_of_KDE
 # This file is distributed under the same license as the networkmanagement package.
 # Tommi Nieminen <translator@legisign.org>, 2010, 2012.
-# Lasse Liehu <lliehu@kolumbus.fi>, 2011.
+# Lasse Liehu <lliehu@kolumbus.fi>, 2011, 2012.
 #
+# KDE 4.9 Finnish translation sprint 2012-06/07
+# Author: Artnay
+# Author: Lliehu
+# Author: Niklas Laxström
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: plasma_applet_networkmanagement\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-06-15 13:51+0200\n"
-"PO-Revision-Date: 2012-04-27 18:25+0300\n"
+"POT-Creation-Date: 2012-12-02 08:26+0100\n"
+"PO-Revision-Date: 2012-07-08 16:27:30+0000\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
-"Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
+"Language-Team: Finnish <lokalisointi@lists.coss.fi>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-POT-Import-Date: 2012-06-15 06:58:30+0000\n"
+"X-Generator: Lokalize 1.5\n"
 
-#: activatableitem.cpp:116
+#: activatableitem.cpp:117
 msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is disabled"
 msgid "Networking system disabled"
 msgstr "Verkkojärjestelmä poistettu käytöstä"
 
-#: activatableitem.cpp:120
+#: activatableitem.cpp:121
 msgctxt "@info:status Notification for radio kill switch turned off"
 msgid "Wireless hardware disabled"
 msgstr "Langaton verkkolaitteisto poistettu käytöstä"
@@ -50,7 +56,7 @@ msgctxt "@info:tooltip for hidden wireless network SSID entry"
 msgid "Enter network name and press <enter>"
 msgstr "Anna verkon nimi ja paina <Enter>"
 
-#: interfaceconnectionitem.cpp:70
+#: interfaceconnectionitem.cpp:71
 msgctxt "name of the connection not known"
 msgid "Unknown"
 msgstr "Tuntematon"
@@ -157,7 +163,7 @@ msgstr "Signaalin voimakkuus"
 #: interfacedetailswidget.cpp:337
 msgctxt "interface details"
 msgid "Access Technology"
-msgstr ""
+msgstr "Pääsytekniikka"
 
 #: interfacedetailswidget.cpp:355
 msgctxt "interface details"
@@ -237,91 +243,91 @@ msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr "Ei verkkoliitäntöjä"
 
-#: networkmanager.cpp:726
+#: networkmanager.cpp:727
 msgid "VPN Connections"
 msgstr "VPN-yhteydet"
 
-#: networkmanager.cpp:740
+#: networkmanager.cpp:741
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
 msgstr "Ei yhteyttä"
 
-#: networkmanager.cpp:743
+#: networkmanager.cpp:744
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
 msgstr "Ohjelmisto on poistanut langattoman verkon käytöstä"
 
-#: networkmanager.cpp:746
+#: networkmanager.cpp:747
 msgctxt "tooltip, all interfaces are down"
 msgid "Networking disabled"
 msgstr "Verkko ei ole käytössä"
 
-#: networkmanager.cpp:749
+#: networkmanager.cpp:750
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
 msgstr "Laitteisto on poistanut langattoman verkon käytöstä"
 
-#: nmpopup.cpp:89 nmpopup.cpp:747
+#: nmpopup.cpp:90 nmpopup.cpp:732
 msgctxt "title on the LHS of the plasmoid"
 msgid "<h3>Interfaces</h3>"
 msgstr "<h3>Liitännät</h3>"
 
-#: nmpopup.cpp:95
+#: nmpopup.cpp:96
 msgctxt "title on the RHS of the plasmoid"
 msgid "<h3>Connections</h3>"
 msgstr "<h3>Yhteydet</h3>"
 
-#: nmpopup.cpp:123
+#: nmpopup.cpp:124
 msgctxt "CheckBox to enable or disable networking completely"
 msgid "Enable networking"
 msgstr "Ota verkko käyttöön"
 
-#: nmpopup.cpp:132
+#: nmpopup.cpp:133
 msgctxt "CheckBox to enable or disable wwan (mobile broadband) interface)"
 msgid "Enable mobile broadband"
 msgstr "Salli mobiililaajakaista"
 
-#: nmpopup.cpp:145
+#: nmpopup.cpp:146
 msgctxt "CheckBox to enable or disable wireless interface (rfkill)"
 msgid "Enable wireless"
 msgstr "Salli langaton verkko"
 
-#: nmpopup.cpp:157
+#: nmpopup.cpp:158
 msgctxt "tabbar on the left side"
 msgid "Interfaces"
 msgstr "Liitännät"
 
-#: nmpopup.cpp:167
+#: nmpopup.cpp:168
 msgctxt "details for the interface"
 msgid "Details"
 msgstr "Yksityiskohdat"
 
-#: nmpopup.cpp:196
+#: nmpopup.cpp:197
 msgctxt "manage connections button in the applet's popup"
 msgid "Manage Connections..."
 msgstr "Yhteyksien hallinta..."
 
-#: nmpopup.cpp:204
+#: nmpopup.cpp:205
 msgctxt "@info:tooltip tooltip for the 'Show More' button"
 msgid "Show all available networks"
 msgstr "Näytä kaikki tarjolla olevat verkopt"
 
-#: nmpopup.cpp:209
+#: nmpopup.cpp:210
 msgctxt "show more button in the applet's popup"
 msgid "Show More..."
 msgstr "Näytä enemmän..."
 
-#: nmpopup.cpp:213
+#: nmpopup.cpp:214
 msgctxt "show more button in the applet's popup"
 msgid "Show Less..."
 msgstr "Näytä vähemmän..."
 
-#: nmpopup.cpp:319
+#: nmpopup.cpp:294
 msgctxt "Warning about wrong NetworkManager version"
 msgid "NetworkManager is not running. Please start it."
 msgstr "NetworkManager ei ole käynnissä. Käynnistä se."
 
-#: nmpopup.cpp:323
+#: nmpopup.cpp:300
 #, kde-format
 msgctxt "Warning about wrong NetworkManager version"
 msgid ""
@@ -331,12 +337,12 @@ msgstr ""
 "Vähintään NetworkManager-%1 vaaditaan, jotta ohjelma toimisi oikein, "
 "löydettiin ”%2”. Päivitä uudempaan versioon."
 
-#: nmpopup.cpp:659
+#: nmpopup.cpp:644
 msgctxt "pressed show more button"
 msgid "Show Less..."
 msgstr "Näytä vähemmän..."
 
-#: nmpopup.cpp:664
+#: nmpopup.cpp:649
 msgctxt "unpressed show more button"
 msgid "Show More..."
 msgstr "Näytä enemmän..."
@@ -377,7 +383,7 @@ msgctxt "VPN state label"
 msgid "Not Connected..."
 msgstr "Ei yhdistetty..."
 
-#: wirelessnetworkitem.cpp:120 wirelessnetworkitem.cpp:160
+#: wirelessnetworkitem.cpp:121 wirelessnetworkitem.cpp:161
 #, kde-format
 msgid "Strength: %1%"
 msgstr "Voimakkuus: %1 %"

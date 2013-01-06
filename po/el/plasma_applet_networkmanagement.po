@@ -2,29 +2,30 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Dimitrios Glentadakis <dglent@gmail.com>, 2012.
+# Petros Vidalis <pvidalis@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-03-20 18:01+0100\n"
-"PO-Revision-Date: 2012-01-05 18:48+0100\n"
-"Last-Translator: Dimitrios Glentadakis <dglent@gmail.com>\n"
-"Language-Team: Greek <kde-i18n-el@kde.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2012-12-02 08:26+0100\n"
+"PO-Revision-Date: 2012-09-27 14:44+0300\n"
+"Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
+"Language-Team: Greek <i18ngr@lists.hellug.gr>\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: activatableitem.cpp:116
+#: activatableitem.cpp:117
 msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is disabled"
 msgid "Networking system disabled"
 msgstr "Το σύστημα δικτύωσης απενεργοποιήθηκε"
 
-#: activatableitem.cpp:120
+#: activatableitem.cpp:121
 msgctxt "@info:status Notification for radio kill switch turned off"
 msgid "Wireless hardware disabled"
 msgstr "Το υλικό ασυρμάτου απενεργοποιήθηκε"
@@ -37,20 +38,20 @@ msgstr "Ποιότητα σήματος: %1%"
 #: hiddenwirelessnetworkitem.cpp:77
 msgctxt "label for creating a connection to a hidden wireless network"
 msgid "<hidden network>"
-msgstr ""
+msgstr "<κρυφό δίκτυο>"
 
 #: hiddenwirelessnetworkitem.cpp:81
 msgctxt ""
 "default KLineEdit::clickMessage() for hidden wireless network SSID entry"
 msgid "Enter network name and press <enter>"
-msgstr ""
+msgstr "Εισάγετε το όνομα του δικτύου και πατήστε <enter>"
 
 #: hiddenwirelessnetworkitem.cpp:82
 msgctxt "@info:tooltip for hidden wireless network SSID entry"
 msgid "Enter network name and press <enter>"
-msgstr ""
+msgstr "Εισάγετε το όνομα του δικτύου και πατήστε <enter>"
 
-#: interfaceconnectionitem.cpp:70
+#: interfaceconnectionitem.cpp:71
 msgctxt "name of the connection not known"
 msgid "Unknown"
 msgstr "Άγνωστο"
@@ -172,7 +173,7 @@ msgstr "Διεύθυνση υλικού (MAC)"
 #: interfacedetailswidget.cpp:377 interfaceitem.cpp:286
 msgctxt "label of the network interface"
 msgid "No IP address."
-msgstr "Καμία διεύθυνση ΙΡ."
+msgstr "Καμία διεύθυνση IP."
 
 #: interfacedetailswidget.cpp:388 interfaceitem.cpp:297
 msgctxt "label of the network interface"
@@ -232,96 +233,96 @@ msgctxt "wired interface network cable unplugged"
 msgid "Cable Unplugged"
 msgstr "Το καλώδιο αποσυνδέθηκε"
 
-#: networkmanager.cpp:618
+#: networkmanager.cpp:675
 msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr "Καμία διεπαφή δικτύου"
 
-#: networkmanager.cpp:669
+#: networkmanager.cpp:727
 msgid "VPN Connections"
 msgstr "Συνδέσεις VPN"
 
-#: networkmanager.cpp:683
+#: networkmanager.cpp:741
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
 msgstr "Αποσυνδέθηκε"
 
-#: networkmanager.cpp:686
+#: networkmanager.cpp:744
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
 msgstr "Το ασύρματο απενεργοποιήθηκε στο λογισμικό"
 
-#: networkmanager.cpp:689
+#: networkmanager.cpp:747
 msgctxt "tooltip, all interfaces are down"
 msgid "Networking disabled"
 msgstr "Δικτύωση ανενεργή"
 
-#: networkmanager.cpp:692
+#: networkmanager.cpp:750
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
 msgstr "Το ασύρματο απενεργοποιήθηκε από το υλικό"
 
-#: nmpopup.cpp:89 nmpopup.cpp:747
+#: nmpopup.cpp:90 nmpopup.cpp:732
 msgctxt "title on the LHS of the plasmoid"
 msgid "<h3>Interfaces</h3>"
 msgstr "<h3>Διεπαφές</h3>"
 
-#: nmpopup.cpp:95
+#: nmpopup.cpp:96
 msgctxt "title on the RHS of the plasmoid"
 msgid "<h3>Connections</h3>"
-msgstr ""
+msgstr "<h3>Συνδέσεις</h3>"
 
-#: nmpopup.cpp:123
+#: nmpopup.cpp:124
 msgctxt "CheckBox to enable or disable networking completely"
 msgid "Enable networking"
 msgstr "Ενεργοποίηση δικτύωσης"
 
-#: nmpopup.cpp:132
+#: nmpopup.cpp:133
 msgctxt "CheckBox to enable or disable wwan (mobile broadband) interface)"
 msgid "Enable mobile broadband"
 msgstr "Ενεργοποίηση ευρείας ζώνης για κινητά"
 
-#: nmpopup.cpp:145
+#: nmpopup.cpp:146
 msgctxt "CheckBox to enable or disable wireless interface (rfkill)"
 msgid "Enable wireless"
 msgstr "Ενεργοποίηση ασύρματου"
 
-#: nmpopup.cpp:157
+#: nmpopup.cpp:158
 msgctxt "tabbar on the left side"
 msgid "Interfaces"
 msgstr "Διεπαφές"
 
-#: nmpopup.cpp:167
+#: nmpopup.cpp:168
 msgctxt "details for the interface"
 msgid "Details"
 msgstr "Λεπτομέρειες"
 
-#: nmpopup.cpp:196
+#: nmpopup.cpp:197
 msgctxt "manage connections button in the applet's popup"
 msgid "Manage Connections..."
-msgstr ""
+msgstr "Διαχείριση συνδέσεων..."
 
-#: nmpopup.cpp:204
+#: nmpopup.cpp:205
 msgctxt "@info:tooltip tooltip for the 'Show More' button"
 msgid "Show all available networks"
-msgstr ""
+msgstr "Εμφάνιση διαθέσιμων δικτύων"
 
-#: nmpopup.cpp:209
+#: nmpopup.cpp:210
 msgctxt "show more button in the applet's popup"
 msgid "Show More..."
-msgstr ""
+msgstr "Περισσότερα..."
 
-#: nmpopup.cpp:213
+#: nmpopup.cpp:214
 msgctxt "show more button in the applet's popup"
 msgid "Show Less..."
-msgstr ""
+msgstr "Λιγότερα..."
 
-#: nmpopup.cpp:319
+#: nmpopup.cpp:294
 msgctxt "Warning about wrong NetworkManager version"
 msgid "NetworkManager is not running. Please start it."
 msgstr "Το NetworkManager δεν εκτελείται. Εκκινήστε το."
 
-#: nmpopup.cpp:323
+#: nmpopup.cpp:300
 #, kde-format
 msgctxt "Warning about wrong NetworkManager version"
 msgid ""
@@ -331,15 +332,15 @@ msgstr ""
 "Χρειαζόμαστε τουλάχιστο το NetworkManager-%1 να λειτουργεί σωστά, βρέθηκε "
 "'%2'. Αναβαθμίστε σε νεότερη έκδοση."
 
-#: nmpopup.cpp:659
+#: nmpopup.cpp:644
 msgctxt "pressed show more button"
 msgid "Show Less..."
-msgstr ""
+msgstr "Λιγότερα..."
 
-#: nmpopup.cpp:664
+#: nmpopup.cpp:649
 msgctxt "unpressed show more button"
 msgid "Show More..."
-msgstr ""
+msgstr "Περισσότερα..."
 
 #: vpninterfaceitem.cpp:42
 msgctxt "initial label for VPN connection name"
@@ -377,7 +378,7 @@ msgctxt "VPN state label"
 msgid "Not Connected..."
 msgstr "Χωρίς σύνδεση..."
 
-#: wirelessnetworkitem.cpp:120 wirelessnetworkitem.cpp:160
+#: wirelessnetworkitem.cpp:121 wirelessnetworkitem.cpp:161
 #, kde-format
 msgid "Strength: %1%"
 msgstr "Ισχύς: %1%"

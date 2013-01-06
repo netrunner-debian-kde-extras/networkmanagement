@@ -17,6 +17,14 @@ msgstr ""
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
 "3 : 4\n"
 
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Kevin Scannell"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kscanne@gmail.com"
+
 #: connectioninfodialog.cpp:80
 msgctxt "@title:tab information about ip address, nameserveres, etc"
 msgid "IPv4"
@@ -25,84 +33,84 @@ msgstr "IPv4"
 #: connectioninfoipv4tab.cpp:35
 msgctxt "@label:textbox ip addresses of network interface"
 msgid "IP Addresses:"
-msgstr ""
+msgstr "Seoltaí IP:"
 
 #: connectioninfoipv4tab.cpp:38
 msgctxt "@label:textbox netmasks of network interface"
 msgid "Netmasks:"
-msgstr ""
+msgstr "Mascanna líonra:"
 
 #: connectioninfoipv4tab.cpp:41
 msgctxt "@label:textbox gateways used by network interface"
 msgid "Gateways:"
-msgstr ""
+msgstr "Geataí:"
 
 #: connectioninfoipv4tab.cpp:44
 msgctxt "@label:textbox nameservers used by network interface"
 msgid "Nameservers:"
-msgstr ""
+msgstr "Freastalaithe ainmneacha:"
 
 #: connectioninfoipv4tab.cpp:47
 msgctxt "@label:textbox domains used by network interface"
 msgid "Search domains:"
-msgstr ""
+msgstr "Fearainn chuardaigh:"
 
 #: connectioninfowiredtab.cpp:31 connectioninfowirelesstab.cpp:42
 msgctxt "@label:textbox bit rate of network interface"
 msgid "Bit rate:"
-msgstr ""
+msgstr "Ráta giotán:"
 
 #: connectioninfowiredtab.cpp:34 connectioninfowirelesstab.cpp:57
 msgctxt "@label:textbox MAC address of network interface"
 msgid "Hardware address:"
-msgstr ""
+msgstr "Seoladh crua-earraí:"
 
 #: connectioninfowiredtab.cpp:45
 #, kde-format
 msgctxt "@item:intext bit rate value"
 msgid "%1 Mbit/s"
-msgstr ""
+msgstr "%1 Mghiotán/s"
 
 #: connectioninfowirelesstab.cpp:33
 msgctxt "@label:textbox access point SSID"
 msgid "SSID:"
-msgstr ""
+msgstr "SSID:"
 
 #: connectioninfowirelesstab.cpp:36
 msgctxt "@label:textbox signal strength of AP"
 msgid "Signal strength:"
-msgstr ""
+msgstr "Neart an chomhartha:"
 
 #: connectioninfowirelesstab.cpp:39
 msgctxt "@label:textbox Wi-Fi mode, e.g. Ad-Hoc or Managed"
 msgid "Operation mode:"
-msgstr ""
+msgstr "Mód oibríochta:"
 
 #: connectioninfowirelesstab.cpp:45
 msgctxt "@label:textbox MAC address of access point"
 msgid "Access point:"
-msgstr ""
+msgstr "Pointe rochtana:"
 
 #: connectioninfowirelesstab.cpp:48
 msgctxt "@label:textbox security flags of AP"
 msgid "Security (WPA):"
-msgstr ""
+msgstr "Slándáil (WPA):"
 
 #: connectioninfowirelesstab.cpp:51
 msgctxt "@label:textbox security flags of AP"
 msgid "Security (RSN/WPA2):"
-msgstr ""
+msgstr "Slándáil (RSN/WPA2):"
 
 #: connectioninfowirelesstab.cpp:54
 msgctxt "@label:textbox Wi-Fi frequency"
 msgid "Frequency:"
-msgstr ""
+msgstr "Minicíocht:"
 
 #: connectioninfowirelesstab.cpp:114
 #, kde-format
 msgctxt "@item:intext bit rate value %1 of %2 maximum"
 msgid "%1 / %2 Mbit/s"
-msgstr ""
+msgstr "%1 / %2 Mghiotán/s"
 
 #: connectioninfowirelesstab.cpp:129
 #, kde-format
@@ -121,17 +129,17 @@ msgctxt ""
 "@info:tooltip Tooltip for indicator that connection supplies the network "
 "default route"
 msgid "Default"
-msgstr ""
+msgstr "Réamhshocrú"
 
 #: interfaceconnectionitem.cpp:143
 msgctxt "@info:tooltip network connection disconnect button tooltip"
 msgid "Disconnect"
-msgstr ""
+msgstr "Dícheangail"
 
 #: interfaceconnectionitem.cpp:177
 msgctxt "text for popup's unknown state"
 msgid "<font size=\"-1\">Unknown</font>"
-msgstr ""
+msgstr "<font size=\"-1\">Anaithnid</font>"
 
 #: interfaceconnectionitem.cpp:180
 msgctxt "text for popup's activating state"
@@ -141,39 +149,39 @@ msgstr ""
 #: interfaceconnectionitem.cpp:183
 msgctxt "text for popup's activated state"
 msgid "<font size=\"-1\">Active</font>"
-msgstr ""
+msgstr "<font size=\"-1\">Gníomhach</font>"
 
 #: knetworkmanagertrayicon.cpp:109
 msgctxt "@title:window KNotificationItem tray icon title"
 msgid "Network Management"
-msgstr ""
+msgstr "Bainisteoireacht an Líonra"
 
 #: knetworkmanagertrayicon.cpp:115
 msgctxt "@action:inmenu turns off networking"
 msgid "Enable networking"
-msgstr ""
+msgstr "Cumasaigh an líonrú"
 
 #: knetworkmanagertrayicon.cpp:123
 msgctxt "@action:inmenu turns off wireless networking"
 msgid "Enable wireless"
-msgstr ""
+msgstr "Cumasaigh líonra gan sreang"
 
 #: knetworkmanagertrayicon.cpp:135
 msgctxt "@action:inmenu Preferences action title"
 msgid "Manage Connections..."
-msgstr ""
+msgstr "Bainistigh Ceangail..."
 
 #: knetworkmanagertrayicon.cpp:142
 msgctxt "@action:inmenu show dialog to connect to new or hidden network"
 msgid "Connect To &Other Network..."
-msgstr ""
+msgstr "Ceangail le Lí&onra Eile..."
 
 #: knetworkmanagertrayicon.cpp:214
 msgctxt ""
 "@action:inmenu Disable action text used when the NetworkManager daemon is "
 "not running"
 msgid "Network Management disabled"
-msgstr ""
+msgstr "Díchumasaíodh Bainisteoireacht an Líonra"
 
 #: knetworkmanagertrayicon.cpp:215
 msgctxt ""
@@ -184,16 +192,16 @@ msgstr ""
 #: knetworkmanagertrayicon.cpp:639
 msgctxt "@action:inmenu copy ip address to clipboard"
 msgid "Copy IP Address"
-msgstr ""
+msgstr "Cóipeáil an Seoladh IP"
 
 #: knetworkmanagertrayicon.cpp:640
 msgctxt "@action:inmenu interface connection properties"
 msgid "Properties"
-msgstr ""
+msgstr "Airíonna"
 
 #: main.cpp:27
 msgid "KNetworkManager, the KDE 4 NetworkManager client"
-msgstr ""
+msgstr "KNetworkManager, an cliant NetworkManager le haghaidh KDE 4"
 
 #: main.cpp:33
 msgid "KNetworkManager"
@@ -209,7 +217,7 @@ msgstr "Will Stephenson"
 
 #: main.cpp:34
 msgid "Original Author, Maintainer"
-msgstr ""
+msgstr "An chéad údar agus cothaitheoir"
 
 #: main.cpp:35
 msgid "Paul Marchouk"
@@ -243,7 +251,7 @@ msgctxt ""
 "@title:window message when client cannot start because dbus security policy "
 "prevents it"
 msgid "Installation problem"
-msgstr ""
+msgstr "Fadhb leis an tsuiteáil"
 
 #: monolithic.cpp:126
 msgctxt ""
@@ -259,32 +267,32 @@ msgctxt ""
 "@title:window message when client cannot start because another client is "
 "already running"
 msgid "Network Management already active"
-msgstr ""
+msgstr "Bainisteoireacht an Líonra ar siúl cheana"
 
 #: monolithic.cpp:131
 msgctxt "@action:button enable autostart"
 msgid "Start automatically"
-msgstr ""
+msgstr "Tosaigh go huathoibríoch"
 
 #: monolithic.cpp:131
 msgctxt "@action:button disable autostart"
 msgid "Do not start automatically"
-msgstr ""
+msgstr "Ná tosaigh go huathoibríoch"
 
 #: otherwirelessnetworkdialog.cpp:41
 msgctxt "@window:title connect to other wireless network"
 msgid "Select Wireless Network"
-msgstr ""
+msgstr "Roghnaigh líonra gan sreang"
 
 #: otherwirelessnetworkdialog.cpp:46
 msgctxt "@action:button connect to wireless network"
 msgid "Connect"
-msgstr ""
+msgstr "Ceangail"
 
 #: otherwirelessnetworkdialog.cpp:50
 msgctxt "@item:inlist Create new ad-hoc wireless connection"
 msgid "New Ad-Hoc Network..."
-msgstr ""
+msgstr "Líonra Nua Ad Hoc..."
 
 #: otherwirelessnetworkdialog.cpp:86
 #, kde-format
@@ -304,37 +312,23 @@ msgctxt ""
 msgid " (connected)"
 msgstr ""
 
-#: rc.cpp:1
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Kevin Scannell"
-
-#: rc.cpp:2
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "kscanne@gmail.com"
-
-#. i18n: file: otherwirelessnetworkwidget.ui:19
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:5
+#: otherwirelessnetworkwidget.ui:19
 msgid "&Search:"
 msgstr "&Cuardach:"
 
-#. i18n: file: otherwirelessnetworkwidget.ui:35
 #. i18n: ectx: property (text), widget (QTreeWidget, twNetworks)
-#: rc.cpp:8
+#: otherwirelessnetworkwidget.ui:35
 msgid "Network name"
 msgstr ""
 
-#. i18n: file: otherwirelessnetworkwidget.ui:40
 #. i18n: ectx: property (text), widget (QTreeWidget, twNetworks)
-#: rc.cpp:11
+#: otherwirelessnetworkwidget.ui:40
 msgid "Signal"
 msgstr "Comhartha"
 
-#. i18n: file: otherwirelessnetworkwidget.ui:45
 #. i18n: ectx: property (text), widget (QTreeWidget, twNetworks)
-#: rc.cpp:14
+#: otherwirelessnetworkwidget.ui:45
 msgid "Security"
 msgstr "Slándáil"
 

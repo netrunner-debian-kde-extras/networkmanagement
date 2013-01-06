@@ -1,21 +1,33 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
 # Tommi Nieminen <translator@legisign.org>, 2010.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2011.
+#
+# KDE 4.9 Finnish translation sprint 2012-06/07
+# Author: Artnay
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: knetworkmanager\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2011-10-07 11:06+0200\n"
-"PO-Revision-Date: 2011-10-13 19:34+0300\n"
+"PO-Revision-Date: 2012-07-04 13:35:52+0000\n"
 "Last-Translator: Lasse Liehu <lasse.liehu@gmail.com>\n"
-"Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
-"Language: \n"
+"Language-Team: Finnish <lokalisointi@lists.coss.fi>\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-POT-Import-Date: 2012-06-15 06:58:29+0000\n"
+"X-Generator: MediaWiki 1.20alpha (r113129); Translate 2012-07-04\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Tommi Nieminen"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "translator@legisign.org"
 
 #: connectioninfodialog.cpp:80
 msgctxt "@title:tab information about ip address, nameserveres, etc"
@@ -108,7 +120,7 @@ msgstr "%1 / %2 Mbit/s"
 #, kde-format
 msgctxt "@item:intext signal strength %1 in percent"
 msgid "%1%"
-msgstr ""
+msgstr "%1 %"
 
 #: connectioninfowirelesstab.cpp:140
 #, kde-format
@@ -166,7 +178,7 @@ msgstr "Hallitse yhteyksiä..."
 #: knetworkmanagertrayicon.cpp:142
 msgctxt "@action:inmenu show dialog to connect to new or hidden network"
 msgid "Connect To &Other Network..."
-msgstr ""
+msgstr "Yhdistä muu&hun verkkoon..."
 
 #: knetworkmanagertrayicon.cpp:214
 msgctxt ""
@@ -243,7 +255,7 @@ msgctxt ""
 "@title:window message when client cannot start because dbus security policy "
 "prevents it"
 msgid "Installation problem"
-msgstr ""
+msgstr "Asennusongelma"
 
 #: monolithic.cpp:126
 msgctxt ""
@@ -253,13 +265,15 @@ msgid ""
 "Another NetworkManager client is already running.  Use KNetworkManager in "
 "future? "
 msgstr ""
+"Toinen verkonhallinan asiakasohjelmisto on jo käynnissä. Käytetäänkö "
+"KNetworkManageria jatkossa? "
 
 #: monolithic.cpp:128
 msgctxt ""
 "@title:window message when client cannot start because another client is "
 "already running"
 msgid "Network Management already active"
-msgstr ""
+msgstr "Verkonhallinta on jo aktiivinen"
 
 #: monolithic.cpp:131
 msgctxt "@action:button enable autostart"
@@ -302,39 +316,25 @@ msgstr ""
 msgctxt ""
 "@item:inlist connection status added to signal strength if we are connected"
 msgid " (connected)"
-msgstr ""
+msgstr " (yhdistetty)"
 
-#: rc.cpp:1
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Tommi Nieminen"
-
-#: rc.cpp:2
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "translator@legisign.org"
-
-#. i18n: file: otherwirelessnetworkwidget.ui:19
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:5
+#: otherwirelessnetworkwidget.ui:19
 msgid "&Search:"
 msgstr "&Etsi:"
 
-#. i18n: file: otherwirelessnetworkwidget.ui:35
 #. i18n: ectx: property (text), widget (QTreeWidget, twNetworks)
-#: rc.cpp:8
+#: otherwirelessnetworkwidget.ui:35
 msgid "Network name"
 msgstr "Verkon nimi"
 
-#. i18n: file: otherwirelessnetworkwidget.ui:40
 #. i18n: ectx: property (text), widget (QTreeWidget, twNetworks)
-#: rc.cpp:11
+#: otherwirelessnetworkwidget.ui:40
 msgid "Signal"
 msgstr "Signaali"
 
-#. i18n: file: otherwirelessnetworkwidget.ui:45
 #. i18n: ectx: property (text), widget (QTreeWidget, twNetworks)
-#: rc.cpp:14
+#: otherwirelessnetworkwidget.ui:45
 msgid "Security"
 msgstr "Salaus"
 
@@ -480,4 +480,4 @@ msgstr "Luo verkkoyhteys..."
 #, kde-format
 msgctxt "@info:tooltip signal strength"
 msgid "%1%"
-msgstr ""
+msgstr "%1 %"

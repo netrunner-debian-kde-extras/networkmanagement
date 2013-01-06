@@ -126,14 +126,14 @@ Connection::Type Connection::typeFromSolidType(const Solid::Control::NetworkInte
 }
 
 Connection::Connection(const QString & name, const Connection::Type type, NMBluetoothCapabilities bt_cap)
-    : m_name(name), m_uuid(QUuid::createUuid()), m_type(type), m_autoConnect(false)
+    : m_name(name), m_uuid(QUuid::createUuid()), m_type(type), m_autoConnect(false), m_zone("")
 {
     addToPermissions(KUser().loginName(),QString());
     init(bt_cap);
 }
 
 Connection::Connection(const QUuid & uuid, const Connection::Type type, NMBluetoothCapabilities bt_cap)
-    : m_uuid(uuid), m_type(type), m_autoConnect(false)
+    : m_uuid(uuid), m_type(type), m_autoConnect(false), m_zone("")
 {
     addToPermissions(KUser().loginName(),QString());
     init(bt_cap);
@@ -144,6 +144,7 @@ Connection::Connection(Connection *con)
     setUuid(con->uuid());
     setType(con->type());
     setAutoConnect(con->autoConnect());
+    setZone(con->zone());
     setPermissions(con->permissions());
     setTimestamp(con->timestamp());
     setName(con->name());
@@ -154,13 +155,22 @@ Connection::Connection(Connection *con)
 
 Connection::~Connection()
 {
-    qDeleteAll(m_settings);
+    clearSettings();
+}
+
+void Connection::clearSettings()
+{
+    // child removes itself from list in its destructor, which causes crashes if we use qDeleteAll() of Qt >= 4.8,
+    // so use this loop instead. See https://bugs.kde.org/show_bug.cgi?id=284989
+    while (!m_settings.isEmpty()) {
+        delete m_settings.takeFirst();
+    }
+    m_settings.clear();
 }
 
 void Connection::init(NMBluetoothCapabilities bt_cap)
 {
-    qDeleteAll(m_settings);
-    m_settings.clear();
+    clearSettings();
 
     switch (m_type) {
         case Cdma:
@@ -220,8 +230,7 @@ void Connection::init(NMBluetoothCapabilities bt_cap)
 
 void Connection::init(Connection *con)
 {
-    qDeleteAll(m_settings);
-    m_settings.clear();
+    clearSettings();
 
     switch (m_type) {
         case Cdma:
@@ -333,6 +342,11 @@ bool Connection::autoConnect() const
     return m_autoConnect;
 }
 
+QString Connection::zone() const
+{
+    return m_zone;
+}
+
 bool Connection::isShared() const
 {
     Ipv4Setting * ipv4 = static_cast<Ipv4Setting *>(setting(Setting::Ipv4));
@@ -388,6 +402,11 @@ void Connection::setTimestamp(const QDateTime & timestamp)
 void Connection::setAutoConnect(bool autoConnect)
 {
     m_autoConnect = autoConnect;
+}
+
+void Connection::setZone(const QString & zone)
+{
+    m_zone = zone;
 }
 
 void Connection::updateTimestamp()

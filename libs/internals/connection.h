@@ -62,6 +62,7 @@ public:
     QUuid uuid() const;
     Connection::Type type() const;
     bool autoConnect() const;
+    QString zone() const;
     bool isShared() const;
     QDateTime timestamp() const;
     QHash<QString,QString> permissions() const;
@@ -85,6 +86,7 @@ public:
     void setIconName(const QString &);
     void setUuid(const QUuid &);
     void setAutoConnect(bool);
+    void setZone(const QString &);
     void setTimestamp(const QDateTime&);
 
     /**
@@ -132,12 +134,14 @@ private:
      * Setting of this type.
      */
     void addSetting(Setting*);
+    void clearSettings();
 
     QString m_name;
     QString m_iconName;
     QUuid m_uuid;
     Connection::Type m_type;
     bool m_autoConnect;
+    QString m_zone;
     QDateTime m_timestamp;
     QString m_origin;
     QList<Setting*> m_settings;

@@ -102,8 +102,7 @@ NetworkManagerApplet::NetworkManagerApplet(QObject * parent, const QVariantList 
     m_meterFgSvg = new Plasma::FrameSvg(this);
     m_meterFgSvg->setImagePath("widgets/bar_meter_horizontal");
     m_meterFgSvg->setElementPrefix("bar-active");
-    setStatus(Plasma::ActiveStatus);
-    m_interfaces = Solid::Control::NetworkManagerNm09::networkInterfaces();
+    updateInterfaceList();
     if (!m_interfaces.isEmpty()) {
         qSort(m_interfaces.begin(), m_interfaces.end(), networkInterfaceLessThan);
         setActiveInterface(m_interfaces.first());
@@ -367,6 +366,8 @@ void NetworkManagerApplet::createConfigurationInterface(KConfigDialog *parent)
     parent->addPage(m_kcmNMTray, m_kcmNMTray->moduleInfo().moduleName(),
                     m_kcmNMTray->moduleInfo().icon());
 
+    parent->resize(800, 600);
+
     connect(parent, SIGNAL(applyClicked()), this, SLOT(saveConfiguration()));
     connect(parent, SIGNAL(okClicked()), this, SLOT(saveConfiguration()));
 }
@@ -414,7 +415,6 @@ void NetworkManagerApplet::paintInterface(QPainter * p, const QStyleOptionGraphi
     if (!m_panelContainment) {
         /* To make applet's size matches the popup's size. The applet is the tray icon, which is 16x16 pixels size by default.*/
         adjustSize();
-        return;
     }
 
     QString el = svgElement(m_activeSystrayInterface);
@@ -552,7 +552,7 @@ void NetworkManagerApplet::networkInterfaceAdded(const QString & uni)
 {
     Q_UNUSED(uni);
     // update the tray icon
-    m_interfaces = Solid::Control::NetworkManagerNm09::networkInterfaces();
+    updateInterfaceList();
 
     if (!m_activeInterface) {
         if (m_interfaces.isEmpty()) {
@@ -570,7 +570,7 @@ void NetworkManagerApplet::networkInterfaceAdded(const QString & uni)
 void NetworkManagerApplet::networkInterfaceRemoved(const QString & uni)
 {
     // update the tray icon
-    m_interfaces = Solid::Control::NetworkManagerNm09::networkInterfaces();
+    updateInterfaceList();
 
     if (uni == m_lastActiveInterfaceUni) {
         if (m_interfaces.isEmpty()) {
@@ -682,7 +682,8 @@ void NetworkManagerApplet::toolTipAboutToShow()
         QString icon = "networkmanager";
         QStringList lines;
         foreach (Solid::Control::NetworkInterfaceNm09 *iface, interfaces) {
-            if (iface->connectionState() != Solid::Control::NetworkInterfaceNm09::Unavailable) {
+            if (iface->connectionState() != Solid::Control::NetworkInterfaceNm09::Unavailable &&
+                iface->connectionState() != Solid::Control::NetworkInterfaceNm09::Unmanaged) {
                 if (!lines.isEmpty()) {
                     lines << QString();
                 }
@@ -933,7 +934,7 @@ void NetworkManagerApplet::userWirelessEnabledChanged(bool enabled)
 void NetworkManagerApplet::managerStatusChanged(Solid::Networking::Status status)
 {
     //kDebug() << "managerstatuschanged";
-    m_interfaces = Solid::Control::NetworkManagerNm09::networkInterfaces();
+    updateInterfaceList();
     if (status == Solid::Networking::Unknown) {
         setActiveInterface(0);
         setActiveSystrayInterface(0);
@@ -1012,7 +1013,10 @@ void NetworkManagerApplet::activatableAdded(RemoteActivatable *activatable)
     if (activatable->activatableType() == Knm::Activatable::VpnInterfaceConnection) {
         connect(ic, SIGNAL(activationStateChanged(Knm::InterfaceConnection::ActivationState,Knm::InterfaceConnection::ActivationState)),
                 this, SLOT(vpnActivationStateChanged(Knm::InterfaceConnection::ActivationState,Knm::InterfaceConnection::ActivationState)));
-        QMetaObject::invokeMethod(ic, "activationStateChanged", Q_ARG(Knm::InterfaceConnection::ActivationState, ic->oldActivationState()), Q_ARG(Knm::InterfaceConnection::ActivationState, ic->activationState()));
+	Knm::InterfaceConnection::ActivationState state = ic->activationState();
+	if (state != Knm::InterfaceConnection::Unknown) {
+            QMetaObject::invokeMethod(ic, "activationStateChanged", Q_ARG(Knm::InterfaceConnection::ActivationState, ic->oldActivationState()), Q_ARG(Knm::InterfaceConnection::ActivationState, state));
+	}
     } else if (ic) {
         connect(ic, SIGNAL(hasDefaultRouteChanged(bool)), SLOT(updateActiveInterface(bool)));
         QMetaObject::invokeMethod(ic, "hasDefaultRouteChanged", Q_ARG(bool, ic->hasDefaultRoute()));
@@ -1109,6 +1113,12 @@ void NetworkManagerApplet::setActiveSystrayInterface(Solid::Control::NetworkInte
     if (m_activeSystrayInterface) {
         m_lastActiveSystrayInterfaceUni = m_activeSystrayInterface->uni();
     }
+}
+
+void NetworkManagerApplet::updateInterfaceList()
+{
+    m_interfaces = Solid::Control::NetworkManagerNm09::networkInterfaces();
+    setStatus(m_interfaces.isEmpty() ? Plasma::PassiveStatus : Plasma::ActiveStatus);
 }
 
 #include "networkmanager.moc"

@@ -1,0 +1,5094 @@
+# translation of libknetworkmanager.po to Français
+# translation of libknetworkmanager.po to
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Joëlle Cornavin <jcorn@free.fr>, 2009, 2010, 2011, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libknetworkmanager\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2012-12-06 08:25+0100\n"
+"PO-Revision-Date: 2012-08-07 23:46+0200\n"
+"Last-Translator: Joëlle Cornavin <jcorn@free.fr>\n"
+"Language-Team: French <kde-francophone@kde.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Joëlle Cornavin"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "jcorn@free.fr"
+
+#. i18n: ectx: label, entry (Connections), group (General)
+#: libs/internals/knmserviceprefs.kcfg:11
+msgid "Connections"
+msgstr "Connexions"
+
+#. i18n: ectx: label, entry (SecretStorageMode), group (General)
+#: libs/internals/knmserviceprefs.kcfg:15
+msgid "Store secrets in wallet"
+msgstr "Mémoriser les secrets dans le portefeuille"
+
+#. i18n: ectx: label, entry (securityType), group (802-11-wireless-security)
+#: libs/internals/schemas/802-11-wireless-security.kcfg:19
+msgid "Security type"
+msgstr "Type de sécurité"
+
+#. i18n: ectx: label, entry (keymgmt), group (802-11-wireless-security)
+#: libs/internals/schemas/802-11-wireless-security.kcfg:23
+msgid "Key management"
+msgstr "Gestion des clés"
+
+#. i18n: ectx: label, entry (weptxkeyindex), group (802-11-wireless-security)
+#: libs/internals/schemas/802-11-wireless-security.kcfg:36
+msgid "WEP TX key index"
+msgstr "Index de clé WEP TX"
+
+#. i18n: ectx: label, entry (authalg), group (802-11-wireless-security)
+#: libs/internals/schemas/802-11-wireless-security.kcfg:40
+msgid "Authentication algorithm"
+msgstr "Algorithme d'authentification"
+
+#. i18n: ectx: label, entry (proto), group (802-11-wireless-security)
+#: libs/internals/schemas/802-11-wireless-security.kcfg:50
+msgid "Protocols"
+msgstr "Protocoles"
+
+#. i18n: ectx: label, entry (pairwise), group (802-11-wireless-security)
+#: libs/internals/schemas/802-11-wireless-security.kcfg:54
+msgid "Pairwise"
+msgstr "Par paire"
+
+#. i18n: ectx: label, entry (group), group (802-11-wireless-security)
+#: libs/internals/schemas/802-11-wireless-security.kcfg:58
+msgid "Group"
+msgstr "Groupe"
+
+#. i18n: ectx: label, entry (leapusername), group (802-11-wireless-security)
+#: libs/internals/schemas/802-11-wireless-security.kcfg:62
+msgid "LEAP Username"
+msgstr "Nom d'utilisateur LEAP"
+
+#. i18n: ectx: label, entry (wepkey0), group (802-11-wireless-security)
+#: libs/internals/schemas/802-11-wireless-security.kcfg:66
+msgid "WEP key 0"
+msgstr "Clé WEP 0"
+
+#. i18n: ectx: label, entry (wepkey1), group (802-11-wireless-security)
+#: libs/internals/schemas/802-11-wireless-security.kcfg:70
+msgid "WEP key 1"
+msgstr "Clé WEP 1"
+
+#. i18n: ectx: label, entry (wepkey2), group (802-11-wireless-security)
+#: libs/internals/schemas/802-11-wireless-security.kcfg:74
+msgid "WEP key 2"
+msgstr "Clé WEP 2"
+
+#. i18n: ectx: label, entry (wepkey3), group (802-11-wireless-security)
+#: libs/internals/schemas/802-11-wireless-security.kcfg:78
+msgid "WEP key 3"
+msgstr "Clé WEP 3"
+
+#. i18n: ectx: label, entry (psk), group (802-11-wireless-security)
+#. i18n: ectx: label, entry (psk), group (802-1x)
+#: libs/internals/schemas/802-11-wireless-security.kcfg:82
+#: libs/internals/schemas/802-1x.kcfg:134
+msgid "PSK"
+msgstr "PSK"
+
+#. i18n: ectx: label, entry (leappassword), group (802-11-wireless-security)
+#: libs/internals/schemas/802-11-wireless-security.kcfg:86
+msgid "LEAP Password"
+msgstr "Mot de passe LEAP"
+
+#. i18n: ectx: label, entry (weppassphrase), group (802-11-wireless-security)
+#: libs/internals/schemas/802-11-wireless-security.kcfg:90
+msgid "WEP Passphrase"
+msgstr "Phrase de passe LEAP"
+
+#. i18n: ectx: label, entry (ssid), group (802-11-wireless)
+#: libs/internals/schemas/802-11-wireless.kcfg:9
+msgid "SSID"
+msgstr "SSID"
+
+#. i18n: ectx: whatsthis, entry (ssid), group (802-11-wireless)
+#: libs/internals/schemas/802-11-wireless.kcfg:10
+msgid "Service Set IDentifier (network name) "
+msgstr "Identifiant de l'ensemble de services (nom du réseau) "
+
+#. i18n: ectx: label, entry (mode), group (802-11-wireless)
+#: libs/internals/schemas/802-11-wireless.kcfg:18
+msgid "Mode"
+msgstr "Mode"
+
+#. i18n: ectx: label, entry (band), group (802-11-wireless)
+#. i18n: ectx: label, entry (band), group (gsm)
+#: libs/internals/schemas/802-11-wireless.kcfg:27
+#: libs/internals/schemas/gsm.kcfg:34
+msgid "Band"
+msgstr "Bande"
+
+#. i18n: ectx: property (toolTip), widget (Wireless80211WidgetBand, channel)
+#. i18n: ectx: label, entry (channel), group (802-11-wireless)
+#: libs/internals/schemas/802-11-wireless.kcfg:31
+#: libs/ui/802-11-wireless.ui:141
+msgid "Channel"
+msgstr "Canal"
+
+# unreviewed-context
+#. i18n: ectx: label, entry (bssid), group (802-11-wireless)
+#: libs/internals/schemas/802-11-wireless.kcfg:35
+msgid "BSSID"
+msgstr "BSSID"
+
+#. i18n: ectx: whatsthis, entry (bssid), group (802-11-wireless)
+#: libs/internals/schemas/802-11-wireless.kcfg:36
+msgid "Basic Service Set IDentifier of the access point to use"
+msgstr ""
+"Identifiant de l'ensemble de services de base du point d'accès à utiliser"
+
+#. i18n: ectx: label, entry (rate), group (802-11-wireless)
+#: libs/internals/schemas/802-11-wireless.kcfg:39
+msgid "Data rate"
+msgstr "Débit de données"
+
+#. i18n: ectx: label, entry (txpower), group (802-11-wireless)
+#: libs/internals/schemas/802-11-wireless.kcfg:43
+msgid "Transmit power"
+msgstr "Puissance de transmission"
+
+#. i18n: ectx: label, entry (macaddress), group (802-11-wireless)
+#. i18n: ectx: label, entry (macaddress), group (802-3-ethernet)
+#: libs/internals/schemas/802-11-wireless.kcfg:47
+#: libs/internals/schemas/802-3-ethernet.kcfg:38
+msgid "MAC Address"
+msgstr "Adresse MAC"
+
+#. i18n: ectx: whatsthis, entry (macaddress), group (802-11-wireless)
+#: libs/internals/schemas/802-11-wireless.kcfg:48
+msgid "Hardware address to set on the wireless network interface"
+msgstr "Adresse matérielle à définir sur l'interface réseau sans fil"
+
+#. i18n: ectx: label, entry (mtu), group (802-11-wireless)
+#. i18n: ectx: label, entry (mtu), group (802-3-ethernet)
+#. i18n: ectx: label, entry (mtu), group (ppp)
+#: libs/internals/schemas/802-11-wireless.kcfg:51
+#: libs/internals/schemas/802-3-ethernet.kcfg:42
+#: libs/internals/schemas/ppp.kcfg:69
+msgid "MTU"
+msgstr "MTU"
+
+#. i18n: ectx: whatsthis, entry (mtu), group (802-11-wireless)
+#: libs/internals/schemas/802-11-wireless.kcfg:53
+msgid "Maximum Transmit Unit"
+msgstr "Unité de transmission maximale"
+
+#. i18n: ectx: label, entry (seenbssids), group (802-11-wireless)
+#: libs/internals/schemas/802-11-wireless.kcfg:57
+msgid "Seen BSSIDs"
+msgstr "BSSID vus"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#. i18n: ectx: property (text), widget (QCheckBox, eap)
+#. i18n: ectx: label, entry (eap), group (802-1x)
+#: libs/internals/schemas/802-1x.kcfg:9 libs/ui/ppp.ui:69
+#: vpnplugins/pptp/pptpadvanced.ui:68
+#: vpnplugins/strongswan/strongswanprop.ui:86
+msgid "EAP"
+msgstr "EAP"
+
+#. i18n: ectx: label, entry (identity), group (802-1x)
+#: libs/internals/schemas/802-1x.kcfg:13
+msgid "Identity"
+msgstr "Identité"
+
+#. i18n: ectx: label, entry (anonymousidentity), group (802-1x)
+#: libs/internals/schemas/802-1x.kcfg:17
+msgid "Anonymous identity"
+msgstr "Identité anonyme"
+
+#. i18n: ectx: label, entry (cacert), group (802-1x)
+#: libs/internals/schemas/802-1x.kcfg:21
+msgid "CA Cert"
+msgstr "Cert. d'AC"
+
+#. i18n: ectx: label, entry (capath), group (802-1x)
+#: libs/internals/schemas/802-1x.kcfg:25
+msgid "CA Path"
+msgstr "Emplacement d'AC"
+
+#. i18n: ectx: label, entry (clientcert), group (802-1x)
+#: libs/internals/schemas/802-1x.kcfg:29
+msgid "Client Cert"
+msgstr "Cert. de client"
+
+#. i18n: ectx: label, entry (clientcertpath), group (802-1x)
+#: libs/internals/schemas/802-1x.kcfg:33
+msgid "Client Cert Path"
+msgstr "Emplacement du cert. de client"
+
+#. i18n: ectx: label, entry (phase1peapver), group (802-1x)
+#: libs/internals/schemas/802-1x.kcfg:37
+msgid "Phase 1 PEAP version"
+msgstr "Version de PEAP - phase 1"
+
+#. i18n: ectx: label, entry (phase1peaplabel), group (802-1x)
+#: libs/internals/schemas/802-1x.kcfg:46
+msgid "Phase 1 PEAP label"
+msgstr "Étiquette PEAP - phase 1"
+
+#. i18n: ectx: label, entry (phase1fastprovisioning), group (802-1x)
+#: libs/internals/schemas/802-1x.kcfg:55
+msgid "Phase 1 fast provisioning"
+msgstr "Mise à disposition rapide - phase 1"
+
+#. i18n: ectx: label, entry (phase2auth), group (802-1x)
+#: libs/internals/schemas/802-1x.kcfg:59
+msgid "Phase 2 auth"
+msgstr "auth - phase 2"
+
+#. i18n: ectx: label, entry (phase2autheap), group (802-1x)
+#: libs/internals/schemas/802-1x.kcfg:73
+msgid "Phase 2 auth eap"
+msgstr "Auth EAP - phase 2"
+
+#. i18n: ectx: label, entry (phase2cacert), group (802-1x)
+#: libs/internals/schemas/802-1x.kcfg:86
+msgid "Phase 2 CA Cert"
+msgstr "Cert. d'AC - phase 2"
+
+#. i18n: ectx: label, entry (phase2capath), group (802-1x)
+#: libs/internals/schemas/802-1x.kcfg:90
+msgid "Phase 2 CA Path"
+msgstr "Emplacement d'AC - phase 2"
+
+#. i18n: ectx: label, entry (phase2clientcert), group (802-1x)
+#: libs/internals/schemas/802-1x.kcfg:94
+msgid "Phase 2 client cert"
+msgstr "Cert. de client - phase 2"
+
+#. i18n: ectx: label, entry (phase2clientcertpath), group (802-1x)
+#: libs/internals/schemas/802-1x.kcfg:98
+msgid "Phase 2 client cert path"
+msgstr "Emplacement du cert. de client - phase 2"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: label, entry (password), group (802-1x)
+#. i18n: ectx: label, entry (password), group (cdma)
+#. i18n: ectx: label, entry (password), group (gsm)
+#. i18n: ectx: label, entry (password), group (pppoe)
+#: libs/internals/schemas/802-1x.kcfg:102 libs/internals/schemas/cdma.kcfg:17
+#: libs/internals/schemas/gsm.kcfg:18 libs/internals/schemas/pppoe.kcfg:17
+#: vpnplugins/openvpn/openvpnprop.ui:84 vpnplugins/openvpn/openvpnprop.ui:498
+msgid "Password"
+msgstr "Mot de passe"
+
+#. i18n: ectx: label, entry (privatekey), group (802-1x)
+#: libs/internals/schemas/802-1x.kcfg:106
+msgid "Private key"
+msgstr "Clé privée"
+
+#. i18n: ectx: label, entry (privatekeypath), group (802-1x)
+#: libs/internals/schemas/802-1x.kcfg:110
+msgid "Private key Path"
+msgstr "Emplacement de la clé privée"
+
+#. i18n: ectx: label, entry (privatekeypassword), group (802-1x)
+#: libs/internals/schemas/802-1x.kcfg:114
+msgid "Private key password"
+msgstr "Mot de passe de la clé privée"
+
+#. i18n: ectx: label, entry (phase2privatekey), group (802-1x)
+#: libs/internals/schemas/802-1x.kcfg:118
+msgid "Phase 2 private key"
+msgstr "Clé privée - phase 2"
+
+#. i18n: ectx: label, entry (phase2privatekeypath), group (802-1x)
+#: libs/internals/schemas/802-1x.kcfg:122
+msgid "Phase 2 Private key Path"
+msgstr "Emplacement de la clé privée - phase 2"
+
+#. i18n: ectx: label, entry (phase2privatekeypassword), group (802-1x)
+#: libs/internals/schemas/802-1x.kcfg:126
+msgid "Phase 2 private key password"
+msgstr "Mot de passe de la clé privée - phase 2"
+
+#. i18n: ectx: label, entry (pin), group (802-1x)
+#. i18n: ectx: label, entry (pin), group (gsm)
+#: libs/internals/schemas/802-1x.kcfg:130 libs/internals/schemas/gsm.kcfg:38
+msgid "PIN"
+msgstr "PIN"
+
+#. i18n: ectx: label, entry (UseSystemCaCerts), group (802-1x)
+#: libs/internals/schemas/802-1x.kcfg:138
+msgid "Use System CA Certs"
+msgstr "Utiliser les cert. d'AC système"
+
+#. i18n: ectx: label, entry (enabled), group (802-1x)
+#: libs/internals/schemas/802-1x.kcfg:142
+msgid "Connection uses 802.1x"
+msgstr "La connexion utilise 802.1x"
+
+#. i18n: ectx: label, entry (port), group (802-3-ethernet)
+#: libs/internals/schemas/802-3-ethernet.kcfg:9
+msgid "Port"
+msgstr "Port"
+
+#. i18n: ectx: property (text), widget (QLabel, labelSpeed)
+#. i18n: ectx: label, entry (speed), group (802-3-ethernet)
+#: libs/internals/schemas/802-3-ethernet.kcfg:19 libs/ui/wired.ui:104
+msgid "Speed"
+msgstr "Vitesse"
+
+#. i18n: ectx: property (text), widget (QLabel, labelDuplex)
+#. i18n: ectx: label, entry (duplex), group (802-3-ethernet)
+#: libs/internals/schemas/802-3-ethernet.kcfg:23 libs/ui/wired.ui:133
+msgid "Duplex"
+msgstr "Duplex"
+
+#. i18n: ectx: whatsthis, entry (duplex), group (802-3-ethernet)
+#: libs/internals/schemas/802-3-ethernet.kcfg:24
+msgid "Whether the Ethernet interface should use duplex communications"
+msgstr ""
+"Décider s'il faut ou non que l'interface Ethernet utiliser des "
+"communications duplex"
+
+#. i18n: ectx: label, entry (autonegotiate), group (802-3-ethernet)
+#: libs/internals/schemas/802-3-ethernet.kcfg:32
+msgid "Auto negotiate"
+msgstr "Négociation automatique"
+
+#. i18n: ectx: whatsthis, entry (mtu), group (802-3-ethernet)
+#: libs/internals/schemas/802-3-ethernet.kcfg:44
+msgid "Maximum Transfer Unit to use"
+msgstr "Unité de transmission maximale à utiliser"
+
+#. i18n: ectx: label, entry (networkname), group (bluetooth)
+#: libs/internals/schemas/bluetooth.kcfg:9
+msgid "Network Name"
+msgstr "Nom du réseau"
+
+#. i18n: ectx: label, entry (bdaddr), group (bluetooth)
+#: libs/internals/schemas/bluetooth.kcfg:14
+msgid "Bdaddr"
+msgstr "Bdaddr (adresse du périphérique Bluetooth)"
+
+#. i18n: ectx: label, entry (networktype), group (bluetooth)
+#. i18n: ectx: label, entry (networktype), group (gsm)
+#: libs/internals/schemas/bluetooth.kcfg:19 libs/internals/schemas/gsm.kcfg:30
+msgid "Network Type"
+msgstr "Type de réseau"
+
+#. i18n: ectx: label, entry (number), group (cdma)
+#. i18n: ectx: label, entry (number), group (gsm)
+#: libs/internals/schemas/cdma.kcfg:9 libs/internals/schemas/gsm.kcfg:9
+msgid "Number"
+msgstr "Numéro"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel9_2)
+#. i18n: ectx: label, entry (UserName), group (vpn)
+#. i18n: ectx: label, entry (username), group (cdma)
+#. i18n: ectx: label, entry (username), group (gsm)
+#. i18n: ectx: label, entry (username), group (pppoe)
+#: libs/internals/schemas/cdma.kcfg:13 libs/internals/schemas/gsm.kcfg:14
+#: libs/internals/schemas/pppoe.kcfg:13 libs/internals/schemas/vpn.kcfg:17
+#: vpnplugins/openvpn/openvpnprop.ui:482
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+#. i18n: ectx: label, entry (id), group (connection)
+#: libs/internals/schemas/connection.kcfg:9
+msgid "Identifier"
+msgstr "Identifiant"
+
+#. i18n: ectx: whatsthis, entry (id), group (connection)
+#: libs/internals/schemas/connection.kcfg:10
+msgid "A name that uniquely identifies a connection"
+msgstr "Un nom qui identifie de façon unique une connexion"
+
+#. i18n: ectx: label, entry (type), group (connection)
+#: libs/internals/schemas/connection.kcfg:13
+msgid "Type"
+msgstr "Type"
+
+#. i18n: ectx: whatsthis, entry (type), group (connection)
+#: libs/internals/schemas/connection.kcfg:14
+msgid ""
+"Specifies the connection type, defines which devices it can activate and "
+"which other settings the connection should contain"
+msgstr ""
+"Spécifie le type de connexion, définit les périphériques qu'elle peut "
+"activer et les autres paramètres que la connexion devra contenir"
+
+#. i18n: ectx: label, entry (autoconnect), group (connection)
+#: libs/internals/schemas/connection.kcfg:17
+msgid "Connect automatically"
+msgstr "Connecter automatiquement"
+
+#. i18n: ectx: whatsthis, entry (autoconnect), group (connection)
+#: libs/internals/schemas/connection.kcfg:18
+msgid "Should the networking system always try to activate this connection?"
+msgstr ""
+"Le système de gestion de réseau devra-t-il toujours essayer d'activer cette "
+"connexion ?"
+
+#. i18n: ectx: label, entry (timestamp), group (connection)
+#: libs/internals/schemas/connection.kcfg:21
+msgid "Last used"
+msgstr "La dernière utilisée"
+
+#. i18n: ectx: whatsthis, entry (timestamp), group (connection)
+#: libs/internals/schemas/connection.kcfg:22
+msgid "The date and time that the connection was last activated"
+msgstr "La date et l'heure où la connexion a été activée la dernière fois"
+
+#. i18n: ectx: label, entry (uuid), group (connection)
+#: libs/internals/schemas/connection.kcfg:25
+msgid "UUID"
+msgstr "UUID"
+
+#. i18n: ectx: whatsthis, entry (uuid), group (connection)
+#: libs/internals/schemas/connection.kcfg:26
+msgid "Unique connection identifier"
+msgstr "Identifiant unique de connexion"
+
+#. i18n: ectx: label, entry (apn), group (gsm)
+#: libs/internals/schemas/gsm.kcfg:22
+msgid "APN"
+msgstr "APN"
+
+#. i18n: ectx: label, entry (networkid), group (gsm)
+#: libs/internals/schemas/gsm.kcfg:26
+msgid "Network ID"
+msgstr "ID de réseau"
+
+#. i18n: ectx: label, entry (puk), group (gsm)
+#: libs/internals/schemas/gsm.kcfg:42
+msgid "PUK"
+msgstr "PUK"
+
+#. i18n: ectx: label, entry (method), group (ipv4)
+#: libs/internals/schemas/ipv4.kcfg:9 libs/internals/schemas/ipv6.kcfg:9
+msgid "Method"
+msgstr "Méthode"
+
+#. i18n: ectx: whatsthis, entry (method), group (ipv4)
+#: libs/internals/schemas/ipv4.kcfg:10 libs/internals/schemas/ipv6.kcfg:10
+msgid "Choose the way to set the IP address of this connection"
+msgstr "Choisissez la manière de définir l'adresse IP de cette connexion"
+
+#. i18n: ectx: label, entry (dns), group (ipv4)
+#: libs/internals/schemas/ipv4.kcfg:21 libs/internals/schemas/ipv6.kcfg:22
+#: libs/ui/ipv4widget.cpp:479 libs/ui/ipv6widget.cpp:419
+msgid "DNS Servers"
+msgstr "Serveurs DNS"
+
+#. i18n: ectx: whatsthis, entry (dns), group (ipv4)
+#: libs/internals/schemas/ipv4.kcfg:22 libs/internals/schemas/ipv6.kcfg:23
+msgid "List of Domain Name System servers to use"
+msgstr "Liste des serveurs de noms de domaines à utiliser"
+
+#. i18n: ectx: label, entry (dnssearch), group (ipv4)
+#: libs/internals/schemas/ipv4.kcfg:25 libs/internals/schemas/ipv6.kcfg:26
+msgid "Search Domains"
+msgstr "Domaines de recherche"
+
+#. i18n: ectx: whatsthis, entry (dnssearch), group (ipv4)
+#: libs/internals/schemas/ipv4.kcfg:26 libs/internals/schemas/ipv6.kcfg:27
+msgid "List of domains to search for a hostname"
+msgstr "Liste de domaines dans lesquels chercher un nom d'hôte"
+
+#. i18n: ectx: label, entry (addresses), group (ipv4)
+#: libs/internals/schemas/ipv4.kcfg:30 libs/internals/schemas/ipv6.kcfg:31
+msgid "IP Addresses"
+msgstr "Adresses IP"
+
+#. i18n: ectx: whatsthis, entry (addresses), group (ipv4)
+#: libs/internals/schemas/ipv4.kcfg:31 libs/internals/schemas/ipv6.kcfg:32
+msgid "List of IP addresses to configure on this connection"
+msgstr "Liste d'adresses IP à configurer sur cette connexion"
+
+#. i18n: ectx: label, entry (ignoredhcpdns), group (ipv4)
+#: libs/internals/schemas/ipv4.kcfg:34 libs/internals/schemas/ipv6.kcfg:35
+msgid "Ignore DHCP DNS"
+msgstr "Ignorer les DNS DHCP"
+
+#. i18n: ectx: whatsthis, entry (ignoredhcpdns), group (ipv4)
+#: libs/internals/schemas/ipv4.kcfg:35 libs/internals/schemas/ipv6.kcfg:36
+msgid ""
+"Ignore DNS servers returned by DHCP and use the configured servers instead"
+msgstr ""
+"Ignorer les serveurs DNS retournés par DHCP et utiliser les serveurs "
+"configurés à la place"
+
+#. i18n: ectx: label, entry (ignoreautoroute), group (ipv4)
+#: libs/internals/schemas/ipv4.kcfg:38 libs/internals/schemas/ipv6.kcfg:39
+msgid "Ignore Automatic Routes"
+msgstr "Ignorer les routes automatiques"
+
+#. i18n: ectx: whatsthis, entry (ignoreautoroute), group (ipv4)
+#: libs/internals/schemas/ipv4.kcfg:39 libs/internals/schemas/ipv6.kcfg:40
+msgid ""
+"Ignore routes returned by automatic configuration mechanisms and use the "
+"manually configured routes instead"
+msgstr ""
+"Ignorer les routes retournées par les mécanismes de configuration "
+"automatique et utiliser les routes configurées manuellement à la place"
+
+#. i18n: ectx: label, entry (neverdefault), group (ipv4)
+#: libs/internals/schemas/ipv4.kcfg:42 libs/internals/schemas/ipv6.kcfg:43
+msgid "Never Default Route"
+msgstr "Jamais de route par défaut"
+
+#. i18n: ectx: whatsthis, entry (neverdefault), group (ipv4)
+#: libs/internals/schemas/ipv4.kcfg:43 libs/internals/schemas/ipv6.kcfg:44
+msgid "Never assign the default route to this connection"
+msgstr "Ne jamais affecter la route par défaut à cette connexion"
+
+#. i18n: ectx: label, entry (dhcpclientid), group (ipv4)
+#: libs/internals/schemas/ipv4.kcfg:46
+msgid "DHCP Client ID"
+msgstr "Identifiant de client DHCP"
+
+#. i18n: ectx: label, entry (dhcpsendhostname), group (ipv4)
+#: libs/internals/schemas/ipv4.kcfg:50
+msgid "Send hostname to DHCP server"
+msgstr "Envoyer le nom d'hôte au serveur DHCP"
+
+#. i18n: ectx: label, entry (dhcphostname), group (ipv4)
+#: libs/internals/schemas/ipv4.kcfg:54
+msgid "DHCP hostname"
+msgstr "Nom d'hôte DHCP"
+
+#. i18n: ectx: label, entry (mayfail), group (ipv4)
+#: libs/internals/schemas/ipv4.kcfg:57 libs/internals/schemas/ipv6.kcfg:47
+msgid "Required for this connection"
+msgstr "Requis pour cette connexion"
+
+#. i18n: ectx: label, entry (noauth), group (ppp)
+#: libs/internals/schemas/ppp.kcfg:9
+msgid "No Auth"
+msgstr "Pas d'auth"
+
+#. i18n: ectx: label, entry (refuseeap), group (ppp)
+#: libs/internals/schemas/ppp.kcfg:13
+msgid "Refuse EAP"
+msgstr "Refuser EAP"
+
+#. i18n: ectx: label, entry (refusepap), group (ppp)
+#: libs/internals/schemas/ppp.kcfg:17
+msgid "Refuse PAP"
+msgstr "Refuser PAP"
+
+#. i18n: ectx: label, entry (refusechap), group (ppp)
+#: libs/internals/schemas/ppp.kcfg:21
+msgid "Refuse CHAP"
+msgstr "Refuser CHAP"
+
+#. i18n: ectx: label, entry (refusemschap), group (ppp)
+#: libs/internals/schemas/ppp.kcfg:25
+msgid "Refuse MS CHAP"
+msgstr "Refuser MS CHAP"
+
+#. i18n: ectx: label, entry (refusemschapv2), group (ppp)
+#: libs/internals/schemas/ppp.kcfg:29
+msgid "Refuse MS CHAP V2"
+msgstr "Refuser MS CHAP V2"
+
+#. i18n: ectx: label, entry (nobsdcomp), group (ppp)
+#: libs/internals/schemas/ppp.kcfg:33
+msgid "No BSD comp."
+msgstr "Pas de comp. BSD"
+
+#. i18n: ectx: label, entry (nodeflate), group (ppp)
+#: libs/internals/schemas/ppp.kcfg:37
+msgid "No deflate"
+msgstr "Pas de comp. Deflate"
+
+#. i18n: ectx: label, entry (novjcomp), group (ppp)
+#: libs/internals/schemas/ppp.kcfg:41
+msgid "No VJ comp."
+msgstr "Pas de comp. VJ"
+
+#. i18n: ectx: label, entry (requiremppe), group (ppp)
+#: libs/internals/schemas/ppp.kcfg:45
+msgid "Require MPPE"
+msgstr "Exiger MPPE"
+
+#. i18n: ectx: label, entry (requiremppe128), group (ppp)
+#: libs/internals/schemas/ppp.kcfg:49
+msgid "Require MPPE 128"
+msgstr "Exiger MPPE 128"
+
+#. i18n: ectx: label, entry (mppestateful), group (ppp)
+#: libs/internals/schemas/ppp.kcfg:53
+msgid "MPPE Stateful"
+msgstr "MPPE à états"
+
+#. i18n: ectx: label, entry (crtscts), group (ppp)
+#: libs/internals/schemas/ppp.kcfg:57
+msgid "CRTSCTS"
+msgstr "CRTSCTS"
+
+#. i18n: ectx: label, entry (baud), group (serial)
+#. i18n: ectx: label, entry (baud), group (ppp)
+#: libs/internals/schemas/ppp.kcfg:61 libs/internals/schemas/serial.kcfg:9
+msgid "Baud"
+msgstr "Baud"
+
+#. i18n: ectx: label, entry (mru), group (ppp)
+#: libs/internals/schemas/ppp.kcfg:65
+msgid "MRU"
+msgstr "MRU"
+
+#. i18n: ectx: label, entry (lcpechofailure), group (ppp)
+#: libs/internals/schemas/ppp.kcfg:73
+msgid "LCP echo Failure"
+msgstr "Échec de la requête écho LCP"
+
+#. i18n: ectx: label, entry (lcpechointerval), group (ppp)
+#: libs/internals/schemas/ppp.kcfg:77
+msgid "LCP echo interval"
+msgstr "Intervalle d'écho LCP"
+
+#. i18n: ectx: label, entry (service), group (pppoe)
+#: libs/internals/schemas/pppoe.kcfg:9
+msgid "Service"
+msgstr "Service"
+
+#. i18n: ectx: label, entry (bits), group (serial)
+#. i18n: ectx: label, entry (Data), group (vpn)
+#: libs/internals/schemas/serial.kcfg:14 libs/internals/schemas/vpn.kcfg:13
+msgid "Data bits"
+msgstr "Bits de données"
+
+#. i18n: ectx: label, entry (parity), group (serial)
+#: libs/internals/schemas/serial.kcfg:19
+msgid "Parity"
+msgstr "Parité"
+
+#. i18n: ectx: label, entry (stopbits), group (serial)
+#: libs/internals/schemas/serial.kcfg:29
+msgid "Stop bits"
+msgstr "Bits d'arrêt"
+
+#. i18n: ectx: label, entry (senddelay), group (serial)
+#: libs/internals/schemas/serial.kcfg:34
+msgid "Send delay"
+msgstr "Délai d'envoi"
+
+#. i18n: ectx: label, entry (ServiceType), group (vpn)
+#: libs/internals/schemas/vpn.kcfg:9
+msgid "Service Type"
+msgstr "Type de service"
+
+#. i18n: ectx: whatsthis, entry (UserName), group (vpn)
+#: libs/internals/schemas/vpn.kcfg:18
+msgid "System username, not stored"
+msgstr "Nom d'utilisateur système, non mémorisé"
+
+#. i18n: ectx: label, entry (VpnSecrets), group (vpn)
+#: libs/internals/schemas/vpn.kcfg:21
+msgid "Vpnsecrets"
+msgstr "Vpnsecrets"
+
+#. i18n: ectx: label, entry (PluginName), group (vpn)
+#: libs/internals/schemas/vpn.kcfg:25
+msgid "VPN Plugin Name"
+msgstr "Nom du module externe VPN"
+
+#: libs/internals/tooltips.cpp:43
+msgctxt "@info:tooltip"
+msgid "Interface type"
+msgstr "Type d'interface"
+
+#: libs/internals/tooltips.cpp:44
+msgctxt "@info:tooltip"
+msgid "System device name"
+msgstr "Nom du périphérique système"
+
+#: libs/internals/tooltips.cpp:45
+msgctxt "@info:tooltip"
+msgid "System driver name"
+msgstr "Nom du pilote système"
+
+#: libs/internals/tooltips.cpp:46
+msgctxt "@info:tooltip"
+msgid "Network interface status"
+msgstr "État de l'interface réseau"
+
+#: libs/internals/tooltips.cpp:47
+msgctxt "@info:tooltip"
+msgid "Hardware address of a network interface"
+msgstr "Adresse matérielle d'une interface réseau"
+
+#: libs/internals/tooltips.cpp:48
+msgctxt "@info:tooltip"
+msgid "Network interface current bit rate"
+msgstr "Débit binaire actuel de l'interface réseau"
+
+#: libs/internals/tooltips.cpp:49
+msgctxt "@info:tooltip"
+msgid "Maximum speed of the network interface"
+msgstr "Vitesse maximale de l'interface réseau"
+
+#: libs/internals/tooltips.cpp:50
+msgctxt "@info:tooltip"
+msgid "IPv4 network address"
+msgstr "Adresse réseau IPv4"
+
+#: libs/internals/tooltips.cpp:51
+msgctxt "@info:tooltip"
+msgid "Network name servers"
+msgstr "Serveurs de noms de réseau"
+
+#: libs/internals/tooltips.cpp:52
+msgctxt "@info:tooltip"
+msgid "Network domains"
+msgstr "Domaines de réseau"
+
+#: libs/internals/tooltips.cpp:53
+msgctxt "@info:tooltip"
+msgid "Network routes"
+msgstr "Routes de réseau"
+
+#: libs/internals/tooltips.cpp:55
+msgctxt "@info:tooltip"
+msgid "Signal strength of the wifi network"
+msgstr "Force du signal du réseau sans fil"
+
+#: libs/internals/tooltips.cpp:56
+msgctxt "@info:tooltip"
+msgid "Name of the wireless network in use"
+msgstr "Nom du réseau sans fil en cours d'utilisation"
+
+#: libs/internals/tooltips.cpp:57
+msgctxt "@info:tooltip"
+msgid "Operation mode of wireless network"
+msgstr "Mode de fonctionnement du réseau sans fil"
+
+#: libs/internals/tooltips.cpp:58
+msgctxt "@info:tooltip"
+msgid "Hardware address of the active access point"
+msgstr "Adresse matérielle du point d'accès actif"
+
+#: libs/internals/tooltips.cpp:59
+msgctxt "@info:tooltip"
+msgid "The radio channel frequency that the access point is operating on"
+msgstr "La fréquence du canal radio sur lequel opère ce point d'accès"
+
+#: libs/internals/tooltips.cpp:60
+msgctxt "@info:tooltip"
+msgid "Subjective network security level description"
+msgstr "Description subjective du niveau de sécurité du réseau"
+
+#: libs/internals/tooltips.cpp:61
+msgctxt "@info:tooltip"
+msgid ""
+"Flags describing the access point's capabilities according to WPA (Wifi "
+"Protected Access)"
+msgstr ""
+"Drapeaux décrivant les fonctions du point d'accès en fonction du WPA (Wifi "
+"Protected Access)"
+
+#: libs/internals/tooltips.cpp:62
+msgctxt "@info:tooltip"
+msgid ""
+"Flags describing the access point's capabilities according to RSN (Robust "
+"Secure Network)"
+msgstr ""
+"Drapeaux décrivant les fonctions du point d'accès en fonction du RSN (Robust "
+"Secure Network)"
+
+#: libs/internals/tooltips.cpp:65
+msgctxt " interface type"
+msgid "Type"
+msgstr ""
+
+#: libs/internals/tooltips.cpp:66
+msgctxt " network device name eg eth0"
+msgid "Interface"
+msgstr "Interface"
+
+#: libs/internals/tooltips.cpp:67
+msgctxt " system driver name"
+msgid "Driver"
+msgstr "Pilote"
+
+#: libs/internals/tooltips.cpp:68
+msgctxt " network interface status"
+msgid "Status"
+msgstr "État"
+
+#: libs/internals/tooltips.cpp:70
+msgctxt " this is the hardware address of a network interface"
+msgid "Hardware address (Wired)"
+msgstr "Adresse matérielle (filaire)"
+
+#: libs/internals/tooltips.cpp:71
+msgctxt " network connection bit rate"
+msgid "Bit rate"
+msgstr "Débit binaire"
+
+#: libs/internals/tooltips.cpp:73
+msgctxt " The network device's maximum speed"
+msgid "Max speed"
+msgstr "Vitesse max."
+
+#: libs/internals/tooltips.cpp:74
+msgctxt " IPv4 address"
+msgid "IP address"
+msgstr "Adresse IP"
+
+#: libs/internals/tooltips.cpp:75
+msgctxt " network name servers"
+msgid "Name servers"
+msgstr "Serveurs de noms"
+
+#: libs/internals/tooltips.cpp:76
+msgctxt " network domains"
+msgid "Domains"
+msgstr "Domaines"
+
+#: libs/internals/tooltips.cpp:77
+msgctxt " network routes"
+msgid "Routes"
+msgstr "Routes"
+
+#: libs/internals/tooltips.cpp:80
+msgctxt " The signal strength of the wifi network"
+msgid "Strength"
+msgstr "Force"
+
+#: libs/internals/tooltips.cpp:82
+msgctxt " SSID is a friendly name that identifies a 802.11 WLAN."
+msgid "SSID"
+msgstr ""
+
+#: libs/internals/tooltips.cpp:83
+msgctxt " the operation mode of wi-fi network"
+msgid "Mode"
+msgstr ""
+
+#: libs/internals/tooltips.cpp:85
+msgctxt " Active access point MAC address"
+msgid "Access point"
+msgstr "Point d'accès"
+
+#: libs/internals/tooltips.cpp:87
+msgctxt ""
+" the frequency of the radio channel that the access point is operating on"
+msgid "Frequency"
+msgstr "Fréquence"
+
+#: libs/internals/tooltips.cpp:88
+msgctxt " network security level, e.g. high, low"
+msgid "Security"
+msgstr "Sécurité"
+
+#: libs/internals/tooltips.cpp:90
+msgctxt ""
+" Flags describing the access point's capabilities according to WPA (Wifi "
+"Protected Access)"
+msgid "WPA flags"
+msgstr "Drapeaux WPA"
+
+#: libs/internals/tooltips.cpp:92
+msgctxt ""
+"Flags describing the access point's capabilities according to RSN (Robust "
+"Secure Network)"
+msgid "RSN(WPA2) flags"
+msgstr "Drapeaux RSN(WPA2)"
+
+#: libs/internals/uiutils.cpp:51 libs/internals/uiutils.cpp:80
+msgctxt "title of the interface widget in nm's popup"
+msgid "Wired Ethernet"
+msgstr "Ethernet filaire"
+
+#: libs/internals/uiutils.cpp:54
+msgctxt "title of the interface widget in nm's popup"
+msgid "Wireless 802.11"
+msgstr "Sans fil 802.11"
+
+#: libs/internals/uiutils.cpp:57 libs/internals/uiutils.cpp:70
+msgctxt "title of the interface widget in nm's popup"
+msgid "Mobile Broadband"
+msgstr "Haut débit mobile"
+
+#: libs/internals/uiutils.cpp:65
+msgctxt "title of the interface widget in nm's popup"
+msgid "Serial Modem"
+msgstr "Modem série"
+
+#: libs/internals/uiutils.cpp:171
+msgctxt "description of unknown network interface state"
+msgid "Unknown"
+msgstr "Inconnu"
+
+#: libs/internals/uiutils.cpp:174
+msgctxt "description of unmanaged network interface state"
+msgid "Unmanaged"
+msgstr "Non géré"
+
+#: libs/internals/uiutils.cpp:177
+msgctxt "description of unavailable network interface state"
+msgid "Unavailable"
+msgstr "Indisponible"
+
+#: libs/internals/uiutils.cpp:180
+msgctxt "description of unconnected network interface state"
+msgid "Not connected"
+msgstr "Non connecté"
+
+#: libs/internals/uiutils.cpp:183
+msgctxt "description of preparing to connect network interface state"
+msgid "Preparing to connect"
+msgstr "Préparation pour se connecter"
+
+#: libs/internals/uiutils.cpp:186
+msgctxt "description of configuring hardware network interface state"
+msgid "Configuring interface"
+msgstr "Configuration de l'interface"
+
+#: libs/internals/uiutils.cpp:189
+msgctxt "description of waiting for authentication network interface state"
+msgid "Waiting for authorization"
+msgstr "Attente d'autorisation"
+
+#: libs/internals/uiutils.cpp:192
+msgctxt "network interface doing dhcp request in most cases"
+msgid "Setting network address"
+msgstr "Mise en place une adresse réseau"
+
+#: libs/internals/uiutils.cpp:195
+msgctxt "is other action required to fully connect? captive portals, etc."
+msgid "Checking further connectivity"
+msgstr "Vérification d'une connectivité plus complète"
+
+#: libs/internals/uiutils.cpp:198
+msgctxt ""
+"a secondary connection (e.g. VPN) has to be activated first to continue"
+msgid "Waiting for a secondary connection"
+msgstr "En attente d'une connexion secondaire"
+
+#: libs/internals/uiutils.cpp:202
+msgctxt "network interface connected state label"
+msgid "Connected"
+msgstr "Connecté"
+
+#: libs/internals/uiutils.cpp:204
+#, kde-format
+msgctxt "network interface connected state label"
+msgid "Connected to %1"
+msgstr "Connecté à %1"
+
+#: libs/internals/uiutils.cpp:208
+msgctxt "network interface disconnecting state label"
+msgid "Deactivating connection"
+msgstr "Désactivation de la connexion"
+
+#: libs/internals/uiutils.cpp:211
+msgctxt "network interface connection failed state label"
+msgid "Connection Failed"
+msgstr "La connexion a échoué"
+
+#: libs/internals/uiutils.cpp:214
+msgctxt "interface state"
+msgid "Error: Invalid state"
+msgstr "Erreur : état incorrect"
+
+#: libs/internals/uiutils.cpp:278
+#, kde-format
+msgctxt "Format for <Vendor> <Product>"
+msgid "%1 - %2"
+msgstr "%1 - %2"
+
+#: libs/internals/uiutils.cpp:347
+msgctxt "wireless network operation mode"
+msgid "Unassociated"
+msgstr "Non associé"
+
+#: libs/internals/uiutils.cpp:350
+msgctxt "wireless network operation mode"
+msgid "Adhoc"
+msgstr "Adhoc"
+
+#: libs/internals/uiutils.cpp:353
+msgctxt "wireless network operation mode"
+msgid "Managed"
+msgstr "Géré"
+
+#: libs/internals/uiutils.cpp:356
+msgctxt "wireless network operation mode"
+msgid "Master"
+msgstr "Maître"
+
+#: libs/internals/uiutils.cpp:359
+msgctxt "wireless network operation mode"
+msgid "Repeater"
+msgstr "Répéteur"
+
+#: libs/internals/uiutils.cpp:362
+msgid "INCORRECT MODE FIX ME"
+msgstr "MODE INCORRECT - À CORRIGER"
+
+#: libs/internals/uiutils.cpp:384
+msgctxt "wireless network cipher"
+msgid "Pairwise WEP40"
+msgstr "WEP40 par paire"
+
+#: libs/internals/uiutils.cpp:386
+msgctxt "wireless network cipher"
+msgid "Pairwise WEP104"
+msgstr "WEP104 par paire"
+
+#: libs/internals/uiutils.cpp:388
+msgctxt "wireless network cipher"
+msgid "Pairwise TKIP"
+msgstr "TKIP par paire"
+
+#: libs/internals/uiutils.cpp:390
+msgctxt "wireless network cipher"
+msgid "Pairwise CCMP"
+msgstr "CCMP par paire"
+
+#: libs/internals/uiutils.cpp:392
+msgctxt "wireless network cipher"
+msgid "Group WEP40"
+msgstr "WEP40 par groupe"
+
+#: libs/internals/uiutils.cpp:394
+msgctxt "wireless network cipher"
+msgid "Group WEP104"
+msgstr "WEP104 par groupe"
+
+#: libs/internals/uiutils.cpp:396
+msgctxt "wireless network cipher"
+msgid "Group TKIP"
+msgstr "TKIP par groupe"
+
+#: libs/internals/uiutils.cpp:398
+msgctxt "wireless network cipher"
+msgid "Group CCMP"
+msgstr "CCMP par groupe"
+
+#: libs/internals/uiutils.cpp:400
+msgctxt "wireless network cipher"
+msgid "PSK"
+msgstr "PSK"
+
+#: libs/internals/uiutils.cpp:402
+msgctxt "wireless network cipher"
+msgid "802.1x"
+msgstr "802.1x"
+
+#: libs/internals/uiutils.cpp:411
+#, kde-format
+msgctxt "connection speed"
+msgid "%1 Bit/s"
+msgstr ""
+
+#: libs/internals/uiutils.cpp:413
+#, kde-format
+msgctxt "connection speed"
+msgid "%1 MBit/s"
+msgstr ""
+
+#: libs/internals/uiutils.cpp:415
+#, kde-format
+msgctxt "connection speed"
+msgid "%1 GBit/s"
+msgstr ""
+
+#: libs/internals/wirelesssecurityidentifier.cpp:248
+msgctxt "@label no security"
+msgid "Insecure"
+msgstr "Non sécurisé"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:251
+msgctxt "@label WEP security"
+msgid "WEP"
+msgstr "WEP"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:254
+msgctxt "@label LEAP security"
+msgid "LEAP"
+msgstr "LEAP"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:257
+msgctxt "@label Dynamic WEP security"
+msgid "Dynamic WEP"
+msgstr "WEP dynamique"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:260
+msgctxt "@label WPA-PSK security"
+msgid "WPA-PSK"
+msgstr "WPA-PSK"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:263
+msgctxt "@label WPA-EAP security"
+msgid "WPA-EAP"
+msgstr "WPA-EAP"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:266
+msgctxt "@label WPA2-PSK security"
+msgid "WPA2-PSK"
+msgstr "WPA2-PSK"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:269
+msgctxt "@label WPA2-EAP security"
+msgid "WPA2-EAP"
+msgstr "WPA2-EAP"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:273
+msgctxt "@label unknown security"
+msgid "Unknown security type"
+msgstr "Type de sécurité inconnu"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:284
+msgctxt "@info:tooltip no security"
+msgid "Insecure"
+msgstr "Non sécurisé"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:287
+msgctxt "@info:tooltip WEP security"
+msgid "WEP"
+msgstr "WEP"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:290
+msgctxt "@info:tooltip LEAP security"
+msgid "LEAP"
+msgstr "LEAP"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:293
+msgctxt "@info:tooltip Dynamic WEP security"
+msgid "Dynamic WEP"
+msgstr "WEP dynamique"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:296
+msgctxt "@info:tooltip WPA-PSK security"
+msgid "WPA-PSK"
+msgstr "WPA-PSK"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:299
+msgctxt "@info:tooltip WPA-EAP security"
+msgid "WPA-EAP"
+msgstr "WPA-EAP"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:302
+msgctxt "@info:tooltip WPA2-PSK security"
+msgid "WPA2-PSK"
+msgstr "WPA2-PSK"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:305
+msgctxt "@info:tooltip WPA2-EAP security"
+msgid "WPA2-EAP"
+msgstr "WPA2-EAP"
+
+#: libs/internals/wirelesssecurityidentifier.cpp:309
+msgctxt "@info:tooltip unknown security"
+msgid "Unknown security type"
+msgstr "Type de sécurité inconnu"
+
+#: libs/service/networkinterfacemonitor.cpp:214
+#, kde-format
+msgctxt "Text in GSM PIN/PUK unlock error dialog"
+msgid "Error unlocking modem: %1"
+msgstr "Erreur lors du déverrouillage du modem : %1"
+
+#: libs/service/networkinterfacemonitor.cpp:214
+msgctxt "Title for GSM PIN/PUK unlock error dialog"
+msgid "PIN/PUK unlock error"
+msgstr "Erreur de déverrouillage PIN / PUK"
+
+#: libs/service/notificationmanager.cpp:114
+#: libs/service/notificationmanager.cpp:446
+#, kde-format
+msgctxt "@info:status Notification text when connecting"
+msgid "Activating %1"
+msgstr "Activation de %1"
+
+#: libs/service/notificationmanager.cpp:118
+#: libs/service/notificationmanager.cpp:450
+#, kde-format
+msgctxt "@info:status Notification text when a connection has been activated"
+msgid "%1 activated"
+msgstr "%1 activé"
+
+#: libs/service/notificationmanager.cpp:124
+#: libs/service/notificationmanager.cpp:455
+#, kde-format
+msgctxt "@info:status Notification text when connection has failed"
+msgid "Connection %1 failed"
+msgstr "La connexion %1 a échoué"
+
+#: libs/service/notificationmanager.cpp:126
+#: libs/service/notificationmanager.cpp:457
+#, kde-format
+msgctxt "@info:status Notification text when deactivating a connection"
+msgid "%1 deactivated"
+msgstr "%1 désactivé"
+
+#: libs/service/notificationmanager.cpp:143
+#, kde-format
+msgctxt "@info:status Notification text when wireless/gsm signal is low"
+msgid "Low signal on %1"
+msgstr "Signal faible sur %1"
+
+#: libs/service/notificationmanager.cpp:202
+#, kde-format
+msgctxt ""
+"@info:status interface (%2) status notification title when a connection (%1) "
+"is activating"
+msgid "Activating %1 on %2"
+msgstr "Activation de %1 sur %2"
+
+#: libs/service/notificationmanager.cpp:212
+#, kde-format
+msgctxt ""
+"@info:status interface (%2) status notification title when a connection (%1) "
+"has successfully activated"
+msgid "%1 on %2"
+msgstr "%1 sur %2"
+
+#: libs/service/notificationmanager.cpp:226
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"NowManagedReason"
+msgid "%1 because it is now being managed"
+msgstr "%1 car elle va à présent être gérée"
+
+#: libs/service/notificationmanager.cpp:229
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"NowUnmanagedReason"
+msgid "%1 because it is no longer being managed"
+msgstr "%1 car elle ne sera plus gérée"
+
+#: libs/service/notificationmanager.cpp:232
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ConfigFailedReason"
+msgid "%1 because configuration failed"
+msgstr "%1 car la configuration a échoué"
+
+#: libs/service/notificationmanager.cpp:235
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ConfigUnavailableReason"
+msgid "%1 because the configuration is unavailable"
+msgstr "%1 car la configuration est indisponible"
+
+#: libs/service/notificationmanager.cpp:238
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ConfigExpiredReason"
+msgid "%1 because the configuration has expired"
+msgstr "%1 car la configuration a expiré"
+
+#: libs/service/notificationmanager.cpp:241
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"NoSecretsReason"
+msgid "%1 because secrets were not provided"
+msgstr "%1 car les mots de passe n'ont pas été fournis"
+
+#: libs/service/notificationmanager.cpp:244
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"AuthSupplicantDisconnectReason"
+msgid "%1 because the authorization supplicant disconnected"
+msgstr "%1 car le demandeur de l'autorisation est déconnecté"
+
+#: libs/service/notificationmanager.cpp:247
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"AuthSupplicantConfigFailedReason"
+msgid "%1 because the authorization supplicant's configuration failed"
+msgstr "%1car la configuration du demandeur de l'autorisation a échoué"
+
+#: libs/service/notificationmanager.cpp:250
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"AuthSupplicantFailedReason"
+msgid "%1 because the authorization supplicant failed"
+msgstr "%1 car le demandeur de l'autorisation a échoué"
+
+#: libs/service/notificationmanager.cpp:253
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"AuthSupplicantTimeoutReason"
+msgid "%1 because the authorization supplicant timed out"
+msgstr "%1 car le temps imparti au demandeur de l'autorisation a expiré"
+
+#: libs/service/notificationmanager.cpp:256
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"PppStartFailedReason"
+msgid "%1 because PPP failed to start"
+msgstr "%1 car PPP n'a pas réussi à démarrer"
+
+#: libs/service/notificationmanager.cpp:259
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"PppDisconnectReason"
+msgid "%1 because PPP disconnected"
+msgstr "%1 car PPP est déconnecté"
+
+#: libs/service/notificationmanager.cpp:262
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"PppFailedReason"
+msgid "%1 because PPP failed"
+msgstr "%1 car PPP a échoué"
+
+#: libs/service/notificationmanager.cpp:265
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"DhcpStartFailedReason"
+msgid "%1 because DHCP failed to start"
+msgstr "%1 car DHCP n'a pas réussi à démarrer"
+
+#: libs/service/notificationmanager.cpp:268
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"DhcpErrorReason"
+msgid "%1 because a DHCP error occurred"
+msgstr "%1 car une erreur de DHCP est survenue"
+
+#: libs/service/notificationmanager.cpp:271
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"DhcpFailedReason"
+msgid "%1 because DHCP failed "
+msgstr "%1 car DHCP a échoué "
+
+#: libs/service/notificationmanager.cpp:274
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"SharedStartFailedReason"
+msgid "%1 because the shared service failed to start"
+msgstr "%1 car le service partagé n'a pas réussi à démarrer"
+
+#: libs/service/notificationmanager.cpp:277
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"SharedFailedReason"
+msgid "%1 because the shared service failed"
+msgstr "%1 car le service partagé a échoué"
+
+#: libs/service/notificationmanager.cpp:280
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"AutoIpStartFailedReason"
+msgid "%1 because the auto IP service failed to start"
+msgstr "%1 car le service auto IP n'a pas réussi à démarrer"
+
+#: libs/service/notificationmanager.cpp:283
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"AutoIpErrorReason"
+msgid "%1 because the auto IP service reported an error"
+msgstr "%1 car le service auto IP a signalé une erreur"
+
+#: libs/service/notificationmanager.cpp:286
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"AutoIpFailedReason"
+msgid "%1 because the auto IP service failed"
+msgstr "%1 car le service auto IP a échoué"
+
+#: libs/service/notificationmanager.cpp:289
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ModemBusyReason"
+msgid "%1 because the modem is busy"
+msgstr "%1 car le modem est occupé"
+
+#: libs/service/notificationmanager.cpp:292
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ModemNoDialToneReason"
+msgid "%1 because the modem has no dial tone"
+msgstr "%1 car le modem n'a pas de tonalité"
+
+#: libs/service/notificationmanager.cpp:295
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ModemNoCarrierReason"
+msgid "%1 because the modem shows no carrier"
+msgstr "%1 car le modem n'affiche aucune porteuse"
+
+#: libs/service/notificationmanager.cpp:298
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ModemDialTimeoutReason"
+msgid "%1 because the modem dial timed out"
+msgstr "%1 car le temps imparti à la numérotation a expiré"
+
+#: libs/service/notificationmanager.cpp:301
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ModemInitFailedReason"
+msgid "%1 because the modem could not be initialized"
+msgstr "%1 car il a été impossible d'initialiser le modem"
+
+#: libs/service/notificationmanager.cpp:304
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"GsmApnSelectFailedReason"
+msgid "%1 because the GSM APN could not be selected"
+msgstr "%1 car il a été impossible de sélectionner l'APN du GSM"
+
+#: libs/service/notificationmanager.cpp:307
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"GsmNotSearchingReason"
+msgid "%1 because the GSM modem is not searching"
+msgstr "%1 car le modem GSM n'effectue pas de recherche"
+
+#: libs/service/notificationmanager.cpp:310
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"GsmRegistrationDeniedReason"
+msgid "%1 because GSM network registration was denied"
+msgstr "%1 car l'inscription du réseau GSM a été refusée"
+
+#: libs/service/notificationmanager.cpp:313
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"GsmRegistrationTimeoutReason"
+msgid "%1 because GSM network registration timed out"
+msgstr "%1 car le temps imparti à l'inscription du réseau GSM a expiré"
+
+#: libs/service/notificationmanager.cpp:316
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"GsmRegistrationFailedReason"
+msgid "%1 because GSM registration failed"
+msgstr "%1 car l'inscription du GSM a échoué"
+
+#: libs/service/notificationmanager.cpp:319
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"GsmPinCheckFailedReason"
+msgid "%1 because the GSM PIN check failed"
+msgstr "%1 car la vérification du code PIN du GSM a échoué"
+
+#: libs/service/notificationmanager.cpp:322
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"FirmwareMissingReason"
+msgid "%1 because firmware is missing"
+msgstr "%1 car il manque le micrologiciel"
+
+#: libs/service/notificationmanager.cpp:325
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"DeviceRemovedReason"
+msgid "%1 because the device was removed"
+msgstr "%1 car le périphérique a été supprimé"
+
+#: libs/service/notificationmanager.cpp:328
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"SleepingReason"
+msgid "%1 because the networking system is now sleeping"
+msgstr "%1 car le système de gestion de réseau se met à présent en sommeil"
+
+#: libs/service/notificationmanager.cpp:331
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"ConnectionRemovedReason"
+msgid "%1 because the connection was removed"
+msgstr "%1 car la connexion a été supprimée"
+
+#: libs/service/notificationmanager.cpp:334
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"UserRequestedReason"
+msgid "%1 by request"
+msgstr "%1 à la demande"
+
+#: libs/service/notificationmanager.cpp:337
+#, kde-format
+msgctxt ""
+"@info:status Notification when an interface changes state (%1) due to "
+"CarrierReason"
+msgid "%1 because the cable was disconnected"
+msgstr "%1 car PPP est déconnecté"
+
+#: libs/service/notificationmanager.cpp:505
+#: libs/service/notificationmanager.cpp:517
+#, kde-format
+msgctxt "@info:status Notification for hardware added"
+msgid "%1 attached"
+msgstr "%1 a été raccordé"
+
+#: libs/service/notificationmanager.cpp:506
+msgctxt "@action"
+msgid "Create Connection"
+msgstr "Créer une connexion"
+
+#: libs/service/notificationmanager.cpp:506
+msgctxt "@action"
+msgid "Close"
+msgstr "Fermer"
+
+#: libs/service/notificationmanager.cpp:553
+#, kde-format
+msgctxt ""
+"@info:status Notification for hardware removed giving vendor supplied "
+"product name"
+msgid "%1 removed"
+msgstr "%1 a été supprimée"
+
+#: libs/service/notificationmanager.cpp:557
+msgctxt ""
+"@info:status Notification for hardware removed used if we don't have its "
+"user-visible name"
+msgid "Network interface removed"
+msgstr "L'interface réseau a été supprimée"
+
+#: libs/service/notificationmanager.cpp:590
+#, kde-format
+msgctxt ""
+"@info:status Notification text when a single wireless network was found"
+msgid "Wireless network %1 found"
+msgstr "Un réseau sans fil %1 a été trouvé"
+
+#: libs/service/notificationmanager.cpp:593
+#, kde-format
+msgctxt ""
+"@info:status Notification text when multiple wireless networks are found. %2 "
+"is a list of networks, and the %1 value (not printed) is just used to "
+"determine the plural form of network."
+msgid "<b>New wireless network:</b><br /> %2"
+msgid_plural "<b>New wireless networks:</b><br /> %2"
+msgstr[0] ""
+msgstr[1] ""
+
+#: libs/service/notificationmanager.cpp:608
+#, kde-format
+msgctxt ""
+"@info:status Notification text when a single wireless network disappeared"
+msgid "Wireless network %1 disappeared"
+msgstr "Le réseau sans fil %1 a disparu"
+
+#: libs/service/notificationmanager.cpp:612
+#, kde-format
+msgctxt ""
+"@info:status Notification text when multiple wireless networks have "
+"disappeared.  %2 is a list of networks, and the %1 value (not printed) is "
+"just used to determine the plural form of network."
+msgid "<b>Wireless network disappeared:</b><br /> %2"
+msgid_plural "<b>Wireless networks disappeared:</b><br /> %2"
+msgstr[0] ""
+msgstr[1] ""
+
+#: libs/service/notificationmanager.cpp:624
+msgctxt "@info:status Notification for radio kill switch turned on"
+msgid "Wireless hardware enabled"
+msgstr "Matériel sans fil activé"
+
+#: libs/service/notificationmanager.cpp:631
+msgctxt "@info:status Notification for radio kill switch turned off"
+msgid "Wireless hardware disabled"
+msgstr "Matériel sans fil désactivé"
+
+#: libs/service/notificationmanager.cpp:638
+msgctxt ""
+"@info:status Notification when the networking subsystem (NetworkManager, "
+"etc) is disabled"
+msgid "Networking system disabled"
+msgstr "Système de gestion de réseau désactivé"
+
+#: libs/service/notificationmanager.cpp:644
+msgctxt ""
+"@info:status Notification when the networking subsystem (NetworkManager, "
+"etc) is already running"
+msgid "Networking system already running"
+msgstr ""
+
+#: libs/service/pindialog.cpp:72
+msgctxt "As in 'Unlock cell phone with this pin code'"
+msgid "Unlock"
+msgstr "Déverrouiller"
+
+#: libs/service/pindialog.cpp:76
+msgid "SIM PUK unlock required"
+msgstr "Déverrouillage SIM PUK requis"
+
+#: libs/service/pindialog.cpp:77
+msgid "SIM PUK Unlock Required"
+msgstr "Déverrouillage SIM PUK requis"
+
+#: libs/service/pindialog.cpp:78
+#, kde-format
+msgid ""
+"The mobile broadband device '%1' requires a SIM PUK code before it can be "
+"used."
+msgstr ""
+"Le périphérique haut débit mobile « %1 » nécessite un code SIM PUK avant de "
+"pouvoir l'utiliser."
+
+#: libs/service/pindialog.cpp:79
+msgid "PUK code:"
+msgstr "Code PUK :"
+
+#: libs/service/pindialog.cpp:80
+msgid "New PIN code:"
+msgstr "Nouveau code PIN :"
+
+#: libs/service/pindialog.cpp:81
+msgid "Re-enter new PIN code:"
+msgstr "Saisissez encore le nouveau code PIN :"
+
+#: libs/service/pindialog.cpp:82
+msgid "Show PIN/PUK code"
+msgstr "Afficher le code PIN / PUK"
+
+#: libs/service/pindialog.cpp:90
+msgid "SIM PIN unlock required"
+msgstr "Déverrouillage SIM PIN requis"
+
+#: libs/service/pindialog.cpp:91
+msgid "SIM PIN Unlock Required"
+msgstr "Déverrouillage SIM PIN requis"
+
+#: libs/service/pindialog.cpp:92
+#, kde-format
+msgid ""
+"The mobile broadband device '%1' requires a SIM PIN code before it can be "
+"used."
+msgstr ""
+"Le périphérique haut débit mobile « '%1 » nécessite un code SIM PIN avant de "
+"pouvoir l'utiliser."
+
+#: libs/service/pindialog.cpp:93
+msgid "PIN code:"
+msgstr "Code PIN :"
+
+#: libs/service/pindialog.cpp:94
+msgid "Show PIN code"
+msgstr "Afficher le code PIN"
+
+#: libs/service/pindialog.cpp:178
+msgid "PIN code too short. It should be at least 4 digits."
+msgstr "Code PIN trop court. Il doit contenir au moins 4 chiffres."
+
+#: libs/service/pindialog.cpp:182
+msgid "The two PIN codes do not match"
+msgstr "Les deux codes PIN ne correspondent pas"
+
+#: libs/service/pindialog.cpp:186
+msgid "PUK code too short. It should be 8 digits."
+msgstr "Code PUK trop court. Il doit contenir au moins 8 chiffres."
+
+#: libs/service/pindialog.cpp:190
+msgid "Unknown Error"
+msgstr "Erreur inconnue"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabWireless)
+#. i18n: ectx: property (windowTitle), widget (QWidget, Wireless80211Config)
+#: libs/ui/802-11-wireless.ui:14 settings/config/manageconnectionwidget.ui:65
+msgid "Wireless"
+msgstr "Sans fil"
+
+# unreviewed-context
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: libs/ui/802-11-wireless.ui:23
+msgid "&SSID:"
+msgstr "&SSID :"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, ssid)
+#: libs/ui/802-11-wireless.ui:38
+msgid "The name of the wireless network"
+msgstr "Le nom du réseau sans fil"
+
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, ssid)
+#: libs/ui/802-11-wireless.ui:41
+msgid "The Service Set IDentifier is the name of a wireless network."
+msgstr ""
+"L'identifiant de l'ensemble de services (SSID) est le nom d'un réseau sans "
+"fil."
+
+#. i18n: ectx: property (text), widget (KPushButton, btnScan)
+#: libs/ui/802-11-wireless.ui:48
+msgid "S&can"
+msgstr "&Balayage"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: libs/ui/802-11-wireless.ui:57
+msgid "M&ode:"
+msgstr "M&ode :"
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, cmbMode)
+#: libs/ui/802-11-wireless.ui:70
+msgid "Operating mode of the wireless network"
+msgstr "Mode de fonctionnement du réseau sans fil"
+
+#. i18n: ectx: property (whatsThis), widget (KComboBox, cmbMode)
+#: libs/ui/802-11-wireless.ui:73
+msgid ""
+"Infrastructure mode is the most common setting.  To form a peer-to-peer "
+"wireless network with another computer when there is no infrastructure, "
+"choose Ad-hoc."
+msgstr ""
+"Le mode infrastructure est le paramètre le plus courant. Pour former un "
+"réseau sans fil pair à pair avec un autre ordinateur lorsqu'il n'y a aucune "
+"infrastructure, choisissez Ad-hoc."
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
+#. i18n: ectx: property (text), item, widget (KComboBox, mode)
+#: libs/ui/802-11-wireless.ui:77 libs/ui/wireless.ui:49
+msgid "Infrastructure"
+msgstr "Infrastructure"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
+#. i18n: ectx: property (text), item, widget (KComboBox, mode)
+#: libs/ui/802-11-wireless.ui:82 libs/ui/wireless.ui:54
+msgid "Ad-hoc"
+msgstr "Ad-hoc"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: libs/ui/802-11-wireless.ui:90
+msgid "B&and:"
+msgstr "&Bande :"
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, band)
+#: libs/ui/802-11-wireless.ui:103
+msgid "Frequency band of the wireless network."
+msgstr "Bande de fréquence du réseau sans fil"
+
+#. i18n: ectx: property (whatsThis), widget (KComboBox, band)
+#: libs/ui/802-11-wireless.ui:106
+msgid "b/g is the most common band around 2.4 GHz. Less common is a at 5 GHz."
+msgstr ""
+"b/g est la bande la plus courante d'environ 2,4 GHz. Moins commune est celle "
+"à 5 GHz."
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, sbCustomPort)
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, sbMtu)
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, sbUdpFragmentSize)
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spbLocalPort)
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spbCiscoUdpEncPort)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPeapVersion)
+#. i18n: ectx: property (text), item, widget (KComboBox, band)
+#. i18n: ectx: property (specialValueText), widget (Wireless80211WidgetBand, channel)
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, mtu)
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, speed)
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: libs/ui/802-11-wireless.ui:110 libs/ui/802-11-wireless.ui:147
+#: libs/ui/802-11-wireless.ui:247 libs/ui/ipv6.ui:112
+#: libs/ui/security/eapmethodpeapbase.ui:72 libs/ui/wired.ui:88
+#: libs/ui/wired.ui:120 vpnplugins/openvpn/openvpnprop.ui:629
+#: vpnplugins/openvpn/openvpnprop.ui:653 vpnplugins/openvpn/openvpnprop.ui:677
+#: vpnplugins/vpnc/vpncprop.ui:445 vpnplugins/vpnc/vpncprop.ui:467
+msgid "Automatic"
+msgstr "Automatique"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, band)
+#: libs/ui/802-11-wireless.ui:115
+msgid "a"
+msgstr "a"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, band)
+#: libs/ui/802-11-wireless.ui:120
+msgid "b/g"
+msgstr "b/g"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: libs/ui/802-11-wireless.ui:128
+msgid "&Channel:"
+msgstr "&Canal :"
+
+#. i18n: ectx: property (whatsThis), widget (Wireless80211WidgetBand, channel)
+#: libs/ui/802-11-wireless.ui:144
+msgid "Sets the channel of the network."
+msgstr "Définit le canal du réseau."
+
+# unreviewed-context
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: libs/ui/802-11-wireless.ui:160 libs/ui/wireless.ui:62
+msgid "&BSSID:"
+msgstr "&BSSID :"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, bssid)
+#: libs/ui/802-11-wireless.ui:175
+msgid "Only connect to the access point with this hardware address"
+msgstr "Se connecter uniquement au point d'accès avec cette adresse matérielle"
+
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, bssid)
+#: libs/ui/802-11-wireless.ui:178
+msgid ""
+"Setting a BSSID (Basic Service Set Identification) forces this connection to "
+"connect only to the access point with the specified hardware address, even "
+"if other access points are part of the same network."
+msgstr ""
+"Définir un BSSID (Basic Service Set Identification) force cette connexion à "
+"ne se connecter qu'au point d'accès avec l'adresse matérielle spécifiée, "
+"même si d'autres points d'accès font partie du même réseau."
+
+#. i18n: ectx: property (inputMask), widget (KLineEdit, bssid)
+#. i18n: ectx: property (inputMask), widget (KLineEdit, clonedMacAddress)
+#: libs/ui/802-11-wireless.ui:181 libs/ui/802-11-wireless.ui:275
+#: libs/ui/wired.ui:177
+msgid "HH:HH:HH:HH:HH:HH;_"
+msgstr "HH:HH:HH:HH:HH:HH;_"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnSelectBssid)
+#: libs/ui/802-11-wireless.ui:188
+msgid "&Select"
+msgstr "&Sélectionner"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, btnSelectBssid)
+#: libs/ui/802-11-wireless.ui:194
+msgid "Select the BSSID (access point) with the strongest signal."
+msgstr ""
+"Sélectionnez le BSSID (point d'accès) présentant le signal le plus fort."
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, btnSelectBssid)
+#: libs/ui/802-11-wireless.ui:197
+msgid ""
+"This button will select the access point with the ssid specified in the "
+"field above and with the strongest signal."
+msgstr ""
+"Ce bouton va sélectionner le point d'accès avec le ssid spécifié dans le "
+"champ ci-dessus et comportant le signal le plus fort."
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: libs/ui/802-11-wireless.ui:206 libs/ui/wired.ui:34
+msgid "&Restrict To Interface:"
+msgstr "&Restreindre à l'interface :"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMacAddress)
+#. i18n: ectx: property (text), item, widget (KComboBox, type)
+#: libs/ui/802-11-wireless.ui:220 libs/ui/gsm.ui:183 libs/ui/wired.ui:48
+#: vpnplugins/pptp/pptpadvanced.ui:120
+msgid "Any"
+msgstr "Quelconque"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: libs/ui/802-11-wireless.ui:228
+msgid "MT&U:"
+msgstr "MT&U :"
+
+#. i18n: ectx: property (toolTip), widget (KIntSpinBox, mtu)
+#: libs/ui/802-11-wireless.ui:241 libs/ui/wired.ui:79
+msgid "Maximum Transmission Unit"
+msgstr "Unité de transmission maximale"
+
+#. i18n: ectx: property (whatsThis), widget (KIntSpinBox, mtu)
+#: libs/ui/802-11-wireless.ui:244 libs/ui/wired.ui:82
+msgid ""
+"Sets the size of the largest packet that can be transmitted on this network. "
+"'0' sets the MTU automatically."
+msgstr ""
+"Définit la taille du plus gros paquet pouvant être transmis sur ce réseau. "
+"« 0 » définit la MTU automatiquement."
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: libs/ui/802-11-wireless.ui:260 libs/ui/wired.ui:56
+msgid "Cloned MAC address"
+msgstr "Adresse MAC clonée"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
+#: libs/ui/802-11-wireless.ui:269 libs/ui/wired.ui:171
+msgid "Custom MAC address for the hardware to use"
+msgstr "Adresse MAC personnalisée pour le matériel à utiliser"
+
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, clonedMacAddress)
+#: libs/ui/802-11-wireless.ui:272 libs/ui/wired.ui:174
+msgid ""
+"The MAC address entered here will be used as hardware address for the "
+"network device this connection is activated on. This feature is known as MAC "
+"cloning or spoofing."
+msgstr ""
+"L'adresse MAC saisie ici sera utilisée comme adresse matérielle pour le "
+"périphérique réseau sur lequel cette connexion est activée. Cette "
+"fonctionnalité est dénommée « clonage MAC » (ou « spoofing »)."
+
+#. i18n: ectx: property (text), widget (KPushButton, clonedMacAddressRandom)
+#: libs/ui/802-11-wireless.ui:288 libs/ui/wired.ui:190
+msgid "Random"
+msgstr "Aléatoire"
+
+#: libs/ui/802_11_wirelesswidget.cpp:63 libs/ui/wiredwidget.cpp:55
+msgid " byte"
+msgid_plural " bytes"
+msgstr[0] " octet"
+msgstr[1] " octets"
+
+#: libs/ui/802_11_wirelesswidget.cpp:141 libs/ui/wiredwidget.cpp:76
+#, kde-format
+msgctxt ""
+"@item:inlist item for hardware that is currently not attached to the machine "
+"with MAC address"
+msgid "Disconnected interface (%1)"
+msgstr "Interface déconnectée (%1)"
+
+#: libs/ui/802_11_wirelesswidget.cpp:203
+msgctxt "@title:window wireless network scan dialog"
+msgid "Available Networks"
+msgstr "Réseaux disponibles"
+
+#: libs/ui/advancedpermissionswidget.cpp:97
+msgctxt "@item:intable shortcut for Not Available"
+msgid "N/A"
+msgstr "N / A"
+
+#: libs/ui/advancedpermissionswidget.cpp:98
+msgctxt "@info:tooltip real user name is not available"
+msgid "Not Available"
+msgstr "Non disponible"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: libs/ui/advancedpermissionswidget.ui:34
+msgid "Available Users"
+msgstr "Utilisateurs disponibles"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
+#. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
+#: libs/ui/advancedpermissionswidget.ui:78
+#: libs/ui/advancedpermissionswidget.ui:192
+msgid "Real Name"
+msgstr "Nom réel"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
+#. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
+#: libs/ui/advancedpermissionswidget.ui:83
+#: libs/ui/advancedpermissionswidget.ui:197
+msgid "User Name"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: libs/ui/advancedpermissionswidget.ui:145
+msgid "Users allowed to activate the connection"
+msgstr "Utilisateurs autorisés à activer la connexion"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, Bluetooth)
+#: libs/ui/bluetooth.ui:14
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: libs/ui/bluetooth.ui:23
+msgid "Hardware Address"
+msgstr "Adresse matérielle"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: libs/ui/bluetooth.ui:43 libs/ui/gsm.ui:163
+#: vpnplugins/novellvpn/novellvpnprop.ui:72
+msgid "&Type:"
+msgstr "&Type :"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, networktype)
+#: libs/ui/bluetooth.ui:57
+msgid "Dialup Network (DUN)"
+msgstr "Réseau commuté (DUN)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, networktype)
+#: libs/ui/bluetooth.ui:62
+msgid "Personal Area Network (PANU)"
+msgstr "Réseau personnel (PANU)"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: libs/ui/bluetooth.ui:86
+msgid "Name"
+msgstr "Nom"
+
+#: libs/ui/bluetoothconnectioneditor.cpp:68
+#, kde-format
+msgid "%1 Network"
+msgstr "Réseau %1"
+
+#: libs/ui/bluetoothconnectioneditor.cpp:70
+msgid "New Bluetooth Connection"
+msgstr "Nouvelle connexion Bluetooth"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabCellular)
+#. i18n: ectx: property (windowTitle), widget (QWidget, Gsm)
+#. i18n: ectx: property (windowTitle), widget (QWidget, Cdma)
+#: libs/ui/cdma.ui:14 libs/ui/gsm.ui:14
+#: settings/config/manageconnectionwidget.ui:106
+msgid "Mobile Broadband"
+msgstr "Haut débit mobile"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: libs/ui/cdma.ui:22 libs/ui/gsm.ui:38
+msgid "&Number:"
+msgstr "&Numéro :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, userNameLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: libs/ui/cdma.ui:38 libs/ui/gsm.ui:58 libs/ui/pppoe.ui:36
+#: libs/ui/security/eapmethodleapbase.ui:22
+#: libs/ui/security/eapmethodsimplebase.ui:17 libs/ui/security/leap.ui:17
+#: vpnplugins/novellvpn/novellvpnprop.ui:103
+#: vpnplugins/strongswan/strongswanprop.ui:244 vpnplugins/vpnc/vpncauth.ui:89
+#: vpnplugins/vpnc/vpncprop.ui:46
+msgid "&Username:"
+msgstr "&Nom d'utilisateur :"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: ectx: property (text), widget (QLabel, lbl_password)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_14)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: libs/ui/cdma.ui:54 libs/ui/gsm.ui:74 libs/ui/pppoe.ui:56
+#: libs/ui/security/eapmethodleapbase.ui:42
+#: libs/ui/security/eapmethodsimplebase.ui:33 libs/ui/security/leap.ui:33
+#: libs/ui/security/wpapsk.ui:25 vpnplugins/pptp/pptpauth.ui:26
+#: vpnplugins/pptp/pptpprop.ui:103
+msgid "&Password:"
+msgstr "&Mot de passe :"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPassword)
+#. i18n: ectx: property (text), widget (QCheckBox, cb_showPassword)
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#: libs/ui/cdma.ui:79 libs/ui/pppoe.ui:72 libs/ui/security/leap.ui:46
+#: libs/ui/security/security8021xauth.cpp:91 libs/ui/security/wep.ui:144
+#: libs/ui/security/wirelesssecurityauth.cpp:109 libs/ui/security/wpapsk.ui:45
+#: vpnplugins/openconnect/openconnectauth.cpp:399
+#: vpnplugins/openvpn/openvpnauth.cpp:124 vpnplugins/pptp/pptpauth.ui:39
+#: vpnplugins/pptp/pptpprop.ui:144
+msgid "&Show password"
+msgstr "&Afficher le mot de passe"
+
+#: libs/ui/cdmaconnectioneditor.cpp:52 libs/ui/gsmconnectioneditor.cpp:73
+msgid "New Cellular Connection"
+msgstr "Nouvelle connexion cellulaire"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: libs/ui/connection.ui:32
+msgid "&Firewall zone:"
+msgstr "Zone de pare-&feu :"
+
+#. i18n: ectx: property (text), widget (QCheckBox, autoconnect)
+#: libs/ui/connection.ui:64
+msgid "Connect &automatically"
+msgstr "Connecter &automatiquement"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, system)
+#: libs/ui/connection.ui:76
+msgid "Save secrets in system storage"
+msgstr "Enregistrer les mots de passe dans le stockage système"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, system)
+#: libs/ui/connection.ui:79
+msgid ""
+"If checked, secrets (passwords and encryption keys) will be saved in system "
+"storage, which allows the connection to work without a KDE session."
+msgstr ""
+"Si cette case est cochée, les mots de passe (clés et mots de passe chiffrés) "
+"seront enregistrés dans le stockage système, qui permet à la connexion de "
+"fonctionner sans session KDE."
+
+#. i18n: ectx: property (text), widget (QCheckBox, system)
+#: libs/ui/connection.ui:82
+msgid "&System connection"
+msgstr "Connexion &système"
+
+#. i18n: ectx: property (toolTip), widget (KPushButton, pushButtonPermissions)
+#: libs/ui/connection.ui:95
+msgid "Edit advanced permissions for this connection"
+msgstr "Modifier les droits d'accès avancés pour cette connexion"
+
+#. i18n: ectx: property (whatsThis), widget (KPushButton, pushButtonPermissions)
+#: libs/ui/connection.ui:98
+msgid ""
+"Fine-grained permissions editor for this connection. It lets you choose "
+"which users can activate/modify/delete this connection."
+msgstr ""
+"Éditeur de droits d'accès affinés pour cette connexion. Il permet de choisir "
+"quels utilisateurs peuvent activer / modifier / supprimer cette connexion."
+
+#. i18n: ectx: property (text), widget (KPushButton, pushButtonPermissions)
+#: libs/ui/connection.ui:101
+msgid "Advanced Permissions"
+msgstr "Droits d'accès avancés"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: libs/ui/connection.ui:110
+msgid "&Connection name:"
+msgstr "Nom de la &connexion :"
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, cmbZone)
+#: libs/ui/connection.ui:126
+msgid ""
+"The zone defines trust level of the connection. Default is not a regular "
+"zone, selecting it results in the use of the default zone set in the "
+"firewall. Only usable if firewalld is active."
+msgstr ""
+"La zone définit le niveau de confiance de la connexion. Le réglage par "
+"défaut n'est pas une expression rationnelle, la sélectionner a pour résultat "
+"l'utilisation de la zone définie par défaut dans le pare-feu. Utilisable "
+"uniquement si le pare-feu est actif."
+
+#: libs/ui/connectioneditor.cpp:70 libs/ui/connectioneditor.cpp:93
+msgctxt "Edit connection dialog caption"
+msgid "Edit Network Connection"
+msgstr "Modifier la connexion réseau"
+
+#: libs/ui/connectioneditor.cpp:125
+msgctxt "Add connection dialog caption"
+msgid "Add Network Connection"
+msgstr "Ajouter une connexion réseau"
+
+#: libs/ui/connectionsecretsjob.cpp:127
+#, kde-format
+msgctxt "@title:window for network secrets request"
+msgid "Secrets for %1"
+msgstr "Mots de passe pour %1"
+
+#: libs/ui/connectionwidget.cpp:83 libs/ui/wirelesspreferences.cpp:121
+msgid "New Wireless Connection"
+msgstr "Nouvelle connexion sans fil"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: libs/ui/connectionwidget.cpp:125 libs/ui/connectionwidget.cpp:160
+#: libs/ui/connectionwidget.cpp:166 vpnplugins/openvpn/openvpnprop.ui:809
+msgid "Default"
+msgstr ""
+
+#: libs/ui/connectionwidget.cpp:145
+msgctxt "@title:window advanced permissions editor"
+msgid "Advanced Permissions Editor"
+msgstr "Éditeur avancé de permissions"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_ShowAdvancedSettings)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: libs/ui/gsm.ui:26 settings/config/othersettings.ui:135
+msgid "Basic"
+msgstr "De base"
+
+#. i18n: ectx: property (text), widget (KLineEdit, number)
+#: libs/ui/gsm.ui:51
+msgid "*99#"
+msgstr "*99#"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, x509KeyPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, passPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, x509PassKeyPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, x509PassPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, proxyPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
+#. i18n: ectx: property (text), item, widget (QComboBox, cboGroupPassOptions)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, passwordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, pinStorage)
+#: libs/ui/gsm.ui:93 libs/ui/gsm.ui:253
+#: libs/ui/security/eapmethodleapbase.ui:68
+#: libs/ui/security/eapmethodsimplebase.ui:56
+#: libs/ui/security/eapmethodtlsbase.ui:121 libs/ui/security/leap.ui:76
+#: vpnplugins/openvpn/openvpnprop.ui:181 vpnplugins/openvpn/openvpnprop.ui:391
+#: vpnplugins/openvpn/openvpnprop.ui:523 vpnplugins/openvpn/openvpnprop.ui:556
+#: vpnplugins/openvpn/openvpnprop.ui:1120 vpnplugins/pptp/pptpprop.ui:129
+#: vpnplugins/strongswan/strongswanprop.ui:164
+#: vpnplugins/strongswan/strongswanprop.ui:222
+#: vpnplugins/strongswan/strongswanprop.ui:275 vpnplugins/vpnc/vpncprop.ui:87
+#: vpnplugins/vpnc/vpncprop.ui:146
+msgid "Store"
+msgstr "Enregistrer"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, x509KeyPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, passPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, x509PassKeyPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, x509PassPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, proxyPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
+#. i18n: ectx: property (text), item, widget (QComboBox, cboGroupPassOptions)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, passwordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, pinStorage)
+#: libs/ui/gsm.ui:98 libs/ui/gsm.ui:258
+#: libs/ui/security/eapmethodleapbase.ui:73
+#: libs/ui/security/eapmethodsimplebase.ui:61
+#: libs/ui/security/eapmethodtlsbase.ui:126 libs/ui/security/leap.ui:81
+#: vpnplugins/openvpn/openvpnprop.ui:176 vpnplugins/openvpn/openvpnprop.ui:386
+#: vpnplugins/openvpn/openvpnprop.ui:518 vpnplugins/openvpn/openvpnprop.ui:551
+#: vpnplugins/openvpn/openvpnprop.ui:1115 vpnplugins/pptp/pptpprop.ui:124
+#: vpnplugins/strongswan/strongswanprop.ui:159
+#: vpnplugins/strongswan/strongswanprop.ui:217
+#: vpnplugins/strongswan/strongswanprop.ui:270 vpnplugins/vpnc/vpncprop.ui:82
+#: vpnplugins/vpnc/vpncprop.ui:141
+msgid "Always Ask"
+msgstr "Toujours demander"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, x509KeyPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, passPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, x509PassKeyPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, x509PassPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbProxyType)
+#. i18n: ectx: property (text), item, widget (KComboBox, proxyPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
+#. i18n: ectx: property (text), item, widget (QComboBox, cboGroupPassOptions)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, passwordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, pinStorage)
+#: libs/ui/gsm.ui:103 libs/ui/gsm.ui:263
+#: libs/ui/security/eapmethodleapbase.ui:78
+#: libs/ui/security/eapmethodsimplebase.ui:66
+#: libs/ui/security/eapmethodtlsbase.ui:131 libs/ui/security/leap.ui:86
+#: vpnplugins/openvpn/openvpnprop.ui:186 vpnplugins/openvpn/openvpnprop.ui:396
+#: vpnplugins/openvpn/openvpnprop.ui:528 vpnplugins/openvpn/openvpnprop.ui:561
+#: vpnplugins/openvpn/openvpnprop.ui:1014
+#: vpnplugins/openvpn/openvpnprop.ui:1125 vpnplugins/pptp/pptpprop.ui:134
+#: vpnplugins/strongswan/strongswanprop.ui:169
+#: vpnplugins/strongswan/strongswanprop.ui:227
+#: vpnplugins/strongswan/strongswanprop.ui:280 vpnplugins/vpnc/vpncprop.ui:92
+#: vpnplugins/vpnc/vpncprop.ui:151
+msgid "Not Required"
+msgstr "Non requis"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_ShowAdvancedSettings)
+#. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: libs/ui/gsm.ui:122 settings/config/othersettings.ui:140
+#: vpnplugins/pptp/pptpprop.ui:208 vpnplugins/vpnc/vpncprop.ui:193
+msgid "Advanced"
+msgstr "Avancés"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: libs/ui/gsm.ui:131
+msgid "&APN:"
+msgstr "&APN :"
+
+#. i18n: ectx: property (text), widget (QLabel, lblNetwork)
+#: libs/ui/gsm.ui:147
+msgid "Net&work:"
+msgstr "R&éseau :"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, type)
+#: libs/ui/gsm.ui:188
+msgid "3G (UMTS/HSPA)"
+msgstr "3G (UMTS/HSPA)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, type)
+#: libs/ui/gsm.ui:193
+msgid "2G (GPRS/EDGE)"
+msgstr "2G (GPRS/EDGE)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, type)
+#: libs/ui/gsm.ui:198
+msgid "Prefer 3G"
+msgstr "Préférer 3G"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, type)
+#: libs/ui/gsm.ui:203
+msgid "Prefer 2G"
+msgstr "Préférer 2G"
+
+#. i18n: ectx: property (text), widget (QLabel, lblBand)
+#: libs/ui/gsm.ui:211
+msgid "&Band:"
+msgstr "&Bande :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: libs/ui/gsm.ui:234
+msgid "&PIN:"
+msgstr "&PIN :"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkAllowRoaming)
+#: libs/ui/gsm.ui:273
+msgid "Allow Roaming"
+msgstr "Autoriser l'itinérance"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#: libs/ui/gsm.ui:299
+msgid "&Show secrets"
+msgstr "&Afficher les mots de passe"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, SettingsIp4Config)
+#: libs/ui/ipv4.ui:14
+msgid "IPv4 Address"
+msgstr "Adresse IPv4"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#: libs/ui/ipv4.ui:39 libs/ui/ipv6.ui:39
+msgid "Basic settings"
+msgstr "Réglages de base"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#: libs/ui/ipv4.ui:44 libs/ui/ipv6.ui:44
+msgid "Additional addresses"
+msgstr "Adresses supplémentaires"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#: libs/ui/ipv4.ui:49 libs/ui/ipv6.ui:49
+msgid "Routes"
+msgstr "Routes"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: libs/ui/ipv4.ui:98 libs/ui/ipv6.ui:98
+msgid "Method:"
+msgstr "Méthode :"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: libs/ui/ipv4.ui:112
+msgid "DHCP"
+msgstr "DHCP"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: libs/ui/ipv4.ui:117
+msgid "DHCP (only address)"
+msgstr "DHCP (adresse uniquement)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: libs/ui/ipv4.ui:122 libs/ui/ipv6.ui:127
+msgid "Manual"
+msgstr "Manuelle"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: libs/ui/ipv4.ui:127 libs/ui/ipv6.ui:132
+msgid "Link-Local"
+msgstr "Lien local"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: libs/ui/ipv4.ui:132 libs/ui/ipv6.ui:137
+msgid "Shared"
+msgstr "Partagé"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: libs/ui/ipv4.ui:137 libs/ui/ipv6.ui:142 vpnplugins/vpnc/vpncprop.ui:282
+msgid "Disabled"
+msgstr "Désactivé"
+
+#. i18n: ectx: property (text), widget (QLabel, addressLabel)
+#: libs/ui/ipv4.ui:145 libs/ui/ipv6.ui:150
+msgid "&IP Address:"
+msgstr "Adresse &IP :"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, address)
+#: libs/ui/ipv4.ui:164 libs/ui/ipv6.ui:169
+msgid ""
+"Use this field to specify the IP address that should be used by this "
+"computer."
+msgstr ""
+"Utilisez ce champ pour spécifier l'adresse IP que cet ordinateur devra "
+"utiliser."
+
+#. i18n: ectx: property (text), widget (QLabel, netMaskLabel)
+#: libs/ui/ipv4.ui:171 libs/ui/ipv6.ui:176
+msgid "Subnet &Mask:"
+msgstr "&Masque de sous-réseau :"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, netMask)
+#: libs/ui/ipv4.ui:190 libs/ui/ipv6.ui:195
+msgid ""
+"Use this field to specify the subnet that the above IP address belongs to."
+msgstr ""
+"Utilisez ce champ pour spécifier le sous-réseau auquel appartient "
+"l'adresse IP ci-dessus."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#. i18n: ectx: property (text), widget (QLabel, lbl_gateway)
+#. i18n: ectx: property (text), widget (QLabel, gatewayLabel)
+#: libs/ui/ipv4.ui:197 libs/ui/ipv6.ui:202
+#: vpnplugins/novellvpn/novellvpnprop.ui:26
+#: vpnplugins/openconnect/openconnectprop.ui:29
+#: vpnplugins/openvpn/openvpnprop.ui:32 vpnplugins/pptp/pptpprop.ui:34
+msgid "&Gateway:"
+msgstr "&Passerelle :"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, gateway)
+#: libs/ui/ipv4.ui:216 libs/ui/ipv6.ui:221
+msgid ""
+"Use this field to specify the IP address of the gateway for requests outside "
+"the local network."
+msgstr ""
+"Utilisez ce champ pour spécifier l'adresse IP de la passerelle pour les "
+"requêtes en dehors du réseau local."
+
+#. i18n: ectx: property (text), widget (QLabel, dnsLabel)
+#: libs/ui/ipv4.ui:223 libs/ui/ipv4widget.cpp:392 libs/ui/ipv6.ui:228
+#: libs/ui/ipv6widget.cpp:350
+#, fuzzy
+msgctxt "@info"
+msgid "&DNS Servers:"
+msgstr "Serveurs &DNS :"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, dns)
+#: libs/ui/ipv4.ui:253 libs/ui/ipv6.ui:258
+msgid ""
+"Use this field to specify the IP address(es) of one or more DNS servers. Use "
+"',' to separate entries."
+msgstr ""
+"Utilisez ce champ pour spécifier l'adresse ou les adresses IP d'un ou "
+"plusieurs serveurs DNS. Employez « ; » pour séparer les éléments."
+
+#. i18n: ectx: property (text), widget (KPushButton, altSubjectMatchesMoreBtn)
+#. i18n: ectx: property (text), widget (KPushButton, connectToTheseServersMoreBtn)
+#. i18n: ectx: property (text), widget (KPushButton, dnsMorePushButton)
+#. i18n: ectx: property (text), widget (KPushButton, dnsSearchMorePushButton)
+#: libs/ui/ipv4.ui:260 libs/ui/ipv4.ui:294 libs/ui/ipv6.ui:265
+#: libs/ui/ipv6.ui:299 libs/ui/security/eapmethodpeapbase.ui:120
+#: libs/ui/security/eapmethodpeapbase.ui:145
+#: libs/ui/security/eapmethodtlsbase.ui:171
+#: libs/ui/security/eapmethodtlsbase.ui:196
+#: libs/ui/security/eapmethodttlsbase.ui:88
+#: libs/ui/security/eapmethodttlsbase.ui:113
+msgid "..."
+msgstr "..."
+
+#. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
+#: libs/ui/ipv4.ui:269 libs/ui/ipv4widget.cpp:393 libs/ui/ipv6.ui:274
+#: libs/ui/ipv6widget.cpp:351
+#, fuzzy
+msgctxt "@info"
+msgid "&Search Domains:"
+msgstr "Domaine&s de recherche :"
+
+#. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
+#: libs/ui/ipv4.ui:303
+msgid "DHCP &Client ID:"
+msgstr "Identifiant de &client DHCP :"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, dhcpClientId)
+#: libs/ui/ipv4.ui:316
+msgid ""
+"Use this field to specify the DHCP client ID which is a string sent to the "
+"DHCP server to identify the local machine that the DHCP server may use to "
+"customize the DHCP lease and options."
+msgstr ""
+"Utilisez ce champ pour spécifier l'identifiant de client DHCP, qui est une "
+"chaîne envoyée au serveur DHCP pour identifier la machine locale que le "
+"serveur DHCP peut utiliser pour personnaliser le bail et les options de DHCP."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbMayFail)
+#: libs/ui/ipv4.ui:419
+msgid "IPv4 is required for this connection"
+msgstr "IPv4 est requis pour cette connexion"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, AdvancedSettingsIp4Config)
+#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp4Config)
+#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
+#. i18n: ectx: property (windowTitle), widget (QWidget, AdvancedSettingsIp6Config)
+#: libs/ui/ipv4advanced.ui:20 libs/ui/ipv4routes.ui:20
+#: libs/ui/ipv6advanced.ui:20 libs/ui/ipv6routes.ui:20
+msgid "Advanced IP Settings"
+msgstr "Paramètres IP avancés"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: libs/ui/ipv4advanced.ui:32 libs/ui/ipv6advanced.ui:32
+msgid "&Additional IP Addresses:"
+msgstr "Adresses IP &supplémentaires :"
+
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonAdd)
+#: libs/ui/ipv4advanced.ui:107 libs/ui/ipv4routes.ui:107
+#: libs/ui/ipv6advanced.ui:107 libs/ui/ipv6routes.ui:107
+msgctxt "Insert a row"
+msgid "Add"
+msgstr "Ajouter"
+
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
+#: libs/ui/ipv4advanced.ui:135 libs/ui/ipv4routes.ui:135
+#: libs/ui/ipv6advanced.ui:135 libs/ui/ipv6routes.ui:135
+msgctxt "Remove a selected row"
+msgid "R&emove"
+msgstr "&Supprimer"
+
+#: libs/ui/ipv4advancedwidget.cpp:40 libs/ui/ipv4routeswidget.cpp:39
+msgctxt "Header text for IPv4 address"
+msgid "Address"
+msgstr "Adresse"
+
+#: libs/ui/ipv4advancedwidget.cpp:42 libs/ui/ipv4routeswidget.cpp:41
+msgctxt "Header text for IPv4 netmask"
+msgid "Netmask"
+msgstr "Masque de réseau"
+
+#: libs/ui/ipv4advancedwidget.cpp:44 libs/ui/ipv4routeswidget.cpp:43
+msgctxt "Header text for IPv4 gateway"
+msgid "Gateway"
+msgstr "Passerelle"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: libs/ui/ipv4routes.ui:32 libs/ui/ipv6routes.ui:32
+msgid "&Routes"
+msgstr "&Routes"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
+#: libs/ui/ipv4routes.ui:142 libs/ui/ipv6routes.ui:142
+msgid "Ignore &automatically obtained routes"
+msgstr "Ignorer les routes obtenues &automatiquement"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
+#: libs/ui/ipv4routes.ui:165 libs/ui/ipv6routes.ui:165
+msgid "Use &only for resources on this connection"
+msgstr "Utiliser uniquement p&our les ressources sur cette connexion"
+
+#: libs/ui/ipv4routeswidget.cpp:45
+msgctxt "Header text for IPv4 route metric"
+msgid "Metric"
+msgstr "Métrique"
+
+#: libs/ui/ipv4widget.cpp:69
+msgctxt "@item:inlistbox IPv4 settings configuration method"
+msgid "Automatic (VPN)"
+msgstr "Automatique (VPN)"
+
+#: libs/ui/ipv4widget.cpp:71
+msgctxt "@item:inlistbox IPv4 settings configuration method"
+msgid "Automatic (VPN) addresses only"
+msgstr "Adresses automatiques (VPN) uniquement"
+
+#: libs/ui/ipv4widget.cpp:76
+msgctxt "@item:inlistbox IPv4 settings configuration method"
+msgid "Automatic (PPP)"
+msgstr "Automatique (PPP)"
+
+#: libs/ui/ipv4widget.cpp:78
+msgctxt "@item:inlistbox IPv4 settings configuration method"
+msgid "Automatic (PPP) addresses only"
+msgstr "Adresses automatiques (PPP) uniquement"
+
+#: libs/ui/ipv4widget.cpp:82
+msgctxt "@item:inlistbox IPv4 settings configuration method"
+msgid "Automatic (DSL)"
+msgstr "Automatique (DSL)"
+
+#: libs/ui/ipv4widget.cpp:84
+msgctxt "@item:inlistbox IPv4 settings configuration method"
+msgid "Automatic (DSL) addresses only"
+msgstr "Adresses automatiques (DSL) uniquement"
+
+#: libs/ui/ipv4widget.cpp:88
+msgctxt "@item:inlistbox IPv4 settings configuration method"
+msgid "Automatic (DHCP)"
+msgstr "Automatique (DHCP)"
+
+#: libs/ui/ipv4widget.cpp:90
+msgctxt "@item:inlistbox IPv4 settings configuration method"
+msgid "Automatic (DHCP) addresses only"
+msgstr "Adresses automatiques (DHCP) uniquement"
+
+#: libs/ui/ipv4widget.cpp:389 libs/ui/ipv6widget.cpp:347
+#, fuzzy
+msgctxt "@info"
+msgid "Additional &DNS Servers:"
+msgstr "Serveurs &DNS :"
+
+#: libs/ui/ipv4widget.cpp:390 libs/ui/ipv6widget.cpp:348
+#, fuzzy
+msgctxt "@info"
+msgid "Additional &Search Domains:"
+msgstr "Domaine&s de recherche :"
+
+#: libs/ui/ipv4widget.cpp:493 libs/ui/ipv6widget.cpp:433
+msgid "Search domains"
+msgstr "Domaines de recherche"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, SettingsIp6Config)
+#: libs/ui/ipv6.ui:14
+msgid "IPv6 Address"
+msgstr "Adresse IPv6"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: libs/ui/ipv6.ui:117
+msgid "Automatic (addresses only)"
+msgstr "Automatique (adresses uniquement)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: libs/ui/ipv6.ui:122
+msgid "Automatic (DHCP only)"
+msgstr "Automatique (DHCP uniquement)"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbMayFail)
+#: libs/ui/ipv6.ui:404
+msgid "IPv6 is required for this connection"
+msgstr "IPv6 est requis pour cette connexion"
+
+#: libs/ui/ipv6advancedwidget.cpp:39 libs/ui/ipv6routeswidget.cpp:39
+msgctxt "Header text for IPv6 address"
+msgid "Address"
+msgstr "Adresse"
+
+#: libs/ui/ipv6advancedwidget.cpp:41 libs/ui/ipv6routeswidget.cpp:41
+msgctxt "Header text for IPv6 netmask"
+msgid "Netmask"
+msgstr "Masque de réseau"
+
+#: libs/ui/ipv6advancedwidget.cpp:43 libs/ui/ipv6routeswidget.cpp:43
+msgctxt "Header text for IPv6 gateway"
+msgid "Gateway"
+msgstr "Passerelle"
+
+#: libs/ui/ipv6routeswidget.cpp:45
+msgctxt "Header text for IPv6 route metric"
+msgid "Metric"
+msgstr "Métrique"
+
+#: libs/ui/networkitemmodel.cpp:141
+#, kde-format
+msgctxt "@item:inlist signal strength percentage"
+msgid "%1%"
+msgstr "%1 %"
+
+#: libs/ui/networkitemmodel.cpp:191
+msgctxt "@item:intable wireless network name"
+msgid "Name"
+msgstr "Nom"
+
+#: libs/ui/networkitemmodel.cpp:193
+msgctxt "@item:intable wireless signal strength"
+msgid "Signal Strength"
+msgstr "Force du signal"
+
+#: libs/ui/networkitemmodel.cpp:195
+msgctxt "@item:intable wireless encryption type"
+msgid "Encryption"
+msgstr "Chiffrement"
+
+#: libs/ui/networkitemmodel.cpp:197
+msgctxt "@item:intable wireless band"
+msgid "Band"
+msgstr "Bande"
+
+#: libs/ui/networkitemmodel.cpp:199
+msgctxt "@item:intable wireless channel"
+msgid "Channel"
+msgstr "Canal"
+
+#: libs/ui/networkitemmodel.cpp:201
+msgctxt "@item:intable wireless access point hardware address"
+msgid "MAC Address"
+msgstr "Adresse MAC"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, Ppp)
+#: libs/ui/ppp.ui:14
+msgid "PPP"
+msgstr "PPP"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#. i18n: ectx: property (title), widget (QGroupBox, grp_authenfication)
+#. i18n: ectx: property (title), widget (QGroupBox, auth)
+#: libs/ui/ppp.ui:20 vpnplugins/novellvpn/novellvpnprop.ui:66
+#: vpnplugins/pptp/pptpadvanced.ui:17
+#: vpnplugins/strongswan/strongswanprop.ui:55
+msgid "Authentication"
+msgstr "Authentification"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#. i18n: ectx: property (text), widget (QCheckBox, pap)
+#: libs/ui/ppp.ui:29 vpnplugins/pptp/pptpadvanced.ui:36
+msgid "PAP"
+msgstr "PAP"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#. i18n: ectx: property (text), widget (QCheckBox, chap)
+#: libs/ui/ppp.ui:39 vpnplugins/pptp/pptpadvanced.ui:44
+msgid "CHAP"
+msgstr "CHAP"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#. i18n: ectx: property (text), widget (QCheckBox, mschapv2)
+#: libs/ui/ppp.ui:49 vpnplugins/pptp/pptpadvanced.ui:60
+msgid "MSCHAPv2"
+msgstr "MSCHAPv2"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#. i18n: ectx: property (text), widget (QCheckBox, mschap)
+#: libs/ui/ppp.ui:59 vpnplugins/pptp/pptpadvanced.ui:52
+msgid "MSCHAP"
+msgstr "MSCHAP"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grp_cryptoAndCompression)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: libs/ui/ppp.ui:82 vpnplugins/pptp/pptpadvanced.ui:156
+msgid "Compression"
+msgstr "Compression"
+
+#. i18n: ectx: property (title), widget (QGroupBox, requiremppe)
+#: libs/ui/ppp.ui:91
+msgid "Point-to-Point-Encryption (MPPE)"
+msgstr "Chiffrement point-à-point (MPPE)"
+
+#. i18n: ectx: property (text), widget (QCheckBox, requiremppe128)
+#: libs/ui/ppp.ui:106
+msgid "Require 128-bit encryption"
+msgstr "Exiger un chiffrement sur 128 bits"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mppestateful)
+#: libs/ui/ppp.ui:113
+msgid "Stateful MPPE"
+msgstr "MPPE à états"
+
+#. i18n: ectx: property (text), widget (QCheckBox, bsdcomp)
+#: libs/ui/ppp.ui:123
+msgid "Allow BSD compression"
+msgstr "Utiliser la compression BSD"
+
+#. i18n: ectx: property (text), widget (QCheckBox, deflate)
+#: libs/ui/ppp.ui:133
+msgid "Allow Deflate compression"
+msgstr "Autoriser la compression Deflate"
+
+#. i18n: ectx: property (text), widget (QCheckBox, vjcomp)
+#: libs/ui/ppp.ui:143
+msgid "Use TCP header compression"
+msgstr "Utiliser la compression d'en-têtes TCP"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grp_echo)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: libs/ui/ppp.ui:156 vpnplugins/pptp/pptpadvanced.ui:199
+msgid "Echo"
+msgstr "Écho"
+
+#. i18n: ectx: property (text), widget (QCheckBox, pppecho)
+#: libs/ui/ppp.ui:162
+msgid "Send PPP echo packets"
+msgstr "Envoyer des paquets d'écho PPP"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabPppoe)
+#. i18n: ectx: property (windowTitle), widget (QWidget, Pppoe)
+#: libs/ui/pppoe.ui:14 settings/config/manageconnectionwidget.ui:182
+msgid "DSL"
+msgstr "DSL"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: libs/ui/pppoe.ui:20
+msgid "&Service:"
+msgstr "&Service :"
+
+#: libs/ui/pppoepreferences.cpp:42 libs/ui/pppoepreferences.cpp:60
+msgid "New DSL Connection"
+msgstr "Nouvelle connexion DSL"
+
+#. i18n: ectx: property (text), widget (QLabel, m_interfaceLabel)
+#: libs/ui/scanwidget.ui:38
+msgid "Interface:"
+msgstr "Interface :"
+
+#. i18n: ectx: property (text), widget (QLabel, m_viewLabel_2)
+#: libs/ui/scanwidget.ui:51
+msgid "View:"
+msgstr "Vue :"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, m_view)
+#: libs/ui/scanwidget.ui:62
+msgid "Map"
+msgstr "Carte"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, m_view)
+#: libs/ui/scanwidget.ui:67
+msgid "Details"
+msgstr "Détails"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_useBssid)
+#: libs/ui/scanwidget.ui:101
+msgid "Use the selected AP's BSSID in the connection settings"
+msgstr ""
+"Utiliser le BSSID de l'API sélectionnée dans les paramètres de la connexion"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_useBssid)
+#: libs/ui/scanwidget.ui:104
+msgid ""
+"Automatically set the BSSID in the connection settings to the selected AP's "
+"BSSID. This is useful if multiple networks with the same SSID, but different "
+"BSSIDs exist."
+msgstr ""
+"Associez automatiquement le BSSID dans les paramètres de la connexion au "
+"BSSID de l'API sélectionnée. Cette fonction est utile s'il existe des "
+"réseaux multiples comportant le même SSID, mais des BSSID différents."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_useBssid)
+#: libs/ui/scanwidget.ui:107
+msgid "Use the AP's BSSID"
+msgstr "Utiliser le BSSID de l'API"
+
+#: libs/ui/security/eapmethodinnerauth.cpp:34
+#: libs/ui/security/eapmethodinnerauth.cpp:42
+msgctxt "Label for inner auth combobox"
+msgid "&Inner Authentication:"
+msgstr "A&uthentification interne :"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, leUsername)
+#: libs/ui/security/eapmethodleapbase.ui:35
+msgid "User name on this network"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, lePassword)
+#: libs/ui/security/eapmethodleapbase.ui:57
+msgid "Password on this network"
+msgstr "Mot de passe sur ce réseau"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: libs/ui/security/eapmethodpeapbase.ui:19
+#: libs/ui/security/eapmethodttlsbase.ui:19
+msgid "&Anonymous Identity:"
+msgstr "Identité &anonyme :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: libs/ui/security/eapmethodpeapbase.ui:35
+#: libs/ui/security/eapmethodtlsbase.ui:55
+#: libs/ui/security/eapmethodttlsbase.ui:35
+msgid "CA Certi&ficate:"
+msgstr "&Certificat de l'AC :"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseSystemCaCerts)
+#: libs/ui/security/eapmethodpeapbase.ui:51
+#: libs/ui/security/eapmethodtlsbase.ui:71
+#: libs/ui/security/eapmethodttlsbase.ui:51
+msgid "Use Syste&m CA Certs"
+msgstr "Utiliser les cert. de l'AC systè&me"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: libs/ui/security/eapmethodpeapbase.ui:58
+msgid "PEAP &Version:"
+msgstr "&Version de PEAP :"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPeapVersion)
+#: libs/ui/security/eapmethodpeapbase.ui:77
+msgid "Version 0"
+msgstr "Version 0"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPeapVersion)
+#: libs/ui/security/eapmethodpeapbase.ui:82
+msgid "Version 1"
+msgstr "Version 1"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#. i18n: ectx: property (text), widget (QLabel, lblSubjectMatch)
+#: libs/ui/security/eapmethodpeapbase.ui:90
+#: libs/ui/security/eapmethodtlsbase.ui:141
+#: libs/ui/security/eapmethodttlsbase.ui:58
+#: vpnplugins/openvpn/openvpnprop.ui:881
+msgid "Subject Match:"
+msgstr "Correspondance avec le sujet :"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, leSubjectMatch)
+#: libs/ui/security/eapmethodpeapbase.ui:97
+msgid ""
+"Only connect to servers whose certificate subject matches this. For the "
+"syntax see the wpa_supplicant documentation."
+msgstr ""
+"Ne vous connectez qu'aux serveurs dont le sujet du certificat correspond à "
+"ce dernier. Pour la syntaxe, consultez la documentation de "
+"« wpa_supplicant »."
+
+#. i18n: ectx: property (text), widget (QLabel, lblAltSubjectMatches)
+#: libs/ui/security/eapmethodpeapbase.ui:104
+#: libs/ui/security/eapmethodtlsbase.ui:155
+#: libs/ui/security/eapmethodttlsbase.ui:72
+msgid "Alternative Subject Matches:"
+msgstr "Correspondances de sujet alternatives :"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, leAltSubjectMatches)
+#: libs/ui/security/eapmethodpeapbase.ui:113
+msgid ""
+"Only connect to servers whose certificate contains at least one of the "
+"entries. For the syntax see the wpa_supplicant documentation. Use ',' to "
+"separate entries."
+msgstr ""
+"Ne vous connectez qu'aux serveurs dont le certificat contient au moins un "
+"des éléments. Pour la syntaxe, consultez la documentation de "
+"« wpa_supplicant ». Employez des « , » pour séparer les éléments."
+
+#. i18n: ectx: property (text), widget (QLabel, lblConnectToTheseServers)
+#: libs/ui/security/eapmethodpeapbase.ui:129
+#: libs/ui/security/eapmethodtlsbase.ui:180
+#: libs/ui/security/eapmethodttlsbase.ui:97
+msgid "Connect to these Servers:"
+msgstr "Se connecter à ces serveurs :"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, leConnectToTheseServers)
+#: libs/ui/security/eapmethodpeapbase.ui:138
+#: libs/ui/security/eapmethodtlsbase.ui:189
+#: libs/ui/security/eapmethodttlsbase.ui:106
+msgid "Only connect to these servers. Use ',' to separate entries."
+msgstr ""
+"Connectez uniquement à ces serveurs. Employez « ; » pour séparer les "
+"éléments."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, authalgLabel)
+#: libs/ui/security/eapmethodstackbase.ui:32 libs/ui/security/wep.ui:91
+msgid "&Authentication:"
+msgstr "&Authentification :"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: libs/ui/security/eapmethodtlsbase.ui:19
+msgid "&Identity:"
+msgstr "&Identité :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: libs/ui/security/eapmethodtlsbase.ui:35
+#: vpnplugins/openconnect/openconnectprop.ui:97
+msgid "&User Certificate:"
+msgstr "&Certificat utilisateur :"
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, kurClientCert)
+#: libs/ui/security/eapmethodtlsbase.ui:48
+msgid ""
+"If your private key file is in PKCS12 format select it here and in the "
+"'Private Key' field below."
+msgstr ""
+"Si votre fichier de clé privée est au format « PKCS12 », sélectionnez-le ici "
+"et dans le champ « Clé privée » ci-dessous."
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: libs/ui/security/eapmethodtlsbase.ui:78
+#: vpnplugins/openconnect/openconnectprop.ui:107
+msgid "Private &Key:"
+msgstr "Clé priv&ée :"
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, kurPrivateKey)
+#: libs/ui/security/eapmethodtlsbase.ui:91
+msgid ""
+"If your private key file is in PKCS12 format select it here and in the 'User "
+"Certificate' field above."
+msgstr ""
+"Si votre clé privée est au format « PKCS12 », sélectionnez-le ici et dans le "
+"champ « Certificat utilisateur » ci-dessus."
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: libs/ui/security/eapmethodtlsbase.ui:98
+msgid "Private Key Pass&word:"
+msgstr "Mot de &passe de la clé privée :"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, leSubjectMatch)
+#: libs/ui/security/eapmethodtlsbase.ui:148
+#: libs/ui/security/eapmethodttlsbase.ui:65
+msgid ""
+"Only connect to servers whose certificate's subject matches this. For the "
+"syntax see the wpa_supplicant documentation."
+msgstr ""
+"Connectez-vous uniquement aux serveurs dont le sujet du certificat "
+"correspond à ce dernier. Pour la syntaxe, consultez la documentation de "
+"« wpa_supplicant »."
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, leAltSubjectMatches)
+#: libs/ui/security/eapmethodtlsbase.ui:164
+#: libs/ui/security/eapmethodttlsbase.ui:81
+msgid ""
+"Only connect to servers whose certificate's alternative subject contains at "
+"least one of the entries. For the syntax see the wpa_supplicant "
+"documentation. Use ',' to separate entries."
+msgstr ""
+"Connectez-vous uniquement aux serveurs dont le sujet alternatif du "
+"certificat contient au moins un des éléments. Pour la syntaxe, consultez la "
+"documentation de « wpa_supplicant ». Employez « , » pour séparer les "
+"éléments."
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: libs/ui/security/leapauthwidget.cpp:65
+#: libs/ui/security/security8021xauth.cpp:58
+#: libs/ui/security/wpaauthwidget.cpp:65 vpnplugins/openvpn/openvpnauth.cpp:77
+#: vpnplugins/openvpn/openvpnauth.cpp:86 vpnplugins/openvpn/openvpnauth.ui:23
+#: vpnplugins/openvpn/openvpnprop.ui:363
+msgid "Password:"
+msgstr "Mot de passe :"
+
+#: libs/ui/security/peapwidget.cpp:77 libs/ui/security/ttlswidget.cpp:84
+msgctxt "MSCHAPv2 inner auth method"
+msgid "MSCHAPv2"
+msgstr "MSCHAPv2"
+
+#: libs/ui/security/peapwidget.cpp:79 libs/ui/security/ttlswidget.cpp:90
+msgctxt "MD5 inner auth method"
+msgid "MD5"
+msgstr "MD5"
+
+#: libs/ui/security/peapwidget.cpp:81 libs/ui/security/ttlswidget.cpp:93
+msgctxt "GTC inner auth method"
+msgid "GTC"
+msgstr "GTC"
+
+#: libs/ui/security/peapwidget.cpp:186 libs/ui/security/tlswidget.cpp:297
+#: libs/ui/security/ttlswidget.cpp:188
+msgid "Alternative Subject Matches"
+msgstr "Correspondances de sujets alternatifs"
+
+#: libs/ui/security/peapwidget.cpp:187 libs/ui/security/tlswidget.cpp:298
+#: libs/ui/security/ttlswidget.cpp:189
+msgid ""
+"<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
+"li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. http://www.kde.org&gt;"
+"</li></ul></qt>"
+msgstr ""
+"<qt>Cet élément doit être l'un parmi :<ul><li>DNS : &lt;nom ou adresse ip&gt;"
+"</li><li>COURRIEL : &lt;courriel&gt;</li><li>URI : &lt;uri, ex. http://www."
+"kde.org&gt;</li></ul></qt>"
+
+#: libs/ui/security/peapwidget.cpp:199 libs/ui/security/tlswidget.cpp:310
+#: libs/ui/security/ttlswidget.cpp:201
+msgid "Connect to these Servers"
+msgstr "Se connecter à ces serveurs"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: libs/ui/security/security8021xauth.cpp:66
+#: vpnplugins/strongswan/strongswanprop.ui:130
+msgid "Private Key Password:"
+msgstr "Mot de passe de la clé privée :"
+
+#: libs/ui/security/security8021xauth.cpp:74
+msgid "Phase 2 Private Key Password:"
+msgstr "Mot de passe de la clé privée - phase 2 :"
+
+#: libs/ui/security/securityeap.cpp:56
+msgctxt "show passwords button"
+msgid "&Show Passwords"
+msgstr "&Afficher les mots de passe"
+
+#: libs/ui/security/securityeap.cpp:62
+msgctxt "TLS auth type"
+msgid "TLS"
+msgstr "TLS"
+
+#: libs/ui/security/securityeap.cpp:66
+msgctxt "LEAP auth type"
+msgid "LEAP"
+msgstr "LEAP"
+
+#: libs/ui/security/securityeap.cpp:70
+msgctxt "Peap outer auth type"
+msgid "Protected EAP (PEAP)"
+msgstr "EAP protégé (PEAP)"
+
+#: libs/ui/security/securityeap.cpp:73
+msgctxt "TTLS outer auth type"
+msgid "Tunnelled TLS (TTLS)"
+msgstr "TLS tunnellisé (TTLS)"
+
+#: libs/ui/security/securitywired8021x.cpp:42
+msgctxt "@title:tab wired 802.1x security"
+msgid "802.1x Security"
+msgstr "Sécurité 802.1x"
+
+#: libs/ui/security/securitywired8021x.cpp:45
+msgctxt "@option:check enables/disables 802.1x auth on wired ethernet"
+msgid "Use &802.1x authentication"
+msgstr "Utiliser l'authentification &802.1x"
+
+#: libs/ui/security/ttlswidget.cpp:78
+msgctxt "PAP inner auth method"
+msgid "PAP"
+msgstr "PAP"
+
+#: libs/ui/security/ttlswidget.cpp:81
+msgctxt "MSCHAP inner auth method"
+msgid "MSCHAP"
+msgstr "MSCHAP"
+
+#: libs/ui/security/ttlswidget.cpp:87
+msgctxt "CHAP inner auth method"
+msgid "CHAP"
+msgstr "CHAP"
+
+#. i18n: ectx: property (text), widget (QLabel, keyTypeLabel)
+#: libs/ui/security/wep.ui:17
+msgid "Key type:"
+msgstr "Type de clé :"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, keyType)
+#: libs/ui/security/wep.ui:31
+msgid "Passphrase (for 128 bit)"
+msgstr "Phrase de passe (pour 128 bits)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, keyType)
+#: libs/ui/security/wep.ui:36
+msgid "Hex or Ascii Key (for 64 or 128 bit)"
+msgstr "Clé hexa ou ASCII (pour 64 ou 128 bits)"
+
+#. i18n: ectx: property (text), widget (QLabel, weptxkeyindexLabel)
+#: libs/ui/security/wep.ui:54
+msgid "&WEP index:"
+msgstr "Index &WEP :"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, weptxkeyindex)
+#: libs/ui/security/wep.ui:68
+msgid "1 (Default)"
+msgstr "1 (par défaut)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, weptxkeyindex)
+#: libs/ui/security/wep.ui:73
+msgid "2"
+msgstr "2"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, weptxkeyindex)
+#: libs/ui/security/wep.ui:78
+msgid "3"
+msgstr "3"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, weptxkeyindex)
+#: libs/ui/security/wep.ui:83
+msgid "4"
+msgstr "4"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, authalg)
+#: libs/ui/security/wep.ui:105
+msgid "Open System"
+msgstr "Système ouvert"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel5)
+#. i18n: ectx: property (text), item, widget (KComboBox, authalg)
+#: libs/ui/security/wep.ui:110 vpnplugins/openvpn/openvpnprop.ui:217
+msgid "Shared Key"
+msgstr "Clé partagée"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#. i18n: ectx: property (text), widget (QLabel, textLabel4_3)
+#. i18n: ectx: property (text), widget (QLabel, keyLabel)
+#: libs/ui/security/wep.ui:118 libs/ui/security/wepwidget.cpp:107
+#: vpnplugins/openvpn/openvpnprop.ui:140 vpnplugins/openvpn/openvpnprop.ui:914
+msgid "&Key:"
+msgstr "&Clé :"
+
+# unreviewed-context
+#: libs/ui/security/wepauthwidget.cpp:81
+msgid "Passphrase:"
+msgstr "Phrase de passe :"
+
+#: libs/ui/security/wepauthwidget.cpp:97
+msgid "Key:"
+msgstr "Clé :"
+
+# unreviewed-context
+#: libs/ui/security/wepwidget.cpp:102
+msgid "&Passphrase:"
+msgstr "&Phrase secrète :"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, WirelessSecurity)
+#: libs/ui/security/wirelesssecurity.ui:20
+msgid "Wireless Security"
+msgstr "Sécurité du réseau sans fil"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: libs/ui/security/wirelesssecurity.ui:41
+msgid "&Security:"
+msgstr "&Sécurité :"
+
+#: libs/ui/security/wirelesssecurityauth.cpp:65
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "The network %1 requires authentication"
+msgstr "Utiliser une authentification hybride"
+
+#: libs/ui/security/wirelesssecuritysettingwidget.cpp:178
+msgctxt "Label for no wireless security"
+msgid "None"
+msgstr "Aucun"
+
+#: libs/ui/security/wirelesssecuritysettingwidget.cpp:186
+msgctxt "Label for LEAP wireless security"
+msgid "LEAP"
+msgstr "LEAP"
+
+#: libs/ui/security/wirelesssecuritysettingwidget.cpp:196
+msgctxt "Label for Dynamic WEP wireless security"
+msgid "Dynamic WEP (802.1x)"
+msgstr "WEP dynamique (802.1x)"
+
+#: libs/ui/security/wirelesssecuritysettingwidget.cpp:206
+msgctxt "Label for WEP wireless security"
+msgid "WEP"
+msgstr "WEP"
+
+#: libs/ui/security/wirelesssecuritysettingwidget.cpp:218
+msgctxt "Label for WPA-PSK wireless security"
+msgid "WPA/WPA2 Personal"
+msgstr "WPA / WPA2 Personnel"
+
+#: libs/ui/security/wirelesssecuritysettingwidget.cpp:229
+msgctxt "Label for WPA-EAP wireless security"
+msgid "WPA/WPA2 Enterprise"
+msgstr "WPA / WPA2 Entreprise"
+
+#: libs/ui/vpnpreferences.cpp:53 libs/ui/vpnpreferences.cpp:124
+msgid "New VPN Connection"
+msgstr "Nouvelle connexion VPN"
+
+#: libs/ui/vpnuiplugin.cpp:36
+msgctxt "Error message in VPN import/export dialog"
+msgid "Operation not supported for this VPN type."
+msgstr "Opération non prise en charge pour ce type de VPN."
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, Settings8023Ethernet)
+#: libs/ui/wired.ui:20
+msgid "Ethernet"
+msgstr "Ethernet"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, label)
+#: libs/ui/wired.ui:31
+msgid "Example: 11:22:33:44:55:66"
+msgstr "Exemple : 11:22:33:44:55:66"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, label_2)
+#: libs/ui/wired.ui:63
+msgid "Maximum Transfer Unit (bytes)"
+msgstr "Unité de transmission maximale (octets)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: libs/ui/wired.ui:66
+msgid "M&TU:"
+msgstr "M&TU :"
+
+#. i18n: ectx: property (toolTip), widget (KIntSpinBox, speed)
+#: libs/ui/wired.ui:111
+msgid "Use the specified speed"
+msgstr "Utiliser la vitesse spécifiée"
+
+#. i18n: ectx: property (whatsThis), widget (KIntSpinBox, speed)
+#: libs/ui/wired.ui:114
+msgid "Request that the device use only the specified speed."
+msgstr "Demande que le périphérique utilise uniquement la vitesse spécifiée."
+
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, speed)
+#: libs/ui/wired.ui:123
+msgid " MBit/s"
+msgstr " Mbit/s"
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, cmbDuplex)
+#: libs/ui/wired.ui:146
+msgid "Use the specified duplex mode"
+msgstr "Utiliser le mode duplex spécifié"
+
+#. i18n: ectx: property (whatsThis), widget (KComboBox, cmbDuplex)
+#: libs/ui/wired.ui:149
+msgid ""
+"Request that the device use only the specified duplex mode. A device in full "
+"duplex mode can send and receive data at the same time, while a device in "
+"half duplex mode can either send or receive data, but not both at the same "
+"time."
+msgstr ""
+"Demande que le périphérique utilise uniquement le mode duplex  spécifié. Un "
+"périphérique en mode duplex intégral peut envoyer et recevoir des données en "
+"même temps, alors qu'un périphérique en mode semi-duplex peut soit envoyer "
+"soit recevoir des données, mais pas les deux en même temps."
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbDuplex)
+#: libs/ui/wired.ui:156
+msgid "Half"
+msgstr "Semi"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbDuplex)
+#: libs/ui/wired.ui:161
+msgid "Full"
+msgstr "Intégral"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkAutoNegotiate)
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, chkAutoNegotiate)
+#: libs/ui/wired.ui:217 libs/ui/wired.ui:220
+msgid "Allow auto-negotiation of port speed and duplex mode"
+msgstr ""
+"Autoriser l'auto-négociation de la vitesse de port et le mode de duplex"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkAutoNegotiate)
+#: libs/ui/wired.ui:226
+msgid "Autonegotiate"
+msgstr "Auto-négocier"
+
+#: libs/ui/wiredpreferences.cpp:50
+msgid "Shared Wired Connection"
+msgstr "Connexion filaire partagée"
+
+#: libs/ui/wiredpreferences.cpp:53
+msgid "New Wired Connection"
+msgstr "Nouvelle connexion filaire"
+
+# unreviewed-context
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: libs/ui/wireless.ui:19
+msgid "&ESSID:"
+msgstr "&ESSID :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: libs/ui/wireless.ui:35
+msgid "&Mode:"
+msgstr "&Mode :"
+
+#. i18n: ectx: property (inputMask), widget (KLineEdit, bssid)
+#. i18n: ectx: property (inputMask), widget (KLineEdit, macaddress)
+#: libs/ui/wireless.ui:75 libs/ui/wireless.ui:98
+msgid "HH:HH:HH:HH:HH:HH; "
+msgstr "HH:HH:HH:HH:HH:HH; "
+
+#. i18n: ectx: property (text), widget (KLineEdit, bssid)
+#: libs/ui/wireless.ui:78
+msgid ":::::"
+msgstr ":::::"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: libs/ui/wireless.ui:85
+msgid "MAC &address:"
+msgstr "&Adresse MAC :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: libs/ui/wireless.ui:105
+msgid "&MTU:"
+msgstr "&MTU :"
+
+#: libs/ui/wirelesspreferences.cpp:71
+msgctxt ""
+"ssid of the wifi connection. Use ASCII letters and underscore *only* (no "
+"spaces!). Leave it unstranslated if your language does not support ASCII "
+"characters"
+msgid "Shared_Wireless_Connection"
+msgstr "Connexion_sans_fil_partagée"
+
+#: libs/ui/wirelesspreferences.cpp:119
+msgid "Shared Wireless Connection"
+msgstr "Connexion sans fil partagée"
+
+#: settings/config/addeditdeletebuttonset.cpp:40
+msgid "Add..."
+msgstr "Ajouter..."
+
+#: settings/config/addeditdeletebuttonset.cpp:42
+msgid "Edit..."
+msgstr "Modifier..."
+
+#: settings/config/addeditdeletebuttonset.cpp:48
+msgid "Import"
+msgstr "Importer"
+
+#: settings/config/addeditdeletebuttonset.cpp:49
+msgid "Export"
+msgstr "Exporter"
+
+#: settings/config/manageconnectionwidget.cpp:80
+#: settings/config/managetraywidget.cpp:47
+msgid "Manage Connections"
+msgstr "Gérer les connexions"
+
+#: settings/config/manageconnectionwidget.cpp:81
+#: settings/config/managetraywidget.cpp:48
+msgid "Manage Connections Control Panel Module"
+msgstr "Module du tableau de bord de gestion de connexions"
+
+#: settings/config/manageconnectionwidget.cpp:82
+msgid "(c) 2008-2009 Will Stephenson<p>(c) 2011-2012 Lamarque V. Souza</p>"
+msgstr "(c) 2008-2009 Will Stephenson<p>(c) 2011-2012 Lamarque V. Souza</p>"
+
+#: settings/config/manageconnectionwidget.cpp:84
+#: settings/config/managetraywidget.cpp:51
+msgid "Lamarque V. Souza"
+msgstr "Lamarque V. Souza"
+
+#: settings/config/manageconnectionwidget.cpp:84
+#: settings/config/managetraywidget.cpp:51
+msgid "Developer and Maintainer"
+msgstr "Développeur et mainteneur"
+
+#: settings/config/manageconnectionwidget.cpp:85
+#: settings/config/managetraywidget.cpp:52
+msgid "Ilia Kats"
+msgstr "Ilia Kats"
+
+#: settings/config/manageconnectionwidget.cpp:85
+#: settings/config/manageconnectionwidget.cpp:86
+#: settings/config/manageconnectionwidget.cpp:87
+#: settings/config/manageconnectionwidget.cpp:88
+#: settings/config/managetraywidget.cpp:52
+#: settings/config/managetraywidget.cpp:53
+#: settings/config/managetraywidget.cpp:54
+#: settings/config/managetraywidget.cpp:55
+msgid "Developer"
+msgstr "Développeur"
+
+#: settings/config/manageconnectionwidget.cpp:86
+#: settings/config/managetraywidget.cpp:53
+msgid "Rajeesh K Nambiar"
+msgstr "Rajeesh K Nambiar"
+
+#: settings/config/manageconnectionwidget.cpp:87
+#: settings/config/managetraywidget.cpp:54 settings/configshell/main.cpp:37
+msgid "Will Stephenson"
+msgstr "Will Stephenson"
+
+#: settings/config/manageconnectionwidget.cpp:88
+#: settings/config/managetraywidget.cpp:55
+msgid "Sebastian Kügler"
+msgstr "Sebastian Kügler"
+
+#: settings/config/manageconnectionwidget.cpp:113
+msgctxt "Like in 'add wired connection'"
+msgid "Wired"
+msgstr "Filaire"
+
+#: settings/config/manageconnectionwidget.cpp:116
+#: settings/config/manageconnectionwidget.cpp:127
+msgctxt "Like in 'add shared connection'"
+msgid "Shared"
+msgstr "Partagée"
+
+#: settings/config/manageconnectionwidget.cpp:124
+msgctxt "Like in 'add wireless connection'"
+msgid "Wireless"
+msgstr "Sans fil"
+
+#: settings/config/manageconnectionwidget.cpp:207
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last hour, as "
+"the number of minutes since usage"
+msgid "One minute ago"
+msgid_plural "%1 minutes ago"
+msgstr[0] "Il y a une minute"
+msgstr[1] "Il y a %1 minutes"
+
+#: settings/config/manageconnectionwidget.cpp:214
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last day, as "
+"the number of hours since usage"
+msgid "One hour ago"
+msgid_plural "%1 hours ago"
+msgstr[0] "Il y a une heure"
+msgstr[1] "Il y a %1 heures"
+
+#: settings/config/manageconnectionwidget.cpp:219
+msgctxt ""
+"Label for last used time for a network connection used the previous day"
+msgid "Yesterday"
+msgstr "Hier"
+
+#: settings/config/manageconnectionwidget.cpp:225
+msgctxt ""
+"Label for last used time for a network connection that has never been used"
+msgid "Never"
+msgstr "Jamais"
+
+#: settings/config/manageconnectionwidget.cpp:372
+msgctxt "Tooltip for disabled tab when no VPN plugins are installed"
+msgid "No VPN plugins were found"
+msgstr "Aucun module externe VPN n'a été trouvé"
+
+#: settings/config/manageconnectionwidget.cpp:416
+msgctxt "File chooser dialog title for importing VPN"
+msgid "Import VPN connection settings"
+msgstr "Importer les paramètres de connexion de VPN"
+
+#: settings/config/manageconnectionwidget.cpp:454
+#, kde-format
+msgid ""
+"None of the supported plugins implement importing operation for file %1."
+msgstr ""
+"Aucun des modules externes pris en charge n'implémente d'opération "
+"d'importation pour le fichier %1."
+
+#: settings/config/manageconnectionwidget.cpp:454
+#: settings/config/manageconnectionwidget.cpp:456
+msgid "Error importing VPN connection settings"
+msgstr "Problème lors de l'importation des paramètres de connexion de VPN"
+
+#: settings/config/manageconnectionwidget.cpp:483
+msgctxt "File chooser dialog title for exporting VPN"
+msgid "Export VPN"
+msgstr "Exporter un VPN"
+
+#: settings/config/manageconnectionwidget.cpp:490
+msgid "VPN connection successfully exported"
+msgstr "La connexion VPN a été exportée avec succès"
+
+#: settings/config/manageconnectionwidget.cpp:490
+msgid "Success"
+msgstr "Succès"
+
+#: settings/config/manageconnectionwidget.cpp:490
+msgid "Do not show again"
+msgstr "Ne plus afficher"
+
+#: settings/config/manageconnectionwidget.cpp:492
+msgid "Error exporting VPN connection settings"
+msgstr "Erreur lors de l'exportation des paramètres de connexion de VPN"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
+#: settings/config/manageconnectionwidget.cpp:495
+#: settings/config/manageconnectionwidget.cpp:548
+#: vpnplugins/openconnect/openconnectauth.ui:133 vpnplugins/vpnc/vpnc.cpp:83
+msgid "Error"
+msgstr "Erreur"
+
+#: settings/config/manageconnectionwidget.cpp:495
+msgid "Could not export VPN connection settings"
+msgstr "Impossible d'exporter les paramètres de connexion de VPN"
+
+#: settings/config/manageconnectionwidget.cpp:531
+msgid ""
+"Connection edit option failed, make sure that NetworkManager is properly "
+"running."
+msgstr ""
+"L'option d'édition de connexion a échoué. Assurez-vous que NetworkManager "
+"fonctionne correctement."
+
+#: settings/config/manageconnectionwidget.cpp:571
+msgid "Connection create operation failed."
+msgstr "L'opération de création de connexion a échoué."
+
+# unreviewed-context
+#: settings/config/manageconnectionwidget.cpp:595
+#, kde-format
+msgctxt "Warning message on attempting to delete a connection"
+msgid "Do you really want to delete the connection '%1'?"
+msgstr "Voulez-vous vraiment supprimer la connexion « %1 » ?"
+
+#: settings/config/manageconnectionwidget.cpp:596
+msgid "Confirm Delete"
+msgstr "Confirmez la suppression"
+
+#: settings/config/manageconnectionwidget.cpp:756
+msgid "Connected"
+msgstr ""
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabWired)
+#: settings/config/manageconnectionwidget.ui:21
+msgid "Wired"
+msgstr "Filaire"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, listWired)
+#. i18n: ectx: property (text), widget (QTreeWidget, listWireless)
+#. i18n: ectx: property (text), widget (QTreeWidget, listCellular)
+#. i18n: ectx: property (text), widget (QTreeWidget, listVpn)
+#. i18n: ectx: property (text), widget (QTreeWidget, listPppoe)
+#: settings/config/manageconnectionwidget.ui:43
+#: settings/config/manageconnectionwidget.ui:84
+#: settings/config/manageconnectionwidget.ui:122
+#: settings/config/manageconnectionwidget.ui:160
+#: settings/config/manageconnectionwidget.ui:198
+msgid "Connection"
+msgstr "Connexion"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, listWired)
+#. i18n: ectx: property (text), widget (QTreeWidget, listWireless)
+#. i18n: ectx: property (text), widget (QTreeWidget, listCellular)
+#. i18n: ectx: property (text), widget (QTreeWidget, listVpn)
+#. i18n: ectx: property (text), widget (QTreeWidget, listPppoe)
+#: settings/config/manageconnectionwidget.ui:48
+#: settings/config/manageconnectionwidget.ui:89
+#: settings/config/manageconnectionwidget.ui:127
+#: settings/config/manageconnectionwidget.ui:165
+#: settings/config/manageconnectionwidget.ui:203
+msgid "Last Used"
+msgstr "Dernière utilisation"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, listWired)
+#. i18n: ectx: property (text), widget (QTreeWidget, listWireless)
+#. i18n: ectx: property (text), widget (QTreeWidget, listCellular)
+#. i18n: ectx: property (text), widget (QTreeWidget, listVpn)
+#. i18n: ectx: property (text), widget (QTreeWidget, listPppoe)
+#: settings/config/manageconnectionwidget.ui:53
+#: settings/config/manageconnectionwidget.ui:94
+#: settings/config/manageconnectionwidget.ui:132
+#: settings/config/manageconnectionwidget.ui:170
+#: settings/config/manageconnectionwidget.ui:208
+msgid "State"
+msgstr "État"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabVpn)
+#: settings/config/manageconnectionwidget.ui:144
+msgid "VPN"
+msgstr "VPN"
+
+#: settings/config/managetraywidget.cpp:49
+msgid ""
+"(c) 2008-2009 Will Stephenson<p>(c) 2010 Sebastian Kügler</p><p>(c) "
+"2011-2012 Lamarque V. Souza</p>"
+msgstr ""
+"(c) 2008-2009 Will Stephenson<p>(c) 2010 Sebastian Kügler</p><p>(c) "
+"2011-2012 Lamarque V. Souza</p>"
+
+#: settings/config/managetraywidget.cpp:83
+msgctxt "@info"
+msgid "Error switching storage type"
+msgstr ""
+
+#: settings/config/mobileconnectionwizard.cpp:52
+msgctxt "Mobile Connection Wizard"
+msgid "New Mobile Broadband Connection"
+msgstr "Nouvelle connexion haut débit mobile"
+
+#: settings/config/mobileconnectionwizard.cpp:151
+#: settings/config/mobileconnectionwizard.cpp:167
+#: settings/config/mobileconnectionwizard.cpp:193
+#: settings/config/mobileconnectionwizard.cpp:525
+msgctxt "Mobile Connection Wizard"
+msgid "My plan is not listed..."
+msgstr "Mon plan ne figure pas sur la liste..."
+
+#: settings/config/mobileconnectionwizard.cpp:156
+msgctxt "Mobile Connection Wizard"
+msgid "Unknown Provider"
+msgstr "Fournisseur inconnu"
+
+#: settings/config/mobileconnectionwizard.cpp:163
+msgctxt "Mobile Connection Wizard"
+msgid "Default"
+msgstr "Par défaut"
+
+#: settings/config/mobileconnectionwizard.cpp:195
+#: settings/config/mobileconnectionwizard.cpp:203
+msgctxt "Mobile Connection Wizard"
+msgid "APN"
+msgstr "APN"
+
+#: settings/config/mobileconnectionwizard.cpp:248
+msgctxt "Mobile Connection Wizard"
+msgid "Set up a Mobile Broadband Connection"
+msgstr "Configurer une connexion haut débit mobile"
+
+#: settings/config/mobileconnectionwizard.cpp:251
+msgctxt "Mobile Connection Wizard"
+msgid ""
+"This assistant helps you easily set up a mobile broadband connection to a "
+"cellular (3G) network."
+msgstr ""
+"Cet assistant vous aide à configurer facilement une connexion haut débit "
+"mobile à un réseau cellulaire (3G)."
+
+#: settings/config/mobileconnectionwizard.cpp:255
+msgctxt "Mobile Connection Wizard"
+msgid "You will need the following information:"
+msgstr "Vous aurez besoin des informations suivantes :"
+
+#: settings/config/mobileconnectionwizard.cpp:259
+msgctxt "Mobile Connection Wizard"
+msgid "Your broadband provider's name"
+msgstr "Le nom de votre opérateur haut débit"
+
+#: settings/config/mobileconnectionwizard.cpp:260
+msgctxt "Mobile Connection Wizard"
+msgid "Your broadband billing plan name"
+msgstr "Le nom du plan de votre plan tarifaire haut débit"
+
+#: settings/config/mobileconnectionwizard.cpp:261
+msgctxt "Mobile Connection Wizard"
+msgid "(in some cases) Your broadband billing plan APN (Access Point Name)"
+msgstr ""
+"(dans certains cas) APN (nom du point d'accès) de votre plan tarifaire haut "
+"débit"
+
+#: settings/config/mobileconnectionwizard.cpp:265
+msgctxt "Mobile Connection Wizard"
+msgid "Create a connection for &this mobile broadband device:"
+msgstr "Créez une connexion pour ce périp&hérique haut débit mobile :"
+
+#: settings/config/mobileconnectionwizard.cpp:269
+#: settings/config/mobileconnectionwizard.cpp:395
+msgctxt "Mobile Connection Wizard"
+msgid "Any GSM device"
+msgstr "N'importe quel périphérique GSM"
+
+#: settings/config/mobileconnectionwizard.cpp:271
+#: settings/config/mobileconnectionwizard.cpp:397
+msgctxt "Mobile Connection Wizard"
+msgid "Any CDMA device"
+msgstr "N'importe quel périphérique CDMA"
+
+#: settings/config/mobileconnectionwizard.cpp:324
+msgctxt "Mobile Connection Wizard"
+msgid "Installed GSM device"
+msgstr "Périphérique GSM installé"
+
+#: settings/config/mobileconnectionwizard.cpp:328
+msgctxt "Mobile Connection Wizard"
+msgid "Installed CDMA device"
+msgstr "Périphérique CDMA installé"
+
+#: settings/config/mobileconnectionwizard.cpp:410
+msgctxt "Mobile Connection Wizard"
+msgid "Choose your Provider's Country"
+msgstr "Choisissez le pays de votre opérateur"
+
+#: settings/config/mobileconnectionwizard.cpp:413
+msgctxt "Mobile Connection Wizard"
+msgid "Country List:"
+msgstr "Liste des pays :"
+
+#: settings/config/mobileconnectionwizard.cpp:417
+msgctxt "Mobile Connection Wizard"
+msgid "My country is not listed"
+msgstr "Mon pays ne figure pas sur la liste"
+
+#: settings/config/mobileconnectionwizard.cpp:433
+msgctxt "Mobile Connection Wizard"
+msgid "Choose your Provider"
+msgstr "Choisissez votre opérateur"
+
+#: settings/config/mobileconnectionwizard.cpp:436
+msgctxt "Mobile Connection Wizard"
+msgid "Select your provider from a &list:"
+msgstr "Sélectionnez votre fournisseur dans une &liste :"
+
+#: settings/config/mobileconnectionwizard.cpp:445
+msgctxt "Mobile Connection Wizard"
+msgid "I can't find my provider and I wish to enter it &manually:"
+msgstr "Je ne trouve pas mon opérateur et souhaite le saisir &manuellement :"
+
+#: settings/config/mobileconnectionwizard.cpp:487
+msgctxt "Mobile Connection Wizard"
+msgid "Choose your Billing Plan"
+msgstr "Choisissez votre plan tarifaire"
+
+#: settings/config/mobileconnectionwizard.cpp:490
+msgctxt "Mobile Connection Wizard"
+msgid "&Select your plan:"
+msgstr "&Sélectionnez votre plan :"
+
+#: settings/config/mobileconnectionwizard.cpp:497
+msgctxt "Mobile Connection Wizard"
+msgid "Selected plan &APN (Access Point Name):"
+msgstr "&APN (nom du point d'accès) du plan sélectionné :"
+
+#: settings/config/mobileconnectionwizard.cpp:509
+msgctxt "Mobile Connection Wizard"
+msgid ""
+"Warning: Selecting an incorrect plan may result in billing issues for your "
+"broadband account or may prevent connectivity.\n"
+"\n"
+"If you are unsure of your plan please ask your provider for your plan's APN."
+msgstr ""
+"Avertissement : sélectionner un plan incorrect risque d'entraîner des "
+"problèmes pour votre compte haut débit ou empêcher la connectivité.\n"
+"\n"
+"Si vous n'êtes pas sûr de votre plan, veuillez en demander l'APN à votre "
+"opérateur."
+
+#: settings/config/mobileconnectionwizard.cpp:546
+msgctxt "Mobile Connection Wizard"
+msgid "Confirm Mobile Broadband Settings"
+msgstr "Confirmer la configuration haut débit mobile"
+
+#: settings/config/mobileconnectionwizard.cpp:549
+msgctxt "Mobile Connection Wizard"
+msgid ""
+"Your mobile broadband connection is configured with the following settings:"
+msgstr ""
+"Votre connexion haut débit mobile est configurée avec les paramètres "
+"suivants :"
+
+#: settings/config/mobileconnectionwizard.cpp:553
+msgctxt "Mobile Connection Wizard"
+msgid "Your Provider:"
+msgstr "Votre opérateur :"
+
+#: settings/config/mobileconnectionwizard.cpp:558
+msgctxt "Mobile Connection Wizard"
+msgid "Your Plan:"
+msgstr "Votre plan :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: settings/config/othersettings.ui:17
+msgid "<b>Connection Secrets</b>"
+msgstr "<b>Mots de passe de la connexion</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: settings/config/othersettings.ui:24
+msgid "&Store connection secrets: "
+msgstr "&Mémoriser les mots de passe de la connexion :"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SecretStorageMode)
+#: settings/config/othersettings.ui:41
+msgid "Do not store (always prompt)"
+msgstr "Ne pas mémoriser (toujours émettre une invite)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SecretStorageMode)
+#: settings/config/othersettings.ui:46
+msgid "In file (unencrypted)"
+msgstr "Dans un fichier (non chiffré)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SecretStorageMode)
+#: settings/config/othersettings.ui:51
+msgid "In secure storage (encrypted)"
+msgstr "Dans un système de stockage sécurisé (chiffré)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: settings/config/othersettings.ui:59
+msgid "<b>Display</b>"
+msgstr "<b>Affichage</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, interfaceNamingLabel)
+#: settings/config/othersettings.ui:66 settings/config/traysettings.ui:21
+msgid "Show network interfaces using:"
+msgstr "Afficher les interfaces réseau à l'aide de :"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
+#: settings/config/othersettings.ui:77 settings/config/traysettings.ui:29
+msgid "Descriptive Name"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
+#: settings/config/othersettings.ui:82 settings/config/traysettings.ui:34
+msgid "System Name"
+msgstr "Nom du système"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
+#: settings/config/othersettings.ui:87 settings/config/traysettings.ui:39
+msgid "Vendor's Name"
+msgstr "Nom du fabricant"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
+#: settings/config/othersettings.ui:92 settings/config/traysettings.ui:44
+msgid "Type Name"
+msgstr "Nom du type"
+
+#. i18n: ectx: property (text), widget (QLabel, networkSpeedLabel)
+#: settings/config/othersettings.ui:100
+msgid "Show network speed in:"
+msgstr "Afficher la vitesse du réseau en :"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_NetworkSpeedUnit)
+#: settings/config/othersettings.ui:111
+msgid "KBytes/s"
+msgstr "Ko/s"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_NetworkSpeedUnit)
+#: settings/config/othersettings.ui:116
+msgid "KBits/s"
+msgstr "Kbits/s"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: settings/config/othersettings.ui:124
+msgid "Display settings as:"
+msgstr "Afficher les paramètres comme :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: settings/config/othersettings.ui:148
+msgid "<b>Events</b>"
+msgstr "<b>Évènements</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, askPinLabel)
+#: settings/config/othersettings.ui:155
+msgid "Ask for GSM Pin:"
+msgstr "Demandez le PIN GSM :"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AskForGsmPin)
+#: settings/config/othersettings.ui:166
+msgid "On Modem Detection"
+msgstr "Lors de la détection du modem"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AskForGsmPin)
+#: settings/config/othersettings.ui:171
+msgid "When Activating Connection"
+msgstr "Lors de l'activation de la connexion"
+
+#. i18n: ectx: property (text), widget (QPushButton, notificationsButton)
+#: settings/config/othersettings.ui:179
+msgid "Configure Notifications..."
+msgstr "Configurer les notifications..."
+
+#: settings/config/othersettingswidget.cpp:41
+#, kde-format
+msgctxt "Version text"
+msgid "<b>Version %1</b>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Autostart)
+#: settings/config/traysettings.ui:54
+msgid "Show tray icon"
+msgstr "Afficher l'icône de la boîte à miniatures"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: settings/config/traysettings.ui:73
+msgid "Tray icons:"
+msgstr "Icônes de la boîte à miniatures :"
+
+#. i18n: ectx: property (toolTip), widget (QListWidget, iconInterfaceList)
+#: settings/config/traysettings.ui:82
+msgid "Arrange interface types between icons with drag and drop"
+msgstr ""
+"Arranger les types d'interfaces entre les icônes avec la fonction glisser-"
+"déposer"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, pbAddIcon)
+#: settings/config/traysettings.ui:97
+msgid "Add another system tray icon"
+msgstr "Ajouter une autre icône de boîte à miniatures"
+
+#. i18n: ectx: property (text), widget (QPushButton, pbAddIcon)
+#: settings/config/traysettings.ui:100
+msgid "&More Icons"
+msgstr "&Plus d'icônes"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, pbRemoveIcon)
+#: settings/config/traysettings.ui:107
+msgid "Remove a system tray icon"
+msgstr "Supprimer une icône de la boîte à miniatures"
+
+#. i18n: ectx: property (text), widget (QPushButton, pbRemoveIcon)
+#: settings/config/traysettings.ui:110
+msgid "&Fewer Icons"
+msgstr "&Moins d'icônes"
+
+#: settings/configshell/bluetooth.cpp:55
+msgid "We support 'dun' and 'nap' services only."
+msgstr "Nous prenons en charge les services « dun » et « nap » uniquement."
+
+#: settings/configshell/bluetooth.cpp:69
+msgid "Could not contact bluetooth manager (BlueZ)."
+msgstr "Impossible de contacter le gestionnaire bluetooth (BlueZ)."
+
+#: settings/configshell/bluetooth.cpp:78
+#, kde-format
+msgid "Default bluetooth adapter not found: %1"
+msgstr "Adaptateur bluetooth par défaut introuvable : %1"
+
+#: settings/configshell/bluetooth.cpp:142
+#, kde-format
+msgid "%1 (%2) does not support Dialup Networking (DUN)."
+msgstr ""
+"%1 (%2) ne prend pas en charge la gestion de réseau en mode commuté (DUN)."
+
+#: settings/configshell/bluetooth.cpp:148
+#, kde-format
+msgid "%1 (%2) does not support Network Access Point (NAP)."
+msgstr "%1 (%2) ne prend pas en charge le point d'accès au réseau (NAP)."
+
+#: settings/configshell/bluetooth.cpp:175
+#, kde-format
+msgid "Error activating devices's serial port: %1"
+msgstr "Problème lors de l'activation du port série du périphérique : %1"
+
+#: settings/configshell/bluetooth.cpp:200
+#, kde-format
+msgid "Device %1 is not the one we want (%2)"
+msgstr "Le périphérique  %1 n'est pas celui que nous souhaitons (%2)"
+
+#: settings/configshell/bluetooth.cpp:202
+#, kde-format
+msgid "Device for serial port %1 (%2) not found."
+msgstr "Le périphérique pour le port série %1 (%2) est introuvable."
+
+#: settings/configshell/main.cpp:31
+msgid "Network Management"
+msgstr "Gestion de réseau"
+
+#: settings/configshell/main.cpp:33
+msgid "Create network connections standalone"
+msgstr "Créer des connexions réseau en mode autonome"
+
+#: settings/configshell/main.cpp:35
+msgid "(c) 2008 Will Stephenson"
+msgstr "(c) 2008 Will Stephenson"
+
+#: settings/configshell/main.cpp:42
+msgid "Connection ID to edit"
+msgstr "Identifiant de connexion à modifier"
+
+#: settings/configshell/main.cpp:43
+msgid "Connect to a hidden wireless network"
+msgstr "Se connecter à un réseau sans fil caché"
+
+#: settings/configshell/main.cpp:44
+msgid ""
+"Connection type to create, must be one of '802-3-ethernet', '802-11-"
+"wireless', 'pppoe', 'vpn', 'cellular', 'bluetooth'"
+msgstr ""
+"Type de connexion à créer. Ce doit être l'un parmi « 802-3-ethernet », "
+"« 802-11-wireless », « pppoe », « vpn », « cellular », « bluetooth »"
+
+#: settings/configshell/main.cpp:45
+msgid ""
+"Space-separated connection type-specific arguments, may be either 'gsm' or "
+"'cdma' for cellular connections,\n"
+"'openvpn' or 'vpnc' for vpn connections,\n"
+"interface and AP identifiers for wireless connections,\n"
+"bluetooth mac address and service ('dun' or 'nap') for bluetooth "
+"connections.\n"
+"\n"
+"You can also pass the serial device (i.e. 'rfcomm0') instead of service for "
+"dun bluetooth connections,\n"
+"in that case this program will block waiting for that device to be "
+"registered in ModemManager."
+msgstr ""
+"Arguments séparés par des espaces, spécifiques au type de connexion. Il peut "
+"s'agir de « gsm » ou « cdma » pour les connexions cellulaires,\n"
+"« openvpn » ou « vpnc » pour les connexions VPN,\n"
+"les identifiants d'interface et de points d'accès pour les connexions sans "
+"fil,\n"
+"l'adresse mac bluetooth et le service (« dun » ou « nap ») pour les "
+"connexions bluetooth.\n"
+"\n"
+"Vous pouvez également passer le périphérique série (c'est-à-dire "
+"« rfcomm0 ») au lieu du service pour les connexions bluetooth « dun ».\n"
+"Dans ce cas, ce programme se bloquera en attendant que ce périphérique soit "
+"déclaré dans ModemManager."
+
+#: settings/configshell/main.cpp:46
+msgid "Operation mode, may be either 'create' or 'edit'"
+msgstr "Mode de fonctionnement. Ce peut être soit « create » soit « edit »"
+
+#: settings/configshell/main.cpp:97
+#, kde-format
+msgid "Expected two specific args, found %1: %2"
+msgstr "Deux arguments spécifiques étaient attendus. Trouvé %1 : %2"
+
+#: settings/configshell/manageconnection.cpp:83
+msgid "unknown error"
+msgstr "Erreur inconnue"
+
+#: settings/configshell/manageconnection.cpp:87
+#, kde-format
+msgid "Error adding connection: %1"
+msgstr "Problème lors l'ajout d'une connexion : %1"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: vpnplugins/novellvpn/novellvpnadvancedprop.ui:17
+msgid "&DH Group"
+msgstr "Groupe &DH"
+
+#. i18n: ectx: property (text), widget (QRadioButton, rbDh1)
+#: vpnplugins/novellvpn/novellvpnadvancedprop.ui:23
+msgid "768 bits (DH&1)"
+msgstr "768 bits (DH&1)"
+
+#. i18n: ectx: property (text), widget (QRadioButton, rbDh2)
+#: vpnplugins/novellvpn/novellvpnadvancedprop.ui:33
+msgid "1024 bits (DH&2)"
+msgstr "1024 bits (DH&2)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: vpnplugins/novellvpn/novellvpnadvancedprop.ui:43
+msgid "&PFS Group"
+msgstr "Groupe &PFS"
+
+#. i18n: ectx: property (text), widget (QRadioButton, rbPfOff)
+#: vpnplugins/novellvpn/novellvpnadvancedprop.ui:49
+msgid "&Off"
+msgstr "&Désactivé"
+
+#. i18n: ectx: property (text), widget (QRadioButton, rbPf1)
+#: vpnplugins/novellvpn/novellvpnadvancedprop.ui:59
+msgid "&768 bits (PF1)"
+msgstr "&768 bits (PF1)"
+
+#. i18n: ectx: property (text), widget (QRadioButton, rbPf2)
+#: vpnplugins/novellvpn/novellvpnadvancedprop.ui:66
+msgid "102&4 bits (PF2)"
+msgstr "102&4 bits (PF2)"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbDisableSplit)
+#: vpnplugins/novellvpn/novellvpnadvancedprop.ui:76
+msgid "Disable &split tunnel"
+msgstr "Désactiver le tunnel &séparé"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, NovellVpnWidget)
+#: vpnplugins/novellvpn/novellvpnprop.ui:14
+msgid "Novell VPN"
+msgstr "Novell VPN"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: ectx: property (title), widget (QGroupBox, grp_general)
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: vpnplugins/novellvpn/novellvpnprop.ui:20
+#: vpnplugins/openconnect/openconnectprop.ui:20 vpnplugins/pptp/pptpprop.ui:26
+#: vpnplugins/vpnc/vpncprop.ui:24
+msgid "General"
+msgstr "Général"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: vpnplugins/novellvpn/novellvpnprop.ui:39
+msgid "Gate&way Type:"
+msgstr "T&ype de passerelle :"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbGwType)
+#: vpnplugins/novellvpn/novellvpnprop.ui:50
+msgid "Nortel"
+msgstr "Nortel"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbGwType)
+#: vpnplugins/novellvpn/novellvpnprop.ui:55
+msgid "Standard Gateway"
+msgstr "Passerelle standard"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbAuthType)
+#: vpnplugins/novellvpn/novellvpnprop.ui:83
+msgid "XAUTH"
+msgstr "XAUTH"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbAuthType)
+#: vpnplugins/novellvpn/novellvpnprop.ui:88
+msgid "X.509"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: vpnplugins/novellvpn/novellvpnprop.ui:116
+msgid "&Group Name:"
+msgstr "Nom du &groupe :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: vpnplugins/novellvpn/novellvpnprop.ui:129
+msgid "U&ser Password:"
+msgstr "Mot de passe &utilisateur :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: vpnplugins/novellvpn/novellvpnprop.ui:146
+msgid "G&roup Password:"
+msgstr "&Mot de passe du groupe :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_13)
+#: vpnplugins/novellvpn/novellvpnprop.ui:167
+msgid "Certificate &file:"
+msgstr "Fichier de &certificat :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_14)
+#: vpnplugins/novellvpn/novellvpnprop.ui:180
+msgid "Certificate &password:"
+msgstr "Mot de &passe du certificat :"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPasswords)
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPasswords)
+#: vpnplugins/novellvpn/novellvpnprop.ui:201
+#: vpnplugins/openvpn/openvpnprop.ui:590
+msgid "&Show Passwords"
+msgstr "&Afficher les mots de passe"
+
+#. i18n: ectx: property (text), widget (KPushButton, btnAdvanced)
+#: vpnplugins/novellvpn/novellvpnprop.ui:208
+msgid "Ad&vanced..."
+msgstr "A&vancé..."
+
+#: vpnplugins/novellvpn/novellvpnwidget.cpp:63
+msgctxt "@window:title NovellVPN advanced connection options"
+msgid "NovellVPN advanced options"
+msgstr "Options avancées pour NovellVPN"
+
+#: vpnplugins/openconnect/openconnectauth.cpp:269
+msgid "Contacting host, please wait..."
+msgstr "Contact avec l'hôte en cours, veuillez patienter..."
+
+#: vpnplugins/openconnect/openconnectauth.cpp:449
+msgid "Login"
+msgstr "Identifiant de connexion"
+
+#: vpnplugins/openconnect/openconnectauth.cpp:497
+#, kde-format
+msgid ""
+"Check failed for certificate from VPN server \"%1\".\n"
+"Reason: %2\n"
+"Accept it anyway?"
+msgstr ""
+"Échec du contrôle pour le certificat depuis le serveur VPN « %1 ».\n"
+"Raison : %2\n"
+"L'accepter néanmoins ?"
+
+#: vpnplugins/openconnect/openconnectauth.cpp:570
+msgid "Connection attempt was unsuccessful."
+msgstr "La tentative de connexion n'a pas abouti."
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenconnectAuth)
+#: vpnplugins/openconnect/openconnectauth.ui:20
+msgid "OpenConnect VPN Authentication"
+msgstr "Authentification VPN OpenConnect"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: vpnplugins/openconnect/openconnectauth.ui:40
+msgid "VPN Host"
+msgstr "Hôte VPN"
+
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnConnect)
+#: vpnplugins/openconnect/openconnectauth.ui:56
+msgid "Connect"
+msgstr "Connecter"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkAutoconnect)
+#: vpnplugins/openconnect/openconnectauth.ui:77
+msgid "Automatically start connecting next time"
+msgstr "Démarrer automatiquement une connexion la prochaine fois"
+
+#. i18n: ectx: property (text), widget (QCheckBox, viewServerLog)
+#: vpnplugins/openconnect/openconnectauth.ui:112
+msgid "View Log"
+msgstr "Afficher le journal"
+
+#. i18n: ectx: property (text), widget (QLabel, lblLogLevel)
+#: vpnplugins/openconnect/openconnectauth.ui:122
+msgid "Log Level:"
+msgstr "Niveau de journalisation :"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
+#: vpnplugins/openconnect/openconnectauth.ui:138
+msgid "Info"
+msgstr "Informations"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
+#: vpnplugins/openconnect/openconnectauth.ui:143
+msgid "Debug"
+msgstr "Débogage"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
+#: vpnplugins/openconnect/openconnectauth.ui:148
+msgid "Trace"
+msgstr "Traçage"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenconnectProp)
+#: vpnplugins/openconnect/openconnectprop.ui:14
+msgid "OpenConnect Settings"
+msgstr "Paramètres de OpenConnect"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: vpnplugins/openconnect/openconnectprop.ui:42
+msgid "&CA Certificate:"
+msgstr "&Certificat de l'AC :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: vpnplugins/openconnect/openconnectprop.ui:55
+msgid "&Proxy:"
+msgstr "&Serveur mandataire :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: vpnplugins/openconnect/openconnectprop.ui:68
+msgid "CSD &Wrapper Script:"
+msgstr "Script d'encaps&ulation CSD :"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkAllowTrojan)
+#: vpnplugins/openconnect/openconnectprop.ui:78
+msgid "Allow Cisco Secure Desktop &trojan"
+msgstr "Autoriser un &cheval de Troie sur Cisco Secure Desktop"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: vpnplugins/openconnect/openconnectprop.ui:91
+msgid "Certificate Authentication"
+msgstr "Authentification du certificat"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
+#: vpnplugins/openconnect/openconnectprop.ui:123
+msgid "Use &FSID for key passphrase"
+msgstr "Utiliser &FSID pour la phrase de chiffrement de la clé"
+
+#: vpnplugins/openvpn/openvpn.cpp:165
+msgid "Could not open file"
+msgstr "Impossible d'ouvrir le fichier"
+
+#: vpnplugins/openvpn/openvpn.cpp:210 vpnplugins/openvpn/openvpn.cpp:231
+#: vpnplugins/openvpn/openvpn.cpp:421
+#, kde-format
+msgid "Unknown option: %1"
+msgstr "Option inconnue : %1"
+
+#: vpnplugins/openvpn/openvpn.cpp:214 vpnplugins/openvpn/openvpn.cpp:235
+#: vpnplugins/openvpn/openvpn.cpp:253 vpnplugins/openvpn/openvpn.cpp:267
+#: vpnplugins/openvpn/openvpn.cpp:285 vpnplugins/openvpn/openvpn.cpp:359
+#: vpnplugins/openvpn/openvpn.cpp:412 vpnplugins/openvpn/openvpn.cpp:443
+#, kde-format
+msgid "Invalid number of arguments (expected 1) in option: %1"
+msgstr "Nombre incorrect d'arguments (1 était attendu) dans l'option : %1"
+
+#: vpnplugins/openvpn/openvpn.cpp:249 vpnplugins/openvpn/openvpn.cpp:263
+#, kde-format
+msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
+msgstr ""
+"Taille incorrecte (devrait se situer entre 0 et 0xFFFF) dans l'option : %1"
+
+#: vpnplugins/openvpn/openvpn.cpp:281
+#, kde-format
+msgid "Invalid size (should be between 0 and 604800) in option: %1"
+msgstr ""
+"Taille incorrecte (devrait se situer entre 0 et 604800) dans l'option : %1"
+
+#: vpnplugins/openvpn/openvpn.cpp:333
+#, kde-format
+msgid "Invalid proxy option: %1"
+msgstr "Option de serveur mandataire incorrecte : %1"
+
+#: vpnplugins/openvpn/openvpn.cpp:356
+#, kde-format
+msgid "Invalid port (should be between 1 and 65535) in option: %1"
+msgstr "Port incorrect (devrait se situer entre 1 et 65535) dans l'option : %1"
+
+#: vpnplugins/openvpn/openvpn.cpp:431
+#, kde-format
+msgid "Invalid number of arguments (expected 2) in option: %1"
+msgstr "Nombre incorrect d'arguments (2 était attendu) dans l'option : %1"
+
+#: vpnplugins/openvpn/openvpn.cpp:455
+#, kde-format
+msgid "File %1 is not a valid OpenVPN's client configuration file"
+msgstr ""
+"Le fichier %1 n'est pas un fichier de configuration client de OpenVPN valable"
+
+#: vpnplugins/openvpn/openvpn.cpp:460
+#, kde-format
+msgid "File %1 is not a valid OpenVPN configuration (no remote)."
+msgstr ""
+"Le fichier %1 n'est pas une configuration OpenVPN valable (non distant)."
+
+#: vpnplugins/openvpn/openvpn.cpp:511
+msgid "Could not open file for writing"
+msgstr "Impossible d'ouvrir le fichier en écriture"
+
+#: vpnplugins/openvpn/openvpnauth.cpp:69 vpnplugins/openvpn/openvpnauth.cpp:95
+msgid "Key Password:"
+msgstr "Mot de passe de la clé :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_15)
+#: vpnplugins/openvpn/openvpnauth.cpp:106
+#: vpnplugins/openvpn/openvpnprop.ui:1085
+msgid "Proxy Password:"
+msgstr "Mot de passe du groupe :"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenVPNAuthenticationWidget)
+#: vpnplugins/openvpn/openvpnauth.ui:14
+msgid "OpenVPNAuthentication"
+msgstr "OpenVPNAuthentication"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenVPNProp)
+#: vpnplugins/openvpn/openvpnprop.ui:14
+msgid "OpenVPN"
+msgstr "OpenVPN"
+
+#. i18n: ectx: attribute (title), widget (QWidget, TabPage)
+#: vpnplugins/openvpn/openvpnprop.ui:24
+msgid "Required Settings"
+msgstr "Paramètres requis"
+
+#. i18n: ectx: property (text), widget (QLabel, labelConnectionType)
+#: vpnplugins/openvpn/openvpnprop.ui:51
+msgid "Connection &type:"
+msgstr "&Type de connexion :"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
+#: vpnplugins/openvpn/openvpnprop.ui:74
+msgid "X.509 Certificates"
+msgstr "Certificats X.509"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
+#: vpnplugins/openvpn/openvpnprop.ui:79
+msgid "Pre-shared Key"
+msgstr "Clé pré-partagée"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
+#: vpnplugins/openvpn/openvpnprop.ui:89
+msgid "X.509 With Password"
+msgstr "X.509 avec mot de passe"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: vpnplugins/openvpn/openvpnprop.ui:108
+msgid "C&A file:"
+msgstr "Fichier d'&AC :"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
+#: vpnplugins/openvpn/openvpnprop.ui:124
+msgid "&Certificate:"
+msgstr "&Certificat :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: vpnplugins/openvpn/openvpnprop.ui:156
+msgid "Key password:"
+msgstr "Mot de passe de la clé :"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel6)
+#: vpnplugins/openvpn/openvpnprop.ui:233
+msgid "Local IP"
+msgstr "IP locale"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel7)
+#: vpnplugins/openvpn/openvpnprop.ui:249
+msgid "Remote IP"
+msgstr "IP distante"
+
+#. i18n: ectx: property (text), widget (QLabel, label_16)
+#: vpnplugins/openvpn/openvpnprop.ui:269
+msgid "Key Direction"
+msgstr "Direction de la clé"
+
+#. i18n: ectx: property (whatsThis), widget (KComboBox, cmbKeyDirection)
+#: vpnplugins/openvpn/openvpnprop.ui:282
+msgid ""
+"If key direction is used, it must be the opposite of that used on the VPN "
+"peer."
+msgstr ""
+"Si la direction de la clé est utilisée, elle doit être l'opposé de celle "
+"employée sur l'homologue VPN."
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbKeyDirection)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboDirection)
+#. i18n: ectx: property (text), item, widget (QComboBox, cboEncryptionMethod)
+#: vpnplugins/openvpn/openvpnprop.ui:286 vpnplugins/openvpn/openvpnprop.ui:814
+#: vpnplugins/openvpn/openvpnprop.ui:948 vpnplugins/vpnc/vpncprop.ui:242
+msgid "None"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbKeyDirection)
+#: vpnplugins/openvpn/openvpnprop.ui:291
+msgid "0"
+msgstr "0"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbKeyDirection)
+#: vpnplugins/openvpn/openvpnprop.ui:296
+msgid "1"
+msgstr "1"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel8)
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: vpnplugins/openvpn/openvpnprop.ui:325 vpnplugins/vpnc/vpncprop.ui:178
+msgid "CA File:"
+msgstr "Fichier d'AC :"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel9)
+#: vpnplugins/openvpn/openvpnprop.ui:344
+msgid "Username:"
+msgstr "Nom d'utilisateur :"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel2_2)
+#: vpnplugins/openvpn/openvpnprop.ui:427
+msgid "CA file"
+msgstr "Fichier d'AC"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel3_2_2)
+#: vpnplugins/openvpn/openvpnprop.ui:443
+msgid "Certificate"
+msgstr "Certificat"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel4_2)
+#: vpnplugins/openvpn/openvpnprop.ui:459
+msgid "Key"
+msgstr "Clé"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: vpnplugins/openvpn/openvpnprop.ui:475
+msgid "Key password"
+msgstr "Mot de passe de la clé"
+
+#. i18n: ectx: attribute (title), widget (QWidget, TabPage2)
+#: vpnplugins/openvpn/openvpnprop.ui:611
+msgid "Optional Settings"
+msgstr "Paramètres optionnels"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: vpnplugins/openvpn/openvpnprop.ui:619
+msgid "Gateway &Port:"
+msgstr "Port de &passerelle :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: vpnplugins/openvpn/openvpnprop.ui:643
+msgid "Tunnel MTU"
+msgstr "Tunnel MTU"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: vpnplugins/openvpn/openvpnprop.ui:667
+msgid "UDP fragment size"
+msgstr "Taille de fragment UDP"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseCustomReneg)
+#: vpnplugins/openvpn/openvpnprop.ui:691
+msgid "Use custom renegotiation interval"
+msgstr "Utiliser un intervalle de renégociation personnalisé"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseLZO)
+#: vpnplugins/openvpn/openvpnprop.ui:710
+msgid "Use LZO compression"
+msgstr "Utiliser la compression LZO"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseTCP)
+#: vpnplugins/openvpn/openvpnprop.ui:717
+msgid "Use TCP connection"
+msgstr "Utiliser une connexion TCP"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseTAP)
+#: vpnplugins/openvpn/openvpnprop.ui:724
+msgid "Use TAP device"
+msgstr "Utiliser le périphérique TAP"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkMssRestrict)
+#: vpnplugins/openvpn/openvpnprop.ui:731
+msgid "Restrict TCP maximum segment size (MSS)"
+msgstr "Restreindre la taille maximale de segment TCP (MSS)"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: vpnplugins/openvpn/openvpnprop.ui:752
+msgid "Optional &Security"
+msgstr "&Sécurité optionnelle"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: vpnplugins/openvpn/openvpnprop.ui:760
+msgid "&Cipher:"
+msgstr "&Chiffrement :"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboCipher)
+#: vpnplugins/openvpn/openvpnprop.ui:780
+msgid "Obtaining available ciphers..."
+msgstr "Obtention de chiffrements valables..."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: vpnplugins/openvpn/openvpnprop.ui:792
+msgid "&HMAC Authentication:"
+msgstr "Authentification &HMAC :"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: vpnplugins/openvpn/openvpnprop.ui:819
+msgid "MD-5"
+msgstr "MD-5"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: vpnplugins/openvpn/openvpnprop.ui:824
+msgid "SHA-1"
+msgstr "SHA-1"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: vpnplugins/openvpn/openvpnprop.ui:829
+msgid "SHA-224"
+msgstr "SHA-224"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: vpnplugins/openvpn/openvpnprop.ui:834
+msgid "SHA-256"
+msgstr "SHA-256"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: vpnplugins/openvpn/openvpnprop.ui:839
+msgid "SHA-384"
+msgstr "SHA-384"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: vpnplugins/openvpn/openvpnprop.ui:844
+msgid "SHA-512"
+msgstr "SHA-512"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: vpnplugins/openvpn/openvpnprop.ui:849
+msgid "RIPEMD-160"
+msgstr "RIPEMD-160"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: vpnplugins/openvpn/openvpnprop.ui:873
+msgid "Optional TLS Settings"
+msgstr "Paramètres TLS optionnels"
+
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, subjectMatch)
+#: vpnplugins/openvpn/openvpnprop.ui:891
+msgid ""
+"Connect only to servers whose certificate matches the given subject. "
+"Example: /CN=myvpn.company.com"
+msgstr ""
+"Se connecter uniquement aux serveurs dont le certificat correspond au sujet "
+"donné. Exemple : /CN=monvpn.compagnie.com"
+
+#. i18n: ectx: property (title), widget (QGroupBox, useExtraTlsAuth)
+#: vpnplugins/openvpn/openvpnprop.ui:900
+msgid "Use additional TLS authentication"
+msgstr "Utiliser une authentification TLS supplémentaire"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: vpnplugins/openvpn/openvpnprop.ui:934
+msgid "Key Direction:"
+msgstr "Direction de la clé :"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboDirection)
+#: vpnplugins/openvpn/openvpnprop.ui:953
+msgid "Server (0)"
+msgstr "Serveur (0)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboDirection)
+#: vpnplugins/openvpn/openvpnprop.ui:958
+msgid "Client (1)"
+msgstr "Client (1)"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_3)
+#: vpnplugins/openvpn/openvpnprop.ui:985
+msgid "Proxies"
+msgstr "Serveurs mandataires"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: vpnplugins/openvpn/openvpnprop.ui:994
+msgid "Proxy Type:"
+msgstr "Type de serveur mandataire :"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbProxyType)
+#: vpnplugins/openvpn/openvpnprop.ui:1019
+msgid "HTTP"
+msgstr "HTTP"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbProxyType)
+#: vpnplugins/openvpn/openvpnprop.ui:1024
+msgid "SOCKS"
+msgstr "SOCKS"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: vpnplugins/openvpn/openvpnprop.ui:1032
+msgid "Server Address:"
+msgstr "Adresse du serveur :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_13)
+#: vpnplugins/openvpn/openvpnprop.ui:1045
+msgid "Port:"
+msgstr "Port :"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkProxyRetry)
+#: vpnplugins/openvpn/openvpnprop.ui:1068
+msgid "Retry indefinitely when errors occur"
+msgstr "Réessayer indéfiniment lors des erreurs surviennent"
+
+#. i18n: ectx: property (text), widget (QLabel, label_14)
+#: vpnplugins/openvpn/openvpnprop.ui:1075
+msgid "Proxy Username:"
+msgstr "Nom d'utilisateur du serveur mandataire :"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkProxyShowPassword)
+#: vpnplugins/openvpn/openvpnprop.ui:1095
+msgid "Show Password"
+msgstr "Afficher le mot de passe"
+
+#: vpnplugins/openvpn/openvpnwidget.cpp:127
+#: vpnplugins/openvpn/openvpnwidget.cpp:151
+msgctxt "@item:inlist Item added when OpenVPN cipher lookup failed"
+msgid "OpenVPN cipher lookup failed"
+msgstr "La recherche de chiffrement pour OpenVPN a échoué"
+
+#: vpnplugins/openvpn/openvpnwidget.cpp:134
+msgctxt "@item::inlist Default openvpn cipher item"
+msgid "Default"
+msgstr "Par défaut"
+
+#: vpnplugins/openvpn/openvpnwidget.cpp:148
+msgctxt "@item:inlist Item added when OpenVPN cipher lookup failed"
+msgid "No OpenVPN ciphers found"
+msgstr "Aucun chiffrement pour OpenVPN n'a été trouvé"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_auth)
+#: vpnplugins/pptp/pptpadvanced.ui:25
+msgid "Allow following &authentication methods:"
+msgstr "Autoriser les méthodes d'&authentification suivantes :"
+
+#. i18n: ectx: property (toolTip), widget (QGroupBox, gb_MPPE)
+#: vpnplugins/pptp/pptpadvanced.ui:84
+msgid "Use Microsoft Point-to-Point Encryption"
+msgstr "Utiliser le chiffrement point-à-point de Microsoft (MPPE)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gb_MPPE)
+#: vpnplugins/pptp/pptpadvanced.ui:87
+msgid "Use &MPPE Encryption"
+msgstr "Utiliser le chiffrement &MPPE"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_MMPEcrypto)
+#: vpnplugins/pptp/pptpadvanced.ui:109
+msgid "&Crypto:"
+msgstr "&Chiffrement :"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
+#: vpnplugins/pptp/pptpadvanced.ui:125
+msgid "128 bit"
+msgstr "128 bits"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
+#: vpnplugins/pptp/pptpadvanced.ui:130
+msgid "40 bit"
+msgstr "40 bits"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_statefulEncryption)
+#: vpnplugins/pptp/pptpadvanced.ui:144
+msgid "Use &stateful encryption"
+msgstr "Utiliser le chiffrement à état&s"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_BSD)
+#: vpnplugins/pptp/pptpadvanced.ui:164
+msgid "Allow &BSD compression"
+msgstr "Autoriser la compression &BSD"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_deflate)
+#: vpnplugins/pptp/pptpadvanced.ui:174
+msgid "Allow &Deflate compression"
+msgstr "Autoriser la compression &Deflate"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_TCPheaders)
+#: vpnplugins/pptp/pptpadvanced.ui:184
+msgid "Allow &TCP header compression"
+msgstr "Utiliser la compression d'en-têtes &TCP"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_sendEcho)
+#: vpnplugins/pptp/pptpadvanced.ui:205
+msgid "Send PPP &echo packets "
+msgstr "Envoyer des paquets d'&écho PPP "
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PptpAuthenticationWidget)
+#: vpnplugins/pptp/pptpauth.ui:14
+msgid "PPTPAuthentication"
+msgstr "PPTPAuthentication"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PptpProp)
+#: vpnplugins/pptp/pptpprop.ui:14
+msgid "PPTP Settings"
+msgstr "Paramètres PPTP"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grp_additional)
+#: vpnplugins/pptp/pptpprop.ui:52
+msgid "Additional"
+msgstr "Supplémentaires"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_login)
+#: vpnplugins/pptp/pptpprop.ui:74
+msgid "&Login:"
+msgstr "&Identifiant de connexion :"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_ntdomain)
+#: vpnplugins/pptp/pptpprop.ui:165
+msgid "&NT Domain:"
+msgstr "&Domaine NT :"
+
+#: vpnplugins/strongswan/strongswanauth.cpp:70
+msgctxt "@label:textbox password label for private key password"
+msgid "Private Key Password:"
+msgstr "Mot de passe de la clé privée :"
+
+#: vpnplugins/strongswan/strongswanauth.cpp:72
+msgctxt "@label:textbox password label for smartcard pin"
+msgid "PIN:"
+msgstr "PIN :"
+
+#: vpnplugins/strongswan/strongswanauth.cpp:74
+msgctxt "@label:textbox password label for EAP password"
+msgid "Password:"
+msgstr "Mot de passe :"
+
+#: vpnplugins/strongswan/strongswanauth.cpp:111
+msgid ""
+"Configuration uses ssh-agent for authentication, but no ssh-agent found "
+"running."
+msgstr ""
+"La configuration utilise l'agent ssh pour l'authentification, mais aucun "
+"agent ssh n'a été trouvé en cours de fonctionnement."
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanAuth)
+#. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanProp)
+#: vpnplugins/strongswan/strongswanauth.ui:14
+#: vpnplugins/strongswan/strongswanprop.ui:14
+msgid "Strong Swan VPN"
+msgstr "VPN Strong Swan"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPasswords)
+#: vpnplugins/strongswan/strongswanauth.ui:37
+#: vpnplugins/strongswan/strongswanprop.ui:304 vpnplugins/vpnc/vpncauth.ui:79
+#: vpnplugins/vpnc/vpncprop.ui:161
+msgid "&Show passwords"
+msgstr "&Afficher les mots de passe"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: vpnplugins/strongswan/strongswanprop.ui:20
+msgid "Gateway"
+msgstr "Passerelle"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: vpnplugins/strongswan/strongswanprop.ui:26 vpnplugins/vpnc/vpncprop.ui:30
+msgid "Gateway:"
+msgstr "Passerelle :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: vpnplugins/strongswan/strongswanprop.ui:42
+#: vpnplugins/strongswan/strongswanprop.ui:110
+#: vpnplugins/strongswan/strongswanprop.ui:183
+msgid "Certificate:"
+msgstr "Certificat :"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#: vpnplugins/strongswan/strongswanprop.ui:71
+msgid "Certificate/private key"
+msgstr "Certificat / Clé privée"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#: vpnplugins/strongswan/strongswanprop.ui:76
+msgid "Certificate/ssh-agent"
+msgstr "Certificat / Agent ssh"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#: vpnplugins/strongswan/strongswanprop.ui:81
+msgid "Smartcard"
+msgstr "Carte à puce"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: vpnplugins/strongswan/strongswanprop.ui:120
+msgid "Private key:"
+msgstr "Clé privée :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: vpnplugins/strongswan/strongswanprop.ui:197
+msgid "PIN:"
+msgstr "PIN :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: vpnplugins/strongswan/strongswanprop.ui:290
+msgid "User &Password"
+msgstr "Mot de passe &utilisateur"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: vpnplugins/strongswan/strongswanprop.ui:317
+msgid "Options"
+msgstr "Options"
+
+#. i18n: ectx: property (text), widget (QCheckBox, innerIP)
+#: vpnplugins/strongswan/strongswanprop.ui:326
+msgid "Request an inner IP address"
+msgstr "Demander une adresse IP interne"
+
+#. i18n: ectx: property (text), widget (QCheckBox, udpEncap)
+#: vpnplugins/strongswan/strongswanprop.ui:339
+msgid "Enforce UDP encapsulation"
+msgstr "Appliquer l'encapsulation UDP"
+
+#. i18n: ectx: property (text), widget (QCheckBox, ipComp)
+#: vpnplugins/strongswan/strongswanprop.ui:346
+msgid "Use IP compression"
+msgstr "Utiliser la compression IP"
+
+#: vpnplugins/vpnc/vpnc.cpp:83
+msgid "Error decrypting the obfuscated password"
+msgstr "Erreur lors du déchiffrement du mot de passe masqué"
+
+#: vpnplugins/vpnc/vpnc.cpp:138
+#, kde-format
+msgid "File %1 could not be opened."
+msgstr "Impossible de rouvrir le fichier %1."
+
+#: vpnplugins/vpnc/vpnc.cpp:148
+msgid "Needed executable cisco-decrypt could not be found."
+msgstr "Impossible de trouver l'exécutable « cisco-decrypt » nécessaire."
+
+#: vpnplugins/vpnc/vpnc.cpp:264
+#, kde-format
+msgid ""
+"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
+"through TCP which is currently not supported in the vpnc software.\n"
+"\n"
+"The connection can still be created, with TCP tunneling disabled, however it "
+"may not work as expected."
+msgstr ""
+"Le fichier de configuration VPN « '%1 » spécifie que le trafic VPN devra "
+"être tunnellisé via TCP, ce qui n'est actuellement pris en charge dans le "
+"logiciel VPN.\n"
+"\n"
+"La connexion peut encore être créée, avec la tunnellisation TCP désactivée, "
+"cependant elle risque de ne pas fonctionner comme attendu."
+
+#: vpnplugins/vpnc/vpnc.cpp:264
+msgid "Not supported"
+msgstr "Non pris en charge"
+
+#: vpnplugins/vpnc/vpnc.cpp:291
+#, kde-format
+msgid "%1: file format error."
+msgstr "%1 : erreur de format de fichier."
+
+#: vpnplugins/vpnc/vpnc.cpp:311
+#, kde-format
+msgid "%1: file could not be created"
+msgstr "%1 : impossible de créer le fichier"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, VpncAuth)
+#: vpnplugins/vpnc/vpncauth.ui:14
+msgid "VPNCAuthentication"
+msgstr "VPNCAuthentication"
+
+#. i18n: ectx: property (text), widget (QLabel, userPasswordLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: vpnplugins/vpnc/vpncauth.ui:23 vpnplugins/vpnc/vpncprop.ui:59
+msgid "User &Password:"
+msgstr "Mot de passe &utilisateur :"
+
+#. i18n: ectx: property (text), widget (QLabel, groupPasswordLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: vpnplugins/vpnc/vpncauth.ui:36 vpnplugins/vpnc/vpncprop.ui:118
+msgid "&Group Password:"
+msgstr "&Mot de passe du groupe :"
+
+#. i18n: ectx: property (text), widget (QLabel, groupNameLabel)
+#. i18n: ectx: property (text), widget (QLabel, labelGroup)
+#: vpnplugins/vpnc/vpncauth.ui:106 vpnplugins/vpnc/vpncprop.ui:102
+msgid "Group name:"
+msgstr "Nom du groupe :"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, VpncProp)
+#: vpnplugins/vpnc/vpncprop.ui:14
+msgid "Cisco VPN"
+msgstr "VPN Cisco"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbUseHybridAuth)
+#: vpnplugins/vpnc/vpncprop.ui:171
+msgid "Use hybrid authentication"
+msgstr "Utiliser une authentification hybride"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: vpnplugins/vpnc/vpncprop.ui:202
+msgid "&Domain:"
+msgstr "&Domaine :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: vpnplugins/vpnc/vpncprop.ui:215
+msgid "&Encryption Method:"
+msgstr "Méthode de chiffrem&ent :"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cboEncryptionMethod)
+#: vpnplugins/vpnc/vpncprop.ui:232
+msgid "Secure"
+msgstr "Sécurisée"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cboEncryptionMethod)
+#: vpnplugins/vpnc/vpncprop.ui:237
+msgid "Weak"
+msgstr "Faible"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: vpnplugins/vpnc/vpncprop.ui:250
+msgid "&NAT Traversal:"
+msgstr "Traversée de &NAT :"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
+#: vpnplugins/vpnc/vpncprop.ui:267
+msgid "NAT-T (if available)"
+msgstr "NAT-T (si disponible)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
+#: vpnplugins/vpnc/vpncprop.ui:272
+msgid "Force NAT-T"
+msgstr "Forcer NAT-T"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
+#: vpnplugins/vpnc/vpncprop.ui:277
+msgid "Cisco UDP"
+msgstr "UDP Cisco"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: vpnplugins/vpnc/vpncprop.ui:290
+msgid "&IKE DH Group"
+msgstr "Groupe &DH-IKE"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cboDHGroup)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPerfectForwardSecrecy)
+#: vpnplugins/vpnc/vpncprop.ui:310 vpnplugins/vpnc/vpncprop.ui:358
+msgid "DH Group 1"
+msgstr "Groupe DH 1"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cboDHGroup)
+#: vpnplugins/vpnc/vpncprop.ui:315
+msgid "DH Group 2 (default)"
+msgstr "Groupe DH 2 (par défaut)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cboDHGroup)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPerfectForwardSecrecy)
+#: vpnplugins/vpnc/vpncprop.ui:320 vpnplugins/vpnc/vpncprop.ui:368
+msgid "DH Group 5"
+msgstr "Groupe DH 5"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: vpnplugins/vpnc/vpncprop.ui:328
+msgid "&Perfect Forward Secrecy:"
+msgstr "Confidentialité de transmission &parfaite :"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPerfectForwardSecrecy)
+#: vpnplugins/vpnc/vpncprop.ui:348
+msgid "No PFS"
+msgstr "Pas de PFS"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPerfectForwardSecrecy)
+#: vpnplugins/vpnc/vpncprop.ui:353
+msgid "Server (default)"
+msgstr "Serveur (par défaut)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPerfectForwardSecrecy)
+#: vpnplugins/vpnc/vpncprop.ui:363
+msgid "DH Group 2"
+msgstr "Groupe DH 2"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: vpnplugins/vpnc/vpncprop.ui:376
+msgid "&Vendor:"
+msgstr "&Fournisseur :"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboVendor)
+#: vpnplugins/vpnc/vpncprop.ui:393
+msgid "Cisco (default)"
+msgstr "Cisco (par défaut)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboVendor)
+#: vpnplugins/vpnc/vpncprop.ui:398
+msgid "Netscreen"
+msgstr "Netscreen"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: vpnplugins/vpnc/vpncprop.ui:406
+msgid "&Application Version:"
+msgstr "Version de l'&application :"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkDeadPeerDetection)
+#: vpnplugins/vpnc/vpncprop.ui:419
+msgid "Enable Dead &Peer Detection"
+msgstr "Activer la détection d'homologues non o&pérationnels"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: vpnplugins/vpnc/vpncprop.ui:429
+msgid "&Local Port:"
+msgstr "Port &local :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_13)
+#: vpnplugins/vpnc/vpncprop.ui:480
+msgid "&Cisco UDP Encapsulation Port:"
+msgstr "Port d''encapsulation UDP &Cisco :"

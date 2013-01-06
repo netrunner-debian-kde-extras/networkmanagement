@@ -157,9 +157,14 @@ bool ActivatableListWidget::accept(RemoteActivatable * activatable) const
             return false;
         }
     }
-    if (activatable->activatableType() == Knm::Activatable::WirelessInterfaceConnection &&
-        !Solid::Control::NetworkManagerNm09::isWirelessEnabled()) {
-        return false;
+    if (activatable->activatableType() == Knm::Activatable::WirelessInterfaceConnection) {
+        RemoteWirelessInterfaceConnection * wic = static_cast<RemoteWirelessInterfaceConnection*>(activatable);
+
+        if (!Solid::Control::NetworkManagerNm09::isWirelessEnabled() ||
+            (!m_showAllTypes && !wic->isShared() && wic->operationMode() == Solid::Control::WirelessNetworkInterfaceNm09::Adhoc &&
+                                 wic->activationState() != Knm::InterfaceConnection::Activated)) {
+            return false;
+        }
     }
     return true;
 }
@@ -205,7 +210,10 @@ void ActivatableListWidget::createItem(RemoteActivatable * activatable, int inde
 
     Q_ASSERT(ai);
     ai->setupItem();
-    m_layout->insertItem(index + 1, ai);
+    if (m_hiddenItem)
+        m_layout->insertItem(index + 1, ai);
+    else
+        m_layout->insertItem(index, ai);
     m_itemIndex[activatable] = ai;
     connect(ai, SIGNAL(disappearAnimationFinished()),
             this, SLOT(deleteItem()));

@@ -1,5 +1,6 @@
 /*
 Copyright 2011 Ilia Kats <ilia-kats@gmx.net>
+Copyright 2011-2012 Lamarque V. Souza <lamarque@kde.org>
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -19,6 +20,8 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include "secretstorage.h"
+#include "../internals/settings/802-11-wireless-security.h"
+#include "../internals/settings/802-1x.h"
 
 #include <KConfigGroup>
 #include <kwallet.h>
@@ -86,8 +89,18 @@ void SecretStorage::saveSecrets(Knm::Connection *con)
             }
         }
     } else if (d->storageMode == Secure) {
+        if (!KWallet::Wallet::isEnabled()) {
+            kWarning() << "KWallet is disabled, please enable it or change Plasma NM to use 'In file' storage. Secrets not saved.";
+            return;
+        }
+
         KWallet::Wallet * wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(), walletWid(), KWallet::Wallet::Asynchronous );
         Q_ASSERT(wallet);
+
+        if (!wallet) {
+            kWarning() << "Error opening kwallet. Secrets not saved.";
+            return;
+        }
 
         connect(wallet, SIGNAL(walletOpened(bool)), this, SLOT(walletOpenedForWrite(bool)));
         d->connectionsToWrite.append(con);
@@ -154,6 +167,19 @@ void SecretStorage::walletOpenedForRead(bool success)
                     if (i.next().key() != con->uuid())
                         continue;
 
+                    Knm::WirelessSecuritySetting * settingSecurity = static_cast<Knm::WirelessSecuritySetting *>(con->setting(Knm::Setting::WirelessSecurity));
+                    if (settingSecurity) {
+                        Knm::Security8021xSetting * setting8021x = static_cast<Knm::Security8021xSetting *>(con->setting(Knm::Setting::Security8021x));
+
+                        if (setting8021x) {
+                            if (settingSecurity->securityType() == Knm::WirelessSecuritySetting::EnumSecurityType::DynamicWep ||
+                                settingSecurity->securityType() == Knm::WirelessSecuritySetting::EnumSecurityType::WpaEap) {
+                                kDebug() << "Enabling workaround for DynamicWep and WpaEap";
+                                setting8021x->setEnabled(true); // needed for needSecrets() below, otherwise needSecrets() returns an empty list.
+                            }
+                        }
+                    }
+
                     QPair<QString,GetSecretsFlags> pair = i.value();
                     bool settingsFound = false;
                     foreach (Knm::Setting * setting, con->settings()) {
@@ -168,6 +194,7 @@ void SecretStorage::walletOpenedForRead(bool success)
                                 setting->secretsFromMap(map);
                             }
                             QStringList needSecretsList = setting->needSecrets();
+                            kDebug() << "Needed secrets" << needSecretsList;
                             if ((pair.second & RequestNew) || (!needSecretsList.isEmpty() && (pair.second & AllowInteraction))) {
                                 askUser(con, pair.first, needSecretsList);
                             } else {
@@ -186,7 +213,10 @@ void SecretStorage::walletOpenedForRead(bool success)
             retrievalSuccessful = false;
         }
     }
-    wallet->deleteLater();
+
+    if (wallet) {
+        wallet->deleteLater();
+    }
 
     if (!retrievalSuccessful || !success) {
          while (!d->connectionsToRead.isEmpty()) {
@@ -216,8 +246,18 @@ void SecretStorage::deleteSecrets(Knm::Connection *con)
         KSharedConfig::Ptr ptr = secretsFileForUuid(con->uuid());
         QFile::remove(ptr->name());
     } else if (d->storageMode == Secure) {
+        if (!KWallet::Wallet::isEnabled()) {
+            kWarning() << "KWallet is disabled, please enable it. Secrets not deleted.";
+            return;
+        }
+
         KWallet::Wallet * wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(), walletWid(), KWallet::Wallet::Synchronous );
         Q_ASSERT(wallet);
+
+        if (!wallet) {
+            kWarning() << "Error opening kwallet. Secrets not deleted.";
+            return;
+        }
 
         if( wallet->isOpen() && wallet->hasFolder( s_walletFolderName ) && wallet->setFolder( s_walletFolderName )) {
             foreach (const QString & k, wallet->entryList()) {
@@ -260,6 +300,11 @@ void SecretStorage::loadSecrets(Knm::Connection *con, const QString &name, GetSe
             emit connectionRead(con, name, false, false);
         }
     } else if (d->storageMode == Secure) {
+        if (!KWallet::Wallet::isEnabled()) {
+            kWarning() << "KWallet is disabled, please enable it. Secrets not loaded.";
+            return;
+        }
+
         kDebug() << "opening wallet...";
         KWallet::Wallet * wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(),
                 walletWid(),KWallet::Wallet::Asynchronous);
@@ -291,10 +336,18 @@ void SecretStorage::loadSecrets(Knm::Connection *con, const QString &name, GetSe
             }
         }
 
-        connect(wallet, SIGNAL(walletOpened(bool)), this, SLOT(walletOpenedForRead(bool)));
         d->connectionsToRead.append(con);
         QPair<QString,GetSecretsFlags> pair(name, flags);
         d->settingsToRead.insert(uuid, pair);
+
+        if (wallet) {
+            connect(wallet, SIGNAL(walletOpened(bool)), this, SLOT(walletOpenedForRead(bool)));
+        } else {
+            kWarning() << "Error opening kwallet. Secrets not loaded.";
+
+            // emit connectionRead() signal to indicate operation has failed.
+            walletOpenedForRead(false);
+        }
     }
 }
 
@@ -342,15 +395,26 @@ void SecretStorage::gotSecrets(KJob *job)
     emit connectionRead(con, csj->settingName(), failed, true);
 }
 
-void SecretStorage::switchStorage(SecretStorageMode oldMode, SecretStorageMode newMode)
+bool SecretStorage::switchStorage(SecretStorageMode oldMode, SecretStorageMode newMode)
 {
     // TODO: integrate DontStore with NM0.9 secret flags
-    if (oldMode == DontStore || newMode == DontStore)
-        return;
+    if (oldMode == DontStore || newMode == DontStore) {
+        return true;
+    }
+
+    if (!KWallet::Wallet::isEnabled()) {
+        kWarning() << "KWallet is disabled, please enable it. Storage mode not changed.";
+        return false;
+    }
 
     KWallet::Wallet * wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(),
         walletWid(),KWallet::Wallet::Synchronous);
     Q_ASSERT(wallet);
+
+    if (!wallet) {
+        kWarning() << "Error opening kwallet.";
+        return false;
+    }
 
     if( !wallet->hasFolder( s_walletFolderName ) )
         wallet->createFolder( s_walletFolderName );
@@ -374,11 +438,13 @@ void SecretStorage::switchStorage(SecretStorageMode oldMode, SecretStorageMode n
             KConfigGroup configGroup(config, parts[1]);
             QMap<QString, QString> secrets;
             wallet->readMap(key, secrets);
-            foreach (const QString &secret, secrets.keys()) {
-                configGroup.writeEntry(secret, secrets.value(secret));
+            QMap<QString, QString>::ConstIterator it = secrets.constBegin();
+            for ( ; it != secrets.constEnd(); ++it) {
+                configGroup.writeEntry(it.key(), it.value());
             }
             wallet->removeEntry(key);
         }
     }
     wallet->deleteLater();
+    return true;
 }
