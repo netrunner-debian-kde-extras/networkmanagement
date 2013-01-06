@@ -7,6 +7,7 @@ usr/lib/kde4/networkmanagement_openvpnui.so
 usr/lib/kde4/networkmanagement_pptpui.so
 usr/lib/kde4/networkmanagement_strongswanui.so
 usr/lib/kde4/networkmanagement_vpncui.so
+usr/lib/kde4/networkmanagement_openconnectui.so
 usr/lib/kde4/plasma_applet_networkmanagement.so
 usr/lib/kde4/plasma_engine_networkmanagement.so
 usr/lib/kde4/solid_networkmanager09.so
@@ -30,6 +31,7 @@ usr/share/kde4/services/networkmanagement_openvpnui.desktop
 usr/share/kde4/services/networkmanagement_pptpui.desktop
 usr/share/kde4/services/networkmanagement_strongswanui.desktop
 usr/share/kde4/services/networkmanagement_vpncui.desktop
+usr/share/kde4/services/networkmanagement_openconnectui.desktop
 usr/share/kde4/services/plasma-applet-networkmanagement.desktop
 usr/share/kde4/services/plasma-engine-networkmanagement.desktop
 usr/share/kde4/services/solidbackends/solid_networkmanager09.desktop
