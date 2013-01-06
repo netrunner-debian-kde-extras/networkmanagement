@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-06-15 13:51+0200\n"
+"POT-Creation-Date: 2012-12-02 08:26+0100\n"
 "PO-Revision-Date: 2012-04-17 21:56+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -18,14 +18,14 @@ msgstr ""
 "X-Generator: Lokalize 1.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: activatableitem.cpp:116
+#: activatableitem.cpp:117
 msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is disabled"
 msgid "Networking system disabled"
 msgstr ""
 
-#: activatableitem.cpp:120
+#: activatableitem.cpp:121
 msgctxt "@info:status Notification for radio kill switch turned off"
 msgid "Wireless hardware disabled"
 msgstr ""
@@ -51,7 +51,7 @@ msgctxt "@info:tooltip for hidden wireless network SSID entry"
 msgid "Enter network name and press <enter>"
 msgstr ""
 
-#: interfaceconnectionitem.cpp:70
+#: interfaceconnectionitem.cpp:71
 msgctxt "name of the connection not known"
 msgid "Unknown"
 msgstr "Bilinmeyen"
@@ -238,91 +238,91 @@ msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr ""
 
-#: networkmanager.cpp:726
+#: networkmanager.cpp:727
 msgid "VPN Connections"
 msgstr ""
 
-#: networkmanager.cpp:740
+#: networkmanager.cpp:741
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
 msgstr ""
 
-#: networkmanager.cpp:743
+#: networkmanager.cpp:744
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
 msgstr ""
 
-#: networkmanager.cpp:746
+#: networkmanager.cpp:747
 msgctxt "tooltip, all interfaces are down"
 msgid "Networking disabled"
 msgstr ""
 
-#: networkmanager.cpp:749
+#: networkmanager.cpp:750
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
 msgstr ""
 
-#: nmpopup.cpp:89 nmpopup.cpp:747
+#: nmpopup.cpp:90 nmpopup.cpp:732
 msgctxt "title on the LHS of the plasmoid"
 msgid "<h3>Interfaces</h3>"
 msgstr ""
 
-#: nmpopup.cpp:95
+#: nmpopup.cpp:96
 msgctxt "title on the RHS of the plasmoid"
 msgid "<h3>Connections</h3>"
 msgstr ""
 
-#: nmpopup.cpp:123
+#: nmpopup.cpp:124
 msgctxt "CheckBox to enable or disable networking completely"
 msgid "Enable networking"
 msgstr ""
 
-#: nmpopup.cpp:132
+#: nmpopup.cpp:133
 msgctxt "CheckBox to enable or disable wwan (mobile broadband) interface)"
 msgid "Enable mobile broadband"
 msgstr ""
 
-#: nmpopup.cpp:145
+#: nmpopup.cpp:146
 msgctxt "CheckBox to enable or disable wireless interface (rfkill)"
 msgid "Enable wireless"
 msgstr ""
 
-#: nmpopup.cpp:157
+#: nmpopup.cpp:158
 msgctxt "tabbar on the left side"
 msgid "Interfaces"
 msgstr ""
 
-#: nmpopup.cpp:167
+#: nmpopup.cpp:168
 msgctxt "details for the interface"
 msgid "Details"
 msgstr ""
 
-#: nmpopup.cpp:196
+#: nmpopup.cpp:197
 msgctxt "manage connections button in the applet's popup"
 msgid "Manage Connections..."
 msgstr ""
 
-#: nmpopup.cpp:204
+#: nmpopup.cpp:205
 msgctxt "@info:tooltip tooltip for the 'Show More' button"
 msgid "Show all available networks"
 msgstr ""
 
-#: nmpopup.cpp:209
+#: nmpopup.cpp:210
 msgctxt "show more button in the applet's popup"
 msgid "Show More..."
 msgstr ""
 
-#: nmpopup.cpp:213
+#: nmpopup.cpp:214
 msgctxt "show more button in the applet's popup"
 msgid "Show Less..."
 msgstr ""
 
-#: nmpopup.cpp:319
+#: nmpopup.cpp:294
 msgctxt "Warning about wrong NetworkManager version"
 msgid "NetworkManager is not running. Please start it."
 msgstr ""
 
-#: nmpopup.cpp:323
+#: nmpopup.cpp:300
 #, kde-format
 msgctxt "Warning about wrong NetworkManager version"
 msgid ""
@@ -332,12 +332,12 @@ msgstr ""
 "Bu uygulamanın düzgün çalışabilmesi için en azından NetworkManager-"
 "%1gerekiyor, sistemdeki '%2'. Lütfen daha yeni bir sürüme yükseltin."
 
-#: nmpopup.cpp:659
+#: nmpopup.cpp:644
 msgctxt "pressed show more button"
 msgid "Show Less..."
 msgstr ""
 
-#: nmpopup.cpp:664
+#: nmpopup.cpp:649
 msgctxt "unpressed show more button"
 msgid "Show More..."
 msgstr ""
@@ -378,7 +378,7 @@ msgctxt "VPN state label"
 msgid "Not Connected..."
 msgstr ""
 
-#: wirelessnetworkitem.cpp:120 wirelessnetworkitem.cpp:160
+#: wirelessnetworkitem.cpp:121 wirelessnetworkitem.cpp:161
 #, kde-format
 msgid "Strength: %1%"
 msgstr ""

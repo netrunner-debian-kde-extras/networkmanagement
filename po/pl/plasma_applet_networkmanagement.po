@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanager\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-06-15 13:51+0200\n"
+"POT-Creation-Date: 2012-12-02 08:26+0100\n"
 "PO-Revision-Date: 2012-01-06 10:35+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -21,14 +21,14 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
-#: activatableitem.cpp:116
+#: activatableitem.cpp:117
 msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is disabled"
 msgid "Networking system disabled"
 msgstr "System sieciowy wyłączony"
 
-#: activatableitem.cpp:120
+#: activatableitem.cpp:121
 msgctxt "@info:status Notification for radio kill switch turned off"
 msgid "Wireless hardware disabled"
 msgstr "Urządzenie bezprzewodowe wyłączone"
@@ -54,7 +54,7 @@ msgctxt "@info:tooltip for hidden wireless network SSID entry"
 msgid "Enter network name and press <enter>"
 msgstr "Podaj nazwę sieci i naciśnij <enter>"
 
-#: interfaceconnectionitem.cpp:70
+#: interfaceconnectionitem.cpp:71
 msgctxt "name of the connection not known"
 msgid "Unknown"
 msgstr "Nieznana"
@@ -241,91 +241,91 @@ msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr "Brak interfejsów sieciowych"
 
-#: networkmanager.cpp:726
+#: networkmanager.cpp:727
 msgid "VPN Connections"
 msgstr "Połączenia VPN"
 
-#: networkmanager.cpp:740
+#: networkmanager.cpp:741
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
 msgstr "Rozłączony"
 
-#: networkmanager.cpp:743
+#: networkmanager.cpp:744
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
 msgstr "Urządzenie bezprzewodowe wyłączone programowo"
 
-#: networkmanager.cpp:746
+#: networkmanager.cpp:747
 msgctxt "tooltip, all interfaces are down"
 msgid "Networking disabled"
 msgstr "Sieć wyłączona"
 
-#: networkmanager.cpp:749
+#: networkmanager.cpp:750
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
 msgstr "Urządzenie bezprzewodowe wyłączone sprzętowo"
 
-#: nmpopup.cpp:89 nmpopup.cpp:747
+#: nmpopup.cpp:90 nmpopup.cpp:732
 msgctxt "title on the LHS of the plasmoid"
 msgid "<h3>Interfaces</h3>"
 msgstr "<h3>Interfejsy</h3>"
 
-#: nmpopup.cpp:95
+#: nmpopup.cpp:96
 msgctxt "title on the RHS of the plasmoid"
 msgid "<h3>Connections</h3>"
 msgstr "<h3>Połączenia</h3>"
 
-#: nmpopup.cpp:123
+#: nmpopup.cpp:124
 msgctxt "CheckBox to enable or disable networking completely"
 msgid "Enable networking"
 msgstr "Włącz sieć"
 
-#: nmpopup.cpp:132
+#: nmpopup.cpp:133
 msgctxt "CheckBox to enable or disable wwan (mobile broadband) interface)"
 msgid "Enable mobile broadband"
 msgstr "Włącz sieć komórkową szerokopasmową"
 
-#: nmpopup.cpp:145
+#: nmpopup.cpp:146
 msgctxt "CheckBox to enable or disable wireless interface (rfkill)"
 msgid "Enable wireless"
 msgstr "Włącz sieć bezprzewodową"
 
-#: nmpopup.cpp:157
+#: nmpopup.cpp:158
 msgctxt "tabbar on the left side"
 msgid "Interfaces"
 msgstr "Interfejsy"
 
-#: nmpopup.cpp:167
+#: nmpopup.cpp:168
 msgctxt "details for the interface"
 msgid "Details"
 msgstr "Szczegóły"
 
-#: nmpopup.cpp:196
+#: nmpopup.cpp:197
 msgctxt "manage connections button in the applet's popup"
 msgid "Manage Connections..."
 msgstr "Zarządzaj połączeniami..."
 
-#: nmpopup.cpp:204
+#: nmpopup.cpp:205
 msgctxt "@info:tooltip tooltip for the 'Show More' button"
 msgid "Show all available networks"
 msgstr "Pokaż wszystkie dostępne sieci"
 
-#: nmpopup.cpp:209
+#: nmpopup.cpp:210
 msgctxt "show more button in the applet's popup"
 msgid "Show More..."
 msgstr "Pokaż więcej..."
 
-#: nmpopup.cpp:213
+#: nmpopup.cpp:214
 msgctxt "show more button in the applet's popup"
 msgid "Show Less..."
 msgstr "Pokaż mniej..."
 
-#: nmpopup.cpp:319
+#: nmpopup.cpp:294
 msgctxt "Warning about wrong NetworkManager version"
 msgid "NetworkManager is not running. Please start it."
 msgstr "Menadżer Sieci jest nieuruchomiony. Proszę go uruchomić."
 
-#: nmpopup.cpp:323
+#: nmpopup.cpp:300
 #, kde-format
 msgctxt "Warning about wrong NetworkManager version"
 msgid ""
@@ -335,12 +335,12 @@ msgstr ""
 "Potrzebujemy co najmniej NetworkManager-%1 aby procować poprawnie, "
 "znaleziono '%2'. Proszę zaktualizować do nowszej wersji."
 
-#: nmpopup.cpp:659
+#: nmpopup.cpp:644
 msgctxt "pressed show more button"
 msgid "Show Less..."
 msgstr "Pokaż mniej..."
 
-#: nmpopup.cpp:664
+#: nmpopup.cpp:649
 msgctxt "unpressed show more button"
 msgid "Show More..."
 msgstr "Pokaż więcej..."
@@ -381,7 +381,7 @@ msgctxt "VPN state label"
 msgid "Not Connected..."
 msgstr "Nie połączono..."
 
-#: wirelessnetworkitem.cpp:120 wirelessnetworkitem.cpp:160
+#: wirelessnetworkitem.cpp:121 wirelessnetworkitem.cpp:161
 #, kde-format
 msgid "Strength: %1%"
 msgstr "Siła: %1%"

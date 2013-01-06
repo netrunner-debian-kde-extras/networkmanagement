@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanagement\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-06-15 13:51+0200\n"
+"POT-Creation-Date: 2012-12-02 08:26+0100\n"
 "PO-Revision-Date: 2011-12-24 20:19-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -17,40 +17,40 @@ msgstr ""
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
 "3 : 4\n"
 
-#: activatableitem.cpp:116
+#: activatableitem.cpp:117
 msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is disabled"
 msgid "Networking system disabled"
-msgstr ""
+msgstr "Díchumasaíodh an córas líonraithe"
 
-#: activatableitem.cpp:120
+#: activatableitem.cpp:121
 msgctxt "@info:status Notification for radio kill switch turned off"
 msgid "Wireless hardware disabled"
-msgstr ""
+msgstr "Díchumasaíodh crua-earraí gan sreang"
 
 #: gsminterfaceconnectionitem.cpp:143
 #, kde-format
 msgid "Signal quality: %1%"
-msgstr ""
+msgstr "Cáilíocht an chomhartha: %1%"
 
 #: hiddenwirelessnetworkitem.cpp:77
 msgctxt "label for creating a connection to a hidden wireless network"
 msgid "<hidden network>"
-msgstr ""
+msgstr "<líonra i bhfolach>"
 
 #: hiddenwirelessnetworkitem.cpp:81
 msgctxt ""
 "default KLineEdit::clickMessage() for hidden wireless network SSID entry"
 msgid "Enter network name and press <enter>"
-msgstr ""
+msgstr "Cuir ainm an líonra isteach agus brúigh <enter>"
 
 #: hiddenwirelessnetworkitem.cpp:82
 msgctxt "@info:tooltip for hidden wireless network SSID entry"
 msgid "Enter network name and press <enter>"
-msgstr ""
+msgstr "Cuir ainm an líonra isteach agus brúigh <enter>"
 
-#: interfaceconnectionitem.cpp:70
+#: interfaceconnectionitem.cpp:71
 msgctxt "name of the connection not known"
 msgid "Unknown"
 msgstr "Anaithnid"
@@ -58,7 +58,7 @@ msgstr "Anaithnid"
 #: interfacedetailswidget.cpp:116
 msgctxt "interface details"
 msgid "<b>Traffic</b>"
-msgstr ""
+msgstr "<b>Trácht</b>"
 
 #: interfacedetailswidget.cpp:152
 msgid "Go Back"
@@ -67,32 +67,32 @@ msgstr "Ar Ais"
 #: interfacedetailswidget.cpp:177 interfacedetailswidget.cpp:299
 msgctxt "entry not available"
 msgid "not available"
-msgstr ""
+msgstr "níl ar fáil"
 
 #: interfacedetailswidget.cpp:182
 msgctxt "traffic received empty"
 msgid "Received"
-msgstr ""
+msgstr "Faighte"
 
 #: interfacedetailswidget.cpp:184
 msgctxt "traffic transmitted empty"
 msgid "Transmitted"
-msgstr ""
+msgstr "Tarchurtha"
 
 #: interfacedetailswidget.cpp:290
 msgctxt "state of mobile broadband connection"
 msgid "not enabled"
-msgstr ""
+msgstr "gan cumasú"
 
 #: interfacedetailswidget.cpp:306 interfacedetailswidget.cpp:353
 msgctxt "interface details"
 msgid "Type"
-msgstr ""
+msgstr "Cineál"
 
 #: interfacedetailswidget.cpp:307 interfacedetailswidget.cpp:354
 msgctxt "interface details"
 msgid "Connection State"
-msgstr ""
+msgstr "Staid an Cheangail"
 
 #: interfacedetailswidget.cpp:308
 msgctxt "interface details"
@@ -102,57 +102,57 @@ msgstr "Seoladh IP"
 #: interfacedetailswidget.cpp:309 interfacedetailswidget.cpp:356
 msgctxt "interface details"
 msgid "Connection Speed"
-msgstr ""
+msgstr "Luas an Cheangail"
 
 #: interfacedetailswidget.cpp:309
 msgctxt "bitrate"
 msgid "Unknown"
-msgstr ""
+msgstr "Anaithnid"
 
 #: interfacedetailswidget.cpp:310 interfacedetailswidget.cpp:357
 msgctxt "interface details"
 msgid "System Name"
-msgstr ""
+msgstr "Ainm an Chórais"
 
 #: interfacedetailswidget.cpp:311
 msgctxt "interface details"
 msgid "MAC Address"
-msgstr ""
+msgstr "Seoladh MAC"
 
 #: interfacedetailswidget.cpp:312 interfacedetailswidget.cpp:359
 msgctxt "interface details"
 msgid "Driver"
-msgstr ""
+msgstr "Tiománaí"
 
 #: interfacedetailswidget.cpp:318
 msgctxt "interface details"
 msgid "Access Point (SSID)"
-msgstr ""
+msgstr "Pointe Rochtana (SSID)"
 
 #: interfacedetailswidget.cpp:319
 msgctxt "interface details"
 msgid "Access Point (MAC)"
-msgstr ""
+msgstr "Pointe Rochtana (MAC)"
 
 #: interfacedetailswidget.cpp:327
 msgctxt "@item:intable wireless band"
 msgid "Band"
-msgstr ""
+msgstr "Banda"
 
 #: interfacedetailswidget.cpp:328
 msgctxt "@item:intable wireless channel"
 msgid "Channel"
-msgstr ""
+msgstr "Cainéal"
 
 #: interfacedetailswidget.cpp:335
 msgctxt "interface details"
 msgid "Operator"
-msgstr ""
+msgstr "Oibreoir"
 
 #: interfacedetailswidget.cpp:336
 msgctxt "interface details"
 msgid "Signal Quality"
-msgstr ""
+msgstr "Cáilíocht an Chomhartha"
 
 #: interfacedetailswidget.cpp:337
 msgctxt "interface details"
@@ -162,34 +162,34 @@ msgstr ""
 #: interfacedetailswidget.cpp:355
 msgctxt "interface details"
 msgid "Network Address (IP)"
-msgstr ""
+msgstr "Seoladh Líonra (IP)"
 
 #: interfacedetailswidget.cpp:358
 msgctxt "interface details"
 msgid "Hardware Address (MAC)"
-msgstr ""
+msgstr "Seoladh Crua-Earraí (MAC)"
 
 #: interfacedetailswidget.cpp:377 interfaceitem.cpp:286
 msgctxt "label of the network interface"
 msgid "No IP address."
-msgstr ""
+msgstr "Gan seoladh IP."
 
 #: interfacedetailswidget.cpp:388 interfaceitem.cpp:297
 msgctxt "label of the network interface"
 msgid "IP display error."
-msgstr ""
+msgstr "Earráid agus IP á thaispeáint."
 
 #: interfacedetailswidget.cpp:467
 msgid "KBit/s"
-msgstr ""
+msgstr "KGhiotán/s"
 
 #: interfacedetailswidget.cpp:469
 msgid "MBit/s"
-msgstr ""
+msgstr "MGhiotán/s"
 
 #: interfacedetailswidget.cpp:473
 msgid "GBit/s"
-msgstr ""
+msgstr "Gghiotán/s"
 
 #: interfacedetailswidget.cpp:497
 #, kde-format
@@ -197,7 +197,7 @@ msgctxt ""
 "traffic, e.g. n KB/s\n"
 " m KB/s"
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: interfacedetailswidget.cpp:506
 msgid "Received"
@@ -205,7 +205,7 @@ msgstr "Faighte"
 
 #: interfacedetailswidget.cpp:509
 msgid "Transmitted"
-msgstr ""
+msgstr "Tarchurtha"
 
 #: interfaceitem.cpp:75
 msgctxt "tooltip on the LHS widgets"
@@ -215,113 +215,113 @@ msgstr ""
 #: interfaceitem.cpp:112
 msgctxt "tooltip on disconnect icon"
 msgid "Disconnect"
-msgstr ""
+msgstr "Dícheangail"
 
 #: interfaceitem.cpp:250
 msgctxt "generic label for an interface"
 msgid "<b>Network Interface</b>"
-msgstr ""
+msgstr "<b>Comhéadan Líonra</b>"
 
 #: interfaceitem.cpp:254
 msgctxt "network interface name unknown"
 msgid "<b>Unknown Network Interface</b>"
-msgstr ""
+msgstr "<b>Comhéadan Anaithnid Líonra</b>"
 
 #: interfaceitem.cpp:402
 msgctxt "wired interface network cable unplugged"
 msgid "Cable Unplugged"
-msgstr ""
+msgstr "Cábla Díphlugáilte"
 
 #: networkmanager.cpp:675
 msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr "Gan chomhéadain líonra"
 
-#: networkmanager.cpp:726
+#: networkmanager.cpp:727
 msgid "VPN Connections"
 msgstr "Naisc VPN"
 
-#: networkmanager.cpp:740
+#: networkmanager.cpp:741
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
-msgstr ""
+msgstr "Dícheangailte"
 
-#: networkmanager.cpp:743
+#: networkmanager.cpp:744
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
-msgstr ""
+msgstr "Díchumasaíodh líonra gan sreang sa mbogearra"
 
-#: networkmanager.cpp:746
+#: networkmanager.cpp:747
 msgctxt "tooltip, all interfaces are down"
 msgid "Networking disabled"
-msgstr ""
+msgstr "Líonrú díchumasaithe"
 
-#: networkmanager.cpp:749
+#: networkmanager.cpp:750
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
 msgstr ""
 
-#: nmpopup.cpp:89 nmpopup.cpp:747
+#: nmpopup.cpp:90 nmpopup.cpp:732
 msgctxt "title on the LHS of the plasmoid"
 msgid "<h3>Interfaces</h3>"
-msgstr ""
+msgstr "<h3>Comhéadain</h3>"
 
-#: nmpopup.cpp:95
+#: nmpopup.cpp:96
 msgctxt "title on the RHS of the plasmoid"
 msgid "<h3>Connections</h3>"
-msgstr ""
+msgstr "<h3>Ceangail</h3>"
 
-#: nmpopup.cpp:123
+#: nmpopup.cpp:124
 msgctxt "CheckBox to enable or disable networking completely"
 msgid "Enable networking"
-msgstr ""
+msgstr "Cumasaigh an líonrú"
 
-#: nmpopup.cpp:132
+#: nmpopup.cpp:133
 msgctxt "CheckBox to enable or disable wwan (mobile broadband) interface)"
 msgid "Enable mobile broadband"
-msgstr ""
+msgstr "Cumasaigh leathanbhanda soghluaiste"
 
-#: nmpopup.cpp:145
+#: nmpopup.cpp:146
 msgctxt "CheckBox to enable or disable wireless interface (rfkill)"
 msgid "Enable wireless"
-msgstr ""
+msgstr "Cumasaigh líonra gan sreang"
 
-#: nmpopup.cpp:157
+#: nmpopup.cpp:158
 msgctxt "tabbar on the left side"
 msgid "Interfaces"
-msgstr ""
+msgstr "Comhéadain"
 
-#: nmpopup.cpp:167
+#: nmpopup.cpp:168
 msgctxt "details for the interface"
 msgid "Details"
 msgstr "Mionsonraí"
 
-#: nmpopup.cpp:196
+#: nmpopup.cpp:197
 msgctxt "manage connections button in the applet's popup"
 msgid "Manage Connections..."
-msgstr ""
+msgstr "Bainistigh Ceangail..."
 
-#: nmpopup.cpp:204
+#: nmpopup.cpp:205
 msgctxt "@info:tooltip tooltip for the 'Show More' button"
 msgid "Show all available networks"
-msgstr ""
+msgstr "Taispeáin gach líonra atá ar fáil"
 
-#: nmpopup.cpp:209
+#: nmpopup.cpp:210
 msgctxt "show more button in the applet's popup"
 msgid "Show More..."
-msgstr ""
+msgstr "Taispeáin Tuilleadh..."
 
-#: nmpopup.cpp:213
+#: nmpopup.cpp:214
 msgctxt "show more button in the applet's popup"
 msgid "Show Less..."
-msgstr ""
+msgstr "Taispeáin Níos Lú..."
 
-#: nmpopup.cpp:319
+#: nmpopup.cpp:294
 msgctxt "Warning about wrong NetworkManager version"
 msgid "NetworkManager is not running. Please start it."
-msgstr ""
+msgstr "Níl NetworkManager ag rith. Tosaigh é!"
 
-#: nmpopup.cpp:323
+#: nmpopup.cpp:300
 #, kde-format
 msgctxt "Warning about wrong NetworkManager version"
 msgid ""
@@ -329,25 +329,25 @@ msgid ""
 "upgrade to a newer version."
 msgstr ""
 
-#: nmpopup.cpp:659
+#: nmpopup.cpp:644
 msgctxt "pressed show more button"
 msgid "Show Less..."
-msgstr ""
+msgstr "Taispeáin Níos Lú..."
 
-#: nmpopup.cpp:664
+#: nmpopup.cpp:649
 msgctxt "unpressed show more button"
 msgid "Show More..."
-msgstr ""
+msgstr "Taispeáin Tuilleadh..."
 
 #: vpninterfaceitem.cpp:42
 msgctxt "initial label for VPN connection name"
 msgid "Not Available"
-msgstr ""
+msgstr "Níl ar Fáil"
 
 #: vpninterfaceitem.cpp:92
 msgctxt "ip of vpn interface item"
 msgid "not available"
-msgstr ""
+msgstr "níl ar fáil"
 
 #: vpninterfaceitem.cpp:99
 #, kde-format
@@ -368,14 +368,14 @@ msgstr "Á Cheangal..."
 #: vpninterfaceitem.cpp:110
 msgctxt "VPN connections interface"
 msgid "<b>Virtual Private Network</b>"
-msgstr ""
+msgstr "<b>Líonra Príobháideach Fíorúil</b>"
 
 #: vpninterfaceitem.cpp:111
 msgctxt "VPN state label"
 msgid "Not Connected..."
-msgstr ""
+msgstr "Gan Cheangal..."
 
-#: wirelessnetworkitem.cpp:120 wirelessnetworkitem.cpp:160
+#: wirelessnetworkitem.cpp:121 wirelessnetworkitem.cpp:161
 #, kde-format
 msgid "Strength: %1%"
 msgstr "Neart: %1%"

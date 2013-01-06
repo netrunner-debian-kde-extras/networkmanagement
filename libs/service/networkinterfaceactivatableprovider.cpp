@@ -1,5 +1,6 @@
 /*
 Copyright 2009 Will Stephenson <wstephenson@kde.org>
+Copyright 2011-2012 Lamarque V. Souza <lamarque@kde.org>
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -19,17 +20,14 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include "networkinterfaceactivatableprovider.h"
-
+#include "networkinterfaceactivatableprovider_p.h"
+#include "interfaceconnectionhelpers.h"
 #include "connection.h"
 #include "connectionlist.h"
 #include "interfaceconnection.h"
 #include "unconfiguredinterface.h"
-
 #include "activatablelist.h"
-
-#include "interfaceconnectionhelpers.h"
-
-#include "networkinterfaceactivatableprovider_p.h"
+#include "uiutils.h"
 
 /* Normal interfaceconnections are added to d->activatables on connection add, updated on update,
  * removed on remove
@@ -59,25 +57,6 @@ void NetworkInterfaceActivatableProvider::init()
 {
     Q_D(NetworkInterfaceActivatableProvider);
 
-    /* d->interface can be a dangling pointer in one situation:
-     * NMDBusSettingsConnectionProvider::clearConnections() calls the Removed signal for
-     * all connections AFTER NetworkManager has stopped, and consequently, after all
-     * Solid::Control::NetworkManager::NetworkInterface* objects have been invalidated.
-     * The Removed signal triggers the call sequency NMDBusSettingsConnectionProvider::onRemoteConnectionRemoved() ->
-     * NMDBusSettingsConnectionProvider { d->connectionList->removeConnection(con) } ->
-     * ConnectionList { connHandler->handleRemove(connection) }
-     * handleRemove() -> maintainActivatableForUnconfigured() ->
-     * WiredNetworkInterfaceActivatableProvider::needsActivatableForUnconfigured() ->
-     * d->wiredInterface() -> qobject_cast<Solid::Control::WiredNetworkInterfaceNm09*>(interface).
-     * interface is an invalid pointer and crashes the kded module.
-     * Actually Solid::Control::NetworkManagerNm09::notifier()'s networkInterfaceRemoved signal should
-     * triggers the removing of WiredNetworkInterfaceActivatableProvider before
-     * NMDBusSettingsConnectionProvider::clearConnections() is called, but it seems sometimes, and only sometimes,
-     * that does not happen.
-     * I am using the destroyed signal to set the pointer to 0 and prevent the crash.
-     */
-    connect(d->interface, SIGNAL(destroyed(QObject*)), SLOT(_k_destroyed(QObject*)));
-
     // assess all connections
     foreach (const QString &uuid, d->connectionList->connections()) {
         Knm::Connection * connection = d->connectionList->findConnection(uuid);
@@ -87,13 +66,6 @@ void NetworkInterfaceActivatableProvider::init()
     // if we don't have any connections, create a special activatable representing the unconfigured
     // device, which is removed when a connection appears
     maintainActivatableForUnconfigured();
-}
-
-void NetworkInterfaceActivatableProvider::_k_destroyed(QObject *object)
-{
-    Q_D(NetworkInterfaceActivatableProvider);
-    Q_UNUSED(object);
-    d->interface = 0;
 }
 
 NetworkInterfaceActivatableProvider::~NetworkInterfaceActivatableProvider()
@@ -151,36 +123,29 @@ bool NetworkInterfaceActivatableProvider::matches(Knm::Connection::Type connType
 bool NetworkInterfaceActivatableProvider::hardwareAddressMatches(Knm::Connection * connection, Solid::Control::NetworkInterfaceNm09 * iface)
 {
     bool matches = true;
-    Q_UNUSED(connection);
-    Q_UNUSED(iface);
-    // todo figure out how to convert from the struct ether_addr.ether_addr_octet contained in the
-    // hardware address from system-provided connections.  This probably also means the encoding
-    // used in the connections we put on the bus is wrong.
-#if 0
-    if (connection->type() == Knm::Connection::Wired) {
-        Knm::WiredSetting * wiredSetting = dynamic_cast<Knm::WiredSetting *>(connection->setting(Knm::Setting::Wired));
-        Solid::Control::WiredNetworkInterface * wiredIface = dynamic_cast<Solid::Control::WiredNetworkInterface *>(iface);
-
-        if (wiredSetting && wiredIface) {
-
-            // only settings which contain a valid macaddress are interesting
-            if (!wiredSetting->macaddress().isEmpty()) {
-                matches = (QString(wiredSetting->macaddress()) == wiredIface->hardwareAddress());
-            }
-        }
-    } else if (connection->type() == Knm::Connection::Wireless) {
+    if (connection->type() == Knm::Connection::Wireless) {
         Knm::WirelessSetting * wirelessSetting = dynamic_cast<Knm::WirelessSetting *>(connection->setting(Knm::Setting::Wireless));
-        Solid::Control::WirelessNetworkInterface * wirelessIface = dynamic_cast<Solid::Control::WirelessNetworkInterface *>(iface);
+        Solid::Control::WirelessNetworkInterfaceNm09 * wirelessIface = dynamic_cast<Solid::Control::WirelessNetworkInterfaceNm09 *>(iface);
 
         if (wirelessSetting && wirelessIface) {
 
             // only settings which contain a valid macaddress are interesting
             if (!wirelessSetting->macaddress().isEmpty()) {
-                matches = (QString(wirelessSetting->macaddress()) == wirelessIface->hardwareAddress());
+                matches = (UiUtils::macAddressAsString(wirelessSetting->macaddress()) == wirelessIface->hardwareAddress());
+            }
+        }
+    } else if (connection->type() == Knm::Connection::Wired) {
+        Knm::WiredSetting * wiredSetting = dynamic_cast<Knm::WiredSetting *>(connection->setting(Knm::Setting::Wired));
+        Solid::Control::WiredNetworkInterfaceNm09 * wiredIface = dynamic_cast<Solid::Control::WiredNetworkInterfaceNm09 *>(iface);
+
+        if (wiredSetting && wiredIface) {
+
+            // only settings which contain a valid macaddress are interesting
+            if (!wiredSetting->macaddress().isEmpty()) {
+                matches = (UiUtils::macAddressAsString(wiredSetting->macaddress()) == wiredIface->hardwareAddress());
             }
         }
     }
-#endif
     return matches;
 }
 
@@ -189,7 +154,7 @@ void NetworkInterfaceActivatableProvider::handleAdd(Knm::Connection * addedConne
     Q_D(NetworkInterfaceActivatableProvider);
     // check type
     kDebug() << addedConnection->uuid();
-    if (!d->activatables.contains(addedConnection->uuid())) {
+    if (!d->activatables.contains(addedConnection->uuid()) && d->interface->connectionState() != Solid::Control::NetworkInterfaceNm09::Unmanaged) {
         if (hardwareAddressMatches(addedConnection, d->interface)) {
             if (matches(addedConnection->type(), d->interface->type())) {
                 Knm::InterfaceConnection * ifaceConnection = Knm::InterfaceConnectionHelpers::buildInterfaceConnection(addedConnection, d->interface->uni(), this);;

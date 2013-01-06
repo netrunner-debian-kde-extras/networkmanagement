@@ -19,6 +19,16 @@ msgstr ""
 "X-Generator: WordForge 0.8 RC1\n"
 "X-Language: km-KH\n"
 
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ខឹម សុខែម, ម៉ន ម៉េត, សេង សុត្ថា, ចាន់ សម្បត្តិរតនៈ, សុខ សុភា"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"khoemsokhem@khmeros.info,​​mornmet@khmeros.info,sutha@khmeros.info,"
+"ratanak@khmeros.info,sophea@khmeros.info"
+
 #: connectioninfodialog.cpp:80
 msgctxt "@title:tab information about ip address, nameserveres, etc"
 msgid "IPv4"
@@ -311,39 +321,23 @@ msgctxt ""
 msgid " (connected)"
 msgstr " (បាន​តភ្ជាប់)"
 
-#: rc.cpp:1
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "ខឹម សុខែម, ម៉ន ម៉េត, សេង សុត្ថា, ចាន់ សម្បត្តិរតនៈ, សុខ សុភា"
-
-#: rc.cpp:2
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-"khoemsokhem@khmeros.info,​​mornmet@khmeros.info,sutha@khmeros.info,"
-"ratanak@khmeros.info,sophea@khmeros.info"
-
-#. i18n: file: otherwirelessnetworkwidget.ui:19
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:5
+#: otherwirelessnetworkwidget.ui:19
 msgid "&Search:"
 msgstr "ស្វែងរក ៖"
 
-#. i18n: file: otherwirelessnetworkwidget.ui:35
 #. i18n: ectx: property (text), widget (QTreeWidget, twNetworks)
-#: rc.cpp:8
+#: otherwirelessnetworkwidget.ui:35
 msgid "Network name"
 msgstr "ឈ្មោះ​បណ្ដាញ"
 
-#. i18n: file: otherwirelessnetworkwidget.ui:40
 #. i18n: ectx: property (text), widget (QTreeWidget, twNetworks)
-#: rc.cpp:11
+#: otherwirelessnetworkwidget.ui:40
 msgid "Signal"
 msgstr "សញ្ញា"
 
-#. i18n: file: otherwirelessnetworkwidget.ui:45
 #. i18n: ectx: property (text), widget (QTreeWidget, twNetworks)
-#: rc.cpp:14
+#: otherwirelessnetworkwidget.ui:45
 msgid "Security"
 msgstr "សុវត្ថិភាព"
 

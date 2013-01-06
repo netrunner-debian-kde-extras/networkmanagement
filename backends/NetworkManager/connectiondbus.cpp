@@ -58,6 +58,8 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 #include "settings/vpn.h"
 #include "vpndbus.h"
 
+#include <solid/control/networkmanager.h>
+
 using namespace Knm;
 
 ConnectionDbus::ConnectionDbus(Knm::Connection * conn)
@@ -192,6 +194,15 @@ QVariantMapMap ConnectionDbus::toDbusMap()
         connectionMap.insert(QLatin1String(NM_SETTING_CONNECTION_PERMISSIONS), permissionsDbus);
     }
 
+#ifdef NM_SETTING_CONNECTION_ZONE
+    // NetworkManager 0.9.4 has a bug where it refuses to create the connection if zone is empty,
+    // but an empty zone means the default zone according to firewalld developers. The bug will be
+    // fixed in NetworkManager 0.9.6.
+    if (!m_connection->zone().isEmpty() || Solid::Control::NetworkManagerNm09::compareVersion(0, 9, 6) >= 0) {
+        connectionMap.insert(QLatin1String(NM_SETTING_CONNECTION_ZONE), m_connection->zone());
+    }
+#endif
+
     //kDebug() << "Printing connection map: ";
     //foreach(QString key, connectionMap.keys())
         //kDebug() << key << " : " << connectionMap.value(key);
@@ -265,6 +276,9 @@ void ConnectionDbus::fromDbusMap(const QVariantMapMap &settings)
     QUuid uuid(connectionSettings.value(QLatin1String(NM_SETTING_CONNECTION_UUID)).toString());
     QString dbusConnectionType = connectionSettings.value(QLatin1String(NM_SETTING_CONNECTION_TYPE)).toString();
     bool autoconnect = true; //default value must be true according to NM settings spec
+#ifdef NM_SETTING_CONNECTION_ZONE
+    QString zone = connectionSettings.value(QLatin1String(NM_SETTING_CONNECTION_ZONE)).toString();
+#endif
 
     if (connectionSettings.contains(QLatin1String(NM_SETTING_CONNECTION_AUTOCONNECT)))
         autoconnect = connectionSettings.value(QLatin1String(NM_SETTING_CONNECTION_AUTOCONNECT)).toBool();
@@ -312,6 +326,9 @@ void ConnectionDbus::fromDbusMap(const QVariantMapMap &settings)
     m_connection->setUuid(uuid);
     m_connection->setType(type, bt_cap);
     m_connection->setAutoConnect(autoconnect);
+#ifdef NM_SETTING_CONNECTION_ZONE
+    m_connection->setZone(zone);
+#endif
 
     // all other settings
     foreach (Setting * setting, m_connection->settings()) {

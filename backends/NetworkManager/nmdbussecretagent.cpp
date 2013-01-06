@@ -1,5 +1,6 @@
 /*
 Copyright 2011 Ilia Kats <ilia-kats@gmx.net>
+Copyright 2011-2012 Lamarque V. Souza <lamarque@kde.org>
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -85,7 +86,8 @@ void NMDBusSecretAgent::registerAgent()
 QVariantMapMap NMDBusSecretAgent::GetSecrets(const QVariantMapMap &connection, const QDBusObjectPath &connection_path, const QString &setting_name, const QStringList &hints, uint flags)
 {
     Q_D(NMDBusSecretAgent);
-    kDebug() << connection;
+    // WARNING: do not commit this uncommented.
+    //kDebug() << connection;
     kDebug() << setting_name << flags << hints;
 
     QDBusMessage msg = message();
@@ -93,6 +95,7 @@ QVariantMapMap NMDBusSecretAgent::GetSecrets(const QVariantMapMap &connection, c
     Knm::Connection * con = new Knm::Connection(QUuid(), Knm::Connection::Wired);
     ConnectionDbus condbus(con);
     condbus.fromDbusMap(connection);
+    condbus.fromDbusSecretsMap(connection);
     QPair<QString,QDBusMessage> pair;
     pair.first = connection_path.path();
     pair.second = msg;

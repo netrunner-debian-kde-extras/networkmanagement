@@ -1,0 +1,41 @@
+# translation of solidcontrol.po to Français
+# translation of solidcontrol.po to
+# Copyright (C) 2007 This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# aminesay <aminesay@yahoo.fr>, 2007.
+# Sébastien Renard <Sebastien.Renard@digitalfox.org>, 2007.
+# Amine Say <aminesay@yahoo.fr>, 2010.
+# xavier <xavier.besnard@neuf.fr>, 2012.
+#
+# invite, 2010.
+# amine say, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: solidcontrol\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2011-10-09 10:32+0200\n"
+"PO-Revision-Date: 2012-08-03 15:45+0200\n"
+"Last-Translator: xavier <xavier.besnard@neuf.fr>\n"
+"Language-Team: American English <kde-i18n-doc@kde.org>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+# unreviewed-context
+#: managerbase.cpp:61
+#, kde-format
+msgid "Backend loaded but wrong type obtained, expected %1"
+msgstr "Moteur chargé mais en version erronée car version %1 attendue "
+
+# unreviewed-context
+#: managerbase.cpp:79
+#, kde-format
+msgid "No %1 Backend found"
+msgstr "Pas de moteur %1 trouvé"
+
+#: managerbase.cpp:84
+#, kde-format
+msgid "Unable to use any of the %1 Backends"
+msgstr "Aucun de ces %1 moteurs n'est utilisable"

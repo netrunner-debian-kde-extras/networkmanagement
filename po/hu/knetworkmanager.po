@@ -17,6 +17,14 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Szántó Tamás,Kiszel Kristóf"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "taszanto@gmail.com,ulysses@kubuntu.org"
+
 #: connectioninfodialog.cpp:80
 msgctxt "@title:tab information about ip address, nameserveres, etc"
 msgid "IPv4"
@@ -312,37 +320,23 @@ msgctxt ""
 msgid " (connected)"
 msgstr " (csatlakozva)"
 
-#: rc.cpp:1
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Szántó Tamás,Kiszel Kristóf"
-
-#: rc.cpp:2
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "taszanto@gmail.com,ulysses@kubuntu.org"
-
-#. i18n: file: otherwirelessnetworkwidget.ui:19
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:5
+#: otherwirelessnetworkwidget.ui:19
 msgid "&Search:"
 msgstr "&Keresés:"
 
-#. i18n: file: otherwirelessnetworkwidget.ui:35
 #. i18n: ectx: property (text), widget (QTreeWidget, twNetworks)
-#: rc.cpp:8
+#: otherwirelessnetworkwidget.ui:35
 msgid "Network name"
 msgstr "Hálózatnév"
 
-#. i18n: file: otherwirelessnetworkwidget.ui:40
 #. i18n: ectx: property (text), widget (QTreeWidget, twNetworks)
-#: rc.cpp:11
+#: otherwirelessnetworkwidget.ui:40
 msgid "Signal"
 msgstr "Jel"
 
-#. i18n: file: otherwirelessnetworkwidget.ui:45
 #. i18n: ectx: property (text), widget (QTreeWidget, twNetworks)
-#: rc.cpp:14
+#: otherwirelessnetworkwidget.ui:45
 msgid "Security"
 msgstr "Biztonság"
 

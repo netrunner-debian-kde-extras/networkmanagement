@@ -5,30 +5,31 @@
 # Donatas G. <dgvirtual@akl.lt>, 2010.
 # Tomas Straupis <tomasstraupis@gmail.com>, 2011.
 # Remigijus Jarmalavičius <remigijus@jarmalavicius.lt>, 2011.
+# Liudas Ališauskas <liudas.alisauskas@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanagement\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-06-15 13:51+0200\n"
-"PO-Revision-Date: 2011-11-11 17:05+0200\n"
-"Last-Translator: Tomas Straupis <tomasstraupis@gmail.com>\n"
-"Language-Team: Lithuanian <kde-i18n-doc@kde.org>\n"
+"POT-Creation-Date: 2012-12-02 08:26+0100\n"
+"PO-Revision-Date: 2012-08-05 18:07+0300\n"
+"Last-Translator: Liudas Ališauskas <liudas.alisauskas@gmail.com>\n"
+"Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.5\n"
 
-#: activatableitem.cpp:116
+#: activatableitem.cpp:117
 msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is disabled"
 msgid "Networking system disabled"
-msgstr "Tinklas išjungtas"
+msgstr "Tinklo sistema išjungta"
 
-#: activatableitem.cpp:120
+#: activatableitem.cpp:121
 msgctxt "@info:status Notification for radio kill switch turned off"
 msgid "Wireless hardware disabled"
 msgstr "Bevielis ryšys išjungtas"
@@ -54,7 +55,7 @@ msgctxt "@info:tooltip for hidden wireless network SSID entry"
 msgid "Enter network name and press <enter>"
 msgstr "Įveskite tinklo pavadinimą ir spauskite <enter>"
 
-#: interfaceconnectionitem.cpp:70
+#: interfaceconnectionitem.cpp:71
 msgctxt "name of the connection not known"
 msgid "Unknown"
 msgstr "Nežinoma"
@@ -241,91 +242,91 @@ msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr "Nėra tinklo sąsajų"
 
-#: networkmanager.cpp:726
+#: networkmanager.cpp:727
 msgid "VPN Connections"
 msgstr "VPN ryšiai"
 
-#: networkmanager.cpp:740
+#: networkmanager.cpp:741
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
 msgstr "Atsijungta"
 
-#: networkmanager.cpp:743
+#: networkmanager.cpp:744
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
 msgstr "Bevielis yra išjungtas programiškai"
 
-#: networkmanager.cpp:746
+#: networkmanager.cpp:747
 msgctxt "tooltip, all interfaces are down"
 msgid "Networking disabled"
 msgstr "Tinklas išjungtas"
 
-#: networkmanager.cpp:749
+#: networkmanager.cpp:750
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
 msgstr "Bevielis yra išjungtas aparatiškai"
 
-#: nmpopup.cpp:89 nmpopup.cpp:747
+#: nmpopup.cpp:90 nmpopup.cpp:732
 msgctxt "title on the LHS of the plasmoid"
 msgid "<h3>Interfaces</h3>"
 msgstr "<h3>Sąsajos</h3>"
 
-#: nmpopup.cpp:95
+#: nmpopup.cpp:96
 msgctxt "title on the RHS of the plasmoid"
 msgid "<h3>Connections</h3>"
 msgstr "<h3>Ryšiai</h3>"
 
-#: nmpopup.cpp:123
+#: nmpopup.cpp:124
 msgctxt "CheckBox to enable or disable networking completely"
 msgid "Enable networking"
 msgstr "Įgalinti darbą tinkle"
 
-#: nmpopup.cpp:132
+#: nmpopup.cpp:133
 msgctxt "CheckBox to enable or disable wwan (mobile broadband) interface)"
 msgid "Enable mobile broadband"
 msgstr "Įjungti mobilųjį plačiajuostį"
 
-#: nmpopup.cpp:145
+#: nmpopup.cpp:146
 msgctxt "CheckBox to enable or disable wireless interface (rfkill)"
 msgid "Enable wireless"
 msgstr "Įgalinti bevielį ryšį"
 
-#: nmpopup.cpp:157
+#: nmpopup.cpp:158
 msgctxt "tabbar on the left side"
 msgid "Interfaces"
 msgstr "Sąsajos"
 
-#: nmpopup.cpp:167
+#: nmpopup.cpp:168
 msgctxt "details for the interface"
 msgid "Details"
 msgstr "Detalės"
 
-#: nmpopup.cpp:196
+#: nmpopup.cpp:197
 msgctxt "manage connections button in the applet's popup"
 msgid "Manage Connections..."
 msgstr "Tvarkyti ryšius..."
 
-#: nmpopup.cpp:204
+#: nmpopup.cpp:205
 msgctxt "@info:tooltip tooltip for the 'Show More' button"
 msgid "Show all available networks"
 msgstr "Rodyti visus prieinamus tinklus"
 
-#: nmpopup.cpp:209
+#: nmpopup.cpp:210
 msgctxt "show more button in the applet's popup"
 msgid "Show More..."
 msgstr "Rodyti daugiau..."
 
-#: nmpopup.cpp:213
+#: nmpopup.cpp:214
 msgctxt "show more button in the applet's popup"
 msgid "Show Less..."
 msgstr "Rodyti mažiau..."
 
-#: nmpopup.cpp:319
+#: nmpopup.cpp:294
 msgctxt "Warning about wrong NetworkManager version"
 msgid "NetworkManager is not running. Please start it."
 msgstr "NetworkManager neveikia. Prašome jį įjungti."
 
-#: nmpopup.cpp:323
+#: nmpopup.cpp:300
 #, kde-format
 msgctxt "Warning about wrong NetworkManager version"
 msgid ""
@@ -335,12 +336,12 @@ msgstr ""
 "Mums reikia bent jau NetworkManager-%1, kad galėtume veikti, o rastas „%2“. "
 "Prašome atnaujinti iki naujesnės versijos."
 
-#: nmpopup.cpp:659
+#: nmpopup.cpp:644
 msgctxt "pressed show more button"
 msgid "Show Less..."
 msgstr "Rodyti mažiau..."
 
-#: nmpopup.cpp:664
+#: nmpopup.cpp:649
 msgctxt "unpressed show more button"
 msgid "Show More..."
 msgstr "Rodyti daugiau..."
@@ -381,7 +382,7 @@ msgctxt "VPN state label"
 msgid "Not Connected..."
 msgstr "Neprisijungta..."
 
-#: wirelessnetworkitem.cpp:120 wirelessnetworkitem.cpp:160
+#: wirelessnetworkitem.cpp:121 wirelessnetworkitem.cpp:161
 #, kde-format
 msgid "Strength: %1%"
 msgstr "Stiprumas: %1%"

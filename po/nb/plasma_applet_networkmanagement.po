@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanager\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-06-15 13:51+0200\n"
+"POT-Creation-Date: 2012-10-29 11:32+0100\n"
 "PO-Revision-Date: 2011-10-20 11:23+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
@@ -14,20 +14,20 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: activatableitem.cpp:116
+#: activatableitem.cpp:117
 msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is disabled"
 msgid "Networking system disabled"
 msgstr "Nettverkssystemet er slått av"
 
-#: activatableitem.cpp:120
+#: activatableitem.cpp:121
 msgctxt "@info:status Notification for radio kill switch turned off"
 msgid "Wireless hardware disabled"
 msgstr "Trådløs maskinvare slått av"
@@ -53,7 +53,7 @@ msgctxt "@info:tooltip for hidden wireless network SSID entry"
 msgid "Enter network name and press <enter>"
 msgstr "Skriv inn nettverksnavn og trykk <enter>"
 
-#: interfaceconnectionitem.cpp:70
+#: interfaceconnectionitem.cpp:71
 msgctxt "name of the connection not known"
 msgid "Unknown"
 msgstr "Ukjent"
@@ -235,96 +235,96 @@ msgctxt "wired interface network cable unplugged"
 msgid "Cable Unplugged"
 msgstr "Kabel koblet fra"
 
-#: networkmanager.cpp:675
+#: networkmanager.cpp:673
 msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr "Ingen nettverksgrensesnitt"
 
-#: networkmanager.cpp:726
+#: networkmanager.cpp:725
 msgid "VPN Connections"
 msgstr "VPN-forbindelser"
 
-#: networkmanager.cpp:740
+#: networkmanager.cpp:739
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
 msgstr "Frakoblet"
 
-#: networkmanager.cpp:743
+#: networkmanager.cpp:742
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
 msgstr "Trådløs er slått av i programvare"
 
-#: networkmanager.cpp:746
+#: networkmanager.cpp:745
 msgctxt "tooltip, all interfaces are down"
 msgid "Networking disabled"
 msgstr "Nettverkssystemet er slått av"
 
-#: networkmanager.cpp:749
+#: networkmanager.cpp:748
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
 msgstr "Trådløs er slått av med maskinvare"
 
-#: nmpopup.cpp:89 nmpopup.cpp:747
+#: nmpopup.cpp:90 nmpopup.cpp:732
 msgctxt "title on the LHS of the plasmoid"
 msgid "<h3>Interfaces</h3>"
 msgstr "<h3>Grensesnitt</h3>"
 
-#: nmpopup.cpp:95
+#: nmpopup.cpp:96
 msgctxt "title on the RHS of the plasmoid"
 msgid "<h3>Connections</h3>"
 msgstr "<h3>Tilkoblinger</h3>"
 
-#: nmpopup.cpp:123
+#: nmpopup.cpp:124
 msgctxt "CheckBox to enable or disable networking completely"
 msgid "Enable networking"
 msgstr "Slå på bruk av nettverk"
 
-#: nmpopup.cpp:132
+#: nmpopup.cpp:133
 msgctxt "CheckBox to enable or disable wwan (mobile broadband) interface)"
 msgid "Enable mobile broadband"
 msgstr "Slå på mobilt bredbånd"
 
-#: nmpopup.cpp:145
+#: nmpopup.cpp:146
 msgctxt "CheckBox to enable or disable wireless interface (rfkill)"
 msgid "Enable wireless"
 msgstr "Slå på trådløs"
 
-#: nmpopup.cpp:157
+#: nmpopup.cpp:158
 msgctxt "tabbar on the left side"
 msgid "Interfaces"
 msgstr "Grensesnitt"
 
-#: nmpopup.cpp:167
+#: nmpopup.cpp:168
 msgctxt "details for the interface"
 msgid "Details"
 msgstr "Detaljer"
 
-#: nmpopup.cpp:196
+#: nmpopup.cpp:197
 msgctxt "manage connections button in the applet's popup"
 msgid "Manage Connections..."
 msgstr "Styr forbindelser …"
 
-#: nmpopup.cpp:204
+#: nmpopup.cpp:205
 msgctxt "@info:tooltip tooltip for the 'Show More' button"
 msgid "Show all available networks"
 msgstr "Vis alle tilgjengelige nettverk"
 
-#: nmpopup.cpp:209
+#: nmpopup.cpp:210
 msgctxt "show more button in the applet's popup"
 msgid "Show More..."
 msgstr "Vis mer …"
 
-#: nmpopup.cpp:213
+#: nmpopup.cpp:214
 msgctxt "show more button in the applet's popup"
 msgid "Show Less..."
 msgstr "Vis mindre …"
 
-#: nmpopup.cpp:319
+#: nmpopup.cpp:294
 msgctxt "Warning about wrong NetworkManager version"
 msgid "NetworkManager is not running. Please start it."
 msgstr "NetworkManager kjører ikke. Vennligst start den."
 
-#: nmpopup.cpp:323
+#: nmpopup.cpp:300
 #, kde-format
 msgctxt "Warning about wrong NetworkManager version"
 msgid ""
@@ -334,12 +334,12 @@ msgstr ""
 "Vi trenger minst NetworkManager-%1 for å virke riktig, fant «%2». Oppgrader "
 "til en nyere versjon."
 
-#: nmpopup.cpp:659
+#: nmpopup.cpp:644
 msgctxt "pressed show more button"
 msgid "Show Less..."
 msgstr "Vis mindre …"
 
-#: nmpopup.cpp:664
+#: nmpopup.cpp:649
 msgctxt "unpressed show more button"
 msgid "Show More..."
 msgstr "Vis mer …"
@@ -380,7 +380,7 @@ msgctxt "VPN state label"
 msgid "Not Connected..."
 msgstr "Ikke tilkoblet"
 
-#: wirelessnetworkitem.cpp:120 wirelessnetworkitem.cpp:160
+#: wirelessnetworkitem.cpp:121 wirelessnetworkitem.cpp:161
 #, kde-format
 msgid "Strength: %1%"
 msgstr "Styrke: %1%"

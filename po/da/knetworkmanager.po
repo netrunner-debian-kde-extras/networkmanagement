@@ -17,6 +17,14 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Martin Schlander"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "mschlander@opensuse.org"
+
 #: connectioninfodialog.cpp:80
 msgctxt "@title:tab information about ip address, nameserveres, etc"
 msgid "IPv4"
@@ -310,37 +318,23 @@ msgctxt ""
 msgid " (connected)"
 msgstr " (forbundet)"
 
-#: rc.cpp:1
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Martin Schlander"
-
-#: rc.cpp:2
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "mschlander@opensuse.org"
-
-#. i18n: file: otherwirelessnetworkwidget.ui:19
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:5
+#: otherwirelessnetworkwidget.ui:19
 msgid "&Search:"
 msgstr "&Søg:"
 
-#. i18n: file: otherwirelessnetworkwidget.ui:35
 #. i18n: ectx: property (text), widget (QTreeWidget, twNetworks)
-#: rc.cpp:8
+#: otherwirelessnetworkwidget.ui:35
 msgid "Network name"
 msgstr "Netværksnavn"
 
-#. i18n: file: otherwirelessnetworkwidget.ui:40
 #. i18n: ectx: property (text), widget (QTreeWidget, twNetworks)
-#: rc.cpp:11
+#: otherwirelessnetworkwidget.ui:40
 msgid "Signal"
 msgstr "Signal"
 
-#. i18n: file: otherwirelessnetworkwidget.ui:45
 #. i18n: ectx: property (text), widget (QTreeWidget, twNetworks)
-#: rc.cpp:14
+#: otherwirelessnetworkwidget.ui:45
 msgid "Security"
 msgstr "Sikkerhed"
 
