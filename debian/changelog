@@ -1,8 +1,8 @@
-networkmanagement (0.9.0.7-1) UNRELEASED; urgency=low
+networkmanagement (0.9.0.7-1) experimental; urgency=low
 
   * New upstream release.
 
- -- Michael Biebl <biebl@debian.org>  Sun, 27 Jan 2013 21:36:09 +0100
+ -- Michael Biebl <biebl@debian.org>  Sun, 27 Jan 2013 21:36:56 +0100
 
 networkmanagement (0.9.0.6-1) experimental; urgency=low
 
