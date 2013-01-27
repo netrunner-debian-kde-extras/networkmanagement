@@ -1,20 +1,20 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Yuri Efremov <yur.arh@gmail.com>, 2012.
+# Yuri Efremov <yur.arh@gmail.com>, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-12-02 08:26+0100\n"
-"PO-Revision-Date: 2012-08-28 22:10+0400\n"
+"POT-Creation-Date: 2013-01-02 08:50+0100\n"
+"PO-Revision-Date: 2013-01-18 22:27+0400\n"
 "Last-Translator: Yuri Efremov <yur.arh@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Environment: kde\n"
@@ -47,155 +47,155 @@ msgstr ""
 msgctxt ""
 "default KLineEdit::clickMessage() for hidden wireless network SSID entry"
 msgid "Enter network name and press <enter>"
-msgstr ""
+msgstr "Введите название сети и нажмите клавишу <enter>"
 
 #: hiddenwirelessnetworkitem.cpp:82
 msgctxt "@info:tooltip for hidden wireless network SSID entry"
 msgid "Enter network name and press <enter>"
-msgstr ""
+msgstr "Введите название сети и нажмите клавишу <enter>"
 
 #: interfaceconnectionitem.cpp:71
 msgctxt "name of the connection not known"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: interfacedetailswidget.cpp:116
+#: interfacedetailswidget.cpp:117
 msgctxt "interface details"
 msgid "<b>Traffic</b>"
 msgstr "<b>Трафик</b>"
 
-#: interfacedetailswidget.cpp:152
+#: interfacedetailswidget.cpp:153
 msgid "Go Back"
 msgstr "Назад"
 
-#: interfacedetailswidget.cpp:177 interfacedetailswidget.cpp:299
+#: interfacedetailswidget.cpp:178 interfacedetailswidget.cpp:300
 msgctxt "entry not available"
 msgid "not available"
 msgstr "недоступно"
 
-#: interfacedetailswidget.cpp:182
+#: interfacedetailswidget.cpp:183
 msgctxt "traffic received empty"
 msgid "Received"
 msgstr "Принято"
 
-#: interfacedetailswidget.cpp:184
+#: interfacedetailswidget.cpp:185
 msgctxt "traffic transmitted empty"
 msgid "Transmitted"
 msgstr "Передано"
 
-#: interfacedetailswidget.cpp:290
+#: interfacedetailswidget.cpp:291
 msgctxt "state of mobile broadband connection"
 msgid "not enabled"
 msgstr "не включено"
 
-#: interfacedetailswidget.cpp:306 interfacedetailswidget.cpp:353
+#: interfacedetailswidget.cpp:307 interfacedetailswidget.cpp:354
 msgctxt "interface details"
 msgid "Type"
 msgstr "Тип"
 
-#: interfacedetailswidget.cpp:307 interfacedetailswidget.cpp:354
+#: interfacedetailswidget.cpp:308 interfacedetailswidget.cpp:355
 msgctxt "interface details"
 msgid "Connection State"
 msgstr "Состояние соединения"
 
-#: interfacedetailswidget.cpp:308
+#: interfacedetailswidget.cpp:309
 msgctxt "interface details"
 msgid "IP Address"
 msgstr "IP-адрес"
 
-#: interfacedetailswidget.cpp:309 interfacedetailswidget.cpp:356
+#: interfacedetailswidget.cpp:310 interfacedetailswidget.cpp:357
 msgctxt "interface details"
 msgid "Connection Speed"
 msgstr "Скорость соединения"
 
-#: interfacedetailswidget.cpp:309
+#: interfacedetailswidget.cpp:310
 msgctxt "bitrate"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: interfacedetailswidget.cpp:310 interfacedetailswidget.cpp:357
+#: interfacedetailswidget.cpp:311 interfacedetailswidget.cpp:358
 msgctxt "interface details"
 msgid "System Name"
 msgstr "Системное имя"
 
-#: interfacedetailswidget.cpp:311
+#: interfacedetailswidget.cpp:312
 msgctxt "interface details"
 msgid "MAC Address"
 msgstr "MAC-адрес"
 
-#: interfacedetailswidget.cpp:312 interfacedetailswidget.cpp:359
+#: interfacedetailswidget.cpp:313 interfacedetailswidget.cpp:360
 msgctxt "interface details"
 msgid "Driver"
 msgstr "Драйвер"
 
-#: interfacedetailswidget.cpp:318
+#: interfacedetailswidget.cpp:319
 msgctxt "interface details"
 msgid "Access Point (SSID)"
 msgstr "Точка доступа (SSID)"
 
-#: interfacedetailswidget.cpp:319
+#: interfacedetailswidget.cpp:320
 msgctxt "interface details"
 msgid "Access Point (MAC)"
 msgstr "Точка доступа (MAC)"
 
-#: interfacedetailswidget.cpp:327
+#: interfacedetailswidget.cpp:328
 msgctxt "@item:intable wireless band"
 msgid "Band"
 msgstr "Диапазон"
 
-#: interfacedetailswidget.cpp:328
+#: interfacedetailswidget.cpp:329
 msgctxt "@item:intable wireless channel"
 msgid "Channel"
 msgstr "Канал"
 
-#: interfacedetailswidget.cpp:335
+#: interfacedetailswidget.cpp:336
 msgctxt "interface details"
 msgid "Operator"
 msgstr "Оператор"
 
-#: interfacedetailswidget.cpp:336
+#: interfacedetailswidget.cpp:337
 msgctxt "interface details"
 msgid "Signal Quality"
 msgstr "Уровень сигнала"
 
-#: interfacedetailswidget.cpp:337
+#: interfacedetailswidget.cpp:338
 msgctxt "interface details"
 msgid "Access Technology"
 msgstr "Способ доступа"
 
-#: interfacedetailswidget.cpp:355
+#: interfacedetailswidget.cpp:356
 msgctxt "interface details"
 msgid "Network Address (IP)"
 msgstr "Сетевой адрес (IP)"
 
-#: interfacedetailswidget.cpp:358
+#: interfacedetailswidget.cpp:359
 msgctxt "interface details"
 msgid "Hardware Address (MAC)"
 msgstr "Аппаратный адрес (MAC)"
 
-#: interfacedetailswidget.cpp:377 interfaceitem.cpp:286
+#: interfacedetailswidget.cpp:378 interfaceitem.cpp:286
 msgctxt "label of the network interface"
 msgid "No IP address."
 msgstr "Без IP-адреса"
 
-#: interfacedetailswidget.cpp:388 interfaceitem.cpp:297
+#: interfacedetailswidget.cpp:389 interfaceitem.cpp:297
 msgctxt "label of the network interface"
 msgid "IP display error."
 msgstr "Ошибка показа IP-адреса"
 
-#: interfacedetailswidget.cpp:467
+#: interfacedetailswidget.cpp:468
 msgid "KBit/s"
 msgstr "кбит/с"
 
-#: interfacedetailswidget.cpp:469
+#: interfacedetailswidget.cpp:470
 msgid "MBit/s"
 msgstr "Мбит/с"
 
-#: interfacedetailswidget.cpp:473
+#: interfacedetailswidget.cpp:474
 msgid "GBit/s"
 msgstr "Гбит/с"
 
-#: interfacedetailswidget.cpp:497
+#: interfacedetailswidget.cpp:498
 #, kde-format
 msgctxt ""
 "traffic, e.g. n KB/s\n"
@@ -203,11 +203,11 @@ msgctxt ""
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: interfacedetailswidget.cpp:506
+#: interfacedetailswidget.cpp:507
 msgid "Received"
 msgstr "Принято"
 
-#: interfacedetailswidget.cpp:509
+#: interfacedetailswidget.cpp:510
 msgid "Transmitted"
 msgstr "Передано"
 
@@ -273,7 +273,7 @@ msgstr "<h3>Интерфейсы</h3>"
 #: nmpopup.cpp:96
 msgctxt "title on the RHS of the plasmoid"
 msgid "<h3>Connections</h3>"
-msgstr ""
+msgstr "<h3>Соединения</h3>"
 
 #: nmpopup.cpp:124
 msgctxt "CheckBox to enable or disable networking completely"

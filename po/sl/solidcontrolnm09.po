@@ -1,0 +1,35 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Andrej Mernik <andrejm@ubuntu.si>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2011-10-09 10:32+0200\n"
+"PO-Revision-Date: 2013-01-09 21:21+0100\n"
+"Last-Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: managerbase.cpp:61
+#, kde-format
+msgid "Backend loaded but wrong type obtained, expected %1"
+msgstr ""
+"Zaledje je naloženo, a je pridobljena napačna vrsta. Pričakovana je bila %1"
+
+#: managerbase.cpp:79
+#, kde-format
+msgid "No %1 Backend found"
+msgstr "Ni mogoče najti zaledja za %1"
+
+#: managerbase.cpp:84
+#, kde-format
+msgid "Unable to use any of the %1 Backends"
+msgstr "Ni mogoče uporabiti nobenega zaledja za %1"

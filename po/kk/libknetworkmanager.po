@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libnetworkmanager\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-12-06 08:25+0100\n"
+"POT-Creation-Date: 2013-01-16 09:40+0100\n"
 "PO-Revision-Date: 2012-10-10 04:28+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -483,7 +483,7 @@ msgstr "Қосылымның IP адресін таңдау әдісін орн�
 
 #. i18n: ectx: label, entry (dns), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:21 libs/internals/schemas/ipv6.kcfg:22
-#: libs/ui/ipv4widget.cpp:479 libs/ui/ipv6widget.cpp:419
+#: libs/ui/ipv4widget.cpp:479 libs/ui/ipv6widget.cpp:430
 msgid "DNS Servers"
 msgstr "DNS серверлері"
 
@@ -2399,7 +2399,9 @@ msgstr "Ортақ"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: libs/ui/ipv4.ui:137 libs/ui/ipv6.ui:142 vpnplugins/vpnc/vpncprop.ui:282
+#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#: libs/ui/ipv4.ui:137 libs/ui/ipv6.ui:142 libs/ui/ipv6.ui:341
+#: vpnplugins/vpnc/vpncprop.ui:282
 msgid "Disabled"
 msgstr "Бұғатталған"
 
@@ -2447,7 +2449,7 @@ msgstr "Жергілікті желінен тыс шығатын шлюзіні
 
 #. i18n: ectx: property (text), widget (QLabel, dnsLabel)
 #: libs/ui/ipv4.ui:223 libs/ui/ipv4widget.cpp:392 libs/ui/ipv6.ui:228
-#: libs/ui/ipv6widget.cpp:350
+#: libs/ui/ipv6widget.cpp:361
 msgctxt "@info"
 msgid "&DNS Servers:"
 msgstr "&DNS серверлері:"
@@ -2475,7 +2477,7 @@ msgstr "..."
 
 #. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
 #: libs/ui/ipv4.ui:269 libs/ui/ipv4widget.cpp:393 libs/ui/ipv6.ui:274
-#: libs/ui/ipv6widget.cpp:351
+#: libs/ui/ipv6widget.cpp:362
 msgctxt "@info"
 msgid "&Search Domains:"
 msgstr "&Іздеу домендері:"
@@ -2604,17 +2606,17 @@ msgctxt "@item:inlistbox IPv4 settings configuration method"
 msgid "Automatic (DHCP) addresses only"
 msgstr "Автоматты (DHCP) адрестері ғана"
 
-#: libs/ui/ipv4widget.cpp:389 libs/ui/ipv6widget.cpp:347
+#: libs/ui/ipv4widget.cpp:389 libs/ui/ipv6widget.cpp:358
 msgctxt "@info"
 msgid "Additional &DNS Servers:"
 msgstr "Қосымша &DNS серверлері:"
 
-#: libs/ui/ipv4widget.cpp:390 libs/ui/ipv6widget.cpp:348
+#: libs/ui/ipv4widget.cpp:390 libs/ui/ipv6widget.cpp:359
 msgctxt "@info"
 msgid "Additional &Search Domains:"
 msgstr "Қосымша &іздеу домендері:"
 
-#: libs/ui/ipv4widget.cpp:493 libs/ui/ipv6widget.cpp:433
+#: libs/ui/ipv4widget.cpp:493 libs/ui/ipv6widget.cpp:444
 msgid "Search domains"
 msgstr "Іздеу домендері"
 
@@ -2633,8 +2635,25 @@ msgstr "Автоматты (адрестері ғана)"
 msgid "Automatic (DHCP only)"
 msgstr "Автоматты (DHCP ғана)"
 
+#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#: libs/ui/ipv6.ui:346
+msgid "Enabled (prefer public address)"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#: libs/ui/ipv6.ui:351
+msgid "Enabled (prefer temporary addresses)"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: libs/ui/ipv6.ui:359
+#, fuzzy
+#| msgid "Tray icons:"
+msgid "Privacy Extensions:"
+msgstr "Жүйелік сөре таңбашалары:"
+
 #. i18n: ectx: property (text), widget (QCheckBox, cbMayFail)
-#: libs/ui/ipv6.ui:404
+#: libs/ui/ipv6.ui:430
 msgid "IPv6 is required for this connection"
 msgstr "Бұл қосылымға IPv6 керек"
 
@@ -3032,13 +3051,13 @@ msgctxt "GTC inner auth method"
 msgid "GTC"
 msgstr "GTC"
 
-#: libs/ui/security/peapwidget.cpp:186 libs/ui/security/tlswidget.cpp:297
-#: libs/ui/security/ttlswidget.cpp:188
+#: libs/ui/security/peapwidget.cpp:192 libs/ui/security/tlswidget.cpp:297
+#: libs/ui/security/ttlswidget.cpp:194
 msgid "Alternative Subject Matches"
 msgstr "Тақырып сәйкестігі (бірнешеден)"
 
-#: libs/ui/security/peapwidget.cpp:187 libs/ui/security/tlswidget.cpp:298
-#: libs/ui/security/ttlswidget.cpp:189
+#: libs/ui/security/peapwidget.cpp:193 libs/ui/security/tlswidget.cpp:298
+#: libs/ui/security/ttlswidget.cpp:195
 msgid ""
 "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
 "li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. http://www.kde.org&gt;"
@@ -3048,8 +3067,8 @@ msgstr ""
 "адресі&gt;</li><li>EMAIL: &lt;эл.пошта&gt;</li><li>URI: &lt;uri-сілтеме, "
 "мысалы, http://www.kde.org&gt;</li></ul></qt>"
 
-#: libs/ui/security/peapwidget.cpp:199 libs/ui/security/tlswidget.cpp:310
-#: libs/ui/security/ttlswidget.cpp:201
+#: libs/ui/security/peapwidget.cpp:205 libs/ui/security/tlswidget.cpp:310
+#: libs/ui/security/ttlswidget.cpp:207
 msgid "Connect to these Servers"
 msgstr "Осы серверлеріне қосылу"
 
@@ -3490,71 +3509,71 @@ msgctxt "File chooser dialog title for importing VPN"
 msgid "Import VPN connection settings"
 msgstr "VPN қосылымының параметрлерін импорттау"
 
-#: settings/config/manageconnectionwidget.cpp:454
+#: settings/config/manageconnectionwidget.cpp:467
 #, kde-format
 msgid ""
 "None of the supported plugins implement importing operation for file %1."
 msgstr "%1 файлын импорттау амалын ешбір танитын плагині іске асырмайды."
 
-#: settings/config/manageconnectionwidget.cpp:454
-#: settings/config/manageconnectionwidget.cpp:456
+#: settings/config/manageconnectionwidget.cpp:467
+#: settings/config/manageconnectionwidget.cpp:472
 msgid "Error importing VPN connection settings"
 msgstr "VPN қосылымының параметрлерін импорттау қатесі"
 
-#: settings/config/manageconnectionwidget.cpp:483
+#: settings/config/manageconnectionwidget.cpp:498
 msgctxt "File chooser dialog title for exporting VPN"
 msgid "Export VPN"
 msgstr "VPN экспорты"
 
-#: settings/config/manageconnectionwidget.cpp:490
+#: settings/config/manageconnectionwidget.cpp:505
 msgid "VPN connection successfully exported"
 msgstr "VPN қосылымы сәтті экспортталды"
 
-#: settings/config/manageconnectionwidget.cpp:490
+#: settings/config/manageconnectionwidget.cpp:505
 msgid "Success"
 msgstr "Сәтті бітті"
 
-#: settings/config/manageconnectionwidget.cpp:490
+#: settings/config/manageconnectionwidget.cpp:505
 msgid "Do not show again"
 msgstr "Ендігәрі көрсетілмесін"
 
-#: settings/config/manageconnectionwidget.cpp:492
+#: settings/config/manageconnectionwidget.cpp:507
 msgid "Error exporting VPN connection settings"
 msgstr "VPN қосылымының параметрлерін экспорттау қатесі"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: settings/config/manageconnectionwidget.cpp:495
-#: settings/config/manageconnectionwidget.cpp:548
+#: settings/config/manageconnectionwidget.cpp:510
+#: settings/config/manageconnectionwidget.cpp:563
 #: vpnplugins/openconnect/openconnectauth.ui:133 vpnplugins/vpnc/vpnc.cpp:83
 msgid "Error"
 msgstr "Қате"
 
-#: settings/config/manageconnectionwidget.cpp:495
+#: settings/config/manageconnectionwidget.cpp:510
 msgid "Could not export VPN connection settings"
 msgstr "VPN қосылымының параметрлерін экспорттауға болмады"
 
-#: settings/config/manageconnectionwidget.cpp:531
+#: settings/config/manageconnectionwidget.cpp:546
 msgid ""
 "Connection edit option failed, make sure that NetworkManager is properly "
 "running."
 msgstr ""
 "Қосылымды өңдеу амалы жаңылды, NetworkManager дұрыс істегенін тексеріңіз."
 
-#: settings/config/manageconnectionwidget.cpp:571
+#: settings/config/manageconnectionwidget.cpp:586
 msgid "Connection create operation failed."
 msgstr "Қосылымды құру амалы жаңылды."
 
-#: settings/config/manageconnectionwidget.cpp:595
+#: settings/config/manageconnectionwidget.cpp:610
 #, kde-format
 msgctxt "Warning message on attempting to delete a connection"
 msgid "Do you really want to delete the connection '%1'?"
 msgstr "'%1' деген қосылымды жойғыңыз келгені рас па?"
 
-#: settings/config/manageconnectionwidget.cpp:596
+#: settings/config/manageconnectionwidget.cpp:611
 msgid "Confirm Delete"
 msgstr "Өшіруді құптау"
 
-#: settings/config/manageconnectionwidget.cpp:756
+#: settings/config/manageconnectionwidget.cpp:771
 msgid "Connected"
 msgstr "Қосылған"
 

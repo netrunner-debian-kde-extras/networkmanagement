@@ -1,11 +1,11 @@
 # Translation of libknetworkmanager.po into Serbian.
-# Chusslove Illich <caslav.ilic@gmx.net>, 2012.
+# Chusslove Illich <caslav.ilic@gmx.net>, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-12-06 08:25+0100\n"
-"PO-Revision-Date: 2012-10-04 21:00+0200\n"
+"POT-Creation-Date: 2013-01-16 09:40+0100\n"
+"PO-Revision-Date: 2013-01-13 11:28+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@latin\n"
@@ -485,7 +485,7 @@ msgstr "Izaberite način postavljanja IP adrese za ovu vezu."
 
 #. i18n: ectx: label, entry (dns), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:21 libs/internals/schemas/ipv6.kcfg:22
-#: libs/ui/ipv4widget.cpp:479 libs/ui/ipv6widget.cpp:419
+#: libs/ui/ipv4widget.cpp:479 libs/ui/ipv6widget.cpp:430
 msgid "DNS Servers"
 msgstr "DNS serveri"
 
@@ -2422,7 +2422,9 @@ msgstr "deljeno"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: libs/ui/ipv4.ui:137 libs/ui/ipv6.ui:142 vpnplugins/vpnc/vpncprop.ui:282
+#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#: libs/ui/ipv4.ui:137 libs/ui/ipv6.ui:142 libs/ui/ipv6.ui:341
+#: vpnplugins/vpnc/vpncprop.ui:282
 msgid "Disabled"
 msgstr "isključeno"
 
@@ -2474,7 +2476,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, dnsLabel)
 #: libs/ui/ipv4.ui:223 libs/ui/ipv4widget.cpp:392 libs/ui/ipv6.ui:228
-#: libs/ui/ipv6widget.cpp:350
+#: libs/ui/ipv6widget.cpp:361
 msgctxt "@info"
 msgid "&DNS Servers:"
 msgstr "&DNS serveri:"
@@ -2504,7 +2506,7 @@ msgstr "..."
 
 #. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
 #: libs/ui/ipv4.ui:269 libs/ui/ipv4widget.cpp:393 libs/ui/ipv6.ui:274
-#: libs/ui/ipv6widget.cpp:351
+#: libs/ui/ipv6widget.cpp:362
 msgctxt "@info"
 msgid "&Search Domains:"
 msgstr "&Domeni za pretragu:"
@@ -2633,17 +2635,17 @@ msgctxt "@item:inlistbox IPv4 settings configuration method"
 msgid "Automatic (DHCP) addresses only"
 msgstr "automatski (DHCP) samo adrese"
 
-#: libs/ui/ipv4widget.cpp:389 libs/ui/ipv6widget.cpp:347
+#: libs/ui/ipv4widget.cpp:389 libs/ui/ipv6widget.cpp:358
 msgctxt "@info"
 msgid "Additional &DNS Servers:"
 msgstr "Dopunski &DNS serveri:"
 
-#: libs/ui/ipv4widget.cpp:390 libs/ui/ipv6widget.cpp:348
+#: libs/ui/ipv4widget.cpp:390 libs/ui/ipv6widget.cpp:359
 msgctxt "@info"
 msgid "Additional &Search Domains:"
 msgstr "Dopunski &domeni za pretragu:"
 
-#: libs/ui/ipv4widget.cpp:493 libs/ui/ipv6widget.cpp:433
+#: libs/ui/ipv4widget.cpp:493 libs/ui/ipv6widget.cpp:444
 msgid "Search domains"
 msgstr "Domeni za pretragu"
 
@@ -2662,8 +2664,23 @@ msgstr "automatski (samo adrese)"
 msgid "Automatic (DHCP only)"
 msgstr "automatski (samo DHCP)"
 
+#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#: libs/ui/ipv6.ui:346
+msgid "Enabled (prefer public address)"
+msgstr "uključeno (radije javna adresa)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#: libs/ui/ipv6.ui:351
+msgid "Enabled (prefer temporary addresses)"
+msgstr "uključeno (radije privremene adrese)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: libs/ui/ipv6.ui:359
+msgid "Privacy Extensions:"
+msgstr "Proširenja za privatnost:"
+
 #. i18n: ectx: property (text), widget (QCheckBox, cbMayFail)
-#: libs/ui/ipv6.ui:404
+#: libs/ui/ipv6.ui:430
 msgid "IPv6 is required for this connection"
 msgstr "Ova veza zahteva IPv6"
 
@@ -3059,13 +3076,13 @@ msgctxt "GTC inner auth method"
 msgid "GTC"
 msgstr "GTC"
 
-#: libs/ui/security/peapwidget.cpp:186 libs/ui/security/tlswidget.cpp:297
-#: libs/ui/security/ttlswidget.cpp:188
+#: libs/ui/security/peapwidget.cpp:192 libs/ui/security/tlswidget.cpp:297
+#: libs/ui/security/ttlswidget.cpp:194
 msgid "Alternative Subject Matches"
 msgstr "Poklapanja alternativnog naslova"
 
-#: libs/ui/security/peapwidget.cpp:187 libs/ui/security/tlswidget.cpp:298
-#: libs/ui/security/ttlswidget.cpp:189
+#: libs/ui/security/peapwidget.cpp:193 libs/ui/security/tlswidget.cpp:298
+#: libs/ui/security/ttlswidget.cpp:195
 msgid ""
 "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
 "li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. http://www.kde.org&gt;"
@@ -3075,8 +3092,8 @@ msgstr ""
 "li><li>EMAIL: &lt;adresa e‑pošte&gt;</li><li>URI: &lt;URI, npr. http://www."
 "kde.org&gt;</li></ul></qt>"
 
-#: libs/ui/security/peapwidget.cpp:199 libs/ui/security/tlswidget.cpp:310
-#: libs/ui/security/ttlswidget.cpp:201
+#: libs/ui/security/peapwidget.cpp:205 libs/ui/security/tlswidget.cpp:310
+#: libs/ui/security/ttlswidget.cpp:207
 msgid "Connect to these Servers"
 msgstr "Povezuj se na ove servere"
 
@@ -3524,50 +3541,50 @@ msgctxt "File chooser dialog title for importing VPN"
 msgid "Import VPN connection settings"
 msgstr "Uvoz postavki VPN veze"
 
-#: settings/config/manageconnectionwidget.cpp:454
+#: settings/config/manageconnectionwidget.cpp:467
 #, kde-format
 msgid ""
 "None of the supported plugins implement importing operation for file %1."
 msgstr "Nijedan od podržanih priključaka ne izvodi postupak uvoza za fajl %1."
 
-#: settings/config/manageconnectionwidget.cpp:454
-#: settings/config/manageconnectionwidget.cpp:456
+#: settings/config/manageconnectionwidget.cpp:467
+#: settings/config/manageconnectionwidget.cpp:472
 msgid "Error importing VPN connection settings"
 msgstr "Greška pri uvozu postavki VPN veze"
 
-#: settings/config/manageconnectionwidget.cpp:483
+#: settings/config/manageconnectionwidget.cpp:498
 msgctxt "File chooser dialog title for exporting VPN"
 msgid "Export VPN"
 msgstr "Izvoz VPN‑a"
 
-#: settings/config/manageconnectionwidget.cpp:490
+#: settings/config/manageconnectionwidget.cpp:505
 msgid "VPN connection successfully exported"
 msgstr "VPN veza je uspešno izvezena."
 
-#: settings/config/manageconnectionwidget.cpp:490
+#: settings/config/manageconnectionwidget.cpp:505
 msgid "Success"
 msgstr "Uspeh"
 
-#: settings/config/manageconnectionwidget.cpp:490
+#: settings/config/manageconnectionwidget.cpp:505
 msgid "Do not show again"
 msgstr "Ne prikazuj više"
 
-#: settings/config/manageconnectionwidget.cpp:492
+#: settings/config/manageconnectionwidget.cpp:507
 msgid "Error exporting VPN connection settings"
 msgstr "Greška pri izvozu postavki VPN veze."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: settings/config/manageconnectionwidget.cpp:495
-#: settings/config/manageconnectionwidget.cpp:548
+#: settings/config/manageconnectionwidget.cpp:510
+#: settings/config/manageconnectionwidget.cpp:563
 #: vpnplugins/openconnect/openconnectauth.ui:133 vpnplugins/vpnc/vpnc.cpp:83
 msgid "Error"
 msgstr "Greška"
 
-#: settings/config/manageconnectionwidget.cpp:495
+#: settings/config/manageconnectionwidget.cpp:510
 msgid "Could not export VPN connection settings"
 msgstr "Ne mogu da izvezem postavke VPN veze"
 
-#: settings/config/manageconnectionwidget.cpp:531
+#: settings/config/manageconnectionwidget.cpp:546
 msgid ""
 "Connection edit option failed, make sure that NetworkManager is properly "
 "running."
@@ -3575,21 +3592,21 @@ msgstr ""
 "Opcija uređivanja veze nije prošla, proverite da li je Menadžer mreže uredno "
 "u pogonu."
 
-#: settings/config/manageconnectionwidget.cpp:571
+#: settings/config/manageconnectionwidget.cpp:586
 msgid "Connection create operation failed."
 msgstr "Postupak stvaranja veze nije prošao."
 
-#: settings/config/manageconnectionwidget.cpp:595
+#: settings/config/manageconnectionwidget.cpp:610
 #, kde-format
 msgctxt "Warning message on attempting to delete a connection"
 msgid "Do you really want to delete the connection '%1'?"
 msgstr "Želite li zaista da obrišete vezu „%1“?"
 
-#: settings/config/manageconnectionwidget.cpp:596
+#: settings/config/manageconnectionwidget.cpp:611
 msgid "Confirm Delete"
 msgstr "Potvrda brisanja"
 
-#: settings/config/manageconnectionwidget.cpp:756
+#: settings/config/manageconnectionwidget.cpp:771
 msgid "Connected"
 msgstr "uspostavljena"
 

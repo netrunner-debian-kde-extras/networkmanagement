@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Vít Pelčák <vit@pelcak.org>, 2010, 2011, 2012.
+# Vít Pelčák <vit@pelcak.org>, 2010, 2011, 2012, 2013.
 # Lukáš Tinkl <lukas@kde.org>, 2010, 2011, 2012.
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012.
 #
@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-12-06 08:25+0100\n"
-"PO-Revision-Date: 2012-09-26 09:57+0200\n"
+"POT-Creation-Date: 2013-01-16 09:40+0100\n"
+"PO-Revision-Date: 2013-01-09 09:28+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 1.5\n"
 
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
@@ -483,7 +483,7 @@ msgstr "Vyberte způsob nastavení IP adresy tohoto spojení"
 
 #. i18n: ectx: label, entry (dns), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:21 libs/internals/schemas/ipv6.kcfg:22
-#: libs/ui/ipv4widget.cpp:479 libs/ui/ipv6widget.cpp:419
+#: libs/ui/ipv4widget.cpp:479 libs/ui/ipv6widget.cpp:430
 msgid "DNS Servers"
 msgstr "DNS servery"
 
@@ -2395,7 +2395,9 @@ msgstr "Sdílené"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: libs/ui/ipv4.ui:137 libs/ui/ipv6.ui:142 vpnplugins/vpnc/vpncprop.ui:282
+#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#: libs/ui/ipv4.ui:137 libs/ui/ipv6.ui:142 libs/ui/ipv6.ui:341
+#: vpnplugins/vpnc/vpncprop.ui:282
 msgid "Disabled"
 msgstr "Vypnuto"
 
@@ -2449,7 +2451,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, dnsLabel)
 #: libs/ui/ipv4.ui:223 libs/ui/ipv4widget.cpp:392 libs/ui/ipv6.ui:228
-#: libs/ui/ipv6widget.cpp:350
+#: libs/ui/ipv6widget.cpp:361
 msgctxt "@info"
 msgid "&DNS Servers:"
 msgstr "&DNS servery:"
@@ -2479,7 +2481,7 @@ msgstr "..."
 
 #. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
 #: libs/ui/ipv4.ui:269 libs/ui/ipv4widget.cpp:393 libs/ui/ipv6.ui:274
-#: libs/ui/ipv6widget.cpp:351
+#: libs/ui/ipv6widget.cpp:362
 msgctxt "@info"
 msgid "&Search Domains:"
 msgstr "&Hledat domény:"
@@ -2605,17 +2607,17 @@ msgctxt "@item:inlistbox IPv4 settings configuration method"
 msgid "Automatic (DHCP) addresses only"
 msgstr "Automaticky (DHCP) pouze adresy"
 
-#: libs/ui/ipv4widget.cpp:389 libs/ui/ipv6widget.cpp:347
+#: libs/ui/ipv4widget.cpp:389 libs/ui/ipv6widget.cpp:358
 msgctxt "@info"
 msgid "Additional &DNS Servers:"
 msgstr "Další &DNS servery:"
 
-#: libs/ui/ipv4widget.cpp:390 libs/ui/ipv6widget.cpp:348
+#: libs/ui/ipv4widget.cpp:390 libs/ui/ipv6widget.cpp:359
 msgctxt "@info"
 msgid "Additional &Search Domains:"
 msgstr ""
 
-#: libs/ui/ipv4widget.cpp:493 libs/ui/ipv6widget.cpp:433
+#: libs/ui/ipv4widget.cpp:493 libs/ui/ipv6widget.cpp:444
 msgid "Search domains"
 msgstr "Hledat domény"
 
@@ -2634,8 +2636,23 @@ msgstr "Automaticky (pouze adresy)"
 msgid "Automatic (DHCP only)"
 msgstr "Automaticky (pouze DHCP)"
 
+#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#: libs/ui/ipv6.ui:346
+msgid "Enabled (prefer public address)"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#: libs/ui/ipv6.ui:351
+msgid "Enabled (prefer temporary addresses)"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: libs/ui/ipv6.ui:359
+msgid "Privacy Extensions:"
+msgstr "Rozšíření pro ochranu soukromí:"
+
 #. i18n: ectx: property (text), widget (QCheckBox, cbMayFail)
-#: libs/ui/ipv6.ui:404
+#: libs/ui/ipv6.ui:430
 msgid "IPv6 is required for this connection"
 msgstr "Pro spojení je potřeba IPv6"
 
@@ -3015,21 +3032,21 @@ msgctxt "GTC inner auth method"
 msgid "GTC"
 msgstr "GTC"
 
-#: libs/ui/security/peapwidget.cpp:186 libs/ui/security/tlswidget.cpp:297
-#: libs/ui/security/ttlswidget.cpp:188
+#: libs/ui/security/peapwidget.cpp:192 libs/ui/security/tlswidget.cpp:297
+#: libs/ui/security/ttlswidget.cpp:194
 msgid "Alternative Subject Matches"
 msgstr "Alternativní shody předmětu"
 
-#: libs/ui/security/peapwidget.cpp:187 libs/ui/security/tlswidget.cpp:298
-#: libs/ui/security/ttlswidget.cpp:189
+#: libs/ui/security/peapwidget.cpp:193 libs/ui/security/tlswidget.cpp:298
+#: libs/ui/security/ttlswidget.cpp:195
 msgid ""
 "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
 "li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. http://www.kde.org&gt;"
 "</li></ul></qt>"
 msgstr ""
 
-#: libs/ui/security/peapwidget.cpp:199 libs/ui/security/tlswidget.cpp:310
-#: libs/ui/security/ttlswidget.cpp:201
+#: libs/ui/security/peapwidget.cpp:205 libs/ui/security/tlswidget.cpp:310
+#: libs/ui/security/ttlswidget.cpp:207
 msgid "Connect to these Servers"
 msgstr "Připojit k těmto serverům"
 
@@ -3471,70 +3488,70 @@ msgctxt "File chooser dialog title for importing VPN"
 msgid "Import VPN connection settings"
 msgstr "Importovat nastavení VPN spojení"
 
-#: settings/config/manageconnectionwidget.cpp:454
+#: settings/config/manageconnectionwidget.cpp:467
 #, kde-format
 msgid ""
 "None of the supported plugins implement importing operation for file %1."
 msgstr ""
 
-#: settings/config/manageconnectionwidget.cpp:454
-#: settings/config/manageconnectionwidget.cpp:456
+#: settings/config/manageconnectionwidget.cpp:467
+#: settings/config/manageconnectionwidget.cpp:472
 msgid "Error importing VPN connection settings"
 msgstr "Chyba při importu nastavení spojení VPN"
 
-#: settings/config/manageconnectionwidget.cpp:483
+#: settings/config/manageconnectionwidget.cpp:498
 msgctxt "File chooser dialog title for exporting VPN"
 msgid "Export VPN"
 msgstr "Exportovat VPN"
 
-#: settings/config/manageconnectionwidget.cpp:490
+#: settings/config/manageconnectionwidget.cpp:505
 msgid "VPN connection successfully exported"
 msgstr "VPN spojení úspěšně exportováno"
 
-#: settings/config/manageconnectionwidget.cpp:490
+#: settings/config/manageconnectionwidget.cpp:505
 msgid "Success"
 msgstr "Úspěch"
 
-#: settings/config/manageconnectionwidget.cpp:490
+#: settings/config/manageconnectionwidget.cpp:505
 msgid "Do not show again"
 msgstr "Znovu nezobrazovat"
 
-#: settings/config/manageconnectionwidget.cpp:492
+#: settings/config/manageconnectionwidget.cpp:507
 msgid "Error exporting VPN connection settings"
 msgstr "Chyba při exportu nastavení spojení VPN"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: settings/config/manageconnectionwidget.cpp:495
-#: settings/config/manageconnectionwidget.cpp:548
+#: settings/config/manageconnectionwidget.cpp:510
+#: settings/config/manageconnectionwidget.cpp:563
 #: vpnplugins/openconnect/openconnectauth.ui:133 vpnplugins/vpnc/vpnc.cpp:83
 msgid "Error"
 msgstr "Chyba"
 
-#: settings/config/manageconnectionwidget.cpp:495
+#: settings/config/manageconnectionwidget.cpp:510
 msgid "Could not export VPN connection settings"
 msgstr "Nelze exportovat nastavení VPN spojení"
 
-#: settings/config/manageconnectionwidget.cpp:531
+#: settings/config/manageconnectionwidget.cpp:546
 msgid ""
 "Connection edit option failed, make sure that NetworkManager is properly "
 "running."
 msgstr ""
 
-#: settings/config/manageconnectionwidget.cpp:571
+#: settings/config/manageconnectionwidget.cpp:586
 msgid "Connection create operation failed."
 msgstr "Vytváření spojení selhalo"
 
-#: settings/config/manageconnectionwidget.cpp:595
+#: settings/config/manageconnectionwidget.cpp:610
 #, kde-format
 msgctxt "Warning message on attempting to delete a connection"
 msgid "Do you really want to delete the connection '%1'?"
 msgstr "Opravdu si přejete smazat spojení '%1'?"
 
-#: settings/config/manageconnectionwidget.cpp:596
+#: settings/config/manageconnectionwidget.cpp:611
 msgid "Confirm Delete"
 msgstr "Potvrdit odstranění"
 
-#: settings/config/manageconnectionwidget.cpp:756
+#: settings/config/manageconnectionwidget.cpp:771
 msgid "Connected"
 msgstr "Připojeno"
 
