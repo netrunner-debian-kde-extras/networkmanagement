@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknminternals\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-12-06 08:25+0100\n"
-"PO-Revision-Date: 2012-09-27 23:33+0100\n"
+"POT-Creation-Date: 2013-01-16 09:40+0100\n"
+"PO-Revision-Date: 2013-01-12 13:44+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -25,12 +25,13 @@ msgstr ""
 "X-POFile-IgnoreConsistency: View:\n"
 "X-POFile-SpellExtra: Swan GBps bps MBps EVDO xRTT GTC GHz NetworkManager\n"
 "X-POFile-SpellExtra: PANU Dif DUN rfcomm ModemManager WifiPartilhada\n"
-"X-POFile-SpellExtra: LigaçãosemFiosPartilhada Proxies SOCKS OpenConnect\n"
-"X-POFile-SpellExtra: MSS RIPEMD xFFFF SEP wpasupplicant CSD KBits clonado\n"
-"X-POFile-SpellExtra: decrypt MBit KBytes Desktop Netscreen agent IKE\n"
-"X-POFile-SpellExtra: Roaming FSID EMAIL nap BlueZ NAP dun Ilia Rajeesh\n"
-"X-POFile-SpellExtra: Nambiar Lamarque Kats Kügler Souza Sebastian\n"
-"X-POFile-SpellExtra: firewalld PKSC PKCS LigacaosemFiosPartilhada\n"
+"X-POFile-SpellExtra: LigaçãosemFiosPartilhada wpasupplicant MSS agent\n"
+"X-POFile-SpellExtra: Desktop HSUPA OpenConnect xFFFF SEP KBits AWS\n"
+"X-POFile-SpellExtra: Netscreen IKE CSD Roaming Proxies decrypt KBytes GPP\n"
+"X-POFile-SpellExtra: FSID MBit RIPEMD clonado WCDMA SOCKS HSDPA EMAIL nap\n"
+"X-POFile-SpellExtra: BlueZ NAP dun GBit Souza Sebastian Kügler Lamarque\n"
+"X-POFile-SpellExtra: Rajeesh Ilia Kats Nambiar firewalld IMEI PKCS IMSI\n"
+"X-POFile-SpellExtra: LigacaosemFiosPartilhada\n"
 
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
@@ -498,7 +499,7 @@ msgstr "Escolha a forma de atribuição do endereço IP a esta ligação"
 
 #. i18n: ectx: label, entry (dns), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:21 libs/internals/schemas/ipv6.kcfg:22
-#: libs/ui/ipv4widget.cpp:479 libs/ui/ipv6widget.cpp:419
+#: libs/ui/ipv4widget.cpp:479 libs/ui/ipv6widget.cpp:430
 msgid "DNS Servers"
 msgstr "Servidores de DNS"
 
@@ -1106,19 +1107,19 @@ msgstr "802.1x"
 #, kde-format
 msgctxt "connection speed"
 msgid "%1 Bit/s"
-msgstr "%1 bps"
+msgstr "%1 Bit/s"
 
 #: libs/internals/uiutils.cpp:413
 #, kde-format
 msgctxt "connection speed"
 msgid "%1 MBit/s"
-msgstr "%1 MBps"
+msgstr "%1 MBit/s"
 
 #: libs/internals/uiutils.cpp:415
 #, kde-format
 msgctxt "connection speed"
 msgid "%1 GBit/s"
-msgstr "%1 GBps"
+msgstr "%1 GBit/s"
 
 #: libs/internals/wirelesssecurityidentifier.cpp:248
 msgctxt "@label no security"
@@ -1623,8 +1624,8 @@ msgctxt ""
 "determine the plural form of network."
 msgid "<b>New wireless network:</b><br /> %2"
 msgid_plural "<b>New wireless networks:</b><br /> %2"
-msgstr[0] "<b>Nova rede sem-fios:</b><br /> %2"
-msgstr[1] "<b>Novas redes sem-fios:</b><br /> %2"
+msgstr[0] "<b>Nova rede sem-fios:</b><br/>%2"
+msgstr[1] "<b>Novas redes sem-fios:</b><br/>%2"
 
 #: libs/service/notificationmanager.cpp:608
 #, kde-format
@@ -1641,8 +1642,8 @@ msgctxt ""
 "just used to determine the plural form of network."
 msgid "<b>Wireless network disappeared:</b><br /> %2"
 msgid_plural "<b>Wireless networks disappeared:</b><br /> %2"
-msgstr[0] "<b>Desapareceu a rede sem-fios:</b><br /> %2"
-msgstr[1] "<b>Desapareceram as redes sem-fios:</b><br /> %2"
+msgstr[0] "<b>Desapareceu a rede sem-fios:</b><br/>%2"
+msgstr[1] "<b>Desapareceram as redes sem-fios:</b><br/>%2"
 
 #: libs/service/notificationmanager.cpp:624
 msgctxt "@info:status Notification for radio kill switch turned on"
@@ -1666,7 +1667,7 @@ msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is already running"
 msgid "Networking system already running"
-msgstr "O sistema de rede já está em funcionamento"
+msgstr "O sistema de rede já está em execução"
 
 #: libs/service/pindialog.cpp:72
 msgctxt "As in 'Unlock cell phone with this pin code'"
@@ -1842,7 +1843,7 @@ msgstr ""
 #: vpnplugins/openvpn/openvpnprop.ui:653 vpnplugins/openvpn/openvpnprop.ui:677
 #: vpnplugins/vpnc/vpncprop.ui:445 vpnplugins/vpnc/vpncprop.ui:467
 msgid "Automatic"
-msgstr "Automático"
+msgstr "Automática"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: libs/ui/802-11-wireless.ui:115
@@ -1970,7 +1971,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (KPushButton, clonedMacAddressRandom)
 #: libs/ui/802-11-wireless.ui:288 libs/ui/wired.ui:190
 msgid "Random"
-msgstr "Aleatório"
+msgstr "Aleatória"
 
 #: libs/ui/802_11_wirelesswidget.cpp:63 libs/ui/wiredwidget.cpp:55
 msgid " byte"
@@ -2216,7 +2217,7 @@ msgstr "Nova Ligação sem Fios"
 #: libs/ui/connectionwidget.cpp:125 libs/ui/connectionwidget.cpp:160
 #: libs/ui/connectionwidget.cpp:166 vpnplugins/openvpn/openvpnprop.ui:809
 msgid "Default"
-msgstr "Predefinição"
+msgstr "Predefinida"
 
 #: libs/ui/connectionwidget.cpp:145
 msgctxt "@title:window advanced permissions editor"
@@ -2227,7 +2228,7 @@ msgstr "Editor Avançado de Permissões"
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: libs/ui/gsm.ui:26 settings/config/othersettings.ui:135
 msgid "Basic"
-msgstr "Básico"
+msgstr "Básica"
 
 #. i18n: ectx: property (text), widget (KLineEdit, number)
 #: libs/ui/gsm.ui:51
@@ -2324,7 +2325,7 @@ msgstr "Não Obrigatório"
 #: libs/ui/gsm.ui:122 settings/config/othersettings.ui:140
 #: vpnplugins/pptp/pptpprop.ui:208 vpnplugins/vpnc/vpncprop.ui:193
 msgid "Advanced"
-msgstr "Avançado"
+msgstr "Avançada"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: libs/ui/gsm.ui:131
@@ -2428,7 +2429,9 @@ msgstr "Partilhada"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: libs/ui/ipv4.ui:137 libs/ui/ipv6.ui:142 vpnplugins/vpnc/vpncprop.ui:282
+#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#: libs/ui/ipv4.ui:137 libs/ui/ipv6.ui:142 libs/ui/ipv6.ui:341
+#: vpnplugins/vpnc/vpncprop.ui:282
 msgid "Disabled"
 msgstr "Desactivada"
 
@@ -2481,7 +2484,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, dnsLabel)
 #: libs/ui/ipv4.ui:223 libs/ui/ipv4widget.cpp:392 libs/ui/ipv6.ui:228
-#: libs/ui/ipv6widget.cpp:350
+#: libs/ui/ipv6widget.cpp:361
 msgctxt "@info"
 msgid "&DNS Servers:"
 msgstr "Servidores de &DNS:"
@@ -2511,7 +2514,7 @@ msgstr "..."
 
 #. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
 #: libs/ui/ipv4.ui:269 libs/ui/ipv4widget.cpp:393 libs/ui/ipv6.ui:274
-#: libs/ui/ipv6widget.cpp:351
+#: libs/ui/ipv6widget.cpp:362
 msgctxt "@info"
 msgid "&Search Domains:"
 msgstr "Domínios de Pe&squisa:"
@@ -2640,17 +2643,17 @@ msgctxt "@item:inlistbox IPv4 settings configuration method"
 msgid "Automatic (DHCP) addresses only"
 msgstr "Apenas endereços automáticos (DHCP)"
 
-#: libs/ui/ipv4widget.cpp:389 libs/ui/ipv6widget.cpp:347
+#: libs/ui/ipv4widget.cpp:389 libs/ui/ipv6widget.cpp:358
 msgctxt "@info"
 msgid "Additional &DNS Servers:"
 msgstr "Servidores de &DNS Adicionais:"
 
-#: libs/ui/ipv4widget.cpp:390 libs/ui/ipv6widget.cpp:348
+#: libs/ui/ipv4widget.cpp:390 libs/ui/ipv6widget.cpp:359
 msgctxt "@info"
 msgid "Additional &Search Domains:"
 msgstr "Domínios de Pe&squisa Adicionais:"
 
-#: libs/ui/ipv4widget.cpp:493 libs/ui/ipv6widget.cpp:433
+#: libs/ui/ipv4widget.cpp:493 libs/ui/ipv6widget.cpp:444
 msgid "Search domains"
 msgstr "Domínios de pesquisa"
 
@@ -2669,8 +2672,23 @@ msgstr "Automática (apenas endereços)"
 msgid "Automatic (DHCP only)"
 msgstr "Automática (apenas DHCP)"
 
+#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#: libs/ui/ipv6.ui:346
+msgid "Enabled (prefer public address)"
+msgstr "Activa (preferir o endereço público)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#: libs/ui/ipv6.ui:351
+msgid "Enabled (prefer temporary addresses)"
+msgstr "Activa (preferir os endereços temporários)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: libs/ui/ipv6.ui:359
+msgid "Privacy Extensions:"
+msgstr "Extensões de Privacidade:"
+
 #. i18n: ectx: property (text), widget (QCheckBox, cbMayFail)
-#: libs/ui/ipv6.ui:404
+#: libs/ui/ipv6.ui:430
 msgid "IPv6 is required for this connection"
 msgstr "O IPv6 é necessário para esta ligação"
 
@@ -2880,7 +2898,7 @@ msgstr "Autenticação &Interior:"
 #. i18n: ectx: property (toolTip), widget (KLineEdit, leUsername)
 #: libs/ui/security/eapmethodleapbase.ui:35
 msgid "User name on this network"
-msgstr "Nome do utilizador nesta rede"
+msgstr "Utilizador nesta rede"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, lePassword)
 #: libs/ui/security/eapmethodleapbase.ui:57
@@ -3067,13 +3085,13 @@ msgctxt "GTC inner auth method"
 msgid "GTC"
 msgstr "GTC"
 
-#: libs/ui/security/peapwidget.cpp:186 libs/ui/security/tlswidget.cpp:297
-#: libs/ui/security/ttlswidget.cpp:188
+#: libs/ui/security/peapwidget.cpp:192 libs/ui/security/tlswidget.cpp:297
+#: libs/ui/security/ttlswidget.cpp:194
 msgid "Alternative Subject Matches"
 msgstr "Correspondências do Sujeito Alternativas"
 
-#: libs/ui/security/peapwidget.cpp:187 libs/ui/security/tlswidget.cpp:298
-#: libs/ui/security/ttlswidget.cpp:189
+#: libs/ui/security/peapwidget.cpp:193 libs/ui/security/tlswidget.cpp:298
+#: libs/ui/security/ttlswidget.cpp:195
 msgid ""
 "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
 "li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. http://www.kde.org&gt;"
@@ -3083,8 +3101,8 @@ msgstr ""
 "IP&gt;</li><li>EMAIL: &lt;e-mail&gt;</li><li>URI: &lt;URI, p.ex. http://www."
 "kde.org&gt;</li></ul></qt>"
 
-#: libs/ui/security/peapwidget.cpp:199 libs/ui/security/tlswidget.cpp:310
-#: libs/ui/security/ttlswidget.cpp:201
+#: libs/ui/security/peapwidget.cpp:205 libs/ui/security/tlswidget.cpp:310
+#: libs/ui/security/ttlswidget.cpp:207
 msgid "Connect to these Servers"
 msgstr "Ligar a estes Servidores"
 
@@ -3528,7 +3546,7 @@ msgctxt "File chooser dialog title for importing VPN"
 msgid "Import VPN connection settings"
 msgstr "Importar a configuração da ligação da VPN"
 
-#: settings/config/manageconnectionwidget.cpp:454
+#: settings/config/manageconnectionwidget.cpp:467
 #, kde-format
 msgid ""
 "None of the supported plugins implement importing operation for file %1."
@@ -3536,44 +3554,44 @@ msgstr ""
 "Nenhum dos 'plugins' suportados implementa a operação de importação do "
 "ficheiro %1."
 
-#: settings/config/manageconnectionwidget.cpp:454
-#: settings/config/manageconnectionwidget.cpp:456
+#: settings/config/manageconnectionwidget.cpp:467
+#: settings/config/manageconnectionwidget.cpp:472
 msgid "Error importing VPN connection settings"
 msgstr "Erro ao importar a configuração da ligação VPN"
 
-#: settings/config/manageconnectionwidget.cpp:483
+#: settings/config/manageconnectionwidget.cpp:498
 msgctxt "File chooser dialog title for exporting VPN"
 msgid "Export VPN"
 msgstr "Exportar a VPN"
 
-#: settings/config/manageconnectionwidget.cpp:490
+#: settings/config/manageconnectionwidget.cpp:505
 msgid "VPN connection successfully exported"
 msgstr "A ligação da VPN foi exportada com sucesso"
 
-#: settings/config/manageconnectionwidget.cpp:490
+#: settings/config/manageconnectionwidget.cpp:505
 msgid "Success"
 msgstr "Sucesso"
 
-#: settings/config/manageconnectionwidget.cpp:490
+#: settings/config/manageconnectionwidget.cpp:505
 msgid "Do not show again"
 msgstr "Não mostrar de novo"
 
-#: settings/config/manageconnectionwidget.cpp:492
+#: settings/config/manageconnectionwidget.cpp:507
 msgid "Error exporting VPN connection settings"
 msgstr "Erro ao exportar a configuração da ligação VPN"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: settings/config/manageconnectionwidget.cpp:495
-#: settings/config/manageconnectionwidget.cpp:548
+#: settings/config/manageconnectionwidget.cpp:510
+#: settings/config/manageconnectionwidget.cpp:563
 #: vpnplugins/openconnect/openconnectauth.ui:133 vpnplugins/vpnc/vpnc.cpp:83
 msgid "Error"
 msgstr "Erro"
 
-#: settings/config/manageconnectionwidget.cpp:495
+#: settings/config/manageconnectionwidget.cpp:510
 msgid "Could not export VPN connection settings"
 msgstr "Não foi possível exportar a configuração da ligação VPN"
 
-#: settings/config/manageconnectionwidget.cpp:531
+#: settings/config/manageconnectionwidget.cpp:546
 msgid ""
 "Connection edit option failed, make sure that NetworkManager is properly "
 "running."
@@ -3581,23 +3599,23 @@ msgstr ""
 "A opção de edição da ligação foi mal-sucedida; certifique-se que o "
 "NetworkManager está a correr adequadamente."
 
-#: settings/config/manageconnectionwidget.cpp:571
+#: settings/config/manageconnectionwidget.cpp:586
 msgid "Connection create operation failed."
 msgstr "A operação de criação da ligação foi mal-sucedida."
 
-#: settings/config/manageconnectionwidget.cpp:595
+#: settings/config/manageconnectionwidget.cpp:610
 #, kde-format
 msgctxt "Warning message on attempting to delete a connection"
 msgid "Do you really want to delete the connection '%1'?"
 msgstr "Deseja mesmo remover a ligação '%1'?"
 
-#: settings/config/manageconnectionwidget.cpp:596
+#: settings/config/manageconnectionwidget.cpp:611
 msgid "Confirm Delete"
 msgstr "Confirmar a Remoção"
 
-#: settings/config/manageconnectionwidget.cpp:756
+#: settings/config/manageconnectionwidget.cpp:771
 msgid "Connected"
-msgstr "Ligado"
+msgstr "Ligada"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabWired)
 #: settings/config/manageconnectionwidget.ui:21
@@ -3659,7 +3677,7 @@ msgstr ""
 #: settings/config/managetraywidget.cpp:83
 msgctxt "@info"
 msgid "Error switching storage type"
-msgstr "Erro ao mudar de tipo de armazenamento"
+msgstr "Erro ao mudar o tipo de armazenamento"
 
 #: settings/config/mobileconnectionwizard.cpp:52
 msgctxt "Mobile Connection Wizard"

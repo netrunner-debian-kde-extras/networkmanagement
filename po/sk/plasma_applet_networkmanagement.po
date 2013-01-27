@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanagement\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-12-02 08:26+0100\n"
+"POT-Creation-Date: 2013-01-02 08:50+0100\n"
 "PO-Revision-Date: 2012-02-05 22:31+0100\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -54,143 +54,143 @@ msgctxt "name of the connection not known"
 msgid "Unknown"
 msgstr "Neznáme"
 
-#: interfacedetailswidget.cpp:116
+#: interfacedetailswidget.cpp:117
 msgctxt "interface details"
 msgid "<b>Traffic</b>"
 msgstr "<b>Prevádzka</b>"
 
-#: interfacedetailswidget.cpp:152
+#: interfacedetailswidget.cpp:153
 msgid "Go Back"
 msgstr "Prejsť späť"
 
-#: interfacedetailswidget.cpp:177 interfacedetailswidget.cpp:299
+#: interfacedetailswidget.cpp:178 interfacedetailswidget.cpp:300
 msgctxt "entry not available"
 msgid "not available"
 msgstr "nedostupné"
 
-#: interfacedetailswidget.cpp:182
+#: interfacedetailswidget.cpp:183
 msgctxt "traffic received empty"
 msgid "Received"
 msgstr "Prijaté"
 
-#: interfacedetailswidget.cpp:184
+#: interfacedetailswidget.cpp:185
 msgctxt "traffic transmitted empty"
 msgid "Transmitted"
 msgstr "Odoslané"
 
-#: interfacedetailswidget.cpp:290
+#: interfacedetailswidget.cpp:291
 msgctxt "state of mobile broadband connection"
 msgid "not enabled"
 msgstr "nepovolené"
 
-#: interfacedetailswidget.cpp:306 interfacedetailswidget.cpp:353
+#: interfacedetailswidget.cpp:307 interfacedetailswidget.cpp:354
 msgctxt "interface details"
 msgid "Type"
 msgstr "Typ"
 
-#: interfacedetailswidget.cpp:307 interfacedetailswidget.cpp:354
+#: interfacedetailswidget.cpp:308 interfacedetailswidget.cpp:355
 msgctxt "interface details"
 msgid "Connection State"
 msgstr "Stav pripojenia"
 
-#: interfacedetailswidget.cpp:308
+#: interfacedetailswidget.cpp:309
 msgctxt "interface details"
 msgid "IP Address"
 msgstr "IP adresa"
 
-#: interfacedetailswidget.cpp:309 interfacedetailswidget.cpp:356
+#: interfacedetailswidget.cpp:310 interfacedetailswidget.cpp:357
 msgctxt "interface details"
 msgid "Connection Speed"
 msgstr "Rýchlosť pripojenia"
 
-#: interfacedetailswidget.cpp:309
+#: interfacedetailswidget.cpp:310
 msgctxt "bitrate"
 msgid "Unknown"
 msgstr "Neznáme"
 
-#: interfacedetailswidget.cpp:310 interfacedetailswidget.cpp:357
+#: interfacedetailswidget.cpp:311 interfacedetailswidget.cpp:358
 msgctxt "interface details"
 msgid "System Name"
 msgstr "Systémový názov"
 
-#: interfacedetailswidget.cpp:311
+#: interfacedetailswidget.cpp:312
 msgctxt "interface details"
 msgid "MAC Address"
 msgstr "MAC adresa"
 
-#: interfacedetailswidget.cpp:312 interfacedetailswidget.cpp:359
+#: interfacedetailswidget.cpp:313 interfacedetailswidget.cpp:360
 msgctxt "interface details"
 msgid "Driver"
 msgstr "Ovládač"
 
-#: interfacedetailswidget.cpp:318
+#: interfacedetailswidget.cpp:319
 msgctxt "interface details"
 msgid "Access Point (SSID)"
 msgstr "Prístupový bod (SSID)"
 
-#: interfacedetailswidget.cpp:319
+#: interfacedetailswidget.cpp:320
 msgctxt "interface details"
 msgid "Access Point (MAC)"
 msgstr "Prístupový bod (MAC)"
 
-#: interfacedetailswidget.cpp:327
+#: interfacedetailswidget.cpp:328
 msgctxt "@item:intable wireless band"
 msgid "Band"
 msgstr "Pásmo"
 
-#: interfacedetailswidget.cpp:328
+#: interfacedetailswidget.cpp:329
 msgctxt "@item:intable wireless channel"
 msgid "Channel"
 msgstr "Kanál"
 
-#: interfacedetailswidget.cpp:335
+#: interfacedetailswidget.cpp:336
 msgctxt "interface details"
 msgid "Operator"
 msgstr "Operátor"
 
-#: interfacedetailswidget.cpp:336
+#: interfacedetailswidget.cpp:337
 msgctxt "interface details"
 msgid "Signal Quality"
 msgstr "Kvalita signálu"
 
-#: interfacedetailswidget.cpp:337
+#: interfacedetailswidget.cpp:338
 msgctxt "interface details"
 msgid "Access Technology"
 msgstr "Prístupová technológia"
 
-#: interfacedetailswidget.cpp:355
+#: interfacedetailswidget.cpp:356
 msgctxt "interface details"
 msgid "Network Address (IP)"
 msgstr "Sieťová adresa (IP)"
 
-#: interfacedetailswidget.cpp:358
+#: interfacedetailswidget.cpp:359
 msgctxt "interface details"
 msgid "Hardware Address (MAC)"
 msgstr "Hardvérová adresa (MAC)"
 
-#: interfacedetailswidget.cpp:377 interfaceitem.cpp:286
+#: interfacedetailswidget.cpp:378 interfaceitem.cpp:286
 msgctxt "label of the network interface"
 msgid "No IP address."
 msgstr "Žiadna IP adresa."
 
-#: interfacedetailswidget.cpp:388 interfaceitem.cpp:297
+#: interfacedetailswidget.cpp:389 interfaceitem.cpp:297
 msgctxt "label of the network interface"
 msgid "IP display error."
 msgstr "Chyba zobrazenia IP."
 
-#: interfacedetailswidget.cpp:467
+#: interfacedetailswidget.cpp:468
 msgid "KBit/s"
 msgstr "KBit/s"
 
-#: interfacedetailswidget.cpp:469
+#: interfacedetailswidget.cpp:470
 msgid "MBit/s"
 msgstr "MBit/s"
 
-#: interfacedetailswidget.cpp:473
+#: interfacedetailswidget.cpp:474
 msgid "GBit/s"
 msgstr "GBit/s"
 
-#: interfacedetailswidget.cpp:497
+#: interfacedetailswidget.cpp:498
 #, kde-format
 msgctxt ""
 "traffic, e.g. n KB/s\n"
@@ -198,11 +198,11 @@ msgctxt ""
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: interfacedetailswidget.cpp:506
+#: interfacedetailswidget.cpp:507
 msgid "Received"
 msgstr "Prijaté"
 
-#: interfacedetailswidget.cpp:509
+#: interfacedetailswidget.cpp:510
 msgid "Transmitted"
 msgstr "Odoslané"
 

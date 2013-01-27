@@ -36,6 +36,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // KDE
 #include <KGlobalSettings>
 #include <kdebug.h>
+#include <KIcon>
 
 // Plasma
 #include <Plasma/DataEngineManager>
@@ -145,7 +146,7 @@ InterfaceDetailsWidget::InterfaceDetailsWidget(QGraphicsItem * parent) : QGraphi
     m_gridLayout->addItem(m_traffic, row, 0);
 
     // add pushbutton for "back" action
-    m_backButton = new Plasma::PushButton(this);
+    m_backButton = new Plasma::IconWidget(this);
     m_backButton->setMaximumHeight(22);
     m_backButton->setMaximumWidth(22);
     m_backButton->setIcon(KIcon("go-previous"));
@@ -554,7 +555,7 @@ void InterfaceDetailsWidget::handleConnectionStateChange(int new_state, int old_
     } else {
         details->ipAddress = currentIpAddress();
         details->connectionState = static_cast<Solid::Control::NetworkInterfaceNm09::ConnectionState>(new_state);
-        if (m_iface->type() == Solid::Control::NetworkInterfaceNm09::Bluetooth) {
+        if (reason != Solid::Control::NetworkInterfaceNm09::Unavailable && m_iface->type() == Solid::Control::NetworkInterfaceNm09::Bluetooth) {
             QString interfaceName = m_iface->ipInterfaceName();
             if (interfaceName != details->interfaceName) {
                 // Hack to force updating interfaceName and traffic plot source.

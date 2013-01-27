@@ -6,7 +6,7 @@
 # Jorma Karvonen <karvonen.jorma@gmail.com>, 2010.
 #
 #
-# KDE 4.9 Finnish translation sprint 2012-06/07
+# KDE Finnish translation sprint participants:
 msgid ""
 msgstr ""
 "Project-Id-Version: solidcontrol\n"
@@ -20,8 +20,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-POT-Import-Date: 2012-06-15 07:41:36+0000\n"
-"X-Generator: MediaWiki 1.20alpha (r113129); Translate 2012-07-04\n"
+"X-POT-Import-Date: 2012-12-01 22:22:39+0000\n"
+"X-Generator: MediaWiki 1.21alpha (963ddae); Translate 2012-11-08\n"
 
 #: managerbase.cpp:61
 #, kde-format

@@ -3,7 +3,7 @@
 # Tommi Nieminen <translator@legisign.org>, 2010.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2011.
 #
-# KDE 4.9 Finnish translation sprint 2012-06/07
+# KDE Finnish translation sprint participants:
 # Author: Artnay
 msgid ""
 msgstr ""
@@ -18,8 +18,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-POT-Import-Date: 2012-06-15 06:58:29+0000\n"
-"X-Generator: MediaWiki 1.20alpha (r113129); Translate 2012-07-04\n"
+"X-POT-Import-Date: 2012-12-01 22:20:04+0000\n"
+"X-Generator: MediaWiki 1.21alpha (963ddae); Translate 2012-11-08\n"
 
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"

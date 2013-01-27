@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Yuri Efremov <yur.arh@gmail.com>, 2012.
+# Yuri Efremov <yur.arh@gmail.com>, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-12-06 08:25+0100\n"
-"PO-Revision-Date: 2012-08-28 22:26+0400\n"
+"POT-Creation-Date: 2013-01-16 09:40+0100\n"
+"PO-Revision-Date: 2013-01-18 22:24+0400\n"
 "Last-Translator: Yuri Efremov <yur.arh@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -485,7 +485,7 @@ msgstr "Выберите способ назначения IP-адреса дл�
 
 #. i18n: ectx: label, entry (dns), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:21 libs/internals/schemas/ipv6.kcfg:22
-#: libs/ui/ipv4widget.cpp:479 libs/ui/ipv6widget.cpp:419
+#: libs/ui/ipv4widget.cpp:479 libs/ui/ipv6widget.cpp:430
 msgid "DNS Servers"
 msgstr "Серверы DNS"
 
@@ -1958,7 +1958,6 @@ msgid "Random"
 msgstr "Случайно"
 
 #: libs/ui/802_11_wirelesswidget.cpp:63 libs/ui/wiredwidget.cpp:55
-#, fuzzy
 msgid " byte"
 msgid_plural " bytes"
 msgstr[0] " байт"
@@ -2042,7 +2041,6 @@ msgstr "Персональная сеть (PANU)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: libs/ui/bluetooth.ui:86
-#, fuzzy
 msgid "Name"
 msgstr "Имя"
 
@@ -2118,8 +2116,9 @@ msgstr "Новое сотовое соединение"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: libs/ui/connection.ui:32
+#, fuzzy
 msgid "&Firewall zone:"
-msgstr ""
+msgstr "Зона firewall:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnect)
 #: libs/ui/connection.ui:64
@@ -2128,9 +2127,8 @@ msgstr "Подключаться &автоматически"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, system)
 #: libs/ui/connection.ui:76
-#, fuzzy
 msgid "Save secrets in system storage"
-msgstr "%1, поскольку соединение было удалено"
+msgstr "Сохранить секретные данные в системном хранилище"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, system)
 #: libs/ui/connection.ui:79
@@ -2138,6 +2136,9 @@ msgid ""
 "If checked, secrets (passwords and encryption keys) will be saved in system "
 "storage, which allows the connection to work without a KDE session."
 msgstr ""
+"Если отметить, секретные данные (пароли и ключи шифрования) будут сохранены "
+"в системном хранилище, что позволит использовать это соединение без сессии "
+"KDE."
 
 #. i18n: ectx: property (text), widget (QCheckBox, system)
 #: libs/ui/connection.ui:82
@@ -2199,7 +2200,7 @@ msgstr "Новое беспроводное соединение"
 #: libs/ui/connectionwidget.cpp:125 libs/ui/connectionwidget.cpp:160
 #: libs/ui/connectionwidget.cpp:166 vpnplugins/openvpn/openvpnprop.ui:809
 msgid "Default"
-msgstr ""
+msgstr "По умолчанию"
 
 #: libs/ui/connectionwidget.cpp:145
 msgctxt "@title:window advanced permissions editor"
@@ -2411,7 +2412,9 @@ msgstr "Общий с другими компьютерами"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: libs/ui/ipv4.ui:137 libs/ui/ipv6.ui:142 vpnplugins/vpnc/vpncprop.ui:282
+#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#: libs/ui/ipv4.ui:137 libs/ui/ipv6.ui:142 libs/ui/ipv6.ui:341
+#: vpnplugins/vpnc/vpncprop.ui:282
 #, fuzzy
 msgid "Disabled"
 msgstr "Отключено"
@@ -2462,7 +2465,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, dnsLabel)
 #: libs/ui/ipv4.ui:223 libs/ui/ipv4widget.cpp:392 libs/ui/ipv6.ui:228
-#: libs/ui/ipv6widget.cpp:350
+#: libs/ui/ipv6widget.cpp:361
 #, fuzzy
 #| msgid "&DNS Servers:"
 msgctxt "@info"
@@ -2494,7 +2497,7 @@ msgstr "..."
 
 #. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
 #: libs/ui/ipv4.ui:269 libs/ui/ipv4widget.cpp:393 libs/ui/ipv6.ui:274
-#: libs/ui/ipv6widget.cpp:351
+#: libs/ui/ipv6widget.cpp:362
 #, fuzzy
 #| msgid "&Search Domains:"
 msgctxt "@info"
@@ -2623,21 +2626,21 @@ msgctxt "@item:inlistbox IPv4 settings configuration method"
 msgid "Automatic (DHCP) addresses only"
 msgstr "Автоматически (DHCP, только адрес)"
 
-#: libs/ui/ipv4widget.cpp:389 libs/ui/ipv6widget.cpp:347
+#: libs/ui/ipv4widget.cpp:389 libs/ui/ipv6widget.cpp:358
 #, fuzzy
 #| msgid "&DNS Servers:"
 msgctxt "@info"
 msgid "Additional &DNS Servers:"
 msgstr "Серверы &DNS:"
 
-#: libs/ui/ipv4widget.cpp:390 libs/ui/ipv6widget.cpp:348
+#: libs/ui/ipv4widget.cpp:390 libs/ui/ipv6widget.cpp:359
 #, fuzzy
 #| msgid "&Search Domains:"
 msgctxt "@info"
 msgid "Additional &Search Domains:"
 msgstr "Домены пои&ска:"
 
-#: libs/ui/ipv4widget.cpp:493 libs/ui/ipv6widget.cpp:433
+#: libs/ui/ipv4widget.cpp:493 libs/ui/ipv6widget.cpp:444
 msgid "Search domains"
 msgstr "Домены поиска"
 
@@ -2656,8 +2659,25 @@ msgstr "Автоматически (только адреса)"
 msgid "Automatic (DHCP only)"
 msgstr "Автоматически (только DHCP)"
 
+#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#: libs/ui/ipv6.ui:346
+msgid "Enabled (prefer public address)"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#: libs/ui/ipv6.ui:351
+msgid "Enabled (prefer temporary addresses)"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: libs/ui/ipv6.ui:359
+#, fuzzy
+#| msgid "Tray icons:"
+msgid "Privacy Extensions:"
+msgstr "Значки:"
+
 #. i18n: ectx: property (text), widget (QCheckBox, cbMayFail)
-#: libs/ui/ipv6.ui:404
+#: libs/ui/ipv6.ui:430
 #, fuzzy
 msgid "IPv6 is required for this connection"
 msgstr "Использовать т&олько для ресурсов этого соединения"
@@ -3041,21 +3061,21 @@ msgctxt "GTC inner auth method"
 msgid "GTC"
 msgstr "GTC"
 
-#: libs/ui/security/peapwidget.cpp:186 libs/ui/security/tlswidget.cpp:297
-#: libs/ui/security/ttlswidget.cpp:188
+#: libs/ui/security/peapwidget.cpp:192 libs/ui/security/tlswidget.cpp:297
+#: libs/ui/security/ttlswidget.cpp:194
 msgid "Alternative Subject Matches"
 msgstr ""
 
-#: libs/ui/security/peapwidget.cpp:187 libs/ui/security/tlswidget.cpp:298
-#: libs/ui/security/ttlswidget.cpp:189
+#: libs/ui/security/peapwidget.cpp:193 libs/ui/security/tlswidget.cpp:298
+#: libs/ui/security/ttlswidget.cpp:195
 msgid ""
 "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
 "li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. http://www.kde.org&gt;"
 "</li></ul></qt>"
 msgstr ""
 
-#: libs/ui/security/peapwidget.cpp:199 libs/ui/security/tlswidget.cpp:310
-#: libs/ui/security/ttlswidget.cpp:201
+#: libs/ui/security/peapwidget.cpp:205 libs/ui/security/tlswidget.cpp:310
+#: libs/ui/security/ttlswidget.cpp:207
 msgid "Connect to these Servers"
 msgstr "Подключение к этим серверам"
 
@@ -3499,50 +3519,50 @@ msgctxt "File chooser dialog title for importing VPN"
 msgid "Import VPN connection settings"
 msgstr "Импорт параметров VPN соединения"
 
-#: settings/config/manageconnectionwidget.cpp:454
+#: settings/config/manageconnectionwidget.cpp:467
 #, kde-format
 msgid ""
 "None of the supported plugins implement importing operation for file %1."
 msgstr ""
 
-#: settings/config/manageconnectionwidget.cpp:454
-#: settings/config/manageconnectionwidget.cpp:456
+#: settings/config/manageconnectionwidget.cpp:467
+#: settings/config/manageconnectionwidget.cpp:472
 msgid "Error importing VPN connection settings"
 msgstr "Ошибка импорта параметров VPN соединения"
 
-#: settings/config/manageconnectionwidget.cpp:483
+#: settings/config/manageconnectionwidget.cpp:498
 msgctxt "File chooser dialog title for exporting VPN"
 msgid "Export VPN"
 msgstr "Экспорт VPN"
 
-#: settings/config/manageconnectionwidget.cpp:490
+#: settings/config/manageconnectionwidget.cpp:505
 msgid "VPN connection successfully exported"
 msgstr "VPN соединение успешно экспортировано"
 
-#: settings/config/manageconnectionwidget.cpp:490
+#: settings/config/manageconnectionwidget.cpp:505
 msgid "Success"
 msgstr "Выполнено успешно"
 
-#: settings/config/manageconnectionwidget.cpp:490
+#: settings/config/manageconnectionwidget.cpp:505
 msgid "Do not show again"
 msgstr "Больше не показывать"
 
-#: settings/config/manageconnectionwidget.cpp:492
+#: settings/config/manageconnectionwidget.cpp:507
 msgid "Error exporting VPN connection settings"
 msgstr "Ошибка экспорта параметров VPN соединения"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: settings/config/manageconnectionwidget.cpp:495
-#: settings/config/manageconnectionwidget.cpp:548
+#: settings/config/manageconnectionwidget.cpp:510
+#: settings/config/manageconnectionwidget.cpp:563
 #: vpnplugins/openconnect/openconnectauth.ui:133 vpnplugins/vpnc/vpnc.cpp:83
 msgid "Error"
 msgstr "Ошибка"
 
-#: settings/config/manageconnectionwidget.cpp:495
+#: settings/config/manageconnectionwidget.cpp:510
 msgid "Could not export VPN connection settings"
 msgstr "Не удалось экспортировать параметры VPN соединения"
 
-#: settings/config/manageconnectionwidget.cpp:531
+#: settings/config/manageconnectionwidget.cpp:546
 msgid ""
 "Connection edit option failed, make sure that NetworkManager is properly "
 "running."
@@ -3550,21 +3570,21 @@ msgstr ""
 "Не удалось изменить параметры соединения, убедитесь, что NetworkManager "
 "работает правильно."
 
-#: settings/config/manageconnectionwidget.cpp:571
+#: settings/config/manageconnectionwidget.cpp:586
 msgid "Connection create operation failed."
 msgstr "Не удалось создать соединение."
 
-#: settings/config/manageconnectionwidget.cpp:595
+#: settings/config/manageconnectionwidget.cpp:610
 #, kde-format
 msgctxt "Warning message on attempting to delete a connection"
 msgid "Do you really want to delete the connection '%1'?"
 msgstr "Удалить соединение «%1»?"
 
-#: settings/config/manageconnectionwidget.cpp:596
+#: settings/config/manageconnectionwidget.cpp:611
 msgid "Confirm Delete"
 msgstr "Подтвердите удаление"
 
-#: settings/config/manageconnectionwidget.cpp:756
+#: settings/config/manageconnectionwidget.cpp:771
 msgid "Connected"
 msgstr ""
 

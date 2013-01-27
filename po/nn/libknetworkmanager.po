@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-11-01 10:54+0100\n"
+"POT-Creation-Date: 2012-12-06 08:25+0100\n"
 "PO-Revision-Date: 2008-11-26 17:46+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -2034,8 +2034,8 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, userNameLabel)
-#. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: libs/ui/cdma.ui:38 libs/ui/gsm.ui:58 libs/ui/pppoe.ui:36
@@ -2049,9 +2049,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #. i18n: ectx: property (text), widget (QLabel, lbl_password)
-#. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_14)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: libs/ui/cdma.ui:54 libs/ui/gsm.ui:74 libs/ui/pppoe.ui:56
@@ -2145,7 +2145,7 @@ msgctxt "Add connection dialog caption"
 msgid "Add Network Connection"
 msgstr ""
 
-#: libs/ui/connectionsecretsjob.cpp:125
+#: libs/ui/connectionsecretsjob.cpp:127
 #, kde-format
 msgctxt "@title:window for network secrets request"
 msgid "Secrets for %1"
@@ -2973,31 +2973,31 @@ msgctxt "MSCHAPv2 inner auth method"
 msgid "MSCHAPv2"
 msgstr ""
 
-#: libs/ui/security/peapwidget.cpp:79
+#: libs/ui/security/peapwidget.cpp:79 libs/ui/security/ttlswidget.cpp:90
 msgctxt "MD5 inner auth method"
 msgid "MD5"
 msgstr ""
 
-#: libs/ui/security/peapwidget.cpp:81
+#: libs/ui/security/peapwidget.cpp:81 libs/ui/security/ttlswidget.cpp:93
 msgctxt "GTC inner auth method"
 msgid "GTC"
 msgstr ""
 
-#: libs/ui/security/peapwidget.cpp:186 libs/ui/security/tlswidget.cpp:288
-#: libs/ui/security/ttlswidget.cpp:182
+#: libs/ui/security/peapwidget.cpp:186 libs/ui/security/tlswidget.cpp:297
+#: libs/ui/security/ttlswidget.cpp:188
 msgid "Alternative Subject Matches"
 msgstr ""
 
-#: libs/ui/security/peapwidget.cpp:187 libs/ui/security/tlswidget.cpp:289
-#: libs/ui/security/ttlswidget.cpp:183
+#: libs/ui/security/peapwidget.cpp:187 libs/ui/security/tlswidget.cpp:298
+#: libs/ui/security/ttlswidget.cpp:189
 msgid ""
 "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
 "li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. http://www.kde.org&gt;"
 "</li></ul></qt>"
 msgstr ""
 
-#: libs/ui/security/peapwidget.cpp:199 libs/ui/security/tlswidget.cpp:301
-#: libs/ui/security/ttlswidget.cpp:195
+#: libs/ui/security/peapwidget.cpp:199 libs/ui/security/tlswidget.cpp:310
+#: libs/ui/security/ttlswidget.cpp:201
 msgid "Connect to these Servers"
 msgstr ""
 

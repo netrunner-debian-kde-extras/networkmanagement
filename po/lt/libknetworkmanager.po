@@ -5,13 +5,14 @@
 # Tomas Straupis <tomasstraupis@gmail.com>, 2011.
 # Remigijus Jarmalavičius <remigijus@jarmalavicius.lt>, 2011, 2012.
 # Liudas Ališauskas <liudas.alisauskas@gmail.com>, 2011.
+# Liudas Alisauskas <liudas@akmc.lt>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-12-06 08:25+0100\n"
-"PO-Revision-Date: 2012-09-09 14:17+0300\n"
-"Last-Translator: Remigijus Jarmalavičius <remigijus@jarmalavicius.lt>\n"
+"POT-Creation-Date: 2013-01-16 09:40+0100\n"
+"PO-Revision-Date: 2013-01-25 08:25+0200\n"
+"Last-Translator: Liudas Alisauskas <liudas@akmc.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 1.5\n"
 
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
@@ -485,7 +486,7 @@ msgstr "Pasirinkite būdą nustatyti IP adresui šiam prisijungimui"
 
 #. i18n: ectx: label, entry (dns), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:21 libs/internals/schemas/ipv6.kcfg:22
-#: libs/ui/ipv4widget.cpp:479 libs/ui/ipv6widget.cpp:419
+#: libs/ui/ipv4widget.cpp:479 libs/ui/ipv6widget.cpp:430
 msgid "DNS Servers"
 msgstr "DNS serveriai"
 
@@ -2119,7 +2120,7 @@ msgstr "Nauja telefoninė jungtis"
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: libs/ui/connection.ui:32
 msgid "&Firewall zone:"
-msgstr ""
+msgstr "&Ugniesienės zona:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnect)
 #: libs/ui/connection.ui:64
@@ -2176,6 +2177,9 @@ msgid ""
 "zone, selecting it results in the use of the default zone set in the "
 "firewall. Only usable if firewalld is active."
 msgstr ""
+"Zona nustato pasitikėjimo ryšiu lygį. Numatyta yra ne eilinė zona, "
+"pasirenkant ją bus nustatyta numatyta zona ugniasienėje. Naudojama tik jei "
+"firewalld yra įjungtas."
 
 #: libs/ui/connectioneditor.cpp:70 libs/ui/connectioneditor.cpp:93
 msgctxt "Edit connection dialog caption"
@@ -2354,7 +2358,7 @@ msgstr "&PIN:"
 #. i18n: ectx: property (text), widget (QCheckBox, chkAllowRoaming)
 #: libs/ui/gsm.ui:273
 msgid "Allow Roaming"
-msgstr ""
+msgstr "Leisti tarptiklinį ryšį"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
 #: libs/ui/gsm.ui:299
@@ -2413,7 +2417,9 @@ msgstr "Bendrinamas"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: libs/ui/ipv4.ui:137 libs/ui/ipv6.ui:142 vpnplugins/vpnc/vpncprop.ui:282
+#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#: libs/ui/ipv4.ui:137 libs/ui/ipv6.ui:142 libs/ui/ipv6.ui:341
+#: vpnplugins/vpnc/vpncprop.ui:282
 msgid "Disabled"
 msgstr "Uždraustas"
 
@@ -2466,8 +2472,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, dnsLabel)
 #: libs/ui/ipv4.ui:223 libs/ui/ipv4widget.cpp:392 libs/ui/ipv6.ui:228
-#: libs/ui/ipv6widget.cpp:350
-#, fuzzy
+#: libs/ui/ipv6widget.cpp:361
 msgctxt "@info"
 msgid "&DNS Servers:"
 msgstr "&DNS serveriai:"
@@ -2497,8 +2502,7 @@ msgstr "..."
 
 #. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
 #: libs/ui/ipv4.ui:269 libs/ui/ipv4widget.cpp:393 libs/ui/ipv6.ui:274
-#: libs/ui/ipv6widget.cpp:351
-#, fuzzy
+#: libs/ui/ipv6widget.cpp:362
 msgctxt "@info"
 msgid "&Search Domains:"
 msgstr "&Ieškoti domenų:"
@@ -2627,19 +2631,17 @@ msgctxt "@item:inlistbox IPv4 settings configuration method"
 msgid "Automatic (DHCP) addresses only"
 msgstr "Automatinis (DHCP) tik adresai"
 
-#: libs/ui/ipv4widget.cpp:389 libs/ui/ipv6widget.cpp:347
-#, fuzzy
+#: libs/ui/ipv4widget.cpp:389 libs/ui/ipv6widget.cpp:358
 msgctxt "@info"
 msgid "Additional &DNS Servers:"
-msgstr "&DNS serveriai:"
+msgstr "Papildomi &DNS serveriai:"
 
-#: libs/ui/ipv4widget.cpp:390 libs/ui/ipv6widget.cpp:348
-#, fuzzy
+#: libs/ui/ipv4widget.cpp:390 libs/ui/ipv6widget.cpp:359
 msgctxt "@info"
 msgid "Additional &Search Domains:"
-msgstr "&Ieškoti domenų:"
+msgstr "Papildomai &Ieškoti domenų:"
 
-#: libs/ui/ipv4widget.cpp:493 libs/ui/ipv6widget.cpp:433
+#: libs/ui/ipv4widget.cpp:493 libs/ui/ipv6widget.cpp:444
 msgid "Search domains"
 msgstr "Ieškoti domenų"
 
@@ -2650,18 +2652,31 @@ msgstr "IPv6 adresas"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: libs/ui/ipv6.ui:117
-#, fuzzy
 msgid "Automatic (addresses only)"
-msgstr "Automatinis (VPN) tik adresai"
+msgstr "Automatinis (tik adresai)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: libs/ui/ipv6.ui:122
-#, fuzzy
 msgid "Automatic (DHCP only)"
-msgstr "Automatinis (DHCP)"
+msgstr "Automatinis (tik DHCP)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#: libs/ui/ipv6.ui:346
+msgid "Enabled (prefer public address)"
+msgstr "Įjungta (pageidaujamas viešas adresas)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#: libs/ui/ipv6.ui:351
+msgid "Enabled (prefer temporary addresses)"
+msgstr "Įjungta (pageidaujamas laikinas adresas)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: libs/ui/ipv6.ui:359
+msgid "Privacy Extensions:"
+msgstr "Privatumo plėtiniai:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbMayFail)
-#: libs/ui/ipv6.ui:404
+#: libs/ui/ipv6.ui:430
 msgid "IPv6 is required for this connection"
 msgstr "IPv6 yra privalomas šiam susijungimui"
 
@@ -2936,7 +2951,7 @@ msgstr ""
 #: libs/ui/security/eapmethodtlsbase.ui:155
 #: libs/ui/security/eapmethodttlsbase.ui:72
 msgid "Alternative Subject Matches:"
-msgstr ""
+msgstr "Alternatyvus objektas atitinka:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leAltSubjectMatches)
 #: libs/ui/security/eapmethodpeapbase.ui:113
@@ -2987,6 +3002,8 @@ msgid ""
 "If your private key file is in PKCS12 format select it here and in the "
 "'Private Key' field below."
 msgstr ""
+"Jei Jūsų privatus raktas yra PKCS12 formate, nurodykite jį žemiau esančiame "
+"įvedimo laukelyje „Privatus raktas“."
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
@@ -3001,6 +3018,8 @@ msgid ""
 "If your private key file is in PKCS12 format select it here and in the 'User "
 "Certificate' field above."
 msgstr ""
+"Jei Jūsų privatus raktas yra PKCS12 formate, pasirinkite tai čia ir "
+"nurodykite jį žemiau esančiame įvedimo laukelyje „Naudotojo sertifikatas."
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: libs/ui/security/eapmethodtlsbase.ui:98
@@ -3025,6 +3044,9 @@ msgid ""
 "least one of the entries. For the syntax see the wpa_supplicant "
 "documentation. Use ',' to separate entries."
 msgstr ""
+"Jungtis tik prie tų serverių, kurių liudijimuose yra bent vienas iš įrašų. "
+"Sintaksę galite sužinoti wpa_supplicant dokumentacijoje. Įrašus atskirkite "
+"kableliais „,“."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -3051,25 +3073,24 @@ msgctxt "GTC inner auth method"
 msgid "GTC"
 msgstr "GTC"
 
-#: libs/ui/security/peapwidget.cpp:186 libs/ui/security/tlswidget.cpp:297
-#: libs/ui/security/ttlswidget.cpp:188
+#: libs/ui/security/peapwidget.cpp:192 libs/ui/security/tlswidget.cpp:297
+#: libs/ui/security/ttlswidget.cpp:194
 msgid "Alternative Subject Matches"
-msgstr ""
+msgstr "Alternatyvus objektas atitinka"
 
-#: libs/ui/security/peapwidget.cpp:187 libs/ui/security/tlswidget.cpp:298
-#: libs/ui/security/ttlswidget.cpp:189
-#, fuzzy
+#: libs/ui/security/peapwidget.cpp:193 libs/ui/security/tlswidget.cpp:298
+#: libs/ui/security/ttlswidget.cpp:195
 msgid ""
 "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
 "li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. http://www.kde.org&gt;"
 "</li></ul></qt>"
 msgstr ""
 "<qt>Šis įrašas turi būti vienas iš:<ul><li>DNS: &lt;pavadinimas arba ip "
-"adresas&gt;</li><li>EMAIL: &lt;e-paštas&gt;</li><li>URI: &lt;uri, pavyzdžiui "
+"adresas&gt;</li><li>EMAIL: &lt;el. paštas&gt;</li><li>URI: &lt;uri, pvz.: "
 "http://www.kde.org&gt;</li><ul></qt>"
 
-#: libs/ui/security/peapwidget.cpp:199 libs/ui/security/tlswidget.cpp:310
-#: libs/ui/security/ttlswidget.cpp:201
+#: libs/ui/security/peapwidget.cpp:205 libs/ui/security/tlswidget.cpp:310
+#: libs/ui/security/ttlswidget.cpp:207
 msgid "Connect to these Servers"
 msgstr "Jungtis prie šių stočių"
 
@@ -3215,10 +3236,10 @@ msgid "&Security:"
 msgstr "&Saugumas:"
 
 #: libs/ui/security/wirelesssecurityauth.cpp:65
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "The network %1 requires authentication"
-msgstr "Naudoti hibridinį tapatumo nustatymą"
+msgstr "Tinklas %1 reikalauja tapatybės nustatymo"
 
 #: libs/ui/security/wirelesssecuritysettingwidget.cpp:178
 msgctxt "Label for no wireless security"
@@ -3373,7 +3394,6 @@ msgid "&MTU:"
 msgstr "&MTU:"
 
 #: libs/ui/wirelesspreferences.cpp:71
-#, fuzzy
 msgctxt ""
 "ssid of the wifi connection. Use ASCII letters and underscore *only* (no "
 "spaces!). Leave it unstranslated if your language does not support ASCII "
@@ -3403,33 +3423,32 @@ msgstr "Eksportuoti"
 
 #: settings/config/manageconnectionwidget.cpp:80
 #: settings/config/managetraywidget.cpp:47
-#, fuzzy
 msgid "Manage Connections"
-msgstr "Ryšiai"
+msgstr "Tvarkyti ryšius"
 
 #: settings/config/manageconnectionwidget.cpp:81
 #: settings/config/managetraywidget.cpp:48
 msgid "Manage Connections Control Panel Module"
-msgstr ""
+msgstr "Tvarkyti ryšių valdymo skydelio modulį"
 
 #: settings/config/manageconnectionwidget.cpp:82
 msgid "(c) 2008-2009 Will Stephenson<p>(c) 2011-2012 Lamarque V. Souza</p>"
-msgstr ""
+msgstr "(c) 2008-2009 Will Stephenson<p>(c) 2011-2012 Lamarque V. Souza</p>"
 
 #: settings/config/manageconnectionwidget.cpp:84
 #: settings/config/managetraywidget.cpp:51
 msgid "Lamarque V. Souza"
-msgstr ""
+msgstr "Lamarque V. Souza"
 
 #: settings/config/manageconnectionwidget.cpp:84
 #: settings/config/managetraywidget.cpp:51
 msgid "Developer and Maintainer"
-msgstr ""
+msgstr "Programuotojas ir palaikytojas"
 
 #: settings/config/manageconnectionwidget.cpp:85
 #: settings/config/managetraywidget.cpp:52
 msgid "Ilia Kats"
-msgstr ""
+msgstr "Ilia Kats"
 
 #: settings/config/manageconnectionwidget.cpp:85
 #: settings/config/manageconnectionwidget.cpp:86
@@ -3440,12 +3459,12 @@ msgstr ""
 #: settings/config/managetraywidget.cpp:54
 #: settings/config/managetraywidget.cpp:55
 msgid "Developer"
-msgstr ""
+msgstr "Programuotojas"
 
 #: settings/config/manageconnectionwidget.cpp:86
 #: settings/config/managetraywidget.cpp:53
 msgid "Rajeesh K Nambiar"
-msgstr ""
+msgstr "Rajeesh K Nambiar"
 
 #: settings/config/manageconnectionwidget.cpp:87
 #: settings/config/managetraywidget.cpp:54 settings/configshell/main.cpp:37
@@ -3455,7 +3474,7 @@ msgstr "Will Stephenson"
 #: settings/config/manageconnectionwidget.cpp:88
 #: settings/config/managetraywidget.cpp:55
 msgid "Sebastian Kügler"
-msgstr ""
+msgstr "Sebastian Kügler"
 
 #: settings/config/manageconnectionwidget.cpp:113
 msgctxt "Like in 'add wired connection'"
@@ -3519,72 +3538,71 @@ msgctxt "File chooser dialog title for importing VPN"
 msgid "Import VPN connection settings"
 msgstr "Importuoti VPN ryšio nustatymus"
 
-#: settings/config/manageconnectionwidget.cpp:454
+#: settings/config/manageconnectionwidget.cpp:467
 #, kde-format
 msgid ""
 "None of the supported plugins implement importing operation for file %1."
 msgstr "Nei vienas iš palaikomų priedų nepalaiko failo %1 importavimo."
 
-#: settings/config/manageconnectionwidget.cpp:454
-#: settings/config/manageconnectionwidget.cpp:456
+#: settings/config/manageconnectionwidget.cpp:467
+#: settings/config/manageconnectionwidget.cpp:472
 msgid "Error importing VPN connection settings"
 msgstr "Klaida importuojant VPN jungties nustatymus"
 
-#: settings/config/manageconnectionwidget.cpp:483
+#: settings/config/manageconnectionwidget.cpp:498
 msgctxt "File chooser dialog title for exporting VPN"
 msgid "Export VPN"
 msgstr "Eksportuoti VPN"
 
-#: settings/config/manageconnectionwidget.cpp:490
+#: settings/config/manageconnectionwidget.cpp:505
 msgid "VPN connection successfully exported"
 msgstr "VPN jungtis sėkmingai eksportuota"
 
-#: settings/config/manageconnectionwidget.cpp:490
+#: settings/config/manageconnectionwidget.cpp:505
 msgid "Success"
 msgstr "Sėkmė"
 
-#: settings/config/manageconnectionwidget.cpp:490
+#: settings/config/manageconnectionwidget.cpp:505
 msgid "Do not show again"
 msgstr "Daugiau neberodyti"
 
-#: settings/config/manageconnectionwidget.cpp:492
-#, fuzzy
+#: settings/config/manageconnectionwidget.cpp:507
 msgid "Error exporting VPN connection settings"
-msgstr "Klaida importuojant VPN jungties nustatymus"
+msgstr "Klaida eksportuojant VPN ryšio nustatymus"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: settings/config/manageconnectionwidget.cpp:495
-#: settings/config/manageconnectionwidget.cpp:548
+#: settings/config/manageconnectionwidget.cpp:510
+#: settings/config/manageconnectionwidget.cpp:563
 #: vpnplugins/openconnect/openconnectauth.ui:133 vpnplugins/vpnc/vpnc.cpp:83
 msgid "Error"
 msgstr "Klaida"
 
-#: settings/config/manageconnectionwidget.cpp:495
+#: settings/config/manageconnectionwidget.cpp:510
 msgid "Could not export VPN connection settings"
 msgstr "Nepavyko eksportuoti VPN ryšio nustatymų"
 
-#: settings/config/manageconnectionwidget.cpp:531
+#: settings/config/manageconnectionwidget.cpp:546
 msgid ""
 "Connection edit option failed, make sure that NetworkManager is properly "
 "running."
 msgstr ""
 "Ryšio taisymas nepavyko, įsitikinkite, kad NetworkManager tinkamai veikia."
 
-#: settings/config/manageconnectionwidget.cpp:571
+#: settings/config/manageconnectionwidget.cpp:586
 msgid "Connection create operation failed."
 msgstr "Nepavyko ryšio sukūrimo veiksmas."
 
-#: settings/config/manageconnectionwidget.cpp:595
+#: settings/config/manageconnectionwidget.cpp:610
 #, kde-format
 msgctxt "Warning message on attempting to delete a connection"
 msgid "Do you really want to delete the connection '%1'?"
 msgstr "Ar tikrai norite ištrinti ryšį „%1“?"
 
-#: settings/config/manageconnectionwidget.cpp:596
+#: settings/config/manageconnectionwidget.cpp:611
 msgid "Confirm Delete"
 msgstr "Patvirtinti trynimą"
 
-#: settings/config/manageconnectionwidget.cpp:756
+#: settings/config/manageconnectionwidget.cpp:771
 #, fuzzy
 msgid "Connected"
 msgstr "Prisijungta"
@@ -3643,11 +3661,13 @@ msgid ""
 "(c) 2008-2009 Will Stephenson<p>(c) 2010 Sebastian Kügler</p><p>(c) "
 "2011-2012 Lamarque V. Souza</p>"
 msgstr ""
+"(c) 2008-2009 Will Stephenson<p>(c) 2010 Sebastian Kügler</p><p>(c) "
+"2011-2012 Lamarque V. Souza</p>"
 
 #: settings/config/managetraywidget.cpp:83
 msgctxt "@info"
 msgid "Error switching storage type"
-msgstr ""
+msgstr "Klaida keičiant saugyklos tipą"
 
 #: settings/config/mobileconnectionwizard.cpp:52
 msgctxt "Mobile Connection Wizard"
@@ -3721,17 +3741,15 @@ msgstr "Sukurti jungtį šiam mobilaus &plačiajuosčio tinklo įrenginiui:"
 
 #: settings/config/mobileconnectionwizard.cpp:269
 #: settings/config/mobileconnectionwizard.cpp:395
-#, fuzzy
 msgctxt "Mobile Connection Wizard"
 msgid "Any GSM device"
-msgstr "Bet koks įrenginys"
+msgstr "Bet koks GSM įrenginys"
 
 #: settings/config/mobileconnectionwizard.cpp:271
 #: settings/config/mobileconnectionwizard.cpp:397
-#, fuzzy
 msgctxt "Mobile Connection Wizard"
 msgid "Any CDMA device"
-msgstr "Bet koks įrenginys"
+msgstr "Bet koks CDMA įrenginys"
 
 #: settings/config/mobileconnectionwizard.cpp:324
 msgctxt "Mobile Connection Wizard"
@@ -3906,19 +3924,17 @@ msgstr "<b>Įvykiai</b>"
 #. i18n: ectx: property (text), widget (QLabel, askPinLabel)
 #: settings/config/othersettings.ui:155
 msgid "Ask for GSM Pin:"
-msgstr ""
+msgstr "Prašyti GSM Pin:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AskForGsmPin)
 #: settings/config/othersettings.ui:166
-#, fuzzy
 msgid "On Modem Detection"
-msgstr "Įgalinti neveikiančių &kolegų aptikimą"
+msgstr "Aptinkant modemą"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AskForGsmPin)
 #: settings/config/othersettings.ui:171
-#, fuzzy
 msgid "When Activating Connection"
-msgstr "Išjungiama jungtis"
+msgstr "Aktyvuojant ryšį"
 
 #. i18n: ectx: property (text), widget (QPushButton, notificationsButton)
 #: settings/config/othersettings.ui:179
@@ -3968,41 +3984,41 @@ msgstr "&Mažiau ženkliukų"
 
 #: settings/configshell/bluetooth.cpp:55
 msgid "We support 'dun' and 'nap' services only."
-msgstr ""
+msgstr "Mes palaikome tik „dun“ ir „nap“ paslaugas."
 
 #: settings/configshell/bluetooth.cpp:69
 msgid "Could not contact bluetooth manager (BlueZ)."
-msgstr ""
+msgstr "Nepavyko susisiekti su bluetooth tvarkytuve (BlueZ)."
 
 #: settings/configshell/bluetooth.cpp:78
 #, kde-format
 msgid "Default bluetooth adapter not found: %1"
-msgstr ""
+msgstr "Numatytasis bluetooth adapteris nerastas: %1"
 
 #: settings/configshell/bluetooth.cpp:142
 #, kde-format
 msgid "%1 (%2) does not support Dialup Networking (DUN)."
-msgstr ""
+msgstr "%1 (%2) nepalaiko Dialup tinklo (DUN)."
 
 #: settings/configshell/bluetooth.cpp:148
 #, kde-format
 msgid "%1 (%2) does not support Network Access Point (NAP)."
-msgstr ""
+msgstr "%1 (%2) nepalaiko tinklo prieigos taško (NAP)."
 
 #: settings/configshell/bluetooth.cpp:175
 #, kde-format
 msgid "Error activating devices's serial port: %1"
-msgstr ""
+msgstr "Klaida aktyvuojant įrenginio nuoseklųjį prievadą: %1"
 
 #: settings/configshell/bluetooth.cpp:200
 #, kde-format
 msgid "Device %1 is not the one we want (%2)"
-msgstr ""
+msgstr "Įrenginys %1 nėra mūsų norimas (%2)"
 
 #: settings/configshell/bluetooth.cpp:202
 #, kde-format
 msgid "Device for serial port %1 (%2) not found."
-msgstr ""
+msgstr "Įrenginys nuosekliajam prievadui %1 (%2) nerastas."
 
 #: settings/configshell/main.cpp:31
 msgid "Network Management"
@@ -4071,9 +4087,9 @@ msgid "unknown error"
 msgstr "nežinoma klaida"
 
 #: settings/configshell/manageconnection.cpp:87
-#, fuzzy, kde-format
+#, kde-format
 msgid "Error adding connection: %1"
-msgstr "Klaida pridedant jungtį: %s"
+msgstr "Klaida pridedant ryšį: %1"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: vpnplugins/novellvpn/novellvpnadvancedprop.ui:17
@@ -4183,7 +4199,6 @@ msgstr "Liudijimo &slaptažodis:"
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPasswords)
 #: vpnplugins/novellvpn/novellvpnprop.ui:201
 #: vpnplugins/openvpn/openvpnprop.ui:590
-#, fuzzy
 msgid "&Show Passwords"
 msgstr "&Rodyti slaptažodžius"
 
@@ -4283,12 +4298,12 @@ msgstr "&Įgaliotasis serveris:"
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: vpnplugins/openconnect/openconnectprop.ui:68
 msgid "CSD &Wrapper Script:"
-msgstr ""
+msgstr "CSD &Wrapper scenarijus:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAllowTrojan)
 #: vpnplugins/openconnect/openconnectprop.ui:78
 msgid "Allow Cisco Secure Desktop &trojan"
-msgstr ""
+msgstr "Leisti Cisco Secure Desktop &trojaną"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: vpnplugins/openconnect/openconnectprop.ui:91
@@ -4298,7 +4313,7 @@ msgstr "Liudijimo tapatumo nustatymas"
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
 #: vpnplugins/openconnect/openconnectprop.ui:123
 msgid "Use &FSID for key passphrase"
-msgstr ""
+msgstr "Naudoti &FSID rakto slaptafrazei"
 
 #: vpnplugins/openvpn/openvpn.cpp:165
 msgid "Could not open file"
@@ -4799,9 +4814,8 @@ msgstr "Stiprus Swan VPN"
 #: vpnplugins/strongswan/strongswanauth.ui:37
 #: vpnplugins/strongswan/strongswanprop.ui:304 vpnplugins/vpnc/vpncauth.ui:79
 #: vpnplugins/vpnc/vpncprop.ui:161
-#, fuzzy
 msgid "&Show passwords"
-msgstr "&Rodyti slaptažodį"
+msgstr "&Rodyti slaptažodžius"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: vpnplugins/strongswan/strongswanprop.ui:20
@@ -4910,9 +4924,9 @@ msgid "%1: file format error."
 msgstr "%1: failo formato klaida."
 
 #: vpnplugins/vpnc/vpnc.cpp:311
-#, fuzzy, kde-format
+#, kde-format
 msgid "%1: file could not be created"
-msgstr "Nepavyko atverti failo %1."
+msgstr "%1: Nepavyko sukurti faulo"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, VpncAuth)
 #: vpnplugins/vpnc/vpncauth.ui:14
@@ -5012,7 +5026,7 @@ msgstr "DH 5 grupė"
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: vpnplugins/vpnc/vpncprop.ui:328
 msgid "&Perfect Forward Secrecy:"
-msgstr ""
+msgstr "&Puikus persiunčiamas slaptumas:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cboPerfectForwardSecrecy)
 #: vpnplugins/vpnc/vpncprop.ui:348
