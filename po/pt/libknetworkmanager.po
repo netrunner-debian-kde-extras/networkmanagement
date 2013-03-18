@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknminternals\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-01-16 09:40+0100\n"
-"PO-Revision-Date: 2013-01-12 13:44+0000\n"
+"POT-Creation-Date: 2013-03-02 10:30+0100\n"
+"PO-Revision-Date: 2013-03-03 12:46+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -31,7 +31,7 @@ msgstr ""
 "X-POFile-SpellExtra: FSID MBit RIPEMD clonado WCDMA SOCKS HSDPA EMAIL nap\n"
 "X-POFile-SpellExtra: BlueZ NAP dun GBit Souza Sebastian Kügler Lamarque\n"
 "X-POFile-SpellExtra: Rajeesh Ilia Kats Nambiar firewalld IMEI PKCS IMSI\n"
-"X-POFile-SpellExtra: LigacaosemFiosPartilhada\n"
+"X-POFile-SpellExtra: LigacaosemFiosPartilhada WiFi PAN MS\n"
 
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
@@ -153,7 +153,7 @@ msgstr "Banda"
 #. i18n: ectx: property (toolTip), widget (Wireless80211WidgetBand, channel)
 #. i18n: ectx: label, entry (channel), group (802-11-wireless)
 #: libs/internals/schemas/802-11-wireless.kcfg:31
-#: libs/ui/802-11-wireless.ui:141
+#: libs/ui/802-11-wireless.ui:146
 msgid "Channel"
 msgstr "Canal"
 
@@ -1037,7 +1037,7 @@ msgstr "Ad-hoc"
 #: libs/internals/uiutils.cpp:353
 msgctxt "wireless network operation mode"
 msgid "Managed"
-msgstr "Gerida"
+msgstr "Não-Gerida"
 
 #: libs/internals/uiutils.cpp:356
 msgctxt "wireless network operation mode"
@@ -1624,8 +1624,8 @@ msgctxt ""
 "determine the plural form of network."
 msgid "<b>New wireless network:</b><br /> %2"
 msgid_plural "<b>New wireless networks:</b><br /> %2"
-msgstr[0] "<b>Nova rede sem-fios:</b><br/>%2"
-msgstr[1] "<b>Novas redes sem-fios:</b><br/>%2"
+msgstr[0] "<b>Nova rede sem-fios:</b><br/> %2"
+msgstr[1] "<b>Novas redes sem-fios:</b><br/> %2"
 
 #: libs/service/notificationmanager.cpp:608
 #, kde-format
@@ -1642,8 +1642,8 @@ msgctxt ""
 "just used to determine the plural form of network."
 msgid "<b>Wireless network disappeared:</b><br /> %2"
 msgid_plural "<b>Wireless networks disappeared:</b><br /> %2"
-msgstr[0] "<b>Desapareceu a rede sem-fios:</b><br/>%2"
-msgstr[1] "<b>Desapareceram as redes sem-fios:</b><br/>%2"
+msgstr[0] "<b>Desapareceu a rede sem-fios:</b><br/> %2"
+msgstr[1] "<b>Desapareceram as redes sem-fios:</b><br/> %2"
 
 #: libs/service/notificationmanager.cpp:624
 msgctxt "@info:status Notification for radio kill switch turned on"
@@ -1790,11 +1790,14 @@ msgstr "O modo de operação da rede sem fios"
 msgid ""
 "Infrastructure mode is the most common setting.  To form a peer-to-peer "
 "wireless network with another computer when there is no infrastructure, "
-"choose Ad-hoc."
+"choose Ap-mode (requires NetworkManager >= 0.9.8 and a suitable wifi driver) "
+"or Ad-hoc. Also read https://bugs.kde.org/show_bug.cgi?id=311705."
 msgstr ""
 "O modo de Infra-Estrutura é a configuração mais comum. Para formar uma rede "
 "sem fios ponto-a-ponto com outro computador, quando não existe infra-"
-"estrutura, escolha a opção Ad-hoc."
+"estrutura, escolha o modo AP (ponto de acesso) - precisa do NetworkManager "
+">= 0.9.8 e um controlador de WiFi adequado) ou Ad-hoc. Leia também em "
+"https://bugs.kde.org/show_bug.cgi?id=311705."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #. i18n: ectx: property (text), item, widget (KComboBox, mode)
@@ -1808,18 +1811,24 @@ msgstr "Infra-estrutura"
 msgid "Ad-hoc"
 msgstr "Ad-hoc"
 
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
+#. i18n: ectx: property (text), item, widget (KComboBox, mode)
+#: libs/ui/802-11-wireless.ui:87 libs/ui/wireless.ui:58
+msgid "Ap-mode"
+msgstr "Modo de AP"
+
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: libs/ui/802-11-wireless.ui:90
+#: libs/ui/802-11-wireless.ui:95
 msgid "B&and:"
 msgstr "B&anda:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, band)
-#: libs/ui/802-11-wireless.ui:103
+#: libs/ui/802-11-wireless.ui:108
 msgid "Frequency band of the wireless network."
 msgstr "A banda de frequências da rede sem fios."
 
 #. i18n: ectx: property (whatsThis), widget (KComboBox, band)
-#: libs/ui/802-11-wireless.ui:106
+#: libs/ui/802-11-wireless.ui:111
 msgid "b/g is the most common band around 2.4 GHz. Less common is a at 5 GHz."
 msgstr ""
 "A 'b/g' é a banda mais comum em torno dos 2.4 GHz. A menos comum é a 'a' nos "
@@ -1836,8 +1845,8 @@ msgstr ""
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, mtu)
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, speed)
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: libs/ui/802-11-wireless.ui:110 libs/ui/802-11-wireless.ui:147
-#: libs/ui/802-11-wireless.ui:247 libs/ui/ipv6.ui:112
+#: libs/ui/802-11-wireless.ui:115 libs/ui/802-11-wireless.ui:152
+#: libs/ui/802-11-wireless.ui:252 libs/ui/ipv6.ui:112
 #: libs/ui/security/eapmethodpeapbase.ui:72 libs/ui/wired.ui:88
 #: libs/ui/wired.ui:120 vpnplugins/openvpn/openvpnprop.ui:629
 #: vpnplugins/openvpn/openvpnprop.ui:653 vpnplugins/openvpn/openvpnprop.ui:677
@@ -1846,38 +1855,38 @@ msgid "Automatic"
 msgstr "Automática"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: libs/ui/802-11-wireless.ui:115
+#: libs/ui/802-11-wireless.ui:120
 msgid "a"
 msgstr "a"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: libs/ui/802-11-wireless.ui:120
+#: libs/ui/802-11-wireless.ui:125
 msgid "b/g"
 msgstr "b/g"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: libs/ui/802-11-wireless.ui:128
+#: libs/ui/802-11-wireless.ui:133
 msgid "&Channel:"
 msgstr "&Canal:"
 
 #. i18n: ectx: property (whatsThis), widget (Wireless80211WidgetBand, channel)
-#: libs/ui/802-11-wireless.ui:144
+#: libs/ui/802-11-wireless.ui:149
 msgid "Sets the channel of the network."
 msgstr "Define o canal da rede."
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: libs/ui/802-11-wireless.ui:160 libs/ui/wireless.ui:62
+#: libs/ui/802-11-wireless.ui:165 libs/ui/wireless.ui:66
 msgid "&BSSID:"
 msgstr "&BSSID:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, bssid)
-#: libs/ui/802-11-wireless.ui:175
+#: libs/ui/802-11-wireless.ui:180
 msgid "Only connect to the access point with this hardware address"
 msgstr "Ligar apenas ao ponto de acesso com este endereço de 'hardware'"
 
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, bssid)
-#: libs/ui/802-11-wireless.ui:178
+#: libs/ui/802-11-wireless.ui:183
 msgid ""
 "Setting a BSSID (Basic Service Set Identification) forces this connection to "
 "connect only to the access point with the specified hardware address, even "
@@ -1889,23 +1898,23 @@ msgstr ""
 
 #. i18n: ectx: property (inputMask), widget (KLineEdit, bssid)
 #. i18n: ectx: property (inputMask), widget (KLineEdit, clonedMacAddress)
-#: libs/ui/802-11-wireless.ui:181 libs/ui/802-11-wireless.ui:275
+#: libs/ui/802-11-wireless.ui:186 libs/ui/802-11-wireless.ui:280
 #: libs/ui/wired.ui:177
 msgid "HH:HH:HH:HH:HH:HH;_"
 msgstr "HH:HH:HH:HH:HH:HH;_"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnSelectBssid)
-#: libs/ui/802-11-wireless.ui:188
+#: libs/ui/802-11-wireless.ui:193
 msgid "&Select"
 msgstr "&Seleccionar"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, btnSelectBssid)
-#: libs/ui/802-11-wireless.ui:194
+#: libs/ui/802-11-wireless.ui:199
 msgid "Select the BSSID (access point) with the strongest signal."
 msgstr "Seleccionar o BSSID (ponto de acesso) com o sinal mais forte."
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, btnSelectBssid)
-#: libs/ui/802-11-wireless.ui:197
+#: libs/ui/802-11-wireless.ui:202
 msgid ""
 "This button will select the access point with the ssid specified in the "
 "field above and with the strongest signal."
@@ -1915,30 +1924,30 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: libs/ui/802-11-wireless.ui:206 libs/ui/wired.ui:34
+#: libs/ui/802-11-wireless.ui:211 libs/ui/wired.ui:34
 msgid "&Restrict To Interface:"
 msgstr "&Restringir à Interface:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbMacAddress)
 #. i18n: ectx: property (text), item, widget (KComboBox, type)
-#: libs/ui/802-11-wireless.ui:220 libs/ui/gsm.ui:183 libs/ui/wired.ui:48
+#: libs/ui/802-11-wireless.ui:225 libs/ui/gsm.ui:183 libs/ui/wired.ui:48
 #: vpnplugins/pptp/pptpadvanced.ui:120
 msgid "Any"
 msgstr "Qualquer"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
-#: libs/ui/802-11-wireless.ui:228
+#: libs/ui/802-11-wireless.ui:233
 msgid "MT&U:"
 msgstr "MT&U:"
 
 #. i18n: ectx: property (toolTip), widget (KIntSpinBox, mtu)
-#: libs/ui/802-11-wireless.ui:241 libs/ui/wired.ui:79
+#: libs/ui/802-11-wireless.ui:246 libs/ui/wired.ui:79
 msgid "Maximum Transmission Unit"
 msgstr "Unidade Máxima de Transferência"
 
 #. i18n: ectx: property (whatsThis), widget (KIntSpinBox, mtu)
-#: libs/ui/802-11-wireless.ui:244 libs/ui/wired.ui:82
+#: libs/ui/802-11-wireless.ui:249 libs/ui/wired.ui:82
 msgid ""
 "Sets the size of the largest packet that can be transmitted on this network. "
 "'0' sets the MTU automatically."
@@ -1948,17 +1957,17 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: libs/ui/802-11-wireless.ui:260 libs/ui/wired.ui:56
+#: libs/ui/802-11-wireless.ui:265 libs/ui/wired.ui:56
 msgid "Cloned MAC address"
 msgstr "Endereço MAC clonado"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
-#: libs/ui/802-11-wireless.ui:269 libs/ui/wired.ui:171
+#: libs/ui/802-11-wireless.ui:274 libs/ui/wired.ui:171
 msgid "Custom MAC address for the hardware to use"
 msgstr "Endereço MAC personalizado do 'hardware' a usar"
 
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, clonedMacAddress)
-#: libs/ui/802-11-wireless.ui:272 libs/ui/wired.ui:174
+#: libs/ui/802-11-wireless.ui:277 libs/ui/wired.ui:174
 msgid ""
 "The MAC address entered here will be used as hardware address for the "
 "network device this connection is activated on. This feature is known as MAC "
@@ -1969,17 +1978,17 @@ msgstr ""
 "conhecida como clonagem ou intercepção de MAC."
 
 #. i18n: ectx: property (text), widget (KPushButton, clonedMacAddressRandom)
-#: libs/ui/802-11-wireless.ui:288 libs/ui/wired.ui:190
+#: libs/ui/802-11-wireless.ui:293 libs/ui/wired.ui:190
 msgid "Random"
 msgstr "Aleatória"
 
-#: libs/ui/802_11_wirelesswidget.cpp:63 libs/ui/wiredwidget.cpp:55
+#: libs/ui/802_11_wirelesswidget.cpp:64 libs/ui/wiredwidget.cpp:55
 msgid " byte"
 msgid_plural " bytes"
 msgstr[0] " byte"
 msgstr[1] " bytes"
 
-#: libs/ui/802_11_wirelesswidget.cpp:141 libs/ui/wiredwidget.cpp:76
+#: libs/ui/802_11_wirelesswidget.cpp:140 libs/ui/wiredwidget.cpp:76
 #, kde-format
 msgctxt ""
 "@item:inlist item for hardware that is currently not attached to the machine "
@@ -1987,7 +1996,7 @@ msgctxt ""
 msgid "Disconnected interface (%1)"
 msgstr "Interface desligada (%1)"
 
-#: libs/ui/802_11_wirelesswidget.cpp:203
+#: libs/ui/802_11_wirelesswidget.cpp:206
 msgctxt "@title:window wireless network scan dialog"
 msgid "Available Networks"
 msgstr "Redes Disponíveis"
@@ -2209,7 +2218,7 @@ msgctxt "@title:window for network secrets request"
 msgid "Secrets for %1"
 msgstr "Segredos de %1"
 
-#: libs/ui/connectionwidget.cpp:83 libs/ui/wirelesspreferences.cpp:121
+#: libs/ui/connectionwidget.cpp:83 libs/ui/wirelesspreferences.cpp:145
 msgid "New Wireless Connection"
 msgstr "Nova Ligação sem Fios"
 
@@ -2217,7 +2226,7 @@ msgstr "Nova Ligação sem Fios"
 #: libs/ui/connectionwidget.cpp:125 libs/ui/connectionwidget.cpp:160
 #: libs/ui/connectionwidget.cpp:166 vpnplugins/openvpn/openvpnprop.ui:809
 msgid "Default"
-msgstr "Predefinida"
+msgstr "Predefinição"
 
 #: libs/ui/connectionwidget.cpp:145
 msgctxt "@title:window advanced permissions editor"
@@ -2228,7 +2237,7 @@ msgstr "Editor Avançado de Permissões"
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: libs/ui/gsm.ui:26 settings/config/othersettings.ui:135
 msgid "Basic"
-msgstr "Básica"
+msgstr "Básico"
 
 #. i18n: ectx: property (text), widget (KLineEdit, number)
 #: libs/ui/gsm.ui:51
@@ -2325,7 +2334,7 @@ msgstr "Não Obrigatório"
 #: libs/ui/gsm.ui:122 settings/config/othersettings.ui:140
 #: vpnplugins/pptp/pptpprop.ui:208 vpnplugins/vpnc/vpncprop.ui:193
 msgid "Advanced"
-msgstr "Avançada"
+msgstr "Avançado"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: libs/ui/gsm.ui:131
@@ -2383,16 +2392,19 @@ msgid "IPv4 Address"
 msgstr "Endereço IPv4"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbSettingsMode)
 #: libs/ui/ipv4.ui:39 libs/ui/ipv6.ui:39
 msgid "Basic settings"
 msgstr "Configuração básica"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbSettingsMode)
 #: libs/ui/ipv4.ui:44 libs/ui/ipv6.ui:44
 msgid "Additional addresses"
 msgstr "Endereços adicionais"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbSettingsMode)
 #: libs/ui/ipv4.ui:49 libs/ui/ipv6.ui:49
 msgid "Routes"
 msgstr "Rotas"
@@ -2429,7 +2441,7 @@ msgstr "Partilhada"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#. i18n: ectx: property (text), item, widget (KComboBox, privacy)
 #: libs/ui/ipv4.ui:137 libs/ui/ipv6.ui:142 libs/ui/ipv6.ui:341
 #: vpnplugins/vpnc/vpncprop.ui:282
 msgid "Disabled"
@@ -2672,12 +2684,12 @@ msgstr "Automática (apenas endereços)"
 msgid "Automatic (DHCP only)"
 msgstr "Automática (apenas DHCP)"
 
-#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#. i18n: ectx: property (text), item, widget (KComboBox, privacy)
 #: libs/ui/ipv6.ui:346
 msgid "Enabled (prefer public address)"
 msgstr "Activa (preferir o endereço público)"
 
-#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#. i18n: ectx: property (text), item, widget (KComboBox, privacy)
 #: libs/ui/ipv6.ui:351
 msgid "Enabled (prefer temporary addresses)"
 msgstr "Activa (preferir os endereços temporários)"
@@ -2898,7 +2910,7 @@ msgstr "Autenticação &Interior:"
 #. i18n: ectx: property (toolTip), widget (KLineEdit, leUsername)
 #: libs/ui/security/eapmethodleapbase.ui:35
 msgid "User name on this network"
-msgstr "Utilizador nesta rede"
+msgstr "O nome do utilizador nesta rede"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, lePassword)
 #: libs/ui/security/eapmethodleapbase.ui:57
@@ -3386,26 +3398,26 @@ msgstr "&Modo:"
 
 #. i18n: ectx: property (inputMask), widget (KLineEdit, bssid)
 #. i18n: ectx: property (inputMask), widget (KLineEdit, macaddress)
-#: libs/ui/wireless.ui:75 libs/ui/wireless.ui:98
+#: libs/ui/wireless.ui:79 libs/ui/wireless.ui:102
 msgid "HH:HH:HH:HH:HH:HH; "
 msgstr "HH:HH:HH:HH:HH:HH; "
 
 #. i18n: ectx: property (text), widget (KLineEdit, bssid)
-#: libs/ui/wireless.ui:78
+#: libs/ui/wireless.ui:82
 msgid ":::::"
 msgstr ":::::"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: libs/ui/wireless.ui:85
+#: libs/ui/wireless.ui:89
 msgid "MAC &address:"
 msgstr "Endereço &MAC:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: libs/ui/wireless.ui:105
+#: libs/ui/wireless.ui:109
 msgid "&MTU:"
 msgstr "&MTU:"
 
-#: libs/ui/wirelesspreferences.cpp:71
+#: libs/ui/wirelesspreferences.cpp:72
 msgctxt ""
 "ssid of the wifi connection. Use ASCII letters and underscore *only* (no "
 "spaces!). Leave it unstranslated if your language does not support ASCII "
@@ -3413,7 +3425,7 @@ msgctxt ""
 msgid "Shared_Wireless_Connection"
 msgstr "Ligacao_sem_Fios_Partilhada"
 
-#: libs/ui/wirelesspreferences.cpp:119
+#: libs/ui/wirelesspreferences.cpp:143
 msgid "Shared Wireless Connection"
 msgstr "Ligação sem Fios Partilhada"
 
@@ -3615,7 +3627,7 @@ msgstr "Confirmar a Remoção"
 
 #: settings/config/manageconnectionwidget.cpp:771
 msgid "Connected"
-msgstr "Ligada"
+msgstr "Ligado"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabWired)
 #: settings/config/manageconnectionwidget.ui:21
@@ -4223,7 +4235,7 @@ msgstr "A&vançado..."
 #: vpnplugins/novellvpn/novellvpnwidget.cpp:63
 msgctxt "@window:title NovellVPN advanced connection options"
 msgid "NovellVPN advanced options"
-msgstr "Opções avançadas do VPN da Novell"
+msgstr "Opções avançadas da VPN da Novell"
 
 #: vpnplugins/openconnect/openconnectauth.cpp:269
 msgid "Contacting host, please wait..."

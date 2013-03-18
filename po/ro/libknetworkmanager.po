@@ -2,21 +2,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Sergiu Bivol <sergiu@ase.md>, 2009, 2010, 2011.
-# Sergiu Bivol <sergiu.bivol@jurnaltv.md>, 2009, 2010.
+# Sergiu Bivol <sergiu.bivol@jurnaltv.md>, 2009, 2010, 2013.
 # Cristian Oneț <onet.cristian@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-01-16 09:40+0100\n"
-"PO-Revision-Date: 2011-11-12 18:47+0200\n"
+"POT-Creation-Date: 2013-03-02 10:30+0100\n"
+"PO-Revision-Date: 2013-02-09 01:04+0200\n"
 "Last-Translator: Sergiu Bivol <sergiu.bivol@jurnaltv.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
-"Language: \n"
+"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
 
@@ -70,8 +70,6 @@ msgstr "Pereche"
 
 #. i18n: ectx: label, entry (group), group (802-11-wireless-security)
 #: libs/internals/schemas/802-11-wireless-security.kcfg:58
-#, fuzzy
-#| msgid "Group"
 msgid "Group"
 msgstr "Grup"
 
@@ -142,7 +140,7 @@ msgstr "Bandă"
 #. i18n: ectx: property (toolTip), widget (Wireless80211WidgetBand, channel)
 #. i18n: ectx: label, entry (channel), group (802-11-wireless)
 #: libs/internals/schemas/802-11-wireless.kcfg:31
-#: libs/ui/802-11-wireless.ui:141
+#: libs/ui/802-11-wireless.ui:146
 msgid "Channel"
 msgstr "Canal"
 
@@ -235,7 +233,7 @@ msgstr "Certificat client"
 #. i18n: ectx: label, entry (clientcertpath), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:33
 msgid "Client Cert Path"
-msgstr ""
+msgstr "Cale certificat client"
 
 #. i18n: ectx: label, entry (phase1peapver), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:37
@@ -318,17 +316,13 @@ msgstr "Cheie privată pentru Faza 2"
 
 #. i18n: ectx: label, entry (phase2privatekeypath), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:122
-#, fuzzy
-#| msgid "Private key:"
 msgid "Phase 2 Private key Path"
-msgstr "Cheie privată:"
+msgstr "Calea cheii private pentru faza 2"
 
 #. i18n: ectx: label, entry (phase2privatekeypassword), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:126
-#, fuzzy
-#| msgid "Private key password:"
 msgid "Phase 2 private key password"
-msgstr "Parola cheii private:"
+msgstr "Parola cheii private pentru faza 2"
 
 #. i18n: ectx: label, entry (pin), group (802-1x)
 #. i18n: ectx: label, entry (pin), group (gsm)
@@ -360,8 +354,6 @@ msgstr "Viteză"
 #. i18n: ectx: property (text), widget (QLabel, labelDuplex)
 #. i18n: ectx: label, entry (duplex), group (802-3-ethernet)
 #: libs/internals/schemas/802-3-ethernet.kcfg:23 libs/ui/wired.ui:133
-#, fuzzy
-#| msgid "Duplex"
 msgid "Duplex"
 msgstr "Duplex"
 
@@ -410,8 +402,6 @@ msgstr "Număr"
 #: libs/internals/schemas/cdma.kcfg:13 libs/internals/schemas/gsm.kcfg:14
 #: libs/internals/schemas/pppoe.kcfg:13 libs/internals/schemas/vpn.kcfg:17
 #: vpnplugins/openvpn/openvpnprop.ui:482
-#, fuzzy
-#| msgid "Username"
 msgid "Username"
 msgstr "Utilizator"
 
@@ -545,15 +535,12 @@ msgstr "Ignoră rutele automate"
 
 #. i18n: ectx: whatsthis, entry (ignoreautoroute), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:39 libs/internals/schemas/ipv6.kcfg:40
-#, fuzzy
-#| msgid ""
-#| "Ignore DNS servers returned by DHCP and use the configured servers instead"
 msgid ""
 "Ignore routes returned by automatic configuration mechanisms and use the "
 "manually configured routes instead"
 msgstr ""
-"Ignoră serverele DNS întoarse de DHCP și utilizează în schimb serverele "
-"configurate"
+"Ignoră rutele întoarse de mecanismele automate de configurare și folosește "
+"în schimb rutele configurate manual"
 
 #. i18n: ectx: label, entry (neverdefault), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:42 libs/internals/schemas/ipv6.kcfg:43
@@ -705,7 +692,7 @@ msgstr "Tip serviciu"
 #. i18n: ectx: whatsthis, entry (UserName), group (vpn)
 #: libs/internals/schemas/vpn.kcfg:18
 msgid "System username, not stored"
-msgstr ""
+msgstr "Utilizator din sistem, nu se stochează"
 
 #. i18n: ectx: label, entry (VpnSecrets), group (vpn)
 #: libs/internals/schemas/vpn.kcfg:21
@@ -826,73 +813,46 @@ msgid "Type"
 msgstr "Tip"
 
 #: libs/internals/tooltips.cpp:66
-#, fuzzy
-#| msgctxt " network device name eg eth0"
-#| msgid "Interface"
 msgctxt " network device name eg eth0"
 msgid "Interface"
 msgstr "Interfață"
 
 #: libs/internals/tooltips.cpp:67
-#, fuzzy
-#| msgctxt " system driver name"
-#| msgid "Driver"
 msgctxt " system driver name"
 msgid "Driver"
 msgstr "Driver"
 
 #: libs/internals/tooltips.cpp:68
-#, fuzzy
-#| msgctxt " network interface status"
-#| msgid "Status"
 msgctxt " network interface status"
 msgid "Status"
 msgstr "Stare"
 
 #: libs/internals/tooltips.cpp:70
-#, fuzzy
-#| msgctxt " this is the hardware address of a network interface"
-#| msgid "Hardware address (Wired)"
 msgctxt " this is the hardware address of a network interface"
 msgid "Hardware address (Wired)"
 msgstr "Adresă fizică (cu fir)"
 
 #: libs/internals/tooltips.cpp:71
-#, fuzzy
-#| msgctxt " network connection bit rate"
-#| msgid "Bit rate"
 msgctxt " network connection bit rate"
 msgid "Bit rate"
 msgstr "Rată de biți"
 
 #: libs/internals/tooltips.cpp:73
-#, fuzzy
-#| msgctxt " The network device's maximum speed"
-#| msgid "Max speed"
 msgctxt " The network device's maximum speed"
 msgid "Max speed"
 msgstr "Viteză maximă"
 
 #: libs/internals/tooltips.cpp:74
-#, fuzzy
-#| msgctxt " IPv4 address"
-#| msgid "IP address"
 msgctxt " IPv4 address"
 msgid "IP address"
 msgstr "Adresă IP"
 
 #: libs/internals/tooltips.cpp:75
-#, fuzzy
-#| msgctxt " network name servers"
-#| msgid "Name servers"
 msgctxt " network name servers"
 msgid "Name servers"
 msgstr "Servere de nume"
 
 #: libs/internals/tooltips.cpp:76
-#, fuzzy
-#| msgctxt " network domains"
-#| msgid "Domains"
 msgctxt " network domains"
 msgid "Domains"
 msgstr "Domenii"
@@ -903,9 +863,6 @@ msgid "Routes"
 msgstr "Rute"
 
 #: libs/internals/tooltips.cpp:80
-#, fuzzy
-#| msgctxt " The signal strength of the wifi network"
-#| msgid "Strength"
 msgctxt " The signal strength of the wifi network"
 msgid "Strength"
 msgstr "Putere"
@@ -921,37 +878,22 @@ msgid "Mode"
 msgstr "Regim"
 
 #: libs/internals/tooltips.cpp:85
-#, fuzzy
-#| msgctxt " Active access point MAC address"
-#| msgid "Access point"
 msgctxt " Active access point MAC address"
 msgid "Access point"
 msgstr "Punct de acces"
 
 #: libs/internals/tooltips.cpp:87
-#, fuzzy
-#| msgctxt ""
-#| " the frequency of the radio channel that the access point is operating on"
-#| msgid "Frequency"
 msgctxt ""
 " the frequency of the radio channel that the access point is operating on"
 msgid "Frequency"
 msgstr "Frecvență"
 
 #: libs/internals/tooltips.cpp:88
-#, fuzzy
-#| msgctxt " network security level, e.g. high, low"
-#| msgid "Security"
 msgctxt " network security level, e.g. high, low"
 msgid "Security"
 msgstr "Securitate"
 
 #: libs/internals/tooltips.cpp:90
-#, fuzzy
-#| msgctxt ""
-#| " Flags describing the access point's capabilities according to WPA (Wifi "
-#| "Protected Access)"
-#| msgid "WPA flags"
 msgctxt ""
 " Flags describing the access point's capabilities according to WPA (Wifi "
 "Protected Access)"
@@ -959,11 +901,6 @@ msgid "WPA flags"
 msgstr "Fanioane WPA"
 
 #: libs/internals/tooltips.cpp:92
-#, fuzzy
-#| msgctxt ""
-#| "Flags describing the access point's capabilities according to RSN (Robust "
-#| "Secure Network)"
-#| msgid "RSN(WPA2) flags"
 msgctxt ""
 "Flags describing the access point's capabilities according to RSN (Robust "
 "Secure Network)"
@@ -1665,13 +1602,7 @@ msgid "Wireless network %1 found"
 msgstr "Rețea fără fir %1 găsită"
 
 #: libs/service/notificationmanager.cpp:593
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification text when multiple wireless networks are found. "
-#| "%2 is a list of networks, and the %1 value (not printed) is just used to "
-#| "determine the plural form of network."
-#| msgid "<b>New wireless network:</b><br /> %2"
-#| msgid_plural "<b>New wireless networks:</b><br /> %2"
+#, kde-format
 msgctxt ""
 "@info:status Notification text when multiple wireless networks are found. %2 "
 "is a list of networks, and the %1 value (not printed) is just used to "
@@ -1690,13 +1621,7 @@ msgid "Wireless network %1 disappeared"
 msgstr "Rețeaua fără fir %1 a dispărut"
 
 #: libs/service/notificationmanager.cpp:612
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification text when multiple wireless networks have "
-#| "disappeared.  %2 is a list of networks, and the %1 value (not printed) is "
-#| "just used to determine the plural form of network."
-#| msgid "<b>Wireless network disappeared:</b><br /> %2"
-#| msgid_plural "<b>Wireless networks disappeared:</b><br /> %2"
+#, kde-format
 msgctxt ""
 "@info:status Notification text when multiple wireless networks have "
 "disappeared.  %2 is a list of networks, and the %1 value (not printed) is "
@@ -1848,10 +1773,16 @@ msgstr "Regimul de operare al rețelei fără fir"
 
 #. i18n: ectx: property (whatsThis), widget (KComboBox, cmbMode)
 #: libs/ui/802-11-wireless.ui:73
+#, fuzzy
+#| msgid ""
+#| "Infrastructure mode is the most common setting.  To form a peer-to-peer "
+#| "wireless network with another computer when there is no infrastructure, "
+#| "choose Ad-hoc."
 msgid ""
 "Infrastructure mode is the most common setting.  To form a peer-to-peer "
 "wireless network with another computer when there is no infrastructure, "
-"choose Ad-hoc."
+"choose Ap-mode (requires NetworkManager >= 0.9.8 and a suitable wifi driver) "
+"or Ad-hoc. Also read https://bugs.kde.org/show_bug.cgi?id=311705."
 msgstr ""
 "Regimul de infrastructură este configurarea cea mai comună. Pentru a forma o "
 "rețea fără fir peer-to-peer cu alt calculator atunci cînd nu există "
@@ -1869,18 +1800,24 @@ msgstr "Infrastructură"
 msgid "Ad-hoc"
 msgstr "Ad-hoc"
 
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
+#. i18n: ectx: property (text), item, widget (KComboBox, mode)
+#: libs/ui/802-11-wireless.ui:87 libs/ui/wireless.ui:58
+msgid "Ap-mode"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: libs/ui/802-11-wireless.ui:90
+#: libs/ui/802-11-wireless.ui:95
 msgid "B&and:"
 msgstr "B&andă:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, band)
-#: libs/ui/802-11-wireless.ui:103
+#: libs/ui/802-11-wireless.ui:108
 msgid "Frequency band of the wireless network."
 msgstr "Banda de frecvență a rețelei fără fir."
 
 #. i18n: ectx: property (whatsThis), widget (KComboBox, band)
-#: libs/ui/802-11-wireless.ui:106
+#: libs/ui/802-11-wireless.ui:111
 msgid "b/g is the most common band around 2.4 GHz. Less common is a at 5 GHz."
 msgstr ""
 "b/g este cea mai utilizată bandă în jur de 2.4 GHz. Mai rar întîlnită este "
@@ -1897,52 +1834,48 @@ msgstr ""
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, mtu)
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, speed)
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: libs/ui/802-11-wireless.ui:110 libs/ui/802-11-wireless.ui:147
-#: libs/ui/802-11-wireless.ui:247 libs/ui/ipv6.ui:112
+#: libs/ui/802-11-wireless.ui:115 libs/ui/802-11-wireless.ui:152
+#: libs/ui/802-11-wireless.ui:252 libs/ui/ipv6.ui:112
 #: libs/ui/security/eapmethodpeapbase.ui:72 libs/ui/wired.ui:88
 #: libs/ui/wired.ui:120 vpnplugins/openvpn/openvpnprop.ui:629
 #: vpnplugins/openvpn/openvpnprop.ui:653 vpnplugins/openvpn/openvpnprop.ui:677
 #: vpnplugins/vpnc/vpncprop.ui:445 vpnplugins/vpnc/vpncprop.ui:467
-#, fuzzy
-#| msgid "Automatic"
 msgid "Automatic"
 msgstr "Automat"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: libs/ui/802-11-wireless.ui:115
+#: libs/ui/802-11-wireless.ui:120
 msgid "a"
 msgstr "a"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: libs/ui/802-11-wireless.ui:120
+#: libs/ui/802-11-wireless.ui:125
 msgid "b/g"
 msgstr "b/g"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: libs/ui/802-11-wireless.ui:128
+#: libs/ui/802-11-wireless.ui:133
 msgid "&Channel:"
 msgstr "&Canal:"
 
 #. i18n: ectx: property (whatsThis), widget (Wireless80211WidgetBand, channel)
-#: libs/ui/802-11-wireless.ui:144
+#: libs/ui/802-11-wireless.ui:149
 msgid "Sets the channel of the network."
 msgstr "Stabilește canalul rețelei."
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: libs/ui/802-11-wireless.ui:160 libs/ui/wireless.ui:62
+#: libs/ui/802-11-wireless.ui:165 libs/ui/wireless.ui:66
 msgid "&BSSID:"
 msgstr "&BSSID:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, bssid)
-#: libs/ui/802-11-wireless.ui:175
-#, fuzzy
-#| msgid "Only connect to the station with this hardware address"
+#: libs/ui/802-11-wireless.ui:180
 msgid "Only connect to the access point with this hardware address"
-msgstr "Conectează numai la stația cu această adresă fizică"
+msgstr "Conectează numai la punctul de acces cu această adresă fizică"
 
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, bssid)
-#: libs/ui/802-11-wireless.ui:178
+#: libs/ui/802-11-wireless.ui:183
 msgid ""
 "Setting a BSSID (Basic Service Set Identification) forces this connection to "
 "connect only to the access point with the specified hardware address, even "
@@ -1951,23 +1884,23 @@ msgstr ""
 
 #. i18n: ectx: property (inputMask), widget (KLineEdit, bssid)
 #. i18n: ectx: property (inputMask), widget (KLineEdit, clonedMacAddress)
-#: libs/ui/802-11-wireless.ui:181 libs/ui/802-11-wireless.ui:275
+#: libs/ui/802-11-wireless.ui:186 libs/ui/802-11-wireless.ui:280
 #: libs/ui/wired.ui:177
 msgid "HH:HH:HH:HH:HH:HH;_"
 msgstr "HH:HH:HH:HH:HH:HH;_"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnSelectBssid)
-#: libs/ui/802-11-wireless.ui:188
+#: libs/ui/802-11-wireless.ui:193
 msgid "&Select"
 msgstr "&Alege"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, btnSelectBssid)
-#: libs/ui/802-11-wireless.ui:194
+#: libs/ui/802-11-wireless.ui:199
 msgid "Select the BSSID (access point) with the strongest signal."
 msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, btnSelectBssid)
-#: libs/ui/802-11-wireless.ui:197
+#: libs/ui/802-11-wireless.ui:202
 msgid ""
 "This button will select the access point with the ssid specified in the "
 "field above and with the strongest signal."
@@ -1975,33 +1908,30 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: libs/ui/802-11-wireless.ui:206 libs/ui/wired.ui:34
+#: libs/ui/802-11-wireless.ui:211 libs/ui/wired.ui:34
 msgid "&Restrict To Interface:"
 msgstr "&Restricționează la interfața:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbMacAddress)
 #. i18n: ectx: property (text), item, widget (KComboBox, type)
-#: libs/ui/802-11-wireless.ui:220 libs/ui/gsm.ui:183 libs/ui/wired.ui:48
+#: libs/ui/802-11-wireless.ui:225 libs/ui/gsm.ui:183 libs/ui/wired.ui:48
 #: vpnplugins/pptp/pptpadvanced.ui:120
-#, fuzzy
-#| msgctxt "Any cellular frequency band"
-#| msgid "Any"
 msgid "Any"
 msgstr "Oricare"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
-#: libs/ui/802-11-wireless.ui:228
+#: libs/ui/802-11-wireless.ui:233
 msgid "MT&U:"
 msgstr "MT&U:"
 
 #. i18n: ectx: property (toolTip), widget (KIntSpinBox, mtu)
-#: libs/ui/802-11-wireless.ui:241 libs/ui/wired.ui:79
+#: libs/ui/802-11-wireless.ui:246 libs/ui/wired.ui:79
 msgid "Maximum Transmission Unit"
 msgstr "Maximum Transmission Unit"
 
 #. i18n: ectx: property (whatsThis), widget (KIntSpinBox, mtu)
-#: libs/ui/802-11-wireless.ui:244 libs/ui/wired.ui:82
+#: libs/ui/802-11-wireless.ui:249 libs/ui/wired.ui:82
 msgid ""
 "Sets the size of the largest packet that can be transmitted on this network. "
 "'0' sets the MTU automatically."
@@ -2009,17 +1939,17 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: libs/ui/802-11-wireless.ui:260 libs/ui/wired.ui:56
+#: libs/ui/802-11-wireless.ui:265 libs/ui/wired.ui:56
 msgid "Cloned MAC address"
 msgstr "Adresă MAC clonată"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
-#: libs/ui/802-11-wireless.ui:269 libs/ui/wired.ui:171
+#: libs/ui/802-11-wireless.ui:274 libs/ui/wired.ui:171
 msgid "Custom MAC address for the hardware to use"
 msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, clonedMacAddress)
-#: libs/ui/802-11-wireless.ui:272 libs/ui/wired.ui:174
+#: libs/ui/802-11-wireless.ui:277 libs/ui/wired.ui:174
 msgid ""
 "The MAC address entered here will be used as hardware address for the "
 "network device this connection is activated on. This feature is known as MAC "
@@ -2027,35 +1957,26 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (KPushButton, clonedMacAddressRandom)
-#: libs/ui/802-11-wireless.ui:288 libs/ui/wired.ui:190
-#, fuzzy
-#| msgid "Random"
+#: libs/ui/802-11-wireless.ui:293 libs/ui/wired.ui:190
 msgid "Random"
 msgstr "Aleator"
 
-#: libs/ui/802_11_wirelesswidget.cpp:63 libs/ui/wiredwidget.cpp:55
-#, fuzzy
-#| msgid " byte"
-#| msgid_plural " bytes"
+#: libs/ui/802_11_wirelesswidget.cpp:64 libs/ui/wiredwidget.cpp:55
 msgid " byte"
 msgid_plural " bytes"
 msgstr[0] " octet"
 msgstr[1] " octeți"
 msgstr[2] " de octeți"
 
-#: libs/ui/802_11_wirelesswidget.cpp:141 libs/ui/wiredwidget.cpp:76
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@item:inlist item for hardware that is currently not attached to the "
-#| "machine with MAC address"
-#| msgid "Disconnected interface (%1)"
+#: libs/ui/802_11_wirelesswidget.cpp:140 libs/ui/wiredwidget.cpp:76
+#, kde-format
 msgctxt ""
 "@item:inlist item for hardware that is currently not attached to the machine "
 "with MAC address"
 msgid "Disconnected interface (%1)"
 msgstr "Interfață deconectată (%1)"
 
-#: libs/ui/802_11_wirelesswidget.cpp:203
+#: libs/ui/802_11_wirelesswidget.cpp:206
 msgctxt "@title:window wireless network scan dialog"
 msgid "Available Networks"
 msgstr "Rețele disponibile"
@@ -2123,8 +2044,6 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: libs/ui/bluetooth.ui:86
-#, fuzzy
-#| msgid "Name"
 msgid "Name"
 msgstr "Denumire"
 
@@ -2271,16 +2190,13 @@ msgctxt "@title:window for network secrets request"
 msgid "Secrets for %1"
 msgstr "Secrete pentru %1"
 
-#: libs/ui/connectionwidget.cpp:83 libs/ui/wirelesspreferences.cpp:121
+#: libs/ui/connectionwidget.cpp:83 libs/ui/wirelesspreferences.cpp:145
 msgid "New Wireless Connection"
 msgstr "Conexiune fără fir nouă"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
 #: libs/ui/connectionwidget.cpp:125 libs/ui/connectionwidget.cpp:160
 #: libs/ui/connectionwidget.cpp:166 vpnplugins/openvpn/openvpnprop.ui:809
-#, fuzzy
-#| msgctxt "@item::inlist Default openvpn cipher item"
-#| msgid "Default"
 msgid "Default"
 msgstr "Implicit"
 
@@ -2292,8 +2208,6 @@ msgstr "Redactor de permisiuni avansate"
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_ShowAdvancedSettings)
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: libs/ui/gsm.ui:26 settings/config/othersettings.ui:135
-#, fuzzy
-#| msgid "Basic"
 msgid "Basic"
 msgstr "De bază"
 
@@ -2391,8 +2305,6 @@ msgstr "Nu este necesar"
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: libs/ui/gsm.ui:122 settings/config/othersettings.ui:140
 #: vpnplugins/pptp/pptpprop.ui:208 vpnplugins/vpnc/vpncprop.ui:193
-#, fuzzy
-#| msgid "Advanced"
 msgid "Advanced"
 msgstr "Avansat"
 
@@ -2439,7 +2351,7 @@ msgstr "&PIN:"
 #. i18n: ectx: property (text), widget (QCheckBox, chkAllowRoaming)
 #: libs/ui/gsm.ui:273
 msgid "Allow Roaming"
-msgstr ""
+msgstr "Permite roaming-ul"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
 #: libs/ui/gsm.ui:299
@@ -2452,16 +2364,19 @@ msgid "IPv4 Address"
 msgstr "Adresă IPv4"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbSettingsMode)
 #: libs/ui/ipv4.ui:39 libs/ui/ipv6.ui:39
 msgid "Basic settings"
 msgstr "Configurări de bază"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbSettingsMode)
 #: libs/ui/ipv4.ui:44 libs/ui/ipv6.ui:44
 msgid "Additional addresses"
 msgstr "Adrese suplimentare"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbSettingsMode)
 #: libs/ui/ipv4.ui:49 libs/ui/ipv6.ui:49
 msgid "Routes"
 msgstr "Rute"
@@ -2483,8 +2398,6 @@ msgstr "DHCP (numai adresă)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: libs/ui/ipv4.ui:122 libs/ui/ipv6.ui:127
-#, fuzzy
-#| msgid "Manual"
 msgid "Manual"
 msgstr "Manual"
 
@@ -2500,11 +2413,9 @@ msgstr "Partajat"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#. i18n: ectx: property (text), item, widget (KComboBox, privacy)
 #: libs/ui/ipv4.ui:137 libs/ui/ipv6.ui:142 libs/ui/ipv6.ui:341
 #: vpnplugins/vpnc/vpncprop.ui:282
-#, fuzzy
-#| msgid "Disabled"
 msgid "Disabled"
 msgstr "Dezactivat"
 
@@ -2553,8 +2464,6 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, dnsLabel)
 #: libs/ui/ipv4.ui:223 libs/ui/ipv4widget.cpp:392 libs/ui/ipv6.ui:228
 #: libs/ui/ipv6widget.cpp:361
-#, fuzzy
-#| msgid "&DNS Servers:"
 msgctxt "@info"
 msgid "&DNS Servers:"
 msgstr "Servere &DNS:"
@@ -2583,8 +2492,6 @@ msgstr "..."
 #. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
 #: libs/ui/ipv4.ui:269 libs/ui/ipv4widget.cpp:393 libs/ui/ipv6.ui:274
 #: libs/ui/ipv6widget.cpp:362
-#, fuzzy
-#| msgid "&Search Domains:"
 msgctxt "@info"
 msgid "&Search Domains:"
 msgstr "Do&menii de căutare:"
@@ -2711,22 +2618,16 @@ msgid "Automatic (DHCP) addresses only"
 msgstr "Numai adrese (DHCP) automate"
 
 #: libs/ui/ipv4widget.cpp:389 libs/ui/ipv6widget.cpp:358
-#, fuzzy
-#| msgid "&DNS Servers:"
 msgctxt "@info"
 msgid "Additional &DNS Servers:"
-msgstr "Servere &DNS:"
+msgstr "Servere &DNS suplimentare:"
 
 #: libs/ui/ipv4widget.cpp:390 libs/ui/ipv6widget.cpp:359
-#, fuzzy
-#| msgid "&Search Domains:"
 msgctxt "@info"
 msgid "Additional &Search Domains:"
-msgstr "Do&menii de căutare:"
+msgstr "Do&menii de căutare suplimentare:"
 
 #: libs/ui/ipv4widget.cpp:493 libs/ui/ipv6widget.cpp:444
-#, fuzzy
-#| msgid "Search domains"
 msgid "Search domains"
 msgstr "Domenii de căutare"
 
@@ -2737,36 +2638,28 @@ msgstr "Adresă IPv6"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: libs/ui/ipv6.ui:117
-#, fuzzy
-#| msgctxt "@item:inlistbox IPv4 settings configuration method"
-#| msgid "Automatic (VPN) addresses only"
 msgid "Automatic (addresses only)"
-msgstr "Numai adrese (VPN) automate"
+msgstr "Automat (numai adrese)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: libs/ui/ipv6.ui:122
-#, fuzzy
-#| msgctxt "@item:inlistbox IPv4 settings configuration method"
-#| msgid "Automatic (DHCP)"
 msgid "Automatic (DHCP only)"
-msgstr "Automat (DHCP)"
+msgstr "Automat (numai DHCP)"
 
-#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#. i18n: ectx: property (text), item, widget (KComboBox, privacy)
 #: libs/ui/ipv6.ui:346
 msgid "Enabled (prefer public address)"
-msgstr ""
+msgstr "Activat (preferă adresa publică)"
 
-#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#. i18n: ectx: property (text), item, widget (KComboBox, privacy)
 #: libs/ui/ipv6.ui:351
 msgid "Enabled (prefer temporary addresses)"
-msgstr ""
+msgstr "Activat (preferă adresa temporară)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: libs/ui/ipv6.ui:359
-#, fuzzy
-#| msgid "Tray icons:"
 msgid "Privacy Extensions:"
-msgstr "Pictograme în tavă:"
+msgstr "Extensii de intimitate:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbMayFail)
 #: libs/ui/ipv6.ui:430
@@ -2794,9 +2687,7 @@ msgid "Metric"
 msgstr "Metric"
 
 #: libs/ui/networkitemmodel.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@item:inlist signal strength percentage"
-#| msgid "%1%"
+#, kde-format
 msgctxt "@item:inlist signal strength percentage"
 msgid "%1%"
 msgstr "%1%"
@@ -2877,8 +2768,6 @@ msgstr "Compresie"
 
 #. i18n: ectx: property (title), widget (QGroupBox, requiremppe)
 #: libs/ui/ppp.ui:91
-#, fuzzy
-#| msgid "Point-to-Point Encryption (MPPE)"
 msgid "Point-to-Point-Encryption (MPPE)"
 msgstr "Criptare Punct-la-Punct (MPPE)"
 
@@ -2969,7 +2858,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QCheckBox, m_useBssid)
 #: libs/ui/scanwidget.ui:107
 msgid "Use the AP's BSSID"
-msgstr ""
+msgstr "Folosește BSSID-ul punctului de acces"
 
 #: libs/ui/security/eapmethodinnerauth.cpp:34
 #: libs/ui/security/eapmethodinnerauth.cpp:42
@@ -2979,8 +2868,6 @@ msgstr "Autentificare &interioară:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, leUsername)
 #: libs/ui/security/eapmethodleapbase.ui:35
-#, fuzzy
-#| msgid "User name on this network"
 msgid "User name on this network"
 msgstr "Numele de utilizator în această rețea"
 
@@ -3031,7 +2918,7 @@ msgstr "Versiunea 1"
 #: libs/ui/security/eapmethodttlsbase.ui:58
 #: vpnplugins/openvpn/openvpnprop.ui:881
 msgid "Subject Match:"
-msgstr ""
+msgstr "Potrivire subiect:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, leSubjectMatch)
 #: libs/ui/security/eapmethodpeapbase.ui:97
@@ -3045,7 +2932,7 @@ msgstr ""
 #: libs/ui/security/eapmethodtlsbase.ui:155
 #: libs/ui/security/eapmethodttlsbase.ui:72
 msgid "Alternative Subject Matches:"
-msgstr ""
+msgstr "Potriviri de subiect alternative:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leAltSubjectMatches)
 #: libs/ui/security/eapmethodpeapbase.ui:113
@@ -3160,7 +3047,7 @@ msgstr "GTC"
 #: libs/ui/security/peapwidget.cpp:192 libs/ui/security/tlswidget.cpp:297
 #: libs/ui/security/ttlswidget.cpp:194
 msgid "Alternative Subject Matches"
-msgstr ""
+msgstr "Potriviri de subiect alternative"
 
 #: libs/ui/security/peapwidget.cpp:193 libs/ui/security/tlswidget.cpp:298
 #: libs/ui/security/ttlswidget.cpp:195
@@ -3259,8 +3146,6 @@ msgstr "Index &WEP:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, weptxkeyindex)
 #: libs/ui/security/wep.ui:68
-#, fuzzy
-#| msgid "1 (Default)"
 msgid "1 (Default)"
 msgstr "1 (Implicit)"
 
@@ -3321,12 +3206,10 @@ msgid "&Security:"
 msgstr "&Securitate:"
 
 #: libs/ui/security/wirelesssecurityauth.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "@option:check enables/disables 802.1x auth on wired ethernet"
-#| msgid "Use &802.1x authentication"
+#, kde-format
 msgctxt "@title:window"
 msgid "The network %1 requires authentication"
-msgstr "Utilizează autentificare &802.1x"
+msgstr "Rețeaua %1 necesită autentificare"
 
 #: libs/ui/security/wirelesssecuritysettingwidget.cpp:178
 msgctxt "Label for no wireless security"
@@ -3390,12 +3273,12 @@ msgstr "M&TU:"
 #. i18n: ectx: property (toolTip), widget (KIntSpinBox, speed)
 #: libs/ui/wired.ui:111
 msgid "Use the specified speed"
-msgstr ""
+msgstr "Folosește viteza specificată"
 
 #. i18n: ectx: property (whatsThis), widget (KIntSpinBox, speed)
 #: libs/ui/wired.ui:114
 msgid "Request that the device use only the specified speed."
-msgstr ""
+msgstr "Cere ca dispozitivul să folosească numai adresa specificată."
 
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, speed)
 #: libs/ui/wired.ui:123
@@ -3419,18 +3302,18 @@ msgstr ""
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbDuplex)
 #: libs/ui/wired.ui:156
 msgid "Half"
-msgstr ""
+msgstr "Jumătate"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbDuplex)
 #: libs/ui/wired.ui:161
 msgid "Full"
-msgstr ""
+msgstr "Întreg"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkAutoNegotiate)
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, chkAutoNegotiate)
 #: libs/ui/wired.ui:217 libs/ui/wired.ui:220
 msgid "Allow auto-negotiation of port speed and duplex mode"
-msgstr ""
+msgstr "Permite negocierea automată a vitezei și regimului duplex ale portului"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAutoNegotiate)
 #: libs/ui/wired.ui:226
@@ -3457,36 +3340,34 @@ msgstr "&Regim:"
 
 #. i18n: ectx: property (inputMask), widget (KLineEdit, bssid)
 #. i18n: ectx: property (inputMask), widget (KLineEdit, macaddress)
-#: libs/ui/wireless.ui:75 libs/ui/wireless.ui:98
+#: libs/ui/wireless.ui:79 libs/ui/wireless.ui:102
 msgid "HH:HH:HH:HH:HH:HH; "
 msgstr "HH:HH:HH:HH:HH:HH; "
 
 #. i18n: ectx: property (text), widget (KLineEdit, bssid)
-#: libs/ui/wireless.ui:78
+#: libs/ui/wireless.ui:82
 msgid ":::::"
 msgstr ":::::"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: libs/ui/wireless.ui:85
+#: libs/ui/wireless.ui:89
 msgid "MAC &address:"
 msgstr "&Adresă MAC:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: libs/ui/wireless.ui:105
+#: libs/ui/wireless.ui:109
 msgid "&MTU:"
 msgstr "&MTU:"
 
-#: libs/ui/wirelesspreferences.cpp:71
-#, fuzzy
-#| msgid "Shared_Wireless_Connection"
+#: libs/ui/wirelesspreferences.cpp:72
 msgctxt ""
 "ssid of the wifi connection. Use ASCII letters and underscore *only* (no "
 "spaces!). Leave it unstranslated if your language does not support ASCII "
 "characters"
 msgid "Shared_Wireless_Connection"
-msgstr "Conexiune fără fir partajată"
+msgstr "Conexiune_fara_fir_partajata"
 
-#: libs/ui/wirelesspreferences.cpp:119
+#: libs/ui/wirelesspreferences.cpp:143
 msgid "Shared Wireless Connection"
 msgstr "Conexiune fără fir partajată"
 
@@ -3508,34 +3389,32 @@ msgstr "Exportă"
 
 #: settings/config/manageconnectionwidget.cpp:80
 #: settings/config/managetraywidget.cpp:47
-#, fuzzy
-#| msgid "Connections"
 msgid "Manage Connections"
-msgstr "Conexiuni"
+msgstr "Gestiune conexiuni"
 
 #: settings/config/manageconnectionwidget.cpp:81
 #: settings/config/managetraywidget.cpp:48
 msgid "Manage Connections Control Panel Module"
-msgstr ""
+msgstr "Modul al panoului de control pentru gestiunea conexiunilor"
 
 #: settings/config/manageconnectionwidget.cpp:82
 msgid "(c) 2008-2009 Will Stephenson<p>(c) 2011-2012 Lamarque V. Souza</p>"
-msgstr ""
+msgstr "(c) 2008-2009 Will Stephenson<p>(c) 2011-2012 Lamarque V. Souza</p>"
 
 #: settings/config/manageconnectionwidget.cpp:84
 #: settings/config/managetraywidget.cpp:51
 msgid "Lamarque V. Souza"
-msgstr ""
+msgstr "Lamarque V. Souza"
 
 #: settings/config/manageconnectionwidget.cpp:84
 #: settings/config/managetraywidget.cpp:51
 msgid "Developer and Maintainer"
-msgstr ""
+msgstr "Dezvoltator și responsabil"
 
 #: settings/config/manageconnectionwidget.cpp:85
 #: settings/config/managetraywidget.cpp:52
 msgid "Ilia Kats"
-msgstr ""
+msgstr "Ilia Kats"
 
 #: settings/config/manageconnectionwidget.cpp:85
 #: settings/config/manageconnectionwidget.cpp:86
@@ -3546,12 +3425,12 @@ msgstr ""
 #: settings/config/managetraywidget.cpp:54
 #: settings/config/managetraywidget.cpp:55
 msgid "Developer"
-msgstr ""
+msgstr "Dezvoltator"
 
 #: settings/config/manageconnectionwidget.cpp:86
 #: settings/config/managetraywidget.cpp:53
 msgid "Rajeesh K Nambiar"
-msgstr ""
+msgstr "Rajeesh K Nambiar"
 
 #: settings/config/manageconnectionwidget.cpp:87
 #: settings/config/managetraywidget.cpp:54 settings/configshell/main.cpp:37
@@ -3561,7 +3440,7 @@ msgstr "Will Stephenson"
 #: settings/config/manageconnectionwidget.cpp:88
 #: settings/config/managetraywidget.cpp:55
 msgid "Sebastian Kügler"
-msgstr ""
+msgstr "Sebastian Kügler"
 
 #: settings/config/manageconnectionwidget.cpp:113
 msgctxt "Like in 'add wired connection'"
@@ -3628,6 +3507,8 @@ msgstr "Importă setările de conexiune VPN"
 msgid ""
 "None of the supported plugins implement importing operation for file %1."
 msgstr ""
+"Niciuna dintre extensiile suportate nu implementează operația de import "
+"pentru fișierul %1."
 
 #: settings/config/manageconnectionwidget.cpp:467
 #: settings/config/manageconnectionwidget.cpp:472
@@ -3652,10 +3533,8 @@ msgid "Do not show again"
 msgstr "Nu mai arăta"
 
 #: settings/config/manageconnectionwidget.cpp:507
-#, fuzzy
-#| msgid "Error importing VPN connection settings"
 msgid "Error exporting VPN connection settings"
-msgstr "Eroare la importul configurărilor de conexiune VPN"
+msgstr "Eroare la exportul configurărilor de conexiune VPN"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
 #: settings/config/manageconnectionwidget.cpp:510
@@ -3691,9 +3570,6 @@ msgid "Confirm Delete"
 msgstr "Confirmă ștergerea"
 
 #: settings/config/manageconnectionwidget.cpp:771
-#, fuzzy
-#| msgctxt "network interface connected state label"
-#| msgid "Connected"
 msgid "Connected"
 msgstr "Conectată"
 
@@ -3738,8 +3614,6 @@ msgstr "Ultima utilizare"
 #: settings/config/manageconnectionwidget.ui:132
 #: settings/config/manageconnectionwidget.ui:170
 #: settings/config/manageconnectionwidget.ui:208
-#, fuzzy
-#| msgid "State"
 msgid "State"
 msgstr "Stare"
 
@@ -3753,11 +3627,13 @@ msgid ""
 "(c) 2008-2009 Will Stephenson<p>(c) 2010 Sebastian Kügler</p><p>(c) "
 "2011-2012 Lamarque V. Souza</p>"
 msgstr ""
+"(c) 2008-2009 Will Stephenson<p>(c) 2010 Sebastian Kügler</p><p>(c) "
+"2011-2012 Lamarque V. Souza</p>"
 
 #: settings/config/managetraywidget.cpp:83
 msgctxt "@info"
 msgid "Error switching storage type"
-msgstr ""
+msgstr "Eroare la schimbarea tipului de stocare"
 
 #: settings/config/mobileconnectionwizard.cpp:52
 msgctxt "Mobile Connection Wizard"
@@ -3831,21 +3707,15 @@ msgstr "Creează o conexiune pentru acest dispozi&tiv de bandă largă mobilă:"
 
 #: settings/config/mobileconnectionwizard.cpp:269
 #: settings/config/mobileconnectionwizard.cpp:395
-#, fuzzy
-#| msgctxt "Mobile Connection Wizard"
-#| msgid "Any device"
 msgctxt "Mobile Connection Wizard"
 msgid "Any GSM device"
-msgstr "Orice dispozitiv"
+msgstr "Orice dispozitiv GSM"
 
 #: settings/config/mobileconnectionwizard.cpp:271
 #: settings/config/mobileconnectionwizard.cpp:397
-#, fuzzy
-#| msgctxt "Mobile Connection Wizard"
-#| msgid "Any device"
 msgctxt "Mobile Connection Wizard"
 msgid "Any CDMA device"
-msgstr "Orice dispozitiv"
+msgstr "Orice dispozitiv CDMA"
 
 #: settings/config/mobileconnectionwizard.cpp:324
 msgctxt "Mobile Connection Wizard"
@@ -4021,22 +3891,17 @@ msgstr "<b>Evenimente</b>"
 #. i18n: ectx: property (text), widget (QLabel, askPinLabel)
 #: settings/config/othersettings.ui:155
 msgid "Ask for GSM Pin:"
-msgstr ""
+msgstr "Cere PIN-ul GSM:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AskForGsmPin)
 #: settings/config/othersettings.ui:166
-#, fuzzy
-#| msgid "Enable weak single DES encryption"
 msgid "On Modem Detection"
-msgstr "Activează criptare singulară slabă DES"
+msgstr "La detectarea modemului"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AskForGsmPin)
 #: settings/config/othersettings.ui:171
-#, fuzzy
-#| msgctxt "network interface disconnecting state label"
-#| msgid "Deactivating connection"
 msgid "When Activating Connection"
-msgstr "Se dezactivează conexiunea"
+msgstr "La activarea conexiunii"
 
 #. i18n: ectx: property (text), widget (QPushButton, notificationsButton)
 #: settings/config/othersettings.ui:179
@@ -4063,6 +3928,7 @@ msgstr "Pictograme în tavă:"
 #: settings/config/traysettings.ui:82
 msgid "Arrange interface types between icons with drag and drop"
 msgstr ""
+"Aranjați tipurile de interfețe între pictograme prin tragere și plasare"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, pbAddIcon)
 #: settings/config/traysettings.ui:97
@@ -4086,16 +3952,16 @@ msgstr "Mai &puține pictograme"
 
 #: settings/configshell/bluetooth.cpp:55
 msgid "We support 'dun' and 'nap' services only."
-msgstr ""
+msgstr "Susținem numai serviciile „dun” și „nap”."
 
 #: settings/configshell/bluetooth.cpp:69
 msgid "Could not contact bluetooth manager (BlueZ)."
-msgstr ""
+msgstr "Administratorul de Bluetooth (BlueZ) nu a putut fo contactat."
 
 #: settings/configshell/bluetooth.cpp:78
 #, kde-format
 msgid "Default bluetooth adapter not found: %1"
-msgstr ""
+msgstr "Adaptorul implicit de Bluetooth nu a fost găsit: %1"
 
 #: settings/configshell/bluetooth.cpp:142
 #, kde-format
@@ -4110,17 +3976,17 @@ msgstr ""
 #: settings/configshell/bluetooth.cpp:175
 #, kde-format
 msgid "Error activating devices's serial port: %1"
-msgstr ""
+msgstr "Eroare la activarea portului serial al dispozitivului: %1"
 
 #: settings/configshell/bluetooth.cpp:200
 #, kde-format
 msgid "Device %1 is not the one we want (%2)"
-msgstr ""
+msgstr "Dispozitivul %1 nu este cel dorit (%2)"
 
 #: settings/configshell/bluetooth.cpp:202
 #, kde-format
 msgid "Device for serial port %1 (%2) not found."
-msgstr ""
+msgstr "Dispozitivul pentru portul serial %1 (%2) nu a fost găsit."
 
 #: settings/configshell/main.cpp:31
 msgid "Network Management"
@@ -4176,7 +4042,7 @@ msgstr ""
 
 #: settings/configshell/main.cpp:46
 msgid "Operation mode, may be either 'create' or 'edit'"
-msgstr "Regimul de operare, poate fi 'create' sau 'edit'"
+msgstr "Regimul de operare, poate fi „create” sau „edit”"
 
 #: settings/configshell/main.cpp:97
 #, kde-format
@@ -4188,10 +4054,9 @@ msgid "unknown error"
 msgstr "eroare necunoscută"
 
 #: settings/configshell/manageconnection.cpp:87
-#, fuzzy, kde-format
-#| msgid "Error adding connection: %s"
+#, kde-format
 msgid "Error adding connection: %1"
-msgstr "Eroare la adăugarea conexiunii: %s"
+msgstr "Eroare la adăugarea conexiunii: %1"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: vpnplugins/novellvpn/novellvpnadvancedprop.ui:17
@@ -4244,8 +4109,6 @@ msgstr "Novell VPN"
 #: vpnplugins/novellvpn/novellvpnprop.ui:20
 #: vpnplugins/openconnect/openconnectprop.ui:20 vpnplugins/pptp/pptpprop.ui:26
 #: vpnplugins/vpnc/vpncprop.ui:24
-#, fuzzy
-#| msgid "General"
 msgid "General"
 msgstr "General"
 
@@ -4303,9 +4166,6 @@ msgstr "&Parolă certificat:"
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPasswords)
 #: vpnplugins/novellvpn/novellvpnprop.ui:201
 #: vpnplugins/openvpn/openvpnprop.ui:590
-#, fuzzy
-#| msgctxt "show passwords button"
-#| msgid "&Show Passwords"
 msgid "&Show Passwords"
 msgstr "&Arată parolele"
 
@@ -4315,9 +4175,6 @@ msgid "Ad&vanced..."
 msgstr "A&vansat..."
 
 #: vpnplugins/novellvpn/novellvpnwidget.cpp:63
-#, fuzzy
-#| msgctxt "@window:title NovellVPN advanced connection options"
-#| msgid "NovellVPN advanced options"
 msgctxt "@window:title NovellVPN advanced connection options"
 msgid "NovellVPN advanced options"
 msgstr "Opțiuni avansate NovellVPN"
@@ -4327,10 +4184,8 @@ msgid "Contacting host, please wait..."
 msgstr "Se contactează gazda, așteptați..."
 
 #: vpnplugins/openconnect/openconnectauth.cpp:449
-#, fuzzy
-#| msgid "&Login:"
 msgid "Login"
-msgstr "&Utilizator:"
+msgstr "Autentificare"
 
 #: vpnplugins/openconnect/openconnectauth.cpp:497
 #, kde-format
@@ -4346,50 +4201,43 @@ msgstr "Tentativa de conectare a eșuat."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, OpenconnectAuth)
 #: vpnplugins/openconnect/openconnectauth.ui:20
-#, fuzzy
-#| msgid "OpenVPNAuthentication"
 msgid "OpenConnect VPN Authentication"
-msgstr "AutentificareOpenVPN"
+msgstr "Autentificare OpenConnect VPN"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: vpnplugins/openconnect/openconnectauth.ui:40
 msgid "VPN Host"
-msgstr ""
+msgstr "Gazdă VPN"
 
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnConnect)
 #: vpnplugins/openconnect/openconnectauth.ui:56
-#, fuzzy
-#| msgctxt "network interface connected state label"
-#| msgid "Connected"
 msgid "Connect"
-msgstr "Conectată"
+msgstr "Conectează"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAutoconnect)
 #: vpnplugins/openconnect/openconnectauth.ui:77
 msgid "Automatically start connecting next time"
-msgstr ""
+msgstr "Data viitoare începe conectarea automat"
 
 #. i18n: ectx: property (text), widget (QCheckBox, viewServerLog)
 #: vpnplugins/openconnect/openconnectauth.ui:112
-#, fuzzy
-#| msgid "View:"
 msgid "View Log"
-msgstr "Vizualizare:"
+msgstr "Vizualizează jurnalul"
 
 #. i18n: ectx: property (text), widget (QLabel, lblLogLevel)
 #: vpnplugins/openconnect/openconnectauth.ui:122
 msgid "Log Level:"
-msgstr ""
+msgstr "Nivel de jurnalizare:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
 #: vpnplugins/openconnect/openconnectauth.ui:138
 msgid "Info"
-msgstr ""
+msgstr "Informații"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
 #: vpnplugins/openconnect/openconnectauth.ui:143
 msgid "Debug"
-msgstr ""
+msgstr "Depanare"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
 #: vpnplugins/openconnect/openconnectauth.ui:148
@@ -4403,10 +4251,8 @@ msgstr "Configurări OpenConnect"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: vpnplugins/openconnect/openconnectprop.ui:42
-#, fuzzy
-#| msgid "CA Certi&ficate:"
 msgid "&CA Certificate:"
-msgstr "Certi&ficat AC:"
+msgstr "&Certificat AC:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: vpnplugins/openconnect/openconnectprop.ui:55
@@ -4425,11 +4271,8 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: vpnplugins/openconnect/openconnectprop.ui:91
-#, fuzzy
-#| msgctxt "Label for inner auth combobox"
-#| msgid "&Inner Authentication:"
 msgid "Certificate Authentication"
-msgstr "Autentificare &interioară:"
+msgstr "Autentificare cu certificat"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
 #: vpnplugins/openconnect/openconnectprop.ui:123
@@ -4565,10 +4408,8 @@ msgstr "IP distant"
 
 #. i18n: ectx: property (text), widget (QLabel, label_16)
 #: vpnplugins/openvpn/openvpnprop.ui:269
-#, fuzzy
-#| msgid "Key Direction:"
 msgid "Key Direction"
-msgstr "Direcție cheie:"
+msgstr "Direcție cheie"
 
 #. i18n: ectx: property (whatsThis), widget (KComboBox, cmbKeyDirection)
 #: vpnplugins/openvpn/openvpnprop.ui:282
@@ -4583,11 +4424,8 @@ msgstr ""
 #. i18n: ectx: property (text), item, widget (QComboBox, cboEncryptionMethod)
 #: vpnplugins/openvpn/openvpnprop.ui:286 vpnplugins/openvpn/openvpnprop.ui:814
 #: vpnplugins/openvpn/openvpnprop.ui:948 vpnplugins/vpnc/vpncprop.ui:242
-#, fuzzy
-#| msgctxt "Label for no wireless security"
-#| msgid "None"
 msgid "None"
-msgstr "Niciuna"
+msgstr "Fără"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbKeyDirection)
 #: vpnplugins/openvpn/openvpnprop.ui:291
@@ -4602,15 +4440,11 @@ msgstr "1"
 #. i18n: ectx: property (text), widget (QLabel, textLabel8)
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: vpnplugins/openvpn/openvpnprop.ui:325 vpnplugins/vpnc/vpncprop.ui:178
-#, fuzzy
-#| msgid "CA file:"
 msgid "CA File:"
 msgstr "Fișier AC:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel9)
 #: vpnplugins/openvpn/openvpnprop.ui:344
-#, fuzzy
-#| msgid "Username:"
 msgid "Username:"
 msgstr "Utilizator:"
 
@@ -4659,7 +4493,7 @@ msgstr "Dimensiune fragment UDP"
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseCustomReneg)
 #: vpnplugins/openvpn/openvpnprop.ui:691
 msgid "Use custom renegotiation interval"
-msgstr ""
+msgstr "Folosește interval personalizat de renegociere"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseLZO)
 #: vpnplugins/openvpn/openvpnprop.ui:710
@@ -4679,7 +4513,7 @@ msgstr "Utilizează dispozitiv TAP"
 #. i18n: ectx: property (text), widget (QCheckBox, chkMssRestrict)
 #: vpnplugins/openvpn/openvpnprop.ui:731
 msgid "Restrict TCP maximum segment size (MSS)"
-msgstr ""
+msgstr "Restricționează dimensiunea maximă de segment (MSS) TCP"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: vpnplugins/openvpn/openvpnprop.ui:752
@@ -4771,7 +4605,7 @@ msgstr "Client (1)"
 #. i18n: ectx: attribute (title), widget (QWidget, tab_3)
 #: vpnplugins/openvpn/openvpnprop.ui:985
 msgid "Proxies"
-msgstr ""
+msgstr "Proxy-uri"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: vpnplugins/openvpn/openvpnprop.ui:994
@@ -4805,10 +4639,8 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_14)
 #: vpnplugins/openvpn/openvpnprop.ui:1075
-#, fuzzy
-#| msgid "Username:"
 msgid "Proxy Username:"
-msgstr "Utilizator:"
+msgstr "Utilizator proxy:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkProxyShowPassword)
 #: vpnplugins/openvpn/openvpnprop.ui:1095
@@ -4817,9 +4649,6 @@ msgstr "Arată parola"
 
 #: vpnplugins/openvpn/openvpnwidget.cpp:127
 #: vpnplugins/openvpn/openvpnwidget.cpp:151
-#, fuzzy
-#| msgctxt "@item:inlist Item added when OpenVPN cipher lookup failed"
-#| msgid "OpenVPN cipher lookup failed"
 msgctxt "@item:inlist Item added when OpenVPN cipher lookup failed"
 msgid "OpenVPN cipher lookup failed"
 msgstr "Căutarea cifrului OpenVPN a eșuat"
@@ -4830,9 +4659,6 @@ msgid "Default"
 msgstr "Implicit"
 
 #: vpnplugins/openvpn/openvpnwidget.cpp:148
-#, fuzzy
-#| msgctxt "@item:inlist Item added when OpenVPN cipher lookup failed"
-#| msgid "No OpenVPN ciphers found"
 msgctxt "@item:inlist Item added when OpenVPN cipher lookup failed"
 msgid "No OpenVPN ciphers found"
 msgstr "Nu a fost găsit niciun cifru OpenVPN"
@@ -4894,10 +4720,8 @@ msgstr "Trimite pachete de &ecou PPP "
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PptpAuthenticationWidget)
 #: vpnplugins/pptp/pptpauth.ui:14
-#, fuzzy
-#| msgid "Authentication"
 msgid "PPTPAuthentication"
-msgstr "Autentificare"
+msgstr "Autentificare PPTP"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PptpProp)
 #: vpnplugins/pptp/pptpprop.ui:14
@@ -4906,8 +4730,6 @@ msgstr "Configurări PPTP"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_additional)
 #: vpnplugins/pptp/pptpprop.ui:52
-#, fuzzy
-#| msgid "Additional"
 msgid "Additional"
 msgstr "Suplimentar"
 
@@ -4954,16 +4776,11 @@ msgstr "VPN StrongSwan"
 #: vpnplugins/strongswan/strongswanauth.ui:37
 #: vpnplugins/strongswan/strongswanprop.ui:304 vpnplugins/vpnc/vpncauth.ui:79
 #: vpnplugins/vpnc/vpncprop.ui:161
-#, fuzzy
-#| msgid "&Show password"
 msgid "&Show passwords"
-msgstr "Arată par&ola"
+msgstr "&Arată parolele"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: vpnplugins/strongswan/strongswanprop.ui:20
-#, fuzzy
-#| msgctxt "Header text for IPv4 gateway"
-#| msgid "Gateway"
 msgid "Gateway"
 msgstr "Gateway"
 
@@ -5064,10 +4881,9 @@ msgid "%1: file format error."
 msgstr "%1: eroare de format al fișierului.."
 
 #: vpnplugins/vpnc/vpnc.cpp:311
-#, fuzzy, kde-format
-#| msgid "File %1 could not be opened."
+#, kde-format
 msgid "%1: file could not be created"
-msgstr "Fișierul %1 nu poate fi deschis."
+msgstr "%1: fișierul nu a putut fi creat"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, VpncAuth)
 #: vpnplugins/vpnc/vpncauth.ui:14
@@ -5099,11 +4915,8 @@ msgstr "Cisco VPN"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbUseHybridAuth)
 #: vpnplugins/vpnc/vpncprop.ui:171
-#, fuzzy
-#| msgctxt "@option:check enables/disables 802.1x auth on wired ethernet"
-#| msgid "Use &802.1x authentication"
 msgid "Use hybrid authentication"
-msgstr "Utilizează autentificare &802.1x"
+msgstr "Folosește autentificare hibridă"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: vpnplugins/vpnc/vpncprop.ui:202
@@ -5117,8 +4930,6 @@ msgstr "&Metoda de criptare:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboEncryptionMethod)
 #: vpnplugins/vpnc/vpncprop.ui:232
-#, fuzzy
-#| msgid "Secure"
 msgid "Secure"
 msgstr "Sigură"
 
@@ -5134,18 +4945,13 @@ msgstr "Traversarea &NAT:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
 #: vpnplugins/vpnc/vpncprop.ui:267
-#, fuzzy
-#| msgctxt "description of unavailable network interface state"
-#| msgid "is unavailable"
 msgid "NAT-T (if available)"
-msgstr "nu este disponibilă"
+msgstr "NAT-T (dacă este disponibil)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
 #: vpnplugins/vpnc/vpncprop.ui:272
-#, fuzzy
-#| msgid "NAT-T"
 msgid "Force NAT-T"
-msgstr "NAT-T"
+msgstr "Forțează NAT-T"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
 #: vpnplugins/vpnc/vpncprop.ui:277
@@ -5154,31 +4960,25 @@ msgstr "Cisco UDP"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: vpnplugins/vpnc/vpncprop.ui:290
-#, fuzzy
-#| msgid "&DH Group"
 msgid "&IKE DH Group"
-msgstr "Grup &DH"
+msgstr "Grup DH IKE"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboDHGroup)
 #. i18n: ectx: property (text), item, widget (KComboBox, cboPerfectForwardSecrecy)
 #: vpnplugins/vpnc/vpncprop.ui:310 vpnplugins/vpnc/vpncprop.ui:358
-#, fuzzy
-#| msgid "&DH Group"
 msgid "DH Group 1"
-msgstr "Grup &DH"
+msgstr "Grup DH 1"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboDHGroup)
 #: vpnplugins/vpnc/vpncprop.ui:315
 msgid "DH Group 2 (default)"
-msgstr ""
+msgstr "Grup DH 2 (implicit)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboDHGroup)
 #. i18n: ectx: property (text), item, widget (KComboBox, cboPerfectForwardSecrecy)
 #: vpnplugins/vpnc/vpncprop.ui:320 vpnplugins/vpnc/vpncprop.ui:368
-#, fuzzy
-#| msgid "&DH Group"
 msgid "DH Group 5"
-msgstr "Grup &DH"
+msgstr "Grup DH 5"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: vpnplugins/vpnc/vpncprop.ui:328
@@ -5188,7 +4988,7 @@ msgstr ""
 #. i18n: ectx: property (text), item, widget (KComboBox, cboPerfectForwardSecrecy)
 #: vpnplugins/vpnc/vpncprop.ui:348
 msgid "No PFS"
-msgstr ""
+msgstr "Fără PFS"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cboPerfectForwardSecrecy)
 #: vpnplugins/vpnc/vpncprop.ui:353
@@ -5197,10 +4997,8 @@ msgstr "Server (implicit)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cboPerfectForwardSecrecy)
 #: vpnplugins/vpnc/vpncprop.ui:363
-#, fuzzy
-#| msgid "&DH Group"
 msgid "DH Group 2"
-msgstr "Grup &DH"
+msgstr "Grup DH 2"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: vpnplugins/vpnc/vpncprop.ui:376
@@ -5220,7 +5018,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_10)
 #: vpnplugins/vpnc/vpncprop.ui:406
 msgid "&Application Version:"
-msgstr ""
+msgstr "Versiune &aplicație:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkDeadPeerDetection)
 #: vpnplugins/vpnc/vpncprop.ui:419

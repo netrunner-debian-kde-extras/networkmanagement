@@ -1,21 +1,22 @@
 # translation of plasma_applet_networkmanagement.po to Français
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Joëlle Cornavin <jcorn@free.fr>, 2010, 2011, 2012.
+# Joëlle Cornavin <jcorn@free.fr>, 2010, 2011, 2012, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanagement\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-01-02 08:50+0100\n"
-"PO-Revision-Date: 2012-10-10 10:31+0200\n"
-"Last-Translator: Pierre Buard <pierre.buard@gmail.com>\n"
+"POT-Creation-Date: 2013-03-11 10:02+0100\n"
+"PO-Revision-Date: 2013-02-23 20:30+0100\n"
+"Last-Translator: Joëlle Cornavin <jcorn@free.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 1.4\n"
 
 #: activatableitem.cpp:117
 msgctxt ""
@@ -37,18 +38,18 @@ msgstr "Qualité du signal : %1 %"
 #: hiddenwirelessnetworkitem.cpp:77
 msgctxt "label for creating a connection to a hidden wireless network"
 msgid "<hidden network>"
-msgstr ""
+msgstr "<réseau caché>"
 
 #: hiddenwirelessnetworkitem.cpp:81
 msgctxt ""
 "default KLineEdit::clickMessage() for hidden wireless network SSID entry"
 msgid "Enter network name and press <enter>"
-msgstr ""
+msgstr "Saisissez le nom du réseau et appuyez sur <entrée>"
 
 #: hiddenwirelessnetworkitem.cpp:82
 msgctxt "@info:tooltip for hidden wireless network SSID entry"
 msgid "Enter network name and press <enter>"
-msgstr ""
+msgstr "Saisissez le nom du réseau et appuyez sur <entrée>"
 
 #: interfaceconnectionitem.cpp:71
 msgctxt "name of the connection not known"
@@ -97,7 +98,7 @@ msgstr "État de la connexion"
 #: interfacedetailswidget.cpp:309
 msgctxt "interface details"
 msgid "IP Address"
-msgstr ""
+msgstr "Adresse IP"
 
 #: interfacedetailswidget.cpp:310 interfacedetailswidget.cpp:357
 msgctxt "interface details"
@@ -232,31 +233,31 @@ msgctxt "wired interface network cable unplugged"
 msgid "Cable Unplugged"
 msgstr "Câble non connecté"
 
-#: networkmanager.cpp:675
+#: networkmanager.cpp:678
 msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr "Pas d'interfaces réseau"
 
-#: networkmanager.cpp:727
+#: networkmanager.cpp:730
 msgid "VPN Connections"
 msgstr "Connexions VPN"
 
-#: networkmanager.cpp:741
+#: networkmanager.cpp:744
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
 msgstr "Déconnectées"
 
-#: networkmanager.cpp:744
+#: networkmanager.cpp:747
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
 msgstr "Réseau sans fil désactivé dans le logiciel"
 
-#: networkmanager.cpp:747
+#: networkmanager.cpp:750
 msgctxt "tooltip, all interfaces are down"
 msgid "Networking disabled"
 msgstr "Gestion de réseau désactivée"
 
-#: networkmanager.cpp:750
+#: networkmanager.cpp:753
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
 msgstr "Réseau sans fil désactivé par le matériel"
@@ -269,7 +270,7 @@ msgstr "<h3>Interfaces</h3>"
 #: nmpopup.cpp:96
 msgctxt "title on the RHS of the plasmoid"
 msgid "<h3>Connections</h3>"
-msgstr ""
+msgstr "<h3>Connexions</h3>"
 
 #: nmpopup.cpp:124
 msgctxt "CheckBox to enable or disable networking completely"
@@ -299,22 +300,22 @@ msgstr "Détails"
 #: nmpopup.cpp:197
 msgctxt "manage connections button in the applet's popup"
 msgid "Manage Connections..."
-msgstr ""
+msgstr "Gérer les connexions..."
 
 #: nmpopup.cpp:205
 msgctxt "@info:tooltip tooltip for the 'Show More' button"
 msgid "Show all available networks"
-msgstr ""
+msgstr "Afficher toutes les connexions disponibles"
 
 #: nmpopup.cpp:210
 msgctxt "show more button in the applet's popup"
 msgid "Show More..."
-msgstr ""
+msgstr "Afficher plus..."
 
 #: nmpopup.cpp:214
 msgctxt "show more button in the applet's popup"
 msgid "Show Less..."
-msgstr ""
+msgstr "Afficher moins..."
 
 #: nmpopup.cpp:294
 msgctxt "Warning about wrong NetworkManager version"
@@ -334,12 +335,12 @@ msgstr ""
 #: nmpopup.cpp:644
 msgctxt "pressed show more button"
 msgid "Show Less..."
-msgstr ""
+msgstr "Afficher moins..."
 
 #: nmpopup.cpp:649
 msgctxt "unpressed show more button"
 msgid "Show More..."
-msgstr ""
+msgstr "Afficher plus..."
 
 #: vpninterfaceitem.cpp:42
 msgctxt "initial label for VPN connection name"

@@ -1,178 +1,187 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2011.
-# Serdar Soytetir <tulliana@gmail.com>, 2012.
+# Serdar Soytetir <tulliana@gmail.com>, 2009.
+# Serdar SOYTETİR <tulliana@gmail.com>, 2010, 2011, 2012.
+# Gökçen Eraslan <gokcen@pardus.org.tr>, 2011, 2013.
+# Volkan Gezer <volkangezer@gmail.com>, 2013.
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-01-16 09:40+0100\n"
-"PO-Revision-Date: 2012-04-17 22:17+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"POT-Creation-Date: 2013-03-02 10:30+0100\n"
+"PO-Revision-Date: 2013-03-10 03:30+0100\n"
+"Last-Translator: Volkan Gezer <volkangezer@gmail.com>\n"
+"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 1.4\n"
 
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Gökçen Eraslan, Serdar Soytetir, Osman Tosun, Volkan Gezer"
 
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
+"gokcen@pardus.org.tr, tulliana@gmail.com, rainman.neu@gmail.com, "
+"volkangezer@gmail.com"
 
 #. i18n: ectx: label, entry (Connections), group (General)
 #: libs/internals/knmserviceprefs.kcfg:11
 msgid "Connections"
-msgstr ""
+msgstr "Bağlantılar"
 
 #. i18n: ectx: label, entry (SecretStorageMode), group (General)
 #: libs/internals/knmserviceprefs.kcfg:15
 msgid "Store secrets in wallet"
-msgstr ""
+msgstr "Parolaları cüzdana kaydet"
 
 #. i18n: ectx: label, entry (securityType), group (802-11-wireless-security)
 #: libs/internals/schemas/802-11-wireless-security.kcfg:19
 msgid "Security type"
-msgstr ""
+msgstr "Güvenlik tipi"
 
 #. i18n: ectx: label, entry (keymgmt), group (802-11-wireless-security)
 #: libs/internals/schemas/802-11-wireless-security.kcfg:23
 msgid "Key management"
-msgstr ""
+msgstr "Anahtar yönetimi"
 
 #. i18n: ectx: label, entry (weptxkeyindex), group (802-11-wireless-security)
 #: libs/internals/schemas/802-11-wireless-security.kcfg:36
 msgid "WEP TX key index"
-msgstr ""
+msgstr "WEP TX anahtar dizini"
 
 #. i18n: ectx: label, entry (authalg), group (802-11-wireless-security)
 #: libs/internals/schemas/802-11-wireless-security.kcfg:40
 msgid "Authentication algorithm"
-msgstr ""
+msgstr "Yetkilendirme algoritması"
 
 #. i18n: ectx: label, entry (proto), group (802-11-wireless-security)
 #: libs/internals/schemas/802-11-wireless-security.kcfg:50
 msgid "Protocols"
-msgstr ""
+msgstr "Protokoller"
 
 #. i18n: ectx: label, entry (pairwise), group (802-11-wireless-security)
 #: libs/internals/schemas/802-11-wireless-security.kcfg:54
 msgid "Pairwise"
-msgstr ""
+msgstr "İkili"
 
 #. i18n: ectx: label, entry (group), group (802-11-wireless-security)
 #: libs/internals/schemas/802-11-wireless-security.kcfg:58
+#, fuzzy
+#| msgctxt ""
+#| "encryption capabilities group (one of 'wep40', 'wep104', 'tkip', or "
+#| "'ccmp')"
+#| msgid "Group"
 msgid "Group"
-msgstr ""
+msgstr "Grup"
 
 #. i18n: ectx: label, entry (leapusername), group (802-11-wireless-security)
 #: libs/internals/schemas/802-11-wireless-security.kcfg:62
 msgid "LEAP Username"
-msgstr ""
+msgstr "LEAP Kullanıcı Adı"
 
 #. i18n: ectx: label, entry (wepkey0), group (802-11-wireless-security)
 #: libs/internals/schemas/802-11-wireless-security.kcfg:66
 msgid "WEP key 0"
-msgstr ""
+msgstr "WEP anahtarı 0"
 
 #. i18n: ectx: label, entry (wepkey1), group (802-11-wireless-security)
 #: libs/internals/schemas/802-11-wireless-security.kcfg:70
 msgid "WEP key 1"
-msgstr ""
+msgstr "WEP anahtarı 1"
 
 #. i18n: ectx: label, entry (wepkey2), group (802-11-wireless-security)
 #: libs/internals/schemas/802-11-wireless-security.kcfg:74
 msgid "WEP key 2"
-msgstr ""
+msgstr "WEP anahtarı 2"
 
 #. i18n: ectx: label, entry (wepkey3), group (802-11-wireless-security)
 #: libs/internals/schemas/802-11-wireless-security.kcfg:78
 msgid "WEP key 3"
-msgstr ""
+msgstr "WEP anahtarı 3"
 
 #. i18n: ectx: label, entry (psk), group (802-11-wireless-security)
 #. i18n: ectx: label, entry (psk), group (802-1x)
 #: libs/internals/schemas/802-11-wireless-security.kcfg:82
 #: libs/internals/schemas/802-1x.kcfg:134
 msgid "PSK"
-msgstr ""
+msgstr "PSK"
 
 #. i18n: ectx: label, entry (leappassword), group (802-11-wireless-security)
 #: libs/internals/schemas/802-11-wireless-security.kcfg:86
 msgid "LEAP Password"
-msgstr ""
+msgstr "LEAP Parolası"
 
 #. i18n: ectx: label, entry (weppassphrase), group (802-11-wireless-security)
 #: libs/internals/schemas/802-11-wireless-security.kcfg:90
 msgid "WEP Passphrase"
-msgstr ""
+msgstr "WEP Parolası"
 
 #. i18n: ectx: label, entry (ssid), group (802-11-wireless)
 #: libs/internals/schemas/802-11-wireless.kcfg:9
 msgid "SSID"
-msgstr ""
+msgstr "SSID"
 
 #. i18n: ectx: whatsthis, entry (ssid), group (802-11-wireless)
 #: libs/internals/schemas/802-11-wireless.kcfg:10
 msgid "Service Set IDentifier (network name) "
-msgstr ""
+msgstr "Hizmet Ayarlama Tanımlayıcısı (ID) (ağ adı)"
 
 #. i18n: ectx: label, entry (mode), group (802-11-wireless)
 #: libs/internals/schemas/802-11-wireless.kcfg:18
 msgid "Mode"
-msgstr ""
+msgstr "Kip"
 
 #. i18n: ectx: label, entry (band), group (802-11-wireless)
 #. i18n: ectx: label, entry (band), group (gsm)
 #: libs/internals/schemas/802-11-wireless.kcfg:27
 #: libs/internals/schemas/gsm.kcfg:34
 msgid "Band"
-msgstr ""
+msgstr "Bant"
 
 #. i18n: ectx: property (toolTip), widget (Wireless80211WidgetBand, channel)
 #. i18n: ectx: label, entry (channel), group (802-11-wireless)
 #: libs/internals/schemas/802-11-wireless.kcfg:31
-#: libs/ui/802-11-wireless.ui:141
+#: libs/ui/802-11-wireless.ui:146
 msgid "Channel"
-msgstr ""
+msgstr "Kanal"
 
 #. i18n: ectx: label, entry (bssid), group (802-11-wireless)
 #: libs/internals/schemas/802-11-wireless.kcfg:35
 msgid "BSSID"
-msgstr ""
+msgstr "BSSID"
 
 #. i18n: ectx: whatsthis, entry (bssid), group (802-11-wireless)
 #: libs/internals/schemas/802-11-wireless.kcfg:36
 msgid "Basic Service Set IDentifier of the access point to use"
-msgstr ""
+msgstr "Kullanılacak erişim noktasının temel Hizmet Ayarlama Tanımlayıcısı"
 
 #. i18n: ectx: label, entry (rate), group (802-11-wireless)
 #: libs/internals/schemas/802-11-wireless.kcfg:39
 msgid "Data rate"
-msgstr ""
+msgstr "Veri hızı"
 
 #. i18n: ectx: label, entry (txpower), group (802-11-wireless)
 #: libs/internals/schemas/802-11-wireless.kcfg:43
 msgid "Transmit power"
-msgstr ""
+msgstr "Gönderim Gücü"
 
 #. i18n: ectx: label, entry (macaddress), group (802-11-wireless)
 #. i18n: ectx: label, entry (macaddress), group (802-3-ethernet)
 #: libs/internals/schemas/802-11-wireless.kcfg:47
 #: libs/internals/schemas/802-3-ethernet.kcfg:38
 msgid "MAC Address"
-msgstr ""
+msgstr "MAC Adresi"
 
 #. i18n: ectx: whatsthis, entry (macaddress), group (802-11-wireless)
 #: libs/internals/schemas/802-11-wireless.kcfg:48
 msgid "Hardware address to set on the wireless network interface"
-msgstr ""
+msgstr "Kablosuz ağ arayüzünde ayarlanacak donanım adresi"
 
 #. i18n: ectx: label, entry (mtu), group (802-11-wireless)
 #. i18n: ectx: label, entry (mtu), group (802-3-ethernet)
@@ -181,17 +190,17 @@ msgstr ""
 #: libs/internals/schemas/802-3-ethernet.kcfg:42
 #: libs/internals/schemas/ppp.kcfg:69
 msgid "MTU"
-msgstr ""
+msgstr "MTU"
 
 #. i18n: ectx: whatsthis, entry (mtu), group (802-11-wireless)
 #: libs/internals/schemas/802-11-wireless.kcfg:53
 msgid "Maximum Transmit Unit"
-msgstr ""
+msgstr "Azami Taşıma Birimi"
 
 #. i18n: ectx: label, entry (seenbssids), group (802-11-wireless)
 #: libs/internals/schemas/802-11-wireless.kcfg:57
 msgid "Seen BSSIDs"
-msgstr ""
+msgstr "Tespit Edilen BSSIDler"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
@@ -201,82 +210,82 @@ msgstr ""
 #: vpnplugins/pptp/pptpadvanced.ui:68
 #: vpnplugins/strongswan/strongswanprop.ui:86
 msgid "EAP"
-msgstr ""
+msgstr "EAP"
 
 #. i18n: ectx: label, entry (identity), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:13
 msgid "Identity"
-msgstr ""
+msgstr "Kimlik"
 
 #. i18n: ectx: label, entry (anonymousidentity), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:17
 msgid "Anonymous identity"
-msgstr ""
+msgstr "Anonim kimlik"
 
 #. i18n: ectx: label, entry (cacert), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:21
 msgid "CA Cert"
-msgstr ""
+msgstr "CA Sertifikası"
 
 #. i18n: ectx: label, entry (capath), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:25
 msgid "CA Path"
-msgstr ""
+msgstr "CA Yolu"
 
 #. i18n: ectx: label, entry (clientcert), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:29
 msgid "Client Cert"
-msgstr ""
+msgstr "İstemci Sertifikası"
 
 #. i18n: ectx: label, entry (clientcertpath), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:33
 msgid "Client Cert Path"
-msgstr ""
+msgstr "İstemci Sertifikasının Yolu"
 
 #. i18n: ectx: label, entry (phase1peapver), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:37
 msgid "Phase 1 PEAP version"
-msgstr ""
+msgstr "Faz 1 PEAP sürümü"
 
 #. i18n: ectx: label, entry (phase1peaplabel), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:46
 msgid "Phase 1 PEAP label"
-msgstr ""
+msgstr "Faz 1 PEAP etiketi"
 
 #. i18n: ectx: label, entry (phase1fastprovisioning), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:55
 msgid "Phase 1 fast provisioning"
-msgstr ""
+msgstr "Faz 1 hızlı sağlama"
 
 #. i18n: ectx: label, entry (phase2auth), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:59
 msgid "Phase 2 auth"
-msgstr ""
+msgstr "Faz 2 doğrulama"
 
 #. i18n: ectx: label, entry (phase2autheap), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:73
 msgid "Phase 2 auth eap"
-msgstr ""
+msgstr "Faz 2 eap doğrulama"
 
 #. i18n: ectx: label, entry (phase2cacert), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:86
 msgid "Phase 2 CA Cert"
-msgstr ""
+msgstr "Faz 2 CA Sert."
 
 #. i18n: ectx: label, entry (phase2capath), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:90
 msgid "Phase 2 CA Path"
-msgstr ""
+msgstr "Faz 2 CA Yolu"
 
 #. i18n: ectx: label, entry (phase2clientcert), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:94
 msgid "Phase 2 client cert"
-msgstr ""
+msgstr "Faz 2 istemci sert"
 
 #. i18n: ectx: label, entry (phase2clientcertpath), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:98
 msgid "Phase 2 client cert path"
-msgstr ""
+msgstr "Faz 2 istemci sert. yolu"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -288,107 +297,110 @@ msgstr ""
 #: libs/internals/schemas/gsm.kcfg:18 libs/internals/schemas/pppoe.kcfg:17
 #: vpnplugins/openvpn/openvpnprop.ui:84 vpnplugins/openvpn/openvpnprop.ui:498
 msgid "Password"
-msgstr ""
+msgstr "Parola"
 
 #. i18n: ectx: label, entry (privatekey), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:106
 msgid "Private key"
-msgstr ""
+msgstr "Özel anahtar"
 
 #. i18n: ectx: label, entry (privatekeypath), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:110
 msgid "Private key Path"
-msgstr ""
+msgstr "Gizli anahtarın Yolu"
 
 #. i18n: ectx: label, entry (privatekeypassword), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:114
 msgid "Private key password"
-msgstr ""
+msgstr "Gizli anahtar parolası"
 
 #. i18n: ectx: label, entry (phase2privatekey), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:118
 msgid "Phase 2 private key"
-msgstr ""
+msgstr "Faz 2 özel anahtar"
 
 #. i18n: ectx: label, entry (phase2privatekeypath), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:122
 msgid "Phase 2 Private key Path"
-msgstr ""
+msgstr "Faz 2 Özel anahtar Yolu"
 
 #. i18n: ectx: label, entry (phase2privatekeypassword), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:126
 msgid "Phase 2 private key password"
-msgstr ""
+msgstr "Faz 2 özel anahtar şifresi"
 
 #. i18n: ectx: label, entry (pin), group (802-1x)
 #. i18n: ectx: label, entry (pin), group (gsm)
 #: libs/internals/schemas/802-1x.kcfg:130 libs/internals/schemas/gsm.kcfg:38
 msgid "PIN"
-msgstr ""
+msgstr "PIN"
 
 #. i18n: ectx: label, entry (UseSystemCaCerts), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:138
 msgid "Use System CA Certs"
-msgstr ""
+msgstr "Sistem CA Sertifikalarını Kullan"
 
 #. i18n: ectx: label, entry (enabled), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:142
 msgid "Connection uses 802.1x"
-msgstr ""
+msgstr "Bağlantı 802.1x kullanıyor"
 
 #. i18n: ectx: label, entry (port), group (802-3-ethernet)
 #: libs/internals/schemas/802-3-ethernet.kcfg:9
 msgid "Port"
-msgstr ""
+msgstr "Port"
 
 #. i18n: ectx: property (text), widget (QLabel, labelSpeed)
 #. i18n: ectx: label, entry (speed), group (802-3-ethernet)
 #: libs/internals/schemas/802-3-ethernet.kcfg:19 libs/ui/wired.ui:104
 msgid "Speed"
-msgstr ""
+msgstr "Hız"
 
 #. i18n: ectx: property (text), widget (QLabel, labelDuplex)
 #. i18n: ectx: label, entry (duplex), group (802-3-ethernet)
 #: libs/internals/schemas/802-3-ethernet.kcfg:23 libs/ui/wired.ui:133
+#, fuzzy
+#| msgctxt "like in Ethernet duplex mode (half or full)"
+#| msgid "Duplex"
 msgid "Duplex"
-msgstr ""
+msgstr "Çift Yönlü"
 
 #. i18n: ectx: whatsthis, entry (duplex), group (802-3-ethernet)
 #: libs/internals/schemas/802-3-ethernet.kcfg:24
 msgid "Whether the Ethernet interface should use duplex communications"
-msgstr ""
+msgstr "Ethernet arayüzü çift yönlü iletişimi kullanıp kullanmaması"
 
 #. i18n: ectx: label, entry (autonegotiate), group (802-3-ethernet)
 #: libs/internals/schemas/802-3-ethernet.kcfg:32
 msgid "Auto negotiate"
-msgstr ""
+msgstr "Otomatik anlaşma"
 
 #. i18n: ectx: whatsthis, entry (mtu), group (802-3-ethernet)
 #: libs/internals/schemas/802-3-ethernet.kcfg:44
 msgid "Maximum Transfer Unit to use"
-msgstr ""
+msgstr "Kullanılacak en fazla Aktarım Birimi"
 
 #. i18n: ectx: label, entry (networkname), group (bluetooth)
 #: libs/internals/schemas/bluetooth.kcfg:9
 msgid "Network Name"
-msgstr ""
+msgstr "Ağ Adı"
 
 #. i18n: ectx: label, entry (bdaddr), group (bluetooth)
 #: libs/internals/schemas/bluetooth.kcfg:14
 msgid "Bdaddr"
-msgstr ""
+msgstr "Bdaddr"
 
 #. i18n: ectx: label, entry (networktype), group (bluetooth)
 #. i18n: ectx: label, entry (networktype), group (gsm)
 #: libs/internals/schemas/bluetooth.kcfg:19 libs/internals/schemas/gsm.kcfg:30
 msgid "Network Type"
-msgstr ""
+msgstr "Ağ Tipi"
 
 #. i18n: ectx: label, entry (number), group (cdma)
 #. i18n: ectx: label, entry (number), group (gsm)
 #: libs/internals/schemas/cdma.kcfg:9 libs/internals/schemas/gsm.kcfg:9
 msgid "Number"
-msgstr ""
+msgstr "Numara"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel9_2)
 #. i18n: ectx: label, entry (UserName), group (vpn)
@@ -398,23 +410,26 @@ msgstr ""
 #: libs/internals/schemas/cdma.kcfg:13 libs/internals/schemas/gsm.kcfg:14
 #: libs/internals/schemas/pppoe.kcfg:13 libs/internals/schemas/vpn.kcfg:17
 #: vpnplugins/openvpn/openvpnprop.ui:482
+#, fuzzy
+#| msgctxt "like in Username for authenticaton"
+#| msgid "Username"
 msgid "Username"
-msgstr ""
+msgstr "Kullanıcı adı"
 
 #. i18n: ectx: label, entry (id), group (connection)
 #: libs/internals/schemas/connection.kcfg:9
 msgid "Identifier"
-msgstr ""
+msgstr "Tanımlayıcı"
 
 #. i18n: ectx: whatsthis, entry (id), group (connection)
 #: libs/internals/schemas/connection.kcfg:10
 msgid "A name that uniquely identifies a connection"
-msgstr ""
+msgstr "Bir bağlantıyı benzersiz tanımlayan bir isim"
 
 #. i18n: ectx: label, entry (type), group (connection)
 #: libs/internals/schemas/connection.kcfg:13
 msgid "Type"
-msgstr ""
+msgstr "Tip"
 
 #. i18n: ectx: whatsthis, entry (type), group (connection)
 #: libs/internals/schemas/connection.kcfg:14
@@ -422,108 +437,113 @@ msgid ""
 "Specifies the connection type, defines which devices it can activate and "
 "which other settings the connection should contain"
 msgstr ""
+"Bağlantı türünü belirtir, hangi aygıtları etkinleştirebileceğini ve diğer "
+"hangi bağlantı seçeneklerini içermesini tanımlar"
 
 #. i18n: ectx: label, entry (autoconnect), group (connection)
 #: libs/internals/schemas/connection.kcfg:17
 msgid "Connect automatically"
-msgstr ""
+msgstr "Otomatik olarak bağlan"
 
 #. i18n: ectx: whatsthis, entry (autoconnect), group (connection)
 #: libs/internals/schemas/connection.kcfg:18
 msgid "Should the networking system always try to activate this connection?"
 msgstr ""
+"Ağ iletişim sistemi her zaman bu bağlantıyı etkinleştirmeyi denesin mi?"
 
 #. i18n: ectx: label, entry (timestamp), group (connection)
 #: libs/internals/schemas/connection.kcfg:21
 msgid "Last used"
-msgstr ""
+msgstr "Son kullanım"
 
 #. i18n: ectx: whatsthis, entry (timestamp), group (connection)
 #: libs/internals/schemas/connection.kcfg:22
 msgid "The date and time that the connection was last activated"
-msgstr ""
+msgstr "Bağlantının son etkinleştirildiği tarih ve saat"
 
 #. i18n: ectx: label, entry (uuid), group (connection)
 #: libs/internals/schemas/connection.kcfg:25
 msgid "UUID"
-msgstr ""
+msgstr "Kullanıcı Kimliği"
 
 #. i18n: ectx: whatsthis, entry (uuid), group (connection)
 #: libs/internals/schemas/connection.kcfg:26
 msgid "Unique connection identifier"
-msgstr ""
+msgstr "Benzersiz bağlantı tanımlayıcı"
 
 #. i18n: ectx: label, entry (apn), group (gsm)
 #: libs/internals/schemas/gsm.kcfg:22
 msgid "APN"
-msgstr ""
+msgstr "APN"
 
 #. i18n: ectx: label, entry (networkid), group (gsm)
 #: libs/internals/schemas/gsm.kcfg:26
 msgid "Network ID"
-msgstr ""
+msgstr "Ağ Kimliği"
 
 #. i18n: ectx: label, entry (puk), group (gsm)
 #: libs/internals/schemas/gsm.kcfg:42
 msgid "PUK"
-msgstr ""
+msgstr "PUK"
 
 #. i18n: ectx: label, entry (method), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:9 libs/internals/schemas/ipv6.kcfg:9
 msgid "Method"
-msgstr ""
+msgstr "Yöntem"
 
 #. i18n: ectx: whatsthis, entry (method), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:10 libs/internals/schemas/ipv6.kcfg:10
 msgid "Choose the way to set the IP address of this connection"
-msgstr ""
+msgstr "Bu bağlantının IP adresini belirleme yöntemini seçin"
 
 #. i18n: ectx: label, entry (dns), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:21 libs/internals/schemas/ipv6.kcfg:22
 #: libs/ui/ipv4widget.cpp:479 libs/ui/ipv6widget.cpp:430
 msgid "DNS Servers"
-msgstr ""
+msgstr "DNS Sunucuları"
 
 #. i18n: ectx: whatsthis, entry (dns), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:22 libs/internals/schemas/ipv6.kcfg:23
 msgid "List of Domain Name System servers to use"
-msgstr ""
+msgstr "Kullanılacak Alan Adı Sistem sunucularının listesi"
 
 #. i18n: ectx: label, entry (dnssearch), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:25 libs/internals/schemas/ipv6.kcfg:26
 msgid "Search Domains"
-msgstr ""
+msgstr "Alan Adlarında Ara"
 
 #. i18n: ectx: whatsthis, entry (dnssearch), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:26 libs/internals/schemas/ipv6.kcfg:27
 msgid "List of domains to search for a hostname"
-msgstr ""
+msgstr "Sunucu adı aranacak alan adlarının listesi"
 
 #. i18n: ectx: label, entry (addresses), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:30 libs/internals/schemas/ipv6.kcfg:31
 msgid "IP Addresses"
-msgstr ""
+msgstr "IP Adresleri"
 
 #. i18n: ectx: whatsthis, entry (addresses), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:31 libs/internals/schemas/ipv6.kcfg:32
 msgid "List of IP addresses to configure on this connection"
-msgstr ""
+msgstr "Bu bağlantıda yapılandırılacak IP adres listesi"
 
 #. i18n: ectx: label, entry (ignoredhcpdns), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:34 libs/internals/schemas/ipv6.kcfg:35
 msgid "Ignore DHCP DNS"
-msgstr ""
+msgstr "DHCP DNS'lerini Göz Ardı Et"
 
 #. i18n: ectx: whatsthis, entry (ignoredhcpdns), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:35 libs/internals/schemas/ipv6.kcfg:36
 msgid ""
 "Ignore DNS servers returned by DHCP and use the configured servers instead"
 msgstr ""
+"DHCP tarafından döndürülen DNS sunucularını yoksay ve yerine yapılandırılmış "
+"sunucuları kullan"
 
 #. i18n: ectx: label, entry (ignoreautoroute), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:38 libs/internals/schemas/ipv6.kcfg:39
 msgid "Ignore Automatic Routes"
-msgstr ""
+msgstr "Otomatik Rotaları Göz Ardı Et"
 
 #. i18n: ectx: whatsthis, entry (ignoreautoroute), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:39 libs/internals/schemas/ipv6.kcfg:40
@@ -535,7 +555,7 @@ msgstr ""
 #. i18n: ectx: label, entry (neverdefault), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:42 libs/internals/schemas/ipv6.kcfg:43
 msgid "Never Default Route"
-msgstr ""
+msgstr "Öntanımlı Rota Kullanma"
 
 #. i18n: ectx: whatsthis, entry (neverdefault), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:43 libs/internals/schemas/ipv6.kcfg:44
@@ -545,57 +565,57 @@ msgstr ""
 #. i18n: ectx: label, entry (dhcpclientid), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:46
 msgid "DHCP Client ID"
-msgstr ""
+msgstr "DHCP İstemci Kimliği"
 
 #. i18n: ectx: label, entry (dhcpsendhostname), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:50
 msgid "Send hostname to DHCP server"
-msgstr ""
+msgstr "DHCP sunucuya makine ismini gönder"
 
 #. i18n: ectx: label, entry (dhcphostname), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:54
 msgid "DHCP hostname"
-msgstr ""
+msgstr "DHCP makine adı"
 
 #. i18n: ectx: label, entry (mayfail), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:57 libs/internals/schemas/ipv6.kcfg:47
 msgid "Required for this connection"
-msgstr ""
+msgstr "Bu bağlantı için gerekiyor"
 
 #. i18n: ectx: label, entry (noauth), group (ppp)
 #: libs/internals/schemas/ppp.kcfg:9
 msgid "No Auth"
-msgstr ""
+msgstr "Yetkilendirme Yok"
 
 #. i18n: ectx: label, entry (refuseeap), group (ppp)
 #: libs/internals/schemas/ppp.kcfg:13
 msgid "Refuse EAP"
-msgstr ""
+msgstr "EAP reddet"
 
 #. i18n: ectx: label, entry (refusepap), group (ppp)
 #: libs/internals/schemas/ppp.kcfg:17
 msgid "Refuse PAP"
-msgstr ""
+msgstr "PAP'ı Reddet"
 
 #. i18n: ectx: label, entry (refusechap), group (ppp)
 #: libs/internals/schemas/ppp.kcfg:21
 msgid "Refuse CHAP"
-msgstr ""
+msgstr "CHAP'ı Reddet"
 
 #. i18n: ectx: label, entry (refusemschap), group (ppp)
 #: libs/internals/schemas/ppp.kcfg:25
 msgid "Refuse MS CHAP"
-msgstr ""
+msgstr "MSCHAP'ı Reddet"
 
 #. i18n: ectx: label, entry (refusemschapv2), group (ppp)
 #: libs/internals/schemas/ppp.kcfg:29
 msgid "Refuse MS CHAP V2"
-msgstr ""
+msgstr "MSCHAP V2'yi Reddet"
 
 #. i18n: ectx: label, entry (nobsdcomp), group (ppp)
 #: libs/internals/schemas/ppp.kcfg:33
 msgid "No BSD comp."
-msgstr ""
+msgstr "BSD sıkıştırması yok."
 
 #. i18n: ectx: label, entry (nodeflate), group (ppp)
 #: libs/internals/schemas/ppp.kcfg:37
@@ -610,12 +630,12 @@ msgstr ""
 #. i18n: ectx: label, entry (requiremppe), group (ppp)
 #: libs/internals/schemas/ppp.kcfg:45
 msgid "Require MPPE"
-msgstr ""
+msgstr "MPPE Gerekir"
 
 #. i18n: ectx: label, entry (requiremppe128), group (ppp)
 #: libs/internals/schemas/ppp.kcfg:49
 msgid "Require MPPE 128"
-msgstr ""
+msgstr "MPPE 128 Gerekir"
 
 #. i18n: ectx: label, entry (mppestateful), group (ppp)
 #: libs/internals/schemas/ppp.kcfg:53
@@ -625,18 +645,18 @@ msgstr ""
 #. i18n: ectx: label, entry (crtscts), group (ppp)
 #: libs/internals/schemas/ppp.kcfg:57
 msgid "CRTSCTS"
-msgstr ""
+msgstr "CRTSCTS"
 
 #. i18n: ectx: label, entry (baud), group (serial)
 #. i18n: ectx: label, entry (baud), group (ppp)
 #: libs/internals/schemas/ppp.kcfg:61 libs/internals/schemas/serial.kcfg:9
 msgid "Baud"
-msgstr ""
+msgstr "Baud"
 
 #. i18n: ectx: label, entry (mru), group (ppp)
 #: libs/internals/schemas/ppp.kcfg:65
 msgid "MRU"
-msgstr ""
+msgstr "MRU"
 
 #. i18n: ectx: label, entry (lcpechofailure), group (ppp)
 #: libs/internals/schemas/ppp.kcfg:73
@@ -646,23 +666,23 @@ msgstr ""
 #. i18n: ectx: label, entry (lcpechointerval), group (ppp)
 #: libs/internals/schemas/ppp.kcfg:77
 msgid "LCP echo interval"
-msgstr ""
+msgstr "LCP echo aralığı"
 
 #. i18n: ectx: label, entry (service), group (pppoe)
 #: libs/internals/schemas/pppoe.kcfg:9
 msgid "Service"
-msgstr ""
+msgstr "Servis"
 
 #. i18n: ectx: label, entry (bits), group (serial)
 #. i18n: ectx: label, entry (Data), group (vpn)
 #: libs/internals/schemas/serial.kcfg:14 libs/internals/schemas/vpn.kcfg:13
 msgid "Data bits"
-msgstr ""
+msgstr "Veri bitleri"
 
 #. i18n: ectx: label, entry (parity), group (serial)
 #: libs/internals/schemas/serial.kcfg:19
 msgid "Parity"
-msgstr ""
+msgstr "Eşlik"
 
 #. i18n: ectx: label, entry (stopbits), group (serial)
 #: libs/internals/schemas/serial.kcfg:29
@@ -672,17 +692,17 @@ msgstr ""
 #. i18n: ectx: label, entry (senddelay), group (serial)
 #: libs/internals/schemas/serial.kcfg:34
 msgid "Send delay"
-msgstr ""
+msgstr "Gönderme gecikmesi"
 
 #. i18n: ectx: label, entry (ServiceType), group (vpn)
 #: libs/internals/schemas/vpn.kcfg:9
 msgid "Service Type"
-msgstr ""
+msgstr "Servis Tipi"
 
 #. i18n: ectx: whatsthis, entry (UserName), group (vpn)
 #: libs/internals/schemas/vpn.kcfg:18
 msgid "System username, not stored"
-msgstr ""
+msgstr "Sistem kullanıcı adı, kaydedilmeyecek"
 
 #. i18n: ectx: label, entry (VpnSecrets), group (vpn)
 #: libs/internals/schemas/vpn.kcfg:21
@@ -692,7 +712,7 @@ msgstr ""
 #. i18n: ectx: label, entry (PluginName), group (vpn)
 #: libs/internals/schemas/vpn.kcfg:25
 msgid "VPN Plugin Name"
-msgstr ""
+msgstr "VPN Eklenti Adı"
 
 #: libs/internals/tooltips.cpp:43
 msgctxt "@info:tooltip"
@@ -702,77 +722,77 @@ msgstr "Arayüz tipi"
 #: libs/internals/tooltips.cpp:44
 msgctxt "@info:tooltip"
 msgid "System device name"
-msgstr "Sistem aygıt adı"
+msgstr "Sistem aygıtı adı"
 
 #: libs/internals/tooltips.cpp:45
 msgctxt "@info:tooltip"
 msgid "System driver name"
-msgstr "Sistem sürücü adı"
+msgstr "Sistem sürücüsü adı"
 
 #: libs/internals/tooltips.cpp:46
 msgctxt "@info:tooltip"
 msgid "Network interface status"
-msgstr ""
+msgstr "Ağ arayüzü durumu"
 
 #: libs/internals/tooltips.cpp:47
 msgctxt "@info:tooltip"
 msgid "Hardware address of a network interface"
-msgstr ""
+msgstr "Ağ arayüzünün donanım adresi"
 
 #: libs/internals/tooltips.cpp:48
 msgctxt "@info:tooltip"
 msgid "Network interface current bit rate"
-msgstr ""
+msgstr "Ağ arayüzünün mevcut bit oranı"
 
 #: libs/internals/tooltips.cpp:49
 msgctxt "@info:tooltip"
 msgid "Maximum speed of the network interface"
-msgstr ""
+msgstr "Ağ arayüzünün maksimum hızı"
 
 #: libs/internals/tooltips.cpp:50
 msgctxt "@info:tooltip"
 msgid "IPv4 network address"
-msgstr ""
+msgstr "IPv4 ağ adresi"
 
 #: libs/internals/tooltips.cpp:51
 msgctxt "@info:tooltip"
 msgid "Network name servers"
-msgstr ""
+msgstr "Ağ isim sunucuları"
 
 #: libs/internals/tooltips.cpp:52
 msgctxt "@info:tooltip"
 msgid "Network domains"
-msgstr ""
+msgstr "Ağ alan adları"
 
 #: libs/internals/tooltips.cpp:53
 msgctxt "@info:tooltip"
 msgid "Network routes"
-msgstr ""
+msgstr "Ağ rotaları"
 
 #: libs/internals/tooltips.cpp:55
 msgctxt "@info:tooltip"
 msgid "Signal strength of the wifi network"
-msgstr ""
+msgstr "Wifi ağın sinyal gücü"
 
 #: libs/internals/tooltips.cpp:56
 msgctxt "@info:tooltip"
 msgid "Name of the wireless network in use"
-msgstr ""
+msgstr "Kullanılan kablosuz bağlantının ismi"
 
 #: libs/internals/tooltips.cpp:57
 msgctxt "@info:tooltip"
 msgid "Operation mode of wireless network"
-msgstr ""
+msgstr "Kablosuz ağın işlem kipi"
 
 #: libs/internals/tooltips.cpp:58
 msgctxt "@info:tooltip"
 msgid "Hardware address of the active access point"
-msgstr ""
+msgstr "Aktif erişim noktasının donanım adresi"
 
 #: libs/internals/tooltips.cpp:59
 msgctxt "@info:tooltip"
 msgid "The radio channel frequency that the access point is operating on"
-msgstr ""
+msgstr "Bu erişim noktasının kullandığı radyo kanal frekansı"
 
 #: libs/internals/tooltips.cpp:60
 msgctxt "@info:tooltip"
@@ -785,6 +805,8 @@ msgid ""
 "Flags describing the access point's capabilities according to WPA (Wifi "
 "Protected Access)"
 msgstr ""
+"WPA'ya (Kablosuz Korumalı Erişim - Wifi Protected Access) göre erişim "
+"noktasının yeteneklerini tanımlayan bayraklar"
 
 #: libs/internals/tooltips.cpp:62
 msgctxt "@info:tooltip"
@@ -792,94 +814,149 @@ msgid ""
 "Flags describing the access point's capabilities according to RSN (Robust "
 "Secure Network)"
 msgstr ""
+"RSN'e (Güçlü Güvenli Ağ) göre erişim noktasının yeteneklerini tanımlayan "
+"bayraklar"
 
 #: libs/internals/tooltips.cpp:65
+#, fuzzy
+#| msgid "Type"
 msgctxt " interface type"
 msgid "Type"
 msgstr "Tip"
 
 #: libs/internals/tooltips.cpp:66
+#, fuzzy
+#| msgctxt "@label network device name eg eth0"
+#| msgid "Interface"
 msgctxt " network device name eg eth0"
 msgid "Interface"
 msgstr "Arayüz"
 
 #: libs/internals/tooltips.cpp:67
+#, fuzzy
+#| msgid "Driver"
 msgctxt " system driver name"
 msgid "Driver"
 msgstr "Sürücü"
 
 #: libs/internals/tooltips.cpp:68
+#, fuzzy
+#| msgctxt "@label network interface status"
+#| msgid "Status"
 msgctxt " network interface status"
 msgid "Status"
 msgstr "Durum"
 
 #: libs/internals/tooltips.cpp:70
+#, fuzzy
+#| msgctxt "@label this is the hardware address of a network interface"
+#| msgid "Hardware address (Wired)"
 msgctxt " this is the hardware address of a network interface"
 msgid "Hardware address (Wired)"
 msgstr "Donanım adresi (Kablolu)"
 
 #: libs/internals/tooltips.cpp:71
+#, fuzzy
+#| msgctxt "@label network connection bit rate"
+#| msgid "Bit rate"
 msgctxt " network connection bit rate"
 msgid "Bit rate"
 msgstr "Bit oranı"
 
 #: libs/internals/tooltips.cpp:73
+#, fuzzy
+#| msgctxt "@label The network device's maximum speed"
+#| msgid "Max speed"
 msgctxt " The network device's maximum speed"
 msgid "Max speed"
-msgstr "Azami hız"
+msgstr "En yüksek hız"
 
 #: libs/internals/tooltips.cpp:74
+#, fuzzy
+#| msgctxt "@label IPv4 address"
+#| msgid "IP address"
 msgctxt " IPv4 address"
 msgid "IP address"
 msgstr "IP adresi"
 
 #: libs/internals/tooltips.cpp:75
+#, fuzzy
+#| msgctxt "@label network name servers"
+#| msgid "Name servers"
 msgctxt " network name servers"
 msgid "Name servers"
-msgstr "Adres sunucuları"
+msgstr "İsim sunucuları"
 
 #: libs/internals/tooltips.cpp:76
+#, fuzzy
+#| msgctxt "@label network domains"
+#| msgid "Domains"
 msgctxt " network domains"
 msgid "Domains"
-msgstr ""
+msgstr "Alan adları"
 
 #: libs/internals/tooltips.cpp:77
+#, fuzzy
+#| msgid "Routes"
 msgctxt " network routes"
 msgid "Routes"
-msgstr ""
+msgstr "Rotalar"
 
 #: libs/internals/tooltips.cpp:80
+#, fuzzy
+#| msgctxt "@label The signal strength of the wifi network"
+#| msgid "Strength"
 msgctxt " The signal strength of the wifi network"
 msgid "Strength"
-msgstr ""
+msgstr "Güç"
 
 #: libs/internals/tooltips.cpp:82
+#, fuzzy
+#| msgid "SSID"
 msgctxt " SSID is a friendly name that identifies a 802.11 WLAN."
 msgid "SSID"
 msgstr "SSID"
 
 #: libs/internals/tooltips.cpp:83
+#, fuzzy
+#| msgid "Mode"
 msgctxt " the operation mode of wi-fi network"
 msgid "Mode"
 msgstr "Kip"
 
 #: libs/internals/tooltips.cpp:85
+#, fuzzy
+#| msgctxt "@label Active access point MAC address"
+#| msgid "Access point"
 msgctxt " Active access point MAC address"
 msgid "Access point"
-msgstr ""
+msgstr "Erişim noktası"
 
 #: libs/internals/tooltips.cpp:87
+#, fuzzy
+#| msgctxt ""
+#| "@label the frequency of the radio channel that the access point is "
+#| "operating on"
+#| msgid "Frequency"
 msgctxt ""
 " the frequency of the radio channel that the access point is operating on"
 msgid "Frequency"
 msgstr "Frekans"
 
 #: libs/internals/tooltips.cpp:88
+#, fuzzy
+#| msgctxt "@label network security level, e.g. high, low"
+#| msgid "Security"
 msgctxt " network security level, e.g. high, low"
 msgid "Security"
 msgstr "Güvenlik"
 
 #: libs/internals/tooltips.cpp:90
+#, fuzzy
+#| msgctxt ""
+#| "@label Flags describing the access point's capabilities according to WPA "
+#| "(Wifi Protected Access)"
+#| msgid "WPA flags"
 msgctxt ""
 " Flags describing the access point's capabilities according to WPA (Wifi "
 "Protected Access)"
@@ -887,11 +964,16 @@ msgid "WPA flags"
 msgstr "WPA bayrakları"
 
 #: libs/internals/tooltips.cpp:92
+#, fuzzy
+#| msgctxt ""
+#| "@label Flags describing the access point's capabilities according to RSN "
+#| "(Robust Secure Network)"
+#| msgid "RSN(WPA2) flags"
 msgctxt ""
 "Flags describing the access point's capabilities according to RSN (Robust "
 "Secure Network)"
 msgid "RSN(WPA2) flags"
-msgstr ""
+msgstr "RSN(WPA2) bayrakları"
 
 #: libs/internals/uiutils.cpp:51 libs/internals/uiutils.cpp:80
 msgctxt "title of the interface widget in nm's popup"
@@ -906,12 +988,12 @@ msgstr "Kablosuz 802.11"
 #: libs/internals/uiutils.cpp:57 libs/internals/uiutils.cpp:70
 msgctxt "title of the interface widget in nm's popup"
 msgid "Mobile Broadband"
-msgstr ""
+msgstr "Mobil Geniş Bant"
 
 #: libs/internals/uiutils.cpp:65
 msgctxt "title of the interface widget in nm's popup"
 msgid "Serial Modem"
-msgstr ""
+msgstr "Seri Modem"
 
 #: libs/internals/uiutils.cpp:171
 msgctxt "description of unknown network interface state"
@@ -921,12 +1003,12 @@ msgstr "Bilinmeyen"
 #: libs/internals/uiutils.cpp:174
 msgctxt "description of unmanaged network interface state"
 msgid "Unmanaged"
-msgstr ""
+msgstr "Yönetilmeyen"
 
 #: libs/internals/uiutils.cpp:177
 msgctxt "description of unavailable network interface state"
 msgid "Unavailable"
-msgstr ""
+msgstr "Kullanılamaz"
 
 #: libs/internals/uiutils.cpp:180
 msgctxt "description of unconnected network interface state"
@@ -936,22 +1018,22 @@ msgstr "Bağlı değil"
 #: libs/internals/uiutils.cpp:183
 msgctxt "description of preparing to connect network interface state"
 msgid "Preparing to connect"
-msgstr ""
+msgstr "Bağlanmaya hazırlanılıyor"
 
 #: libs/internals/uiutils.cpp:186
 msgctxt "description of configuring hardware network interface state"
 msgid "Configuring interface"
-msgstr ""
+msgstr "Arayüz yapılandırılıyor"
 
 #: libs/internals/uiutils.cpp:189
 msgctxt "description of waiting for authentication network interface state"
 msgid "Waiting for authorization"
-msgstr ""
+msgstr "Doğrulama için bekleniyor"
 
 #: libs/internals/uiutils.cpp:192
 msgctxt "network interface doing dhcp request in most cases"
 msgid "Setting network address"
-msgstr ""
+msgstr "Ağ adresi ayarlanıyor"
 
 #: libs/internals/uiutils.cpp:195
 msgctxt "is other action required to fully connect? captive portals, etc."
@@ -962,33 +1044,33 @@ msgstr "Daha fazla bağlanılabilirlik için bakılıyor"
 msgctxt ""
 "a secondary connection (e.g. VPN) has to be activated first to continue"
 msgid "Waiting for a secondary connection"
-msgstr ""
+msgstr "İkincil bir bağlantı bekleniyor"
 
 #: libs/internals/uiutils.cpp:202
 msgctxt "network interface connected state label"
 msgid "Connected"
-msgstr ""
+msgstr "Bağlı"
 
 #: libs/internals/uiutils.cpp:204
 #, kde-format
 msgctxt "network interface connected state label"
 msgid "Connected to %1"
-msgstr ""
+msgstr "%1 ağına bağlı"
 
 #: libs/internals/uiutils.cpp:208
 msgctxt "network interface disconnecting state label"
 msgid "Deactivating connection"
-msgstr ""
+msgstr "Bağlantı pasifleştiriliyor"
 
 #: libs/internals/uiutils.cpp:211
 msgctxt "network interface connection failed state label"
 msgid "Connection Failed"
-msgstr ""
+msgstr "Bağlantı Başarısız Oldu"
 
 #: libs/internals/uiutils.cpp:214
 msgctxt "interface state"
 msgid "Error: Invalid state"
-msgstr ""
+msgstr "Hata: Geçersiz durum"
 
 #: libs/internals/uiutils.cpp:278
 #, kde-format
@@ -999,7 +1081,7 @@ msgstr "%1 - %2"
 #: libs/internals/uiutils.cpp:347
 msgctxt "wireless network operation mode"
 msgid "Unassociated"
-msgstr ""
+msgstr "İlişkilendirilmemiş"
 
 #: libs/internals/uiutils.cpp:350
 msgctxt "wireless network operation mode"
@@ -1009,26 +1091,26 @@ msgstr "Adhoc"
 #: libs/internals/uiutils.cpp:353
 msgctxt "wireless network operation mode"
 msgid "Managed"
-msgstr ""
+msgstr "Yönetilen"
 
 #: libs/internals/uiutils.cpp:356
 msgctxt "wireless network operation mode"
 msgid "Master"
-msgstr ""
+msgstr "Ana"
 
 #: libs/internals/uiutils.cpp:359
 msgctxt "wireless network operation mode"
 msgid "Repeater"
-msgstr ""
+msgstr "Tekrarlayıcı"
 
 #: libs/internals/uiutils.cpp:362
 msgid "INCORRECT MODE FIX ME"
-msgstr ""
+msgstr "GEÇERSİZ KİP BENİ ONAR"
 
 #: libs/internals/uiutils.cpp:384
 msgctxt "wireless network cipher"
 msgid "Pairwise WEP40"
-msgstr ""
+msgstr "İkili WEP40"
 
 #: libs/internals/uiutils.cpp:386
 msgctxt "wireless network cipher"
@@ -1048,22 +1130,22 @@ msgstr ""
 #: libs/internals/uiutils.cpp:392
 msgctxt "wireless network cipher"
 msgid "Group WEP40"
-msgstr ""
+msgstr "Grup WEP40"
 
 #: libs/internals/uiutils.cpp:394
 msgctxt "wireless network cipher"
 msgid "Group WEP104"
-msgstr ""
+msgstr "Grup WEP104"
 
 #: libs/internals/uiutils.cpp:396
 msgctxt "wireless network cipher"
 msgid "Group TKIP"
-msgstr ""
+msgstr "Grup TKIP"
 
 #: libs/internals/uiutils.cpp:398
 msgctxt "wireless network cipher"
 msgid "Group CCMP"
-msgstr ""
+msgstr "Grup CCMP"
 
 #: libs/internals/uiutils.cpp:400
 msgctxt "wireless network cipher"
@@ -1076,27 +1158,30 @@ msgid "802.1x"
 msgstr "802.1x"
 
 #: libs/internals/uiutils.cpp:411
-#, kde-format
+#, fuzzy, kde-format
+#| msgid " MBit/s"
 msgctxt "connection speed"
 msgid "%1 Bit/s"
-msgstr "%1 Bit/s"
+msgstr " MBit/s"
 
 #: libs/internals/uiutils.cpp:413
-#, kde-format
+#, fuzzy, kde-format
+#| msgid " MBit/s"
 msgctxt "connection speed"
 msgid "%1 MBit/s"
-msgstr "%1 MBit/s"
+msgstr " MBit/s"
 
 #: libs/internals/uiutils.cpp:415
-#, kde-format
+#, fuzzy, kde-format
+#| msgid " MBit/s"
 msgctxt "connection speed"
 msgid "%1 GBit/s"
-msgstr "%1 GBit/s"
+msgstr " MBit/s"
 
 #: libs/internals/wirelesssecurityidentifier.cpp:248
 msgctxt "@label no security"
 msgid "Insecure"
-msgstr ""
+msgstr "Güvenliksiz"
 
 #: libs/internals/wirelesssecurityidentifier.cpp:251
 msgctxt "@label WEP security"
@@ -1136,12 +1221,12 @@ msgstr "WPA2-EAP"
 #: libs/internals/wirelesssecurityidentifier.cpp:273
 msgctxt "@label unknown security"
 msgid "Unknown security type"
-msgstr ""
+msgstr "Bilinmeyen güvenlik tipi"
 
 #: libs/internals/wirelesssecurityidentifier.cpp:284
 msgctxt "@info:tooltip no security"
 msgid "Insecure"
-msgstr ""
+msgstr "Güvenliksiz"
 
 #: libs/internals/wirelesssecurityidentifier.cpp:287
 msgctxt "@info:tooltip WEP security"
@@ -1181,7 +1266,7 @@ msgstr "WPA2-EAP"
 #: libs/internals/wirelesssecurityidentifier.cpp:309
 msgctxt "@info:tooltip unknown security"
 msgid "Unknown security type"
-msgstr ""
+msgstr "Bilinmeyen güvenlik tipi"
 
 #: libs/service/networkinterfacemonitor.cpp:214
 #, kde-format
@@ -1192,41 +1277,41 @@ msgstr "Modemin kilidi açılamadı: %1"
 #: libs/service/networkinterfacemonitor.cpp:214
 msgctxt "Title for GSM PIN/PUK unlock error dialog"
 msgid "PIN/PUK unlock error"
-msgstr ""
+msgstr "PIN/PUK kilit açma hatası"
 
 #: libs/service/notificationmanager.cpp:114
 #: libs/service/notificationmanager.cpp:446
 #, kde-format
 msgctxt "@info:status Notification text when connecting"
 msgid "Activating %1"
-msgstr ""
+msgstr "%1 etkinleştiriliyor"
 
 #: libs/service/notificationmanager.cpp:118
 #: libs/service/notificationmanager.cpp:450
 #, kde-format
 msgctxt "@info:status Notification text when a connection has been activated"
 msgid "%1 activated"
-msgstr ""
+msgstr "%1 etkinleştirildi"
 
 #: libs/service/notificationmanager.cpp:124
 #: libs/service/notificationmanager.cpp:455
 #, kde-format
 msgctxt "@info:status Notification text when connection has failed"
 msgid "Connection %1 failed"
-msgstr ""
+msgstr "%1 bağlantısı başarısız oldu"
 
 #: libs/service/notificationmanager.cpp:126
 #: libs/service/notificationmanager.cpp:457
 #, kde-format
 msgctxt "@info:status Notification text when deactivating a connection"
 msgid "%1 deactivated"
-msgstr ""
+msgstr "%1 pasifleştirildi"
 
 #: libs/service/notificationmanager.cpp:143
 #, kde-format
 msgctxt "@info:status Notification text when wireless/gsm signal is low"
 msgid "Low signal on %1"
-msgstr ""
+msgstr "%1 bağlantsının sinyal gücü zayıf"
 
 #: libs/service/notificationmanager.cpp:202
 #, kde-format
@@ -1234,7 +1319,7 @@ msgctxt ""
 "@info:status interface (%2) status notification title when a connection (%1) "
 "is activating"
 msgid "Activating %1 on %2"
-msgstr ""
+msgstr "%2 üzerindeki %1 bağlantısı etkinleştiriliyor"
 
 #: libs/service/notificationmanager.cpp:212
 #, kde-format
@@ -1242,7 +1327,7 @@ msgctxt ""
 "@info:status interface (%2) status notification title when a connection (%1) "
 "has successfully activated"
 msgid "%1 on %2"
-msgstr ""
+msgstr "%2 üzerinde %1"
 
 #: libs/service/notificationmanager.cpp:226
 #, kde-format
@@ -1250,7 +1335,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "NowManagedReason"
 msgid "%1 because it is now being managed"
-msgstr ""
+msgstr "%1: Arayüz artık yönetiliyor"
 
 #: libs/service/notificationmanager.cpp:229
 #, kde-format
@@ -1258,7 +1343,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "NowUnmanagedReason"
 msgid "%1 because it is no longer being managed"
-msgstr ""
+msgstr "%1: Arayüz artık yönetilmiyor"
 
 #: libs/service/notificationmanager.cpp:232
 #, kde-format
@@ -1266,7 +1351,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "ConfigFailedReason"
 msgid "%1 because configuration failed"
-msgstr ""
+msgstr "%1: Yapılandırma başarısız"
 
 #: libs/service/notificationmanager.cpp:235
 #, kde-format
@@ -1274,7 +1359,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "ConfigUnavailableReason"
 msgid "%1 because the configuration is unavailable"
-msgstr ""
+msgstr "%1: Yapılandırma bulunamadı"
 
 #: libs/service/notificationmanager.cpp:238
 #, kde-format
@@ -1282,7 +1367,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "ConfigExpiredReason"
 msgid "%1 because the configuration has expired"
-msgstr ""
+msgstr "%1: Yapılandırma zaman aşımına uğradı"
 
 #: libs/service/notificationmanager.cpp:241
 #, kde-format
@@ -1290,7 +1375,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "NoSecretsReason"
 msgid "%1 because secrets were not provided"
-msgstr ""
+msgstr "%1: Gizli ağ bilgileri sağlanmadı"
 
 #: libs/service/notificationmanager.cpp:244
 #, kde-format
@@ -1298,7 +1383,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "AuthSupplicantDisconnectReason"
 msgid "%1 because the authorization supplicant disconnected"
-msgstr ""
+msgstr "%1: Yetkilendirme aracının bağlantısı kesildi"
 
 #: libs/service/notificationmanager.cpp:247
 #, kde-format
@@ -1306,7 +1391,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "AuthSupplicantConfigFailedReason"
 msgid "%1 because the authorization supplicant's configuration failed"
-msgstr ""
+msgstr "%1: Yetkilendirme aracının yapılandırılması başarısız"
 
 #: libs/service/notificationmanager.cpp:250
 #, kde-format
@@ -1314,7 +1399,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "AuthSupplicantFailedReason"
 msgid "%1 because the authorization supplicant failed"
-msgstr ""
+msgstr "%1: Yetkilendirme aracında hata meydana geldi"
 
 #: libs/service/notificationmanager.cpp:253
 #, kde-format
@@ -1322,7 +1407,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "AuthSupplicantTimeoutReason"
 msgid "%1 because the authorization supplicant timed out"
-msgstr ""
+msgstr "%1: Yetkilendirme aracı zaman aşımına uğradı"
 
 #: libs/service/notificationmanager.cpp:256
 #, kde-format
@@ -1330,7 +1415,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "PppStartFailedReason"
 msgid "%1 because PPP failed to start"
-msgstr ""
+msgstr "%1: PPP başlatılamadı"
 
 #: libs/service/notificationmanager.cpp:259
 #, kde-format
@@ -1338,7 +1423,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "PppDisconnectReason"
 msgid "%1 because PPP disconnected"
-msgstr ""
+msgstr "%1: PPP bağlantısı kesildi"
 
 #: libs/service/notificationmanager.cpp:262
 #, kde-format
@@ -1346,7 +1431,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "PppFailedReason"
 msgid "%1 because PPP failed"
-msgstr ""
+msgstr "%1: PPP başarısız"
 
 #: libs/service/notificationmanager.cpp:265
 #, kde-format
@@ -1354,7 +1439,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "DhcpStartFailedReason"
 msgid "%1 because DHCP failed to start"
-msgstr ""
+msgstr "%1: DHCP başlatılamadı"
 
 #: libs/service/notificationmanager.cpp:268
 #, kde-format
@@ -1362,7 +1447,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "DhcpErrorReason"
 msgid "%1 because a DHCP error occurred"
-msgstr ""
+msgstr "%1: Bir DHCP hatası meydana geldi"
 
 #: libs/service/notificationmanager.cpp:271
 #, kde-format
@@ -1370,7 +1455,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "DhcpFailedReason"
 msgid "%1 because DHCP failed "
-msgstr ""
+msgstr "%1: DHCP başarısız"
 
 #: libs/service/notificationmanager.cpp:274
 #, kde-format
@@ -1378,7 +1463,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "SharedStartFailedReason"
 msgid "%1 because the shared service failed to start"
-msgstr ""
+msgstr "%1: Paylaştırılmış servis başlatılamadı"
 
 #: libs/service/notificationmanager.cpp:277
 #, kde-format
@@ -1386,7 +1471,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "SharedFailedReason"
 msgid "%1 because the shared service failed"
-msgstr ""
+msgstr "%1: Paylaştırılmış servis başarısız"
 
 #: libs/service/notificationmanager.cpp:280
 #, kde-format
@@ -1394,7 +1479,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "AutoIpStartFailedReason"
 msgid "%1 because the auto IP service failed to start"
-msgstr ""
+msgstr "%1: Otomatik IP servisi başlatılamadı"
 
 #: libs/service/notificationmanager.cpp:283
 #, kde-format
@@ -1402,7 +1487,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "AutoIpErrorReason"
 msgid "%1 because the auto IP service reported an error"
-msgstr ""
+msgstr "%1: Otomatik IP servisi bir hata bildirdi"
 
 #: libs/service/notificationmanager.cpp:286
 #, kde-format
@@ -1410,7 +1495,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "AutoIpFailedReason"
 msgid "%1 because the auto IP service failed"
-msgstr ""
+msgstr "%1: Otomatik IP servisi başarısız"
 
 #: libs/service/notificationmanager.cpp:289
 #, kde-format
@@ -1418,7 +1503,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "ModemBusyReason"
 msgid "%1 because the modem is busy"
-msgstr ""
+msgstr "%1: Modem meşgul"
 
 #: libs/service/notificationmanager.cpp:292
 #, kde-format
@@ -1426,7 +1511,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "ModemNoDialToneReason"
 msgid "%1 because the modem has no dial tone"
-msgstr ""
+msgstr "%1: Modemde çevir sesi yok"
 
 #: libs/service/notificationmanager.cpp:295
 #, kde-format
@@ -1434,7 +1519,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "ModemNoCarrierReason"
 msgid "%1 because the modem shows no carrier"
-msgstr ""
+msgstr "%1: Modem bir taşıyıcı bulamadı"
 
 #: libs/service/notificationmanager.cpp:298
 #, kde-format
@@ -1442,7 +1527,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "ModemDialTimeoutReason"
 msgid "%1 because the modem dial timed out"
-msgstr ""
+msgstr "%1: Modem araması zaman aşımına uğradı"
 
 #: libs/service/notificationmanager.cpp:301
 #, kde-format
@@ -1450,7 +1535,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "ModemInitFailedReason"
 msgid "%1 because the modem could not be initialized"
-msgstr ""
+msgstr "%1: Modem başlatılamadı"
 
 #: libs/service/notificationmanager.cpp:304
 #, kde-format
@@ -1458,7 +1543,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "GsmApnSelectFailedReason"
 msgid "%1 because the GSM APN could not be selected"
-msgstr ""
+msgstr "%1: GSM APN seçilemedi"
 
 #: libs/service/notificationmanager.cpp:307
 #, kde-format
@@ -1466,7 +1551,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "GsmNotSearchingReason"
 msgid "%1 because the GSM modem is not searching"
-msgstr ""
+msgstr "%1: GSM modem aranamıyor"
 
 #: libs/service/notificationmanager.cpp:310
 #, kde-format
@@ -1474,7 +1559,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "GsmRegistrationDeniedReason"
 msgid "%1 because GSM network registration was denied"
-msgstr ""
+msgstr "%1: GSM ağı kayıt işlemi başarızı"
 
 #: libs/service/notificationmanager.cpp:313
 #, kde-format
@@ -1482,7 +1567,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "GsmRegistrationTimeoutReason"
 msgid "%1 because GSM network registration timed out"
-msgstr ""
+msgstr "%1: GSM ağı kayıt işlemi zaman aşımına uğradı"
 
 #: libs/service/notificationmanager.cpp:316
 #, kde-format
@@ -1490,7 +1575,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "GsmRegistrationFailedReason"
 msgid "%1 because GSM registration failed"
-msgstr ""
+msgstr "%1: GSM kayıt işlemi başarısız"
 
 #: libs/service/notificationmanager.cpp:319
 #, kde-format
@@ -1498,7 +1583,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "GsmPinCheckFailedReason"
 msgid "%1 because the GSM PIN check failed"
-msgstr ""
+msgstr "%1: GSM PIN kontrolü başarısız"
 
 #: libs/service/notificationmanager.cpp:322
 #, kde-format
@@ -1506,7 +1591,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "FirmwareMissingReason"
 msgid "%1 because firmware is missing"
-msgstr ""
+msgstr "%1: Firmware bulunamadı"
 
 #: libs/service/notificationmanager.cpp:325
 #, kde-format
@@ -1514,7 +1599,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "DeviceRemovedReason"
 msgid "%1 because the device was removed"
-msgstr ""
+msgstr "%1: Aygıt çıkarıldı"
 
 #: libs/service/notificationmanager.cpp:328
 #, kde-format
@@ -1522,7 +1607,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "SleepingReason"
 msgid "%1 because the networking system is now sleeping"
-msgstr ""
+msgstr "%1: Ağ altyapısı şu anda uyku modunda"
 
 #: libs/service/notificationmanager.cpp:331
 #, kde-format
@@ -1530,7 +1615,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "ConnectionRemovedReason"
 msgid "%1 because the connection was removed"
-msgstr ""
+msgstr "%1: Ağ bağlantısı silindi"
 
 #: libs/service/notificationmanager.cpp:334
 #, kde-format
@@ -1538,7 +1623,7 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "UserRequestedReason"
 msgid "%1 by request"
-msgstr ""
+msgstr "Kullanıcı isteği üzerine işlem gerçekleştirildi: %1"
 
 #: libs/service/notificationmanager.cpp:337
 #, kde-format
@@ -1546,19 +1631,19 @@ msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
 "CarrierReason"
 msgid "%1 because the cable was disconnected"
-msgstr ""
+msgstr "%1: Kablo bağlantısı kesildi"
 
 #: libs/service/notificationmanager.cpp:505
 #: libs/service/notificationmanager.cpp:517
 #, kde-format
 msgctxt "@info:status Notification for hardware added"
 msgid "%1 attached"
-msgstr ""
+msgstr "%1 eklendi"
 
 #: libs/service/notificationmanager.cpp:506
 msgctxt "@action"
 msgid "Create Connection"
-msgstr ""
+msgstr "Bağlantı Oluştur"
 
 #: libs/service/notificationmanager.cpp:506
 msgctxt "@action"
@@ -1571,85 +1656,102 @@ msgctxt ""
 "@info:status Notification for hardware removed giving vendor supplied "
 "product name"
 msgid "%1 removed"
-msgstr ""
+msgstr "%1 kaldırıldı"
 
 #: libs/service/notificationmanager.cpp:557
 msgctxt ""
 "@info:status Notification for hardware removed used if we don't have its "
 "user-visible name"
 msgid "Network interface removed"
-msgstr ""
+msgstr "Ağ arayüzü çıkarıldı"
 
 #: libs/service/notificationmanager.cpp:590
 #, kde-format
 msgctxt ""
 "@info:status Notification text when a single wireless network was found"
 msgid "Wireless network %1 found"
-msgstr ""
+msgstr "%1 kablosuz ağı bulundu"
 
 #: libs/service/notificationmanager.cpp:593
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info:status Notification text when multiple wireless networks are found. "
+#| "%2 is a list of networks, and the %1 value (not printed) is just used to "
+#| "determine the plural form of network."
+#| msgid "<title>New wireless network:</title><para>%2</para>"
+#| msgid_plural "<title>New wireless networks:</title><para>%2</para>"
 msgctxt ""
 "@info:status Notification text when multiple wireless networks are found. %2 "
 "is a list of networks, and the %1 value (not printed) is just used to "
 "determine the plural form of network."
 msgid "<b>New wireless network:</b><br /> %2"
 msgid_plural "<b>New wireless networks:</b><br /> %2"
-msgstr[0] ""
+msgstr[0] "<title>Yeni kablosuz ağ:</title><para>%2</para>"
 
 #: libs/service/notificationmanager.cpp:608
 #, kde-format
 msgctxt ""
 "@info:status Notification text when a single wireless network disappeared"
 msgid "Wireless network %1 disappeared"
-msgstr ""
+msgstr "%1 kablosuz ağı kaybedildi"
 
 #: libs/service/notificationmanager.cpp:612
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info:status Notification text when multiple wireless networks have "
+#| "disappeared.  %2 is a list of networks, and the %1 value (not printed) is "
+#| "just used to determine the plural form of network."
+#| msgid "<title>Wireless network disappeared:</title><para>%2</para>"
+#| msgid_plural "<title>Wireless networks disappeared:</title><para>%2</para>"
 msgctxt ""
 "@info:status Notification text when multiple wireless networks have "
 "disappeared.  %2 is a list of networks, and the %1 value (not printed) is "
 "just used to determine the plural form of network."
 msgid "<b>Wireless network disappeared:</b><br /> %2"
 msgid_plural "<b>Wireless networks disappeared:</b><br /> %2"
-msgstr[0] ""
+msgstr[0] "<title>Kablosuz ağ kaybedildi:</title><para>%2</para>"
 
 #: libs/service/notificationmanager.cpp:624
 msgctxt "@info:status Notification for radio kill switch turned on"
 msgid "Wireless hardware enabled"
-msgstr ""
+msgstr "Kablosuz donanım açık"
 
 #: libs/service/notificationmanager.cpp:631
 msgctxt "@info:status Notification for radio kill switch turned off"
 msgid "Wireless hardware disabled"
-msgstr ""
+msgstr "Kablosuz donanım etkin değil"
 
 #: libs/service/notificationmanager.cpp:638
 msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is disabled"
 msgid "Networking system disabled"
-msgstr ""
+msgstr "Ağ sistemi pasifleştirildi"
 
 #: libs/service/notificationmanager.cpp:644
+#, fuzzy
+#| msgctxt ""
+#| "@info:status Notification when the networking subsystem (NetworkManager, "
+#| "etc) is disabled"
+#| msgid "Networking system disabled"
 msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is already running"
 msgid "Networking system already running"
-msgstr ""
+msgstr "Ağ sistemi pasifleştirildi"
 
 #: libs/service/pindialog.cpp:72
 msgctxt "As in 'Unlock cell phone with this pin code'"
 msgid "Unlock"
-msgstr ""
+msgstr "Kilidi Aç"
 
 #: libs/service/pindialog.cpp:76
 msgid "SIM PUK unlock required"
-msgstr ""
+msgstr "SIM PUK kilidinin açılması gerekiyor"
 
 #: libs/service/pindialog.cpp:77
 msgid "SIM PUK Unlock Required"
-msgstr ""
+msgstr "SIM PUK Kilidinin Açılması Gerekiyor"
 
 #: libs/service/pindialog.cpp:78
 #, kde-format
@@ -1657,30 +1759,31 @@ msgid ""
 "The mobile broadband device '%1' requires a SIM PUK code before it can be "
 "used."
 msgstr ""
+"Mobil geniş bant aygıtının (%1) kullanılabilmesi için SIM PUK kodu gerekiyor."
 
 #: libs/service/pindialog.cpp:79
 msgid "PUK code:"
-msgstr ""
+msgstr "PUK kodu:"
 
 #: libs/service/pindialog.cpp:80
 msgid "New PIN code:"
-msgstr ""
+msgstr "Yeni PIN kodu:"
 
 #: libs/service/pindialog.cpp:81
 msgid "Re-enter new PIN code:"
-msgstr ""
+msgstr "Yeni PIN kodunu yeniden girin:"
 
 #: libs/service/pindialog.cpp:82
 msgid "Show PIN/PUK code"
-msgstr ""
+msgstr "PIN/PUK kodunu göster"
 
 #: libs/service/pindialog.cpp:90
 msgid "SIM PIN unlock required"
-msgstr ""
+msgstr "SIM PIN kilidinin açılması gerekiyor"
 
 #: libs/service/pindialog.cpp:91
 msgid "SIM PIN Unlock Required"
-msgstr ""
+msgstr "SIM PIN Kilidinin Açılması Gerekiyor"
 
 #: libs/service/pindialog.cpp:92
 #, kde-format
@@ -1688,6 +1791,7 @@ msgid ""
 "The mobile broadband device '%1' requires a SIM PIN code before it can be "
 "used."
 msgstr ""
+"Mobil geniş bant aygıtının (%1) kullanılabilmesi için SIM PIN kodu gerekiyor."
 
 #: libs/service/pindialog.cpp:93
 msgid "PIN code:"
@@ -1699,90 +1803,102 @@ msgstr "PIN kodunu göster"
 
 #: libs/service/pindialog.cpp:178
 msgid "PIN code too short. It should be at least 4 digits."
-msgstr ""
+msgstr "PIN kodu çok kısa, en az 4 haneli olmalı."
 
 #: libs/service/pindialog.cpp:182
 msgid "The two PIN codes do not match"
-msgstr ""
+msgstr "PIN kodları aynı değil"
 
 #: libs/service/pindialog.cpp:186
 msgid "PUK code too short. It should be 8 digits."
-msgstr ""
+msgstr "PUK kodu çok kısa, en az 8 haneli olmalı."
 
 #: libs/service/pindialog.cpp:190
 msgid "Unknown Error"
-msgstr ""
+msgstr "Bilinmeyen Hata"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabWireless)
 #. i18n: ectx: property (windowTitle), widget (QWidget, Wireless80211Config)
 #: libs/ui/802-11-wireless.ui:14 settings/config/manageconnectionwidget.ui:65
 msgid "Wireless"
-msgstr ""
+msgstr "Kablosuz"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: libs/ui/802-11-wireless.ui:23
 msgid "&SSID:"
-msgstr ""
+msgstr "&SSID:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, ssid)
 #: libs/ui/802-11-wireless.ui:38
 msgid "The name of the wireless network"
-msgstr ""
+msgstr "Kablosuz ağın adı"
 
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, ssid)
 #: libs/ui/802-11-wireless.ui:41
 msgid "The Service Set IDentifier is the name of a wireless network."
-msgstr ""
+msgstr "Kablosuz ağ adı Servi Ayarlama Tanımlayıcısıdır (SSID)."
 
 #. i18n: ectx: property (text), widget (KPushButton, btnScan)
 #: libs/ui/802-11-wireless.ui:48
 msgid "S&can"
-msgstr ""
+msgstr "&Tara"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: libs/ui/802-11-wireless.ui:57
 msgid "M&ode:"
-msgstr ""
+msgstr "K&ip:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, cmbMode)
 #: libs/ui/802-11-wireless.ui:70
 msgid "Operating mode of the wireless network"
-msgstr ""
+msgstr "Kablosuz ağın işleme kipi"
 
 #. i18n: ectx: property (whatsThis), widget (KComboBox, cmbMode)
 #: libs/ui/802-11-wireless.ui:73
 msgid ""
 "Infrastructure mode is the most common setting.  To form a peer-to-peer "
 "wireless network with another computer when there is no infrastructure, "
-"choose Ad-hoc."
+"choose Ap-mode (requires NetworkManager >= 0.9.8 and a suitable wifi driver) "
+"or Ad-hoc. Also read https://bugs.kde.org/show_bug.cgi?id=311705."
 msgstr ""
+"Infrastructure kipi en genel ayardır. Bir alt yapı olmadığında bilgisayarlar "
+"arası (p2p) kablosuz ağ oluşturmak için Ap-kipini (NetworkManager >= 0.9.8 "
+"ve uygun bir kablosuz sürücüsü gerektirir) veya Ad-hoc seçin. Ayrıca https://"
+"bugs.kde.org/show_bug.cgi?id=311705 sayfasını okuyun."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #. i18n: ectx: property (text), item, widget (KComboBox, mode)
 #: libs/ui/802-11-wireless.ui:77 libs/ui/wireless.ui:49
 msgid "Infrastructure"
-msgstr ""
+msgstr "Altyapı"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #. i18n: ectx: property (text), item, widget (KComboBox, mode)
 #: libs/ui/802-11-wireless.ui:82 libs/ui/wireless.ui:54
 msgid "Ad-hoc"
-msgstr ""
+msgstr "Birebir (ad-hoc)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
+#. i18n: ectx: property (text), item, widget (KComboBox, mode)
+#: libs/ui/802-11-wireless.ui:87 libs/ui/wireless.ui:58
+msgid "Ap-mode"
+msgstr "Ap-kipi"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: libs/ui/802-11-wireless.ui:90
+#: libs/ui/802-11-wireless.ui:95
 msgid "B&and:"
-msgstr ""
+msgstr "&Bant:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, band)
-#: libs/ui/802-11-wireless.ui:103
+#: libs/ui/802-11-wireless.ui:108
 msgid "Frequency band of the wireless network."
-msgstr ""
+msgstr "Kablosuz ağın frekans bandı"
 
 #. i18n: ectx: property (whatsThis), widget (KComboBox, band)
-#: libs/ui/802-11-wireless.ui:106
+#: libs/ui/802-11-wireless.ui:111
 msgid "b/g is the most common band around 2.4 GHz. Less common is a at 5 GHz."
 msgstr ""
+"b/g 2.4 GHz civarındaki en yaygın banttır. 5 GHz değerinde yaygın değildir."
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, sbCustomPort)
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, sbMtu)
@@ -1795,73 +1911,79 @@ msgstr ""
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, mtu)
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, speed)
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: libs/ui/802-11-wireless.ui:110 libs/ui/802-11-wireless.ui:147
-#: libs/ui/802-11-wireless.ui:247 libs/ui/ipv6.ui:112
+#: libs/ui/802-11-wireless.ui:115 libs/ui/802-11-wireless.ui:152
+#: libs/ui/802-11-wireless.ui:252 libs/ui/ipv6.ui:112
 #: libs/ui/security/eapmethodpeapbase.ui:72 libs/ui/wired.ui:88
 #: libs/ui/wired.ui:120 vpnplugins/openvpn/openvpnprop.ui:629
 #: vpnplugins/openvpn/openvpnprop.ui:653 vpnplugins/openvpn/openvpnprop.ui:677
 #: vpnplugins/vpnc/vpncprop.ui:445 vpnplugins/vpnc/vpncprop.ui:467
+#, fuzzy
+#| msgctxt "like in use Automatic configuration"
+#| msgid "Automatic"
 msgid "Automatic"
-msgstr ""
+msgstr "Otomatik"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: libs/ui/802-11-wireless.ui:115
+#: libs/ui/802-11-wireless.ui:120
 msgid "a"
 msgstr "a"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: libs/ui/802-11-wireless.ui:120
+#: libs/ui/802-11-wireless.ui:125
 msgid "b/g"
 msgstr "b/g"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: libs/ui/802-11-wireless.ui:128
+#: libs/ui/802-11-wireless.ui:133
 msgid "&Channel:"
-msgstr ""
+msgstr "&Kanal:"
 
 #. i18n: ectx: property (whatsThis), widget (Wireless80211WidgetBand, channel)
-#: libs/ui/802-11-wireless.ui:144
+#: libs/ui/802-11-wireless.ui:149
 msgid "Sets the channel of the network."
-msgstr ""
+msgstr "Ağın kanalını belirler."
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: libs/ui/802-11-wireless.ui:160 libs/ui/wireless.ui:62
+#: libs/ui/802-11-wireless.ui:165 libs/ui/wireless.ui:66
 msgid "&BSSID:"
-msgstr ""
+msgstr "&BSSID:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, bssid)
-#: libs/ui/802-11-wireless.ui:175
+#: libs/ui/802-11-wireless.ui:180
 msgid "Only connect to the access point with this hardware address"
-msgstr ""
+msgstr "Sadece bu donanım adresine sahip erişim noktasına bağlan"
 
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, bssid)
-#: libs/ui/802-11-wireless.ui:178
+#: libs/ui/802-11-wireless.ui:183
 msgid ""
 "Setting a BSSID (Basic Service Set Identification) forces this connection to "
 "connect only to the access point with the specified hardware address, even "
 "if other access points are part of the same network."
 msgstr ""
+"Bir BSSID ayarlamak (Temel Hizmet Ayarlama Kimliği - Basic Service Set "
+"Identification) bu bağlantıyı, diğer erişim noktaları aynı ağın parçaları "
+"olasalar bile sadece bu adresi kullanan erişim noktalarına bağlanmaya zorlar."
 
 #. i18n: ectx: property (inputMask), widget (KLineEdit, bssid)
 #. i18n: ectx: property (inputMask), widget (KLineEdit, clonedMacAddress)
-#: libs/ui/802-11-wireless.ui:181 libs/ui/802-11-wireless.ui:275
+#: libs/ui/802-11-wireless.ui:186 libs/ui/802-11-wireless.ui:280
 #: libs/ui/wired.ui:177
 msgid "HH:HH:HH:HH:HH:HH;_"
-msgstr ""
+msgstr "HH:HH:HH:HH:HH:HH;_"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnSelectBssid)
-#: libs/ui/802-11-wireless.ui:188
+#: libs/ui/802-11-wireless.ui:193
 msgid "&Select"
 msgstr "&Seç"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, btnSelectBssid)
-#: libs/ui/802-11-wireless.ui:194
+#: libs/ui/802-11-wireless.ui:199
 msgid "Select the BSSID (access point) with the strongest signal."
 msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, btnSelectBssid)
-#: libs/ui/802-11-wireless.ui:197
+#: libs/ui/802-11-wireless.ui:202
 msgid ""
 "This button will select the access point with the ssid specified in the "
 "field above and with the strongest signal."
@@ -1869,48 +1991,53 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: libs/ui/802-11-wireless.ui:206 libs/ui/wired.ui:34
+#: libs/ui/802-11-wireless.ui:211 libs/ui/wired.ui:34
 msgid "&Restrict To Interface:"
-msgstr ""
+msgstr "&Bu Arayüz ile Kısıtla:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbMacAddress)
 #. i18n: ectx: property (text), item, widget (KComboBox, type)
-#: libs/ui/802-11-wireless.ui:220 libs/ui/gsm.ui:183 libs/ui/wired.ui:48
+#: libs/ui/802-11-wireless.ui:225 libs/ui/gsm.ui:183 libs/ui/wired.ui:48
 #: vpnplugins/pptp/pptpadvanced.ui:120
+#, fuzzy
+#| msgctxt "Any cellular frequency band"
+#| msgid "Any"
 msgid "Any"
-msgstr ""
+msgstr "Herhangi biri"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
-#: libs/ui/802-11-wireless.ui:228
+#: libs/ui/802-11-wireless.ui:233
 msgid "MT&U:"
-msgstr ""
+msgstr "MT&U:"
 
 #. i18n: ectx: property (toolTip), widget (KIntSpinBox, mtu)
-#: libs/ui/802-11-wireless.ui:241 libs/ui/wired.ui:79
+#: libs/ui/802-11-wireless.ui:246 libs/ui/wired.ui:79
 msgid "Maximum Transmission Unit"
-msgstr ""
+msgstr "En fazla Aktarım Birimi"
 
 #. i18n: ectx: property (whatsThis), widget (KIntSpinBox, mtu)
-#: libs/ui/802-11-wireless.ui:244 libs/ui/wired.ui:82
+#: libs/ui/802-11-wireless.ui:249 libs/ui/wired.ui:82
 msgid ""
 "Sets the size of the largest packet that can be transmitted on this network. "
 "'0' sets the MTU automatically."
 msgstr ""
+"Bu ağdan aktarılabilecek en büyük paket boyutunu ayarlar. '0' değeri MTU "
+"ayarını otomatik olarak yapar."
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: libs/ui/802-11-wireless.ui:260 libs/ui/wired.ui:56
+#: libs/ui/802-11-wireless.ui:265 libs/ui/wired.ui:56
 msgid "Cloned MAC address"
-msgstr ""
+msgstr "Klonlanmış MAC adresi"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
-#: libs/ui/802-11-wireless.ui:269 libs/ui/wired.ui:171
+#: libs/ui/802-11-wireless.ui:274 libs/ui/wired.ui:171
 msgid "Custom MAC address for the hardware to use"
-msgstr ""
+msgstr "Donanımın kullanacağı özel MAC adresi"
 
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, clonedMacAddress)
-#: libs/ui/802-11-wireless.ui:272 libs/ui/wired.ui:174
+#: libs/ui/802-11-wireless.ui:277 libs/ui/wired.ui:174
 msgid ""
 "The MAC address entered here will be used as hardware address for the "
 "network device this connection is activated on. This feature is known as MAC "
@@ -1918,28 +2045,38 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (KPushButton, clonedMacAddressRandom)
-#: libs/ui/802-11-wireless.ui:288 libs/ui/wired.ui:190
+#: libs/ui/802-11-wireless.ui:293 libs/ui/wired.ui:190
+#, fuzzy
+#| msgctxt "like in use Random mac address generation"
+#| msgid "Random"
 msgid "Random"
 msgstr "Rastgele"
 
-#: libs/ui/802_11_wirelesswidget.cpp:63 libs/ui/wiredwidget.cpp:55
+#: libs/ui/802_11_wirelesswidget.cpp:64 libs/ui/wiredwidget.cpp:55
 #, fuzzy
+#| msgctxt "@label:textbox"
+#| msgid " byte"
+#| msgid_plural " bytes"
 msgid " byte"
 msgid_plural " bytes"
 msgstr[0] " bayt"
 
-#: libs/ui/802_11_wirelesswidget.cpp:141 libs/ui/wiredwidget.cpp:76
-#, kde-format
+#: libs/ui/802_11_wirelesswidget.cpp:140 libs/ui/wiredwidget.cpp:76
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@item:inlistbox item for hardware that is currently not attached to the "
+#| "machine with MAC address"
+#| msgid "Disconnected interface (%1)"
 msgctxt ""
 "@item:inlist item for hardware that is currently not attached to the machine "
 "with MAC address"
 msgid "Disconnected interface (%1)"
-msgstr ""
+msgstr "Arayüzün bağlantısı kesildi (%1)"
 
-#: libs/ui/802_11_wirelesswidget.cpp:203
+#: libs/ui/802_11_wirelesswidget.cpp:206
 msgctxt "@title:window wireless network scan dialog"
 msgid "Available Networks"
-msgstr ""
+msgstr "Kullanılabilir Ağlar"
 
 #: libs/ui/advancedpermissionswidget.cpp:97
 msgctxt "@item:intable shortcut for Not Available"
@@ -1949,26 +2086,29 @@ msgstr "N/A"
 #: libs/ui/advancedpermissionswidget.cpp:98
 msgctxt "@info:tooltip real user name is not available"
 msgid "Not Available"
-msgstr ""
+msgstr "Kullanılabilir Değil"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: libs/ui/advancedpermissionswidget.ui:34
 msgid "Available Users"
-msgstr ""
+msgstr "Uygun Kullanıcılar"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
 #. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
 #: libs/ui/advancedpermissionswidget.ui:78
 #: libs/ui/advancedpermissionswidget.ui:192
 msgid "Real Name"
-msgstr ""
+msgstr "Gerçek İsim"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
 #. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
 #: libs/ui/advancedpermissionswidget.ui:83
 #: libs/ui/advancedpermissionswidget.ui:197
+#, fuzzy
+#| msgctxt "like in Username for authenticaton"
+#| msgid "Username"
 msgid "User Name"
-msgstr ""
+msgstr "Kullanıcı adı"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: libs/ui/advancedpermissionswidget.ui:145
@@ -1983,19 +2123,19 @@ msgstr "Bluetooth"
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: libs/ui/bluetooth.ui:23
 msgid "Hardware Address"
-msgstr ""
+msgstr "Donanım adresi"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: libs/ui/bluetooth.ui:43 libs/ui/gsm.ui:163
 #: vpnplugins/novellvpn/novellvpnprop.ui:72
 msgid "&Type:"
-msgstr ""
+msgstr "&Tip:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, networktype)
 #: libs/ui/bluetooth.ui:57
 msgid "Dialup Network (DUN)"
-msgstr ""
+msgstr "Çevirmeli Ağ (DUN)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, networktype)
 #: libs/ui/bluetooth.ui:62
@@ -2004,17 +2144,20 @@ msgstr "Kişisel Alan Ağı (PANU)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: libs/ui/bluetooth.ui:86
+#, fuzzy
+#| msgctxt "title of a table's column"
+#| msgid "Name"
 msgid "Name"
-msgstr ""
+msgstr "İsim"
 
 #: libs/ui/bluetoothconnectioneditor.cpp:68
 #, kde-format
 msgid "%1 Network"
-msgstr ""
+msgstr "%1 Ağı"
 
 #: libs/ui/bluetoothconnectioneditor.cpp:70
 msgid "New Bluetooth Connection"
-msgstr ""
+msgstr "Yeni Bluetooth Bağlantısı"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabCellular)
 #. i18n: ectx: property (windowTitle), widget (QWidget, Gsm)
@@ -2022,13 +2165,13 @@ msgstr ""
 #: libs/ui/cdma.ui:14 libs/ui/gsm.ui:14
 #: settings/config/manageconnectionwidget.ui:106
 msgid "Mobile Broadband"
-msgstr ""
+msgstr "Mobil Geniş Bant"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: libs/ui/cdma.ui:22 libs/ui/gsm.ui:38
 msgid "&Number:"
-msgstr ""
+msgstr "&Numara:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_5)
@@ -2044,7 +2187,7 @@ msgstr ""
 #: vpnplugins/strongswan/strongswanprop.ui:244 vpnplugins/vpnc/vpncauth.ui:89
 #: vpnplugins/vpnc/vpncprop.ui:46
 msgid "&Username:"
-msgstr ""
+msgstr "&Kullanıcı adı:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #. i18n: ectx: property (text), widget (QLabel, lbl_password)
@@ -2059,7 +2202,7 @@ msgstr ""
 #: libs/ui/security/wpapsk.ui:25 vpnplugins/pptp/pptpauth.ui:26
 #: vpnplugins/pptp/pptpprop.ui:103
 msgid "&Password:"
-msgstr ""
+msgstr "&Parola:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPassword)
 #. i18n: ectx: property (text), widget (QCheckBox, cb_showPassword)
@@ -2075,22 +2218,22 @@ msgstr "&Parolayı göster"
 
 #: libs/ui/cdmaconnectioneditor.cpp:52 libs/ui/gsmconnectioneditor.cpp:73
 msgid "New Cellular Connection"
-msgstr ""
+msgstr "Yeni Hücresel Bağlantı"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: libs/ui/connection.ui:32
 msgid "&Firewall zone:"
-msgstr ""
+msgstr "&Güvenlik Duvarı alanı:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnect)
 #: libs/ui/connection.ui:64
 msgid "Connect &automatically"
-msgstr ""
+msgstr "Otomatik b&ağlan"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, system)
 #: libs/ui/connection.ui:76
 msgid "Save secrets in system storage"
-msgstr ""
+msgstr "Parolaları sistem içerisine kaydet"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, system)
 #: libs/ui/connection.ui:79
@@ -2102,12 +2245,12 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QCheckBox, system)
 #: libs/ui/connection.ui:82
 msgid "&System connection"
-msgstr ""
+msgstr "&Sistem bağlantısı"
 
 #. i18n: ectx: property (toolTip), widget (KPushButton, pushButtonPermissions)
 #: libs/ui/connection.ui:95
 msgid "Edit advanced permissions for this connection"
-msgstr ""
+msgstr "Bu bağlantı için gelişmiş izinleri düzenle"
 
 #. i18n: ectx: property (whatsThis), widget (KPushButton, pushButtonPermissions)
 #: libs/ui/connection.ui:98
@@ -2119,12 +2262,12 @@ msgstr ""
 #. i18n: ectx: property (text), widget (KPushButton, pushButtonPermissions)
 #: libs/ui/connection.ui:101
 msgid "Advanced Permissions"
-msgstr ""
+msgstr "Gelişmiş İzinler"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: libs/ui/connection.ui:110
 msgid "&Connection name:"
-msgstr ""
+msgstr "&Bağlantı adı:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, cmbZone)
 #: libs/ui/connection.ui:126
@@ -2137,28 +2280,31 @@ msgstr ""
 #: libs/ui/connectioneditor.cpp:70 libs/ui/connectioneditor.cpp:93
 msgctxt "Edit connection dialog caption"
 msgid "Edit Network Connection"
-msgstr ""
+msgstr "Ağ Bağlantısını Düzenle"
 
 #: libs/ui/connectioneditor.cpp:125
 msgctxt "Add connection dialog caption"
 msgid "Add Network Connection"
-msgstr ""
+msgstr "Ağ Bağlantısı Ekle"
 
 #: libs/ui/connectionsecretsjob.cpp:127
 #, kde-format
 msgctxt "@title:window for network secrets request"
 msgid "Secrets for %1"
-msgstr ""
+msgstr "%1 için gizli ağ bilgileri isteği"
 
-#: libs/ui/connectionwidget.cpp:83 libs/ui/wirelesspreferences.cpp:121
+#: libs/ui/connectionwidget.cpp:83 libs/ui/wirelesspreferences.cpp:145
 msgid "New Wireless Connection"
-msgstr ""
+msgstr "Yeni Kablosuz Bağlantı"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
 #: libs/ui/connectionwidget.cpp:125 libs/ui/connectionwidget.cpp:160
 #: libs/ui/connectionwidget.cpp:166 vpnplugins/openvpn/openvpnprop.ui:809
+#, fuzzy
+#| msgctxt "@item::inlist default firewall zone item"
+#| msgid "Default"
 msgid "Default"
-msgstr ""
+msgstr "Öntanımlı"
 
 #: libs/ui/connectionwidget.cpp:145
 msgctxt "@title:window advanced permissions editor"
@@ -2168,13 +2314,16 @@ msgstr "Gelişmiş İzin Düzenleyici"
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_ShowAdvancedSettings)
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: libs/ui/gsm.ui:26 settings/config/othersettings.ui:135
+#, fuzzy
+#| msgctxt "like in show Basic settings only"
+#| msgid "Basic"
 msgid "Basic"
-msgstr ""
+msgstr "Temel"
 
 #. i18n: ectx: property (text), widget (KLineEdit, number)
 #: libs/ui/gsm.ui:51
 msgid "*99#"
-msgstr ""
+msgstr "*99#"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, x509KeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passPasswordStorage)
@@ -2201,7 +2350,7 @@ msgstr ""
 #: vpnplugins/strongswan/strongswanprop.ui:275 vpnplugins/vpnc/vpncprop.ui:87
 #: vpnplugins/vpnc/vpncprop.ui:146
 msgid "Store"
-msgstr ""
+msgstr "Kaydet"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, x509KeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passPasswordStorage)
@@ -2228,7 +2377,7 @@ msgstr ""
 #: vpnplugins/strongswan/strongswanprop.ui:270 vpnplugins/vpnc/vpncprop.ui:82
 #: vpnplugins/vpnc/vpncprop.ui:141
 msgid "Always Ask"
-msgstr ""
+msgstr "Her Zaman Sor"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, x509KeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passPasswordStorage)
@@ -2257,7 +2406,7 @@ msgstr ""
 #: vpnplugins/strongswan/strongswanprop.ui:280 vpnplugins/vpnc/vpncprop.ui:92
 #: vpnplugins/vpnc/vpncprop.ui:151
 msgid "Not Required"
-msgstr ""
+msgstr "Gerekli Değil"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_ShowAdvancedSettings)
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
@@ -2265,48 +2414,51 @@ msgstr ""
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: libs/ui/gsm.ui:122 settings/config/othersettings.ui:140
 #: vpnplugins/pptp/pptpprop.ui:208 vpnplugins/vpnc/vpncprop.ui:193
+#, fuzzy
+#| msgctxt "like in Advanced settings"
+#| msgid "Advanced"
 msgid "Advanced"
-msgstr ""
+msgstr "Gelişmiş"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: libs/ui/gsm.ui:131
 msgid "&APN:"
-msgstr ""
+msgstr "&APN:"
 
 #. i18n: ectx: property (text), widget (QLabel, lblNetwork)
 #: libs/ui/gsm.ui:147
 msgid "Net&work:"
-msgstr ""
+msgstr "&Ağ:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, type)
 #: libs/ui/gsm.ui:188
 msgid "3G (UMTS/HSPA)"
-msgstr ""
+msgstr "3G (UMTS/HSPA)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, type)
 #: libs/ui/gsm.ui:193
 msgid "2G (GPRS/EDGE)"
-msgstr ""
+msgstr "2G (GPRS/EDGE)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, type)
 #: libs/ui/gsm.ui:198
 msgid "Prefer 3G"
-msgstr ""
+msgstr "3G tercih et"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, type)
 #: libs/ui/gsm.ui:203
 msgid "Prefer 2G"
-msgstr ""
+msgstr "2G tercih et"
 
 #. i18n: ectx: property (text), widget (QLabel, lblBand)
 #: libs/ui/gsm.ui:211
 msgid "&Band:"
-msgstr ""
+msgstr "&Bant:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: libs/ui/gsm.ui:234
 msgid "&PIN:"
-msgstr ""
+msgstr "&PIN:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAllowRoaming)
 #: libs/ui/gsm.ui:273
@@ -2316,70 +2468,76 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
 #: libs/ui/gsm.ui:299
 msgid "&Show secrets"
-msgstr ""
+msgstr "&Parolaları göster"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SettingsIp4Config)
 #: libs/ui/ipv4.ui:14
 msgid "IPv4 Address"
-msgstr ""
+msgstr "IPv4 Adresi"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbSettingsMode)
 #: libs/ui/ipv4.ui:39 libs/ui/ipv6.ui:39
 msgid "Basic settings"
-msgstr ""
+msgstr "Temel ayarlar"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbSettingsMode)
 #: libs/ui/ipv4.ui:44 libs/ui/ipv6.ui:44
 msgid "Additional addresses"
-msgstr ""
+msgstr "Ek adresler"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbSettingsMode)
 #: libs/ui/ipv4.ui:49 libs/ui/ipv6.ui:49
 msgid "Routes"
-msgstr ""
+msgstr "Rotalar"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: libs/ui/ipv4.ui:98 libs/ui/ipv6.ui:98
 msgid "Method:"
-msgstr ""
+msgstr "Yöntem:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: libs/ui/ipv4.ui:112
 msgid "DHCP"
-msgstr ""
+msgstr "DHCP"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: libs/ui/ipv4.ui:117
 msgid "DHCP (only address)"
-msgstr ""
+msgstr "DHCP (sadece adres)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: libs/ui/ipv4.ui:122 libs/ui/ipv6.ui:127
+#, fuzzy
+#| msgctxt "like in use Manual configuration"
+#| msgid "Manual"
 msgid "Manual"
-msgstr ""
+msgstr "Elle"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: libs/ui/ipv4.ui:127 libs/ui/ipv6.ui:132
 msgid "Link-Local"
-msgstr ""
+msgstr "Sadece Yerel Ağ"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: libs/ui/ipv4.ui:132 libs/ui/ipv6.ui:137
 msgid "Shared"
-msgstr ""
+msgstr "Paylaştırılmış"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#. i18n: ectx: property (text), item, widget (KComboBox, privacy)
 #: libs/ui/ipv4.ui:137 libs/ui/ipv6.ui:142 libs/ui/ipv6.ui:341
 #: vpnplugins/vpnc/vpncprop.ui:282
 msgid "Disabled"
-msgstr ""
+msgstr "Devre dışı"
 
 #. i18n: ectx: property (text), widget (QLabel, addressLabel)
 #: libs/ui/ipv4.ui:145 libs/ui/ipv6.ui:150
 msgid "&IP Address:"
-msgstr ""
+msgstr "&IP Adresi:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, address)
 #: libs/ui/ipv4.ui:164 libs/ui/ipv6.ui:169
@@ -2387,17 +2545,19 @@ msgid ""
 "Use this field to specify the IP address that should be used by this "
 "computer."
 msgstr ""
+"Bu bilgisayar tarafından kullanılacak olan IP adresini belirtmek için bu "
+"alanı kullanın."
 
 #. i18n: ectx: property (text), widget (QLabel, netMaskLabel)
 #: libs/ui/ipv4.ui:171 libs/ui/ipv6.ui:176
 msgid "Subnet &Mask:"
-msgstr ""
+msgstr "&Alt Ağ Maskesi:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, netMask)
 #: libs/ui/ipv4.ui:190 libs/ui/ipv6.ui:195
 msgid ""
 "Use this field to specify the subnet that the above IP address belongs to."
-msgstr ""
+msgstr "Bu IP adresinin ait olduğu alt ağı belirtmek için bu alanı kullanın."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
@@ -2409,7 +2569,7 @@ msgstr ""
 #: vpnplugins/openconnect/openconnectprop.ui:29
 #: vpnplugins/openvpn/openvpnprop.ui:32 vpnplugins/pptp/pptpprop.ui:34
 msgid "&Gateway:"
-msgstr ""
+msgstr "&Ağ Geçidi:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, gateway)
 #: libs/ui/ipv4.ui:216 libs/ui/ipv6.ui:221
@@ -2417,16 +2577,15 @@ msgid ""
 "Use this field to specify the IP address of the gateway for requests outside "
 "the local network."
 msgstr ""
+"Yerel ağ dışından gelen istekler için kullanılacak olan ağ geçidini "
+"belirtmek için bu alanı kullanın."
 
 #. i18n: ectx: property (text), widget (QLabel, dnsLabel)
 #: libs/ui/ipv4.ui:223 libs/ui/ipv4widget.cpp:392 libs/ui/ipv6.ui:228
 #: libs/ui/ipv6widget.cpp:361
-#, fuzzy
-#| msgctxt " network name servers"
-#| msgid "Name servers"
 msgctxt "@info"
 msgid "&DNS Servers:"
-msgstr "Adres sunucuları"
+msgstr "&DNS Sunucuları:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dns)
 #: libs/ui/ipv4.ui:253 libs/ui/ipv6.ui:258
@@ -2434,6 +2593,8 @@ msgid ""
 "Use this field to specify the IP address(es) of one or more DNS servers. Use "
 "',' to separate entries."
 msgstr ""
+"Bir ya da daha fazla DNS sunucusunun IP adresini belirtmek için bu alanı "
+"kullanın. Girdileri ayırmak için ',' kullanabilirsiniz."
 
 #. i18n: ectx: property (text), widget (KPushButton, altSubjectMatchesMoreBtn)
 #. i18n: ectx: property (text), widget (KPushButton, connectToTheseServersMoreBtn)
@@ -2447,19 +2608,19 @@ msgstr ""
 #: libs/ui/security/eapmethodttlsbase.ui:88
 #: libs/ui/security/eapmethodttlsbase.ui:113
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
 #: libs/ui/ipv4.ui:269 libs/ui/ipv4widget.cpp:393 libs/ui/ipv6.ui:274
 #: libs/ui/ipv6widget.cpp:362
 msgctxt "@info"
 msgid "&Search Domains:"
-msgstr ""
+msgstr "&Arama Alan Adları:"
 
 #. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
 #: libs/ui/ipv4.ui:303
 msgid "DHCP &Client ID:"
-msgstr ""
+msgstr "DHCP &İstemci Kimliği:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dhcpClientId)
 #: libs/ui/ipv4.ui:316
@@ -2468,11 +2629,14 @@ msgid ""
 "DHCP server to identify the local machine that the DHCP server may use to "
 "customize the DHCP lease and options."
 msgstr ""
+"DHCP istemci kimliği belirtmek için bu alanı kullanın. DHCP istemci kimliği, "
+"yerel makinelerin, DHCP kiralama vb. seçenekleri özelleştirmeleri için DHCP "
+"sunucuya kendilerini tanıtmalarında kullanılan bir bilgidir."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbMayFail)
 #: libs/ui/ipv4.ui:419
 msgid "IPv4 is required for this connection"
-msgstr ""
+msgstr "Bu bağlantı için IPv4 kullanılması gerekmektedir"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, AdvancedSettingsIp4Config)
 #. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp4Config)
@@ -2481,137 +2645,140 @@ msgstr ""
 #: libs/ui/ipv4advanced.ui:20 libs/ui/ipv4routes.ui:20
 #: libs/ui/ipv6advanced.ui:20 libs/ui/ipv6routes.ui:20
 msgid "Advanced IP Settings"
-msgstr ""
+msgstr "Gelişmiş IP Ayarları"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: libs/ui/ipv4advanced.ui:32 libs/ui/ipv6advanced.ui:32
 msgid "&Additional IP Addresses:"
-msgstr ""
+msgstr "Ek &IP Adresleri:"
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonAdd)
 #: libs/ui/ipv4advanced.ui:107 libs/ui/ipv4routes.ui:107
 #: libs/ui/ipv6advanced.ui:107 libs/ui/ipv6routes.ui:107
 msgctxt "Insert a row"
 msgid "Add"
-msgstr ""
+msgstr "Ekle"
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
 #: libs/ui/ipv4advanced.ui:135 libs/ui/ipv4routes.ui:135
 #: libs/ui/ipv6advanced.ui:135 libs/ui/ipv6routes.ui:135
 msgctxt "Remove a selected row"
 msgid "R&emove"
-msgstr ""
+msgstr "&Sil"
 
 #: libs/ui/ipv4advancedwidget.cpp:40 libs/ui/ipv4routeswidget.cpp:39
 msgctxt "Header text for IPv4 address"
 msgid "Address"
-msgstr ""
+msgstr "Adres"
 
 #: libs/ui/ipv4advancedwidget.cpp:42 libs/ui/ipv4routeswidget.cpp:41
 msgctxt "Header text for IPv4 netmask"
 msgid "Netmask"
-msgstr ""
+msgstr "Ağ maskesi"
 
 #: libs/ui/ipv4advancedwidget.cpp:44 libs/ui/ipv4routeswidget.cpp:43
 msgctxt "Header text for IPv4 gateway"
 msgid "Gateway"
-msgstr ""
+msgstr "Ağ Geçidi"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: libs/ui/ipv4routes.ui:32 libs/ui/ipv6routes.ui:32
 msgid "&Routes"
-msgstr ""
+msgstr "&Rotalar"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
 #: libs/ui/ipv4routes.ui:142 libs/ui/ipv6routes.ui:142
 msgid "Ignore &automatically obtained routes"
-msgstr ""
+msgstr "&Otomatik alınan rotaları göz ardı et"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
 #: libs/ui/ipv4routes.ui:165 libs/ui/ipv6routes.ui:165
 msgid "Use &only for resources on this connection"
-msgstr ""
+msgstr "Kaynakları sadece &bu bağlantı için kullan"
 
 #: libs/ui/ipv4routeswidget.cpp:45
 msgctxt "Header text for IPv4 route metric"
 msgid "Metric"
-msgstr ""
+msgstr "Metrik"
 
 #: libs/ui/ipv4widget.cpp:69
 msgctxt "@item:inlistbox IPv4 settings configuration method"
 msgid "Automatic (VPN)"
-msgstr ""
+msgstr "Otomatik (VPN)"
 
 #: libs/ui/ipv4widget.cpp:71
 msgctxt "@item:inlistbox IPv4 settings configuration method"
 msgid "Automatic (VPN) addresses only"
-msgstr ""
+msgstr "Sadece otomatik (VPN) adresler"
 
 #: libs/ui/ipv4widget.cpp:76
 msgctxt "@item:inlistbox IPv4 settings configuration method"
 msgid "Automatic (PPP)"
-msgstr ""
+msgstr "Otomatik (PPP)"
 
 #: libs/ui/ipv4widget.cpp:78
 msgctxt "@item:inlistbox IPv4 settings configuration method"
 msgid "Automatic (PPP) addresses only"
-msgstr ""
+msgstr "Sadece otomatik (PPP) adresler"
 
 #: libs/ui/ipv4widget.cpp:82
 msgctxt "@item:inlistbox IPv4 settings configuration method"
 msgid "Automatic (DSL)"
-msgstr ""
+msgstr "Otomatik (DSL)"
 
 #: libs/ui/ipv4widget.cpp:84
 msgctxt "@item:inlistbox IPv4 settings configuration method"
 msgid "Automatic (DSL) addresses only"
-msgstr ""
+msgstr "Sadece Otomatik (DSL) adresleri"
 
 #: libs/ui/ipv4widget.cpp:88
 msgctxt "@item:inlistbox IPv4 settings configuration method"
 msgid "Automatic (DHCP)"
-msgstr ""
+msgstr "Otomatik (DHCP)"
 
 #: libs/ui/ipv4widget.cpp:90
 msgctxt "@item:inlistbox IPv4 settings configuration method"
 msgid "Automatic (DHCP) addresses only"
-msgstr ""
+msgstr "Sadece otomatik (DHCP) adresler"
 
 #: libs/ui/ipv4widget.cpp:389 libs/ui/ipv6widget.cpp:358
 msgctxt "@info"
 msgid "Additional &DNS Servers:"
-msgstr ""
+msgstr "Ek &DNS Sunucuları:"
 
 #: libs/ui/ipv4widget.cpp:390 libs/ui/ipv6widget.cpp:359
 msgctxt "@info"
 msgid "Additional &Search Domains:"
-msgstr ""
+msgstr "Ek &Arama Alan Adları:"
 
 #: libs/ui/ipv4widget.cpp:493 libs/ui/ipv6widget.cpp:444
+#, fuzzy
+#| msgctxt "@title:window"
+#| msgid "Search domains"
 msgid "Search domains"
-msgstr ""
+msgstr "Alan adlarını ara"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SettingsIp6Config)
 #: libs/ui/ipv6.ui:14
 msgid "IPv6 Address"
-msgstr ""
+msgstr "IPv6 Adresi"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: libs/ui/ipv6.ui:117
 msgid "Automatic (addresses only)"
-msgstr ""
+msgstr "Otomatik (sadece adresler)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: libs/ui/ipv6.ui:122
 msgid "Automatic (DHCP only)"
-msgstr ""
+msgstr "Otomatik (sadece DHCP)"
 
-#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#. i18n: ectx: property (text), item, widget (KComboBox, privacy)
 #: libs/ui/ipv6.ui:346
 msgid "Enabled (prefer public address)"
 msgstr ""
 
-#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#. i18n: ectx: property (text), item, widget (KComboBox, privacy)
 #: libs/ui/ipv6.ui:351
 msgid "Enabled (prefer temporary addresses)"
 msgstr ""
@@ -2619,38 +2786,40 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: libs/ui/ipv6.ui:359
 msgid "Privacy Extensions:"
-msgstr ""
+msgstr "Gizlilik Uzantıları:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbMayFail)
 #: libs/ui/ipv6.ui:430
 msgid "IPv6 is required for this connection"
-msgstr ""
+msgstr "Bu bağlantı için IPv6 kullanılması gerekmektedir"
 
 #: libs/ui/ipv6advancedwidget.cpp:39 libs/ui/ipv6routeswidget.cpp:39
 msgctxt "Header text for IPv6 address"
 msgid "Address"
-msgstr ""
+msgstr "Adres"
 
 #: libs/ui/ipv6advancedwidget.cpp:41 libs/ui/ipv6routeswidget.cpp:41
 msgctxt "Header text for IPv6 netmask"
 msgid "Netmask"
-msgstr ""
+msgstr "Ağ maskesi"
 
 #: libs/ui/ipv6advancedwidget.cpp:43 libs/ui/ipv6routeswidget.cpp:43
 msgctxt "Header text for IPv6 gateway"
 msgid "Gateway"
-msgstr ""
+msgstr "Ağ Geçidi"
 
 #: libs/ui/ipv6routeswidget.cpp:45
 msgctxt "Header text for IPv6 route metric"
 msgid "Metric"
-msgstr ""
+msgstr "Metrik"
 
 #: libs/ui/networkitemmodel.cpp:141
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@item:inlistbox signal strength percentage"
+#| msgid "%1%"
 msgctxt "@item:inlist signal strength percentage"
 msgid "%1%"
-msgstr "%1%"
+msgstr "%%1"
 
 #: libs/ui/networkitemmodel.cpp:191
 msgctxt "@item:intable wireless network name"
@@ -2660,7 +2829,7 @@ msgstr "İsim"
 #: libs/ui/networkitemmodel.cpp:193
 msgctxt "@item:intable wireless signal strength"
 msgid "Signal Strength"
-msgstr ""
+msgstr "Sinyal Gücü"
 
 #: libs/ui/networkitemmodel.cpp:195
 msgctxt "@item:intable wireless encryption type"
@@ -2670,7 +2839,7 @@ msgstr "Şifreleme"
 #: libs/ui/networkitemmodel.cpp:197
 msgctxt "@item:intable wireless band"
 msgid "Band"
-msgstr ""
+msgstr "Bant"
 
 #: libs/ui/networkitemmodel.cpp:199
 msgctxt "@item:intable wireless channel"
@@ -2685,7 +2854,7 @@ msgstr "MAC Adresi"
 #. i18n: ectx: property (windowTitle), widget (QWidget, Ppp)
 #: libs/ui/ppp.ui:14
 msgid "PPP"
-msgstr ""
+msgstr "PPP"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #. i18n: ectx: property (title), widget (QGroupBox, grp_authenfication)
@@ -2694,118 +2863,119 @@ msgstr ""
 #: vpnplugins/pptp/pptpadvanced.ui:17
 #: vpnplugins/strongswan/strongswanprop.ui:55
 msgid "Authentication"
-msgstr ""
+msgstr "Kimlik Doğrulama"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #. i18n: ectx: property (text), widget (QCheckBox, pap)
 #: libs/ui/ppp.ui:29 vpnplugins/pptp/pptpadvanced.ui:36
 msgid "PAP"
-msgstr ""
+msgstr "PAP"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #. i18n: ectx: property (text), widget (QCheckBox, chap)
 #: libs/ui/ppp.ui:39 vpnplugins/pptp/pptpadvanced.ui:44
 msgid "CHAP"
-msgstr ""
+msgstr "CHAP"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #. i18n: ectx: property (text), widget (QCheckBox, mschapv2)
 #: libs/ui/ppp.ui:49 vpnplugins/pptp/pptpadvanced.ui:60
 msgid "MSCHAPv2"
-msgstr ""
+msgstr "MSCHAPv2"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #. i18n: ectx: property (text), widget (QCheckBox, mschap)
 #: libs/ui/ppp.ui:59 vpnplugins/pptp/pptpadvanced.ui:52
 msgid "MSCHAP"
-msgstr ""
+msgstr "MSCHAP"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_cryptoAndCompression)
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: libs/ui/ppp.ui:82 vpnplugins/pptp/pptpadvanced.ui:156
 msgid "Compression"
-msgstr ""
+msgstr "Sıkıştırma"
 
 #. i18n: ectx: property (title), widget (QGroupBox, requiremppe)
 #: libs/ui/ppp.ui:91
 msgid "Point-to-Point-Encryption (MPPE)"
-msgstr ""
+msgstr "Noktadan-Noktaya-Şifreleme (MPPE)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, requiremppe128)
 #: libs/ui/ppp.ui:106
 msgid "Require 128-bit encryption"
-msgstr ""
+msgstr "128-bit şifreleme gerektirir"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mppestateful)
 #: libs/ui/ppp.ui:113
 msgid "Stateful MPPE"
-msgstr ""
+msgstr "Stateful MPPE"
 
 #. i18n: ectx: property (text), widget (QCheckBox, bsdcomp)
 #: libs/ui/ppp.ui:123
 msgid "Allow BSD compression"
-msgstr ""
+msgstr "BSD sıkıştırmasına izin ver"
 
 #. i18n: ectx: property (text), widget (QCheckBox, deflate)
 #: libs/ui/ppp.ui:133
 msgid "Allow Deflate compression"
-msgstr ""
+msgstr "Deflate Sıkıştırmasına İzin Ver"
 
 #. i18n: ectx: property (text), widget (QCheckBox, vjcomp)
 #: libs/ui/ppp.ui:143
 msgid "Use TCP header compression"
-msgstr ""
+msgstr "TCP başlık sıkıştırması kullan"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_echo)
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: libs/ui/ppp.ui:156 vpnplugins/pptp/pptpadvanced.ui:199
 msgid "Echo"
-msgstr ""
+msgstr "Echo"
 
 #. i18n: ectx: property (text), widget (QCheckBox, pppecho)
 #: libs/ui/ppp.ui:162
 msgid "Send PPP echo packets"
-msgstr ""
+msgstr "PPP echo paketleri gönder"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabPppoe)
 #. i18n: ectx: property (windowTitle), widget (QWidget, Pppoe)
 #: libs/ui/pppoe.ui:14 settings/config/manageconnectionwidget.ui:182
 msgid "DSL"
-msgstr ""
+msgstr "DSL"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: libs/ui/pppoe.ui:20
 msgid "&Service:"
-msgstr ""
+msgstr "&Servis:"
 
 #: libs/ui/pppoepreferences.cpp:42 libs/ui/pppoepreferences.cpp:60
 msgid "New DSL Connection"
-msgstr ""
+msgstr "Yeni DSL Bağlantısı"
 
 #. i18n: ectx: property (text), widget (QLabel, m_interfaceLabel)
 #: libs/ui/scanwidget.ui:38
 msgid "Interface:"
-msgstr ""
+msgstr "Arayüz:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_viewLabel_2)
 #: libs/ui/scanwidget.ui:51
 msgid "View:"
-msgstr ""
+msgstr "Göster:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, m_view)
 #: libs/ui/scanwidget.ui:62
 msgid "Map"
-msgstr ""
+msgstr "Harita"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, m_view)
 #: libs/ui/scanwidget.ui:67
 msgid "Details"
-msgstr ""
+msgstr "Ayrıntılar"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_useBssid)
 #: libs/ui/scanwidget.ui:101
 msgid "Use the selected AP's BSSID in the connection settings"
 msgstr ""
+"Bağlantı ayarlarında seçili olan erişim noktasının BSSID değerini kullan"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_useBssid)
 #: libs/ui/scanwidget.ui:104
@@ -2818,58 +2988,60 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QCheckBox, m_useBssid)
 #: libs/ui/scanwidget.ui:107
 msgid "Use the AP's BSSID"
-msgstr ""
+msgstr "Erişim Noktasının BSSID'sini kullan"
 
 #: libs/ui/security/eapmethodinnerauth.cpp:34
 #: libs/ui/security/eapmethodinnerauth.cpp:42
 msgctxt "Label for inner auth combobox"
 msgid "&Inner Authentication:"
-msgstr ""
+msgstr "Dahili &Doğrulama:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, leUsername)
 #: libs/ui/security/eapmethodleapbase.ui:35
+#, fuzzy
+#| msgid "Username on this network"
 msgid "User name on this network"
-msgstr ""
+msgstr "Bu ağdaki kullanıcı adı"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, lePassword)
 #: libs/ui/security/eapmethodleapbase.ui:57
 msgid "Password on this network"
-msgstr ""
+msgstr "Bu ağdaki parola"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: libs/ui/security/eapmethodpeapbase.ui:19
 #: libs/ui/security/eapmethodttlsbase.ui:19
 msgid "&Anonymous Identity:"
-msgstr ""
+msgstr "Anonim K&imlik:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: libs/ui/security/eapmethodpeapbase.ui:35
 #: libs/ui/security/eapmethodtlsbase.ui:55
 #: libs/ui/security/eapmethodttlsbase.ui:35
 msgid "CA Certi&ficate:"
-msgstr ""
+msgstr "&CA Sertifikası:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseSystemCaCerts)
 #: libs/ui/security/eapmethodpeapbase.ui:51
 #: libs/ui/security/eapmethodtlsbase.ui:71
 #: libs/ui/security/eapmethodttlsbase.ui:51
 msgid "Use Syste&m CA Certs"
-msgstr ""
+msgstr "&Sistem CA sertifikalarını kullan"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: libs/ui/security/eapmethodpeapbase.ui:58
 msgid "PEAP &Version:"
-msgstr ""
+msgstr "PEAP S&ürümü:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cboPeapVersion)
 #: libs/ui/security/eapmethodpeapbase.ui:77
 msgid "Version 0"
-msgstr ""
+msgstr "Sürüm 0"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cboPeapVersion)
 #: libs/ui/security/eapmethodpeapbase.ui:82
 msgid "Version 1"
-msgstr ""
+msgstr "Sürüm 1"
 
 #. i18n: ectx: property (text), widget (QLabel, label_10)
 #. i18n: ectx: property (text), widget (QLabel, lblSubjectMatch)
@@ -2914,25 +3086,25 @@ msgstr ""
 #: libs/ui/security/eapmethodtlsbase.ui:189
 #: libs/ui/security/eapmethodttlsbase.ui:106
 msgid "Only connect to these servers. Use ',' to separate entries."
-msgstr ""
+msgstr "Sadece bu sunuculara bağlan. Girişleri ayırmak için ',' kullanın."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, authalgLabel)
 #: libs/ui/security/eapmethodstackbase.ui:32 libs/ui/security/wep.ui:91
 msgid "&Authentication:"
-msgstr ""
+msgstr "&Kimlik Doğrulama:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: libs/ui/security/eapmethodtlsbase.ui:19
 msgid "&Identity:"
-msgstr ""
+msgstr "&Kimlik:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: libs/ui/security/eapmethodtlsbase.ui:35
 #: vpnplugins/openconnect/openconnectprop.ui:97
 msgid "&User Certificate:"
-msgstr ""
+msgstr "&Kullanıcı Sertifikası:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurClientCert)
 #: libs/ui/security/eapmethodtlsbase.ui:48
@@ -2946,7 +3118,7 @@ msgstr ""
 #: libs/ui/security/eapmethodtlsbase.ui:78
 #: vpnplugins/openconnect/openconnectprop.ui:107
 msgid "Private &Key:"
-msgstr ""
+msgstr "&Gizli Anahtar:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurPrivateKey)
 #: libs/ui/security/eapmethodtlsbase.ui:91
@@ -2958,7 +3130,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: libs/ui/security/eapmethodtlsbase.ui:98
 msgid "Private Key Pass&word:"
-msgstr ""
+msgstr "Gizli Anahtar &Parolası:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, leSubjectMatch)
 #: libs/ui/security/eapmethodtlsbase.ui:148
@@ -3024,16 +3196,16 @@ msgstr "Bu sunuculara bağlan"
 #: libs/ui/security/security8021xauth.cpp:66
 #: vpnplugins/strongswan/strongswanprop.ui:130
 msgid "Private Key Password:"
-msgstr ""
+msgstr "Gizli Anahtar Parolası:"
 
 #: libs/ui/security/security8021xauth.cpp:74
 msgid "Phase 2 Private Key Password:"
-msgstr ""
+msgstr "Faz 2 Gizli Anahtar Parolası:"
 
 #: libs/ui/security/securityeap.cpp:56
 msgctxt "show passwords button"
 msgid "&Show Passwords"
-msgstr ""
+msgstr "&Parolaları Göster"
 
 #: libs/ui/security/securityeap.cpp:62
 msgctxt "TLS auth type"
@@ -3048,22 +3220,22 @@ msgstr "LEAP"
 #: libs/ui/security/securityeap.cpp:70
 msgctxt "Peap outer auth type"
 msgid "Protected EAP (PEAP)"
-msgstr ""
+msgstr "Korunan EAP (PEAP)"
 
 #: libs/ui/security/securityeap.cpp:73
 msgctxt "TTLS outer auth type"
 msgid "Tunnelled TLS (TTLS)"
-msgstr ""
+msgstr "Tünellenmiş TLS (TTLS)"
 
 #: libs/ui/security/securitywired8021x.cpp:42
 msgctxt "@title:tab wired 802.1x security"
 msgid "802.1x Security"
-msgstr ""
+msgstr "802.1x Güvenliği"
 
 #: libs/ui/security/securitywired8021x.cpp:45
 msgctxt "@option:check enables/disables 802.1x auth on wired ethernet"
 msgid "Use &802.1x authentication"
-msgstr ""
+msgstr "&802.1x doğrulaması kullan"
 
 #: libs/ui/security/ttlswidget.cpp:78
 msgctxt "PAP inner auth method"
@@ -3083,53 +3255,58 @@ msgstr "CHAP"
 #. i18n: ectx: property (text), widget (QLabel, keyTypeLabel)
 #: libs/ui/security/wep.ui:17
 msgid "Key type:"
-msgstr ""
+msgstr "Anahtar tipi:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, keyType)
 #: libs/ui/security/wep.ui:31
 msgid "Passphrase (for 128 bit)"
-msgstr ""
+msgstr "Parola (128 bit için)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, keyType)
 #: libs/ui/security/wep.ui:36
 msgid "Hex or Ascii Key (for 64 or 128 bit)"
-msgstr ""
+msgstr "Hex ya da Ascii Anahtar (64 ya da 128 bit)"
 
 #. i18n: ectx: property (text), widget (QLabel, weptxkeyindexLabel)
 #: libs/ui/security/wep.ui:54
 msgid "&WEP index:"
-msgstr ""
+msgstr "&WEP dizini:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, weptxkeyindex)
 #: libs/ui/security/wep.ui:68
+#, fuzzy
+#| msgctxt ""
+#| "Default WEP key index to use. WEP supports four keys, the key with index "
+#| "number one is the default"
+#| msgid "1 (Default)"
 msgid "1 (Default)"
-msgstr ""
+msgstr "1 (Öntanımlı)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, weptxkeyindex)
 #: libs/ui/security/wep.ui:73
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, weptxkeyindex)
 #: libs/ui/security/wep.ui:78
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, weptxkeyindex)
 #: libs/ui/security/wep.ui:83
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, authalg)
 #: libs/ui/security/wep.ui:105
 msgid "Open System"
-msgstr ""
+msgstr "Açık Sistem"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel5)
 #. i18n: ectx: property (text), item, widget (KComboBox, authalg)
 #: libs/ui/security/wep.ui:110 vpnplugins/openvpn/openvpnprop.ui:217
 msgid "Shared Key"
-msgstr ""
+msgstr "Paylaşılan Anahtar"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
 #. i18n: ectx: property (text), widget (QLabel, textLabel4_3)
@@ -3141,7 +3318,7 @@ msgstr "&Anahtar:"
 
 #: libs/ui/security/wepauthwidget.cpp:81
 msgid "Passphrase:"
-msgstr ""
+msgstr "Parola ifadesi:"
 
 #: libs/ui/security/wepauthwidget.cpp:97
 msgid "Key:"
@@ -3149,28 +3326,28 @@ msgstr "Anahtar:"
 
 #: libs/ui/security/wepwidget.cpp:102
 msgid "&Passphrase:"
-msgstr ""
+msgstr "&Parola ifadesi:"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, WirelessSecurity)
 #: libs/ui/security/wirelesssecurity.ui:20
 msgid "Wireless Security"
-msgstr ""
+msgstr "Kablosuz Güvenliği"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: libs/ui/security/wirelesssecurity.ui:41
 msgid "&Security:"
-msgstr ""
+msgstr "&Güvenlik:"
 
 #: libs/ui/security/wirelesssecurityauth.cpp:65
 #, kde-format
 msgctxt "@title:window"
 msgid "The network %1 requires authentication"
-msgstr ""
+msgstr "%1 ağı doğrulama gerektiriyor"
 
 #: libs/ui/security/wirelesssecuritysettingwidget.cpp:178
 msgctxt "Label for no wireless security"
 msgid "None"
-msgstr ""
+msgstr "Hiçbiri"
 
 #: libs/ui/security/wirelesssecuritysettingwidget.cpp:186
 msgctxt "Label for LEAP wireless security"
@@ -3195,11 +3372,11 @@ msgstr "WPA/WPA2 Kişisel"
 #: libs/ui/security/wirelesssecuritysettingwidget.cpp:229
 msgctxt "Label for WPA-EAP wireless security"
 msgid "WPA/WPA2 Enterprise"
-msgstr ""
+msgstr "WPA/WPA2 Kurumsal"
 
 #: libs/ui/vpnpreferences.cpp:53 libs/ui/vpnpreferences.cpp:124
 msgid "New VPN Connection"
-msgstr ""
+msgstr "Yeni VPN Bağlantısı"
 
 #: libs/ui/vpnuiplugin.cpp:36
 msgctxt "Error message in VPN import/export dialog"
@@ -3209,22 +3386,22 @@ msgstr ""
 #. i18n: ectx: property (windowTitle), widget (QWidget, Settings8023Ethernet)
 #: libs/ui/wired.ui:20
 msgid "Ethernet"
-msgstr ""
+msgstr "Ethernet"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label)
 #: libs/ui/wired.ui:31
 msgid "Example: 11:22:33:44:55:66"
-msgstr ""
+msgstr "Örnek: 11:22:33:44:55:66"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_2)
 #: libs/ui/wired.ui:63
 msgid "Maximum Transfer Unit (bytes)"
-msgstr ""
+msgstr "En fazla Aktarım Birimi (bayt)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: libs/ui/wired.ui:66
 msgid "M&TU:"
-msgstr ""
+msgstr "M&TU:"
 
 #. i18n: ectx: property (toolTip), widget (KIntSpinBox, speed)
 #: libs/ui/wired.ui:111
@@ -3239,7 +3416,7 @@ msgstr ""
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, speed)
 #: libs/ui/wired.ui:123
 msgid " MBit/s"
-msgstr ""
+msgstr " MBit/s"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, cmbDuplex)
 #: libs/ui/wired.ui:146
@@ -3262,6 +3439,9 @@ msgstr "Yarım"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbDuplex)
 #: libs/ui/wired.ui:161
+#, fuzzy
+#| msgctxt "like in use Full duplex mode"
+#| msgid "Full"
 msgid "Full"
 msgstr "Tam"
 
@@ -3274,58 +3454,58 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QCheckBox, chkAutoNegotiate)
 #: libs/ui/wired.ui:226
 msgid "Autonegotiate"
-msgstr ""
+msgstr "Otomatik anlaşma"
 
 #: libs/ui/wiredpreferences.cpp:50
 msgid "Shared Wired Connection"
-msgstr ""
+msgstr "Paylaşılan Kablolu Bağlantı"
 
 #: libs/ui/wiredpreferences.cpp:53
 msgid "New Wired Connection"
-msgstr ""
+msgstr "Yeni Kablolu Bağlantı"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: libs/ui/wireless.ui:19
 msgid "&ESSID:"
-msgstr ""
+msgstr "&ESSID:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: libs/ui/wireless.ui:35
 msgid "&Mode:"
-msgstr ""
+msgstr "&Kip:"
 
 #. i18n: ectx: property (inputMask), widget (KLineEdit, bssid)
 #. i18n: ectx: property (inputMask), widget (KLineEdit, macaddress)
-#: libs/ui/wireless.ui:75 libs/ui/wireless.ui:98
+#: libs/ui/wireless.ui:79 libs/ui/wireless.ui:102
 msgid "HH:HH:HH:HH:HH:HH; "
-msgstr ""
+msgstr "HH:HH:HH:HH:HH:HH; "
 
 #. i18n: ectx: property (text), widget (KLineEdit, bssid)
-#: libs/ui/wireless.ui:78
+#: libs/ui/wireless.ui:82
 msgid ":::::"
-msgstr ""
+msgstr ":::::"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: libs/ui/wireless.ui:85
+#: libs/ui/wireless.ui:89
 msgid "MAC &address:"
-msgstr ""
+msgstr "&MAC adresi:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: libs/ui/wireless.ui:105
+#: libs/ui/wireless.ui:109
 msgid "&MTU:"
-msgstr ""
+msgstr "&MTU:"
 
-#: libs/ui/wirelesspreferences.cpp:71
+#: libs/ui/wirelesspreferences.cpp:72
 msgctxt ""
 "ssid of the wifi connection. Use ASCII letters and underscore *only* (no "
 "spaces!). Leave it unstranslated if your language does not support ASCII "
 "characters"
 msgid "Shared_Wireless_Connection"
-msgstr ""
+msgstr "Paylasilan_Kablosuz_Baglanti"
 
-#: libs/ui/wirelesspreferences.cpp:119
+#: libs/ui/wirelesspreferences.cpp:143
 msgid "Shared Wireless Connection"
-msgstr ""
+msgstr "Paylaşılan Kablosuz Bağlantı"
 
 #: settings/config/addeditdeletebuttonset.cpp:40
 msgid "Add..."
@@ -3337,16 +3517,16 @@ msgstr "Düzenle..."
 
 #: settings/config/addeditdeletebuttonset.cpp:48
 msgid "Import"
-msgstr ""
+msgstr "İçeriye Aktar"
 
 #: settings/config/addeditdeletebuttonset.cpp:49
 msgid "Export"
-msgstr ""
+msgstr "Dışarıya Aktar"
 
 #: settings/config/manageconnectionwidget.cpp:80
 #: settings/config/managetraywidget.cpp:47
 msgid "Manage Connections"
-msgstr ""
+msgstr "Bağlantıları Yönet"
 
 #: settings/config/manageconnectionwidget.cpp:81
 #: settings/config/managetraywidget.cpp:48
@@ -3391,7 +3571,7 @@ msgstr "Rajeesh K Nambiar"
 #: settings/config/manageconnectionwidget.cpp:87
 #: settings/config/managetraywidget.cpp:54 settings/configshell/main.cpp:37
 msgid "Will Stephenson"
-msgstr ""
+msgstr "Will Stephenson"
 
 #: settings/config/manageconnectionwidget.cpp:88
 #: settings/config/managetraywidget.cpp:55
@@ -3401,18 +3581,18 @@ msgstr "Sebastian Kügler"
 #: settings/config/manageconnectionwidget.cpp:113
 msgctxt "Like in 'add wired connection'"
 msgid "Wired"
-msgstr ""
+msgstr "Kablolu"
 
 #: settings/config/manageconnectionwidget.cpp:116
 #: settings/config/manageconnectionwidget.cpp:127
 msgctxt "Like in 'add shared connection'"
 msgid "Shared"
-msgstr ""
+msgstr "Paylaştırılmış"
 
 #: settings/config/manageconnectionwidget.cpp:124
 msgctxt "Like in 'add wireless connection'"
 msgid "Wireless"
-msgstr ""
+msgstr "Kablosuz"
 
 #: settings/config/manageconnectionwidget.cpp:207
 #, kde-format
@@ -3421,7 +3601,7 @@ msgctxt ""
 "the number of minutes since usage"
 msgid "One minute ago"
 msgid_plural "%1 minutes ago"
-msgstr[0] ""
+msgstr[0] "%1 dakika önce"
 
 #: settings/config/manageconnectionwidget.cpp:214
 #, kde-format
@@ -3430,61 +3610,63 @@ msgctxt ""
 "the number of hours since usage"
 msgid "One hour ago"
 msgid_plural "%1 hours ago"
-msgstr[0] ""
+msgstr[0] "%1 saat önce"
 
 #: settings/config/manageconnectionwidget.cpp:219
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Yesterday"
-msgstr ""
+msgstr "Dün"
 
 #: settings/config/manageconnectionwidget.cpp:225
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
 msgid "Never"
-msgstr ""
+msgstr "Asla"
 
 #: settings/config/manageconnectionwidget.cpp:372
 msgctxt "Tooltip for disabled tab when no VPN plugins are installed"
 msgid "No VPN plugins were found"
-msgstr ""
+msgstr "Hiç VPN eklentisi bulunamadı"
 
 #: settings/config/manageconnectionwidget.cpp:416
 msgctxt "File chooser dialog title for importing VPN"
 msgid "Import VPN connection settings"
-msgstr ""
+msgstr "VPN bağlantı ayarlarını içeriye aktar "
 
 #: settings/config/manageconnectionwidget.cpp:467
 #, kde-format
 msgid ""
 "None of the supported plugins implement importing operation for file %1."
 msgstr ""
+"Desteklenen eklentilerden hiçbiri %1 dosyası için içe alıp işlemini "
+"kullanamıyor."
 
 #: settings/config/manageconnectionwidget.cpp:467
 #: settings/config/manageconnectionwidget.cpp:472
 msgid "Error importing VPN connection settings"
-msgstr ""
+msgstr "VPN bağlantı ayarlarını içeriye aktarırken hata"
 
 #: settings/config/manageconnectionwidget.cpp:498
 msgctxt "File chooser dialog title for exporting VPN"
 msgid "Export VPN"
-msgstr ""
+msgstr "VPN bağlantı ayarlarını dışarıya aktar"
 
 #: settings/config/manageconnectionwidget.cpp:505
 msgid "VPN connection successfully exported"
-msgstr ""
+msgstr "VPN bağlantıları başarıyla aktarıldı"
 
 #: settings/config/manageconnectionwidget.cpp:505
 msgid "Success"
-msgstr ""
+msgstr "Başarılı"
 
 #: settings/config/manageconnectionwidget.cpp:505
 msgid "Do not show again"
-msgstr ""
+msgstr "Tekrar gösterme"
 
 #: settings/config/manageconnectionwidget.cpp:507
 msgid "Error exporting VPN connection settings"
-msgstr ""
+msgstr "VPN bağlantı ayarlarını dışarı aktarırken hata"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
 #: settings/config/manageconnectionwidget.cpp:510
@@ -3495,36 +3677,41 @@ msgstr "Hata"
 
 #: settings/config/manageconnectionwidget.cpp:510
 msgid "Could not export VPN connection settings"
-msgstr ""
+msgstr "VPN bağlantı ayarları aktarılamadı"
 
 #: settings/config/manageconnectionwidget.cpp:546
 msgid ""
 "Connection edit option failed, make sure that NetworkManager is properly "
 "running."
 msgstr ""
+"Bağlantı düzenleme işlemi başarısız, NetworkManager programının çalıştığına "
+"emin olun."
 
 #: settings/config/manageconnectionwidget.cpp:586
 msgid "Connection create operation failed."
-msgstr ""
+msgstr "Bağlantı oluşturma işlemi başarısız oldu"
 
 #: settings/config/manageconnectionwidget.cpp:610
 #, kde-format
 msgctxt "Warning message on attempting to delete a connection"
 msgid "Do you really want to delete the connection '%1'?"
-msgstr ""
+msgstr "Gerçekten %1 bağlantısını silmek istiyor musunuz?"
 
 #: settings/config/manageconnectionwidget.cpp:611
 msgid "Confirm Delete"
-msgstr ""
+msgstr "Silmeyi Onayla"
 
 #: settings/config/manageconnectionwidget.cpp:771
+#, fuzzy
+#| msgctxt "network interface connected state label"
+#| msgid "Connected"
 msgid "Connected"
-msgstr ""
+msgstr "Bağlı"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabWired)
 #: settings/config/manageconnectionwidget.ui:21
 msgid "Wired"
-msgstr ""
+msgstr "Kablolu"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, listWired)
 #. i18n: ectx: property (text), widget (QTreeWidget, listWireless)
@@ -3537,7 +3724,7 @@ msgstr ""
 #: settings/config/manageconnectionwidget.ui:160
 #: settings/config/manageconnectionwidget.ui:198
 msgid "Connection"
-msgstr ""
+msgstr "Bağlantı"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, listWired)
 #. i18n: ectx: property (text), widget (QTreeWidget, listWireless)
@@ -3550,7 +3737,7 @@ msgstr ""
 #: settings/config/manageconnectionwidget.ui:165
 #: settings/config/manageconnectionwidget.ui:203
 msgid "Last Used"
-msgstr ""
+msgstr "Son Kullanım"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, listWired)
 #. i18n: ectx: property (text), widget (QTreeWidget, listWireless)
@@ -3562,13 +3749,16 @@ msgstr ""
 #: settings/config/manageconnectionwidget.ui:132
 #: settings/config/manageconnectionwidget.ui:170
 #: settings/config/manageconnectionwidget.ui:208
+#, fuzzy
+#| msgctxt "like in current connection State (connected or disconnected)"
+#| msgid "State"
 msgid "State"
-msgstr ""
+msgstr "Durum"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabVpn)
 #: settings/config/manageconnectionwidget.ui:144
 msgid "VPN"
-msgstr ""
+msgstr "VPN"
 
 #: settings/config/managetraywidget.cpp:49
 msgid ""
@@ -3581,12 +3771,12 @@ msgstr ""
 #: settings/config/managetraywidget.cpp:83
 msgctxt "@info"
 msgid "Error switching storage type"
-msgstr ""
+msgstr "Depo türü değiştirilirken hata"
 
 #: settings/config/mobileconnectionwizard.cpp:52
 msgctxt "Mobile Connection Wizard"
 msgid "New Mobile Broadband Connection"
-msgstr ""
+msgstr "Yeni Geniş Bant Kablosuz Bağlantı"
 
 #: settings/config/mobileconnectionwizard.cpp:151
 #: settings/config/mobileconnectionwizard.cpp:167
@@ -3594,17 +3784,17 @@ msgstr ""
 #: settings/config/mobileconnectionwizard.cpp:525
 msgctxt "Mobile Connection Wizard"
 msgid "My plan is not listed..."
-msgstr ""
+msgstr "Planım listede değil..."
 
 #: settings/config/mobileconnectionwizard.cpp:156
 msgctxt "Mobile Connection Wizard"
 msgid "Unknown Provider"
-msgstr ""
+msgstr "Bilinmeyen Sağlayıcı"
 
 #: settings/config/mobileconnectionwizard.cpp:163
 msgctxt "Mobile Connection Wizard"
 msgid "Default"
-msgstr ""
+msgstr "Öntanımlı"
 
 #: settings/config/mobileconnectionwizard.cpp:195
 #: settings/config/mobileconnectionwizard.cpp:203
@@ -3615,7 +3805,7 @@ msgstr "APN"
 #: settings/config/mobileconnectionwizard.cpp:248
 msgctxt "Mobile Connection Wizard"
 msgid "Set up a Mobile Broadband Connection"
-msgstr ""
+msgstr "Yeni bir Geniş Bant Kablosuz Bağlantı Ayarla"
 
 #: settings/config/mobileconnectionwizard.cpp:251
 msgctxt "Mobile Connection Wizard"
@@ -3623,98 +3813,100 @@ msgid ""
 "This assistant helps you easily set up a mobile broadband connection to a "
 "cellular (3G) network."
 msgstr ""
+"Bu asistan hücresel (3G) mobil geniş bant bağlantılar oluşturmanız için size "
+"yardımcı olur."
 
 #: settings/config/mobileconnectionwizard.cpp:255
 msgctxt "Mobile Connection Wizard"
 msgid "You will need the following information:"
-msgstr ""
+msgstr "Bu sürede aşağıdaki bilgilere ihtiyacınız olacak:"
 
 #: settings/config/mobileconnectionwizard.cpp:259
 msgctxt "Mobile Connection Wizard"
 msgid "Your broadband provider's name"
-msgstr ""
+msgstr "Geniş bant sağlayıcınızın ismi"
 
 #: settings/config/mobileconnectionwizard.cpp:260
 msgctxt "Mobile Connection Wizard"
 msgid "Your broadband billing plan name"
-msgstr ""
+msgstr "Geniş bant ödeme planınızın ismi"
 
 #: settings/config/mobileconnectionwizard.cpp:261
 msgctxt "Mobile Connection Wizard"
 msgid "(in some cases) Your broadband billing plan APN (Access Point Name)"
-msgstr ""
+msgstr "(bazı durumlarda) geniş bant ödeme plan Erişim Noktası İsmi (APN)"
 
 #: settings/config/mobileconnectionwizard.cpp:265
 msgctxt "Mobile Connection Wizard"
 msgid "Create a connection for &this mobile broadband device:"
-msgstr ""
+msgstr "&Bu mobil geniş bant aygıtı için bir bağlantı oluştur:"
 
 #: settings/config/mobileconnectionwizard.cpp:269
 #: settings/config/mobileconnectionwizard.cpp:395
 msgctxt "Mobile Connection Wizard"
 msgid "Any GSM device"
-msgstr ""
+msgstr "Herhangi bir GSM aygıtı"
 
 #: settings/config/mobileconnectionwizard.cpp:271
 #: settings/config/mobileconnectionwizard.cpp:397
 msgctxt "Mobile Connection Wizard"
 msgid "Any CDMA device"
-msgstr ""
+msgstr "Herhangi bir CDMA aygıtı"
 
 #: settings/config/mobileconnectionwizard.cpp:324
 msgctxt "Mobile Connection Wizard"
 msgid "Installed GSM device"
-msgstr ""
+msgstr "Bağlı GSM aygıtı"
 
 #: settings/config/mobileconnectionwizard.cpp:328
 msgctxt "Mobile Connection Wizard"
 msgid "Installed CDMA device"
-msgstr ""
+msgstr "Bağlı CDMA aygıtı"
 
 #: settings/config/mobileconnectionwizard.cpp:410
 msgctxt "Mobile Connection Wizard"
 msgid "Choose your Provider's Country"
-msgstr ""
+msgstr "Sağlayıcınızın Hizmet Verdiği Ülkeyi Seçin"
 
 #: settings/config/mobileconnectionwizard.cpp:413
 msgctxt "Mobile Connection Wizard"
 msgid "Country List:"
-msgstr ""
+msgstr "Ülke Listesi:"
 
 #: settings/config/mobileconnectionwizard.cpp:417
 msgctxt "Mobile Connection Wizard"
 msgid "My country is not listed"
-msgstr ""
+msgstr "Ülkem listede değil"
 
 #: settings/config/mobileconnectionwizard.cpp:433
 msgctxt "Mobile Connection Wizard"
 msgid "Choose your Provider"
-msgstr ""
+msgstr "Sağlayıcınızı Seçin"
 
 #: settings/config/mobileconnectionwizard.cpp:436
 msgctxt "Mobile Connection Wizard"
 msgid "Select your provider from a &list:"
-msgstr ""
+msgstr "&Listeden hizmet sağlayıcınızı seçin:"
 
 #: settings/config/mobileconnectionwizard.cpp:445
 msgctxt "Mobile Connection Wizard"
 msgid "I can't find my provider and I wish to enter it &manually:"
-msgstr ""
+msgstr "Sağlayıcımı listede bulamadım, &kendim eklemek istiyorum:"
 
 #: settings/config/mobileconnectionwizard.cpp:487
 msgctxt "Mobile Connection Wizard"
 msgid "Choose your Billing Plan"
-msgstr ""
+msgstr "Ödeme Planınızı Seçin"
 
 #: settings/config/mobileconnectionwizard.cpp:490
 msgctxt "Mobile Connection Wizard"
 msgid "&Select your plan:"
-msgstr ""
+msgstr "&Planınızı seçin:"
 
 #: settings/config/mobileconnectionwizard.cpp:497
 msgctxt "Mobile Connection Wizard"
 msgid "Selected plan &APN (Access Point Name):"
-msgstr ""
+msgstr "Seçili plan Erişim &Noktası İsmi (APN):"
 
 #: settings/config/mobileconnectionwizard.cpp:509
 msgctxt "Mobile Connection Wizard"
@@ -3724,62 +3916,69 @@ msgid ""
 "\n"
 "If you are unsure of your plan please ask your provider for your plan's APN."
 msgstr ""
+"Uyarı: Yanlış bir plan seçmeniz halinde geniş bant hesabınızın faturası ile "
+"ilgili sorunlar yaşayabilirsiniz  ya da bağlantı problemleriyle "
+"karşılaşabilirsiniz \n"
+"\n"
+"Eğer planınızdan emin değilseniz lütfen servis sağlayıcınıza planınızın "
+"erişim noktası ismini sorunuz."
 
 #: settings/config/mobileconnectionwizard.cpp:546
 msgctxt "Mobile Connection Wizard"
 msgid "Confirm Mobile Broadband Settings"
-msgstr ""
+msgstr "Mobil Geniş Bant Yapılandırmasını Onaylayın"
 
 #: settings/config/mobileconnectionwizard.cpp:549
 msgctxt "Mobile Connection Wizard"
 msgid ""
 "Your mobile broadband connection is configured with the following settings:"
 msgstr ""
+"Mobil geniş bant bağlantınız aşağıdaki yapılandırma ile oluşturulacaktır:"
 
 #: settings/config/mobileconnectionwizard.cpp:553
 msgctxt "Mobile Connection Wizard"
 msgid "Your Provider:"
-msgstr ""
+msgstr "Sağlayıcınız:"
 
 #: settings/config/mobileconnectionwizard.cpp:558
 msgctxt "Mobile Connection Wizard"
 msgid "Your Plan:"
-msgstr ""
+msgstr "Planınız:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: settings/config/othersettings.ui:17
 msgid "<b>Connection Secrets</b>"
-msgstr ""
+msgstr "<b>Bağlantı Parolaları</b>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: settings/config/othersettings.ui:24
 msgid "&Store connection secrets: "
-msgstr ""
+msgstr "Bağlantı parolalarını &kaydet: "
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SecretStorageMode)
 #: settings/config/othersettings.ui:41
 msgid "Do not store (always prompt)"
-msgstr ""
+msgstr "Kaydetme (herzaman sor)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SecretStorageMode)
 #: settings/config/othersettings.ui:46
 msgid "In file (unencrypted)"
-msgstr ""
+msgstr "Dosya içerisinde (şifrelenmemiş)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SecretStorageMode)
 #: settings/config/othersettings.ui:51
 msgid "In secure storage (encrypted)"
-msgstr ""
+msgstr "Güvenli depolama (şifrelenmiş)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: settings/config/othersettings.ui:59
 msgid "<b>Display</b>"
-msgstr ""
+msgstr "<b>Görünüm</b>"
 
 #. i18n: ectx: property (text), widget (QLabel, interfaceNamingLabel)
 #: settings/config/othersettings.ui:66 settings/config/traysettings.ui:21
 msgid "Show network interfaces using:"
-msgstr ""
+msgstr "Ağ arayüzlerini bunu kullanarak göster:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
 #: settings/config/othersettings.ui:77 settings/config/traysettings.ui:29
@@ -3789,22 +3988,22 @@ msgstr ""
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
 #: settings/config/othersettings.ui:82 settings/config/traysettings.ui:34
 msgid "System Name"
-msgstr ""
+msgstr "Sistem İsmi"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
 #: settings/config/othersettings.ui:87 settings/config/traysettings.ui:39
 msgid "Vendor's Name"
-msgstr ""
+msgstr "Sağlayıcı İsmi  "
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
 #: settings/config/othersettings.ui:92 settings/config/traysettings.ui:44
 msgid "Type Name"
-msgstr ""
+msgstr "Tip ismi"
 
 #. i18n: ectx: property (text), widget (QLabel, networkSpeedLabel)
 #: settings/config/othersettings.ui:100
 msgid "Show network speed in:"
-msgstr ""
+msgstr "Ağ hızını şurada göster:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_NetworkSpeedUnit)
 #: settings/config/othersettings.ui:111
@@ -3819,48 +4018,48 @@ msgstr "KBit/s"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: settings/config/othersettings.ui:124
 msgid "Display settings as:"
-msgstr ""
+msgstr "Ayarları şu şekilde görüntüle:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: settings/config/othersettings.ui:148
 msgid "<b>Events</b>"
-msgstr ""
+msgstr "<b>Bildirimler</b>"
 
 #. i18n: ectx: property (text), widget (QLabel, askPinLabel)
 #: settings/config/othersettings.ui:155
 msgid "Ask for GSM Pin:"
-msgstr ""
+msgstr "GSP Pin kodu sor:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AskForGsmPin)
 #: settings/config/othersettings.ui:166
 msgid "On Modem Detection"
-msgstr ""
+msgstr "Modemde Tespit"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AskForGsmPin)
 #: settings/config/othersettings.ui:171
 msgid "When Activating Connection"
-msgstr ""
+msgstr "Bağlantı Etkinleştirilirken"
 
 #. i18n: ectx: property (text), widget (QPushButton, notificationsButton)
 #: settings/config/othersettings.ui:179
 msgid "Configure Notifications..."
-msgstr ""
+msgstr "Bildirimleri Yapılandır..."
 
 #: settings/config/othersettingswidget.cpp:41
 #, kde-format
 msgctxt "Version text"
 msgid "<b>Version %1</b>"
-msgstr ""
+msgstr "<b>Sürüm %1</b>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_Autostart)
 #: settings/config/traysettings.ui:54
 msgid "Show tray icon"
-msgstr ""
+msgstr "Sistem çekmecesi simgesini göster"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: settings/config/traysettings.ui:73
 msgid "Tray icons:"
-msgstr ""
+msgstr "Sistem çekmecesi simgeleri:"
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, iconInterfaceList)
 #: settings/config/traysettings.ui:82
@@ -3870,22 +4069,22 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (QPushButton, pbAddIcon)
 #: settings/config/traysettings.ui:97
 msgid "Add another system tray icon"
-msgstr ""
+msgstr "Başka bir sistem çekmecesi simgesi ekle"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbAddIcon)
 #: settings/config/traysettings.ui:100
 msgid "&More Icons"
-msgstr ""
+msgstr "Daha &Fazla Simge"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, pbRemoveIcon)
 #: settings/config/traysettings.ui:107
 msgid "Remove a system tray icon"
-msgstr ""
+msgstr "Bir sistem çekmecesi simgesini kaldır"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbRemoveIcon)
 #: settings/config/traysettings.ui:110
 msgid "&Fewer Icons"
-msgstr ""
+msgstr "Daha &Az Simge"
 
 #: settings/configshell/bluetooth.cpp:55
 msgid "We support 'dun' and 'nap' services only."
@@ -3893,7 +4092,7 @@ msgstr ""
 
 #: settings/configshell/bluetooth.cpp:69
 msgid "Could not contact bluetooth manager (BlueZ)."
-msgstr ""
+msgstr "Bluetooth yöneticisi ile (BlueZ) iletişim kurulamadı"
 
 #: settings/configshell/bluetooth.cpp:78
 #, kde-format
@@ -3927,7 +4126,7 @@ msgstr ""
 
 #: settings/configshell/main.cpp:31
 msgid "Network Management"
-msgstr ""
+msgstr "Ağ Yönetimi"
 
 #: settings/configshell/main.cpp:33
 msgid "Create network connections standalone"
@@ -3935,15 +4134,15 @@ msgstr ""
 
 #: settings/configshell/main.cpp:35
 msgid "(c) 2008 Will Stephenson"
-msgstr ""
+msgstr "(c) 2008 Will Stephenson"
 
 #: settings/configshell/main.cpp:42
 msgid "Connection ID to edit"
-msgstr ""
+msgstr "Düzenlenecek bağlantı kimliği"
 
 #: settings/configshell/main.cpp:43
 msgid "Connect to a hidden wireless network"
-msgstr ""
+msgstr "Gizli kablosuz ağa bağlan"
 
 #: settings/configshell/main.cpp:44
 msgid ""
@@ -3973,51 +4172,51 @@ msgstr ""
 #: settings/configshell/main.cpp:97
 #, kde-format
 msgid "Expected two specific args, found %1: %2"
-msgstr ""
+msgstr "2 argüman bekleniyordu, %1 bulundu: %2"
 
 #: settings/configshell/manageconnection.cpp:83
 msgid "unknown error"
-msgstr ""
+msgstr "bilinmeyen hata"
 
 #: settings/configshell/manageconnection.cpp:87
 #, kde-format
 msgid "Error adding connection: %1"
-msgstr ""
+msgstr "Bağlantı eklenemedi: %1"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: vpnplugins/novellvpn/novellvpnadvancedprop.ui:17
 msgid "&DH Group"
-msgstr ""
+msgstr "&DH Grubu"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbDh1)
 #: vpnplugins/novellvpn/novellvpnadvancedprop.ui:23
 msgid "768 bits (DH&1)"
-msgstr ""
+msgstr "768 bit (DH&1)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbDh2)
 #: vpnplugins/novellvpn/novellvpnadvancedprop.ui:33
 msgid "1024 bits (DH&2)"
-msgstr ""
+msgstr "1024 bit (DH&2)"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: vpnplugins/novellvpn/novellvpnadvancedprop.ui:43
 msgid "&PFS Group"
-msgstr ""
+msgstr "&PFS Grubu"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPfOff)
 #: vpnplugins/novellvpn/novellvpnadvancedprop.ui:49
 msgid "&Off"
-msgstr ""
+msgstr "&Kapalı"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPf1)
 #: vpnplugins/novellvpn/novellvpnadvancedprop.ui:59
 msgid "&768 bits (PF1)"
-msgstr ""
+msgstr "&768 bit (PF1)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbPf2)
 #: vpnplugins/novellvpn/novellvpnadvancedprop.ui:66
 msgid "102&4 bits (PF2)"
-msgstr ""
+msgstr "102&4 bit (PF2)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbDisableSplit)
 #: vpnplugins/novellvpn/novellvpnadvancedprop.ui:76
@@ -4027,7 +4226,7 @@ msgstr ""
 #. i18n: ectx: property (windowTitle), widget (QWidget, NovellVpnWidget)
 #: vpnplugins/novellvpn/novellvpnprop.ui:14
 msgid "Novell VPN"
-msgstr ""
+msgstr "Novell VPN"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #. i18n: ectx: property (title), widget (QGroupBox, grp_general)
@@ -4035,28 +4234,31 @@ msgstr ""
 #: vpnplugins/novellvpn/novellvpnprop.ui:20
 #: vpnplugins/openconnect/openconnectprop.ui:20 vpnplugins/pptp/pptpprop.ui:26
 #: vpnplugins/vpnc/vpncprop.ui:24
+#, fuzzy
+#| msgctxt "like in General settings"
+#| msgid "General"
 msgid "General"
-msgstr ""
+msgstr "Genel"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: vpnplugins/novellvpn/novellvpnprop.ui:39
 msgid "Gate&way Type:"
-msgstr ""
+msgstr "Ağ &Geçidi Tipi:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbGwType)
 #: vpnplugins/novellvpn/novellvpnprop.ui:50
 msgid "Nortel"
-msgstr ""
+msgstr "Nortel"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbGwType)
 #: vpnplugins/novellvpn/novellvpnprop.ui:55
 msgid "Standard Gateway"
-msgstr ""
+msgstr "Standart Ağ Geçidi"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbAuthType)
 #: vpnplugins/novellvpn/novellvpnprop.ui:83
 msgid "XAUTH"
-msgstr ""
+msgstr "XAUTH"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbAuthType)
 #: vpnplugins/novellvpn/novellvpnprop.ui:88
@@ -4066,46 +4268,47 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: vpnplugins/novellvpn/novellvpnprop.ui:116
 msgid "&Group Name:"
-msgstr ""
+msgstr "&Grup Adı:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: vpnplugins/novellvpn/novellvpnprop.ui:129
 msgid "U&ser Password:"
-msgstr ""
+msgstr "Kullanıcı &Parolası:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: vpnplugins/novellvpn/novellvpnprop.ui:146
 msgid "G&roup Password:"
-msgstr ""
+msgstr "&Grup Parolası:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_13)
 #: vpnplugins/novellvpn/novellvpnprop.ui:167
 msgid "Certificate &file:"
-msgstr ""
+msgstr "&Sertifika dosyası:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_14)
 #: vpnplugins/novellvpn/novellvpnprop.ui:180
 msgid "Certificate &password:"
-msgstr ""
+msgstr "&Sertifika parolası:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowPasswords)
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPasswords)
 #: vpnplugins/novellvpn/novellvpnprop.ui:201
 #: vpnplugins/openvpn/openvpnprop.ui:590
-#, fuzzy
-#| msgid "&Show password"
 msgid "&Show Passwords"
-msgstr "&Parolayı göster"
+msgstr "&Parolaları Göster"
 
 #. i18n: ectx: property (text), widget (KPushButton, btnAdvanced)
 #: vpnplugins/novellvpn/novellvpnprop.ui:208
 msgid "Ad&vanced..."
-msgstr ""
+msgstr "&Gelişmiş..."
 
 #: vpnplugins/novellvpn/novellvpnwidget.cpp:63
+#, fuzzy
+#| msgctxt "@title:window NovellVPN advanced connection options"
+#| msgid "NovellVPN advanced options"
 msgctxt "@window:title NovellVPN advanced connection options"
 msgid "NovellVPN advanced options"
-msgstr ""
+msgstr "NovellVPN gelişmiş seçenekler"
 
 #: vpnplugins/openconnect/openconnectauth.cpp:269
 msgid "Contacting host, please wait..."
@@ -4130,7 +4333,7 @@ msgstr "Bağlanma girişimi başarısız oldu."
 #. i18n: ectx: property (windowTitle), widget (QWidget, OpenconnectAuth)
 #: vpnplugins/openconnect/openconnectauth.ui:20
 msgid "OpenConnect VPN Authentication"
-msgstr ""
+msgstr "OpenConnect VPN Doğrulaması"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: vpnplugins/openconnect/openconnectauth.ui:40
@@ -4140,7 +4343,7 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnConnect)
 #: vpnplugins/openconnect/openconnectauth.ui:56
 msgid "Connect"
-msgstr ""
+msgstr "Bağlan"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAutoconnect)
 #: vpnplugins/openconnect/openconnectauth.ui:77
@@ -4150,7 +4353,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QCheckBox, viewServerLog)
 #: vpnplugins/openconnect/openconnectauth.ui:112
 msgid "View Log"
-msgstr ""
+msgstr "Günlük Dosyasına Bak"
 
 #. i18n: ectx: property (text), widget (QLabel, lblLogLevel)
 #: vpnplugins/openconnect/openconnectauth.ui:122
@@ -4164,6 +4367,9 @@ msgstr "Bilgiler"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
 #: vpnplugins/openconnect/openconnectauth.ui:143
+#, fuzzy
+#| msgctxt "like in Debug log level"
+#| msgid "Debug"
 msgid "Debug"
 msgstr "Hata Ayıkla"
 
@@ -4175,12 +4381,12 @@ msgstr ""
 #. i18n: ectx: property (windowTitle), widget (QWidget, OpenconnectProp)
 #: vpnplugins/openconnect/openconnectprop.ui:14
 msgid "OpenConnect Settings"
-msgstr ""
+msgstr "Openconnect Ayarları"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: vpnplugins/openconnect/openconnectprop.ui:42
 msgid "&CA Certificate:"
-msgstr ""
+msgstr "&CA Sertifikası:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: vpnplugins/openconnect/openconnectprop.ui:55
@@ -4200,7 +4406,7 @@ msgstr ""
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: vpnplugins/openconnect/openconnectprop.ui:91
 msgid "Certificate Authentication"
-msgstr ""
+msgstr "Sertifika Doğrulama"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
 #: vpnplugins/openconnect/openconnectprop.ui:123
@@ -4266,78 +4472,78 @@ msgstr "Dosya yazmak için açılamıyor"
 
 #: vpnplugins/openvpn/openvpnauth.cpp:69 vpnplugins/openvpn/openvpnauth.cpp:95
 msgid "Key Password:"
-msgstr ""
+msgstr "Anahtar Parolası:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_15)
 #: vpnplugins/openvpn/openvpnauth.cpp:106
 #: vpnplugins/openvpn/openvpnprop.ui:1085
 msgid "Proxy Password:"
-msgstr "Vekil Sunucu Parolası:"
+msgstr "Vekil Parolası:"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, OpenVPNAuthenticationWidget)
 #: vpnplugins/openvpn/openvpnauth.ui:14
 msgid "OpenVPNAuthentication"
-msgstr ""
+msgstr "OpenVPN Yetkilendirmesi"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, OpenVPNProp)
 #: vpnplugins/openvpn/openvpnprop.ui:14
 msgid "OpenVPN"
-msgstr ""
+msgstr "OpenVPN"
 
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage)
 #: vpnplugins/openvpn/openvpnprop.ui:24
 msgid "Required Settings"
-msgstr ""
+msgstr "Zorunlu Ayarlar"
 
 #. i18n: ectx: property (text), widget (QLabel, labelConnectionType)
 #: vpnplugins/openvpn/openvpnprop.ui:51
 msgid "Connection &type:"
-msgstr ""
+msgstr "Bağlantı &tipi:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
 #: vpnplugins/openvpn/openvpnprop.ui:74
 msgid "X.509 Certificates"
-msgstr ""
+msgstr "X.509 Sertifikaları"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
 #: vpnplugins/openvpn/openvpnprop.ui:79
 msgid "Pre-shared Key"
-msgstr ""
+msgstr "Önceden Paylaşılmış Anahtar"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
 #: vpnplugins/openvpn/openvpnprop.ui:89
 msgid "X.509 With Password"
-msgstr ""
+msgstr "Parola ile X.509"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #: vpnplugins/openvpn/openvpnprop.ui:108
 msgid "C&A file:"
-msgstr ""
+msgstr "C&A dosyası:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
 #: vpnplugins/openvpn/openvpnprop.ui:124
 msgid "&Certificate:"
-msgstr ""
+msgstr "&Sertifika:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: vpnplugins/openvpn/openvpnprop.ui:156
 msgid "Key password:"
-msgstr ""
+msgstr "Anahtar parolası:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel6)
 #: vpnplugins/openvpn/openvpnprop.ui:233
 msgid "Local IP"
-msgstr ""
+msgstr "Yerel IP"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel7)
 #: vpnplugins/openvpn/openvpnprop.ui:249
 msgid "Remote IP"
-msgstr ""
+msgstr "Uzak IP"
 
 #. i18n: ectx: property (text), widget (QLabel, label_16)
 #: vpnplugins/openvpn/openvpnprop.ui:269
 msgid "Key Direction"
-msgstr ""
+msgstr "Anahtar Yönü"
 
 #. i18n: ectx: property (whatsThis), widget (KComboBox, cmbKeyDirection)
 #: vpnplugins/openvpn/openvpnprop.ui:282
@@ -4352,64 +4558,70 @@ msgstr ""
 #. i18n: ectx: property (text), item, widget (QComboBox, cboEncryptionMethod)
 #: vpnplugins/openvpn/openvpnprop.ui:286 vpnplugins/openvpn/openvpnprop.ui:814
 #: vpnplugins/openvpn/openvpnprop.ui:948 vpnplugins/vpnc/vpncprop.ui:242
+#, fuzzy
+#| msgctxt "Label for no wireless security"
+#| msgid "None"
 msgid "None"
-msgstr ""
+msgstr "Hiçbiri"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbKeyDirection)
 #: vpnplugins/openvpn/openvpnprop.ui:291
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbKeyDirection)
 #: vpnplugins/openvpn/openvpnprop.ui:296
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel8)
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: vpnplugins/openvpn/openvpnprop.ui:325 vpnplugins/vpnc/vpncprop.ui:178
 msgid "CA File:"
-msgstr ""
+msgstr "CA Dosyası:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel9)
 #: vpnplugins/openvpn/openvpnprop.ui:344
+#, fuzzy
+#| msgctxt "like in Username for athentication"
+#| msgid "Username:"
 msgid "Username:"
-msgstr ""
+msgstr "Kullanıcı adı:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2)
 #: vpnplugins/openvpn/openvpnprop.ui:427
 msgid "CA file"
-msgstr ""
+msgstr "CA dosyası"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2_2)
 #: vpnplugins/openvpn/openvpnprop.ui:443
 msgid "Certificate"
-msgstr ""
+msgstr "Sertifika"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4_2)
 #: vpnplugins/openvpn/openvpnprop.ui:459
 msgid "Key"
-msgstr ""
+msgstr "Anahtar"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: vpnplugins/openvpn/openvpnprop.ui:475
 msgid "Key password"
-msgstr ""
+msgstr "Anahtar parolası"
 
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage2)
 #: vpnplugins/openvpn/openvpnprop.ui:611
 msgid "Optional Settings"
-msgstr ""
+msgstr "Seçimlik Ayarlar"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: vpnplugins/openvpn/openvpnprop.ui:619
 msgid "Gateway &Port:"
-msgstr ""
+msgstr "&Ağ Geçidi Portu:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: vpnplugins/openvpn/openvpnprop.ui:643
 msgid "Tunnel MTU"
-msgstr ""
+msgstr "Tünellenmiş MTU"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: vpnplugins/openvpn/openvpnprop.ui:667
@@ -4424,17 +4636,17 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseLZO)
 #: vpnplugins/openvpn/openvpnprop.ui:710
 msgid "Use LZO compression"
-msgstr ""
+msgstr "LZO sıkıştırması kullan"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseTCP)
 #: vpnplugins/openvpn/openvpnprop.ui:717
 msgid "Use TCP connection"
-msgstr ""
+msgstr "TCP bağlantısı kullan"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseTAP)
 #: vpnplugins/openvpn/openvpnprop.ui:724
 msgid "Use TAP device"
-msgstr ""
+msgstr "TAP aygıtı kullan"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMssRestrict)
 #: vpnplugins/openvpn/openvpnprop.ui:731
@@ -4444,7 +4656,7 @@ msgstr ""
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: vpnplugins/openvpn/openvpnprop.ui:752
 msgid "Optional &Security"
-msgstr ""
+msgstr "Seçimlik &Güvenlik"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: vpnplugins/openvpn/openvpnprop.ui:760
@@ -4459,37 +4671,37 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: vpnplugins/openvpn/openvpnprop.ui:792
 msgid "&HMAC Authentication:"
-msgstr ""
+msgstr "&HMAC Yetkilendirmesi:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
 #: vpnplugins/openvpn/openvpnprop.ui:819
 msgid "MD-5"
-msgstr ""
+msgstr "MD-5"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
 #: vpnplugins/openvpn/openvpnprop.ui:824
 msgid "SHA-1"
-msgstr ""
+msgstr "SHA-1"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
 #: vpnplugins/openvpn/openvpnprop.ui:829
 msgid "SHA-224"
-msgstr ""
+msgstr "SHA-224"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
 #: vpnplugins/openvpn/openvpnprop.ui:834
 msgid "SHA-256"
-msgstr ""
+msgstr "SHA-256"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
 #: vpnplugins/openvpn/openvpnprop.ui:839
 msgid "SHA-384"
-msgstr ""
+msgstr "SHA-384"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
 #: vpnplugins/openvpn/openvpnprop.ui:844
 msgid "SHA-512"
-msgstr ""
+msgstr "SHA-512"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
 #: vpnplugins/openvpn/openvpnprop.ui:849
@@ -4499,7 +4711,7 @@ msgstr "RIPEMD-160"
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
 #: vpnplugins/openvpn/openvpnprop.ui:873
 msgid "Optional TLS Settings"
-msgstr ""
+msgstr "Seçimlik TLS Ayarları"
 
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, subjectMatch)
 #: vpnplugins/openvpn/openvpnprop.ui:891
@@ -4511,12 +4723,12 @@ msgstr ""
 #. i18n: ectx: property (title), widget (QGroupBox, useExtraTlsAuth)
 #: vpnplugins/openvpn/openvpnprop.ui:900
 msgid "Use additional TLS authentication"
-msgstr ""
+msgstr "Ek TLS kimlik doğrulaması kullan"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: vpnplugins/openvpn/openvpnprop.ui:934
 msgid "Key Direction:"
-msgstr ""
+msgstr "Anahtar Yönü:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cboDirection)
 #: vpnplugins/openvpn/openvpnprop.ui:953
@@ -4526,7 +4738,7 @@ msgstr "Sunucu (0)"
 #. i18n: ectx: property (text), item, widget (KComboBox, cboDirection)
 #: vpnplugins/openvpn/openvpnprop.ui:958
 msgid "Client (1)"
-msgstr ""
+msgstr "İstemci (1)"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_3)
 #: vpnplugins/openvpn/openvpnprop.ui:985
@@ -4536,7 +4748,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: vpnplugins/openvpn/openvpnprop.ui:994
 msgid "Proxy Type:"
-msgstr ""
+msgstr "Vekil Sunucu Tipi:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbProxyType)
 #: vpnplugins/openvpn/openvpnprop.ui:1019
@@ -4551,12 +4763,12 @@ msgstr "SOCKS"
 #. i18n: ectx: property (text), widget (QLabel, label_12)
 #: vpnplugins/openvpn/openvpnprop.ui:1032
 msgid "Server Address:"
-msgstr ""
+msgstr "Sunucu Adresi:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_13)
 #: vpnplugins/openvpn/openvpnprop.ui:1045
 msgid "Port:"
-msgstr ""
+msgstr "Port:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkProxyRetry)
 #: vpnplugins/openvpn/openvpnprop.ui:1068
@@ -4566,18 +4778,21 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_14)
 #: vpnplugins/openvpn/openvpnprop.ui:1075
 msgid "Proxy Username:"
-msgstr ""
+msgstr "Vekil Sunucu Kullanıcı Adı:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkProxyShowPassword)
 #: vpnplugins/openvpn/openvpnprop.ui:1095
 msgid "Show Password"
-msgstr ""
+msgstr "Parolayı Göster"
 
 #: vpnplugins/openvpn/openvpnwidget.cpp:127
 #: vpnplugins/openvpn/openvpnwidget.cpp:151
+#, fuzzy
+#| msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
+#| msgid "OpenVPN cipher lookup failed"
 msgctxt "@item:inlist Item added when OpenVPN cipher lookup failed"
 msgid "OpenVPN cipher lookup failed"
-msgstr ""
+msgstr "OpenVPN şifresi arama başarısız"
 
 #: vpnplugins/openvpn/openvpnwidget.cpp:134
 msgctxt "@item::inlist Default openvpn cipher item"
@@ -4585,94 +4800,100 @@ msgid "Default"
 msgstr "Öntanımlı"
 
 #: vpnplugins/openvpn/openvpnwidget.cpp:148
+#, fuzzy
+#| msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
+#| msgid "No OpenVPN ciphers found"
 msgctxt "@item:inlist Item added when OpenVPN cipher lookup failed"
 msgid "No OpenVPN ciphers found"
-msgstr ""
+msgstr "OpenVPN şifresi bulunamadı"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_auth)
 #: vpnplugins/pptp/pptpadvanced.ui:25
 msgid "Allow following &authentication methods:"
-msgstr ""
+msgstr "Bu &kimlik denetleme yöntemlerine izin ver:"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, gb_MPPE)
 #: vpnplugins/pptp/pptpadvanced.ui:84
 msgid "Use Microsoft Point-to-Point Encryption"
-msgstr ""
+msgstr "Microsoft Noktadan-Noktaya Şifrelemesi Kullan"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gb_MPPE)
 #: vpnplugins/pptp/pptpadvanced.ui:87
 msgid "Use &MPPE Encryption"
-msgstr ""
+msgstr "&MPPE Şifrelemesi Kullan"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_MMPEcrypto)
 #: vpnplugins/pptp/pptpadvanced.ui:109
 msgid "&Crypto:"
-msgstr ""
+msgstr "&Şifreleme:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
 #: vpnplugins/pptp/pptpadvanced.ui:125
 msgid "128 bit"
-msgstr ""
+msgstr "128 bit"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
 #: vpnplugins/pptp/pptpadvanced.ui:130
 msgid "40 bit"
-msgstr ""
+msgstr "40 bit"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_statefulEncryption)
 #: vpnplugins/pptp/pptpadvanced.ui:144
 msgid "Use &stateful encryption"
-msgstr ""
+msgstr "&Durum temelli şifreleme kullan"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_BSD)
 #: vpnplugins/pptp/pptpadvanced.ui:164
 msgid "Allow &BSD compression"
-msgstr ""
+msgstr "&BSD sıkıştırmasına izin ver"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_deflate)
 #: vpnplugins/pptp/pptpadvanced.ui:174
 msgid "Allow &Deflate compression"
-msgstr ""
+msgstr "&Deflate sıkıştırmasına izin ver"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_TCPheaders)
 #: vpnplugins/pptp/pptpadvanced.ui:184
 msgid "Allow &TCP header compression"
-msgstr ""
+msgstr "&TCP başlık sıkıştırması kullan"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_sendEcho)
 #: vpnplugins/pptp/pptpadvanced.ui:205
 msgid "Send PPP &echo packets "
-msgstr ""
+msgstr "&PPP echo paketleri gönder "
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PptpAuthenticationWidget)
 #: vpnplugins/pptp/pptpauth.ui:14
 msgid "PPTPAuthentication"
-msgstr ""
+msgstr "PPTP Doğrulaması"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PptpProp)
 #: vpnplugins/pptp/pptpprop.ui:14
 msgid "PPTP Settings"
-msgstr ""
+msgstr "PPTP Ayarları"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_additional)
 #: vpnplugins/pptp/pptpprop.ui:52
+#, fuzzy
+#| msgctxt "like in Additional settings"
+#| msgid "Additional"
 msgid "Additional"
-msgstr ""
+msgstr "Ek"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_login)
 #: vpnplugins/pptp/pptpprop.ui:74
 msgid "&Login:"
-msgstr ""
+msgstr "&Giriş:"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_ntdomain)
 #: vpnplugins/pptp/pptpprop.ui:165
 msgid "&NT Domain:"
-msgstr ""
+msgstr "&NT Alan Adı:"
 
 #: vpnplugins/strongswan/strongswanauth.cpp:70
 msgctxt "@label:textbox password label for private key password"
 msgid "Private Key Password:"
-msgstr ""
+msgstr "Gizli Anahtar Parolası:"
 
 #: vpnplugins/strongswan/strongswanauth.cpp:72
 msgctxt "@label:textbox password label for smartcard pin"
@@ -4695,7 +4916,7 @@ msgstr ""
 #: vpnplugins/strongswan/strongswanauth.ui:14
 #: vpnplugins/strongswan/strongswanprop.ui:14
 msgid "Strong Swan VPN"
-msgstr ""
+msgstr "Güçlü Swan VPN"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowPasswords)
@@ -4708,12 +4929,12 @@ msgstr "&Parolaları göster"
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: vpnplugins/strongswan/strongswanprop.ui:20
 msgid "Gateway"
-msgstr ""
+msgstr "Ağ Geçidi"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #: vpnplugins/strongswan/strongswanprop.ui:26 vpnplugins/vpnc/vpncprop.ui:30
 msgid "Gateway:"
-msgstr ""
+msgstr "Ağ Geçidi:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
@@ -4722,17 +4943,17 @@ msgstr ""
 #: vpnplugins/strongswan/strongswanprop.ui:110
 #: vpnplugins/strongswan/strongswanprop.ui:183
 msgid "Certificate:"
-msgstr ""
+msgstr "Sertifika:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
 #: vpnplugins/strongswan/strongswanprop.ui:71
 msgid "Certificate/private key"
-msgstr ""
+msgstr "Sertifika/gizli anahtar"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
 #: vpnplugins/strongswan/strongswanprop.ui:76
 msgid "Certificate/ssh-agent"
-msgstr ""
+msgstr "Sertifika/ssh-istemcisi"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
 #: vpnplugins/strongswan/strongswanprop.ui:81
@@ -4742,17 +4963,17 @@ msgstr "Akıllı kart"
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: vpnplugins/strongswan/strongswanprop.ui:120
 msgid "Private key:"
-msgstr ""
+msgstr "Gizli anahtar:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: vpnplugins/strongswan/strongswanprop.ui:197
 msgid "PIN:"
-msgstr ""
+msgstr "PIN:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: vpnplugins/strongswan/strongswanprop.ui:290
 msgid "User &Password"
-msgstr ""
+msgstr "Kullanıcı &Parolası"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: vpnplugins/strongswan/strongswanprop.ui:317
@@ -4762,21 +4983,21 @@ msgstr "Seçenekler"
 #. i18n: ectx: property (text), widget (QCheckBox, innerIP)
 #: vpnplugins/strongswan/strongswanprop.ui:326
 msgid "Request an inner IP address"
-msgstr ""
+msgstr "İç IP adresi isteğinde bulun"
 
 #. i18n: ectx: property (text), widget (QCheckBox, udpEncap)
 #: vpnplugins/strongswan/strongswanprop.ui:339
 msgid "Enforce UDP encapsulation"
-msgstr ""
+msgstr "UDP sarmalamaya zorla"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipComp)
 #: vpnplugins/strongswan/strongswanprop.ui:346
 msgid "Use IP compression"
-msgstr ""
+msgstr "IP sıkıştırması kullan"
 
 #: vpnplugins/vpnc/vpnc.cpp:83
 msgid "Error decrypting the obfuscated password"
-msgstr ""
+msgstr "Karartılmış parolanın çözülmesi sırasında hata meydana geldi"
 
 #: vpnplugins/vpnc/vpnc.cpp:138
 #, kde-format
@@ -4809,60 +5030,63 @@ msgstr "%1: dosya biçimi hatası."
 #: vpnplugins/vpnc/vpnc.cpp:311
 #, kde-format
 msgid "%1: file could not be created"
-msgstr ""
+msgstr "%1: dosya oluşturulamadı"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, VpncAuth)
 #: vpnplugins/vpnc/vpncauth.ui:14
 msgid "VPNCAuthentication"
-msgstr ""
+msgstr "VPNCA Yetkilendirmesi"
 
 #. i18n: ectx: property (text), widget (QLabel, userPasswordLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: vpnplugins/vpnc/vpncauth.ui:23 vpnplugins/vpnc/vpncprop.ui:59
 msgid "User &Password:"
-msgstr ""
+msgstr "Kullanıcı &Parolası:"
 
 #. i18n: ectx: property (text), widget (QLabel, groupPasswordLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: vpnplugins/vpnc/vpncauth.ui:36 vpnplugins/vpnc/vpncprop.ui:118
 msgid "&Group Password:"
-msgstr ""
+msgstr "&Grup Parolası:"
 
 #. i18n: ectx: property (text), widget (QLabel, groupNameLabel)
 #. i18n: ectx: property (text), widget (QLabel, labelGroup)
 #: vpnplugins/vpnc/vpncauth.ui:106 vpnplugins/vpnc/vpncprop.ui:102
 msgid "Group name:"
-msgstr ""
+msgstr "Grup adı:"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, VpncProp)
 #: vpnplugins/vpnc/vpncprop.ui:14
 msgid "Cisco VPN"
-msgstr ""
+msgstr "Cisco VPN"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbUseHybridAuth)
 #: vpnplugins/vpnc/vpncprop.ui:171
 msgid "Use hybrid authentication"
-msgstr ""
+msgstr "Hybrid doğrulaması kullan"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: vpnplugins/vpnc/vpncprop.ui:202
 msgid "&Domain:"
-msgstr ""
+msgstr "&Alan Adı:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: vpnplugins/vpnc/vpncprop.ui:215
 msgid "&Encryption Method:"
-msgstr ""
+msgstr "&Şifreleme Yöntemi:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboEncryptionMethod)
 #: vpnplugins/vpnc/vpncprop.ui:232
+#, fuzzy
+#| msgctxt "like in Secure encryption method"
+#| msgid "Secure"
 msgid "Secure"
-msgstr ""
+msgstr "Güvenli"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboEncryptionMethod)
 #: vpnplugins/vpnc/vpncprop.ui:237
 msgid "Weak"
-msgstr ""
+msgstr "Zayıf"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: vpnplugins/vpnc/vpncprop.ui:250
@@ -4872,28 +5096,28 @@ msgstr ""
 #. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
 #: vpnplugins/vpnc/vpncprop.ui:267
 msgid "NAT-T (if available)"
-msgstr ""
+msgstr "NAT-T (erişilebilirse)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
 #: vpnplugins/vpnc/vpncprop.ui:272
 msgid "Force NAT-T"
-msgstr ""
+msgstr "Force NAT-T"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
 #: vpnplugins/vpnc/vpncprop.ui:277
 msgid "Cisco UDP"
-msgstr ""
+msgstr "Cisco UDP"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: vpnplugins/vpnc/vpncprop.ui:290
 msgid "&IKE DH Group"
-msgstr ""
+msgstr "&IKE DH Grubu"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboDHGroup)
 #. i18n: ectx: property (text), item, widget (KComboBox, cboPerfectForwardSecrecy)
 #: vpnplugins/vpnc/vpncprop.ui:310 vpnplugins/vpnc/vpncprop.ui:358
 msgid "DH Group 1"
-msgstr ""
+msgstr "DH Grubu 1"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboDHGroup)
 #: vpnplugins/vpnc/vpncprop.ui:315
@@ -4904,7 +5128,7 @@ msgstr "DH Grubu 2 (öntanımlı)"
 #. i18n: ectx: property (text), item, widget (KComboBox, cboPerfectForwardSecrecy)
 #: vpnplugins/vpnc/vpncprop.ui:320 vpnplugins/vpnc/vpncprop.ui:368
 msgid "DH Group 5"
-msgstr ""
+msgstr "DH Grubu 5"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: vpnplugins/vpnc/vpncprop.ui:328
@@ -4919,12 +5143,12 @@ msgstr ""
 #. i18n: ectx: property (text), item, widget (KComboBox, cboPerfectForwardSecrecy)
 #: vpnplugins/vpnc/vpncprop.ui:353
 msgid "Server (default)"
-msgstr ""
+msgstr "Sunucu (öntanımlı)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cboPerfectForwardSecrecy)
 #: vpnplugins/vpnc/vpncprop.ui:363
 msgid "DH Group 2"
-msgstr ""
+msgstr "DH Grubu 2"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: vpnplugins/vpnc/vpncprop.ui:376
@@ -4934,7 +5158,7 @@ msgstr "&Sağlayıcı:"
 #. i18n: ectx: property (text), item, widget (KComboBox, cboVendor)
 #: vpnplugins/vpnc/vpncprop.ui:393
 msgid "Cisco (default)"
-msgstr ""
+msgstr "Cisco (öntanımlı)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cboVendor)
 #: vpnplugins/vpnc/vpncprop.ui:398
@@ -4949,14 +5173,14 @@ msgstr "&Uygulama Sürümü:"
 #. i18n: ectx: property (text), widget (QCheckBox, chkDeadPeerDetection)
 #: vpnplugins/vpnc/vpncprop.ui:419
 msgid "Enable Dead &Peer Detection"
-msgstr ""
+msgstr "Pasif &Uç Algılamayı Aktifleştir"
 
 #. i18n: ectx: property (text), widget (QLabel, label_12)
 #: vpnplugins/vpnc/vpncprop.ui:429
 msgid "&Local Port:"
-msgstr ""
+msgstr "&Yerel Port:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_13)
 #: vpnplugins/vpnc/vpncprop.ui:480
 msgid "&Cisco UDP Encapsulation Port:"
-msgstr ""
+msgstr "&Cisco UDP Kapsülleme Portu:"

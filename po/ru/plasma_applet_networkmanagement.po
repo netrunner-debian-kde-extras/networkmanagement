@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-01-02 08:50+0100\n"
-"PO-Revision-Date: 2013-01-18 22:27+0400\n"
+"POT-Creation-Date: 2013-03-11 10:02+0100\n"
+"PO-Revision-Date: 2013-02-03 21:14+0400\n"
 "Last-Translator: Yuri Efremov <yur.arh@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -41,7 +41,7 @@ msgstr "Уровень сигнала: %1%"
 #: hiddenwirelessnetworkitem.cpp:77
 msgctxt "label for creating a connection to a hidden wireless network"
 msgid "<hidden network>"
-msgstr ""
+msgstr "<скрытая сеть>"
 
 #: hiddenwirelessnetworkitem.cpp:81
 msgctxt ""
@@ -236,31 +236,31 @@ msgctxt "wired interface network cable unplugged"
 msgid "Cable Unplugged"
 msgstr "Кабель отключён"
 
-#: networkmanager.cpp:675
+#: networkmanager.cpp:678
 msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr "Нет сетевых интерфейсов"
 
-#: networkmanager.cpp:727
+#: networkmanager.cpp:730
 msgid "VPN Connections"
 msgstr "Соединения &VPN"
 
-#: networkmanager.cpp:741
+#: networkmanager.cpp:744
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
 msgstr "Отключено"
 
-#: networkmanager.cpp:744
+#: networkmanager.cpp:747
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
 msgstr "Поддержка беспроводной сети отключена программно"
 
-#: networkmanager.cpp:747
+#: networkmanager.cpp:750
 msgctxt "tooltip, all interfaces are down"
 msgid "Networking disabled"
 msgstr "Поддержка сети отключена"
 
-#: networkmanager.cpp:750
+#: networkmanager.cpp:753
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
 msgstr "Поддержка беспроводной сети отключена аппаратно"

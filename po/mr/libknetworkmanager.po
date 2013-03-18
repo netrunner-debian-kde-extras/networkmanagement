@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-01-16 09:40+0100\n"
-"PO-Revision-Date: 2013-01-23 15:27+0530\n"
+"POT-Creation-Date: 2013-03-02 10:30+0100\n"
+"PO-Revision-Date: 2013-02-11 14:23+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
 "Language: en_US\n"
@@ -137,7 +137,7 @@ msgstr "बँड"
 #. i18n: ectx: property (toolTip), widget (Wireless80211WidgetBand, channel)
 #. i18n: ectx: label, entry (channel), group (802-11-wireless)
 #: libs/internals/schemas/802-11-wireless.kcfg:31
-#: libs/ui/802-11-wireless.ui:141
+#: libs/ui/802-11-wireless.ui:146
 msgid "Channel"
 msgstr "मार्ग"
 
@@ -149,7 +149,7 @@ msgstr "BSSID"
 #. i18n: ectx: whatsthis, entry (bssid), group (802-11-wireless)
 #: libs/internals/schemas/802-11-wireless.kcfg:36
 msgid "Basic Service Set IDentifier of the access point to use"
-msgstr "वापरायच्या प्रवेश बिंदुची मूळ सेवा संच ओळख"
+msgstr "वापरायच्या प्रवेश बिंदूची मूळ सेवा संच ओळख"
 
 #. i18n: ectx: label, entry (rate), group (802-11-wireless)
 #: libs/internals/schemas/802-11-wireless.kcfg:39
@@ -534,7 +534,7 @@ msgstr ""
 #. i18n: ectx: label, entry (neverdefault), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:42 libs/internals/schemas/ipv6.kcfg:43
 msgid "Never Default Route"
-msgstr "मुलभूत रस्ता कधीही घेऊ नका"
+msgstr "मूलभूत रस्ता कधीही घेऊ नका"
 
 #. i18n: ectx: whatsthis, entry (neverdefault), group (ipv4)
 #: libs/internals/schemas/ipv4.kcfg:43 libs/internals/schemas/ipv6.kcfg:44
@@ -706,7 +706,7 @@ msgstr "प्रणाली साधन नाव"
 #: libs/internals/tooltips.cpp:45
 msgctxt "@info:tooltip"
 msgid "System driver name"
-msgstr "प्रणाली ड्रायव्हर नाव"
+msgstr "प्रणाली ड्राइव्हर नाव"
 
 #: libs/internals/tooltips.cpp:46
 msgctxt "@info:tooltip"
@@ -766,7 +766,7 @@ msgstr "वायरलेस संजाळाची कार्य पद्
 #: libs/internals/tooltips.cpp:58
 msgctxt "@info:tooltip"
 msgid "Hardware address of the active access point"
-msgstr "सक्रीय प्रवेश बिंदुचा हार्डवेअर पत्ता"
+msgstr "सक्रिय प्रवेश बिंदूचा हार्डवेअर पत्ता"
 
 #: libs/internals/tooltips.cpp:59
 msgctxt "@info:tooltip"
@@ -865,7 +865,7 @@ msgstr "पद्धत"
 #: libs/internals/tooltips.cpp:85
 msgctxt " Active access point MAC address"
 msgid "Access point"
-msgstr "प्रवेश बिंदु"
+msgstr "प्रवेश बिंदू"
 
 #: libs/internals/tooltips.cpp:87
 msgctxt ""
@@ -935,7 +935,7 @@ msgstr "न जुळलेले"
 #: libs/internals/uiutils.cpp:183
 msgctxt "description of preparing to connect network interface state"
 msgid "Preparing to connect"
-msgstr "जुळवणीस तयार करीत आहे"
+msgstr "जुळवणीस तयार करत आहे"
 
 #: libs/internals/uiutils.cpp:186
 msgctxt "description of configuring hardware network interface state"
@@ -977,7 +977,7 @@ msgstr "%1 यास जुळलेले आहे"
 #: libs/internals/uiutils.cpp:208
 msgctxt "network interface disconnecting state label"
 msgid "Deactivating connection"
-msgstr "जुळवणी निष्क्रीय करत आहे"
+msgstr "जुळवणी निष्क्रिय करत आहे"
 
 #: libs/internals/uiutils.cpp:211
 msgctxt "network interface connection failed state label"
@@ -1198,14 +1198,14 @@ msgstr "PIN/PUK चे कुलूप काढताना त्रुटी"
 #, kde-format
 msgctxt "@info:status Notification text when connecting"
 msgid "Activating %1"
-msgstr "%1 सक्रीय करत आहे"
+msgstr "%1 सक्रिय करत आहे"
 
 #: libs/service/notificationmanager.cpp:118
 #: libs/service/notificationmanager.cpp:450
 #, kde-format
 msgctxt "@info:status Notification text when a connection has been activated"
 msgid "%1 activated"
-msgstr "%1 कार्यान्वीत"
+msgstr "%1 कार्यान्वित"
 
 #: libs/service/notificationmanager.cpp:124
 #: libs/service/notificationmanager.cpp:455
@@ -1219,7 +1219,7 @@ msgstr "%1 जुळवणी अपयशी झाली"
 #, kde-format
 msgctxt "@info:status Notification text when deactivating a connection"
 msgid "%1 deactivated"
-msgstr "%1 निष्क्रीय केले"
+msgstr "%1 निष्क्रिय केले"
 
 #: libs/service/notificationmanager.cpp:143
 #, kde-format
@@ -1233,7 +1233,7 @@ msgctxt ""
 "@info:status interface (%2) status notification title when a connection (%1) "
 "is activating"
 msgid "Activating %1 on %2"
-msgstr "%2 वरील %1 सक्रीय करत आहे"
+msgstr "%2 वरील %1 सक्रिय करत आहे"
 
 #: libs/service/notificationmanager.cpp:212
 #, kde-format
@@ -1594,8 +1594,8 @@ msgctxt ""
 "determine the plural form of network."
 msgid "<b>New wireless network:</b><br /> %2"
 msgid_plural "<b>New wireless networks:</b><br /> %2"
-msgstr[0] "<b>नविन वायरलेस संजाळ :</b><br /> %2"
-msgstr[1] "<b>नविन वायरलेस संजाळ :</b><br /> %2"
+msgstr[0] "<b>नवीन वायरलेस संजाळ :</b><br /> %2"
+msgstr[1] "<b>नवीन वायरलेस संजाळ :</b><br /> %2"
 
 #: libs/service/notificationmanager.cpp:608
 #, kde-format
@@ -1618,19 +1618,19 @@ msgstr[1] "<b>वायरलेस संजाळ नाहीसे झाल
 #: libs/service/notificationmanager.cpp:624
 msgctxt "@info:status Notification for radio kill switch turned on"
 msgid "Wireless hardware enabled"
-msgstr "वायरलेस हार्डवेअर कार्यान्वीत आहे"
+msgstr "वायरलेस हार्डवेअर कार्यान्वित आहे"
 
 #: libs/service/notificationmanager.cpp:631
 msgctxt "@info:status Notification for radio kill switch turned off"
 msgid "Wireless hardware disabled"
-msgstr "वायरलेस हार्डवेअर अकार्यान्वीत आहे"
+msgstr "वायरलेस हार्डवेअर अकार्यान्वित आहे"
 
 #: libs/service/notificationmanager.cpp:638
 msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is disabled"
 msgid "Networking system disabled"
-msgstr "संजाळ प्रणाली अकार्यान्वीत आहे"
+msgstr "संजाळ प्रणाली अकार्यान्वित आहे"
 
 #: libs/service/notificationmanager.cpp:644
 msgctxt ""
@@ -1665,11 +1665,11 @@ msgstr "PUK कोड :"
 
 #: libs/service/pindialog.cpp:80
 msgid "New PIN code:"
-msgstr "नविन PIN कोड :"
+msgstr "नवीन PIN कोड :"
 
 #: libs/service/pindialog.cpp:81
 msgid "Re-enter new PIN code:"
-msgstr "नविन PIN कोड परत दाखल करा :"
+msgstr "नवीन PIN कोड परत दाखल करा :"
 
 #: libs/service/pindialog.cpp:82
 msgid "Show PIN/PUK code"
@@ -1755,7 +1755,8 @@ msgstr "वायरलेस संजाळाची कार्य पद्
 msgid ""
 "Infrastructure mode is the most common setting.  To form a peer-to-peer "
 "wireless network with another computer when there is no infrastructure, "
-"choose Ad-hoc."
+"choose Ap-mode (requires NetworkManager >= 0.9.8 and a suitable wifi driver) "
+"or Ad-hoc. Also read https://bugs.kde.org/show_bug.cgi?id=311705."
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
@@ -1770,18 +1771,24 @@ msgstr "आधार व्यवस्था"
 msgid "Ad-hoc"
 msgstr ""
 
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
+#. i18n: ectx: property (text), item, widget (KComboBox, mode)
+#: libs/ui/802-11-wireless.ui:87 libs/ui/wireless.ui:58
+msgid "Ap-mode"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: libs/ui/802-11-wireless.ui:90
+#: libs/ui/802-11-wireless.ui:95
 msgid "B&and:"
 msgstr "बँड (&A):"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, band)
-#: libs/ui/802-11-wireless.ui:103
+#: libs/ui/802-11-wireless.ui:108
 msgid "Frequency band of the wireless network."
 msgstr "वायरलेस संजाळाचा फ्रिक्वेन्सी बँड"
 
 #. i18n: ectx: property (whatsThis), widget (KComboBox, band)
-#: libs/ui/802-11-wireless.ui:106
+#: libs/ui/802-11-wireless.ui:111
 msgid "b/g is the most common band around 2.4 GHz. Less common is a at 5 GHz."
 msgstr ""
 
@@ -1796,48 +1803,48 @@ msgstr ""
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, mtu)
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, speed)
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: libs/ui/802-11-wireless.ui:110 libs/ui/802-11-wireless.ui:147
-#: libs/ui/802-11-wireless.ui:247 libs/ui/ipv6.ui:112
+#: libs/ui/802-11-wireless.ui:115 libs/ui/802-11-wireless.ui:152
+#: libs/ui/802-11-wireless.ui:252 libs/ui/ipv6.ui:112
 #: libs/ui/security/eapmethodpeapbase.ui:72 libs/ui/wired.ui:88
 #: libs/ui/wired.ui:120 vpnplugins/openvpn/openvpnprop.ui:629
 #: vpnplugins/openvpn/openvpnprop.ui:653 vpnplugins/openvpn/openvpnprop.ui:677
 #: vpnplugins/vpnc/vpncprop.ui:445 vpnplugins/vpnc/vpncprop.ui:467
 msgid "Automatic"
-msgstr "स्वयंचलीत"
+msgstr "स्वयंचलित"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: libs/ui/802-11-wireless.ui:115
+#: libs/ui/802-11-wireless.ui:120
 msgid "a"
 msgstr "a"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: libs/ui/802-11-wireless.ui:120
+#: libs/ui/802-11-wireless.ui:125
 msgid "b/g"
 msgstr "b/g"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: libs/ui/802-11-wireless.ui:128
+#: libs/ui/802-11-wireless.ui:133
 msgid "&Channel:"
 msgstr "मार्ग (&C):"
 
 #. i18n: ectx: property (whatsThis), widget (Wireless80211WidgetBand, channel)
-#: libs/ui/802-11-wireless.ui:144
+#: libs/ui/802-11-wireless.ui:149
 msgid "Sets the channel of the network."
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: libs/ui/802-11-wireless.ui:160 libs/ui/wireless.ui:62
+#: libs/ui/802-11-wireless.ui:165 libs/ui/wireless.ui:66
 msgid "&BSSID:"
 msgstr "&BSSID:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, bssid)
-#: libs/ui/802-11-wireless.ui:175
+#: libs/ui/802-11-wireless.ui:180
 msgid "Only connect to the access point with this hardware address"
 msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, bssid)
-#: libs/ui/802-11-wireless.ui:178
+#: libs/ui/802-11-wireless.ui:183
 msgid ""
 "Setting a BSSID (Basic Service Set Identification) forces this connection to "
 "connect only to the access point with the specified hardware address, even "
@@ -1846,23 +1853,23 @@ msgstr ""
 
 #. i18n: ectx: property (inputMask), widget (KLineEdit, bssid)
 #. i18n: ectx: property (inputMask), widget (KLineEdit, clonedMacAddress)
-#: libs/ui/802-11-wireless.ui:181 libs/ui/802-11-wireless.ui:275
+#: libs/ui/802-11-wireless.ui:186 libs/ui/802-11-wireless.ui:280
 #: libs/ui/wired.ui:177
 msgid "HH:HH:HH:HH:HH:HH;_"
 msgstr "HH:HH:HH:HH:HH:HH;_"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnSelectBssid)
-#: libs/ui/802-11-wireless.ui:188
+#: libs/ui/802-11-wireless.ui:193
 msgid "&Select"
 msgstr "निवडा (&S)"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, btnSelectBssid)
-#: libs/ui/802-11-wireless.ui:194
+#: libs/ui/802-11-wireless.ui:199
 msgid "Select the BSSID (access point) with the strongest signal."
 msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, btnSelectBssid)
-#: libs/ui/802-11-wireless.ui:197
+#: libs/ui/802-11-wireless.ui:202
 msgid ""
 "This button will select the access point with the ssid specified in the "
 "field above and with the strongest signal."
@@ -1870,30 +1877,30 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: libs/ui/802-11-wireless.ui:206 libs/ui/wired.ui:34
+#: libs/ui/802-11-wireless.ui:211 libs/ui/wired.ui:34
 msgid "&Restrict To Interface:"
 msgstr "या दुव्यापुरते प्रतिबंधीत करा (&R):"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbMacAddress)
 #. i18n: ectx: property (text), item, widget (KComboBox, type)
-#: libs/ui/802-11-wireless.ui:220 libs/ui/gsm.ui:183 libs/ui/wired.ui:48
+#: libs/ui/802-11-wireless.ui:225 libs/ui/gsm.ui:183 libs/ui/wired.ui:48
 #: vpnplugins/pptp/pptpadvanced.ui:120
 msgid "Any"
 msgstr "कोणतेही"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
-#: libs/ui/802-11-wireless.ui:228
+#: libs/ui/802-11-wireless.ui:233
 msgid "MT&U:"
 msgstr "MT&U:"
 
 #. i18n: ectx: property (toolTip), widget (KIntSpinBox, mtu)
-#: libs/ui/802-11-wireless.ui:241 libs/ui/wired.ui:79
+#: libs/ui/802-11-wireless.ui:246 libs/ui/wired.ui:79
 msgid "Maximum Transmission Unit"
 msgstr "कमाल वहन एकक"
 
 #. i18n: ectx: property (whatsThis), widget (KIntSpinBox, mtu)
-#: libs/ui/802-11-wireless.ui:244 libs/ui/wired.ui:82
+#: libs/ui/802-11-wireless.ui:249 libs/ui/wired.ui:82
 msgid ""
 "Sets the size of the largest packet that can be transmitted on this network. "
 "'0' sets the MTU automatically."
@@ -1901,17 +1908,17 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: libs/ui/802-11-wireless.ui:260 libs/ui/wired.ui:56
+#: libs/ui/802-11-wireless.ui:265 libs/ui/wired.ui:56
 msgid "Cloned MAC address"
 msgstr "MAC पत्त्याची नक्कल केली "
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
-#: libs/ui/802-11-wireless.ui:269 libs/ui/wired.ui:171
+#: libs/ui/802-11-wireless.ui:274 libs/ui/wired.ui:171
 msgid "Custom MAC address for the hardware to use"
 msgstr "हार्डवेअरला वापरण्याकरिता ऐच्छिक MAC पत्ता"
 
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, clonedMacAddress)
-#: libs/ui/802-11-wireless.ui:272 libs/ui/wired.ui:174
+#: libs/ui/802-11-wireless.ui:277 libs/ui/wired.ui:174
 msgid ""
 "The MAC address entered here will be used as hardware address for the "
 "network device this connection is activated on. This feature is known as MAC "
@@ -1919,17 +1926,17 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (KPushButton, clonedMacAddressRandom)
-#: libs/ui/802-11-wireless.ui:288 libs/ui/wired.ui:190
+#: libs/ui/802-11-wireless.ui:293 libs/ui/wired.ui:190
 msgid "Random"
 msgstr "विनाक्रम"
 
-#: libs/ui/802_11_wirelesswidget.cpp:63 libs/ui/wiredwidget.cpp:55
+#: libs/ui/802_11_wirelesswidget.cpp:64 libs/ui/wiredwidget.cpp:55
 msgid " byte"
 msgid_plural " bytes"
 msgstr[0] " बाइट"
 msgstr[1] " बाइट्स"
 
-#: libs/ui/802_11_wirelesswidget.cpp:141 libs/ui/wiredwidget.cpp:76
+#: libs/ui/802_11_wirelesswidget.cpp:140 libs/ui/wiredwidget.cpp:76
 #, kde-format
 msgctxt ""
 "@item:inlist item for hardware that is currently not attached to the machine "
@@ -1937,7 +1944,7 @@ msgctxt ""
 msgid "Disconnected interface (%1)"
 msgstr "जुळवणी तोडलेली आहे (%1)"
 
-#: libs/ui/802_11_wirelesswidget.cpp:203
+#: libs/ui/802_11_wirelesswidget.cpp:206
 msgctxt "@title:window wireless network scan dialog"
 msgid "Available Networks"
 msgstr "उपलब्ध संजाळ"
@@ -1974,12 +1981,12 @@ msgstr "वापरकर्ता नाव"
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: libs/ui/advancedpermissionswidget.ui:145
 msgid "Users allowed to activate the connection"
-msgstr "जुळवणी कार्यान्वीत करण्याची परवानगी असणारे वापरकर्ते"
+msgstr "जुळवणी कार्यान्वित करण्याची परवानगी असणारे वापरकर्ते"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Bluetooth)
 #: libs/ui/bluetooth.ui:14
 msgid "Bluetooth"
-msgstr "ब्लुटूथ"
+msgstr "ब्लूटूथ"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: libs/ui/bluetooth.ui:23
@@ -2015,7 +2022,7 @@ msgstr "%1 संजाळ"
 
 #: libs/ui/bluetoothconnectioneditor.cpp:70
 msgid "New Bluetooth Connection"
-msgstr "नविन ब्लुटूथ जुळवणी"
+msgstr "नवीन ब्लूटूथ जुळवणी"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabCellular)
 #. i18n: ectx: property (windowTitle), widget (QWidget, Gsm)
@@ -2076,7 +2083,7 @@ msgstr "गुप्तशब्द दर्शवा (&S)"
 
 #: libs/ui/cdmaconnectioneditor.cpp:52 libs/ui/gsmconnectioneditor.cpp:73
 msgid "New Cellular Connection"
-msgstr "नविन मोबाईल जुळवणी"
+msgstr "नवीन मोबाईल जुळवणी"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: libs/ui/connection.ui:32
@@ -2151,15 +2158,15 @@ msgctxt "@title:window for network secrets request"
 msgid "Secrets for %1"
 msgstr "%1 या करिता गोपनीय मजकूर"
 
-#: libs/ui/connectionwidget.cpp:83 libs/ui/wirelesspreferences.cpp:121
+#: libs/ui/connectionwidget.cpp:83 libs/ui/wirelesspreferences.cpp:145
 msgid "New Wireless Connection"
-msgstr "नविन वायरलेस जुळवणी"
+msgstr "नवीन वायरलेस जुळवणी"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
 #: libs/ui/connectionwidget.cpp:125 libs/ui/connectionwidget.cpp:160
 #: libs/ui/connectionwidget.cpp:166 vpnplugins/openvpn/openvpnprop.ui:809
 msgid "Default"
-msgstr "मुलभूत"
+msgstr "मूलभूत"
 
 #: libs/ui/connectionwidget.cpp:145
 msgctxt "@title:window advanced permissions editor"
@@ -2325,16 +2332,19 @@ msgid "IPv4 Address"
 msgstr "IPv4 पत्ता"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbSettingsMode)
 #: libs/ui/ipv4.ui:39 libs/ui/ipv6.ui:39
 msgid "Basic settings"
-msgstr "मुळ संयोजना"
+msgstr "मूळ संयोजना"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbSettingsMode)
 #: libs/ui/ipv4.ui:44 libs/ui/ipv6.ui:44
 msgid "Additional addresses"
 msgstr "अधिक पत्ते"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbSettingsMode)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbSettingsMode)
 #: libs/ui/ipv4.ui:49 libs/ui/ipv6.ui:49
 msgid "Routes"
 msgstr "रस्ते"
@@ -2371,11 +2381,11 @@ msgstr "शेअर केलेले"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboNatTraversal)
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#. i18n: ectx: property (text), item, widget (KComboBox, privacy)
 #: libs/ui/ipv4.ui:137 libs/ui/ipv6.ui:142 libs/ui/ipv6.ui:341
 #: vpnplugins/vpnc/vpncprop.ui:282
 msgid "Disabled"
-msgstr "अकार्यान्वीत"
+msgstr "अकार्यान्वित"
 
 #. i18n: ectx: property (text), widget (QLabel, addressLabel)
 #: libs/ui/ipv4.ui:145 libs/ui/ipv6.ui:150
@@ -2538,42 +2548,42 @@ msgstr "दशमान"
 #: libs/ui/ipv4widget.cpp:69
 msgctxt "@item:inlistbox IPv4 settings configuration method"
 msgid "Automatic (VPN)"
-msgstr "स्वयंचलीत (VPN)"
+msgstr "स्वयंचलित (VPN)"
 
 #: libs/ui/ipv4widget.cpp:71
 msgctxt "@item:inlistbox IPv4 settings configuration method"
 msgid "Automatic (VPN) addresses only"
-msgstr "फक्त स्वयंचलीत (VPN) पत्ते"
+msgstr "फक्त स्वयंचलित (VPN) पत्ते"
 
 #: libs/ui/ipv4widget.cpp:76
 msgctxt "@item:inlistbox IPv4 settings configuration method"
 msgid "Automatic (PPP)"
-msgstr "स्वयंचलीत (PPP)"
+msgstr "स्वयंचलित (PPP)"
 
 #: libs/ui/ipv4widget.cpp:78
 msgctxt "@item:inlistbox IPv4 settings configuration method"
 msgid "Automatic (PPP) addresses only"
-msgstr "फक्त स्वयंचलीत (PPP) पत्ते"
+msgstr "फक्त स्वयंचलित (PPP) पत्ते"
 
 #: libs/ui/ipv4widget.cpp:82
 msgctxt "@item:inlistbox IPv4 settings configuration method"
 msgid "Automatic (DSL)"
-msgstr "स्वयंचलीत (DSL)"
+msgstr "स्वयंचलित (DSL)"
 
 #: libs/ui/ipv4widget.cpp:84
 msgctxt "@item:inlistbox IPv4 settings configuration method"
 msgid "Automatic (DSL) addresses only"
-msgstr "फक्त स्वयंचलीत (DSL) पत्ते"
+msgstr "फक्त स्वयंचलित (DSL) पत्ते"
 
 #: libs/ui/ipv4widget.cpp:88
 msgctxt "@item:inlistbox IPv4 settings configuration method"
 msgid "Automatic (DHCP)"
-msgstr "स्वयंचलीत (DHCP)"
+msgstr "स्वयंचलित (DHCP)"
 
 #: libs/ui/ipv4widget.cpp:90
 msgctxt "@item:inlistbox IPv4 settings configuration method"
 msgid "Automatic (DHCP) addresses only"
-msgstr "फक्त स्वयंचलीत (DHCP) पत्ते"
+msgstr "फक्त स्वयंचलित (DHCP) पत्ते"
 
 #: libs/ui/ipv4widget.cpp:389 libs/ui/ipv6widget.cpp:358
 msgctxt "@info"
@@ -2597,22 +2607,22 @@ msgstr "IPv6 पत्ता"
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: libs/ui/ipv6.ui:117
 msgid "Automatic (addresses only)"
-msgstr "स्वयंचलीत (फक्त पत्ते)"
+msgstr "स्वयंचलित (फक्त पत्ते)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: libs/ui/ipv6.ui:122
 msgid "Automatic (DHCP only)"
-msgstr "स्वयंचलीत (फक्त DHCP)"
+msgstr "स्वयंचलित (फक्त DHCP)"
 
-#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#. i18n: ectx: property (text), item, widget (KComboBox, privacy)
 #: libs/ui/ipv6.ui:346
 msgid "Enabled (prefer public address)"
-msgstr "कार्यान्वीत(सार्वजनीक पत्ते पसंत करा)"
+msgstr "कार्यान्वित(सार्वजनीक पत्ते पसंत करा)"
 
-#. i18n: ectx: property (text), item, widget (QComboBox, privacy)
+#. i18n: ectx: property (text), item, widget (KComboBox, privacy)
 #: libs/ui/ipv6.ui:351
 msgid "Enabled (prefer temporary addresses)"
-msgstr "कार्यान्वीत(तात्पूरते पत्ते पसंत करा)"
+msgstr "कार्यान्वित(तात्पूरते पत्ते पसंत करा)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: libs/ui/ipv6.ui:359
@@ -2778,7 +2788,7 @@ msgstr "सेवा (&S):"
 
 #: libs/ui/pppoepreferences.cpp:42 libs/ui/pppoepreferences.cpp:60
 msgid "New DSL Connection"
-msgstr "नविन DSL जुळवणी"
+msgstr "नवीन DSL जुळवणी"
 
 #. i18n: ectx: property (text), widget (QLabel, m_interfaceLabel)
 #: libs/ui/scanwidget.ui:38
@@ -2890,7 +2900,7 @@ msgstr ""
 #: libs/ui/security/eapmethodtlsbase.ui:155
 #: libs/ui/security/eapmethodttlsbase.ui:72
 msgid "Alternative Subject Matches:"
-msgstr "पर्यायी विषय जुळणे :"
+msgstr "वैकल्पिक विषय जुळणे :"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leAltSubjectMatches)
 #: libs/ui/security/eapmethodpeapbase.ui:113
@@ -3003,7 +3013,7 @@ msgstr "GTC"
 #: libs/ui/security/peapwidget.cpp:192 libs/ui/security/tlswidget.cpp:297
 #: libs/ui/security/ttlswidget.cpp:194
 msgid "Alternative Subject Matches"
-msgstr "पर्यायी विषय जुळणे"
+msgstr "वैकल्पिक विषय जुळणे"
 
 #: libs/ui/security/peapwidget.cpp:193 libs/ui/security/tlswidget.cpp:298
 #: libs/ui/security/ttlswidget.cpp:195
@@ -3101,7 +3111,7 @@ msgstr "&WEP अनुक्रमणिका :"
 #. i18n: ectx: property (text), item, widget (KComboBox, weptxkeyindex)
 #: libs/ui/security/wep.ui:68
 msgid "1 (Default)"
-msgstr "1 (मुलभूत)"
+msgstr "1 (मूलभूत)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, weptxkeyindex)
 #: libs/ui/security/wep.ui:73
@@ -3197,7 +3207,7 @@ msgstr "WPA/WPA2 एंटरप्राइज"
 
 #: libs/ui/vpnpreferences.cpp:53 libs/ui/vpnpreferences.cpp:124
 msgid "New VPN Connection"
-msgstr "नविन VPN जुळवणी"
+msgstr "नवीन VPN जुळवणी"
 
 #: libs/ui/vpnuiplugin.cpp:36
 msgctxt "Error message in VPN import/export dialog"
@@ -3280,7 +3290,7 @@ msgstr "शेअर केलेली वायर्ड जुळवणी"
 
 #: libs/ui/wiredpreferences.cpp:53
 msgid "New Wired Connection"
-msgstr "नविन वायर्ड जुळवणी"
+msgstr "नवीन वायर्ड जुळवणी"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: libs/ui/wireless.ui:19
@@ -3294,34 +3304,34 @@ msgstr "पद्धत (&M):"
 
 #. i18n: ectx: property (inputMask), widget (KLineEdit, bssid)
 #. i18n: ectx: property (inputMask), widget (KLineEdit, macaddress)
-#: libs/ui/wireless.ui:75 libs/ui/wireless.ui:98
+#: libs/ui/wireless.ui:79 libs/ui/wireless.ui:102
 msgid "HH:HH:HH:HH:HH:HH; "
 msgstr "HH:HH:HH:HH:HH:HH; "
 
 #. i18n: ectx: property (text), widget (KLineEdit, bssid)
-#: libs/ui/wireless.ui:78
+#: libs/ui/wireless.ui:82
 msgid ":::::"
 msgstr ":::::"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: libs/ui/wireless.ui:85
+#: libs/ui/wireless.ui:89
 msgid "MAC &address:"
 msgstr "MAC पत्ता (&A):"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: libs/ui/wireless.ui:105
+#: libs/ui/wireless.ui:109
 msgid "&MTU:"
 msgstr "&MTU:"
 
-#: libs/ui/wirelesspreferences.cpp:71
+#: libs/ui/wirelesspreferences.cpp:72
 msgctxt ""
 "ssid of the wifi connection. Use ASCII letters and underscore *only* (no "
 "spaces!). Leave it unstranslated if your language does not support ASCII "
 "characters"
 msgid "Shared_Wireless_Connection"
-msgstr "शेअर केलेली वायरलेस जुळवणी"
+msgstr "Shared_Wireless_Connection"
 
-#: libs/ui/wirelesspreferences.cpp:119
+#: libs/ui/wirelesspreferences.cpp:143
 msgid "Shared Wireless Connection"
 msgstr "शेअर केलेली वायरलेस जुळवणी"
 
@@ -3442,7 +3452,7 @@ msgstr "काल"
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
 msgid "Never"
-msgstr "कधिच नाही"
+msgstr "कधीही नाही"
 
 #: settings/config/manageconnectionwidget.cpp:372
 msgctxt "Tooltip for disabled tab when no VPN plugins are installed"
@@ -3480,7 +3490,7 @@ msgstr "यश"
 
 #: settings/config/manageconnectionwidget.cpp:505
 msgid "Do not show again"
-msgstr "परत दर्शवू नका"
+msgstr "पुन्हा दर्शवू नका"
 
 #: settings/config/manageconnectionwidget.cpp:507
 msgid "Error exporting VPN connection settings"
@@ -3602,7 +3612,7 @@ msgstr "अपरिचीत पुरविठाकर्ता"
 #: settings/config/mobileconnectionwizard.cpp:163
 msgctxt "Mobile Connection Wizard"
 msgid "Default"
-msgstr "मुलभूत"
+msgstr "मूलभूत"
 
 #: settings/config/mobileconnectionwizard.cpp:195
 #: settings/config/mobileconnectionwizard.cpp:203
@@ -3752,12 +3762,12 @@ msgstr "<b>जुळवणी गोपनीयता</b>"
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: settings/config/othersettings.ui:24
 msgid "&Store connection secrets: "
-msgstr "जुळवणी गोपनीयता संचयीत करा (&S): "
+msgstr "जुळवणी गोपनीयता साठवा (&S): "
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SecretStorageMode)
 #: settings/config/othersettings.ui:41
 msgid "Do not store (always prompt)"
-msgstr "संचयीत करु नका (नेहमी विचारा)"
+msgstr "संचयीत करू नका (नेहमी विचारा)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SecretStorageMode)
 #: settings/config/othersettings.ui:46
@@ -3837,7 +3847,7 @@ msgstr "मोडेम सापडल्यावर"
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AskForGsmPin)
 #: settings/config/othersettings.ui:171
 msgid "When Activating Connection"
-msgstr "जुळवणी कार्यान्वीत करताना"
+msgstr "जुळवणी कार्यान्वित करताना"
 
 #. i18n: ectx: property (text), widget (QPushButton, notificationsButton)
 #: settings/config/othersettings.ui:179
@@ -4049,7 +4059,7 @@ msgstr "नोर्टेल"
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbGwType)
 #: vpnplugins/novellvpn/novellvpnprop.ui:55
 msgid "Standard Gateway"
-msgstr "मानक गेटवे"
+msgstr "प्रमाणित गेटवे"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbAuthType)
 #: vpnplugins/novellvpn/novellvpnprop.ui:83
@@ -4181,7 +4191,7 @@ msgstr "&CA प्रमाणपत्र :"
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: vpnplugins/openconnect/openconnectprop.ui:55
 msgid "&Proxy:"
-msgstr ""
+msgstr "प्रॉक्सी (&P):"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: vpnplugins/openconnect/openconnectprop.ui:68
@@ -4268,7 +4278,7 @@ msgstr ""
 #: vpnplugins/openvpn/openvpnauth.cpp:106
 #: vpnplugins/openvpn/openvpnprop.ui:1085
 msgid "Proxy Password:"
-msgstr ""
+msgstr "प्रॉक्सी गुप्तशब्द :"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, OpenVPNAuthenticationWidget)
 #: vpnplugins/openvpn/openvpnauth.ui:14
@@ -4532,27 +4542,27 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: vpnplugins/openvpn/openvpnprop.ui:994
 msgid "Proxy Type:"
-msgstr ""
+msgstr "प्रॉक्सी प्रकार :"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbProxyType)
 #: vpnplugins/openvpn/openvpnprop.ui:1019
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbProxyType)
 #: vpnplugins/openvpn/openvpnprop.ui:1024
 msgid "SOCKS"
-msgstr ""
+msgstr "SOCKS"
 
 #. i18n: ectx: property (text), widget (QLabel, label_12)
 #: vpnplugins/openvpn/openvpnprop.ui:1032
 msgid "Server Address:"
-msgstr ""
+msgstr "सर्व्हर पत्ता :"
 
 #. i18n: ectx: property (text), widget (QLabel, label_13)
 #: vpnplugins/openvpn/openvpnprop.ui:1045
 msgid "Port:"
-msgstr ""
+msgstr "पोर्ट :"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkProxyRetry)
 #: vpnplugins/openvpn/openvpnprop.ui:1068
@@ -4562,12 +4572,12 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_14)
 #: vpnplugins/openvpn/openvpnprop.ui:1075
 msgid "Proxy Username:"
-msgstr ""
+msgstr "प्रॉक्सी वापरकर्ता नाव :"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkProxyShowPassword)
 #: vpnplugins/openvpn/openvpnprop.ui:1095
 msgid "Show Password"
-msgstr ""
+msgstr "गुप्तशब्द दर्शवा"
 
 #: vpnplugins/openvpn/openvpnwidget.cpp:127
 #: vpnplugins/openvpn/openvpnwidget.cpp:151
@@ -4578,7 +4588,7 @@ msgstr ""
 #: vpnplugins/openvpn/openvpnwidget.cpp:134
 msgctxt "@item::inlist Default openvpn cipher item"
 msgid "Default"
-msgstr ""
+msgstr "मूलभूत"
 
 #: vpnplugins/openvpn/openvpnwidget.cpp:148
 msgctxt "@item:inlist Item added when OpenVPN cipher lookup failed"
@@ -4608,12 +4618,12 @@ msgstr ""
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
 #: vpnplugins/pptp/pptpadvanced.ui:125
 msgid "128 bit"
-msgstr ""
+msgstr "128 बिट"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
 #: vpnplugins/pptp/pptpadvanced.ui:130
 msgid "40 bit"
-msgstr ""
+msgstr "40 बिट"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_statefulEncryption)
 #: vpnplugins/pptp/pptpadvanced.ui:144
@@ -4648,7 +4658,7 @@ msgstr ""
 #. i18n: ectx: property (windowTitle), widget (QWidget, PptpProp)
 #: vpnplugins/pptp/pptpprop.ui:14
 msgid "PPTP Settings"
-msgstr ""
+msgstr "PPTP संयोजना"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_additional)
 #: vpnplugins/pptp/pptpprop.ui:52
@@ -4658,27 +4668,27 @@ msgstr "अधिक"
 #. i18n: ectx: property (text), widget (QLabel, lbl_login)
 #: vpnplugins/pptp/pptpprop.ui:74
 msgid "&Login:"
-msgstr ""
+msgstr "प्रवेश (&L):"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_ntdomain)
 #: vpnplugins/pptp/pptpprop.ui:165
 msgid "&NT Domain:"
-msgstr ""
+msgstr "&NT डोमेन :"
 
 #: vpnplugins/strongswan/strongswanauth.cpp:70
 msgctxt "@label:textbox password label for private key password"
 msgid "Private Key Password:"
-msgstr ""
+msgstr "वैयक्तिक कळ गुप्तशब्द :"
 
 #: vpnplugins/strongswan/strongswanauth.cpp:72
 msgctxt "@label:textbox password label for smartcard pin"
 msgid "PIN:"
-msgstr ""
+msgstr "PIN:"
 
 #: vpnplugins/strongswan/strongswanauth.cpp:74
 msgctxt "@label:textbox password label for EAP password"
 msgid "Password:"
-msgstr ""
+msgstr "गुप्तशब्द :"
 
 #: vpnplugins/strongswan/strongswanauth.cpp:111
 msgid ""
@@ -4699,17 +4709,17 @@ msgstr ""
 #: vpnplugins/strongswan/strongswanprop.ui:304 vpnplugins/vpnc/vpncauth.ui:79
 #: vpnplugins/vpnc/vpncprop.ui:161
 msgid "&Show passwords"
-msgstr ""
+msgstr "गुप्तशब्द दर्शवा (&S)"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: vpnplugins/strongswan/strongswanprop.ui:20
 msgid "Gateway"
-msgstr ""
+msgstr "गेटवे"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #: vpnplugins/strongswan/strongswanprop.ui:26 vpnplugins/vpnc/vpncprop.ui:30
 msgid "Gateway:"
-msgstr ""
+msgstr "गेटवे :"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
@@ -4718,32 +4728,32 @@ msgstr ""
 #: vpnplugins/strongswan/strongswanprop.ui:110
 #: vpnplugins/strongswan/strongswanprop.ui:183
 msgid "Certificate:"
-msgstr ""
+msgstr "प्रमाणपत्र :"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
 #: vpnplugins/strongswan/strongswanprop.ui:71
 msgid "Certificate/private key"
-msgstr ""
+msgstr "प्रमाणपत्र / वैयक्तिक कळ"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
 #: vpnplugins/strongswan/strongswanprop.ui:76
 msgid "Certificate/ssh-agent"
-msgstr ""
+msgstr "प्रमाणपत्र/ssh-agent"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
 #: vpnplugins/strongswan/strongswanprop.ui:81
 msgid "Smartcard"
-msgstr ""
+msgstr "स्मार्टकार्ड"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: vpnplugins/strongswan/strongswanprop.ui:120
 msgid "Private key:"
-msgstr ""
+msgstr "वैयक्तिक कळ :"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: vpnplugins/strongswan/strongswanprop.ui:197
 msgid "PIN:"
-msgstr ""
+msgstr "PIN:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: vpnplugins/strongswan/strongswanprop.ui:290
@@ -4805,7 +4815,7 @@ msgstr ""
 #: vpnplugins/vpnc/vpnc.cpp:311
 #, kde-format
 msgid "%1: file could not be created"
-msgstr "%1: ही फाईल तयार करु शकत नाही"
+msgstr "%1: ही फाईल तयार करू शकत नाही"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, VpncAuth)
 #: vpnplugins/vpnc/vpncauth.ui:14
@@ -4915,7 +4925,7 @@ msgstr ""
 #. i18n: ectx: property (text), item, widget (KComboBox, cboPerfectForwardSecrecy)
 #: vpnplugins/vpnc/vpncprop.ui:353
 msgid "Server (default)"
-msgstr "सर्व्हर (मुलभूत)"
+msgstr "सर्व्हर (मूलभूत)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cboPerfectForwardSecrecy)
 #: vpnplugins/vpnc/vpncprop.ui:363
@@ -4940,7 +4950,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_10)
 #: vpnplugins/vpnc/vpncprop.ui:406
 msgid "&Application Version:"
-msgstr ""
+msgstr "अनुप्रयोग आवृत्ती (&A):"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkDeadPeerDetection)
 #: vpnplugins/vpnc/vpncprop.ui:419
@@ -4950,7 +4960,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_12)
 #: vpnplugins/vpnc/vpncprop.ui:429
 msgid "&Local Port:"
-msgstr ""
+msgstr "स्थानीय पोर्ट (&L):"
 
 #. i18n: ectx: property (text), widget (QLabel, label_13)
 #: vpnplugins/vpnc/vpncprop.ui:480

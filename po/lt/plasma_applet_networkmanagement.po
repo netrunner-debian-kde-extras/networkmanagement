@@ -6,13 +6,14 @@
 # Tomas Straupis <tomasstraupis@gmail.com>, 2011.
 # Remigijus Jarmalavičius <remigijus@jarmalavicius.lt>, 2011.
 # Liudas Ališauskas <liudas.alisauskas@gmail.com>, 2012.
+# Liudas Alisauskas <liudas@akmc.lt>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanagement\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-01-02 08:50+0100\n"
-"PO-Revision-Date: 2012-08-05 18:07+0300\n"
-"Last-Translator: Liudas Ališauskas <liudas.alisauskas@gmail.com>\n"
+"POT-Creation-Date: 2013-03-11 10:02+0100\n"
+"PO-Revision-Date: 2013-02-03 11:29+0200\n"
+"Last-Translator: Liudas Alisauskas <liudas@akmc.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
@@ -137,7 +138,7 @@ msgstr "Prieigos taškas"
 #: interfacedetailswidget.cpp:320
 msgctxt "interface details"
 msgid "Access Point (MAC)"
-msgstr "Prieigos taškas (MAC)"
+msgstr "Prieigos taško (MAC)"
 
 #: interfacedetailswidget.cpp:328
 msgctxt "@item:intable wireless band"
@@ -237,31 +238,31 @@ msgctxt "wired interface network cable unplugged"
 msgid "Cable Unplugged"
 msgstr "Atjungtas kabelis"
 
-#: networkmanager.cpp:675
+#: networkmanager.cpp:678
 msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr "Nėra tinklo sąsajų"
 
-#: networkmanager.cpp:727
+#: networkmanager.cpp:730
 msgid "VPN Connections"
 msgstr "VPN ryšiai"
 
-#: networkmanager.cpp:741
+#: networkmanager.cpp:744
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
 msgstr "Atsijungta"
 
-#: networkmanager.cpp:744
+#: networkmanager.cpp:747
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
 msgstr "Bevielis yra išjungtas programiškai"
 
-#: networkmanager.cpp:747
+#: networkmanager.cpp:750
 msgctxt "tooltip, all interfaces are down"
 msgid "Networking disabled"
 msgstr "Tinklas išjungtas"
 
-#: networkmanager.cpp:750
+#: networkmanager.cpp:753
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
 msgstr "Bevielis yra išjungtas aparatiškai"

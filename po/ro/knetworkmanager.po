@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Sergiu Bivol <sergiu.bivol@jurnaltv.md>, 2012.
+# Sergiu Bivol <sergiu.bivol@jurnaltv.md>, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2011-10-07 11:06+0200\n"
-"PO-Revision-Date: 2012-11-16 00:19+0200\n"
+"PO-Revision-Date: 2013-02-09 00:43+0200\n"
 "Last-Translator: Sergiu Bivol <sergiu.bivol@jurnaltv.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -175,7 +175,7 @@ msgstr "Gestiune conexiuni..."
 #: knetworkmanagertrayicon.cpp:142
 msgctxt "@action:inmenu show dialog to connect to new or hidden network"
 msgid "Connect To &Other Network..."
-msgstr ""
+msgstr "C&onectare la altă rețea..."
 
 #: knetworkmanagertrayicon.cpp:214
 msgctxt ""
@@ -188,7 +188,7 @@ msgstr "Gestiunea rețelei e dezactivată"
 msgctxt ""
 "@info:tooltip NetworkManager is not running, this client cannot do anything"
 msgid "The system Network Management service is not running"
-msgstr ""
+msgstr "Serviciul de gestiune a rețelei din sistem nu rulează"
 
 #: knetworkmanagertrayicon.cpp:639
 msgctxt "@action:inmenu copy ip address to clipboard"
@@ -202,7 +202,7 @@ msgstr "Proprietăți"
 
 #: main.cpp:27
 msgid "KNetworkManager, the KDE 4 NetworkManager client"
-msgstr ""
+msgstr "KNetworkManager, clientul KDE 4 pentru NetworkManager"
 
 #: main.cpp:33
 msgid "KNetworkManager"
@@ -226,7 +226,7 @@ msgstr "Paul Marchouk"
 
 #: main.cpp:35
 msgid "User Interface Polish"
-msgstr ""
+msgstr "Îmbunătățirea interfeței cu utilizatorul"
 
 #: main.cpp:36
 msgid "Christopher Blauvelt"
@@ -234,7 +234,7 @@ msgstr "Christopher Blauvelt"
 
 #: main.cpp:36
 msgid "Original Author, Wireless Scan UI"
-msgstr ""
+msgstr "Autor original, interfața de căutare a rețelelor fără fir"
 
 #: monolithic.cpp:118
 msgctxt ""
@@ -262,6 +262,7 @@ msgid ""
 "Another NetworkManager client is already running.  Use KNetworkManager in "
 "future? "
 msgstr ""
+"Alt client NetworkManager rulează deja. Folosiți KNetworkManager pe viitor? "
 
 #: monolithic.cpp:128
 msgctxt ""
@@ -300,12 +301,12 @@ msgstr "Rețea Ad-Hoc nouă..."
 msgctxt ""
 "@item:inlist Create connection to other wireless network using named device"
 msgid "Connect To Other Network With %1..."
-msgstr ""
+msgstr "Conectare la altă rețea cu %1..."
 
 #: otherwirelessnetworkdialog.cpp:106 otherwirelessnetworkdialog.cpp:189
 msgctxt "@item:inlist Signal strength replaced by description on ad-hoc"
 msgid "create Ad-Hoc"
-msgstr ""
+msgstr "creează ad-hoc"
 
 #: otherwirelessnetworkdialog.cpp:197
 msgctxt ""
@@ -391,7 +392,7 @@ msgstr "Domenii"
 #: tooltipbuilder.cpp:236 tooltipbuilder.cpp:238
 msgctxt "@info:tooltip No network route data available"
 msgid "No route data available"
-msgstr ""
+msgstr "Nu sînt date despre rute"
 
 #: tooltipbuilder.cpp:242
 msgctxt "@info:tooltip network routes"
@@ -428,14 +429,14 @@ msgctxt ""
 "@info:tooltip Flags describing the access point's capabilities according to "
 "WPA (Wifi Protected Access)"
 msgid "WPA flags"
-msgstr ""
+msgstr "Fanioane WPA"
 
 #: tooltipbuilder.cpp:319
 msgctxt ""
 "@info:tooltip Flags describing the access point's capabilities according to "
 "RSN (Robust Secure Network)"
 msgid "RSN(WPA2) flags"
-msgstr ""
+msgstr "Fanioane RSN(WPA2)"
 
 #: tooltipbuilder.cpp:329
 msgctxt ""

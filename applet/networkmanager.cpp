@@ -221,7 +221,10 @@ QString NetworkManagerApplet::svgElement(Solid::Control::NetworkInterfaceNm09 *i
                     case Solid::Control::ModemInterface::Hspa:
                         return QString("network-mobile-%1-hspa").arg(strength);
                     default:
-                        return QString("network-mobile-%1-none").arg(strength);
+                        // FIXME: this icon exists but it is invisible, we need
+                        // to create a better one.
+                        //return QString("network-mobile-%1-none").arg(strength);
+                        return QString();
                 }
             }
         }
@@ -1039,8 +1042,9 @@ void NetworkManagerApplet::vpnActivationStateChanged(Knm::InterfaceConnection::A
             break;
         case Knm::InterfaceConnection::Unknown:
             m_activeVpnConnections.remove(id);
-            if (oldState == Knm::InterfaceConnection::Activated && m_totalActiveVpnConnections > 0)
+            if (oldState >= Knm::InterfaceConnection::Activated && m_totalActiveVpnConnections > 0) {
                 m_totalActiveVpnConnections--;
+            }
             break;
     }
     //kDebug() << newState << m_totalActiveVpnConnections;
