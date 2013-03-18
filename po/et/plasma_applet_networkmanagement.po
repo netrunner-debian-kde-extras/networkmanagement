@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-01-02 08:50+0100\n"
+"POT-Creation-Date: 2013-03-11 10:02+0100\n"
 "PO-Revision-Date: 2011-11-28 19:26+0200\n"
 "Last-Translator: Marek Laane <bald@smail.ee>\n"
 "Language-Team: Estonian <kde-et@linux.ee>\n"
@@ -232,31 +232,31 @@ msgctxt "wired interface network cable unplugged"
 msgid "Cable Unplugged"
 msgstr "Kaabel on lahutatud"
 
-#: networkmanager.cpp:675
+#: networkmanager.cpp:678
 msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr "Võrguliideseid pole"
 
-#: networkmanager.cpp:727
+#: networkmanager.cpp:730
 msgid "VPN Connections"
 msgstr "VPN-ühendused"
 
-#: networkmanager.cpp:741
+#: networkmanager.cpp:744
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
 msgstr "Ühenduseta"
 
-#: networkmanager.cpp:744
+#: networkmanager.cpp:747
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
 msgstr "Juhtmeta side on tarkvaraliselt välja lülitatud"
 
-#: networkmanager.cpp:747
+#: networkmanager.cpp:750
 msgctxt "tooltip, all interfaces are down"
 msgid "Networking disabled"
 msgstr "Võrguühendus ei tööta"
 
-#: networkmanager.cpp:750
+#: networkmanager.cpp:753
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
 msgstr "Riistvaralüliti keelas juhtmeta ühenduse vastuvõtjad"

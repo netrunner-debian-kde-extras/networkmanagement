@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanagement\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-01-02 08:50+0100\n"
+"POT-Creation-Date: 2013-03-11 10:02+0100\n"
 "PO-Revision-Date: 2011-10-12 16:57+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -233,31 +233,31 @@ msgctxt "wired interface network cable unplugged"
 msgid "Cable Unplugged"
 msgstr "Cabo Desligado"
 
-#: networkmanager.cpp:675
+#: networkmanager.cpp:678
 msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr "Sem interfaces de rede"
 
-#: networkmanager.cpp:727
+#: networkmanager.cpp:730
 msgid "VPN Connections"
 msgstr "Ligações VPN"
 
-#: networkmanager.cpp:741
+#: networkmanager.cpp:744
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
 msgstr "Desligado"
 
-#: networkmanager.cpp:744
+#: networkmanager.cpp:747
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
 msgstr "A rede sem-fios está desactivada pela aplicação"
 
-#: networkmanager.cpp:747
+#: networkmanager.cpp:750
 msgctxt "tooltip, all interfaces are down"
 msgid "Networking disabled"
 msgstr "A rede está desactivada"
 
-#: networkmanager.cpp:750
+#: networkmanager.cpp:753
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
 msgstr "A rede sem-fios está desactivada pelo 'hardware'"

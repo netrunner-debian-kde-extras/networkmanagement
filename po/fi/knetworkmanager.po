@@ -1,7 +1,7 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Tommi Nieminen <translator@legisign.org>, 2010.
-# Lasse Liehu <lasse.liehu@gmail.com>, 2011.
+# Lasse Liehu <lasse.liehu@gmail.com>, 2011, 2013.
 #
 # KDE Finnish translation sprint participants:
 # Author: Artnay
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: knetworkmanager\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2011-10-07 11:06+0200\n"
-"PO-Revision-Date: 2012-07-04 13:35:52+0000\n"
+"PO-Revision-Date: 2013-03-06 02:45+0200\n"
 "Last-Translator: Lasse Liehu <lasse.liehu@gmail.com>\n"
 "Language-Team: Finnish <lokalisointi@lists.coss.fi>\n"
 "Language: fi\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-POT-Import-Date: 2012-12-01 22:20:04+0000\n"
-"X-Generator: MediaWiki 1.21alpha (963ddae); Translate 2012-11-08\n"
+"X-Generator: Lokalize 1.5\n"
 
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
@@ -249,6 +249,10 @@ msgid ""
 "contact your system administrator or distribution.\n"
 "KNetworkManager will not start automatically in future."
 msgstr ""
+"KNetworkManager ei voi käynnistyä, koska asennus on määritetty väärin.\n"
+"Järjestelmän DBUS-käytänne ei salli käyttäjäasetusten tarjoamista;\n"
+"ota yhteyttä järjestelmän ylläpitäjään tai jakeluun.\n"
+"KNetworkManager ei käynnistä jatkossa automaattisesti."
 
 #: monolithic.cpp:120
 msgctxt ""
@@ -305,12 +309,12 @@ msgstr "Uusi ad hoc -verkko..."
 msgctxt ""
 "@item:inlist Create connection to other wireless network using named device"
 msgid "Connect To Other Network With %1..."
-msgstr ""
+msgstr "Yhdistä muuhun verkkoon laitteen %1 välityksellä..."
 
 #: otherwirelessnetworkdialog.cpp:106 otherwirelessnetworkdialog.cpp:189
 msgctxt "@item:inlist Signal strength replaced by description on ad-hoc"
 msgid "create Ad-Hoc"
-msgstr ""
+msgstr "luo ad hoc"
 
 #: otherwirelessnetworkdialog.cpp:197
 msgctxt ""

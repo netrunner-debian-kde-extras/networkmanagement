@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanagement\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-01-02 08:50+0100\n"
+"POT-Creation-Date: 2013-03-11 10:02+0100\n"
 "PO-Revision-Date: 2011-10-12 18:19+0200\n"
 "Last-Translator: Stefan Asserhall <stefan.asserhall@comhem.se>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -235,31 +235,31 @@ msgctxt "wired interface network cable unplugged"
 msgid "Cable Unplugged"
 msgstr "Kabel frånkopplad"
 
-#: networkmanager.cpp:675
+#: networkmanager.cpp:678
 msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr "Inga nätverksgränssnitt"
 
-#: networkmanager.cpp:727
+#: networkmanager.cpp:730
 msgid "VPN Connections"
 msgstr "VPN-anslutningar"
 
-#: networkmanager.cpp:741
+#: networkmanager.cpp:744
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
 msgstr "Nerkopplad"
 
-#: networkmanager.cpp:744
+#: networkmanager.cpp:747
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
 msgstr "Trådlös anslutning inaktiverad i programvara"
 
-#: networkmanager.cpp:747
+#: networkmanager.cpp:750
 msgctxt "tooltip, all interfaces are down"
 msgid "Networking disabled"
 msgstr "Nätverk inaktiverat"
 
-#: networkmanager.cpp:750
+#: networkmanager.cpp:753
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
 msgstr "Trådlös anslutning inaktiverad av hårdvara"

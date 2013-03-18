@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanager\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-01-02 08:50+0100\n"
+"POT-Creation-Date: 2013-03-11 10:02+0100\n"
 "PO-Revision-Date: 2012-01-06 10:35+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -236,31 +236,31 @@ msgctxt "wired interface network cable unplugged"
 msgid "Cable Unplugged"
 msgstr "Kabel odłączony"
 
-#: networkmanager.cpp:675
+#: networkmanager.cpp:678
 msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr "Brak interfejsów sieciowych"
 
-#: networkmanager.cpp:727
+#: networkmanager.cpp:730
 msgid "VPN Connections"
 msgstr "Połączenia VPN"
 
-#: networkmanager.cpp:741
+#: networkmanager.cpp:744
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
 msgstr "Rozłączony"
 
-#: networkmanager.cpp:744
+#: networkmanager.cpp:747
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
 msgstr "Urządzenie bezprzewodowe wyłączone programowo"
 
-#: networkmanager.cpp:747
+#: networkmanager.cpp:750
 msgctxt "tooltip, all interfaces are down"
 msgid "Networking disabled"
 msgstr "Sieć wyłączona"
 
-#: networkmanager.cpp:750
+#: networkmanager.cpp:753
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
 msgstr "Urządzenie bezprzewodowe wyłączone sprzętowo"

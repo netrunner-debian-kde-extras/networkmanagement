@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-01-02 08:50+0100\n"
-"PO-Revision-Date: 2013-01-23 13:20+0530\n"
+"POT-Creation-Date: 2013-03-11 10:02+0100\n"
+"PO-Revision-Date: 2013-03-04 11:29+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
 "Language: en_US\n"
@@ -22,12 +22,12 @@ msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is disabled"
 msgid "Networking system disabled"
-msgstr "संजाळ प्रणाली अकार्यान्वीत आहे"
+msgstr "संजाळ प्रणाली अकार्यान्वित आहे"
 
 #: activatableitem.cpp:121
 msgctxt "@info:status Notification for radio kill switch turned off"
 msgid "Wireless hardware disabled"
-msgstr "वायरलेस हार्डवेअर अकार्यान्वीत आहे"
+msgstr "वायरलेस हार्डवेअर अकार्यान्वित आहे"
 
 #: gsminterfaceconnectionitem.cpp:143
 #, kde-format
@@ -82,7 +82,7 @@ msgstr "पाठविलेले"
 #: interfacedetailswidget.cpp:291
 msgctxt "state of mobile broadband connection"
 msgid "not enabled"
-msgstr "अकार्यान्वीत आहे"
+msgstr "अकार्यान्वित आहे"
 
 #: interfacedetailswidget.cpp:307 interfacedetailswidget.cpp:354
 msgctxt "interface details"
@@ -92,7 +92,7 @@ msgstr "प्रकार"
 #: interfacedetailswidget.cpp:308 interfacedetailswidget.cpp:355
 msgctxt "interface details"
 msgid "Connection State"
-msgstr "जुळवणी स्थिली"
+msgstr "जुळवणी स्थिती"
 
 #: interfacedetailswidget.cpp:309
 msgctxt "interface details"
@@ -122,22 +122,22 @@ msgstr "MAC पत्ता"
 #: interfacedetailswidget.cpp:313 interfacedetailswidget.cpp:360
 msgctxt "interface details"
 msgid "Driver"
-msgstr "ड्राइवर"
+msgstr "ड्राइव्हर"
 
 #: interfacedetailswidget.cpp:319
 msgctxt "interface details"
 msgid "Access Point (SSID)"
-msgstr "प्रवेश बिंदु (SSID)"
+msgstr "प्रवेश बिंदू (SSID)"
 
 #: interfacedetailswidget.cpp:320
 msgctxt "interface details"
 msgid "Access Point (MAC)"
-msgstr "प्रवेश बिंदु (MAC)"
+msgstr "प्रवेश बिंदू (MAC)"
 
 #: interfacedetailswidget.cpp:328
 msgctxt "@item:intable wireless band"
 msgid "Band"
-msgstr "बॅंड"
+msgstr "बँड"
 
 #: interfacedetailswidget.cpp:329
 msgctxt "@item:intable wireless channel"
@@ -232,34 +232,34 @@ msgctxt "wired interface network cable unplugged"
 msgid "Cable Unplugged"
 msgstr "केबल काढली गेली."
 
-#: networkmanager.cpp:675
+#: networkmanager.cpp:678
 msgctxt "Tooltip sub text"
 msgid "No network interfaces"
 msgstr "एकही संजाळ दुवा नाही"
 
-#: networkmanager.cpp:727
+#: networkmanager.cpp:730
 msgid "VPN Connections"
 msgstr "VPN जुळवण्या"
 
-#: networkmanager.cpp:741
+#: networkmanager.cpp:744
 msgctxt "tooltip, all interfaces are down"
 msgid "Disconnected"
 msgstr "जुळवणी तोडलेली आहे"
 
-#: networkmanager.cpp:744
+#: networkmanager.cpp:747
 msgctxt "tooltip, wireless is disabled in software"
 msgid "Wireless disabled in software"
-msgstr "सॉफ्टवेअर मध्ये वायरलेस अकार्यान्वीत केलेले आहे"
-
-#: networkmanager.cpp:747
-msgctxt "tooltip, all interfaces are down"
-msgid "Networking disabled"
-msgstr "संजाळ अकार्यान्वीत आहे"
+msgstr "सॉफ्टवेअर मध्ये वायरलेस अकार्यान्वित केलेले आहे"
 
 #: networkmanager.cpp:750
+msgctxt "tooltip, all interfaces are down"
+msgid "Networking disabled"
+msgstr "संजाळ अकार्यान्वित आहे"
+
+#: networkmanager.cpp:753
 msgctxt "tooltip, wireless is disabled by hardware"
 msgid "Wireless disabled by hardware"
-msgstr "हार्डवेअरने वायरलेस अकार्यान्वीत केलेले आहे"
+msgstr "हार्डवेअरने वायरलेस अकार्यान्वित केलेले आहे"
 
 #: nmpopup.cpp:90 nmpopup.cpp:732
 msgctxt "title on the LHS of the plasmoid"
@@ -269,22 +269,22 @@ msgstr "<h3>दुवे</h3>"
 #: nmpopup.cpp:96
 msgctxt "title on the RHS of the plasmoid"
 msgid "<h3>Connections</h3>"
-msgstr "<h3>जुळवण्या<h3>"
+msgstr "<h3>जुळवण्या</h3>"
 
 #: nmpopup.cpp:124
 msgctxt "CheckBox to enable or disable networking completely"
 msgid "Enable networking"
-msgstr "संजाळ कार्यान्वीत करा"
+msgstr "संजाळ कार्यान्वित करा"
 
 #: nmpopup.cpp:133
 msgctxt "CheckBox to enable or disable wwan (mobile broadband) interface)"
 msgid "Enable mobile broadband"
-msgstr "मोबाईल ब्रोडबँड कार्यान्वीत करा"
+msgstr "मोबाईल ब्रोडबँड कार्यान्वित करा"
 
 #: nmpopup.cpp:146
 msgctxt "CheckBox to enable or disable wireless interface (rfkill)"
 msgid "Enable wireless"
-msgstr "वायरलेस कार्यान्वीत करा"
+msgstr "वायरलेस कार्यान्वित करा"
 
 #: nmpopup.cpp:158
 msgctxt "tabbar on the left side"
@@ -329,7 +329,7 @@ msgid ""
 "upgrade to a newer version."
 msgstr ""
 "हे नीट चालण्याकरिता किमान संजाळ व्यवस्थापक -%1 ची गरज आहे. पण आता '%2' हा सापडला. "
-"कृपया नविन आवृत्ती वर तो अद्ययावत करा."
+"कृपया नवीन आवृत्ती वर तो अद्ययावत करा."
 
 #: nmpopup.cpp:644
 msgctxt "pressed show more button"

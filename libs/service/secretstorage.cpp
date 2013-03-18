@@ -20,8 +20,6 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include "secretstorage.h"
-#include "../internals/settings/802-11-wireless-security.h"
-#include "../internals/settings/802-1x.h"
 
 #include <KConfigGroup>
 #include <kwallet.h>
@@ -167,19 +165,6 @@ void SecretStorage::walletOpenedForRead(bool success)
                     if (i.next().key() != con->uuid())
                         continue;
 
-                    Knm::WirelessSecuritySetting * settingSecurity = static_cast<Knm::WirelessSecuritySetting *>(con->setting(Knm::Setting::WirelessSecurity));
-                    if (settingSecurity) {
-                        Knm::Security8021xSetting * setting8021x = static_cast<Knm::Security8021xSetting *>(con->setting(Knm::Setting::Security8021x));
-
-                        if (setting8021x) {
-                            if (settingSecurity->securityType() == Knm::WirelessSecuritySetting::EnumSecurityType::DynamicWep ||
-                                settingSecurity->securityType() == Knm::WirelessSecuritySetting::EnumSecurityType::WpaEap) {
-                                kDebug() << "Enabling workaround for DynamicWep and WpaEap";
-                                setting8021x->setEnabled(true); // needed for needSecrets() below, otherwise needSecrets() returns an empty list.
-                            }
-                        }
-                    }
-
                     QPair<QString,GetSecretsFlags> pair = i.value();
                     bool settingsFound = false;
                     foreach (Knm::Setting * setting, con->settings()) {
@@ -193,7 +178,7 @@ void SecretStorage::walletOpenedForRead(bool success)
                             if (wallet->readMap(walletKeyFor(con->uuid(), setting), map) == 0) {
                                 setting->secretsFromMap(map);
                             }
-                            QStringList needSecretsList = setting->needSecrets();
+                            QStringList needSecretsList = setting->needSecrets(pair.second & RequestNew);
                             kDebug() << "Needed secrets" << needSecretsList;
                             if ((pair.second & RequestNew) || (!needSecretsList.isEmpty() && (pair.second & AllowInteraction))) {
                                 askUser(con, pair.first, needSecretsList);
@@ -287,13 +272,13 @@ void SecretStorage::loadSecrets(Knm::Connection *con, const QString &name, GetSe
 
     QString uuid = con->uuid();
 
-    if (d->storageMode == PlainText && !(flags & RequestNew)) {
+    if (d->storageMode == PlainText) {
         KSharedConfig::Ptr ptr = secretsFileForUuid(uuid);
         KConfigGroup config(ptr, name);
         QMap<QString,QString> map = config.entryMap();
         Knm::Setting *setting = con->setting(Knm::Setting::typeFromString(name));
         setting->secretsFromMap(map);
-        QStringList needSecretsList = setting->needSecrets();
+        QStringList needSecretsList = setting->needSecrets(flags & RequestNew);
         if ((flags & RequestNew) || (!needSecretsList.isEmpty() && (flags & AllowInteraction))) {
             askUser(con, name, needSecretsList);
         } else {
