@@ -1,0 +1,41 @@
+#!/bin/sh
+
+set -e
+
+# Remove a no-longer used conffile
+rm_conffile() {
+    local PKGNAME="$1"
+    local CONFFILE="$2"
+
+    [ -e "$CONFFILE" ] || return 0
+
+    local md5sum="$(md5sum $CONFFILE | sed -e 's/ .*//')"
+    local old_md5sum="$(dpkg-query -W -f='${Conffiles}' $PKGNAME | \
+            sed -n -e "\' $CONFFILE ' { s/ obsolete$//; s/.* //; p }")"
+
+    # Do nothing if conffile is not registered for that package.
+    # This behaviour is different from what dpkg-maintscript-helper is doing
+    # on rm_conffile. We do this to correctly handle the case where
+    # the conffile was moved from one package to another via Replaces.
+    [ -n "$old_md5sum" ] || return 0
+
+    if [ "$md5sum" != "$old_md5sum" ]; then
+        echo "Obsolete conffile $CONFFILE has been modified by you."
+        echo "Saving as $CONFFILE.dpkg-bak ..."
+        mv -f "$CONFFILE" "$CONFFILE".dpkg-bak
+    else
+        echo "Removing obsolete conffile $CONFFILE ..."
+        rm -f "$CONFFILE"
+    fi
+}
+
+if [ "$1" = upgrade ] && dpkg --compare-versions "$2" lt-nl "0.9.0.8-2"  ; then
+    # The conffile was moved from knm-runtime to p-n-m during
+    # development of wheezy so we need some special handling of this case
+    rm_conffile plasma-widget-networkmanagement "/etc/dbus-1/system.d/NetworkManager-kde4.conf"
+    rm_conffile knm-runtime "/etc/dbus-1/system.d/NetworkManager-kde4.conf"
+fi
+
+#DEBHELPER#
+
+exit 0
