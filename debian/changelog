@@ -1,10 +1,10 @@
-networkmanagement (0.9.0.8-3) UNRELEASED; urgency=low
+networkmanagement (0.9.0.8-3) unstable; urgency=low
 
   * Upload to unstable.
   * Bump Standards-Version to 3.9.4. No further changes.
   * Drop transitional package network-manager-kde, no longer required.
 
- -- Michael Biebl <biebl@debian.org>  Tue, 07 May 2013 01:10:23 +0200
+ -- Michael Biebl <biebl@debian.org>  Tue, 07 May 2013 01:13:44 +0200
 
 networkmanagement (0.9.0.8-2) experimental; urgency=low
 
