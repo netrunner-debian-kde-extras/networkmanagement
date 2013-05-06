@@ -2,15 +2,8 @@
 
 # DEB_KDE_LINK_WITH_AS_NEEDED ?= yes
 
-DEB_BINARY_VERSION := $(shell dpkg-parsechangelog | sed -n 's/^Version: //p')
-DEB_KNETWORKMANAGER_VERSION := '1:$(DEB_BINARY_VERSION)'
-
 override_dh_auto_configure:
 	dh_auto_configure -Skde -- -DCMAKE_USE_RELATIVE_PATHS=ON
-
-override_dh_gencontrol:
-	dh_gencontrol -pnetwork-manager-kde -- -v'$(DEB_KNETWORKMANAGER_VERSION)'
-	dh_gencontrol --remaining-packages
 
 %:
 	dh $@ --parallel --with kde --dbg-package=plasma-widget-networkmanagement-dbg

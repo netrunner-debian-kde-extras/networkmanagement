@@ -30,15 +30,6 @@ Description: Network Management widget for KDE Plasma workspaces
  In order to start using the widget, look for "Network Management" in the "Add
  Widgets" dialog of the Plasma workspace you're using.
 
-Package: network-manager-kde
-Architecture: any
-Section: oldlibs
-Priority: extra
-Depends: ${misc:Depends}, plasma-widget-networkmanagement
-Description: transitional package for plasma-widget-networkmanagement
- This is a dummy transitional package for plasma-widget-networkmanagement. You
- may safely remove it.
-
 Package: plasma-widget-networkmanagement-dbg
 Architecture: any
 Section: debug
