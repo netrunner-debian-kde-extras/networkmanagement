@@ -16,7 +16,7 @@ Package: plasma-widget-networkmanagement
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, network-manager (>= 0.9.0),
  mobile-broadband-provider-info
-Suggests: kde-workspace-bin
+Suggests: kde-workspace-bin, network-manager-openconnect
 Recommends: kwalletmanager, network-manager-vpnc, network-manager-openvpn, network-manager-pptp
 Replaces: knm-runtime
 Breaks: knm-runtime
