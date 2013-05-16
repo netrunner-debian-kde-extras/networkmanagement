@@ -1,7 +1,6 @@
 networkmanagement (0.9.0.8-4) UNRELEASED; urgency=low
 
-  * Build-depend on kde-workspace-dev instead of the transitional package
-    kdebase-workspace-dev.
+  * Replace kdebase-workspace with kde-workspace in package dependencies.
 
  -- Felix Geyer <fgeyer@debian.org>  Thu, 16 May 2013 22:21:52 +0200
 

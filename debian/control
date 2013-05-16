@@ -16,7 +16,7 @@ Package: plasma-widget-networkmanagement
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, network-manager (>= 0.9.0),
  mobile-broadband-provider-info
-Suggests: kdebase-workspace-bin
+Suggests: kde-workspace-bin
 Recommends: kwalletmanager, network-manager-vpnc, network-manager-openvpn, network-manager-pptp
 Replaces: knm-runtime
 Breaks: knm-runtime
@@ -36,7 +36,7 @@ Section: debug
 Priority: extra
 Depends: ${misc:Depends}, plasma-widget-networkmanagement (= ${binary:Version})
 Recommends: kdelibs5-dbg
-Suggests: kdebase-workspace-dbg
+Suggests: kde-workspace-dbg
 Description: debugging symbols for KDE Network Management
  This package provides debugging symbols for all binary packages built from the
  plasma-widget-networkmanagement source package. It's highly recommended to
