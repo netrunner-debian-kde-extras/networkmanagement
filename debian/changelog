@@ -1,4 +1,4 @@
-networkmanagement (0.9.0.9-1) UNRELEASED; urgency=low
+networkmanagement (0.9.0.9-1) unstable; urgency=low
 
   [ Felix Geyer ]
   * Replace kdebase-workspace with kde-workspace in package dependencies.
@@ -9,7 +9,7 @@ networkmanagement (0.9.0.9-1) UNRELEASED; urgency=low
   * New upstream release.
   * Bump minimum required version of network-manager to 0.9.8.
 
- -- Felix Geyer <fgeyer@debian.org>  Thu, 16 May 2013 22:21:52 +0200
+ -- Michael Biebl <biebl@debian.org>  Fri, 28 Jun 2013 22:44:59 +0200
 
 networkmanagement (0.9.0.8-3) unstable; urgency=low
 
