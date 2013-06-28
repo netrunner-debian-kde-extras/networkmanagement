@@ -1,20 +1,20 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Martin Schlander <mschlander@opensuse.org>, 2011.
+# Martin Schlander <mschlander@opensuse.org>, 2011, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-03-11 10:02+0100\n"
-"PO-Revision-Date: 2011-10-15 13:12+0200\n"
+"POT-Creation-Date: 2013-05-05 10:27+0200\n"
+"PO-Revision-Date: 2013-05-08 19:20+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
-"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
-"Language: \n"
+"Language-Team: Danish <kde-i18n-doc@kde.org>\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: activatableitem.cpp:117
@@ -55,143 +55,155 @@ msgctxt "name of the connection not known"
 msgid "Unknown"
 msgstr "Ukendt"
 
-#: interfacedetailswidget.cpp:117
+#: interfacedetailswidget.cpp:119
 msgctxt "interface details"
 msgid "<b>Traffic</b>"
 msgstr "<b>Trafik</b>"
 
-#: interfacedetailswidget.cpp:153
+#: interfacedetailswidget.cpp:155
 msgid "Go Back"
 msgstr "Gå tilbage"
 
-#: interfacedetailswidget.cpp:178 interfacedetailswidget.cpp:300
+#: interfacedetailswidget.cpp:180 interfacedetailswidget.cpp:303
 msgctxt "entry not available"
 msgid "not available"
 msgstr "ikke tilgængelig"
 
-#: interfacedetailswidget.cpp:183
+#: interfacedetailswidget.cpp:185
 msgctxt "traffic received empty"
 msgid "Received"
 msgstr "Modtaget"
 
-#: interfacedetailswidget.cpp:185
+#: interfacedetailswidget.cpp:187
 msgctxt "traffic transmitted empty"
 msgid "Transmitted"
 msgstr "Sendt"
 
-#: interfacedetailswidget.cpp:291
+#: interfacedetailswidget.cpp:294
 msgctxt "state of mobile broadband connection"
 msgid "not enabled"
 msgstr "ikke aktiveret"
 
-#: interfacedetailswidget.cpp:307 interfacedetailswidget.cpp:354
+#: interfacedetailswidget.cpp:310 interfacedetailswidget.cpp:358
 msgctxt "interface details"
 msgid "Type"
 msgstr "Type"
 
-#: interfacedetailswidget.cpp:308 interfacedetailswidget.cpp:355
+#: interfacedetailswidget.cpp:311 interfacedetailswidget.cpp:359
 msgctxt "interface details"
 msgid "Connection State"
 msgstr "Forbindelsestilstand"
 
-#: interfacedetailswidget.cpp:309
+#: interfacedetailswidget.cpp:312
 msgctxt "interface details"
 msgid "IP Address"
 msgstr "IP-adresse"
 
-#: interfacedetailswidget.cpp:310 interfacedetailswidget.cpp:357
+#: interfacedetailswidget.cpp:313
+msgctxt "interface details"
+msgid "IP Gateway"
+msgstr "IP-gateway"
+
+#: interfacedetailswidget.cpp:314 interfacedetailswidget.cpp:361
 msgctxt "interface details"
 msgid "Connection Speed"
 msgstr "Forbindelseshastighed"
 
-#: interfacedetailswidget.cpp:310
+#: interfacedetailswidget.cpp:314
 msgctxt "bitrate"
 msgid "Unknown"
 msgstr "Ukendt"
 
-#: interfacedetailswidget.cpp:311 interfacedetailswidget.cpp:358
+#: interfacedetailswidget.cpp:315 interfacedetailswidget.cpp:362
 msgctxt "interface details"
 msgid "System Name"
 msgstr "Systemnavn"
 
-#: interfacedetailswidget.cpp:312
+#: interfacedetailswidget.cpp:316
 msgctxt "interface details"
 msgid "MAC Address"
 msgstr "MAC-adresse"
 
-#: interfacedetailswidget.cpp:313 interfacedetailswidget.cpp:360
+#: interfacedetailswidget.cpp:317 interfacedetailswidget.cpp:364
 msgctxt "interface details"
 msgid "Driver"
 msgstr "Driver"
 
-#: interfacedetailswidget.cpp:319
+#: interfacedetailswidget.cpp:323
 msgctxt "interface details"
 msgid "Access Point (SSID)"
 msgstr "Adgangspunkt (SSID)"
 
-#: interfacedetailswidget.cpp:320
+#: interfacedetailswidget.cpp:324
 msgctxt "interface details"
 msgid "Access Point (MAC)"
 msgstr "Adgangspunkt (MAC)"
 
-#: interfacedetailswidget.cpp:328
+#: interfacedetailswidget.cpp:332
 msgctxt "@item:intable wireless band"
 msgid "Band"
 msgstr "Bånd"
 
-#: interfacedetailswidget.cpp:329
+#: interfacedetailswidget.cpp:333
 msgctxt "@item:intable wireless channel"
 msgid "Channel"
 msgstr "Kanal"
 
-#: interfacedetailswidget.cpp:336
+#: interfacedetailswidget.cpp:340
 msgctxt "interface details"
 msgid "Operator"
 msgstr "Operatør"
 
-#: interfacedetailswidget.cpp:337
+#: interfacedetailswidget.cpp:341
 msgctxt "interface details"
 msgid "Signal Quality"
 msgstr "Signalkvalitet"
 
-#: interfacedetailswidget.cpp:338
+#: interfacedetailswidget.cpp:342
 msgctxt "interface details"
 msgid "Access Technology"
 msgstr "Adgangsteknologi"
 
-#: interfacedetailswidget.cpp:356
+#: interfacedetailswidget.cpp:360
 msgctxt "interface details"
 msgid "Network Address (IP)"
 msgstr "Netværksadresse (IP)"
 
-#: interfacedetailswidget.cpp:359
+#: interfacedetailswidget.cpp:363
 msgctxt "interface details"
 msgid "Hardware Address (MAC)"
 msgstr "Hardwareadresse (MAC)"
 
-#: interfacedetailswidget.cpp:378 interfaceitem.cpp:286
+#: interfacedetailswidget.cpp:382 interfaceitem.cpp:286
 msgctxt "label of the network interface"
 msgid "No IP address."
 msgstr "Ingen IP-adresse."
 
-#: interfacedetailswidget.cpp:389 interfaceitem.cpp:297
+#: interfacedetailswidget.cpp:393 interfacedetailswidget.cpp:409
+#: interfacedetailswidget.cpp:421 interfaceitem.cpp:297
 msgctxt "label of the network interface"
 msgid "IP display error."
 msgstr "Fejl i visning af IP."
 
-#: interfacedetailswidget.cpp:468
+#: interfacedetailswidget.cpp:404 interfacedetailswidget.cpp:417
+#: interfacedetailswidget.cpp:433
+msgctxt "label of the network interface"
+msgid "No IP gateway."
+msgstr "Ingen IP-gateway."
+
+#: interfacedetailswidget.cpp:510
 msgid "KBit/s"
 msgstr "KBit/s"
 
-#: interfacedetailswidget.cpp:470
+#: interfacedetailswidget.cpp:512
 msgid "MBit/s"
 msgstr "MBit/s"
 
-#: interfacedetailswidget.cpp:474
+#: interfacedetailswidget.cpp:516
 msgid "GBit/s"
 msgstr "GBit/s"
 
-#: interfacedetailswidget.cpp:498
+#: interfacedetailswidget.cpp:540
 #, kde-format
 msgctxt ""
 "traffic, e.g. n KB/s\n"
@@ -199,11 +211,11 @@ msgctxt ""
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: interfacedetailswidget.cpp:507
+#: interfacedetailswidget.cpp:549
 msgid "Received"
 msgstr "Modtaget"
 
-#: interfacedetailswidget.cpp:510
+#: interfacedetailswidget.cpp:552
 msgid "Transmitted"
 msgstr "Sendt"
 

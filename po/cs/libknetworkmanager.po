@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-03-02 10:30+0100\n"
-"PO-Revision-Date: 2013-03-12 15:38+0100\n"
+"POT-Creation-Date: 2013-06-15 05:01+0000\n"
+"PO-Revision-Date: 2013-06-14 15:26+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -97,8 +97,8 @@ msgstr "WEP klíč 2"
 msgid "WEP key 3"
 msgstr "WEP klíč 3"
 
-#. i18n: ectx: label, entry (psk), group (802-11-wireless-security)
 #. i18n: ectx: label, entry (psk), group (802-1x)
+#. i18n: ectx: label, entry (psk), group (802-11-wireless-security)
 #: libs/internals/schemas/802-11-wireless-security.kcfg:82
 #: libs/internals/schemas/802-1x.kcfg:134
 msgid "PSK"
@@ -163,8 +163,8 @@ msgstr "Datový tok"
 msgid "Transmit power"
 msgstr "Přenosový výkon"
 
-#. i18n: ectx: label, entry (macaddress), group (802-11-wireless)
 #. i18n: ectx: label, entry (macaddress), group (802-3-ethernet)
+#. i18n: ectx: label, entry (macaddress), group (802-11-wireless)
 #: libs/internals/schemas/802-11-wireless.kcfg:47
 #: libs/internals/schemas/802-3-ethernet.kcfg:38
 msgid "MAC Address"
@@ -175,9 +175,9 @@ msgstr "Mac adresa"
 msgid "Hardware address to set on the wireless network interface"
 msgstr "Hardwarová adresa pro nastavení na bezdrátovém síťovém rozhraní"
 
-#. i18n: ectx: label, entry (mtu), group (802-11-wireless)
 #. i18n: ectx: label, entry (mtu), group (802-3-ethernet)
 #. i18n: ectx: label, entry (mtu), group (ppp)
+#. i18n: ectx: label, entry (mtu), group (802-11-wireless)
 #: libs/internals/schemas/802-11-wireless.kcfg:51
 #: libs/internals/schemas/802-3-ethernet.kcfg:42
 #: libs/internals/schemas/ppp.kcfg:69
@@ -194,8 +194,8 @@ msgstr "Maximální přenosová jednotka (MTU)"
 msgid "Seen BSSIDs"
 msgstr ""
 
-#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #. i18n: ectx: property (text), widget (QCheckBox, eap)
 #. i18n: ectx: label, entry (eap), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:9 libs/ui/ppp.ui:69
@@ -252,12 +252,12 @@ msgstr "Fáze 1 rychlé poskytování"
 #. i18n: ectx: label, entry (phase2auth), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:59
 msgid "Phase 2 auth"
-msgstr "Autentizace fáze 2"
+msgstr "Ověření totožnosti fáze 2"
 
 #. i18n: ectx: label, entry (phase2autheap), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:73
 msgid "Phase 2 auth eap"
-msgstr "EAP autentizace fáze 2"
+msgstr "Ověření totožnosti EAP fáze 2"
 
 #. i18n: ectx: label, entry (phase2cacert), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:86
@@ -281,10 +281,10 @@ msgstr "Cesta klientského certifikátu fáze 2"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#. i18n: ectx: label, entry (password), group (802-1x)
 #. i18n: ectx: label, entry (password), group (cdma)
-#. i18n: ectx: label, entry (password), group (gsm)
+#. i18n: ectx: label, entry (password), group (802-1x)
 #. i18n: ectx: label, entry (password), group (pppoe)
+#. i18n: ectx: label, entry (password), group (gsm)
 #: libs/internals/schemas/802-1x.kcfg:102 libs/internals/schemas/cdma.kcfg:17
 #: libs/internals/schemas/gsm.kcfg:18 libs/internals/schemas/pppoe.kcfg:17
 #: vpnplugins/openvpn/openvpnprop.ui:84 vpnplugins/openvpn/openvpnprop.ui:498
@@ -392,10 +392,10 @@ msgid "Number"
 msgstr "Číslo"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel9_2)
-#. i18n: ectx: label, entry (UserName), group (vpn)
 #. i18n: ectx: label, entry (username), group (cdma)
-#. i18n: ectx: label, entry (username), group (gsm)
 #. i18n: ectx: label, entry (username), group (pppoe)
+#. i18n: ectx: label, entry (UserName), group (vpn)
+#. i18n: ectx: label, entry (username), group (gsm)
 #: libs/internals/schemas/cdma.kcfg:13 libs/internals/schemas/gsm.kcfg:14
 #: libs/internals/schemas/pppoe.kcfg:13 libs/internals/schemas/vpn.kcfg:17
 #: vpnplugins/openvpn/openvpnprop.ui:482
@@ -633,8 +633,8 @@ msgstr ""
 msgid "CRTSCTS"
 msgstr "CRTSCTS"
 
-#. i18n: ectx: label, entry (baud), group (serial)
 #. i18n: ectx: label, entry (baud), group (ppp)
+#. i18n: ectx: label, entry (baud), group (serial)
 #: libs/internals/schemas/ppp.kcfg:61 libs/internals/schemas/serial.kcfg:9
 msgid "Baud"
 msgstr "Baud"
@@ -659,8 +659,8 @@ msgstr "Interval LCP echo"
 msgid "Service"
 msgstr "Služba"
 
-#. i18n: ectx: label, entry (bits), group (serial)
 #. i18n: ectx: label, entry (Data), group (vpn)
+#. i18n: ectx: label, entry (bits), group (serial)
 #: libs/internals/schemas/serial.kcfg:14 libs/internals/schemas/vpn.kcfg:13
 msgid "Data bits"
 msgstr "Data bity"
@@ -1205,40 +1205,40 @@ msgid "PIN/PUK unlock error"
 msgstr "Chyba odemčení PIN/PUK"
 
 #: libs/service/notificationmanager.cpp:114
-#: libs/service/notificationmanager.cpp:446
+#: libs/service/notificationmanager.cpp:449
 #, kde-format
 msgctxt "@info:status Notification text when connecting"
 msgid "Activating %1"
 msgstr "Aktivuje se %1"
 
 #: libs/service/notificationmanager.cpp:118
-#: libs/service/notificationmanager.cpp:450
+#: libs/service/notificationmanager.cpp:453
 #, kde-format
 msgctxt "@info:status Notification text when a connection has been activated"
 msgid "%1 activated"
 msgstr "%1 aktivováno"
 
-#: libs/service/notificationmanager.cpp:124
-#: libs/service/notificationmanager.cpp:455
-#, kde-format
-msgctxt "@info:status Notification text when connection has failed"
-msgid "Connection %1 failed"
-msgstr "Spojení %1 selhalo"
-
-#: libs/service/notificationmanager.cpp:126
-#: libs/service/notificationmanager.cpp:457
+#: libs/service/notificationmanager.cpp:122
+#: libs/service/notificationmanager.cpp:460
 #, kde-format
 msgctxt "@info:status Notification text when deactivating a connection"
 msgid "%1 deactivated"
 msgstr "%1 deaktivováno"
 
-#: libs/service/notificationmanager.cpp:143
+#: libs/service/notificationmanager.cpp:128
+#: libs/service/notificationmanager.cpp:458
+#, kde-format
+msgctxt "@info:status Notification text when connection has failed"
+msgid "Connection %1 failed"
+msgstr "Spojení %1 selhalo"
+
+#: libs/service/notificationmanager.cpp:146
 #, kde-format
 msgctxt "@info:status Notification text when wireless/gsm signal is low"
 msgid "Low signal on %1"
 msgstr "Nízký signál na %1"
 
-#: libs/service/notificationmanager.cpp:202
+#: libs/service/notificationmanager.cpp:205
 #, kde-format
 msgctxt ""
 "@info:status interface (%2) status notification title when a connection (%1) "
@@ -1246,7 +1246,7 @@ msgctxt ""
 msgid "Activating %1 on %2"
 msgstr "Aktivuje se %1 na %2"
 
-#: libs/service/notificationmanager.cpp:212
+#: libs/service/notificationmanager.cpp:215
 #, kde-format
 msgctxt ""
 "@info:status interface (%2) status notification title when a connection (%1) "
@@ -1254,7 +1254,7 @@ msgctxt ""
 msgid "%1 on %2"
 msgstr "%1 na %2"
 
-#: libs/service/notificationmanager.cpp:226
+#: libs/service/notificationmanager.cpp:229
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1262,7 +1262,7 @@ msgctxt ""
 msgid "%1 because it is now being managed"
 msgstr "%1, protože je nyní spravováno"
 
-#: libs/service/notificationmanager.cpp:229
+#: libs/service/notificationmanager.cpp:232
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1270,7 +1270,7 @@ msgctxt ""
 msgid "%1 because it is no longer being managed"
 msgstr "%1, protože již není spravováno"
 
-#: libs/service/notificationmanager.cpp:232
+#: libs/service/notificationmanager.cpp:235
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1278,7 +1278,7 @@ msgctxt ""
 msgid "%1 because configuration failed"
 msgstr "%1, protože nastavení selhalo"
 
-#: libs/service/notificationmanager.cpp:235
+#: libs/service/notificationmanager.cpp:238
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1286,7 +1286,7 @@ msgctxt ""
 msgid "%1 because the configuration is unavailable"
 msgstr "%1, protože nastavení není dostupné"
 
-#: libs/service/notificationmanager.cpp:238
+#: libs/service/notificationmanager.cpp:241
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1294,7 +1294,7 @@ msgctxt ""
 msgid "%1 because the configuration has expired"
 msgstr "%1, protože nastavení vypršelo"
 
-#: libs/service/notificationmanager.cpp:241
+#: libs/service/notificationmanager.cpp:244
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1302,7 +1302,7 @@ msgctxt ""
 msgid "%1 because secrets were not provided"
 msgstr "%1 protože nebyly poskytnuty ověřovací údaje"
 
-#: libs/service/notificationmanager.cpp:244
+#: libs/service/notificationmanager.cpp:247
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1310,7 +1310,7 @@ msgctxt ""
 msgid "%1 because the authorization supplicant disconnected"
 msgstr "%1 protože se poskytovatel ověření odpojil"
 
-#: libs/service/notificationmanager.cpp:247
+#: libs/service/notificationmanager.cpp:250
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1318,7 +1318,7 @@ msgctxt ""
 msgid "%1 because the authorization supplicant's configuration failed"
 msgstr "%1 protože konfigurace poskytovatele ověření selhala"
 
-#: libs/service/notificationmanager.cpp:250
+#: libs/service/notificationmanager.cpp:253
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1326,7 +1326,7 @@ msgctxt ""
 msgid "%1 because the authorization supplicant failed"
 msgstr "%1 protože poskytovatel ověření selhal"
 
-#: libs/service/notificationmanager.cpp:253
+#: libs/service/notificationmanager.cpp:256
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1334,7 +1334,7 @@ msgctxt ""
 msgid "%1 because the authorization supplicant timed out"
 msgstr "%1 protože čas pro poskytovatele ověření vypršel"
 
-#: libs/service/notificationmanager.cpp:256
+#: libs/service/notificationmanager.cpp:259
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1342,7 +1342,7 @@ msgctxt ""
 msgid "%1 because PPP failed to start"
 msgstr "%1 protože se nepovedlo spustit PPP"
 
-#: libs/service/notificationmanager.cpp:259
+#: libs/service/notificationmanager.cpp:262
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1350,7 +1350,7 @@ msgctxt ""
 msgid "%1 because PPP disconnected"
 msgstr "%1 protože se PPP odpojil"
 
-#: libs/service/notificationmanager.cpp:262
+#: libs/service/notificationmanager.cpp:265
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1358,7 +1358,7 @@ msgctxt ""
 msgid "%1 because PPP failed"
 msgstr "%1 protože PPP selhal"
 
-#: libs/service/notificationmanager.cpp:265
+#: libs/service/notificationmanager.cpp:268
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1366,7 +1366,7 @@ msgctxt ""
 msgid "%1 because DHCP failed to start"
 msgstr "%1 protože se nepovedlo spustit DHCP"
 
-#: libs/service/notificationmanager.cpp:268
+#: libs/service/notificationmanager.cpp:271
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1374,7 +1374,7 @@ msgctxt ""
 msgid "%1 because a DHCP error occurred"
 msgstr "%1 protože došlo k chybě DHCP"
 
-#: libs/service/notificationmanager.cpp:271
+#: libs/service/notificationmanager.cpp:274
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1382,7 +1382,7 @@ msgctxt ""
 msgid "%1 because DHCP failed "
 msgstr "%1 protože DHCP selhalo "
 
-#: libs/service/notificationmanager.cpp:274
+#: libs/service/notificationmanager.cpp:277
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1390,7 +1390,7 @@ msgctxt ""
 msgid "%1 because the shared service failed to start"
 msgstr "%1 protože se nepovedlo spustit sdílenou službu"
 
-#: libs/service/notificationmanager.cpp:277
+#: libs/service/notificationmanager.cpp:280
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1398,7 +1398,7 @@ msgctxt ""
 msgid "%1 because the shared service failed"
 msgstr "%1 protože sdílená služba selhala"
 
-#: libs/service/notificationmanager.cpp:280
+#: libs/service/notificationmanager.cpp:283
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1406,7 +1406,7 @@ msgctxt ""
 msgid "%1 because the auto IP service failed to start"
 msgstr "%1 protože se nepovedlo spustit službu automatické IP"
 
-#: libs/service/notificationmanager.cpp:283
+#: libs/service/notificationmanager.cpp:286
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1414,7 +1414,7 @@ msgctxt ""
 msgid "%1 because the auto IP service reported an error"
 msgstr "%1 protože  služba automatické IP nahlásila chybu"
 
-#: libs/service/notificationmanager.cpp:286
+#: libs/service/notificationmanager.cpp:289
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1422,7 +1422,7 @@ msgctxt ""
 msgid "%1 because the auto IP service failed"
 msgstr "%1 protože služba automatické IP selhala"
 
-#: libs/service/notificationmanager.cpp:289
+#: libs/service/notificationmanager.cpp:292
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1430,7 +1430,7 @@ msgctxt ""
 msgid "%1 because the modem is busy"
 msgstr "%1 protože je modem zaneprázdněn"
 
-#: libs/service/notificationmanager.cpp:292
+#: libs/service/notificationmanager.cpp:295
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1438,7 +1438,7 @@ msgctxt ""
 msgid "%1 because the modem has no dial tone"
 msgstr "%1 protože modem nemá vytáčecí tón"
 
-#: libs/service/notificationmanager.cpp:295
+#: libs/service/notificationmanager.cpp:298
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1446,7 +1446,7 @@ msgctxt ""
 msgid "%1 because the modem shows no carrier"
 msgstr "%1 protože modem neukazuje žádný přenos"
 
-#: libs/service/notificationmanager.cpp:298
+#: libs/service/notificationmanager.cpp:301
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1454,7 +1454,7 @@ msgctxt ""
 msgid "%1 because the modem dial timed out"
 msgstr "%1 protože vypršel časový limit pro vytáčení modemu"
 
-#: libs/service/notificationmanager.cpp:301
+#: libs/service/notificationmanager.cpp:304
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1462,7 +1462,7 @@ msgctxt ""
 msgid "%1 because the modem could not be initialized"
 msgstr "%1 protože modem nemohl být inicializován"
 
-#: libs/service/notificationmanager.cpp:304
+#: libs/service/notificationmanager.cpp:307
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1470,7 +1470,7 @@ msgctxt ""
 msgid "%1 because the GSM APN could not be selected"
 msgstr "%1 protože GSM APN nemohl být vybrán"
 
-#: libs/service/notificationmanager.cpp:307
+#: libs/service/notificationmanager.cpp:310
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1478,7 +1478,7 @@ msgctxt ""
 msgid "%1 because the GSM modem is not searching"
 msgstr "%1 protože GSM modem nevyhledává"
 
-#: libs/service/notificationmanager.cpp:310
+#: libs/service/notificationmanager.cpp:313
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1486,7 +1486,7 @@ msgctxt ""
 msgid "%1 because GSM network registration was denied"
 msgstr "%1 protože registrace GSM sítě byla zamítnuta"
 
-#: libs/service/notificationmanager.cpp:313
+#: libs/service/notificationmanager.cpp:316
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1494,7 +1494,7 @@ msgctxt ""
 msgid "%1 because GSM network registration timed out"
 msgstr "%1 protože vypršel čas pro registraci GSM sítě"
 
-#: libs/service/notificationmanager.cpp:316
+#: libs/service/notificationmanager.cpp:319
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1502,7 +1502,7 @@ msgctxt ""
 msgid "%1 because GSM registration failed"
 msgstr "%1 protože registrace GSM sítě selhala"
 
-#: libs/service/notificationmanager.cpp:319
+#: libs/service/notificationmanager.cpp:322
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1510,7 +1510,7 @@ msgctxt ""
 msgid "%1 because the GSM PIN check failed"
 msgstr "%1 protože kontrola PINu GSM selhala"
 
-#: libs/service/notificationmanager.cpp:322
+#: libs/service/notificationmanager.cpp:325
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1518,7 +1518,7 @@ msgctxt ""
 msgid "%1 because firmware is missing"
 msgstr "%1 protože chybí firmware"
 
-#: libs/service/notificationmanager.cpp:325
+#: libs/service/notificationmanager.cpp:328
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1526,7 +1526,7 @@ msgctxt ""
 msgid "%1 because the device was removed"
 msgstr "%1 protože zařízení bylo odebráno"
 
-#: libs/service/notificationmanager.cpp:328
+#: libs/service/notificationmanager.cpp:331
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1534,7 +1534,7 @@ msgctxt ""
 msgid "%1 because the networking system is now sleeping"
 msgstr "%1 protože síťový systém je nyní uspaný"
 
-#: libs/service/notificationmanager.cpp:331
+#: libs/service/notificationmanager.cpp:334
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1542,7 +1542,7 @@ msgctxt ""
 msgid "%1 because the connection was removed"
 msgstr "%1 protože spojení bylo odebráno"
 
-#: libs/service/notificationmanager.cpp:334
+#: libs/service/notificationmanager.cpp:337
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1550,7 +1550,7 @@ msgctxt ""
 msgid "%1 by request"
 msgstr "%1 podle požadavku"
 
-#: libs/service/notificationmanager.cpp:337
+#: libs/service/notificationmanager.cpp:340
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1558,24 +1558,24 @@ msgctxt ""
 msgid "%1 because the cable was disconnected"
 msgstr "%1 jelikož byl kabel odpojen"
 
-#: libs/service/notificationmanager.cpp:505
-#: libs/service/notificationmanager.cpp:517
+#: libs/service/notificationmanager.cpp:508
+#: libs/service/notificationmanager.cpp:520
 #, kde-format
 msgctxt "@info:status Notification for hardware added"
 msgid "%1 attached"
 msgstr "%1 připojeno"
 
-#: libs/service/notificationmanager.cpp:506
+#: libs/service/notificationmanager.cpp:509
 msgctxt "@action"
 msgid "Create Connection"
 msgstr "Vytvořit spojení"
 
-#: libs/service/notificationmanager.cpp:506
+#: libs/service/notificationmanager.cpp:509
 msgctxt "@action"
 msgid "Close"
 msgstr "Zavřít"
 
-#: libs/service/notificationmanager.cpp:553
+#: libs/service/notificationmanager.cpp:556
 #, kde-format
 msgctxt ""
 "@info:status Notification for hardware removed giving vendor supplied "
@@ -1583,21 +1583,21 @@ msgctxt ""
 msgid "%1 removed"
 msgstr "%1 odstraněno"
 
-#: libs/service/notificationmanager.cpp:557
+#: libs/service/notificationmanager.cpp:560
 msgctxt ""
 "@info:status Notification for hardware removed used if we don't have its "
 "user-visible name"
 msgid "Network interface removed"
 msgstr "Síťové rozhraní odstraněno"
 
-#: libs/service/notificationmanager.cpp:590
+#: libs/service/notificationmanager.cpp:593
 #, kde-format
 msgctxt ""
 "@info:status Notification text when a single wireless network was found"
 msgid "Wireless network %1 found"
 msgstr "Nalezena bezdrátová síť %1"
 
-#: libs/service/notificationmanager.cpp:593
+#: libs/service/notificationmanager.cpp:596
 #, kde-format
 msgctxt ""
 "@info:status Notification text when multiple wireless networks are found. %2 "
@@ -1609,14 +1609,14 @@ msgstr[0] "<b>Nová bezdrátová síť:</b><br />  %2"
 msgstr[1] "<b>Nové bezdrátové sítě:</b><br />  %2"
 msgstr[2] "<b>Nové bezdrátové sítě:</b><br />  %2"
 
-#: libs/service/notificationmanager.cpp:608
+#: libs/service/notificationmanager.cpp:611
 #, kde-format
 msgctxt ""
 "@info:status Notification text when a single wireless network disappeared"
 msgid "Wireless network %1 disappeared"
 msgstr "Bezdrátová síť %1 zmizela"
 
-#: libs/service/notificationmanager.cpp:612
+#: libs/service/notificationmanager.cpp:615
 #, kde-format
 msgctxt ""
 "@info:status Notification text when multiple wireless networks have "
@@ -1628,24 +1628,24 @@ msgstr[0] "<b>Bezdrátová síť zmizela:</b><br />  %2"
 msgstr[1] "<b>Bezdrátové sítě zmizely:</b><br />  %2"
 msgstr[2] "<b>Bezdrátové sítě zmizely:</b><br />  %2"
 
-#: libs/service/notificationmanager.cpp:624
+#: libs/service/notificationmanager.cpp:627
 msgctxt "@info:status Notification for radio kill switch turned on"
 msgid "Wireless hardware enabled"
 msgstr "Bezdrátový hardware povolen"
 
-#: libs/service/notificationmanager.cpp:631
+#: libs/service/notificationmanager.cpp:634
 msgctxt "@info:status Notification for radio kill switch turned off"
 msgid "Wireless hardware disabled"
 msgstr "Bezdrátový hardware zakázán"
 
-#: libs/service/notificationmanager.cpp:638
+#: libs/service/notificationmanager.cpp:641
 msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is disabled"
 msgid "Networking system disabled"
 msgstr "Síťový systém zakázán"
 
-#: libs/service/notificationmanager.cpp:644
+#: libs/service/notificationmanager.cpp:647
 msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is already running"
@@ -1780,20 +1780,20 @@ msgstr ""
 "vhodný ovladač wifi) nebo Ad-hoc. Rovněž si přečtěte https://bugs.kde.org/"
 "show_bug.cgi?id=311705."
 
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #. i18n: ectx: property (text), item, widget (KComboBox, mode)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #: libs/ui/802-11-wireless.ui:77 libs/ui/wireless.ui:49
 msgid "Infrastructure"
 msgstr "Infrastruktura"
 
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #. i18n: ectx: property (text), item, widget (KComboBox, mode)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #: libs/ui/802-11-wireless.ui:82 libs/ui/wireless.ui:54
 msgid "Ad-hoc"
 msgstr "Ad-hoc"
 
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #. i18n: ectx: property (text), item, widget (KComboBox, mode)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #: libs/ui/802-11-wireless.ui:87 libs/ui/wireless.ui:58
 msgid "Ap-mode"
 msgstr ""
@@ -1818,12 +1818,12 @@ msgstr "B/g je nejobvyklejší režim při 2,4 GHz, méně obvyklý při 5 GHz."
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, sbUdpFragmentSize)
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spbLocalPort)
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spbCiscoUdpEncPort)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPeapVersion)
-#. i18n: ectx: property (text), item, widget (KComboBox, band)
-#. i18n: ectx: property (specialValueText), widget (Wireless80211WidgetBand, channel)
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, mtu)
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, speed)
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPeapVersion)
+#. i18n: ectx: property (text), item, widget (KComboBox, band)
+#. i18n: ectx: property (specialValueText), widget (Wireless80211WidgetBand, channel)
 #: libs/ui/802-11-wireless.ui:115 libs/ui/802-11-wireless.ui:152
 #: libs/ui/802-11-wireless.ui:252 libs/ui/ipv6.ui:112
 #: libs/ui/security/eapmethodpeapbase.ui:72 libs/ui/wired.ui:88
@@ -1853,8 +1853,8 @@ msgstr "&Kanál:"
 msgid "Sets the channel of the network."
 msgstr "Nastavuje kanál sítě."
 
-#. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
 #: libs/ui/802-11-wireless.ui:165 libs/ui/wireless.ui:66
 msgid "&BSSID:"
 msgstr "&BSSID:"
@@ -1872,8 +1872,8 @@ msgid ""
 "if other access points are part of the same network."
 msgstr ""
 
-#. i18n: ectx: property (inputMask), widget (KLineEdit, bssid)
 #. i18n: ectx: property (inputMask), widget (KLineEdit, clonedMacAddress)
+#. i18n: ectx: property (inputMask), widget (KLineEdit, bssid)
 #: libs/ui/802-11-wireless.ui:186 libs/ui/802-11-wireless.ui:280
 #: libs/ui/wired.ui:177
 msgid "HH:HH:HH:HH:HH:HH;_"
@@ -1898,15 +1898,15 @@ msgstr ""
 "Toto tlačítko vybere přístupový bod, se SSID zadaným v políčku nahoře, a "
 "nejsilnějším signálem."
 
-#. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
 #: libs/ui/802-11-wireless.ui:211 libs/ui/wired.ui:34
 msgid "&Restrict To Interface:"
 msgstr "Omezit na &rozhraní:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbMacAddress)
 #. i18n: ectx: property (text), item, widget (KComboBox, type)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMacAddress)
 #: libs/ui/802-11-wireless.ui:225 libs/ui/gsm.ui:183 libs/ui/wired.ui:48
 #: vpnplugins/pptp/pptpadvanced.ui:120
 msgid "Any"
@@ -1931,8 +1931,8 @@ msgstr ""
 "Nastavuje velikost největšího paketu (MTU), který může být přenášený v síti. "
 "'0' nastaví MTU automaticky."
 
-#. i18n: ectx: property (text), widget (QLabel, label_8)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
 #: libs/ui/802-11-wireless.ui:265 libs/ui/wired.ui:56
 msgid "Cloned MAC address"
 msgstr "Klonovaná MAC adresa"
@@ -2051,15 +2051,15 @@ msgid "New Bluetooth Connection"
 msgstr "Nové spojení Bluetooth"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabCellular)
-#. i18n: ectx: property (windowTitle), widget (QWidget, Gsm)
 #. i18n: ectx: property (windowTitle), widget (QWidget, Cdma)
+#. i18n: ectx: property (windowTitle), widget (QWidget, Gsm)
 #: libs/ui/cdma.ui:14 libs/ui/gsm.ui:14
 #: settings/config/manageconnectionwidget.ui:106
 msgid "Mobile Broadband"
 msgstr "Mobilní Broadband"
 
-#. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
 #: libs/ui/cdma.ui:22 libs/ui/gsm.ui:38
 msgid "&Number:"
 msgstr "Čís&lo"
@@ -2067,10 +2067,10 @@ msgstr "Čís&lo"
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, userNameLabel)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
 #: libs/ui/cdma.ui:38 libs/ui/gsm.ui:58 libs/ui/pppoe.ui:36
 #: libs/ui/security/eapmethodleapbase.ui:22
 #: libs/ui/security/eapmethodsimplebase.ui:17 libs/ui/security/leap.ui:17
@@ -2082,11 +2082,11 @@ msgstr "Uživatelské jméno"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #. i18n: ectx: property (text), widget (QLabel, lbl_password)
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#. i18n: ectx: property (text), widget (QLabel, label_14)
-#. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#. i18n: ectx: property (text), widget (QLabel, label_14)
 #: libs/ui/cdma.ui:54 libs/ui/gsm.ui:74 libs/ui/pppoe.ui:56
 #: libs/ui/security/eapmethodleapbase.ui:42
 #: libs/ui/security/eapmethodsimplebase.ui:33 libs/ui/security/leap.ui:33
@@ -2210,19 +2210,19 @@ msgstr "Základní"
 msgid "*99#"
 msgstr "*99#"
 
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509KeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509PassKeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509PassPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, proxyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
-#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboGroupPassOptions)
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passwordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, pinStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #: libs/ui/gsm.ui:93 libs/ui/gsm.ui:253
 #: libs/ui/security/eapmethodleapbase.ui:68
 #: libs/ui/security/eapmethodsimplebase.ui:56
@@ -2237,19 +2237,19 @@ msgstr "*99#"
 msgid "Store"
 msgstr "Uložit"
 
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509KeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509PassKeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509PassPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, proxyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
-#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboGroupPassOptions)
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passwordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, pinStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #: libs/ui/gsm.ui:98 libs/ui/gsm.ui:258
 #: libs/ui/security/eapmethodleapbase.ui:73
 #: libs/ui/security/eapmethodsimplebase.ui:61
@@ -2264,6 +2264,9 @@ msgstr "Uložit"
 msgid "Always Ask"
 msgstr "Vždy se dotázat"
 
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509KeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509PassKeyPasswordStorage)
@@ -2271,13 +2274,10 @@ msgstr "Vždy se dotázat"
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbProxyType)
 #. i18n: ectx: property (text), item, widget (KComboBox, proxyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
-#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboGroupPassOptions)
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passwordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, pinStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #: libs/ui/gsm.ui:103 libs/ui/gsm.ui:263
 #: libs/ui/security/eapmethodleapbase.ui:78
 #: libs/ui/security/eapmethodsimplebase.ui:66
@@ -2440,8 +2440,8 @@ msgstr ""
 "Použijte toto pole pro upřesnění podsítě, do které patří výše zadaná IP "
 "adresa."
 
-#. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #. i18n: ectx: property (text), widget (QLabel, lbl_gateway)
 #. i18n: ectx: property (text), widget (QLabel, gatewayLabel)
@@ -2477,10 +2477,10 @@ msgstr ""
 "Použijte toto pole pro upřesnění IP adres DNS serverů. Použijte ';' pro "
 "oddělení záznamů."
 
-#. i18n: ectx: property (text), widget (KPushButton, altSubjectMatchesMoreBtn)
-#. i18n: ectx: property (text), widget (KPushButton, connectToTheseServersMoreBtn)
 #. i18n: ectx: property (text), widget (KPushButton, dnsMorePushButton)
 #. i18n: ectx: property (text), widget (KPushButton, dnsSearchMorePushButton)
+#. i18n: ectx: property (text), widget (KPushButton, altSubjectMatchesMoreBtn)
+#. i18n: ectx: property (text), widget (KPushButton, connectToTheseServersMoreBtn)
 #: libs/ui/ipv4.ui:260 libs/ui/ipv4.ui:294 libs/ui/ipv6.ui:265
 #: libs/ui/ipv6.ui:299 libs/ui/security/eapmethodpeapbase.ui:120
 #: libs/ui/security/eapmethodpeapbase.ui:145
@@ -2516,10 +2516,10 @@ msgstr ""
 msgid "IPv4 is required for this connection"
 msgstr "Pro spojení je potřeba IPv4"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, AdvancedSettingsIp4Config)
 #. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp4Config)
-#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
+#. i18n: ectx: property (windowTitle), widget (QWidget, AdvancedSettingsIp4Config)
 #. i18n: ectx: property (windowTitle), widget (QWidget, AdvancedSettingsIp6Config)
+#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
 #: libs/ui/ipv4advanced.ui:20 libs/ui/ipv4routes.ui:20
 #: libs/ui/ipv6advanced.ui:20 libs/ui/ipv6routes.ui:20
 msgid "Advanced IP Settings"
@@ -2786,12 +2786,12 @@ msgstr "Stavové MPPE"
 #. i18n: ectx: property (text), widget (QCheckBox, bsdcomp)
 #: libs/ui/ppp.ui:123
 msgid "Allow BSD compression"
-msgstr "Povolit BSD kompresi"
+msgstr "Povolit kompresi BSD"
 
 #. i18n: ectx: property (text), widget (QCheckBox, deflate)
 #: libs/ui/ppp.ui:133
 msgid "Allow Deflate compression"
-msgstr "Povolit Deflate kompresi"
+msgstr "Povolit kompresi Deflate"
 
 #. i18n: ectx: property (text), widget (QCheckBox, vjcomp)
 #: libs/ui/ppp.ui:143
@@ -2807,7 +2807,7 @@ msgstr "Echo"
 #. i18n: ectx: property (text), widget (QCheckBox, pppecho)
 #: libs/ui/ppp.ui:162
 msgid "Send PPP echo packets"
-msgstr "Posílat PPP echo packety"
+msgstr "Posílat pakety PPP echo"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabPppoe)
 #. i18n: ectx: property (windowTitle), widget (QWidget, Pppoe)
@@ -2866,7 +2866,7 @@ msgstr "Použít BSSID AP"
 #: libs/ui/security/eapmethodinnerauth.cpp:42
 msgctxt "Label for inner auth combobox"
 msgid "&Inner Authentication:"
-msgstr "Vn&itřní autentizace:"
+msgstr "Vn&itřní ověření:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, leUsername)
 #: libs/ui/security/eapmethodleapbase.ui:35
@@ -3105,7 +3105,7 @@ msgstr "802.1x zabezpečení"
 #: libs/ui/security/securitywired8021x.cpp:45
 msgctxt "@option:check enables/disables 802.1x auth on wired ethernet"
 msgid "Use &802.1x authentication"
-msgstr "Použít &802.1x autentizaci"
+msgstr "Použít ověření totožnosti &802.1x"
 
 #: libs/ui/security/ttlswidget.cpp:78
 msgctxt "PAP inner auth method"
@@ -3493,7 +3493,7 @@ msgstr "Nikdy"
 #: settings/config/manageconnectionwidget.cpp:372
 msgctxt "Tooltip for disabled tab when no VPN plugins are installed"
 msgid "No VPN plugins were found"
-msgstr "Nebyly nalezeny modyly pro VPN"
+msgstr "Nebyly nalezeny moduly pro VPN"
 
 #: settings/config/manageconnectionwidget.cpp:416
 msgctxt "File chooser dialog title for importing VPN"
@@ -4076,8 +4076,8 @@ msgstr "Zakázat &rozdělený tunel"
 msgid "Novell VPN"
 msgstr "Novell VPN"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #. i18n: ectx: property (title), widget (QGroupBox, grp_general)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: vpnplugins/novellvpn/novellvpnprop.ui:20
 #: vpnplugins/openconnect/openconnectprop.ui:20 vpnplugins/pptp/pptpprop.ui:26
@@ -4307,7 +4307,7 @@ msgstr ""
 
 #: vpnplugins/openvpn/openvpn.cpp:511
 msgid "Could not open file for writing"
-msgstr "Nepodařilo se otevřít soubor pro zápis"
+msgstr "Nelze otevřít soubor pro zápis"
 
 #: vpnplugins/openvpn/openvpnauth.cpp:69 vpnplugins/openvpn/openvpnauth.cpp:95
 msgid "Key Password:"
@@ -4347,7 +4347,7 @@ msgstr "Certifikáty X.509"
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
 #: vpnplugins/openvpn/openvpnprop.ui:79
 msgid "Pre-shared Key"
-msgstr "Presdílený klíč"
+msgstr "Předsdílený klíč"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
 #: vpnplugins/openvpn/openvpnprop.ui:89
@@ -4494,17 +4494,17 @@ msgstr "Volitelné z&abezpečení"
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: vpnplugins/openvpn/openvpnprop.ui:760
 msgid "&Cipher:"
-msgstr "&Cifra:"
+msgstr "Ši&fra:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cboCipher)
 #: vpnplugins/openvpn/openvpnprop.ui:780
 msgid "Obtaining available ciphers..."
-msgstr "Získavají se dostupné cifry..."
+msgstr "Získavají se dostupné šifry..."
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: vpnplugins/openvpn/openvpnprop.ui:792
 msgid "&HMAC Authentication:"
-msgstr "&HMAC autentizace:"
+msgstr "Ověření totožnosti &HMAC:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
 #: vpnplugins/openvpn/openvpnprop.ui:819
@@ -4622,7 +4622,7 @@ msgstr "Zobrazit heslo"
 #: vpnplugins/openvpn/openvpnwidget.cpp:151
 msgctxt "@item:inlist Item added when OpenVPN cipher lookup failed"
 msgid "OpenVPN cipher lookup failed"
-msgstr "Vyhledání OpenVPN cifry selhalo"
+msgstr "Vyhledání OpenVPN šifry selhalo"
 
 #: vpnplugins/openvpn/openvpnwidget.cpp:134
 msgctxt "@item::inlist Default openvpn cipher item"
@@ -4632,7 +4632,7 @@ msgstr "Výchozí"
 #: vpnplugins/openvpn/openvpnwidget.cpp:148
 msgctxt "@item:inlist Item added when OpenVPN cipher lookup failed"
 msgid "No OpenVPN ciphers found"
-msgstr "Nebyly nalezeny žádné OpenVPN cifry"
+msgstr "Nebyly nalezeny žádné OpenVPN šifry"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_auth)
 #: vpnplugins/pptp/pptpadvanced.ui:25
@@ -4672,7 +4672,7 @@ msgstr "Použít &stavové šifrování"
 #. i18n: ectx: property (text), widget (QCheckBox, cb_BSD)
 #: vpnplugins/pptp/pptpadvanced.ui:164
 msgid "Allow &BSD compression"
-msgstr "Povolit &BSD kompresi"
+msgstr "Povolit kompresi &BSD"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_deflate)
 #: vpnplugins/pptp/pptpadvanced.ui:174
@@ -4735,15 +4735,15 @@ msgid ""
 "running."
 msgstr "Nastavení požaduje ověření pomocí agenta ssh, ale žádný neběží."
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanAuth)
 #. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanProp)
+#. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanAuth)
 #: vpnplugins/strongswan/strongswanauth.ui:14
 #: vpnplugins/strongswan/strongswanprop.ui:14
 msgid "Strong Swan VPN"
 msgstr "Strong Swan VPN"
 
-#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowPasswords)
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
 #: vpnplugins/strongswan/strongswanauth.ui:37
 #: vpnplugins/strongswan/strongswanprop.ui:304 vpnplugins/vpnc/vpncauth.ui:79
 #: vpnplugins/vpnc/vpncprop.ui:161

@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-03-02 10:30+0100\n"
-"PO-Revision-Date: 2013-02-10 04:31+0200\n"
+"POT-Creation-Date: 2013-06-15 05:01+0000\n"
+"PO-Revision-Date: 2013-05-17 10:48+0300\n"
 "Last-Translator: Lasse Liehu <lasse.liehu@gmail.com>\n"
 "Language-Team: Finnish <lokalisointi@lists.coss.fi>\n"
 "Language: fi\n"
@@ -26,11 +26,11 @@ msgstr ""
 
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Tommi Nieminen"
+msgstr "Tommi Nieminen,Lasse Liehu"
 
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "translator@legisign.org"
+msgstr "translator@legisign.org,lasse.liehu@gmail.com"
 
 #. i18n: ectx: label, entry (Connections), group (General)
 #: libs/internals/knmserviceprefs.kcfg:11
@@ -102,8 +102,8 @@ msgstr "WEP-avain 2"
 msgid "WEP key 3"
 msgstr "WEP-avain 3"
 
-#. i18n: ectx: label, entry (psk), group (802-11-wireless-security)
 #. i18n: ectx: label, entry (psk), group (802-1x)
+#. i18n: ectx: label, entry (psk), group (802-11-wireless-security)
 #: libs/internals/schemas/802-11-wireless-security.kcfg:82
 #: libs/internals/schemas/802-1x.kcfg:134
 msgid "PSK"
@@ -168,8 +168,8 @@ msgstr "Datanopeus"
 msgid "Transmit power"
 msgstr "Lähetysteho"
 
-#. i18n: ectx: label, entry (macaddress), group (802-11-wireless)
 #. i18n: ectx: label, entry (macaddress), group (802-3-ethernet)
+#. i18n: ectx: label, entry (macaddress), group (802-11-wireless)
 #: libs/internals/schemas/802-11-wireless.kcfg:47
 #: libs/internals/schemas/802-3-ethernet.kcfg:38
 msgid "MAC Address"
@@ -180,9 +180,9 @@ msgstr "MAC-osoite"
 msgid "Hardware address to set on the wireless network interface"
 msgstr "Verkkoliitäntään asetettava laiteosoite"
 
-#. i18n: ectx: label, entry (mtu), group (802-11-wireless)
 #. i18n: ectx: label, entry (mtu), group (802-3-ethernet)
 #. i18n: ectx: label, entry (mtu), group (ppp)
+#. i18n: ectx: label, entry (mtu), group (802-11-wireless)
 #: libs/internals/schemas/802-11-wireless.kcfg:51
 #: libs/internals/schemas/802-3-ethernet.kcfg:42
 #: libs/internals/schemas/ppp.kcfg:69
@@ -199,8 +199,8 @@ msgstr "MTU"
 msgid "Seen BSSIDs"
 msgstr "Havaitut BSSID:t"
 
-#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #. i18n: ectx: property (text), widget (QCheckBox, eap)
 #. i18n: ectx: label, entry (eap), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:9 libs/ui/ppp.ui:69
@@ -212,12 +212,12 @@ msgstr "EAP"
 #. i18n: ectx: label, entry (identity), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:13
 msgid "Identity"
-msgstr "Henkilöllisyys"
+msgstr "Henkilöys"
 
 #. i18n: ectx: label, entry (anonymousidentity), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:17
 msgid "Anonymous identity"
-msgstr "Nimetön henkilöllisyys"
+msgstr "Nimetön henkilöys"
 
 #. i18n: ectx: label, entry (cacert), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:21
@@ -286,10 +286,10 @@ msgstr "Vaiheen 2 asiakkaan varmennepolku"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#. i18n: ectx: label, entry (password), group (802-1x)
 #. i18n: ectx: label, entry (password), group (cdma)
-#. i18n: ectx: label, entry (password), group (gsm)
+#. i18n: ectx: label, entry (password), group (802-1x)
 #. i18n: ectx: label, entry (password), group (pppoe)
+#. i18n: ectx: label, entry (password), group (gsm)
 #: libs/internals/schemas/802-1x.kcfg:102 libs/internals/schemas/cdma.kcfg:17
 #: libs/internals/schemas/gsm.kcfg:18 libs/internals/schemas/pppoe.kcfg:17
 #: vpnplugins/openvpn/openvpnprop.ui:84 vpnplugins/openvpn/openvpnprop.ui:498
@@ -397,10 +397,10 @@ msgid "Number"
 msgstr "Numero"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel9_2)
-#. i18n: ectx: label, entry (UserName), group (vpn)
 #. i18n: ectx: label, entry (username), group (cdma)
-#. i18n: ectx: label, entry (username), group (gsm)
 #. i18n: ectx: label, entry (username), group (pppoe)
+#. i18n: ectx: label, entry (UserName), group (vpn)
+#. i18n: ectx: label, entry (username), group (gsm)
 #: libs/internals/schemas/cdma.kcfg:13 libs/internals/schemas/gsm.kcfg:14
 #: libs/internals/schemas/pppoe.kcfg:13 libs/internals/schemas/vpn.kcfg:17
 #: vpnplugins/openvpn/openvpnprop.ui:482
@@ -639,11 +639,11 @@ msgstr ""
 msgid "CRTSCTS"
 msgstr "CRTSCTS"
 
-#. i18n: ectx: label, entry (baud), group (serial)
 #. i18n: ectx: label, entry (baud), group (ppp)
+#. i18n: ectx: label, entry (baud), group (serial)
 #: libs/internals/schemas/ppp.kcfg:61 libs/internals/schemas/serial.kcfg:9
 msgid "Baud"
-msgstr ""
+msgstr "Baudi"
 
 #. i18n: ectx: label, entry (mru), group (ppp)
 #: libs/internals/schemas/ppp.kcfg:65
@@ -665,8 +665,8 @@ msgstr "LCP-kaiutusväli"
 msgid "Service"
 msgstr "Palvelu"
 
-#. i18n: ectx: label, entry (bits), group (serial)
 #. i18n: ectx: label, entry (Data), group (vpn)
+#. i18n: ectx: label, entry (bits), group (serial)
 #: libs/internals/schemas/serial.kcfg:14 libs/internals/schemas/vpn.kcfg:13
 msgid "Data bits"
 msgstr "Databittejä"
@@ -699,7 +699,7 @@ msgstr "Järjestelmän käyttäjätunnus, ei tallennettu"
 #. i18n: ectx: label, entry (VpnSecrets), group (vpn)
 #: libs/internals/schemas/vpn.kcfg:21
 msgid "Vpnsecrets"
-msgstr ""
+msgstr "VPN-salaisuudet"
 
 #. i18n: ectx: label, entry (PluginName), group (vpn)
 #: libs/internals/schemas/vpn.kcfg:25
@@ -972,7 +972,7 @@ msgstr "Asetetaan verkko-osoitetta"
 #: libs/internals/uiutils.cpp:195
 msgctxt "is other action required to fully connect? captive portals, etc."
 msgid "Checking further connectivity"
-msgstr "Tarkistetaan lisäyhteyksiä"
+msgstr "Tarkistetaan yhteyden lisävaatimuksia"
 
 #: libs/internals/uiutils.cpp:198
 msgctxt ""
@@ -1212,40 +1212,40 @@ msgid "PIN/PUK unlock error"
 msgstr "PIN/PUK-avausvirhe"
 
 #: libs/service/notificationmanager.cpp:114
-#: libs/service/notificationmanager.cpp:446
+#: libs/service/notificationmanager.cpp:449
 #, kde-format
 msgctxt "@info:status Notification text when connecting"
 msgid "Activating %1"
 msgstr "Aktivoidaan %1"
 
 #: libs/service/notificationmanager.cpp:118
-#: libs/service/notificationmanager.cpp:450
+#: libs/service/notificationmanager.cpp:453
 #, kde-format
 msgctxt "@info:status Notification text when a connection has been activated"
 msgid "%1 activated"
 msgstr "%1 aktivoitu"
 
-#: libs/service/notificationmanager.cpp:124
-#: libs/service/notificationmanager.cpp:455
-#, kde-format
-msgctxt "@info:status Notification text when connection has failed"
-msgid "Connection %1 failed"
-msgstr "Yhteys %1 epäonnistui"
-
-#: libs/service/notificationmanager.cpp:126
-#: libs/service/notificationmanager.cpp:457
+#: libs/service/notificationmanager.cpp:122
+#: libs/service/notificationmanager.cpp:460
 #, kde-format
 msgctxt "@info:status Notification text when deactivating a connection"
 msgid "%1 deactivated"
 msgstr "%1 passivoitu"
 
-#: libs/service/notificationmanager.cpp:143
+#: libs/service/notificationmanager.cpp:128
+#: libs/service/notificationmanager.cpp:458
+#, kde-format
+msgctxt "@info:status Notification text when connection has failed"
+msgid "Connection %1 failed"
+msgstr "Yhteys %1 epäonnistui"
+
+#: libs/service/notificationmanager.cpp:146
 #, kde-format
 msgctxt "@info:status Notification text when wireless/gsm signal is low"
 msgid "Low signal on %1"
 msgstr "Huono signaali kohteessa %1"
 
-#: libs/service/notificationmanager.cpp:202
+#: libs/service/notificationmanager.cpp:205
 #, kde-format
 msgctxt ""
 "@info:status interface (%2) status notification title when a connection (%1) "
@@ -1253,7 +1253,7 @@ msgctxt ""
 msgid "Activating %1 on %2"
 msgstr "Aktivoidaan %1 palvelimella %2"
 
-#: libs/service/notificationmanager.cpp:212
+#: libs/service/notificationmanager.cpp:215
 #, kde-format
 msgctxt ""
 "@info:status interface (%2) status notification title when a connection (%1) "
@@ -1261,7 +1261,7 @@ msgctxt ""
 msgid "%1 on %2"
 msgstr "%1 palvelimella %2"
 
-#: libs/service/notificationmanager.cpp:226
+#: libs/service/notificationmanager.cpp:229
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1269,7 +1269,7 @@ msgctxt ""
 msgid "%1 because it is now being managed"
 msgstr "%1, koska sitä alettiin hallinnoida"
 
-#: libs/service/notificationmanager.cpp:229
+#: libs/service/notificationmanager.cpp:232
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1277,7 +1277,7 @@ msgctxt ""
 msgid "%1 because it is no longer being managed"
 msgstr "%1, koska sen hallinnointi päättyi"
 
-#: libs/service/notificationmanager.cpp:232
+#: libs/service/notificationmanager.cpp:235
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1285,7 +1285,7 @@ msgctxt ""
 msgid "%1 because configuration failed"
 msgstr "%1, koska määritys epäonnistui"
 
-#: libs/service/notificationmanager.cpp:235
+#: libs/service/notificationmanager.cpp:238
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1293,7 +1293,7 @@ msgctxt ""
 msgid "%1 because the configuration is unavailable"
 msgstr "%1, koska määritys ei ole saatavilla"
 
-#: libs/service/notificationmanager.cpp:238
+#: libs/service/notificationmanager.cpp:241
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1301,7 +1301,7 @@ msgctxt ""
 msgid "%1 because the configuration has expired"
 msgstr "%1, koska määritys on vanhentunut"
 
-#: libs/service/notificationmanager.cpp:241
+#: libs/service/notificationmanager.cpp:244
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1310,7 +1310,7 @@ msgid "%1 because secrets were not provided"
 msgstr "%1, koska salattuja tietoja ei ole annettu"
 
 # ”asiakas” on ehdotus: supplicant lienee kuitenkin ohjelma, joka tekee jotakin?
-#: libs/service/notificationmanager.cpp:244
+#: libs/service/notificationmanager.cpp:247
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1318,7 +1318,7 @@ msgctxt ""
 msgid "%1 because the authorization supplicant disconnected"
 msgstr "%1, koska tunnistautumisasiakas katkaisi yhteyden"
 
-#: libs/service/notificationmanager.cpp:247
+#: libs/service/notificationmanager.cpp:250
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1326,7 +1326,7 @@ msgctxt ""
 msgid "%1 because the authorization supplicant's configuration failed"
 msgstr "%1, koska tunnistautumisasiakkaan määritys epäonnistui"
 
-#: libs/service/notificationmanager.cpp:250
+#: libs/service/notificationmanager.cpp:253
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1334,7 +1334,7 @@ msgctxt ""
 msgid "%1 because the authorization supplicant failed"
 msgstr "%1, koska tunnistautumisasiakas epäonnistui"
 
-#: libs/service/notificationmanager.cpp:253
+#: libs/service/notificationmanager.cpp:256
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1342,7 +1342,7 @@ msgctxt ""
 msgid "%1 because the authorization supplicant timed out"
 msgstr "%1, koska tunnistautumisasiakas aikakatkaistiin"
 
-#: libs/service/notificationmanager.cpp:256
+#: libs/service/notificationmanager.cpp:259
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1350,7 +1350,7 @@ msgctxt ""
 msgid "%1 because PPP failed to start"
 msgstr "%1, koska PPP ei onnistunut käynnistymään"
 
-#: libs/service/notificationmanager.cpp:259
+#: libs/service/notificationmanager.cpp:262
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1358,7 +1358,7 @@ msgctxt ""
 msgid "%1 because PPP disconnected"
 msgstr "%1, koska PPP katkesi"
 
-#: libs/service/notificationmanager.cpp:262
+#: libs/service/notificationmanager.cpp:265
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1366,7 +1366,7 @@ msgctxt ""
 msgid "%1 because PPP failed"
 msgstr "%1, koska PPP epäonnistui"
 
-#: libs/service/notificationmanager.cpp:265
+#: libs/service/notificationmanager.cpp:268
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1374,7 +1374,7 @@ msgctxt ""
 msgid "%1 because DHCP failed to start"
 msgstr "%1, koska DHCP ei onnistunut käynnistymään"
 
-#: libs/service/notificationmanager.cpp:268
+#: libs/service/notificationmanager.cpp:271
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1382,7 +1382,7 @@ msgctxt ""
 msgid "%1 because a DHCP error occurred"
 msgstr "%1, koska sattui DHCP-virhe"
 
-#: libs/service/notificationmanager.cpp:271
+#: libs/service/notificationmanager.cpp:274
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1390,7 +1390,7 @@ msgctxt ""
 msgid "%1 because DHCP failed "
 msgstr "%1, koska DHCP epäonnistui "
 
-#: libs/service/notificationmanager.cpp:274
+#: libs/service/notificationmanager.cpp:277
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1398,7 +1398,7 @@ msgctxt ""
 msgid "%1 because the shared service failed to start"
 msgstr "%1, koska jaettu palvelu ei onnistunut käynnistymään"
 
-#: libs/service/notificationmanager.cpp:277
+#: libs/service/notificationmanager.cpp:280
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1406,7 +1406,7 @@ msgctxt ""
 msgid "%1 because the shared service failed"
 msgstr "%1, koska jaettu palvelu epäonnistui"
 
-#: libs/service/notificationmanager.cpp:280
+#: libs/service/notificationmanager.cpp:283
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1414,7 +1414,7 @@ msgctxt ""
 msgid "%1 because the auto IP service failed to start"
 msgstr "%1, koska automaattinen IP-palvelu ei onnistunut käynnistymään"
 
-#: libs/service/notificationmanager.cpp:283
+#: libs/service/notificationmanager.cpp:286
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1422,7 +1422,7 @@ msgctxt ""
 msgid "%1 because the auto IP service reported an error"
 msgstr "%1, koska automaattinen IP-palvelu ilmoitti virheen"
 
-#: libs/service/notificationmanager.cpp:286
+#: libs/service/notificationmanager.cpp:289
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1430,7 +1430,7 @@ msgctxt ""
 msgid "%1 because the auto IP service failed"
 msgstr "%1, koska automaattinen IP-palvelu epäonnistui"
 
-#: libs/service/notificationmanager.cpp:289
+#: libs/service/notificationmanager.cpp:292
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1438,7 +1438,7 @@ msgctxt ""
 msgid "%1 because the modem is busy"
 msgstr "%1, koska modeemi on varattu"
 
-#: libs/service/notificationmanager.cpp:292
+#: libs/service/notificationmanager.cpp:295
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1446,7 +1446,7 @@ msgctxt ""
 msgid "%1 because the modem has no dial tone"
 msgstr "%1, koska modeemilla ei ole valintaääntä"
 
-#: libs/service/notificationmanager.cpp:295
+#: libs/service/notificationmanager.cpp:298
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1454,7 +1454,7 @@ msgctxt ""
 msgid "%1 because the modem shows no carrier"
 msgstr "%1, koska modeemi ei osoita kantoaaltoa"
 
-#: libs/service/notificationmanager.cpp:298
+#: libs/service/notificationmanager.cpp:301
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1462,7 +1462,7 @@ msgctxt ""
 msgid "%1 because the modem dial timed out"
 msgstr "%1, koska modeemin numeronvalinta aikakatkaistiin"
 
-#: libs/service/notificationmanager.cpp:301
+#: libs/service/notificationmanager.cpp:304
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1470,7 +1470,7 @@ msgctxt ""
 msgid "%1 because the modem could not be initialized"
 msgstr "%1, koska modeemia ei onnistuttu alustamaan"
 
-#: libs/service/notificationmanager.cpp:304
+#: libs/service/notificationmanager.cpp:307
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1478,7 +1478,7 @@ msgctxt ""
 msgid "%1 because the GSM APN could not be selected"
 msgstr "%1, koska GSM APN:ää ei voitu valita"
 
-#: libs/service/notificationmanager.cpp:307
+#: libs/service/notificationmanager.cpp:310
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1486,7 +1486,7 @@ msgctxt ""
 msgid "%1 because the GSM modem is not searching"
 msgstr "%1, koska GSM-modeemi ei etsi"
 
-#: libs/service/notificationmanager.cpp:310
+#: libs/service/notificationmanager.cpp:313
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1494,7 +1494,7 @@ msgctxt ""
 msgid "%1 because GSM network registration was denied"
 msgstr "%1, koska GSM:n verkkorekisteröinti torjuttiin"
 
-#: libs/service/notificationmanager.cpp:313
+#: libs/service/notificationmanager.cpp:316
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1502,7 +1502,7 @@ msgctxt ""
 msgid "%1 because GSM network registration timed out"
 msgstr "%1, koska GSM:n verkkorekisteröinti aikakatkaistiin"
 
-#: libs/service/notificationmanager.cpp:316
+#: libs/service/notificationmanager.cpp:319
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1510,7 +1510,7 @@ msgctxt ""
 msgid "%1 because GSM registration failed"
 msgstr "%1, koska GSM:n rekisteröinti epäonnistui"
 
-#: libs/service/notificationmanager.cpp:319
+#: libs/service/notificationmanager.cpp:322
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1518,7 +1518,7 @@ msgctxt ""
 msgid "%1 because the GSM PIN check failed"
 msgstr "%1, koska GSM:n PIN-tarkistus epäonnistui"
 
-#: libs/service/notificationmanager.cpp:322
+#: libs/service/notificationmanager.cpp:325
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1526,7 +1526,7 @@ msgctxt ""
 msgid "%1 because firmware is missing"
 msgstr "%1, koska laiteohjelmisto puuttuu"
 
-#: libs/service/notificationmanager.cpp:325
+#: libs/service/notificationmanager.cpp:328
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1534,7 +1534,7 @@ msgctxt ""
 msgid "%1 because the device was removed"
 msgstr "%1, koska laite poistettiin"
 
-#: libs/service/notificationmanager.cpp:328
+#: libs/service/notificationmanager.cpp:331
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1542,7 +1542,7 @@ msgctxt ""
 msgid "%1 because the networking system is now sleeping"
 msgstr "%1, koska verkkojärjestelmä nukkuu nyt"
 
-#: libs/service/notificationmanager.cpp:331
+#: libs/service/notificationmanager.cpp:334
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1550,7 +1550,7 @@ msgctxt ""
 msgid "%1 because the connection was removed"
 msgstr "%1, koska yhteys poistettiin"
 
-#: libs/service/notificationmanager.cpp:334
+#: libs/service/notificationmanager.cpp:337
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1558,7 +1558,7 @@ msgctxt ""
 msgid "%1 by request"
 msgstr "%1 pyynnöstä"
 
-#: libs/service/notificationmanager.cpp:337
+#: libs/service/notificationmanager.cpp:340
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1566,24 +1566,24 @@ msgctxt ""
 msgid "%1 because the cable was disconnected"
 msgstr "%1, koska kaapeli ei ole kiinni"
 
-#: libs/service/notificationmanager.cpp:505
-#: libs/service/notificationmanager.cpp:517
+#: libs/service/notificationmanager.cpp:508
+#: libs/service/notificationmanager.cpp:520
 #, kde-format
 msgctxt "@info:status Notification for hardware added"
 msgid "%1 attached"
 msgstr "%1 liitetty"
 
-#: libs/service/notificationmanager.cpp:506
+#: libs/service/notificationmanager.cpp:509
 msgctxt "@action"
 msgid "Create Connection"
 msgstr "Luo yhteys"
 
-#: libs/service/notificationmanager.cpp:506
+#: libs/service/notificationmanager.cpp:509
 msgctxt "@action"
 msgid "Close"
 msgstr "Sulje"
 
-#: libs/service/notificationmanager.cpp:553
+#: libs/service/notificationmanager.cpp:556
 #, kde-format
 msgctxt ""
 "@info:status Notification for hardware removed giving vendor supplied "
@@ -1591,21 +1591,21 @@ msgctxt ""
 msgid "%1 removed"
 msgstr "%1 poistettiin"
 
-#: libs/service/notificationmanager.cpp:557
+#: libs/service/notificationmanager.cpp:560
 msgctxt ""
 "@info:status Notification for hardware removed used if we don't have its "
 "user-visible name"
 msgid "Network interface removed"
 msgstr "Verkkoliitäntä poistettu"
 
-#: libs/service/notificationmanager.cpp:590
+#: libs/service/notificationmanager.cpp:593
 #, kde-format
 msgctxt ""
 "@info:status Notification text when a single wireless network was found"
 msgid "Wireless network %1 found"
 msgstr "Löydetty langaton verkko %1"
 
-#: libs/service/notificationmanager.cpp:593
+#: libs/service/notificationmanager.cpp:596
 #, kde-format
 msgctxt ""
 "@info:status Notification text when multiple wireless networks are found. %2 "
@@ -1616,14 +1616,14 @@ msgid_plural "<b>New wireless networks:</b><br /> %2"
 msgstr[0] "<b>Uusi langaton verkko:</b><br /> %2"
 msgstr[1] "<b>Uusia langattomia verkkoja:</b><br /> %2"
 
-#: libs/service/notificationmanager.cpp:608
+#: libs/service/notificationmanager.cpp:611
 #, kde-format
 msgctxt ""
 "@info:status Notification text when a single wireless network disappeared"
 msgid "Wireless network %1 disappeared"
 msgstr "Langaton verkko %1 katosi"
 
-#: libs/service/notificationmanager.cpp:612
+#: libs/service/notificationmanager.cpp:615
 #, kde-format
 msgctxt ""
 "@info:status Notification text when multiple wireless networks have "
@@ -1634,24 +1634,24 @@ msgid_plural "<b>Wireless networks disappeared:</b><br /> %2"
 msgstr[0] "<b>Langaton verkko katosi:</b><br /> %2"
 msgstr[1] "<b>Langattomia verkkoja katosi:</b><br /> %2"
 
-#: libs/service/notificationmanager.cpp:624
+#: libs/service/notificationmanager.cpp:627
 msgctxt "@info:status Notification for radio kill switch turned on"
 msgid "Wireless hardware enabled"
 msgstr "Langaton laitteisto käytössä"
 
-#: libs/service/notificationmanager.cpp:631
+#: libs/service/notificationmanager.cpp:634
 msgctxt "@info:status Notification for radio kill switch turned off"
 msgid "Wireless hardware disabled"
-msgstr ""
+msgstr "Langaton verkkolaitteisto poistettu käytöstä"
 
-#: libs/service/notificationmanager.cpp:638
+#: libs/service/notificationmanager.cpp:641
 msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is disabled"
 msgid "Networking system disabled"
 msgstr "Verkkojärjestelmä ei käytössä"
 
-#: libs/service/notificationmanager.cpp:644
+#: libs/service/notificationmanager.cpp:647
 msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is already running"
@@ -1777,11 +1777,6 @@ msgstr "Langattoman verkon toimintatila"
 
 #. i18n: ectx: property (whatsThis), widget (KComboBox, cmbMode)
 #: libs/ui/802-11-wireless.ui:73
-#, fuzzy
-#| msgid ""
-#| "Infrastructure mode is the most common setting.  To form a peer-to-peer "
-#| "wireless network with another computer when there is no infrastructure, "
-#| "choose Ad-hoc."
 msgid ""
 "Infrastructure mode is the most common setting.  To form a peer-to-peer "
 "wireless network with another computer when there is no infrastructure, "
@@ -1790,25 +1785,26 @@ msgid ""
 msgstr ""
 "Yleisin asetus on infrastruktuuritila. Muodostaaksesi langattoman "
 "vertaisverkon toiseen tietokoneeseen infrastruktuurittomassa tilanteessa, "
-"valitse ad hoc."
+"valitse AP-tila (tarvitsee NetworkManagerin >= 0.9.8 ja sopivan WiFi-ajurin) "
+"tai ad hoc. Katso myös https://bugs.kde.org/show_bug.cgi?id=311705."
 
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #. i18n: ectx: property (text), item, widget (KComboBox, mode)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #: libs/ui/802-11-wireless.ui:77 libs/ui/wireless.ui:49
 msgid "Infrastructure"
 msgstr "Infrastruktuuri"
 
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #. i18n: ectx: property (text), item, widget (KComboBox, mode)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #: libs/ui/802-11-wireless.ui:82 libs/ui/wireless.ui:54
 msgid "Ad-hoc"
 msgstr "Ad-hoc"
 
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #. i18n: ectx: property (text), item, widget (KComboBox, mode)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #: libs/ui/802-11-wireless.ui:87 libs/ui/wireless.ui:58
 msgid "Ap-mode"
-msgstr ""
+msgstr "AP-tila"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: libs/ui/802-11-wireless.ui:95
@@ -1832,12 +1828,12 @@ msgstr ""
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, sbUdpFragmentSize)
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spbLocalPort)
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spbCiscoUdpEncPort)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPeapVersion)
-#. i18n: ectx: property (text), item, widget (KComboBox, band)
-#. i18n: ectx: property (specialValueText), widget (Wireless80211WidgetBand, channel)
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, mtu)
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, speed)
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPeapVersion)
+#. i18n: ectx: property (text), item, widget (KComboBox, band)
+#. i18n: ectx: property (specialValueText), widget (Wireless80211WidgetBand, channel)
 #: libs/ui/802-11-wireless.ui:115 libs/ui/802-11-wireless.ui:152
 #: libs/ui/802-11-wireless.ui:252 libs/ui/ipv6.ui:112
 #: libs/ui/security/eapmethodpeapbase.ui:72 libs/ui/wired.ui:88
@@ -1867,8 +1863,8 @@ msgstr "&Kanava:"
 msgid "Sets the channel of the network."
 msgstr "Asettaa verkon kanavan."
 
-#. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
 #: libs/ui/802-11-wireless.ui:165 libs/ui/wireless.ui:66
 msgid "&BSSID:"
 msgstr "&BSSID:"
@@ -1889,8 +1885,8 @@ msgstr ""
 "yhteyden yhdistämään vain tukiasemaan, jolla on annettu laiteosoite, vaikka "
 "muut tukiasemat olisivat samassa verkossa."
 
-#. i18n: ectx: property (inputMask), widget (KLineEdit, bssid)
 #. i18n: ectx: property (inputMask), widget (KLineEdit, clonedMacAddress)
+#. i18n: ectx: property (inputMask), widget (KLineEdit, bssid)
 #: libs/ui/802-11-wireless.ui:186 libs/ui/802-11-wireless.ui:280
 #: libs/ui/wired.ui:177
 msgid "HH:HH:HH:HH:HH:HH;_"
@@ -1915,15 +1911,15 @@ msgstr ""
 "Tämä painike valitsee tukiaseman, jolla on yllä olevassa kentässä annettu "
 "SSID ja vahvin signaali."
 
-#. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
 #: libs/ui/802-11-wireless.ui:211 libs/ui/wired.ui:34
 msgid "&Restrict To Interface:"
 msgstr "Ra&joita liitäntään:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbMacAddress)
 #. i18n: ectx: property (text), item, widget (KComboBox, type)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMacAddress)
 #: libs/ui/802-11-wireless.ui:225 libs/ui/gsm.ui:183 libs/ui/wired.ui:48
 #: vpnplugins/pptp/pptpadvanced.ui:120
 msgid "Any"
@@ -1948,8 +1944,8 @@ msgstr ""
 "Asettaa suurimman verkossa välitettävän paketin koon (MTU). ”0” asettaa MTU:"
 "n automaattisesti."
 
-#. i18n: ectx: property (text), widget (QLabel, label_8)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
 #: libs/ui/802-11-wireless.ui:265 libs/ui/wired.ui:56
 msgid "Cloned MAC address"
 msgstr "MAC-osoite"
@@ -2070,15 +2066,15 @@ msgid "New Bluetooth Connection"
 msgstr "Uusi Bluetooth-yhteys"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabCellular)
-#. i18n: ectx: property (windowTitle), widget (QWidget, Gsm)
 #. i18n: ectx: property (windowTitle), widget (QWidget, Cdma)
+#. i18n: ectx: property (windowTitle), widget (QWidget, Gsm)
 #: libs/ui/cdma.ui:14 libs/ui/gsm.ui:14
 #: settings/config/manageconnectionwidget.ui:106
 msgid "Mobile Broadband"
 msgstr "Mobiililaajakaista"
 
-#. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
 #: libs/ui/cdma.ui:22 libs/ui/gsm.ui:38
 msgid "&Number:"
 msgstr "&Numero:"
@@ -2086,10 +2082,10 @@ msgstr "&Numero:"
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, userNameLabel)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
 #: libs/ui/cdma.ui:38 libs/ui/gsm.ui:58 libs/ui/pppoe.ui:36
 #: libs/ui/security/eapmethodleapbase.ui:22
 #: libs/ui/security/eapmethodsimplebase.ui:17 libs/ui/security/leap.ui:17
@@ -2101,11 +2097,11 @@ msgstr "&Käyttäjätunnus:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #. i18n: ectx: property (text), widget (QLabel, lbl_password)
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#. i18n: ectx: property (text), widget (QLabel, label_14)
-#. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#. i18n: ectx: property (text), widget (QLabel, label_14)
 #: libs/ui/cdma.ui:54 libs/ui/gsm.ui:74 libs/ui/pppoe.ui:56
 #: libs/ui/security/eapmethodleapbase.ui:42
 #: libs/ui/security/eapmethodsimplebase.ui:33 libs/ui/security/leap.ui:33
@@ -2233,19 +2229,19 @@ msgstr "Perusasetukset"
 msgid "*99#"
 msgstr "*99#"
 
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509KeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509PassKeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509PassPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, proxyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
-#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboGroupPassOptions)
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passwordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, pinStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #: libs/ui/gsm.ui:93 libs/ui/gsm.ui:253
 #: libs/ui/security/eapmethodleapbase.ui:68
 #: libs/ui/security/eapmethodsimplebase.ui:56
@@ -2260,19 +2256,19 @@ msgstr "*99#"
 msgid "Store"
 msgstr "Tallenna"
 
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509KeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509PassKeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509PassPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, proxyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
-#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboGroupPassOptions)
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passwordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, pinStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #: libs/ui/gsm.ui:98 libs/ui/gsm.ui:258
 #: libs/ui/security/eapmethodleapbase.ui:73
 #: libs/ui/security/eapmethodsimplebase.ui:61
@@ -2287,6 +2283,9 @@ msgstr "Tallenna"
 msgid "Always Ask"
 msgstr "Kysy aina"
 
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509KeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509PassKeyPasswordStorage)
@@ -2294,13 +2293,10 @@ msgstr "Kysy aina"
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbProxyType)
 #. i18n: ectx: property (text), item, widget (KComboBox, proxyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
-#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboGroupPassOptions)
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passwordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, pinStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #: libs/ui/gsm.ui:103 libs/ui/gsm.ui:263
 #: libs/ui/security/eapmethodleapbase.ui:78
 #: libs/ui/security/eapmethodsimplebase.ui:66
@@ -2459,8 +2455,8 @@ msgid ""
 "Use this field to specify the subnet that the above IP address belongs to."
 msgstr "Määritä tässä kentässä yllä annetttujen IP-osoitteiden aliverkko."
 
-#. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #. i18n: ectx: property (text), widget (QLabel, lbl_gateway)
 #. i18n: ectx: property (text), widget (QLabel, gatewayLabel)
@@ -2496,10 +2492,10 @@ msgstr ""
 "Määritä tässä kentässä yhden tai useamman DNS-palvelimen IP-osoitteet. Erota "
 "tietueet pilkuin (”,”)."
 
-#. i18n: ectx: property (text), widget (KPushButton, altSubjectMatchesMoreBtn)
-#. i18n: ectx: property (text), widget (KPushButton, connectToTheseServersMoreBtn)
 #. i18n: ectx: property (text), widget (KPushButton, dnsMorePushButton)
 #. i18n: ectx: property (text), widget (KPushButton, dnsSearchMorePushButton)
+#. i18n: ectx: property (text), widget (KPushButton, altSubjectMatchesMoreBtn)
+#. i18n: ectx: property (text), widget (KPushButton, connectToTheseServersMoreBtn)
 #: libs/ui/ipv4.ui:260 libs/ui/ipv4.ui:294 libs/ui/ipv6.ui:265
 #: libs/ui/ipv6.ui:299 libs/ui/security/eapmethodpeapbase.ui:120
 #: libs/ui/security/eapmethodpeapbase.ui:145
@@ -2538,10 +2534,10 @@ msgstr ""
 msgid "IPv4 is required for this connection"
 msgstr "Tämä yhteys vaatii IPv4:ää"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, AdvancedSettingsIp4Config)
 #. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp4Config)
-#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
+#. i18n: ectx: property (windowTitle), widget (QWidget, AdvancedSettingsIp4Config)
 #. i18n: ectx: property (windowTitle), widget (QWidget, AdvancedSettingsIp6Config)
+#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
 #: libs/ui/ipv4advanced.ui:20 libs/ui/ipv4routes.ui:20
 #: libs/ui/ipv6advanced.ui:20 libs/ui/ipv6routes.ui:20
 msgid "Advanced IP Settings"
@@ -2909,7 +2905,7 @@ msgstr "Tämän verkon salasana"
 #: libs/ui/security/eapmethodpeapbase.ui:19
 #: libs/ui/security/eapmethodttlsbase.ui:19
 msgid "&Anonymous Identity:"
-msgstr "&Nimetön henkilöllisyys:"
+msgstr "&Nimetön henkilöys:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: libs/ui/security/eapmethodpeapbase.ui:35
@@ -2999,7 +2995,7 @@ msgstr "&Tunnistautuminen:"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: libs/ui/security/eapmethodtlsbase.ui:19
 msgid "&Identity:"
-msgstr "&Henkilöllisyys:"
+msgstr "&Henkilöys:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -3236,7 +3232,7 @@ msgstr "&Salasana:"
 #. i18n: ectx: property (windowTitle), widget (QWidget, WirelessSecurity)
 #: libs/ui/security/wirelesssecurity.ui:20
 msgid "Wireless Security"
-msgstr "Langattoman turvallisuus"
+msgstr "Langattoman suojaus"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: libs/ui/security/wirelesssecurity.ui:41
@@ -3597,7 +3593,7 @@ msgstr "Yhteydenluontitoiminto epäonnistui."
 #, kde-format
 msgctxt "Warning message on attempting to delete a connection"
 msgid "Do you really want to delete the connection '%1'?"
-msgstr "Haluatko todella poistaa yhteyden '%1'?"
+msgstr "Haluatko varmasti poistaa yhteyden ”%1”?"
 
 #: settings/config/manageconnectionwidget.cpp:611
 msgid "Confirm Delete"
@@ -3674,7 +3670,7 @@ msgctxt "Mobile Connection Wizard"
 msgid "New Mobile Broadband Connection"
 msgstr "Uusi mobiililaajakaistayhteys"
 
-# ***TARKISTA: ”Plan” oli kai tapa, jolla laajakaistasta laskutetaan?
+# ”Plan” on tapa, jolla laajakaistasta laskutetaan
 #: settings/config/mobileconnectionwizard.cpp:151
 #: settings/config/mobileconnectionwizard.cpp:167
 #: settings/config/mobileconnectionwizard.cpp:193
@@ -3710,7 +3706,7 @@ msgid ""
 "This assistant helps you easily set up a mobile broadband connection to a "
 "cellular (3G) network."
 msgstr ""
-"Tämä avustettu toiminto auttaa sinua asettamaan helposti mobiililaajakaistan "
+"Tämä opastettu toiminto auttaa sinua asettamaan helposti mobiililaajakaistan "
 "matkapuhelinverkkoon (3G)."
 
 #: settings/config/mobileconnectionwizard.cpp:255
@@ -3732,7 +3728,7 @@ msgstr "Laajakaistapalvelusi laskutustavan nimen"
 msgctxt "Mobile Connection Wizard"
 msgid "(in some cases) Your broadband billing plan APN (Access Point Name)"
 msgstr ""
-"(joissakin tapauksissa) Laajakaistasi laskutustavan APN (tukiaseman nimi)"
+"(joissakin tapauksissa) Laajakaistasi laskutustavan APN:n (tukiaseman nimen)"
 
 #: settings/config/mobileconnectionwizard.cpp:265
 msgctxt "Mobile Connection Wizard"
@@ -3789,7 +3785,7 @@ msgstr "&Valitse palveluntarjoajasi luettelosta:"
 #: settings/config/mobileconnectionwizard.cpp:445
 msgctxt "Mobile Connection Wizard"
 msgid "I can't find my provider and I wish to enter it &manually:"
-msgstr "Palveluntarjoajaani ei löydy, ja haluan määrittää sen itse:"
+msgstr "&Palveluntarjoajaani ei löydy, ja haluan määrittää sen itse:"
 
 #: settings/config/mobileconnectionwizard.cpp:487
 msgctxt "Mobile Connection Wizard"
@@ -3883,7 +3879,7 @@ msgstr "Kuvailevan nimen mukaan"
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
 #: settings/config/othersettings.ui:82 settings/config/traysettings.ui:34
 msgid "System Name"
-msgstr "Järjestelmän nimen mukaan"
+msgstr "Järjestelmänimen mukaan"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_InterfaceNamingStyle)
 #: settings/config/othersettings.ui:87 settings/config/traysettings.ui:39
@@ -4135,8 +4131,8 @@ msgstr ""
 msgid "Novell VPN"
 msgstr "Novell VPN"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #. i18n: ectx: property (title), widget (QGroupBox, grp_general)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: vpnplugins/novellvpn/novellvpnprop.ui:20
 #: vpnplugins/openconnect/openconnectprop.ui:20 vpnplugins/pptp/pptpprop.ui:26
@@ -4803,15 +4799,15 @@ msgstr ""
 "Määritys käyttää ssh-agentia tunnistautumiseen, mutta yhtään ssh-agentia ei "
 "ole käynnissä."
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanAuth)
 #. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanProp)
+#. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanAuth)
 #: vpnplugins/strongswan/strongswanauth.ui:14
 #: vpnplugins/strongswan/strongswanprop.ui:14
 msgid "Strong Swan VPN"
 msgstr "Strong Swan -VPN"
 
-#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowPasswords)
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
 #: vpnplugins/strongswan/strongswanauth.ui:37
 #: vpnplugins/strongswan/strongswanprop.ui:304 vpnplugins/vpnc/vpncauth.ui:79
 #: vpnplugins/vpnc/vpncprop.ui:161

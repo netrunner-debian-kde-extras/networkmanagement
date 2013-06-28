@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanager\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-03-11 10:02+0100\n"
+"POT-Creation-Date: 2013-05-05 10:27+0200\n"
 "PO-Revision-Date: 2013-01-31 15:18+0100\n"
 "Last-Translator: Volkan Gezer <volkangezer@gmail.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -67,46 +67,46 @@ msgctxt "name of the connection not known"
 msgid "Unknown"
 msgstr "Bilinmeyen"
 
-#: interfacedetailswidget.cpp:117
+#: interfacedetailswidget.cpp:119
 msgctxt "interface details"
 msgid "<b>Traffic</b>"
 msgstr "<b>Trafik</b>"
 
-#: interfacedetailswidget.cpp:153
+#: interfacedetailswidget.cpp:155
 msgid "Go Back"
 msgstr "Geri git"
 
-#: interfacedetailswidget.cpp:178 interfacedetailswidget.cpp:300
+#: interfacedetailswidget.cpp:180 interfacedetailswidget.cpp:303
 msgctxt "entry not available"
 msgid "not available"
 msgstr "kullanılabilir değil"
 
-#: interfacedetailswidget.cpp:183
+#: interfacedetailswidget.cpp:185
 msgctxt "traffic received empty"
 msgid "Received"
 msgstr "Alınan"
 
-#: interfacedetailswidget.cpp:185
+#: interfacedetailswidget.cpp:187
 msgctxt "traffic transmitted empty"
 msgid "Transmitted"
 msgstr "Gönderilen"
 
-#: interfacedetailswidget.cpp:291
+#: interfacedetailswidget.cpp:294
 msgctxt "state of mobile broadband connection"
 msgid "not enabled"
 msgstr "kullanılabilir değil"
 
-#: interfacedetailswidget.cpp:307 interfacedetailswidget.cpp:354
+#: interfacedetailswidget.cpp:310 interfacedetailswidget.cpp:358
 msgctxt "interface details"
 msgid "Type"
 msgstr "Tür"
 
-#: interfacedetailswidget.cpp:308 interfacedetailswidget.cpp:355
+#: interfacedetailswidget.cpp:311 interfacedetailswidget.cpp:359
 msgctxt "interface details"
 msgid "Connection State"
 msgstr "Bağlantı Durumu"
 
-#: interfacedetailswidget.cpp:309
+#: interfacedetailswidget.cpp:312
 #, fuzzy
 #| msgctxt "interface details"
 #| msgid "IPv4 Address"
@@ -114,99 +114,117 @@ msgctxt "interface details"
 msgid "IP Address"
 msgstr "IPv4 Adresi"
 
-#: interfacedetailswidget.cpp:310 interfacedetailswidget.cpp:357
+#: interfacedetailswidget.cpp:313
+#, fuzzy
+#| msgctxt "interface details"
+#| msgid "IPv4 Gateway"
+msgctxt "interface details"
+msgid "IP Gateway"
+msgstr "IPv4 Ağ Geçidi"
+
+#: interfacedetailswidget.cpp:314 interfacedetailswidget.cpp:361
 msgctxt "interface details"
 msgid "Connection Speed"
 msgstr "Bağlantı Hızı"
 
-#: interfacedetailswidget.cpp:310
+#: interfacedetailswidget.cpp:314
 msgctxt "bitrate"
 msgid "Unknown"
 msgstr "Bilinmeyen"
 
-#: interfacedetailswidget.cpp:311 interfacedetailswidget.cpp:358
+#: interfacedetailswidget.cpp:315 interfacedetailswidget.cpp:362
 msgctxt "interface details"
 msgid "System Name"
 msgstr "Sistem Adı"
 
-#: interfacedetailswidget.cpp:312
+#: interfacedetailswidget.cpp:316
 msgctxt "interface details"
 msgid "MAC Address"
 msgstr "MAC Adresi"
 
-#: interfacedetailswidget.cpp:313 interfacedetailswidget.cpp:360
+#: interfacedetailswidget.cpp:317 interfacedetailswidget.cpp:364
 msgctxt "interface details"
 msgid "Driver"
 msgstr "Sürücü"
 
-#: interfacedetailswidget.cpp:319
+#: interfacedetailswidget.cpp:323
 msgctxt "interface details"
 msgid "Access Point (SSID)"
 msgstr "Erişim Noktası (SSID)"
 
-#: interfacedetailswidget.cpp:320
+#: interfacedetailswidget.cpp:324
 msgctxt "interface details"
 msgid "Access Point (MAC)"
 msgstr "Erişim Noktası (MAC)"
 
-#: interfacedetailswidget.cpp:328
+#: interfacedetailswidget.cpp:332
 msgctxt "@item:intable wireless band"
 msgid "Band"
 msgstr "Bant"
 
-#: interfacedetailswidget.cpp:329
+#: interfacedetailswidget.cpp:333
 msgctxt "@item:intable wireless channel"
 msgid "Channel"
 msgstr "Kanal"
 
-#: interfacedetailswidget.cpp:336
+#: interfacedetailswidget.cpp:340
 msgctxt "interface details"
 msgid "Operator"
 msgstr "Operatör"
 
-#: interfacedetailswidget.cpp:337
+#: interfacedetailswidget.cpp:341
 msgctxt "interface details"
 msgid "Signal Quality"
 msgstr "Sinyal Kalitesi"
 
-#: interfacedetailswidget.cpp:338
+#: interfacedetailswidget.cpp:342
 msgctxt "interface details"
 msgid "Access Technology"
 msgstr "Erişim Teknolojisi"
 
-#: interfacedetailswidget.cpp:356
+#: interfacedetailswidget.cpp:360
 msgctxt "interface details"
 msgid "Network Address (IP)"
 msgstr "Ağ Adresi (IP)"
 
-#: interfacedetailswidget.cpp:359
+#: interfacedetailswidget.cpp:363
 msgctxt "interface details"
 msgid "Hardware Address (MAC)"
 msgstr "Donanım Adresi (MAC)"
 
-#: interfacedetailswidget.cpp:378 interfaceitem.cpp:286
+#: interfacedetailswidget.cpp:382 interfaceitem.cpp:286
 msgctxt "label of the network interface"
 msgid "No IP address."
 msgstr "IP Adresi yok."
 
-#: interfacedetailswidget.cpp:389 interfaceitem.cpp:297
+#: interfacedetailswidget.cpp:393 interfacedetailswidget.cpp:409
+#: interfacedetailswidget.cpp:421 interfaceitem.cpp:297
 msgctxt "label of the network interface"
 msgid "IP display error."
 msgstr "IP görüntüleme hatası."
 
-#: interfacedetailswidget.cpp:468
+#: interfacedetailswidget.cpp:404 interfacedetailswidget.cpp:417
+#: interfacedetailswidget.cpp:433
+#, fuzzy
+#| msgctxt "label of the network interface"
+#| msgid "No gateway."
+msgctxt "label of the network interface"
+msgid "No IP gateway."
+msgstr "Ağ Geçidi yok."
+
+#: interfacedetailswidget.cpp:510
 msgid "KBit/s"
 msgstr "KBit/s"
 
-#: interfacedetailswidget.cpp:470
+#: interfacedetailswidget.cpp:512
 msgid "MBit/s"
 msgstr "MBit/s"
 
-#: interfacedetailswidget.cpp:474
+#: interfacedetailswidget.cpp:516
 msgid "GBit/s"
 msgstr "GBit/s"
 
-#: interfacedetailswidget.cpp:498
+#: interfacedetailswidget.cpp:540
 #, kde-format
 msgctxt ""
 "traffic, e.g. n KB/s\n"
@@ -214,11 +232,11 @@ msgctxt ""
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: interfacedetailswidget.cpp:507
+#: interfacedetailswidget.cpp:549
 msgid "Received"
 msgstr "Alınan"
 
-#: interfacedetailswidget.cpp:510
+#: interfacedetailswidget.cpp:552
 msgid "Transmitted"
 msgstr "Gönderilen"
 
@@ -399,14 +417,6 @@ msgstr "Bağlanmadı..."
 #, kde-format
 msgid "Strength: %1%"
 msgstr "Güç: %1%"
-
-
-
-
-
-
-
-
 
 
 

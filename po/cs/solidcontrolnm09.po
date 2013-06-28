@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solidcontrol\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-10-09 10:32+0200\n"
+"POT-Creation-Date: 2013-04-21 10:29+0200\n"
 "PO-Revision-Date: 2011-10-17 15:16+0200\n"
 "Last-Translator: Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -32,3 +32,158 @@ msgstr "Nebyla nalezena žádná podpůrná vrstva %1"
 #, kde-format
 msgid "Unable to use any of the %1 Backends"
 msgstr "Nelze použít kteroukoliv z %1 podpůrných vrstev"
+
+#: modeminterface.cpp:193 modeminterface.cpp:198
+msgctxt "Unknown cellular type"
+msgid "Unknown"
+msgstr "Neznámý"
+
+#: modeminterface.cpp:194
+msgctxt "Gsm cellular type"
+msgid "Gsm"
+msgstr "GSM"
+
+#: modeminterface.cpp:195
+msgctxt "Cdma cellular type"
+msgid "Cdma"
+msgstr "CDMA"
+
+#: modeminterface.cpp:204 modeminterface.cpp:220
+msgctxt "Unknown cellular frequency band"
+msgid "Unknown"
+msgstr "Neznámá"
+
+#: modeminterface.cpp:205
+msgctxt "Any cellular frequency band"
+msgid "Any"
+msgstr "Cokoliv"
+
+#: modeminterface.cpp:206
+msgctxt "Cellular frequency band"
+msgid "GSM/GPRS/EDGE 900 MHz"
+msgstr "GSM/GPRS/EDGE 900 MHz"
+
+#: modeminterface.cpp:207
+msgctxt "Cellular frequency band"
+msgid "GSM/GPRS/EDGE 1800 MHz"
+msgstr "GSM/GPRS/EDGE 1800 MHz"
+
+#: modeminterface.cpp:208
+msgctxt "Cellular frequency band"
+msgid "GSM/GPRS/EDGE 1900 MHz"
+msgstr "GSM/GPRS/EDGE 1900 MHz"
+
+#: modeminterface.cpp:209
+msgctxt "Cellular frequency band"
+msgid "GSM/GPRS/EDGE 850 MHz"
+msgstr "GSM/GPRS/EDGE 850 MHz"
+
+#: modeminterface.cpp:210
+msgctxt "Cellular frequency band"
+msgid "WCDMA 2100 MHz (Class I)"
+msgstr "WCDMA 2100 MHz (třída I)"
+
+#: modeminterface.cpp:211
+msgctxt "Cellular frequency band"
+msgid "WCDMA 3GPP 1800 MHz (Class III)"
+msgstr "WCDMA 3GPP 1800 MHz (třída III)"
+
+#: modeminterface.cpp:212
+msgctxt "Cellular frequency band"
+msgid "WCDMA 3GPP AWS 1700/2100 MHz (Class IV)"
+msgstr "WCDMA 3GPP AWS 1700/2100 MHz (třída IV)"
+
+#: modeminterface.cpp:213
+msgctxt "Cellular frequency band"
+msgid "WCDMA 3GPP UMTS 800 MHz (Class VI)"
+msgstr "WCDMA 3GPP UMTS 800 MHz (třída VI)"
+
+#: modeminterface.cpp:214
+msgctxt "Cellular frequency band"
+msgid "WCDMA 3GPP UMTS 850 MHz (Class V)"
+msgstr "WCDMA 3GPP UMTS 850 MHz (třída V)"
+
+#: modeminterface.cpp:215
+msgctxt "Cellular frequency band"
+msgid "WCDMA 3GPP UMTS 900 MHz (Class VIII)"
+msgstr "WCDMA 3GPP UMTS 900 MHz (třída VIII)"
+
+#: modeminterface.cpp:216
+msgctxt "Cellular frequency band"
+msgid "WCDMA 3GPP UMTS 1700 MHz (Class IX)"
+msgstr "WCDMA 3GPP UMTS 1700 MHz (třída IX)"
+
+#: modeminterface.cpp:217
+msgctxt "Cellular frequency band"
+msgid "WCDMA 3GPP UMTS 1900 MHz (Class II)"
+msgstr "WCDMA 3GPP UMTS 1900 MHz (třída II)"
+
+#: modeminterface.cpp:226 modeminterface.cpp:233
+msgctxt "Allowed Gsm modes (2G/3G/any)"
+msgid "Any"
+msgstr "Cokoliv"
+
+#: modeminterface.cpp:227
+msgctxt "Allowed Gsm modes (2G/3G/any)"
+msgid "Prefer 2G"
+msgstr "Preferovat 2G"
+
+#: modeminterface.cpp:228
+msgctxt "Allowed Gsm modes (2G/3G/any)"
+msgid "Prefer 3G"
+msgstr "Preferovat 3G"
+
+#: modeminterface.cpp:229
+msgctxt "Allowed Gsm modes (2G/3G/any)"
+msgid "Only 2G"
+msgstr "Pouze 2G"
+
+#: modeminterface.cpp:230
+msgctxt "Allowed Gsm modes (2G/3G/any)"
+msgid "Only 3G"
+msgstr "Pouze 3G"
+
+#: modeminterface.cpp:239 modeminterface.cpp:250
+msgctxt "Unknown cellular access technology"
+msgid "Unknown"
+msgstr "Neznámá"
+
+#: modeminterface.cpp:240
+msgctxt "Cellular access technology"
+msgid "GSM"
+msgstr "GSM"
+
+#: modeminterface.cpp:241
+msgctxt "Cellular access technology"
+msgid "Compact GSM"
+msgstr "Compact GSM"
+
+#: modeminterface.cpp:242
+msgctxt "Cellular access technology"
+msgid "GPRS"
+msgstr "GPRS"
+
+#: modeminterface.cpp:243
+msgctxt "Cellular access technology"
+msgid "EDGE"
+msgstr "EDGE"
+
+#: modeminterface.cpp:244
+msgctxt "Cellular access technology"
+msgid "UMTS"
+msgstr "UMTS"
+
+#: modeminterface.cpp:245
+msgctxt "Cellular access technology"
+msgid "HSDPA"
+msgstr "HSDPA"
+
+#: modeminterface.cpp:246
+msgctxt "Cellular access technology"
+msgid "HSUPA"
+msgstr "HSUPA"
+
+#: modeminterface.cpp:247
+msgctxt "Cellular access technology"
+msgid "HSPA"
+msgstr "HSPA"

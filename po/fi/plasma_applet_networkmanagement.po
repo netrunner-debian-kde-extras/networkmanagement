@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanagement\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-03-11 10:02+0100\n"
-"PO-Revision-Date: 2013-01-22 23:52+0200\n"
+"POT-Creation-Date: 2013-05-05 10:27+0200\n"
+"PO-Revision-Date: 2013-05-06 21:02+0300\n"
 "Last-Translator: Lasse Liehu <lasse.liehu@gmail.com>\n"
 "Language-Team: Finnish <lokalisointi@lists.coss.fi>\n"
 "Language: fi\n"
@@ -61,143 +61,155 @@ msgctxt "name of the connection not known"
 msgid "Unknown"
 msgstr "Tuntematon"
 
-#: interfacedetailswidget.cpp:117
+#: interfacedetailswidget.cpp:119
 msgctxt "interface details"
 msgid "<b>Traffic</b>"
 msgstr "<b>Liikenne</b>"
 
-#: interfacedetailswidget.cpp:153
+#: interfacedetailswidget.cpp:155
 msgid "Go Back"
 msgstr "Mene takaisin"
 
-#: interfacedetailswidget.cpp:178 interfacedetailswidget.cpp:300
+#: interfacedetailswidget.cpp:180 interfacedetailswidget.cpp:303
 msgctxt "entry not available"
 msgid "not available"
 msgstr "ei saatavilla"
 
-#: interfacedetailswidget.cpp:183
+#: interfacedetailswidget.cpp:185
 msgctxt "traffic received empty"
 msgid "Received"
 msgstr "Vastaanotettu"
 
-#: interfacedetailswidget.cpp:185
+#: interfacedetailswidget.cpp:187
 msgctxt "traffic transmitted empty"
 msgid "Transmitted"
 msgstr "Lähetetty"
 
-#: interfacedetailswidget.cpp:291
+#: interfacedetailswidget.cpp:294
 msgctxt "state of mobile broadband connection"
 msgid "not enabled"
 msgstr "ei käytössä"
 
-#: interfacedetailswidget.cpp:307 interfacedetailswidget.cpp:354
+#: interfacedetailswidget.cpp:310 interfacedetailswidget.cpp:358
 msgctxt "interface details"
 msgid "Type"
 msgstr "Tyyppi"
 
-#: interfacedetailswidget.cpp:308 interfacedetailswidget.cpp:355
+#: interfacedetailswidget.cpp:311 interfacedetailswidget.cpp:359
 msgctxt "interface details"
 msgid "Connection State"
 msgstr "Yhteyden tila"
 
-#: interfacedetailswidget.cpp:309
+#: interfacedetailswidget.cpp:312
 msgctxt "interface details"
 msgid "IP Address"
 msgstr "IP-osoite"
 
-#: interfacedetailswidget.cpp:310 interfacedetailswidget.cpp:357
+#: interfacedetailswidget.cpp:313
+msgctxt "interface details"
+msgid "IP Gateway"
+msgstr "IP-yhdyskäytävä"
+
+#: interfacedetailswidget.cpp:314 interfacedetailswidget.cpp:361
 msgctxt "interface details"
 msgid "Connection Speed"
 msgstr "Yhteyden nopeus"
 
-#: interfacedetailswidget.cpp:310
+#: interfacedetailswidget.cpp:314
 msgctxt "bitrate"
 msgid "Unknown"
 msgstr "Tuntematon"
 
-#: interfacedetailswidget.cpp:311 interfacedetailswidget.cpp:358
+#: interfacedetailswidget.cpp:315 interfacedetailswidget.cpp:362
 msgctxt "interface details"
 msgid "System Name"
-msgstr "Järjestelmän nimi"
+msgstr "Järjestelmänimi"
 
-#: interfacedetailswidget.cpp:312
+#: interfacedetailswidget.cpp:316
 msgctxt "interface details"
 msgid "MAC Address"
 msgstr "MAC-osoite"
 
-#: interfacedetailswidget.cpp:313 interfacedetailswidget.cpp:360
+#: interfacedetailswidget.cpp:317 interfacedetailswidget.cpp:364
 msgctxt "interface details"
 msgid "Driver"
 msgstr "Ajuri"
 
-#: interfacedetailswidget.cpp:319
+#: interfacedetailswidget.cpp:323
 msgctxt "interface details"
 msgid "Access Point (SSID)"
 msgstr "Tukiasema (SSID)"
 
-#: interfacedetailswidget.cpp:320
+#: interfacedetailswidget.cpp:324
 msgctxt "interface details"
 msgid "Access Point (MAC)"
 msgstr "Tukiasema (MAC)"
 
-#: interfacedetailswidget.cpp:328
+#: interfacedetailswidget.cpp:332
 msgctxt "@item:intable wireless band"
 msgid "Band"
 msgstr "Kaista"
 
-#: interfacedetailswidget.cpp:329
+#: interfacedetailswidget.cpp:333
 msgctxt "@item:intable wireless channel"
 msgid "Channel"
 msgstr "Kanava"
 
-#: interfacedetailswidget.cpp:336
+#: interfacedetailswidget.cpp:340
 msgctxt "interface details"
 msgid "Operator"
 msgstr "Operaattori"
 
-#: interfacedetailswidget.cpp:337
+#: interfacedetailswidget.cpp:341
 msgctxt "interface details"
 msgid "Signal Quality"
 msgstr "Signaalin voimakkuus"
 
-#: interfacedetailswidget.cpp:338
+#: interfacedetailswidget.cpp:342
 msgctxt "interface details"
 msgid "Access Technology"
 msgstr "Pääsytekniikka"
 
-#: interfacedetailswidget.cpp:356
+#: interfacedetailswidget.cpp:360
 msgctxt "interface details"
 msgid "Network Address (IP)"
 msgstr "Verkko-osoite (IP)"
 
-#: interfacedetailswidget.cpp:359
+#: interfacedetailswidget.cpp:363
 msgctxt "interface details"
 msgid "Hardware Address (MAC)"
 msgstr "Laiteosoite (MAC)"
 
-#: interfacedetailswidget.cpp:378 interfaceitem.cpp:286
+#: interfacedetailswidget.cpp:382 interfaceitem.cpp:286
 msgctxt "label of the network interface"
 msgid "No IP address."
 msgstr "Ei IP-osoitetta."
 
-#: interfacedetailswidget.cpp:389 interfaceitem.cpp:297
+#: interfacedetailswidget.cpp:393 interfacedetailswidget.cpp:409
+#: interfacedetailswidget.cpp:421 interfaceitem.cpp:297
 msgctxt "label of the network interface"
 msgid "IP display error."
 msgstr "Virhe näytettäessä IP:tä."
 
-#: interfacedetailswidget.cpp:468
+#: interfacedetailswidget.cpp:404 interfacedetailswidget.cpp:417
+#: interfacedetailswidget.cpp:433
+msgctxt "label of the network interface"
+msgid "No IP gateway."
+msgstr "Ei IP-yhdyskäytävää."
+
+#: interfacedetailswidget.cpp:510
 msgid "KBit/s"
 msgstr "kBit/s"
 
-#: interfacedetailswidget.cpp:470
+#: interfacedetailswidget.cpp:512
 msgid "MBit/s"
 msgstr "MBit/s"
 
-#: interfacedetailswidget.cpp:474
+#: interfacedetailswidget.cpp:516
 msgid "GBit/s"
 msgstr "GBit/s"
 
-#: interfacedetailswidget.cpp:498
+#: interfacedetailswidget.cpp:540
 #, kde-format
 msgctxt ""
 "traffic, e.g. n KB/s\n"
@@ -205,11 +217,11 @@ msgctxt ""
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: interfacedetailswidget.cpp:507
+#: interfacedetailswidget.cpp:549
 msgid "Received"
 msgstr "Vastaanotettu"
 
-#: interfacedetailswidget.cpp:510
+#: interfacedetailswidget.cpp:552
 msgid "Transmitted"
 msgstr "Lähetetty"
 

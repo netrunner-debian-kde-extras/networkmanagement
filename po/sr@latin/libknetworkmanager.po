@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-03-02 10:30+0100\n"
-"PO-Revision-Date: 2013-03-10 14:31+0100\n"
+"POT-Creation-Date: 2013-05-22 04:46+0000\n"
+"PO-Revision-Date: 2013-05-21 14:21+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@latin\n"
@@ -96,8 +96,8 @@ msgstr "WEP ključ 2"
 msgid "WEP key 3"
 msgstr "WEP ključ 3"
 
-#. i18n: ectx: label, entry (psk), group (802-11-wireless-security)
 #. i18n: ectx: label, entry (psk), group (802-1x)
+#. i18n: ectx: label, entry (psk), group (802-11-wireless-security)
 #: libs/internals/schemas/802-11-wireless-security.kcfg:82
 #: libs/internals/schemas/802-1x.kcfg:134
 msgid "PSK"
@@ -164,8 +164,8 @@ msgstr "Protok podataka"
 msgid "Transmit power"
 msgstr "Snaga emitovanja"
 
-#. i18n: ectx: label, entry (macaddress), group (802-11-wireless)
 #. i18n: ectx: label, entry (macaddress), group (802-3-ethernet)
+#. i18n: ectx: label, entry (macaddress), group (802-11-wireless)
 #: libs/internals/schemas/802-11-wireless.kcfg:47
 #: libs/internals/schemas/802-3-ethernet.kcfg:38
 msgid "MAC Address"
@@ -176,9 +176,9 @@ msgstr "MAC adresa"
 msgid "Hardware address to set on the wireless network interface"
 msgstr "Hardverska adresa za postavljanje na sučelje bežične mreže."
 
-#. i18n: ectx: label, entry (mtu), group (802-11-wireless)
 #. i18n: ectx: label, entry (mtu), group (802-3-ethernet)
 #. i18n: ectx: label, entry (mtu), group (ppp)
+#. i18n: ectx: label, entry (mtu), group (802-11-wireless)
 #: libs/internals/schemas/802-11-wireless.kcfg:51
 #: libs/internals/schemas/802-3-ethernet.kcfg:42
 #: libs/internals/schemas/ppp.kcfg:69
@@ -195,8 +195,8 @@ msgstr "Najveća jedinica prenosa."
 msgid "Seen BSSIDs"
 msgstr "Viđeni BSSID‑ovi"
 
-#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #. i18n: ectx: property (text), widget (QCheckBox, eap)
 #. i18n: ectx: label, entry (eap), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:9 libs/ui/ppp.ui:69
@@ -282,10 +282,10 @@ msgstr "Klijentska putanja sertifikata, faza 2"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#. i18n: ectx: label, entry (password), group (802-1x)
 #. i18n: ectx: label, entry (password), group (cdma)
-#. i18n: ectx: label, entry (password), group (gsm)
+#. i18n: ectx: label, entry (password), group (802-1x)
 #. i18n: ectx: label, entry (password), group (pppoe)
+#. i18n: ectx: label, entry (password), group (gsm)
 #: libs/internals/schemas/802-1x.kcfg:102 libs/internals/schemas/cdma.kcfg:17
 #: libs/internals/schemas/gsm.kcfg:18 libs/internals/schemas/pppoe.kcfg:17
 #: vpnplugins/openvpn/openvpnprop.ui:84 vpnplugins/openvpn/openvpnprop.ui:498
@@ -394,10 +394,10 @@ msgid "Number"
 msgstr "Broj"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel9_2)
-#. i18n: ectx: label, entry (UserName), group (vpn)
 #. i18n: ectx: label, entry (username), group (cdma)
-#. i18n: ectx: label, entry (username), group (gsm)
 #. i18n: ectx: label, entry (username), group (pppoe)
+#. i18n: ectx: label, entry (UserName), group (vpn)
+#. i18n: ectx: label, entry (username), group (gsm)
 #: libs/internals/schemas/cdma.kcfg:13 libs/internals/schemas/gsm.kcfg:14
 #: libs/internals/schemas/pppoe.kcfg:13 libs/internals/schemas/vpn.kcfg:17
 #: vpnplugins/openvpn/openvpnprop.ui:482
@@ -636,8 +636,8 @@ msgstr "MPPE sa stanjem"
 msgid "CRTSCTS"
 msgstr "CRTSCTS"
 
-#. i18n: ectx: label, entry (baud), group (serial)
 #. i18n: ectx: label, entry (baud), group (ppp)
+#. i18n: ectx: label, entry (baud), group (serial)
 #: libs/internals/schemas/ppp.kcfg:61 libs/internals/schemas/serial.kcfg:9
 msgid "Baud"
 msgstr "Bauda"
@@ -662,8 +662,8 @@ msgstr "Period LCP eha"
 msgid "Service"
 msgstr "Servis"
 
-#. i18n: ectx: label, entry (bits), group (serial)
 #. i18n: ectx: label, entry (Data), group (vpn)
+#. i18n: ectx: label, entry (bits), group (serial)
 #: libs/internals/schemas/serial.kcfg:14 libs/internals/schemas/vpn.kcfg:13
 msgid "Data bits"
 msgstr "Bitova podataka"
@@ -1791,20 +1791,20 @@ msgstr ""
 "„improvizovana“. Takođe pročitajte https://bugs.kde.org/show_bug."
 "cgi?id=311705."
 
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #. i18n: ectx: property (text), item, widget (KComboBox, mode)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #: libs/ui/802-11-wireless.ui:77 libs/ui/wireless.ui:49
 msgid "Infrastructure"
 msgstr "infrastrukturna"
 
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #. i18n: ectx: property (text), item, widget (KComboBox, mode)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #: libs/ui/802-11-wireless.ui:82 libs/ui/wireless.ui:54
 msgid "Ad-hoc"
 msgstr "improvizovana"
 
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #. i18n: ectx: property (text), item, widget (KComboBox, mode)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #: libs/ui/802-11-wireless.ui:87 libs/ui/wireless.ui:58
 msgid "Ap-mode"
 msgstr "AP režim"
@@ -1829,12 +1829,12 @@ msgstr "b/g je najčešći pojas oko 2.4 GHz. Manje uobičajen je a na 5 GHz."
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, sbUdpFragmentSize)
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spbLocalPort)
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spbCiscoUdpEncPort)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPeapVersion)
-#. i18n: ectx: property (text), item, widget (KComboBox, band)
-#. i18n: ectx: property (specialValueText), widget (Wireless80211WidgetBand, channel)
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, mtu)
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, speed)
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPeapVersion)
+#. i18n: ectx: property (text), item, widget (KComboBox, band)
+#. i18n: ectx: property (specialValueText), widget (Wireless80211WidgetBand, channel)
 #: libs/ui/802-11-wireless.ui:115 libs/ui/802-11-wireless.ui:152
 #: libs/ui/802-11-wireless.ui:252 libs/ui/ipv6.ui:112
 #: libs/ui/security/eapmethodpeapbase.ui:72 libs/ui/wired.ui:88
@@ -1864,8 +1864,8 @@ msgstr "&Kanal:"
 msgid "Sets the channel of the network."
 msgstr "Zadaje kanal mreže."
 
-#. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
 #: libs/ui/802-11-wireless.ui:165 libs/ui/wireless.ui:66
 msgid "&BSSID:"
 msgstr "&BSSID:"
@@ -1888,8 +1888,8 @@ msgstr ""
 "zadatom hardverskom adresom, čak i ako su druge pristupne tačke deo iste "
 "mreže."
 
-#. i18n: ectx: property (inputMask), widget (KLineEdit, bssid)
 #. i18n: ectx: property (inputMask), widget (KLineEdit, clonedMacAddress)
+#. i18n: ectx: property (inputMask), widget (KLineEdit, bssid)
 #: libs/ui/802-11-wireless.ui:186 libs/ui/802-11-wireless.ui:280
 #: libs/ui/wired.ui:177
 msgid "HH:HH:HH:HH:HH:HH;_"
@@ -1914,15 +1914,15 @@ msgstr ""
 "Ovo dugme će izabrati pristupnu tačku sa SSID‑om zadatim u polju iznad i "
 "najjačim signalom."
 
-#. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
 #: libs/ui/802-11-wireless.ui:211 libs/ui/wired.ui:34
 msgid "&Restrict To Interface:"
 msgstr "&Ograniči na sučelje:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbMacAddress)
 #. i18n: ectx: property (text), item, widget (KComboBox, type)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMacAddress)
 #: libs/ui/802-11-wireless.ui:225 libs/ui/gsm.ui:183 libs/ui/wired.ui:48
 #: vpnplugins/pptp/pptpadvanced.ui:120
 msgid "Any"
@@ -1947,8 +1947,8 @@ msgstr ""
 "Postavlja veličinu najvećeg paketa koji se može preneti ovom mrežom. 0 za "
 "automatsko postavljanje MTU‑a."
 
-#. i18n: ectx: property (text), widget (QLabel, label_8)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
 #: libs/ui/802-11-wireless.ui:265 libs/ui/wired.ui:56
 msgid "Cloned MAC address"
 msgstr "Klonirana MAC adresa"
@@ -2056,10 +2056,11 @@ msgstr "modemska mreža (DUN)"
 msgid "Personal Area Network (PANU)"
 msgstr "lična oblasna mreža (PANU)"
 
+# >> @title:column
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: libs/ui/bluetooth.ui:86
 msgid "Name"
-msgstr "Ime"
+msgstr "ime"
 
 #: libs/ui/bluetoothconnectioneditor.cpp:68
 #, kde-format
@@ -2071,15 +2072,15 @@ msgid "New Bluetooth Connection"
 msgstr "Nova bluetooth veza"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabCellular)
-#. i18n: ectx: property (windowTitle), widget (QWidget, Gsm)
 #. i18n: ectx: property (windowTitle), widget (QWidget, Cdma)
+#. i18n: ectx: property (windowTitle), widget (QWidget, Gsm)
 #: libs/ui/cdma.ui:14 libs/ui/gsm.ui:14
 #: settings/config/manageconnectionwidget.ui:106
 msgid "Mobile Broadband"
 msgstr "Mobilna širokopojasna"
 
-#. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
 #: libs/ui/cdma.ui:22 libs/ui/gsm.ui:38
 msgid "&Number:"
 msgstr "&Broj:"
@@ -2087,10 +2088,10 @@ msgstr "&Broj:"
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, userNameLabel)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
 #: libs/ui/cdma.ui:38 libs/ui/gsm.ui:58 libs/ui/pppoe.ui:36
 #: libs/ui/security/eapmethodleapbase.ui:22
 #: libs/ui/security/eapmethodsimplebase.ui:17 libs/ui/security/leap.ui:17
@@ -2102,11 +2103,11 @@ msgstr "&Korisničko ime:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #. i18n: ectx: property (text), widget (QLabel, lbl_password)
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#. i18n: ectx: property (text), widget (QLabel, label_14)
-#. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#. i18n: ectx: property (text), widget (QLabel, label_14)
 #: libs/ui/cdma.ui:54 libs/ui/gsm.ui:74 libs/ui/pppoe.ui:56
 #: libs/ui/security/eapmethodleapbase.ui:42
 #: libs/ui/security/eapmethodsimplebase.ui:33 libs/ui/security/leap.ui:33
@@ -2238,19 +2239,19 @@ msgstr "Osnovno"
 msgid "*99#"
 msgstr "*99#"
 
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509KeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509PassKeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509PassPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, proxyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
-#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboGroupPassOptions)
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passwordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, pinStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #: libs/ui/gsm.ui:93 libs/ui/gsm.ui:253
 #: libs/ui/security/eapmethodleapbase.ui:68
 #: libs/ui/security/eapmethodsimplebase.ui:56
@@ -2265,19 +2266,19 @@ msgstr "*99#"
 msgid "Store"
 msgstr "uskladišti"
 
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509KeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509PassKeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509PassPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, proxyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
-#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboGroupPassOptions)
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passwordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, pinStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #: libs/ui/gsm.ui:98 libs/ui/gsm.ui:258
 #: libs/ui/security/eapmethodleapbase.ui:73
 #: libs/ui/security/eapmethodsimplebase.ui:61
@@ -2292,6 +2293,9 @@ msgstr "uskladišti"
 msgid "Always Ask"
 msgstr "uvek pitaj"
 
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509KeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509PassKeyPasswordStorage)
@@ -2299,13 +2303,10 @@ msgstr "uvek pitaj"
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbProxyType)
 #. i18n: ectx: property (text), item, widget (KComboBox, proxyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
-#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboGroupPassOptions)
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passwordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, pinStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #: libs/ui/gsm.ui:103 libs/ui/gsm.ui:263
 #: libs/ui/security/eapmethodleapbase.ui:78
 #: libs/ui/security/eapmethodsimplebase.ui:66
@@ -2466,8 +2467,8 @@ msgid ""
 msgstr ""
 "Upotrebite ovo polje da zadate podmrežu kojoj gornja IP adresa pripada."
 
-#. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #. i18n: ectx: property (text), widget (QLabel, lbl_gateway)
 #. i18n: ectx: property (text), widget (QLabel, gatewayLabel)
@@ -2503,10 +2504,10 @@ msgstr ""
 "Upotrebite ovo polje da zadate IP adrese jednog ili više DNS servera. Stavke "
 "razdvajate zapetom."
 
-#. i18n: ectx: property (text), widget (KPushButton, altSubjectMatchesMoreBtn)
-#. i18n: ectx: property (text), widget (KPushButton, connectToTheseServersMoreBtn)
 #. i18n: ectx: property (text), widget (KPushButton, dnsMorePushButton)
 #. i18n: ectx: property (text), widget (KPushButton, dnsSearchMorePushButton)
+#. i18n: ectx: property (text), widget (KPushButton, altSubjectMatchesMoreBtn)
+#. i18n: ectx: property (text), widget (KPushButton, connectToTheseServersMoreBtn)
 #: libs/ui/ipv4.ui:260 libs/ui/ipv4.ui:294 libs/ui/ipv6.ui:265
 #: libs/ui/ipv6.ui:299 libs/ui/security/eapmethodpeapbase.ui:120
 #: libs/ui/security/eapmethodpeapbase.ui:145
@@ -2545,10 +2546,10 @@ msgstr ""
 msgid "IPv4 is required for this connection"
 msgstr "Ova veza zahteva IPv4"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, AdvancedSettingsIp4Config)
 #. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp4Config)
-#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
+#. i18n: ectx: property (windowTitle), widget (QWidget, AdvancedSettingsIp4Config)
 #. i18n: ectx: property (windowTitle), widget (QWidget, AdvancedSettingsIp6Config)
+#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
 #: libs/ui/ipv4advanced.ui:20 libs/ui/ipv4routes.ui:20
 #: libs/ui/ipv6advanced.ui:20 libs/ui/ipv6routes.ui:20
 msgid "Advanced IP Settings"
@@ -4148,8 +4149,8 @@ msgstr "Isključi &podeljeni tunel"
 msgid "Novell VPN"
 msgstr "Novellov VPN"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #. i18n: ectx: property (title), widget (QGroupBox, grp_general)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: vpnplugins/novellvpn/novellvpnprop.ui:20
 #: vpnplugins/openconnect/openconnectprop.ui:20 vpnplugins/pptp/pptpprop.ui:26
@@ -4816,15 +4817,15 @@ msgid ""
 msgstr ""
 "Postava zadaje ssh-agent za autentifikaciju, ali nema nijednog u pogonu."
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanAuth)
 #. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanProp)
+#. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanAuth)
 #: vpnplugins/strongswan/strongswanauth.ui:14
 #: vpnplugins/strongswan/strongswanprop.ui:14
 msgid "Strong Swan VPN"
 msgstr "Jaki SWAN VPN"
 
-#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowPasswords)
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
 #: vpnplugins/strongswan/strongswanauth.ui:37
 #: vpnplugins/strongswan/strongswanprop.ui:304 vpnplugins/vpnc/vpncauth.ui:79
 #: vpnplugins/vpnc/vpncprop.ui:161

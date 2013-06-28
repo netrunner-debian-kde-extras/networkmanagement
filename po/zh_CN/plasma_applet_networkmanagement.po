@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-03-11 10:02+0100\n"
+"POT-Creation-Date: 2013-05-05 10:27+0200\n"
 "PO-Revision-Date: 2013-01-12 11:11-0500\n"
 "Last-Translator: Weng Xuetian <wengxt@gmail.com>\n"
 "Language-Team: Chinese Simplified <kde-china@kde.org>\n"
@@ -55,143 +55,158 @@ msgctxt "name of the connection not known"
 msgid "Unknown"
 msgstr "未知"
 
-#: interfacedetailswidget.cpp:117
+#: interfacedetailswidget.cpp:119
 msgctxt "interface details"
 msgid "<b>Traffic</b>"
 msgstr "<b>流量</b>"
 
-#: interfacedetailswidget.cpp:153
+#: interfacedetailswidget.cpp:155
 msgid "Go Back"
 msgstr "返回"
 
-#: interfacedetailswidget.cpp:178 interfacedetailswidget.cpp:300
+#: interfacedetailswidget.cpp:180 interfacedetailswidget.cpp:303
 msgctxt "entry not available"
 msgid "not available"
 msgstr "不可用"
 
-#: interfacedetailswidget.cpp:183
+#: interfacedetailswidget.cpp:185
 msgctxt "traffic received empty"
 msgid "Received"
 msgstr "接收"
 
-#: interfacedetailswidget.cpp:185
+#: interfacedetailswidget.cpp:187
 msgctxt "traffic transmitted empty"
 msgid "Transmitted"
 msgstr "传输"
 
-#: interfacedetailswidget.cpp:291
+#: interfacedetailswidget.cpp:294
 msgctxt "state of mobile broadband connection"
 msgid "not enabled"
 msgstr "未启用"
 
-#: interfacedetailswidget.cpp:307 interfacedetailswidget.cpp:354
+#: interfacedetailswidget.cpp:310 interfacedetailswidget.cpp:358
 msgctxt "interface details"
 msgid "Type"
 msgstr "类型"
 
-#: interfacedetailswidget.cpp:308 interfacedetailswidget.cpp:355
+#: interfacedetailswidget.cpp:311 interfacedetailswidget.cpp:359
 msgctxt "interface details"
 msgid "Connection State"
 msgstr "连接状态"
 
-#: interfacedetailswidget.cpp:309
+#: interfacedetailswidget.cpp:312
 msgctxt "interface details"
 msgid "IP Address"
 msgstr "IP 地址"
 
-#: interfacedetailswidget.cpp:310 interfacedetailswidget.cpp:357
+#: interfacedetailswidget.cpp:313
+msgctxt "interface details"
+msgid "IP Gateway"
+msgstr ""
+
+#: interfacedetailswidget.cpp:314 interfacedetailswidget.cpp:361
 msgctxt "interface details"
 msgid "Connection Speed"
 msgstr "连接速度"
 
-#: interfacedetailswidget.cpp:310
+#: interfacedetailswidget.cpp:314
 msgctxt "bitrate"
 msgid "Unknown"
 msgstr "未知"
 
-#: interfacedetailswidget.cpp:311 interfacedetailswidget.cpp:358
+#: interfacedetailswidget.cpp:315 interfacedetailswidget.cpp:362
 msgctxt "interface details"
 msgid "System Name"
 msgstr "系统名称"
 
-#: interfacedetailswidget.cpp:312
+#: interfacedetailswidget.cpp:316
 msgctxt "interface details"
 msgid "MAC Address"
 msgstr "MAC 地址"
 
-#: interfacedetailswidget.cpp:313 interfacedetailswidget.cpp:360
+#: interfacedetailswidget.cpp:317 interfacedetailswidget.cpp:364
 msgctxt "interface details"
 msgid "Driver"
 msgstr "驱动"
 
-#: interfacedetailswidget.cpp:319
+#: interfacedetailswidget.cpp:323
 msgctxt "interface details"
 msgid "Access Point (SSID)"
 msgstr "接入点(SSID)"
 
-#: interfacedetailswidget.cpp:320
+#: interfacedetailswidget.cpp:324
 msgctxt "interface details"
 msgid "Access Point (MAC)"
 msgstr "接入点(MAC)"
 
-#: interfacedetailswidget.cpp:328
+#: interfacedetailswidget.cpp:332
 msgctxt "@item:intable wireless band"
 msgid "Band"
 msgstr "频带"
 
-#: interfacedetailswidget.cpp:329
+#: interfacedetailswidget.cpp:333
 msgctxt "@item:intable wireless channel"
 msgid "Channel"
 msgstr "频道"
 
-#: interfacedetailswidget.cpp:336
+#: interfacedetailswidget.cpp:340
 msgctxt "interface details"
 msgid "Operator"
 msgstr "运营商"
 
-#: interfacedetailswidget.cpp:337
+#: interfacedetailswidget.cpp:341
 msgctxt "interface details"
 msgid "Signal Quality"
 msgstr "信号质量"
 
-#: interfacedetailswidget.cpp:338
+#: interfacedetailswidget.cpp:342
 msgctxt "interface details"
 msgid "Access Technology"
 msgstr "接入技术"
 
-#: interfacedetailswidget.cpp:356
+#: interfacedetailswidget.cpp:360
 msgctxt "interface details"
 msgid "Network Address (IP)"
 msgstr "网络地址(IP)"
 
-#: interfacedetailswidget.cpp:359
+#: interfacedetailswidget.cpp:363
 msgctxt "interface details"
 msgid "Hardware Address (MAC)"
 msgstr "硬件地址(MAC)"
 
-#: interfacedetailswidget.cpp:378 interfaceitem.cpp:286
+#: interfacedetailswidget.cpp:382 interfaceitem.cpp:286
 msgctxt "label of the network interface"
 msgid "No IP address."
 msgstr "无 IP 地址。"
 
-#: interfacedetailswidget.cpp:389 interfaceitem.cpp:297
+#: interfacedetailswidget.cpp:393 interfacedetailswidget.cpp:409
+#: interfacedetailswidget.cpp:421 interfaceitem.cpp:297
 msgctxt "label of the network interface"
 msgid "IP display error."
 msgstr "IP 显示错误。"
 
-#: interfacedetailswidget.cpp:468
+#: interfacedetailswidget.cpp:404 interfacedetailswidget.cpp:417
+#: interfacedetailswidget.cpp:433
+#, fuzzy
+#| msgctxt "label of the network interface"
+#| msgid "No IP address."
+msgctxt "label of the network interface"
+msgid "No IP gateway."
+msgstr "无 IP 地址。"
+
+#: interfacedetailswidget.cpp:510
 msgid "KBit/s"
 msgstr "KBit/s"
 
-#: interfacedetailswidget.cpp:470
+#: interfacedetailswidget.cpp:512
 msgid "MBit/s"
 msgstr "MBit/s"
 
-#: interfacedetailswidget.cpp:474
+#: interfacedetailswidget.cpp:516
 msgid "GBit/s"
 msgstr "GBit/s"
 
-#: interfacedetailswidget.cpp:498
+#: interfacedetailswidget.cpp:540
 #, kde-format
 msgctxt ""
 "traffic, e.g. n KB/s\n"
@@ -199,11 +214,11 @@ msgctxt ""
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: interfacedetailswidget.cpp:507
+#: interfacedetailswidget.cpp:549
 msgid "Received"
 msgstr "接收"
 
-#: interfacedetailswidget.cpp:510
+#: interfacedetailswidget.cpp:552
 msgid "Transmitted"
 msgstr "传输"
 
