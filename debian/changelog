@@ -7,6 +7,7 @@ networkmanagement (0.9.0.9-1) UNRELEASED; urgency=low
 
   [ Michael Biebl ]
   * New upstream release.
+  * Bump minimum required version of network-manager to 0.9.8.
 
  -- Felix Geyer <fgeyer@debian.org>  Thu, 16 May 2013 22:21:52 +0200
 
