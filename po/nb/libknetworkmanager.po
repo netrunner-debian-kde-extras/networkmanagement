@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2013-03-02 10:30+0100\n"
-"PO-Revision-Date: 2013-02-19 21:53+0100\n"
+"PO-Revision-Date: 2013-04-07 18:23+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: nb\n"
@@ -1771,6 +1771,11 @@ msgid ""
 "choose Ap-mode (requires NetworkManager >= 0.9.8 and a suitable wifi driver) "
 "or Ad-hoc. Also read https://bugs.kde.org/show_bug.cgi?id=311705."
 msgstr ""
+"Infrastrukturmodus er er den vanligste innstillingen.  For å sette opp et "
+"trådløst nettverk for direkte forbindelse til en annen datamaskin der det "
+"ikke finnes noen infrastruktur, kan du velge Ap-modus (krever NetworkManager "
+">= 0.9.8 og en passende wifi-driver) eller Ad-hoc. Les også https://bugs.kde."
+"org/show_bug.cgi?id=311705."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #. i18n: ectx: property (text), item, widget (KComboBox, mode)
@@ -1788,7 +1793,7 @@ msgstr "Ad-hoc"
 #. i18n: ectx: property (text), item, widget (KComboBox, mode)
 #: libs/ui/802-11-wireless.ui:87 libs/ui/wireless.ui:58
 msgid "Ap-mode"
-msgstr ""
+msgstr "Ap-modus"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: libs/ui/802-11-wireless.ui:95

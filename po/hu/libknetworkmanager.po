@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2011, 2012.
-# Balázs Úr <urbalazs@gmail.com>, 2012.
+# Balázs Úr <urbalazs@gmail.com>, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-03-02 10:30+0100\n"
-"PO-Revision-Date: 2012-12-21 21:15+0100\n"
+"POT-Creation-Date: 2013-06-15 05:01+0000\n"
+"PO-Revision-Date: 2013-03-29 10:38+0100\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -96,8 +96,8 @@ msgstr "WEP 2"
 msgid "WEP key 3"
 msgstr "WEP 3"
 
-#. i18n: ectx: label, entry (psk), group (802-11-wireless-security)
 #. i18n: ectx: label, entry (psk), group (802-1x)
+#. i18n: ectx: label, entry (psk), group (802-11-wireless-security)
 #: libs/internals/schemas/802-11-wireless-security.kcfg:82
 #: libs/internals/schemas/802-1x.kcfg:134
 msgid "PSK"
@@ -162,8 +162,8 @@ msgstr "Adatráta"
 msgid "Transmit power"
 msgstr "Átviteli teljesítmény"
 
-#. i18n: ectx: label, entry (macaddress), group (802-11-wireless)
 #. i18n: ectx: label, entry (macaddress), group (802-3-ethernet)
+#. i18n: ectx: label, entry (macaddress), group (802-11-wireless)
 #: libs/internals/schemas/802-11-wireless.kcfg:47
 #: libs/internals/schemas/802-3-ethernet.kcfg:38
 msgid "MAC Address"
@@ -174,9 +174,9 @@ msgstr "MAC-cím"
 msgid "Hardware address to set on the wireless network interface"
 msgstr "A vezeték nélküli hálózati csatolón beállítandó hardvercím"
 
-#. i18n: ectx: label, entry (mtu), group (802-11-wireless)
 #. i18n: ectx: label, entry (mtu), group (802-3-ethernet)
 #. i18n: ectx: label, entry (mtu), group (ppp)
+#. i18n: ectx: label, entry (mtu), group (802-11-wireless)
 #: libs/internals/schemas/802-11-wireless.kcfg:51
 #: libs/internals/schemas/802-3-ethernet.kcfg:42
 #: libs/internals/schemas/ppp.kcfg:69
@@ -193,8 +193,8 @@ msgstr "Maximális átviteli egység"
 msgid "Seen BSSIDs"
 msgstr "Látható BSSID-k"
 
-#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #. i18n: ectx: property (text), widget (QCheckBox, eap)
 #. i18n: ectx: label, entry (eap), group (802-1x)
 #: libs/internals/schemas/802-1x.kcfg:9 libs/ui/ppp.ui:69
@@ -280,10 +280,10 @@ msgstr "2. fázis - Ügyféltanúsítvány elérési út"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#. i18n: ectx: label, entry (password), group (802-1x)
 #. i18n: ectx: label, entry (password), group (cdma)
-#. i18n: ectx: label, entry (password), group (gsm)
+#. i18n: ectx: label, entry (password), group (802-1x)
 #. i18n: ectx: label, entry (password), group (pppoe)
+#. i18n: ectx: label, entry (password), group (gsm)
 #: libs/internals/schemas/802-1x.kcfg:102 libs/internals/schemas/cdma.kcfg:17
 #: libs/internals/schemas/gsm.kcfg:18 libs/internals/schemas/pppoe.kcfg:17
 #: vpnplugins/openvpn/openvpnprop.ui:84 vpnplugins/openvpn/openvpnprop.ui:498
@@ -391,10 +391,10 @@ msgid "Number"
 msgstr "Szám"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel9_2)
-#. i18n: ectx: label, entry (UserName), group (vpn)
 #. i18n: ectx: label, entry (username), group (cdma)
-#. i18n: ectx: label, entry (username), group (gsm)
 #. i18n: ectx: label, entry (username), group (pppoe)
+#. i18n: ectx: label, entry (UserName), group (vpn)
+#. i18n: ectx: label, entry (username), group (gsm)
 #: libs/internals/schemas/cdma.kcfg:13 libs/internals/schemas/gsm.kcfg:14
 #: libs/internals/schemas/pppoe.kcfg:13 libs/internals/schemas/vpn.kcfg:17
 #: vpnplugins/openvpn/openvpnprop.ui:482
@@ -633,8 +633,8 @@ msgstr "Állapottartó MPPE"
 msgid "CRTSCTS"
 msgstr "CRTSCTS"
 
-#. i18n: ectx: label, entry (baud), group (serial)
 #. i18n: ectx: label, entry (baud), group (ppp)
+#. i18n: ectx: label, entry (baud), group (serial)
 #: libs/internals/schemas/ppp.kcfg:61 libs/internals/schemas/serial.kcfg:9
 msgid "Baud"
 msgstr "Baud"
@@ -659,8 +659,8 @@ msgstr "LCP visszhangidőköz"
 msgid "Service"
 msgstr "Szolgáltatás"
 
-#. i18n: ectx: label, entry (bits), group (serial)
 #. i18n: ectx: label, entry (Data), group (vpn)
+#. i18n: ectx: label, entry (bits), group (serial)
 #: libs/internals/schemas/serial.kcfg:14 libs/internals/schemas/vpn.kcfg:13
 msgid "Data bits"
 msgstr "Adatbitek"
@@ -1205,40 +1205,40 @@ msgid "PIN/PUK unlock error"
 msgstr "PIN/PUK feloldási hiba"
 
 #: libs/service/notificationmanager.cpp:114
-#: libs/service/notificationmanager.cpp:446
+#: libs/service/notificationmanager.cpp:449
 #, kde-format
 msgctxt "@info:status Notification text when connecting"
 msgid "Activating %1"
 msgstr "%1 aktiválása"
 
 #: libs/service/notificationmanager.cpp:118
-#: libs/service/notificationmanager.cpp:450
+#: libs/service/notificationmanager.cpp:453
 #, kde-format
 msgctxt "@info:status Notification text when a connection has been activated"
 msgid "%1 activated"
 msgstr "%1 aktiválva"
 
-#: libs/service/notificationmanager.cpp:124
-#: libs/service/notificationmanager.cpp:455
-#, kde-format
-msgctxt "@info:status Notification text when connection has failed"
-msgid "Connection %1 failed"
-msgstr "Nem sikerült kapcsolódni: %1"
-
-#: libs/service/notificationmanager.cpp:126
-#: libs/service/notificationmanager.cpp:457
+#: libs/service/notificationmanager.cpp:122
+#: libs/service/notificationmanager.cpp:460
 #, kde-format
 msgctxt "@info:status Notification text when deactivating a connection"
 msgid "%1 deactivated"
 msgstr "%1 deaktiválva"
 
-#: libs/service/notificationmanager.cpp:143
+#: libs/service/notificationmanager.cpp:128
+#: libs/service/notificationmanager.cpp:458
+#, kde-format
+msgctxt "@info:status Notification text when connection has failed"
+msgid "Connection %1 failed"
+msgstr "Nem sikerült kapcsolódni: %1"
+
+#: libs/service/notificationmanager.cpp:146
 #, kde-format
 msgctxt "@info:status Notification text when wireless/gsm signal is low"
 msgid "Low signal on %1"
 msgstr "Alacsony jelerősség: %1"
 
-#: libs/service/notificationmanager.cpp:202
+#: libs/service/notificationmanager.cpp:205
 #, kde-format
 msgctxt ""
 "@info:status interface (%2) status notification title when a connection (%1) "
@@ -1246,7 +1246,7 @@ msgctxt ""
 msgid "Activating %1 on %2"
 msgstr "%1 aktiválása a következőn: %2"
 
-#: libs/service/notificationmanager.cpp:212
+#: libs/service/notificationmanager.cpp:215
 #, kde-format
 msgctxt ""
 "@info:status interface (%2) status notification title when a connection (%1) "
@@ -1254,7 +1254,7 @@ msgctxt ""
 msgid "%1 on %2"
 msgstr "%1 a következőn: %2"
 
-#: libs/service/notificationmanager.cpp:226
+#: libs/service/notificationmanager.cpp:229
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1262,7 +1262,7 @@ msgctxt ""
 msgid "%1 because it is now being managed"
 msgstr "%1, mert mostantól kezelt"
 
-#: libs/service/notificationmanager.cpp:229
+#: libs/service/notificationmanager.cpp:232
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1270,7 +1270,7 @@ msgctxt ""
 msgid "%1 because it is no longer being managed"
 msgstr "%1, mert többé nem kezelt"
 
-#: libs/service/notificationmanager.cpp:232
+#: libs/service/notificationmanager.cpp:235
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1278,7 +1278,7 @@ msgctxt ""
 msgid "%1 because configuration failed"
 msgstr "%1, mert a beállítása sikertelen"
 
-#: libs/service/notificationmanager.cpp:235
+#: libs/service/notificationmanager.cpp:238
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1286,7 +1286,7 @@ msgctxt ""
 msgid "%1 because the configuration is unavailable"
 msgstr "%1, mert a beállítás nem érhető el"
 
-#: libs/service/notificationmanager.cpp:238
+#: libs/service/notificationmanager.cpp:241
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1294,7 +1294,7 @@ msgctxt ""
 msgid "%1 because the configuration has expired"
 msgstr "%1, mert a beállítás lejárt"
 
-#: libs/service/notificationmanager.cpp:241
+#: libs/service/notificationmanager.cpp:244
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1302,7 +1302,7 @@ msgctxt ""
 msgid "%1 because secrets were not provided"
 msgstr "%1, mert a jelszavak nem lettek megadva"
 
-#: libs/service/notificationmanager.cpp:244
+#: libs/service/notificationmanager.cpp:247
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1310,7 +1310,7 @@ msgctxt ""
 msgid "%1 because the authorization supplicant disconnected"
 msgstr "%1, mert a hitelesítő ügynök bontotta a kapcsolatot"
 
-#: libs/service/notificationmanager.cpp:247
+#: libs/service/notificationmanager.cpp:250
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1318,7 +1318,7 @@ msgctxt ""
 msgid "%1 because the authorization supplicant's configuration failed"
 msgstr "%1, mert a hitelesítő ügynök beállítása sikertelen"
 
-#: libs/service/notificationmanager.cpp:250
+#: libs/service/notificationmanager.cpp:253
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1326,7 +1326,7 @@ msgctxt ""
 msgid "%1 because the authorization supplicant failed"
 msgstr "%1, mert a hitelesítő ügynök sikertelen"
 
-#: libs/service/notificationmanager.cpp:253
+#: libs/service/notificationmanager.cpp:256
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1334,7 +1334,7 @@ msgctxt ""
 msgid "%1 because the authorization supplicant timed out"
 msgstr "%1, mert a hitelesítő ügynök túllépte az időkorlátot"
 
-#: libs/service/notificationmanager.cpp:256
+#: libs/service/notificationmanager.cpp:259
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1342,7 +1342,7 @@ msgctxt ""
 msgid "%1 because PPP failed to start"
 msgstr "%1, mert nem sikerült elindítani a PPP-t"
 
-#: libs/service/notificationmanager.cpp:259
+#: libs/service/notificationmanager.cpp:262
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1350,7 +1350,7 @@ msgctxt ""
 msgid "%1 because PPP disconnected"
 msgstr "%1, mert a PPP kapcsolat megszakadt"
 
-#: libs/service/notificationmanager.cpp:262
+#: libs/service/notificationmanager.cpp:265
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1358,7 +1358,7 @@ msgctxt ""
 msgid "%1 because PPP failed"
 msgstr "%1, mert PPP hiba történt"
 
-#: libs/service/notificationmanager.cpp:265
+#: libs/service/notificationmanager.cpp:268
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1366,7 +1366,7 @@ msgctxt ""
 msgid "%1 because DHCP failed to start"
 msgstr "%1, mert nem sikerült elindítani a DHCP-t"
 
-#: libs/service/notificationmanager.cpp:268
+#: libs/service/notificationmanager.cpp:271
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1374,7 +1374,7 @@ msgctxt ""
 msgid "%1 because a DHCP error occurred"
 msgstr "%1, mert egy DHCP hiba történt"
 
-#: libs/service/notificationmanager.cpp:271
+#: libs/service/notificationmanager.cpp:274
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1382,7 +1382,7 @@ msgctxt ""
 msgid "%1 because DHCP failed "
 msgstr "%1, mert a DHCP sikertelen volt "
 
-#: libs/service/notificationmanager.cpp:274
+#: libs/service/notificationmanager.cpp:277
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1390,7 +1390,7 @@ msgctxt ""
 msgid "%1 because the shared service failed to start"
 msgstr "%1, mert nem sikerült elindítani a megosztott szolgáltatást"
 
-#: libs/service/notificationmanager.cpp:277
+#: libs/service/notificationmanager.cpp:280
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1398,7 +1398,7 @@ msgctxt ""
 msgid "%1 because the shared service failed"
 msgstr "%1, mert a megosztott szolgáltatás meghiúsult"
 
-#: libs/service/notificationmanager.cpp:280
+#: libs/service/notificationmanager.cpp:283
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1406,7 +1406,7 @@ msgctxt ""
 msgid "%1 because the auto IP service failed to start"
 msgstr "%1, mert nem sikerült elindítani az IP-szolgáltatást"
 
-#: libs/service/notificationmanager.cpp:283
+#: libs/service/notificationmanager.cpp:286
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1414,7 +1414,7 @@ msgctxt ""
 msgid "%1 because the auto IP service reported an error"
 msgstr "%1, mert az automatikus IP-szolgáltatás hibát jelentett"
 
-#: libs/service/notificationmanager.cpp:286
+#: libs/service/notificationmanager.cpp:289
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1422,7 +1422,7 @@ msgctxt ""
 msgid "%1 because the auto IP service failed"
 msgstr "%1, mert az automatikus IP-szolgáltatás sikertelen"
 
-#: libs/service/notificationmanager.cpp:289
+#: libs/service/notificationmanager.cpp:292
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1430,7 +1430,7 @@ msgctxt ""
 msgid "%1 because the modem is busy"
 msgstr "%1, mert a modem foglalt"
 
-#: libs/service/notificationmanager.cpp:292
+#: libs/service/notificationmanager.cpp:295
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1438,7 +1438,7 @@ msgctxt ""
 msgid "%1 because the modem has no dial tone"
 msgstr "%1, mert a modemnek nincs tárcsahangja"
 
-#: libs/service/notificationmanager.cpp:295
+#: libs/service/notificationmanager.cpp:298
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1446,7 +1446,7 @@ msgctxt ""
 msgid "%1 because the modem shows no carrier"
 msgstr "%1, mert a modem nem jelez szolgáltatót"
 
-#: libs/service/notificationmanager.cpp:298
+#: libs/service/notificationmanager.cpp:301
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1454,7 +1454,7 @@ msgctxt ""
 msgid "%1 because the modem dial timed out"
 msgstr "%1, mert a modem túllépte a tárcsázási időkorlátot"
 
-#: libs/service/notificationmanager.cpp:301
+#: libs/service/notificationmanager.cpp:304
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1462,7 +1462,7 @@ msgctxt ""
 msgid "%1 because the modem could not be initialized"
 msgstr "%1, mert a modem nem inicializálható"
 
-#: libs/service/notificationmanager.cpp:304
+#: libs/service/notificationmanager.cpp:307
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1470,7 +1470,7 @@ msgctxt ""
 msgid "%1 because the GSM APN could not be selected"
 msgstr "%1, mert nem lehet kiválasztani a GSM APN-t"
 
-#: libs/service/notificationmanager.cpp:307
+#: libs/service/notificationmanager.cpp:310
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1478,7 +1478,7 @@ msgctxt ""
 msgid "%1 because the GSM modem is not searching"
 msgstr "%1, mert a GSM modem nem keres"
 
-#: libs/service/notificationmanager.cpp:310
+#: libs/service/notificationmanager.cpp:313
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1486,7 +1486,7 @@ msgctxt ""
 msgid "%1 because GSM network registration was denied"
 msgstr "%1, mert a GSM hálózati regisztráció el lett utasítva"
 
-#: libs/service/notificationmanager.cpp:313
+#: libs/service/notificationmanager.cpp:316
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1494,7 +1494,7 @@ msgctxt ""
 msgid "%1 because GSM network registration timed out"
 msgstr "%1, mert a GSM hálózati regisztráció időtúllépés miatt sikertelen volt"
 
-#: libs/service/notificationmanager.cpp:316
+#: libs/service/notificationmanager.cpp:319
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1502,7 +1502,7 @@ msgctxt ""
 msgid "%1 because GSM registration failed"
 msgstr "%1, mert a GSM-regisztráció nem sikerült"
 
-#: libs/service/notificationmanager.cpp:319
+#: libs/service/notificationmanager.cpp:322
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1510,7 +1510,7 @@ msgctxt ""
 msgid "%1 because the GSM PIN check failed"
 msgstr "%1, mert a GSM PIN ellenőrzése sikertelen"
 
-#: libs/service/notificationmanager.cpp:322
+#: libs/service/notificationmanager.cpp:325
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1518,7 +1518,7 @@ msgctxt ""
 msgid "%1 because firmware is missing"
 msgstr "%1, mert a firmware hiányzik"
 
-#: libs/service/notificationmanager.cpp:325
+#: libs/service/notificationmanager.cpp:328
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1526,7 +1526,7 @@ msgctxt ""
 msgid "%1 because the device was removed"
 msgstr "%1, mert az eszköz el lett távolítva"
 
-#: libs/service/notificationmanager.cpp:328
+#: libs/service/notificationmanager.cpp:331
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1534,7 +1534,7 @@ msgctxt ""
 msgid "%1 because the networking system is now sleeping"
 msgstr "%1, mert a hálózatkezelő rendszer alvó módban van"
 
-#: libs/service/notificationmanager.cpp:331
+#: libs/service/notificationmanager.cpp:334
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1542,7 +1542,7 @@ msgctxt ""
 msgid "%1 because the connection was removed"
 msgstr "%1, mert a kapcsolat el lett távolítva"
 
-#: libs/service/notificationmanager.cpp:334
+#: libs/service/notificationmanager.cpp:337
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1550,7 +1550,7 @@ msgctxt ""
 msgid "%1 by request"
 msgstr "%1 kérésre"
 
-#: libs/service/notificationmanager.cpp:337
+#: libs/service/notificationmanager.cpp:340
 #, kde-format
 msgctxt ""
 "@info:status Notification when an interface changes state (%1) due to "
@@ -1558,24 +1558,24 @@ msgctxt ""
 msgid "%1 because the cable was disconnected"
 msgstr "%1, mert a kábel ki lett húzva"
 
-#: libs/service/notificationmanager.cpp:505
-#: libs/service/notificationmanager.cpp:517
+#: libs/service/notificationmanager.cpp:508
+#: libs/service/notificationmanager.cpp:520
 #, kde-format
 msgctxt "@info:status Notification for hardware added"
 msgid "%1 attached"
 msgstr "%1 csatlakoztatva"
 
-#: libs/service/notificationmanager.cpp:506
+#: libs/service/notificationmanager.cpp:509
 msgctxt "@action"
 msgid "Create Connection"
 msgstr "Kapcsolat létrehozása"
 
-#: libs/service/notificationmanager.cpp:506
+#: libs/service/notificationmanager.cpp:509
 msgctxt "@action"
 msgid "Close"
 msgstr "Bezárás"
 
-#: libs/service/notificationmanager.cpp:553
+#: libs/service/notificationmanager.cpp:556
 #, kde-format
 msgctxt ""
 "@info:status Notification for hardware removed giving vendor supplied "
@@ -1583,21 +1583,21 @@ msgctxt ""
 msgid "%1 removed"
 msgstr "%1 eltávolítva"
 
-#: libs/service/notificationmanager.cpp:557
+#: libs/service/notificationmanager.cpp:560
 msgctxt ""
 "@info:status Notification for hardware removed used if we don't have its "
 "user-visible name"
 msgid "Network interface removed"
 msgstr "Hálózati csatoló eltávolítva"
 
-#: libs/service/notificationmanager.cpp:590
+#: libs/service/notificationmanager.cpp:593
 #, kde-format
 msgctxt ""
 "@info:status Notification text when a single wireless network was found"
 msgid "Wireless network %1 found"
 msgstr "Új vezeték nélküli hálózat: %1"
 
-#: libs/service/notificationmanager.cpp:593
+#: libs/service/notificationmanager.cpp:596
 #, kde-format
 msgctxt ""
 "@info:status Notification text when multiple wireless networks are found. %2 "
@@ -1608,14 +1608,14 @@ msgid_plural "<b>New wireless networks:</b><br /> %2"
 msgstr[0] "<b>Új vezeték nélküli hálózat:</b><br/> %2"
 msgstr[1] "<b>Új vezeték nélküli hálózatok:</b><br/> %2"
 
-#: libs/service/notificationmanager.cpp:608
+#: libs/service/notificationmanager.cpp:611
 #, kde-format
 msgctxt ""
 "@info:status Notification text when a single wireless network disappeared"
 msgid "Wireless network %1 disappeared"
 msgstr "A(z) %1 vezeték nélküli hálózat eltűnt"
 
-#: libs/service/notificationmanager.cpp:612
+#: libs/service/notificationmanager.cpp:615
 #, kde-format
 msgctxt ""
 "@info:status Notification text when multiple wireless networks have "
@@ -1626,24 +1626,24 @@ msgid_plural "<b>Wireless networks disappeared:</b><br /> %2"
 msgstr[0] "<b>A következő vezeték nélküli hálózat tűnt el:</b><br/> %2"
 msgstr[1] "<b>A következő vezeték nélküli hálózatok tűntek el:</b><br/> %2"
 
-#: libs/service/notificationmanager.cpp:624
+#: libs/service/notificationmanager.cpp:627
 msgctxt "@info:status Notification for radio kill switch turned on"
 msgid "Wireless hardware enabled"
 msgstr "Vezeték nélküli hardver bekapcsolva"
 
-#: libs/service/notificationmanager.cpp:631
+#: libs/service/notificationmanager.cpp:634
 msgctxt "@info:status Notification for radio kill switch turned off"
 msgid "Wireless hardware disabled"
 msgstr "Vezeték nélküli hardver kikapcsolva"
 
-#: libs/service/notificationmanager.cpp:638
+#: libs/service/notificationmanager.cpp:641
 msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is disabled"
 msgid "Networking system disabled"
 msgstr "A hálózatkezelő rendszer kikapcsolva"
 
-#: libs/service/notificationmanager.cpp:644
+#: libs/service/notificationmanager.cpp:647
 msgctxt ""
 "@info:status Notification when the networking subsystem (NetworkManager, "
 "etc) is already running"
@@ -1766,11 +1766,6 @@ msgstr "A vezették nélküli hálózat működési módja"
 
 #. i18n: ectx: property (whatsThis), widget (KComboBox, cmbMode)
 #: libs/ui/802-11-wireless.ui:73
-#, fuzzy
-#| msgid ""
-#| "Infrastructure mode is the most common setting.  To form a peer-to-peer "
-#| "wireless network with another computer when there is no infrastructure, "
-#| "choose Ad-hoc."
 msgid ""
 "Infrastructure mode is the most common setting.  To form a peer-to-peer "
 "wireless network with another computer when there is no infrastructure, "
@@ -1779,25 +1774,27 @@ msgid ""
 msgstr ""
 "Az infrastruktúra mód a leggyakoribb beállítás. Amikor nincs infrastruktúra, "
 "más számítógépekkel való vezeték nélküli peer-to-peer hálózat kialakításához "
-"válassza az Ad-hoc módot."
+"válassza az Ap-módot (a NetworkManager >= 0.9.8 és egy megfelelő wifi "
+"meghajtó szükséges) vagy az Ad-hoc módot. Olvassa el továbbá a https://bugs."
+"kde.org/show_bug.cgi?id=311705 oldalt."
 
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #. i18n: ectx: property (text), item, widget (KComboBox, mode)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #: libs/ui/802-11-wireless.ui:77 libs/ui/wireless.ui:49
 msgid "Infrastructure"
 msgstr "Infrastruktúra"
 
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #. i18n: ectx: property (text), item, widget (KComboBox, mode)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #: libs/ui/802-11-wireless.ui:82 libs/ui/wireless.ui:54
 msgid "Ad-hoc"
 msgstr "Ad-hoc"
 
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #. i18n: ectx: property (text), item, widget (KComboBox, mode)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMode)
 #: libs/ui/802-11-wireless.ui:87 libs/ui/wireless.ui:58
 msgid "Ap-mode"
-msgstr ""
+msgstr "Ap-mód"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: libs/ui/802-11-wireless.ui:95
@@ -1819,12 +1816,12 @@ msgstr "A b/g a 2,4 GHz leggyakoribb sávja. Kevésbé gyakori az 5 GHz."
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, sbUdpFragmentSize)
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spbLocalPort)
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spbCiscoUdpEncPort)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPeapVersion)
-#. i18n: ectx: property (text), item, widget (KComboBox, band)
-#. i18n: ectx: property (specialValueText), widget (Wireless80211WidgetBand, channel)
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, mtu)
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, speed)
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPeapVersion)
+#. i18n: ectx: property (text), item, widget (KComboBox, band)
+#. i18n: ectx: property (specialValueText), widget (Wireless80211WidgetBand, channel)
 #: libs/ui/802-11-wireless.ui:115 libs/ui/802-11-wireless.ui:152
 #: libs/ui/802-11-wireless.ui:252 libs/ui/ipv6.ui:112
 #: libs/ui/security/eapmethodpeapbase.ui:72 libs/ui/wired.ui:88
@@ -1854,8 +1851,8 @@ msgstr "&Csatorna:"
 msgid "Sets the channel of the network."
 msgstr "Beállítja a hálózat által használt csatornát."
 
-#. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
 #: libs/ui/802-11-wireless.ui:165 libs/ui/wireless.ui:66
 msgid "&BSSID:"
 msgstr "&BSSID:"
@@ -1878,8 +1875,8 @@ msgstr ""
 "rendelkező hozzáférési ponthoz kapcsolódjon akkor is, ha más hozzáférési "
 "pontok is ugyanannak a hálózatnak a részei."
 
-#. i18n: ectx: property (inputMask), widget (KLineEdit, bssid)
 #. i18n: ectx: property (inputMask), widget (KLineEdit, clonedMacAddress)
+#. i18n: ectx: property (inputMask), widget (KLineEdit, bssid)
 #: libs/ui/802-11-wireless.ui:186 libs/ui/802-11-wireless.ui:280
 #: libs/ui/wired.ui:177
 msgid "HH:HH:HH:HH:HH:HH;_"
@@ -1904,15 +1901,15 @@ msgstr ""
 "Ez a gomb fogja kiválasztani a lenti mezőben megadott SSID-val és a "
 "legerősebb jellel rendelkező hozzáférési pontot."
 
-#. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
 #: libs/ui/802-11-wireless.ui:211 libs/ui/wired.ui:34
 msgid "&Restrict To Interface:"
 msgstr "Ko&rlátozás interfészre:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbMacAddress)
 #. i18n: ectx: property (text), item, widget (KComboBox, type)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMacAddress)
 #: libs/ui/802-11-wireless.ui:225 libs/ui/gsm.ui:183 libs/ui/wired.ui:48
 #: vpnplugins/pptp/pptpadvanced.ui:120
 msgid "Any"
@@ -1937,8 +1934,8 @@ msgstr ""
 "A hálózaton átvihető legnagyobb csomag méretének beállítása, a „0” "
 "automatikusan állítja be az MTU-t."
 
-#. i18n: ectx: property (text), widget (QLabel, label_8)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
 #: libs/ui/802-11-wireless.ui:265 libs/ui/wired.ui:56
 msgid "Cloned MAC address"
 msgstr "Klónozott MAC-cím"
@@ -2059,15 +2056,15 @@ msgid "New Bluetooth Connection"
 msgstr "Új Bluetooth-kapcsolat"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabCellular)
-#. i18n: ectx: property (windowTitle), widget (QWidget, Gsm)
 #. i18n: ectx: property (windowTitle), widget (QWidget, Cdma)
+#. i18n: ectx: property (windowTitle), widget (QWidget, Gsm)
 #: libs/ui/cdma.ui:14 libs/ui/gsm.ui:14
 #: settings/config/manageconnectionwidget.ui:106
 msgid "Mobile Broadband"
 msgstr "Mobil széles sáv"
 
-#. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
 #: libs/ui/cdma.ui:22 libs/ui/gsm.ui:38
 msgid "&Number:"
 msgstr "&Szám:"
@@ -2075,10 +2072,10 @@ msgstr "&Szám:"
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, userNameLabel)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
 #: libs/ui/cdma.ui:38 libs/ui/gsm.ui:58 libs/ui/pppoe.ui:36
 #: libs/ui/security/eapmethodleapbase.ui:22
 #: libs/ui/security/eapmethodsimplebase.ui:17 libs/ui/security/leap.ui:17
@@ -2090,11 +2087,11 @@ msgstr "&Felhasználónév:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #. i18n: ectx: property (text), widget (QLabel, lbl_password)
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#. i18n: ectx: property (text), widget (QLabel, label_14)
-#. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#. i18n: ectx: property (text), widget (QLabel, label_14)
 #: libs/ui/cdma.ui:54 libs/ui/gsm.ui:74 libs/ui/pppoe.ui:56
 #: libs/ui/security/eapmethodleapbase.ui:42
 #: libs/ui/security/eapmethodsimplebase.ui:33 libs/ui/security/leap.ui:33
@@ -2227,19 +2224,19 @@ msgstr "Egyszerű"
 msgid "*99#"
 msgstr "*99#"
 
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509KeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509PassKeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509PassPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, proxyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
-#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboGroupPassOptions)
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passwordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, pinStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #: libs/ui/gsm.ui:93 libs/ui/gsm.ui:253
 #: libs/ui/security/eapmethodleapbase.ui:68
 #: libs/ui/security/eapmethodsimplebase.ui:56
@@ -2254,19 +2251,19 @@ msgstr "*99#"
 msgid "Store"
 msgstr "Elmentés"
 
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509KeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509PassKeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509PassPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, proxyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
-#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboGroupPassOptions)
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passwordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, pinStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #: libs/ui/gsm.ui:98 libs/ui/gsm.ui:258
 #: libs/ui/security/eapmethodleapbase.ui:73
 #: libs/ui/security/eapmethodsimplebase.ui:61
@@ -2281,6 +2278,9 @@ msgstr "Elmentés"
 msgid "Always Ask"
 msgstr "Bekérés mindig"
 
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509KeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, x509PassKeyPasswordStorage)
@@ -2288,13 +2288,10 @@ msgstr "Bekérés mindig"
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbProxyType)
 #. i18n: ectx: property (text), item, widget (KComboBox, proxyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
-#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
-#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPassOptions)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboGroupPassOptions)
-#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, passwordStorage)
 #. i18n: ectx: property (text), item, widget (KComboBox, pinStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPrivateKeyPasswordStorage)
 #: libs/ui/gsm.ui:103 libs/ui/gsm.ui:263
 #: libs/ui/security/eapmethodleapbase.ui:78
 #: libs/ui/security/eapmethodsimplebase.ui:66
@@ -2457,8 +2454,8 @@ msgstr ""
 "Ennek a mezőnek a használatával adhatja meg azt az alhálózatot, amelyhez a "
 "fenti IP-cím tartozik."
 
-#. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #. i18n: ectx: property (text), widget (QLabel, lbl_gateway)
 #. i18n: ectx: property (text), widget (QLabel, gatewayLabel)
@@ -2494,10 +2491,10 @@ msgstr ""
 "Ezzel a mezővel adhatja meg egy vagy több DNS-kiszolgáló IP címét. Használja "
 "a ',' karaktert a bejegyzések elválasztásához."
 
-#. i18n: ectx: property (text), widget (KPushButton, altSubjectMatchesMoreBtn)
-#. i18n: ectx: property (text), widget (KPushButton, connectToTheseServersMoreBtn)
 #. i18n: ectx: property (text), widget (KPushButton, dnsMorePushButton)
 #. i18n: ectx: property (text), widget (KPushButton, dnsSearchMorePushButton)
+#. i18n: ectx: property (text), widget (KPushButton, altSubjectMatchesMoreBtn)
+#. i18n: ectx: property (text), widget (KPushButton, connectToTheseServersMoreBtn)
 #: libs/ui/ipv4.ui:260 libs/ui/ipv4.ui:294 libs/ui/ipv6.ui:265
 #: libs/ui/ipv6.ui:299 libs/ui/security/eapmethodpeapbase.ui:120
 #: libs/ui/security/eapmethodpeapbase.ui:145
@@ -2537,10 +2534,10 @@ msgstr ""
 msgid "IPv4 is required for this connection"
 msgstr "IPv4 szükséges ehhez a kapcsolathoz"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, AdvancedSettingsIp4Config)
 #. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp4Config)
-#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
+#. i18n: ectx: property (windowTitle), widget (QWidget, AdvancedSettingsIp4Config)
 #. i18n: ectx: property (windowTitle), widget (QWidget, AdvancedSettingsIp6Config)
+#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
 #: libs/ui/ipv4advanced.ui:20 libs/ui/ipv4routes.ui:20
 #: libs/ui/ipv6advanced.ui:20 libs/ui/ipv6routes.ui:20
 msgid "Advanced IP Settings"
@@ -2672,19 +2669,17 @@ msgstr "Automatikus (csak DHCP)"
 #. i18n: ectx: property (text), item, widget (KComboBox, privacy)
 #: libs/ui/ipv6.ui:346
 msgid "Enabled (prefer public address)"
-msgstr ""
+msgstr "Engedélyezve (nyilvános cím előnyben részesítve)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacy)
 #: libs/ui/ipv6.ui:351
 msgid "Enabled (prefer temporary addresses)"
-msgstr ""
+msgstr "Engedélyezve (átmeneti címek előnyben részesítve)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: libs/ui/ipv6.ui:359
-#, fuzzy
-#| msgid "Tray icons:"
 msgid "Privacy Extensions:"
-msgstr "Tálcaikonok:"
+msgstr "Adatvédelmi kiterjesztések:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbMayFail)
 #: libs/ui/ipv6.ui:430
@@ -4153,8 +4148,8 @@ msgstr "&Csatornafelosztás letiltása"
 msgid "Novell VPN"
 msgstr "Novell VPN"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #. i18n: ectx: property (title), widget (QGroupBox, grp_general)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: vpnplugins/novellvpn/novellvpnprop.ui:20
 #: vpnplugins/openconnect/openconnectprop.ui:20 vpnplugins/pptp/pptpprop.ui:26
@@ -4822,15 +4817,15 @@ msgstr ""
 "A beállítás ssh-agentet használ hitelesítéshez, de nem található futó ssh-"
 "agent."
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanAuth)
 #. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanProp)
+#. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanAuth)
 #: vpnplugins/strongswan/strongswanauth.ui:14
 #: vpnplugins/strongswan/strongswanprop.ui:14
 msgid "Strong Swan VPN"
 msgstr "Erős Swan VPN"
 
-#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
 #. i18n: ectx: property (text), widget (QCheckBox, cbShowPasswords)
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
 #: vpnplugins/strongswan/strongswanauth.ui:37
 #: vpnplugins/strongswan/strongswanprop.ui:304 vpnplugins/vpnc/vpncauth.ui:79
 #: vpnplugins/vpnc/vpncprop.ui:161
