@@ -1,8 +1,12 @@
-networkmanagement (0.9.0.8-4) UNRELEASED; urgency=low
+networkmanagement (0.9.0.9-1) UNRELEASED; urgency=low
 
+  [ Felix Geyer ]
   * Replace kdebase-workspace with kde-workspace in package dependencies.
   * Add network-manager-openconnect to Suggests.
   * Switch to debhelper compat level v9 which exports build flags.
+
+  [ Michael Biebl ]
+  * New upstream release.
 
  -- Felix Geyer <fgeyer@debian.org>  Thu, 16 May 2013 22:21:52 +0200
 
